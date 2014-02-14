@@ -1,0 +1,42 @@
+//
+//  UAEC2DHCPOptionTests.m
+//  AWS iOS SDK
+//
+//  Copyright © Unsigned Apps ${year}. See License file.
+//  Created by Rob Amos.
+//
+//
+
+#import <Kiwi/Kiwi.h>
+#import "UAEC2DHCPOption.h"
+#import "UAEC2DHCPConfiguration.h"
+#import "UAEC2Tag.h"
+
+#import <KissXML/DDXML.h>
+#import <Mantle/Mantle.h>
+
+SPEC_BEGIN(UAEC2DHCPOptionSpec)
+
+describe(@"UAEC2DHCPOption", ^
+{
+
+
+	it(@"should encode to a query string.", ^
+	{
+	    NSString *xml = @"";
+	    NSError *parseError = nil;
+	    DDXMLDocument *xmlDictionary = [[DDXMLDocument alloc] initWithXMLString:xml options:0 error:&parseError];
+	    [[parseError should] beNil];
+	    [[xmlDictionary should] beNonNil];
+
+	    NSError *serialisationError = nil;
+	    UAEC2DHCPOption *dHCPOption = [MTLXMLAdapter modelOfClass:[UAEC2DHCPOption class] fromXMLNode:xmlDictionary error:&serialisationError];
+	    [[serialisationError should] beNil];
+	    [[dHCPOption should] beNonNil];
+
+	    // additional verification
+	});
+
+});
+
+SPEC_END

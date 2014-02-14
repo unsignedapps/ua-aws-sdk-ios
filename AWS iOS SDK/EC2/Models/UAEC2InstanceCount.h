@@ -1,0 +1,17 @@
+//
+//  UAEC2InstanceCount.h
+//  AWS iOS SDK
+//
+//  Copyright © Unsigned Apps ${year}. See License file.
+//  Created by Rob Amos.
+//
+//
+
+#import "UAEC2Model.h"
+
+@interface UAEC2InstanceCount : UAEC2Model
+
+@property (nonatomic, copy) NSString *state;
+@property (nonatomic, strong) NSNumber *instanceCount;
+
+@end

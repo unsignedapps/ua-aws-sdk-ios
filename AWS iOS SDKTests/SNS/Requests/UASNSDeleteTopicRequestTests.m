@@ -1,0 +1,26 @@
+//
+//  UASNSDeleteTopicRequestTests.m
+//  AWS iOS SDK
+//
+//  Copyright © Unsigned Apps ${year}. See License file.
+//  Created by Rob Amos.
+//
+//
+
+#import <Kiwi/Kiwi.h>
+#import "UASNSDeleteTopicRequest.h"
+
+
+#import <KissXML/DDXML.h>
+#import <Mantle/Mantle.h>
+
+SPEC_BEGIN(UASNSDeleteTopicRequestSpec)
+
+describe(@"UASNSDeleteTopicRequest", ^
+{
+
+
+
+});
+
+SPEC_END

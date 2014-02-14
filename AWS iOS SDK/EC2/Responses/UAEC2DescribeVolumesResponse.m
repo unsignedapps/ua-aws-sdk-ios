@@ -1,0 +1,39 @@
+//
+//  UAEC2DescribeVolumesResponse.m
+//  AWS iOS SDK
+//
+//  Copyright © Unsigned Apps ${year}. See License file.
+//  Created by Rob Amos.
+//
+//
+
+#import "UAEC2DescribeVolumesResponse.h"
+#import "UAEC2Volume.h"
+
+@implementation UAEC2DescribeVolumesResponse
+
+@synthesize volumes=_volumes;
+
++ (NSString *)XPathPrefix
+{
+    return @"./ec2:DescribeVolumesResponse/";
+}
+
++ (NSDictionary *)XMLKeyPathsByPropertyKey
+{
+    // Start with super's key paths (if there are any)
+    NSMutableDictionary *keyPaths = [[UAEC2Response XMLKeyPathsByPropertyKey] mutableCopy];
+
+    [keyPaths addEntriesFromDictionary:
+    @{
+        @"volumes": @"ec2:volumeSet/ec2:item"
+    }];
+    return [keyPaths copy];
+}
+
++ (NSValueTransformer *)volumesXMLTransformer
+{
+  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Volume class]];
+}
+
+@end

@@ -1,0 +1,40 @@
+//
+//  UACWDescribeAlarmHistoryResponse.m
+//  AWS iOS SDK
+//
+//  Copyright © Unsigned Apps ${year}. See License file.
+//  Created by Rob Amos.
+//
+//
+
+#import "UACWDescribeAlarmHistoryResponse.h"
+#import "UACWAlarmHistoryItem.h"
+
+@implementation UACWDescribeAlarmHistoryResponse
+
+@synthesize alarmHistoryItems=_alarmHistoryItems, nextToken=_nextToken;
+
++ (NSString *)XPathPrefix
+{
+    return @"./cloudwatch:DescribeAlarmHistoryResponse/cloudwatch:DescribeAlarmHistoryResult/";
+}
+
++ (NSDictionary *)XMLKeyPathsByPropertyKey
+{
+    // Start with super's key paths (if there are any)
+    NSMutableDictionary *keyPaths = [[UACWResponse XMLKeyPathsByPropertyKey] mutableCopy];
+
+    [keyPaths addEntriesFromDictionary:
+    @{
+        @"alarmHistoryItems": @"cloudwatch:AlarmHistoryItems/cloudwatch:member",
+        @"nextToken": @"cloudwatch:NextToken"
+    }];
+    return [keyPaths copy];
+}
+
++ (NSValueTransformer *)alarmHistoryItemsXMLTransformer
+{
+  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UACWAlarmHistoryItem class]];
+}
+
+@end

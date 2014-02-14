@@ -1,0 +1,41 @@
+//
+//  UAEC2DiskImageDescription.m
+//  AWS iOS SDK
+//
+//  Copyright © Unsigned Apps ${year}. See License file.
+//  Created by Rob Amos.
+//
+//
+
+#import "UAEC2DiskImageDescription.h"
+
+@implementation UAEC2DiskImageDescription
+
+@synthesize format=_format, size=_size, importManifestUrl=_importManifestUrl, checksum=_checksum;
+
++ (NSString *)XPathPrefix
+{
+    return @"./";
+}
+
++ (NSDictionary *)XMLKeyPathsByPropertyKey
+{
+    // Start with super's key paths (if there are any)
+    NSMutableDictionary *keyPaths = [[UAEC2Model XMLKeyPathsByPropertyKey] mutableCopy];
+
+    [keyPaths addEntriesFromDictionary:
+    @{
+        @"format": @"ec2:format",
+        @"size": @"ec2:size",
+        @"importManifestUrl": @"ec2:importManifestUrl",
+        @"checksum": @"ec2:checksum"
+    }];
+    return [keyPaths copy];
+}
+
++ (NSValueTransformer *)sizeXMLTransformer
+{
+  return [NSValueTransformer UA_XMLTransformerForDouble];
+}
+
+@end

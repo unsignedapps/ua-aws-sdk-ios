@@ -1,0 +1,18 @@
+//
+//  UASNSGetPlatformApplicationAttributesResponse.h
+//  AWS iOS SDK
+//
+//  Copyright © Unsigned Apps ${year}. See License file.
+//  Created by Rob Amos.
+//
+//
+
+#import "UASNSResponse.h"
+
+@class UASNSPlatformApplicationAttributes;
+
+@interface UASNSGetPlatformApplicationAttributesResponse : UASNSResponse
+
+@property (nonatomic, copy) UASNSPlatformApplicationAttributes *attributes;
+
+@end

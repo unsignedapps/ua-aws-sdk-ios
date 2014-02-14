@@ -1,0 +1,19 @@
+//
+//  UACWDescribeAlarmHistoryResponse.h
+//  AWS iOS SDK
+//
+//  Copyright © Unsigned Apps ${year}. See License file.
+//  Created by Rob Amos.
+//
+//
+
+#import "UACWResponse.h"
+
+@class UACWAlarmHistoryItem;
+
+@interface UACWDescribeAlarmHistoryResponse : UACWResponse
+
+@property (nonatomic, copy) NSArray *alarmHistoryItems;
+@property (nonatomic, copy) NSString *nextToken;
+
+@end

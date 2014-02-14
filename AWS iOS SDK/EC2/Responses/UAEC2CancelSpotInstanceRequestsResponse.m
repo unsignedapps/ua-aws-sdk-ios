@@ -1,0 +1,39 @@
+//
+//  UAEC2CancelSpotInstanceRequestsResponse.m
+//  AWS iOS SDK
+//
+//  Copyright © Unsigned Apps ${year}. See License file.
+//  Created by Rob Amos.
+//
+//
+
+#import "UAEC2CancelSpotInstanceRequestsResponse.h"
+#import "UAEC2CancelledSpotInstanceRequest.h"
+
+@implementation UAEC2CancelSpotInstanceRequestsResponse
+
+@synthesize cancelledSpotInstanceRequests=_cancelledSpotInstanceRequests;
+
++ (NSString *)XPathPrefix
+{
+    return @"./ec2:CancelSpotInstanceRequestsResponse/";
+}
+
++ (NSDictionary *)XMLKeyPathsByPropertyKey
+{
+    // Start with super's key paths (if there are any)
+    NSMutableDictionary *keyPaths = [[UAEC2Response XMLKeyPathsByPropertyKey] mutableCopy];
+
+    [keyPaths addEntriesFromDictionary:
+    @{
+        @"cancelledSpotInstanceRequests": @"ec2:spotInstanceRequestSet/ec2:item"
+    }];
+    return [keyPaths copy];
+}
+
++ (NSValueTransformer *)cancelledSpotInstanceRequestsXMLTransformer
+{
+  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2CancelledSpotInstanceRequest class]];
+}
+
+@end
