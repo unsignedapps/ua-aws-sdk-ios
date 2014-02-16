@@ -70,6 +70,18 @@
     }];
 }
 
++ (NSValueTransformer *)UA_XMLTransformerForBooleanString
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    {
+        return @([[nodes[0] stringValue] boolValue]);
+
+    } reverseBlock:^NSString *(NSNumber *boolObject)
+    {
+        return [boolObject isEqualToNumber:@(YES)] ? @"true" : @"false";
+    }];
+}
+
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfStrings
 {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *nodes)

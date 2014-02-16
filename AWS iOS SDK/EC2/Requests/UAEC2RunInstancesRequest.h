@@ -2,7 +2,7 @@
 //  UAEC2RunInstancesRequest.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 
@@ -23,6 +23,7 @@ typedef BOOL(^UAEC2RunInstancesRequestShouldContinueWaitingBlock)(UAEC2RunInstan
 @property (nonatomic, strong) NSMutableArray *securityGroups;
 @property (nonatomic, strong) NSMutableArray *securityGroupIDs;
 @property (nonatomic, copy) NSString *userData;
+@property (nonatomic, copy) NSString *decodedUserData;
 @property (nonatomic, copy) NSString *instanceType;
 @property (nonatomic, copy) UAEC2Placement *placement;
 @property (nonatomic, copy) NSString *kernelID;

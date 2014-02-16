@@ -2,7 +2,7 @@
 //  UAASBlockDeviceMapping.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -57,6 +57,11 @@
 + (NSValueTransformer *)ebsXMLTransformer
 {
   return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAASEBSBlockDevice class]];
+}
+
++ (NSValueTransformer *)noDeviceXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

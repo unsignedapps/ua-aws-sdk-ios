@@ -2,7 +2,7 @@
 //  UASNSEndpointAttributes.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -30,6 +30,11 @@
         @"token": @"Sns:entry/Sns:value[../Sns:key/text() = \"Token\"]"
     }];
     return [keyPaths copy];
+}
+
++ (NSValueTransformer *)enabledXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

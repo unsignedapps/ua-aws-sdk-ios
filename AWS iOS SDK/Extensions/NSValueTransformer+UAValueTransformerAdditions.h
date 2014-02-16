@@ -15,6 +15,7 @@
 + (NSValueTransformer *)UA_XMLTransformerForDouble;
 + (NSValueTransformer *)UA_JSONTransformerForBooleanString;
 
++ (NSValueTransformer *)UA_XMLTransformerForBooleanString;
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfStrings;
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfNumbers;
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfDatesWithFormat:(NSString *)dateFormat;

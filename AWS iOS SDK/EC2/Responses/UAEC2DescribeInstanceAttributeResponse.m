@@ -2,7 +2,7 @@
 //  UAEC2DescribeInstanceAttributeResponse.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -32,6 +32,7 @@
         @"kernelID": @"ec2:kernel/ec2:value",
         @"ramdiskID": @"ec2:ramdisk/ec2:value",
         @"userData": @"ec2:userData/ec2:value",
+        @"decodedUserData": [NSNull null],
         @"disableApiTermination": @"ec2:disableApiTermination/ec2:value",
         @"instanceInitiatedShutdownBehavior": @"ec2:instanceInitiatedShutdownBehavior/ec2:value",
         @"rootDeviceName": @"ec2:rootDeviceName/ec2:value",
@@ -41,6 +42,28 @@
         @"sriovNetSupport": @"ec2:sriovNetSupport/ec2:value"
     }];
     return [keyPaths copy];
+}
+
+- (NSString *)decodedUserData
+{
+    if (self.userData == nil)
+        return nil;
+    
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (void)setDecodedUserData:(NSString *)decodedUserData
+{
+    if (decodedUserData == nil)
+        [self setUserData:nil];
+    else
+		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
+}
+
++ (NSValueTransformer *)disableApiTerminationXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)instanceInitiatedShutdownBehaviorXMLTransformer
@@ -86,6 +109,11 @@
 + (NSValueTransformer *)productCodesXMLTransformer
 {
   return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2ProductCode class]];
+}
+
++ (NSValueTransformer *)ebsOptimizedXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

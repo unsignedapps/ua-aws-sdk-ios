@@ -2,7 +2,7 @@
 //  UAEC2LaunchSpecification.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -29,6 +29,7 @@
         @"keyName": @"keyName",
         @"securityGroups": @"groupSet",
         @"userData": @"userData",
+        @"decodedUserData": [NSNull null],
         @"addressingType": @"addressingType",
         @"instanceType": @"instanceType",
         @"placement": @"placement",
@@ -60,6 +61,7 @@
         @"keyName": @"ec2:keyName",
         @"securityGroups": @"ec2:groupSet/ec2:item",
         @"userData": @"ec2:userData",
+        @"decodedUserData": [NSNull null],
         @"addressingType": @"ec2:addressingType",
         @"instanceType": @"ec2:instanceType",
         @"placement": @"ec2:placement",
@@ -73,6 +75,23 @@
         @"ebsOptimized": @"ec2:ebsOptimized"
     }];
     return [keyPaths copy];
+}
+
+- (NSString *)decodedUserData
+{
+    if (self.userData == nil)
+        return nil;
+    
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (void)setDecodedUserData:(NSString *)decodedUserData
+{
+    if (decodedUserData == nil)
+        [self setUserData:nil];
+    else
+		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
 }
 
 + (NSValueTransformer *)securityGroupsQueryStringTransformer
@@ -115,6 +134,11 @@
   return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
++ (NSValueTransformer *)monitoringEnabledXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+}
+
 + (NSValueTransformer *)networkInterfacesXMLTransformer
 {
   return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
@@ -123,6 +147,11 @@
 + (NSValueTransformer *)iamInstanceProfileXMLTransformer
 {
   return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2IAMInstanceProfileSpecification class]];
+}
+
++ (NSValueTransformer *)ebsOptimizedXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

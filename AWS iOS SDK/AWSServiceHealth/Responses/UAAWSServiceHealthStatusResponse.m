@@ -54,6 +54,12 @@
             [outages addObject:outage];
     }
     
+    [outages sortUsingComparator:^NSComparisonResult(UAAWSServiceHealthOutage *outage1, UAAWSServiceHealthOutage *outage2)
+    {
+        // reverse sort by date
+        return [outage1.date compare:outage2.date] * -1;
+    }];
+    
     return [outages count] > 0 ? [outages copy] : nil;
 }
 
@@ -111,8 +117,8 @@
         if (region == UAAWSRegionUnknown || [UAAWSServiceHealthService isService:service availableInRegion:region])
         {
             [services addObject:[[UAAWSServiceHealthService alloc] initWithService:service
-                                                                    currentOutages:[self currentOutagesAffectingService:service]
-                                                                     recentOutages:[self recentOutagesAffectingService:service]]];
+                                                                    currentOutages:[self currentOutagesAffectingService:service inRegion:region]
+                                                                     recentOutages:[self recentOutagesAffectingService:service inRegion:region]]];
         }
     }
     

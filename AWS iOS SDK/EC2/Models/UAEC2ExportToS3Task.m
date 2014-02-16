@@ -2,7 +2,7 @@
 //  UAEC2ExportToS3Task.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //

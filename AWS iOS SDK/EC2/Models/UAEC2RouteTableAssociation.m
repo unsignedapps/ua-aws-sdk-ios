@@ -2,7 +2,7 @@
 //  UAEC2RouteTableAssociation.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -31,6 +31,11 @@
         @"main": @"ec2:main"
     }];
     return [keyPaths copy];
+}
+
++ (NSValueTransformer *)mainXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

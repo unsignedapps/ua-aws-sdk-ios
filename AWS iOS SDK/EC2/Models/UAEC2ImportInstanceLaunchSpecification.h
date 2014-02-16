@@ -2,7 +2,7 @@
 //  UAEC2ImportInstanceLaunchSpecification.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *groupNames;
 @property (nonatomic, copy) NSString *additionalInfo;
 @property (nonatomic, copy) NSString *userData;
+@property (nonatomic, copy) NSString *decodedUserData;
 @property (nonatomic, copy) NSString *instanceType;
 @property (nonatomic, copy) UAEC2Placement *placement;
 @property (nonatomic) BOOL monitoring;

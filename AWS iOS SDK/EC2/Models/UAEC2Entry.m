@@ -2,7 +2,7 @@
 //  UAEC2Entry.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -51,6 +51,11 @@
 + (NSValueTransformer *)ruleNumberXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];
+}
+
++ (NSValueTransformer *)egressXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)icmpTypeCodeXMLTransformer

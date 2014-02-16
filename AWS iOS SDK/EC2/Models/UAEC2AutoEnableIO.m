@@ -2,7 +2,7 @@
 //  UAEC2AutoEnableIO.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -28,6 +28,11 @@
         @"value": @"ec2:value"
     }];
     return [keyPaths copy];
+}
+
++ (NSValueTransformer *)valueXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

@@ -2,7 +2,7 @@
 //  UAEC2RunInstancesRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -58,6 +58,7 @@
         @"securityGroups": @"SecurityGroup",
         @"securityGroupIDs": @"SecurityGroupId",
         @"userData": @"UserData",
+        @"decodedUserData": [NSNull null],
         @"instanceType": @"InstanceType",
         @"placement": @"Placement",
         @"kernelID": @"KernelId",
@@ -76,6 +77,23 @@
         @"ebsOptimized": @"EbsOptimized"
     }];
     return [keyPaths copy];
+}
+
+- (NSString *)decodedUserData
+{
+    if (self.userData == nil)
+        return nil;
+    
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (void)setDecodedUserData:(NSString *)decodedUserData
+{
+    if (decodedUserData == nil)
+        [self setUserData:nil];
+    else
+		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
 }
 
 + (NSValueTransformer *)placementJSONTransformer

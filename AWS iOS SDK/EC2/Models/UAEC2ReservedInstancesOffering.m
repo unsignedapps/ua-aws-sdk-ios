@@ -2,7 +2,7 @@
 //  UAEC2ReservedInstancesOffering.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -72,6 +72,11 @@
 + (NSValueTransformer *)recurringChargesXMLTransformer
 {
   return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2RecurringCharge class]];
+}
+
++ (NSValueTransformer *)marketplaceXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)pricingDetailsXMLTransformer

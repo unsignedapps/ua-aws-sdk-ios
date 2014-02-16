@@ -2,7 +2,7 @@
 //  UAEC2PrivateIPAddressSpecification.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -42,6 +42,11 @@
         @"primary": @"ec2:primary"
     }];
     return [keyPaths copy];
+}
+
++ (NSValueTransformer *)primaryXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

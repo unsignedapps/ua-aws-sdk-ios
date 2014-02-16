@@ -10,7 +10,7 @@
 #import "UAAWSRequest.h"
 #import "UAAWSCredentials.h"
 #import "NSData+UAHMAC.h"
-#import "NSString+UAURLEscape.h"
+#import "NSString+DSURLEscape.h"
 
 @interface UAAWSRequestSigning ()
 
@@ -53,6 +53,7 @@
     {
         return [param1 compare:param2];
 
+            
     }] componentsJoinedByString:@"&"];
     
     // and build our signing content

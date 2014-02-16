@@ -2,7 +2,7 @@
 //  UAEC2Instance.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -541,6 +541,11 @@
   return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
 }
 
++ (NSValueTransformer *)sourceDestCheckXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+}
+
 + (NSValueTransformer *)networkInterfacesXMLTransformer
 {
   return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterface class]];
@@ -549,6 +554,11 @@
 + (NSValueTransformer *)iamInstanceProfileXMLTransformer
 {
   return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2IAMInstanceProfile class]];
+}
+
++ (NSValueTransformer *)ebsOptimizedXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

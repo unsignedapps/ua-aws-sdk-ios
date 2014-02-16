@@ -2,7 +2,7 @@
 //  UAEC2NetworkInterfaceSpecification.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -86,6 +86,11 @@
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }
 
++ (NSValueTransformer *)deleteOnTerminationXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+}
+
 + (NSValueTransformer *)privateIPAddressesXMLTransformer
 {
   return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
@@ -94,6 +99,11 @@
 + (NSValueTransformer *)secondaryPrivateIPAddressCountXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];
+}
+
++ (NSValueTransformer *)associatePublicIPAddressXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

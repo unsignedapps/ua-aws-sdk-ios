@@ -2,7 +2,7 @@
 //  UAASTag.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -48,6 +48,11 @@
         @"propagateAtLaunch": @"AutoScaling:PropagateAtLaunch"
     }];
     return [keyPaths copy];
+}
+
++ (NSValueTransformer *)propagateAtLaunchXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

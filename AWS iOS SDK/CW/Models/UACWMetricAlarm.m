@@ -2,7 +2,7 @@
 //  UACWMetricAlarm.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps ${year}. See License file.
+//  Copyright © Unsigned Apps 2014. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -49,6 +49,11 @@
         @"comparisonOperator": @"cloudwatch:ComparisonOperator"
     }];
     return [keyPaths copy];
+}
+
++ (NSValueTransformer *)actionsEnabledQueryStringTransformer
+{
+    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)stateValueQueryStringTransformer
@@ -302,6 +307,11 @@
 				return nil;
         }
     }];
+}
+
++ (NSValueTransformer *)actionsEnabledXMLTransformer
+{
+    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)oKActionsXMLTransformer
