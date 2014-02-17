@@ -30,6 +30,9 @@
         case UAAWSSignatureVersion2:
             return [self signURLRequestUsingV2:urlRequest ofRequest:request withCredentials:credentials];
             
+        case UAAWSSignatureVersion4:
+            NSAssert(NO, @"Version 4 signature not yet implemented.");
+            
         case UAAWSSignatureNotRequired:
             return;
             

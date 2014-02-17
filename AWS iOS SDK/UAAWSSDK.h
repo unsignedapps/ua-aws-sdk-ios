@@ -13,4 +13,5 @@
 #import "UACloudWatch.h"
 #import "UAEC2.h"
 #import "UAELB.h"
+#import "UAIAM.h"
 #import "UASNS.h"

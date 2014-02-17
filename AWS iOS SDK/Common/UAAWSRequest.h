@@ -13,7 +13,8 @@ typedef NS_ENUM(NSInteger, UAAWSSignatureVersion)
 {
     UAAWSSignatureNotRequired = -1,
     UAAWSSignatureVersionUnknown = 0,
-    UAAWSSignatureVersion2 = 2
+    UAAWSSignatureVersion2 = 2,
+    UAAWSSignatureVersion4 = 4
 };
 
 typedef void(^UAAWSOperationCompletionBlock)(id response, NSError *error);

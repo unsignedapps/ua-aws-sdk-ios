@@ -743,6 +743,175 @@
 		A3377DF318ADA3C600FECC45 /* UAASDescribePoliciesResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3377B2B18ADA3C500FECC45 /* UAASDescribePoliciesResponseTests.m */; };
 		A3377DF418ADA3C600FECC45 /* UAASDescribeScalingActivitiesResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3377B2C18ADA3C500FECC45 /* UAASDescribeScalingActivitiesResponseTests.m */; };
 		A337806318ADA50300FECC45 /* MTLQueryAdapterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A337806218ADA50300FECC45 /* MTLQueryAdapterTests.m */; };
+		A337807A18B18D2700FECC45 /* UAIAMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A337806F18B18D2700FECC45 /* UAIAMModel.m */; };
+		A337807B18B18D2700FECC45 /* UAIAMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337807218B18D2700FECC45 /* UAIAMRequest.m */; };
+		A337807C18B18D2700FECC45 /* UAIAMResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337807518B18D2700FECC45 /* UAIAMResponse.m */; };
+		A337807D18B18D2700FECC45 /* UAIAMError.m in Sources */ = {isa = PBXBuildFile; fileRef = A337807918B18D2700FECC45 /* UAIAMError.m */; };
+		A337809E18B1909F00FECC45 /* UAIAMAccessKey.m in Sources */ = {isa = PBXBuildFile; fileRef = A337807F18B1909F00FECC45 /* UAIAMAccessKey.m */; };
+		A337809F18B1909F00FECC45 /* UAIAMAccessKeyMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = A337808118B1909F00FECC45 /* UAIAMAccessKeyMetadata.m */; };
+		A33780A018B1909F00FECC45 /* UAIAMCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = A337808318B1909F00FECC45 /* UAIAMCertificate.m */; };
+		A33780A118B1909F00FECC45 /* UAIAMGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A337808518B1909F00FECC45 /* UAIAMGroup.m */; };
+		A33780A218B1909F00FECC45 /* UAIAMInstanceProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A337808718B1909F00FECC45 /* UAIAMInstanceProfile.m */; };
+		A33780A318B1909F00FECC45 /* UAIAMLoginProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A337808918B1909F00FECC45 /* UAIAMLoginProfile.m */; };
+		A33780A418B1909F00FECC45 /* UAIAMMFADevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A337808B18B1909F00FECC45 /* UAIAMMFADevice.m */; };
+		A33780A518B1909F00FECC45 /* UAIAMPasswordPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A337808D18B1909F00FECC45 /* UAIAMPasswordPolicy.m */; };
+		A33780A618B1909F00FECC45 /* UAIAMRole.m in Sources */ = {isa = PBXBuildFile; fileRef = A337808F18B1909F00FECC45 /* UAIAMRole.m */; };
+		A33780A718B1909F00FECC45 /* UAIAMSAMLProviderList.m in Sources */ = {isa = PBXBuildFile; fileRef = A337809118B1909F00FECC45 /* UAIAMSAMLProviderList.m */; };
+		A33780A818B1909F00FECC45 /* UAIAMServerCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = A337809318B1909F00FECC45 /* UAIAMServerCertificate.m */; };
+		A33780A918B1909F00FECC45 /* UAIAMServerCertificateMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = A337809518B1909F00FECC45 /* UAIAMServerCertificateMetadata.m */; };
+		A33780AA18B1909F00FECC45 /* UAIAMServerCertificateMetadataList.m in Sources */ = {isa = PBXBuildFile; fileRef = A337809718B1909F00FECC45 /* UAIAMServerCertificateMetadataList.m */; };
+		A33780AC18B1909F00FECC45 /* UAIAMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A337809B18B1909F00FECC45 /* UAIAMUser.m */; };
+		A33780AD18B1909F00FECC45 /* UAIAMVirtualMFADevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A337809D18B1909F00FECC45 /* UAIAMVirtualMFADevice.m */; };
+		A337814218B1912800FECC45 /* UAIAMAddRoleToInstanceProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780AF18B1912700FECC45 /* UAIAMAddRoleToInstanceProfileRequest.m */; };
+		A337814318B1912800FECC45 /* UAIAMAddUserToGroupRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780B118B1912700FECC45 /* UAIAMAddUserToGroupRequest.m */; };
+		A337814418B1912800FECC45 /* UAIAMChangePasswordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780B318B1912700FECC45 /* UAIAMChangePasswordRequest.m */; };
+		A337814518B1912800FECC45 /* UAIAMCreateAccessKeyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780B518B1912700FECC45 /* UAIAMCreateAccessKeyRequest.m */; };
+		A337814618B1912800FECC45 /* UAIAMCreateAccountAliasRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780B718B1912700FECC45 /* UAIAMCreateAccountAliasRequest.m */; };
+		A337814718B1912800FECC45 /* UAIAMCreateGroupRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780B918B1912700FECC45 /* UAIAMCreateGroupRequest.m */; };
+		A337814818B1912800FECC45 /* UAIAMCreateInstanceProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780BB18B1912700FECC45 /* UAIAMCreateInstanceProfileRequest.m */; };
+		A337814918B1912800FECC45 /* UAIAMCreateLoginProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780BD18B1912700FECC45 /* UAIAMCreateLoginProfileRequest.m */; };
+		A337814A18B1912800FECC45 /* UAIAMCreateRoleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780BF18B1912700FECC45 /* UAIAMCreateRoleRequest.m */; };
+		A337814B18B1912800FECC45 /* UAIAMCreateSAMLProviderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780C118B1912700FECC45 /* UAIAMCreateSAMLProviderRequest.m */; };
+		A337814C18B1912800FECC45 /* UAIAMCreateUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780C318B1912700FECC45 /* UAIAMCreateUserRequest.m */; };
+		A337814D18B1912800FECC45 /* UAIAMCreateVirtualMFADeviceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780C518B1912700FECC45 /* UAIAMCreateVirtualMFADeviceRequest.m */; };
+		A337814E18B1912800FECC45 /* UAIAMDeactivateMFADeviceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780C718B1912700FECC45 /* UAIAMDeactivateMFADeviceRequest.m */; };
+		A337814F18B1912800FECC45 /* UAIAMDeleteAccessKeyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780C918B1912700FECC45 /* UAIAMDeleteAccessKeyRequest.m */; };
+		A337815018B1912800FECC45 /* UAIAMDeleteAccountAliasRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780CB18B1912700FECC45 /* UAIAMDeleteAccountAliasRequest.m */; };
+		A337815118B1912800FECC45 /* UAIAMDeleteAccountPasswordPolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780CD18B1912700FECC45 /* UAIAMDeleteAccountPasswordPolicyRequest.m */; };
+		A337815218B1912800FECC45 /* UAIAMDeleteGroupPolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780CF18B1912700FECC45 /* UAIAMDeleteGroupPolicyRequest.m */; };
+		A337815318B1912800FECC45 /* UAIAMDeleteGroupRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780D118B1912700FECC45 /* UAIAMDeleteGroupRequest.m */; };
+		A337815418B1912800FECC45 /* UAIAMDeleteInstanceProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780D318B1912700FECC45 /* UAIAMDeleteInstanceProfileRequest.m */; };
+		A337815518B1912800FECC45 /* UAIAMDeleteLoginProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780D518B1912700FECC45 /* UAIAMDeleteLoginProfileRequest.m */; };
+		A337815618B1912800FECC45 /* UAIAMDeleteRolePolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780D718B1912700FECC45 /* UAIAMDeleteRolePolicyRequest.m */; };
+		A337815718B1912800FECC45 /* UAIAMDeleteRoleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780D918B1912700FECC45 /* UAIAMDeleteRoleRequest.m */; };
+		A337815818B1912800FECC45 /* UAIAMDeleteSAMLProviderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780DB18B1912700FECC45 /* UAIAMDeleteSAMLProviderRequest.m */; };
+		A337815918B1912800FECC45 /* UAIAMDeleteServerCertificateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780DD18B1912700FECC45 /* UAIAMDeleteServerCertificateRequest.m */; };
+		A337815A18B1912800FECC45 /* UAIAMDeleteSigningCertificateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780DF18B1912700FECC45 /* UAIAMDeleteSigningCertificateRequest.m */; };
+		A337815B18B1912800FECC45 /* UAIAMDeleteUserPolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780E118B1912700FECC45 /* UAIAMDeleteUserPolicyRequest.m */; };
+		A337815C18B1912800FECC45 /* UAIAMDeleteUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780E318B1912700FECC45 /* UAIAMDeleteUserRequest.m */; };
+		A337815D18B1912800FECC45 /* UAIAMDeleteVirtualMFADeviceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780E518B1912700FECC45 /* UAIAMDeleteVirtualMFADeviceRequest.m */; };
+		A337815E18B1912800FECC45 /* UAIAMEnableMFADeviceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780E718B1912700FECC45 /* UAIAMEnableMFADeviceRequest.m */; };
+		A337815F18B1912800FECC45 /* UAIAMGetAccountPasswordPolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780E918B1912700FECC45 /* UAIAMGetAccountPasswordPolicyRequest.m */; };
+		A337816018B1912800FECC45 /* UAIAMGetAccountSummaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780EB18B1912700FECC45 /* UAIAMGetAccountSummaryRequest.m */; };
+		A337816118B1912800FECC45 /* UAIAMGetGroupPolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780ED18B1912700FECC45 /* UAIAMGetGroupPolicyRequest.m */; };
+		A337816218B1912800FECC45 /* UAIAMGetGroupRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780EF18B1912700FECC45 /* UAIAMGetGroupRequest.m */; };
+		A337816318B1912800FECC45 /* UAIAMGetInstanceProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780F118B1912700FECC45 /* UAIAMGetInstanceProfileRequest.m */; };
+		A337816418B1912800FECC45 /* UAIAMGetLoginProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780F318B1912700FECC45 /* UAIAMGetLoginProfileRequest.m */; };
+		A337816518B1912800FECC45 /* UAIAMGetRolePolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780F518B1912700FECC45 /* UAIAMGetRolePolicyRequest.m */; };
+		A337816618B1912800FECC45 /* UAIAMGetRoleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780F718B1912700FECC45 /* UAIAMGetRoleRequest.m */; };
+		A337816718B1912800FECC45 /* UAIAMGetSAMLProviderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780F918B1912700FECC45 /* UAIAMGetSAMLProviderRequest.m */; };
+		A337816818B1912800FECC45 /* UAIAMGetServerCertificateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780FB18B1912700FECC45 /* UAIAMGetServerCertificateRequest.m */; };
+		A337816918B1912800FECC45 /* UAIAMGetUserPolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780FD18B1912700FECC45 /* UAIAMGetUserPolicyRequest.m */; };
+		A337816A18B1912800FECC45 /* UAIAMGetUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A33780FF18B1912700FECC45 /* UAIAMGetUserRequest.m */; };
+		A337816B18B1912800FECC45 /* UAIAMListAccessKeysRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337810118B1912700FECC45 /* UAIAMListAccessKeysRequest.m */; };
+		A337816C18B1912800FECC45 /* UAIAMListAccountAliasesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337810318B1912700FECC45 /* UAIAMListAccountAliasesRequest.m */; };
+		A337816D18B1912800FECC45 /* UAIAMListGroupPoliciesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337810518B1912700FECC45 /* UAIAMListGroupPoliciesRequest.m */; };
+		A337816E18B1912800FECC45 /* UAIAMListGroupsForUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337810718B1912700FECC45 /* UAIAMListGroupsForUserRequest.m */; };
+		A337816F18B1912800FECC45 /* UAIAMListGroupsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337810918B1912700FECC45 /* UAIAMListGroupsRequest.m */; };
+		A337817018B1912800FECC45 /* UAIAMListInstanceProfilesForRoleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337810B18B1912700FECC45 /* UAIAMListInstanceProfilesForRoleRequest.m */; };
+		A337817118B1912800FECC45 /* UAIAMListInstanceProfilesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337810D18B1912700FECC45 /* UAIAMListInstanceProfilesRequest.m */; };
+		A337817218B1912800FECC45 /* UAIAMListMFADevicesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337810F18B1912700FECC45 /* UAIAMListMFADevicesRequest.m */; };
+		A337817318B1912800FECC45 /* UAIAMListRolePoliciesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337811118B1912700FECC45 /* UAIAMListRolePoliciesRequest.m */; };
+		A337817418B1912800FECC45 /* UAIAMListRolesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337811318B1912700FECC45 /* UAIAMListRolesRequest.m */; };
+		A337817518B1912800FECC45 /* UAIAMListSAMLProvidersRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337811518B1912700FECC45 /* UAIAMListSAMLProvidersRequest.m */; };
+		A337817618B1912800FECC45 /* UAIAMListServerCertificatesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337811718B1912700FECC45 /* UAIAMListServerCertificatesRequest.m */; };
+		A337817718B1912800FECC45 /* UAIAMListSigningCertificatesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337811918B1912700FECC45 /* UAIAMListSigningCertificatesRequest.m */; };
+		A337817818B1912800FECC45 /* UAIAMListUserPoliciesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337811B18B1912700FECC45 /* UAIAMListUserPoliciesRequest.m */; };
+		A337817918B1912800FECC45 /* UAIAMListUsersRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337811D18B1912700FECC45 /* UAIAMListUsersRequest.m */; };
+		A337817A18B1912800FECC45 /* UAIAMListVirtualMFADevicesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337811F18B1912700FECC45 /* UAIAMListVirtualMFADevicesRequest.m */; };
+		A337817B18B1912800FECC45 /* UAIAMPutGroupPolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337812118B1912800FECC45 /* UAIAMPutGroupPolicyRequest.m */; };
+		A337817C18B1912800FECC45 /* UAIAMPutRolePolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337812318B1912800FECC45 /* UAIAMPutRolePolicyRequest.m */; };
+		A337817D18B1912800FECC45 /* UAIAMPutUserPolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337812518B1912800FECC45 /* UAIAMPutUserPolicyRequest.m */; };
+		A337817E18B1912800FECC45 /* UAIAMRemoveRoleFromInstanceProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337812718B1912800FECC45 /* UAIAMRemoveRoleFromInstanceProfileRequest.m */; };
+		A337817F18B1912800FECC45 /* UAIAMRemoveUserFromGroupRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337812918B1912800FECC45 /* UAIAMRemoveUserFromGroupRequest.m */; };
+		A337818018B1912800FECC45 /* UAIAMResyncMFADeviceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337812B18B1912800FECC45 /* UAIAMResyncMFADeviceRequest.m */; };
+		A337818118B1912800FECC45 /* UAIAMUpdateAccessKeyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337812D18B1912800FECC45 /* UAIAMUpdateAccessKeyRequest.m */; };
+		A337818218B1912800FECC45 /* UAIAMUpdateAccountPasswordPolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337812F18B1912800FECC45 /* UAIAMUpdateAccountPasswordPolicyRequest.m */; };
+		A337818318B1912800FECC45 /* UAIAMUpdateAssumeRolePolicyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337813118B1912800FECC45 /* UAIAMUpdateAssumeRolePolicyRequest.m */; };
+		A337818418B1912800FECC45 /* UAIAMUpdateGroupRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337813318B1912800FECC45 /* UAIAMUpdateGroupRequest.m */; };
+		A337818518B1912800FECC45 /* UAIAMUpdateLoginProfileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337813518B1912800FECC45 /* UAIAMUpdateLoginProfileRequest.m */; };
+		A337818618B1912800FECC45 /* UAIAMUpdateSAMLProviderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337813718B1912800FECC45 /* UAIAMUpdateSAMLProviderRequest.m */; };
+		A337818718B1912800FECC45 /* UAIAMUpdateServerCertificateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337813918B1912800FECC45 /* UAIAMUpdateServerCertificateRequest.m */; };
+		A337818818B1912800FECC45 /* UAIAMUpdateSigningCertificateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337813B18B1912800FECC45 /* UAIAMUpdateSigningCertificateRequest.m */; };
+		A337818918B1912800FECC45 /* UAIAMUpdateUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337813D18B1912800FECC45 /* UAIAMUpdateUserRequest.m */; };
+		A337818A18B1912800FECC45 /* UAIAMUploadServerCertificateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337813F18B1912800FECC45 /* UAIAMUploadServerCertificateRequest.m */; };
+		A337818B18B1912800FECC45 /* UAIAMUploadSigningCertificateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A337814118B1912800FECC45 /* UAIAMUploadSigningCertificateRequest.m */; };
+		A337822018B1913600FECC45 /* UAIAMAddRoleToInstanceProfileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337818D18B1913500FECC45 /* UAIAMAddRoleToInstanceProfileResponse.m */; };
+		A337822118B1913600FECC45 /* UAIAMAddUserToGroupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337818F18B1913500FECC45 /* UAIAMAddUserToGroupResponse.m */; };
+		A337822218B1913600FECC45 /* UAIAMChangePasswordResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337819118B1913500FECC45 /* UAIAMChangePasswordResponse.m */; };
+		A337822318B1913600FECC45 /* UAIAMCreateAccessKeyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337819318B1913500FECC45 /* UAIAMCreateAccessKeyResponse.m */; };
+		A337822418B1913600FECC45 /* UAIAMCreateAccountAliasResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337819518B1913500FECC45 /* UAIAMCreateAccountAliasResponse.m */; };
+		A337822518B1913600FECC45 /* UAIAMCreateGroupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337819718B1913500FECC45 /* UAIAMCreateGroupResponse.m */; };
+		A337822618B1913600FECC45 /* UAIAMCreateInstanceProfileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337819918B1913500FECC45 /* UAIAMCreateInstanceProfileResponse.m */; };
+		A337822718B1913600FECC45 /* UAIAMCreateLoginProfileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337819B18B1913500FECC45 /* UAIAMCreateLoginProfileResponse.m */; };
+		A337822818B1913600FECC45 /* UAIAMCreateRoleResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337819D18B1913500FECC45 /* UAIAMCreateRoleResponse.m */; };
+		A337822918B1913600FECC45 /* UAIAMCreateSAMLProviderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337819F18B1913500FECC45 /* UAIAMCreateSAMLProviderResponse.m */; };
+		A337822A18B1913600FECC45 /* UAIAMCreateUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781A118B1913500FECC45 /* UAIAMCreateUserResponse.m */; };
+		A337822B18B1913600FECC45 /* UAIAMCreateVirtualMFADeviceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781A318B1913500FECC45 /* UAIAMCreateVirtualMFADeviceResponse.m */; };
+		A337822C18B1913600FECC45 /* UAIAMDeactivateMFADeviceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781A518B1913500FECC45 /* UAIAMDeactivateMFADeviceResponse.m */; };
+		A337822D18B1913600FECC45 /* UAIAMDeleteAccessKeyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781A718B1913500FECC45 /* UAIAMDeleteAccessKeyResponse.m */; };
+		A337822E18B1913600FECC45 /* UAIAMDeleteAccountAliasResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781A918B1913500FECC45 /* UAIAMDeleteAccountAliasResponse.m */; };
+		A337822F18B1913600FECC45 /* UAIAMDeleteAccountPasswordPolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781AB18B1913500FECC45 /* UAIAMDeleteAccountPasswordPolicyResponse.m */; };
+		A337823018B1913600FECC45 /* UAIAMDeleteGroupPolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781AD18B1913500FECC45 /* UAIAMDeleteGroupPolicyResponse.m */; };
+		A337823118B1913600FECC45 /* UAIAMDeleteGroupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781AF18B1913500FECC45 /* UAIAMDeleteGroupResponse.m */; };
+		A337823218B1913600FECC45 /* UAIAMDeleteInstanceProfileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781B118B1913500FECC45 /* UAIAMDeleteInstanceProfileResponse.m */; };
+		A337823318B1913600FECC45 /* UAIAMDeleteLoginProfileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781B318B1913500FECC45 /* UAIAMDeleteLoginProfileResponse.m */; };
+		A337823418B1913600FECC45 /* UAIAMDeleteRolePolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781B518B1913500FECC45 /* UAIAMDeleteRolePolicyResponse.m */; };
+		A337823518B1913600FECC45 /* UAIAMDeleteRoleResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781B718B1913500FECC45 /* UAIAMDeleteRoleResponse.m */; };
+		A337823618B1913600FECC45 /* UAIAMDeleteSAMLProviderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781B918B1913500FECC45 /* UAIAMDeleteSAMLProviderResponse.m */; };
+		A337823718B1913600FECC45 /* UAIAMDeleteServerCertificateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781BB18B1913500FECC45 /* UAIAMDeleteServerCertificateResponse.m */; };
+		A337823818B1913600FECC45 /* UAIAMDeleteSigningCertificateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781BD18B1913500FECC45 /* UAIAMDeleteSigningCertificateResponse.m */; };
+		A337823918B1913600FECC45 /* UAIAMDeleteUserPolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781BF18B1913500FECC45 /* UAIAMDeleteUserPolicyResponse.m */; };
+		A337823A18B1913600FECC45 /* UAIAMDeleteUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781C118B1913500FECC45 /* UAIAMDeleteUserResponse.m */; };
+		A337823B18B1913600FECC45 /* UAIAMDeleteVirtualMFADeviceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781C318B1913500FECC45 /* UAIAMDeleteVirtualMFADeviceResponse.m */; };
+		A337823C18B1913600FECC45 /* UAIAMEnableMFADeviceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781C518B1913500FECC45 /* UAIAMEnableMFADeviceResponse.m */; };
+		A337823D18B1913600FECC45 /* UAIAMGetAccountPasswordPolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781C718B1913500FECC45 /* UAIAMGetAccountPasswordPolicyResponse.m */; };
+		A337823E18B1913600FECC45 /* UAIAMGetAccountSummaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781C918B1913500FECC45 /* UAIAMGetAccountSummaryResponse.m */; };
+		A337823F18B1913600FECC45 /* UAIAMGetGroupPolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781CB18B1913500FECC45 /* UAIAMGetGroupPolicyResponse.m */; };
+		A337824018B1913600FECC45 /* UAIAMGetGroupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781CD18B1913500FECC45 /* UAIAMGetGroupResponse.m */; };
+		A337824118B1913600FECC45 /* UAIAMGetInstanceProfileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781CF18B1913500FECC45 /* UAIAMGetInstanceProfileResponse.m */; };
+		A337824218B1913600FECC45 /* UAIAMGetLoginProfileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781D118B1913500FECC45 /* UAIAMGetLoginProfileResponse.m */; };
+		A337824318B1913600FECC45 /* UAIAMGetRolePolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781D318B1913500FECC45 /* UAIAMGetRolePolicyResponse.m */; };
+		A337824418B1913600FECC45 /* UAIAMGetRoleResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781D518B1913500FECC45 /* UAIAMGetRoleResponse.m */; };
+		A337824518B1913600FECC45 /* UAIAMGetSAMLProviderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781D718B1913500FECC45 /* UAIAMGetSAMLProviderResponse.m */; };
+		A337824618B1913600FECC45 /* UAIAMGetServerCertificateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781D918B1913500FECC45 /* UAIAMGetServerCertificateResponse.m */; };
+		A337824718B1913600FECC45 /* UAIAMGetUserPolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781DB18B1913500FECC45 /* UAIAMGetUserPolicyResponse.m */; };
+		A337824818B1913600FECC45 /* UAIAMGetUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781DD18B1913500FECC45 /* UAIAMGetUserResponse.m */; };
+		A337824918B1913600FECC45 /* UAIAMListAccessKeysResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781DF18B1913500FECC45 /* UAIAMListAccessKeysResponse.m */; };
+		A337824A18B1913600FECC45 /* UAIAMListAccountAliasesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781E118B1913500FECC45 /* UAIAMListAccountAliasesResponse.m */; };
+		A337824B18B1913600FECC45 /* UAIAMListGroupPoliciesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781E318B1913500FECC45 /* UAIAMListGroupPoliciesResponse.m */; };
+		A337824C18B1913600FECC45 /* UAIAMListGroupsForUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781E518B1913500FECC45 /* UAIAMListGroupsForUserResponse.m */; };
+		A337824D18B1913600FECC45 /* UAIAMListGroupsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781E718B1913500FECC45 /* UAIAMListGroupsResponse.m */; };
+		A337824E18B1913600FECC45 /* UAIAMListInstanceProfilesForRoleResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781E918B1913500FECC45 /* UAIAMListInstanceProfilesForRoleResponse.m */; };
+		A337824F18B1913600FECC45 /* UAIAMListInstanceProfilesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781EB18B1913500FECC45 /* UAIAMListInstanceProfilesResponse.m */; };
+		A337825018B1913600FECC45 /* UAIAMListMFADevicesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781ED18B1913500FECC45 /* UAIAMListMFADevicesResponse.m */; };
+		A337825118B1913600FECC45 /* UAIAMListRolePoliciesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781EF18B1913500FECC45 /* UAIAMListRolePoliciesResponse.m */; };
+		A337825218B1913600FECC45 /* UAIAMListRolesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781F118B1913500FECC45 /* UAIAMListRolesResponse.m */; };
+		A337825318B1913600FECC45 /* UAIAMListSAMLProvidersResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781F318B1913500FECC45 /* UAIAMListSAMLProvidersResponse.m */; };
+		A337825418B1913600FECC45 /* UAIAMListServerCertificatesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781F518B1913500FECC45 /* UAIAMListServerCertificatesResponse.m */; };
+		A337825518B1913600FECC45 /* UAIAMListSigningCertificatesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781F718B1913500FECC45 /* UAIAMListSigningCertificatesResponse.m */; };
+		A337825618B1913600FECC45 /* UAIAMListUserPoliciesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781F918B1913500FECC45 /* UAIAMListUserPoliciesResponse.m */; };
+		A337825718B1913600FECC45 /* UAIAMListUsersResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781FB18B1913500FECC45 /* UAIAMListUsersResponse.m */; };
+		A337825818B1913600FECC45 /* UAIAMListVirtualMFADevicesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781FD18B1913500FECC45 /* UAIAMListVirtualMFADevicesResponse.m */; };
+		A337825918B1913600FECC45 /* UAIAMPutGroupPolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A33781FF18B1913500FECC45 /* UAIAMPutGroupPolicyResponse.m */; };
+		A337825A18B1913600FECC45 /* UAIAMPutRolePolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337820118B1913500FECC45 /* UAIAMPutRolePolicyResponse.m */; };
+		A337825B18B1913600FECC45 /* UAIAMPutUserPolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337820318B1913500FECC45 /* UAIAMPutUserPolicyResponse.m */; };
+		A337825C18B1913600FECC45 /* UAIAMRemoveRoleFromInstanceProfileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337820518B1913500FECC45 /* UAIAMRemoveRoleFromInstanceProfileResponse.m */; };
+		A337825D18B1913600FECC45 /* UAIAMRemoveUserFromGroupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337820718B1913500FECC45 /* UAIAMRemoveUserFromGroupResponse.m */; };
+		A337825E18B1913600FECC45 /* UAIAMResyncMFADeviceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337820918B1913500FECC45 /* UAIAMResyncMFADeviceResponse.m */; };
+		A337825F18B1913600FECC45 /* UAIAMUpdateAccessKeyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337820B18B1913500FECC45 /* UAIAMUpdateAccessKeyResponse.m */; };
+		A337826018B1913600FECC45 /* UAIAMUpdateAccountPasswordPolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337820D18B1913500FECC45 /* UAIAMUpdateAccountPasswordPolicyResponse.m */; };
+		A337826118B1913600FECC45 /* UAIAMUpdateAssumeRolePolicyResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337820F18B1913500FECC45 /* UAIAMUpdateAssumeRolePolicyResponse.m */; };
+		A337826218B1913600FECC45 /* UAIAMUpdateGroupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337821118B1913500FECC45 /* UAIAMUpdateGroupResponse.m */; };
+		A337826318B1913600FECC45 /* UAIAMUpdateLoginProfileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337821318B1913500FECC45 /* UAIAMUpdateLoginProfileResponse.m */; };
+		A337826418B1913600FECC45 /* UAIAMUpdateSAMLProviderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337821518B1913500FECC45 /* UAIAMUpdateSAMLProviderResponse.m */; };
+		A337826518B1913600FECC45 /* UAIAMUpdateServerCertificateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337821718B1913500FECC45 /* UAIAMUpdateServerCertificateResponse.m */; };
+		A337826618B1913600FECC45 /* UAIAMUpdateSigningCertificateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337821918B1913500FECC45 /* UAIAMUpdateSigningCertificateResponse.m */; };
+		A337826718B1913600FECC45 /* UAIAMUpdateUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337821B18B1913500FECC45 /* UAIAMUpdateUserResponse.m */; };
+		A337826818B1913600FECC45 /* UAIAMUploadServerCertificateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337821D18B1913500FECC45 /* UAIAMUploadServerCertificateResponse.m */; };
+		A337826918B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337821F18B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.m */; };
+		A337826E18B195A300FECC45 /* UAIAMAccountSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = A337826B18B195A300FECC45 /* UAIAMAccountSummary.m */; };
+		A337826F18B195A300FECC45 /* UAIAMSigningCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = A337826D18B195A300FECC45 /* UAIAMSigningCertificate.m */; };
 		A3E01C2018AD93E900C3B7DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C1F18AD93E900C3B7DB /* Foundation.framework */; };
 		A3E01C2218AD93E900C3B7DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */; };
 		A3E01C2418AD93E900C3B7DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2318AD93E900C3B7DB /* UIKit.framework */; };
@@ -2254,6 +2423,346 @@
 		A3377B2C18ADA3C500FECC45 /* UAASDescribeScalingActivitiesResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAASDescribeScalingActivitiesResponseTests.m; sourceTree = "<group>"; };
 		A337806218ADA50300FECC45 /* MTLQueryAdapterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLQueryAdapterTests.m; sourceTree = "<group>"; };
 		A337806418ADA68700FECC45 /* UAAWSSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAAWSSDK.h; sourceTree = "<group>"; };
+		A337806E18B18D2700FECC45 /* UAIAMModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMModel.h; sourceTree = "<group>"; };
+		A337806F18B18D2700FECC45 /* UAIAMModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMModel.m; sourceTree = "<group>"; };
+		A337807118B18D2700FECC45 /* UAIAMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMRequest.h; sourceTree = "<group>"; };
+		A337807218B18D2700FECC45 /* UAIAMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMRequest.m; sourceTree = "<group>"; };
+		A337807418B18D2700FECC45 /* UAIAMResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMResponse.h; sourceTree = "<group>"; };
+		A337807518B18D2700FECC45 /* UAIAMResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMResponse.m; sourceTree = "<group>"; };
+		A337807618B18D2700FECC45 /* UAIAM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAM.h; sourceTree = "<group>"; };
+		A337807718B18D2700FECC45 /* UAIAMDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDataTypes.h; sourceTree = "<group>"; };
+		A337807818B18D2700FECC45 /* UAIAMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMError.h; sourceTree = "<group>"; };
+		A337807918B18D2700FECC45 /* UAIAMError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMError.m; sourceTree = "<group>"; };
+		A337807E18B1909F00FECC45 /* UAIAMAccessKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMAccessKey.h; sourceTree = "<group>"; };
+		A337807F18B1909F00FECC45 /* UAIAMAccessKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMAccessKey.m; sourceTree = "<group>"; };
+		A337808018B1909F00FECC45 /* UAIAMAccessKeyMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMAccessKeyMetadata.h; sourceTree = "<group>"; };
+		A337808118B1909F00FECC45 /* UAIAMAccessKeyMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMAccessKeyMetadata.m; sourceTree = "<group>"; };
+		A337808218B1909F00FECC45 /* UAIAMCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCertificate.h; sourceTree = "<group>"; };
+		A337808318B1909F00FECC45 /* UAIAMCertificate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCertificate.m; sourceTree = "<group>"; };
+		A337808418B1909F00FECC45 /* UAIAMGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGroup.h; sourceTree = "<group>"; };
+		A337808518B1909F00FECC45 /* UAIAMGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGroup.m; sourceTree = "<group>"; };
+		A337808618B1909F00FECC45 /* UAIAMInstanceProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMInstanceProfile.h; sourceTree = "<group>"; };
+		A337808718B1909F00FECC45 /* UAIAMInstanceProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMInstanceProfile.m; sourceTree = "<group>"; };
+		A337808818B1909F00FECC45 /* UAIAMLoginProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMLoginProfile.h; sourceTree = "<group>"; };
+		A337808918B1909F00FECC45 /* UAIAMLoginProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMLoginProfile.m; sourceTree = "<group>"; };
+		A337808A18B1909F00FECC45 /* UAIAMMFADevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMMFADevice.h; sourceTree = "<group>"; };
+		A337808B18B1909F00FECC45 /* UAIAMMFADevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMMFADevice.m; sourceTree = "<group>"; };
+		A337808C18B1909F00FECC45 /* UAIAMPasswordPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMPasswordPolicy.h; sourceTree = "<group>"; };
+		A337808D18B1909F00FECC45 /* UAIAMPasswordPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMPasswordPolicy.m; sourceTree = "<group>"; };
+		A337808E18B1909F00FECC45 /* UAIAMRole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMRole.h; sourceTree = "<group>"; };
+		A337808F18B1909F00FECC45 /* UAIAMRole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMRole.m; sourceTree = "<group>"; };
+		A337809018B1909F00FECC45 /* UAIAMSAMLProviderList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMSAMLProviderList.h; sourceTree = "<group>"; };
+		A337809118B1909F00FECC45 /* UAIAMSAMLProviderList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMSAMLProviderList.m; sourceTree = "<group>"; };
+		A337809218B1909F00FECC45 /* UAIAMServerCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMServerCertificate.h; sourceTree = "<group>"; };
+		A337809318B1909F00FECC45 /* UAIAMServerCertificate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMServerCertificate.m; sourceTree = "<group>"; };
+		A337809418B1909F00FECC45 /* UAIAMServerCertificateMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMServerCertificateMetadata.h; sourceTree = "<group>"; };
+		A337809518B1909F00FECC45 /* UAIAMServerCertificateMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMServerCertificateMetadata.m; sourceTree = "<group>"; };
+		A337809618B1909F00FECC45 /* UAIAMServerCertificateMetadataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMServerCertificateMetadataList.h; sourceTree = "<group>"; };
+		A337809718B1909F00FECC45 /* UAIAMServerCertificateMetadataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMServerCertificateMetadataList.m; sourceTree = "<group>"; };
+		A337809A18B1909F00FECC45 /* UAIAMUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUser.h; sourceTree = "<group>"; };
+		A337809B18B1909F00FECC45 /* UAIAMUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUser.m; sourceTree = "<group>"; };
+		A337809C18B1909F00FECC45 /* UAIAMVirtualMFADevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMVirtualMFADevice.h; sourceTree = "<group>"; };
+		A337809D18B1909F00FECC45 /* UAIAMVirtualMFADevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMVirtualMFADevice.m; sourceTree = "<group>"; };
+		A33780AE18B1912700FECC45 /* UAIAMAddRoleToInstanceProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMAddRoleToInstanceProfileRequest.h; sourceTree = "<group>"; };
+		A33780AF18B1912700FECC45 /* UAIAMAddRoleToInstanceProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMAddRoleToInstanceProfileRequest.m; sourceTree = "<group>"; };
+		A33780B018B1912700FECC45 /* UAIAMAddUserToGroupRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMAddUserToGroupRequest.h; sourceTree = "<group>"; };
+		A33780B118B1912700FECC45 /* UAIAMAddUserToGroupRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMAddUserToGroupRequest.m; sourceTree = "<group>"; };
+		A33780B218B1912700FECC45 /* UAIAMChangePasswordRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMChangePasswordRequest.h; sourceTree = "<group>"; };
+		A33780B318B1912700FECC45 /* UAIAMChangePasswordRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMChangePasswordRequest.m; sourceTree = "<group>"; };
+		A33780B418B1912700FECC45 /* UAIAMCreateAccessKeyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateAccessKeyRequest.h; sourceTree = "<group>"; };
+		A33780B518B1912700FECC45 /* UAIAMCreateAccessKeyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateAccessKeyRequest.m; sourceTree = "<group>"; };
+		A33780B618B1912700FECC45 /* UAIAMCreateAccountAliasRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateAccountAliasRequest.h; sourceTree = "<group>"; };
+		A33780B718B1912700FECC45 /* UAIAMCreateAccountAliasRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateAccountAliasRequest.m; sourceTree = "<group>"; };
+		A33780B818B1912700FECC45 /* UAIAMCreateGroupRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateGroupRequest.h; sourceTree = "<group>"; };
+		A33780B918B1912700FECC45 /* UAIAMCreateGroupRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateGroupRequest.m; sourceTree = "<group>"; };
+		A33780BA18B1912700FECC45 /* UAIAMCreateInstanceProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateInstanceProfileRequest.h; sourceTree = "<group>"; };
+		A33780BB18B1912700FECC45 /* UAIAMCreateInstanceProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateInstanceProfileRequest.m; sourceTree = "<group>"; };
+		A33780BC18B1912700FECC45 /* UAIAMCreateLoginProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateLoginProfileRequest.h; sourceTree = "<group>"; };
+		A33780BD18B1912700FECC45 /* UAIAMCreateLoginProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateLoginProfileRequest.m; sourceTree = "<group>"; };
+		A33780BE18B1912700FECC45 /* UAIAMCreateRoleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateRoleRequest.h; sourceTree = "<group>"; };
+		A33780BF18B1912700FECC45 /* UAIAMCreateRoleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateRoleRequest.m; sourceTree = "<group>"; };
+		A33780C018B1912700FECC45 /* UAIAMCreateSAMLProviderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateSAMLProviderRequest.h; sourceTree = "<group>"; };
+		A33780C118B1912700FECC45 /* UAIAMCreateSAMLProviderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateSAMLProviderRequest.m; sourceTree = "<group>"; };
+		A33780C218B1912700FECC45 /* UAIAMCreateUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateUserRequest.h; sourceTree = "<group>"; };
+		A33780C318B1912700FECC45 /* UAIAMCreateUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateUserRequest.m; sourceTree = "<group>"; };
+		A33780C418B1912700FECC45 /* UAIAMCreateVirtualMFADeviceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateVirtualMFADeviceRequest.h; sourceTree = "<group>"; };
+		A33780C518B1912700FECC45 /* UAIAMCreateVirtualMFADeviceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateVirtualMFADeviceRequest.m; sourceTree = "<group>"; };
+		A33780C618B1912700FECC45 /* UAIAMDeactivateMFADeviceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeactivateMFADeviceRequest.h; sourceTree = "<group>"; };
+		A33780C718B1912700FECC45 /* UAIAMDeactivateMFADeviceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeactivateMFADeviceRequest.m; sourceTree = "<group>"; };
+		A33780C818B1912700FECC45 /* UAIAMDeleteAccessKeyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteAccessKeyRequest.h; sourceTree = "<group>"; };
+		A33780C918B1912700FECC45 /* UAIAMDeleteAccessKeyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteAccessKeyRequest.m; sourceTree = "<group>"; };
+		A33780CA18B1912700FECC45 /* UAIAMDeleteAccountAliasRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteAccountAliasRequest.h; sourceTree = "<group>"; };
+		A33780CB18B1912700FECC45 /* UAIAMDeleteAccountAliasRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteAccountAliasRequest.m; sourceTree = "<group>"; };
+		A33780CC18B1912700FECC45 /* UAIAMDeleteAccountPasswordPolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteAccountPasswordPolicyRequest.h; sourceTree = "<group>"; };
+		A33780CD18B1912700FECC45 /* UAIAMDeleteAccountPasswordPolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteAccountPasswordPolicyRequest.m; sourceTree = "<group>"; };
+		A33780CE18B1912700FECC45 /* UAIAMDeleteGroupPolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteGroupPolicyRequest.h; sourceTree = "<group>"; };
+		A33780CF18B1912700FECC45 /* UAIAMDeleteGroupPolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteGroupPolicyRequest.m; sourceTree = "<group>"; };
+		A33780D018B1912700FECC45 /* UAIAMDeleteGroupRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteGroupRequest.h; sourceTree = "<group>"; };
+		A33780D118B1912700FECC45 /* UAIAMDeleteGroupRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteGroupRequest.m; sourceTree = "<group>"; };
+		A33780D218B1912700FECC45 /* UAIAMDeleteInstanceProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteInstanceProfileRequest.h; sourceTree = "<group>"; };
+		A33780D318B1912700FECC45 /* UAIAMDeleteInstanceProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteInstanceProfileRequest.m; sourceTree = "<group>"; };
+		A33780D418B1912700FECC45 /* UAIAMDeleteLoginProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteLoginProfileRequest.h; sourceTree = "<group>"; };
+		A33780D518B1912700FECC45 /* UAIAMDeleteLoginProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteLoginProfileRequest.m; sourceTree = "<group>"; };
+		A33780D618B1912700FECC45 /* UAIAMDeleteRolePolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteRolePolicyRequest.h; sourceTree = "<group>"; };
+		A33780D718B1912700FECC45 /* UAIAMDeleteRolePolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteRolePolicyRequest.m; sourceTree = "<group>"; };
+		A33780D818B1912700FECC45 /* UAIAMDeleteRoleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteRoleRequest.h; sourceTree = "<group>"; };
+		A33780D918B1912700FECC45 /* UAIAMDeleteRoleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteRoleRequest.m; sourceTree = "<group>"; };
+		A33780DA18B1912700FECC45 /* UAIAMDeleteSAMLProviderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteSAMLProviderRequest.h; sourceTree = "<group>"; };
+		A33780DB18B1912700FECC45 /* UAIAMDeleteSAMLProviderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteSAMLProviderRequest.m; sourceTree = "<group>"; };
+		A33780DC18B1912700FECC45 /* UAIAMDeleteServerCertificateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteServerCertificateRequest.h; sourceTree = "<group>"; };
+		A33780DD18B1912700FECC45 /* UAIAMDeleteServerCertificateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteServerCertificateRequest.m; sourceTree = "<group>"; };
+		A33780DE18B1912700FECC45 /* UAIAMDeleteSigningCertificateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteSigningCertificateRequest.h; sourceTree = "<group>"; };
+		A33780DF18B1912700FECC45 /* UAIAMDeleteSigningCertificateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteSigningCertificateRequest.m; sourceTree = "<group>"; };
+		A33780E018B1912700FECC45 /* UAIAMDeleteUserPolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteUserPolicyRequest.h; sourceTree = "<group>"; };
+		A33780E118B1912700FECC45 /* UAIAMDeleteUserPolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteUserPolicyRequest.m; sourceTree = "<group>"; };
+		A33780E218B1912700FECC45 /* UAIAMDeleteUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteUserRequest.h; sourceTree = "<group>"; };
+		A33780E318B1912700FECC45 /* UAIAMDeleteUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteUserRequest.m; sourceTree = "<group>"; };
+		A33780E418B1912700FECC45 /* UAIAMDeleteVirtualMFADeviceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteVirtualMFADeviceRequest.h; sourceTree = "<group>"; };
+		A33780E518B1912700FECC45 /* UAIAMDeleteVirtualMFADeviceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteVirtualMFADeviceRequest.m; sourceTree = "<group>"; };
+		A33780E618B1912700FECC45 /* UAIAMEnableMFADeviceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMEnableMFADeviceRequest.h; sourceTree = "<group>"; };
+		A33780E718B1912700FECC45 /* UAIAMEnableMFADeviceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMEnableMFADeviceRequest.m; sourceTree = "<group>"; };
+		A33780E818B1912700FECC45 /* UAIAMGetAccountPasswordPolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetAccountPasswordPolicyRequest.h; sourceTree = "<group>"; };
+		A33780E918B1912700FECC45 /* UAIAMGetAccountPasswordPolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetAccountPasswordPolicyRequest.m; sourceTree = "<group>"; };
+		A33780EA18B1912700FECC45 /* UAIAMGetAccountSummaryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetAccountSummaryRequest.h; sourceTree = "<group>"; };
+		A33780EB18B1912700FECC45 /* UAIAMGetAccountSummaryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetAccountSummaryRequest.m; sourceTree = "<group>"; };
+		A33780EC18B1912700FECC45 /* UAIAMGetGroupPolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetGroupPolicyRequest.h; sourceTree = "<group>"; };
+		A33780ED18B1912700FECC45 /* UAIAMGetGroupPolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetGroupPolicyRequest.m; sourceTree = "<group>"; };
+		A33780EE18B1912700FECC45 /* UAIAMGetGroupRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetGroupRequest.h; sourceTree = "<group>"; };
+		A33780EF18B1912700FECC45 /* UAIAMGetGroupRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetGroupRequest.m; sourceTree = "<group>"; };
+		A33780F018B1912700FECC45 /* UAIAMGetInstanceProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetInstanceProfileRequest.h; sourceTree = "<group>"; };
+		A33780F118B1912700FECC45 /* UAIAMGetInstanceProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetInstanceProfileRequest.m; sourceTree = "<group>"; };
+		A33780F218B1912700FECC45 /* UAIAMGetLoginProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetLoginProfileRequest.h; sourceTree = "<group>"; };
+		A33780F318B1912700FECC45 /* UAIAMGetLoginProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetLoginProfileRequest.m; sourceTree = "<group>"; };
+		A33780F418B1912700FECC45 /* UAIAMGetRolePolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetRolePolicyRequest.h; sourceTree = "<group>"; };
+		A33780F518B1912700FECC45 /* UAIAMGetRolePolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetRolePolicyRequest.m; sourceTree = "<group>"; };
+		A33780F618B1912700FECC45 /* UAIAMGetRoleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetRoleRequest.h; sourceTree = "<group>"; };
+		A33780F718B1912700FECC45 /* UAIAMGetRoleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetRoleRequest.m; sourceTree = "<group>"; };
+		A33780F818B1912700FECC45 /* UAIAMGetSAMLProviderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetSAMLProviderRequest.h; sourceTree = "<group>"; };
+		A33780F918B1912700FECC45 /* UAIAMGetSAMLProviderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetSAMLProviderRequest.m; sourceTree = "<group>"; };
+		A33780FA18B1912700FECC45 /* UAIAMGetServerCertificateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetServerCertificateRequest.h; sourceTree = "<group>"; };
+		A33780FB18B1912700FECC45 /* UAIAMGetServerCertificateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetServerCertificateRequest.m; sourceTree = "<group>"; };
+		A33780FC18B1912700FECC45 /* UAIAMGetUserPolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetUserPolicyRequest.h; sourceTree = "<group>"; };
+		A33780FD18B1912700FECC45 /* UAIAMGetUserPolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetUserPolicyRequest.m; sourceTree = "<group>"; };
+		A33780FE18B1912700FECC45 /* UAIAMGetUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetUserRequest.h; sourceTree = "<group>"; };
+		A33780FF18B1912700FECC45 /* UAIAMGetUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetUserRequest.m; sourceTree = "<group>"; };
+		A337810018B1912700FECC45 /* UAIAMListAccessKeysRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListAccessKeysRequest.h; sourceTree = "<group>"; };
+		A337810118B1912700FECC45 /* UAIAMListAccessKeysRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListAccessKeysRequest.m; sourceTree = "<group>"; };
+		A337810218B1912700FECC45 /* UAIAMListAccountAliasesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListAccountAliasesRequest.h; sourceTree = "<group>"; };
+		A337810318B1912700FECC45 /* UAIAMListAccountAliasesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListAccountAliasesRequest.m; sourceTree = "<group>"; };
+		A337810418B1912700FECC45 /* UAIAMListGroupPoliciesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListGroupPoliciesRequest.h; sourceTree = "<group>"; };
+		A337810518B1912700FECC45 /* UAIAMListGroupPoliciesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListGroupPoliciesRequest.m; sourceTree = "<group>"; };
+		A337810618B1912700FECC45 /* UAIAMListGroupsForUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListGroupsForUserRequest.h; sourceTree = "<group>"; };
+		A337810718B1912700FECC45 /* UAIAMListGroupsForUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListGroupsForUserRequest.m; sourceTree = "<group>"; };
+		A337810818B1912700FECC45 /* UAIAMListGroupsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListGroupsRequest.h; sourceTree = "<group>"; };
+		A337810918B1912700FECC45 /* UAIAMListGroupsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListGroupsRequest.m; sourceTree = "<group>"; };
+		A337810A18B1912700FECC45 /* UAIAMListInstanceProfilesForRoleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListInstanceProfilesForRoleRequest.h; sourceTree = "<group>"; };
+		A337810B18B1912700FECC45 /* UAIAMListInstanceProfilesForRoleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListInstanceProfilesForRoleRequest.m; sourceTree = "<group>"; };
+		A337810C18B1912700FECC45 /* UAIAMListInstanceProfilesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListInstanceProfilesRequest.h; sourceTree = "<group>"; };
+		A337810D18B1912700FECC45 /* UAIAMListInstanceProfilesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListInstanceProfilesRequest.m; sourceTree = "<group>"; };
+		A337810E18B1912700FECC45 /* UAIAMListMFADevicesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListMFADevicesRequest.h; sourceTree = "<group>"; };
+		A337810F18B1912700FECC45 /* UAIAMListMFADevicesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListMFADevicesRequest.m; sourceTree = "<group>"; };
+		A337811018B1912700FECC45 /* UAIAMListRolePoliciesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListRolePoliciesRequest.h; sourceTree = "<group>"; };
+		A337811118B1912700FECC45 /* UAIAMListRolePoliciesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListRolePoliciesRequest.m; sourceTree = "<group>"; };
+		A337811218B1912700FECC45 /* UAIAMListRolesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListRolesRequest.h; sourceTree = "<group>"; };
+		A337811318B1912700FECC45 /* UAIAMListRolesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListRolesRequest.m; sourceTree = "<group>"; };
+		A337811418B1912700FECC45 /* UAIAMListSAMLProvidersRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListSAMLProvidersRequest.h; sourceTree = "<group>"; };
+		A337811518B1912700FECC45 /* UAIAMListSAMLProvidersRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListSAMLProvidersRequest.m; sourceTree = "<group>"; };
+		A337811618B1912700FECC45 /* UAIAMListServerCertificatesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListServerCertificatesRequest.h; sourceTree = "<group>"; };
+		A337811718B1912700FECC45 /* UAIAMListServerCertificatesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListServerCertificatesRequest.m; sourceTree = "<group>"; };
+		A337811818B1912700FECC45 /* UAIAMListSigningCertificatesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListSigningCertificatesRequest.h; sourceTree = "<group>"; };
+		A337811918B1912700FECC45 /* UAIAMListSigningCertificatesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListSigningCertificatesRequest.m; sourceTree = "<group>"; };
+		A337811A18B1912700FECC45 /* UAIAMListUserPoliciesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListUserPoliciesRequest.h; sourceTree = "<group>"; };
+		A337811B18B1912700FECC45 /* UAIAMListUserPoliciesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListUserPoliciesRequest.m; sourceTree = "<group>"; };
+		A337811C18B1912700FECC45 /* UAIAMListUsersRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListUsersRequest.h; sourceTree = "<group>"; };
+		A337811D18B1912700FECC45 /* UAIAMListUsersRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListUsersRequest.m; sourceTree = "<group>"; };
+		A337811E18B1912700FECC45 /* UAIAMListVirtualMFADevicesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListVirtualMFADevicesRequest.h; sourceTree = "<group>"; };
+		A337811F18B1912700FECC45 /* UAIAMListVirtualMFADevicesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListVirtualMFADevicesRequest.m; sourceTree = "<group>"; };
+		A337812018B1912800FECC45 /* UAIAMPutGroupPolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMPutGroupPolicyRequest.h; sourceTree = "<group>"; };
+		A337812118B1912800FECC45 /* UAIAMPutGroupPolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMPutGroupPolicyRequest.m; sourceTree = "<group>"; };
+		A337812218B1912800FECC45 /* UAIAMPutRolePolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMPutRolePolicyRequest.h; sourceTree = "<group>"; };
+		A337812318B1912800FECC45 /* UAIAMPutRolePolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMPutRolePolicyRequest.m; sourceTree = "<group>"; };
+		A337812418B1912800FECC45 /* UAIAMPutUserPolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMPutUserPolicyRequest.h; sourceTree = "<group>"; };
+		A337812518B1912800FECC45 /* UAIAMPutUserPolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMPutUserPolicyRequest.m; sourceTree = "<group>"; };
+		A337812618B1912800FECC45 /* UAIAMRemoveRoleFromInstanceProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMRemoveRoleFromInstanceProfileRequest.h; sourceTree = "<group>"; };
+		A337812718B1912800FECC45 /* UAIAMRemoveRoleFromInstanceProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMRemoveRoleFromInstanceProfileRequest.m; sourceTree = "<group>"; };
+		A337812818B1912800FECC45 /* UAIAMRemoveUserFromGroupRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMRemoveUserFromGroupRequest.h; sourceTree = "<group>"; };
+		A337812918B1912800FECC45 /* UAIAMRemoveUserFromGroupRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMRemoveUserFromGroupRequest.m; sourceTree = "<group>"; };
+		A337812A18B1912800FECC45 /* UAIAMResyncMFADeviceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMResyncMFADeviceRequest.h; sourceTree = "<group>"; };
+		A337812B18B1912800FECC45 /* UAIAMResyncMFADeviceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMResyncMFADeviceRequest.m; sourceTree = "<group>"; };
+		A337812C18B1912800FECC45 /* UAIAMUpdateAccessKeyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateAccessKeyRequest.h; sourceTree = "<group>"; };
+		A337812D18B1912800FECC45 /* UAIAMUpdateAccessKeyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateAccessKeyRequest.m; sourceTree = "<group>"; };
+		A337812E18B1912800FECC45 /* UAIAMUpdateAccountPasswordPolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateAccountPasswordPolicyRequest.h; sourceTree = "<group>"; };
+		A337812F18B1912800FECC45 /* UAIAMUpdateAccountPasswordPolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateAccountPasswordPolicyRequest.m; sourceTree = "<group>"; };
+		A337813018B1912800FECC45 /* UAIAMUpdateAssumeRolePolicyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateAssumeRolePolicyRequest.h; sourceTree = "<group>"; };
+		A337813118B1912800FECC45 /* UAIAMUpdateAssumeRolePolicyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateAssumeRolePolicyRequest.m; sourceTree = "<group>"; };
+		A337813218B1912800FECC45 /* UAIAMUpdateGroupRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateGroupRequest.h; sourceTree = "<group>"; };
+		A337813318B1912800FECC45 /* UAIAMUpdateGroupRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateGroupRequest.m; sourceTree = "<group>"; };
+		A337813418B1912800FECC45 /* UAIAMUpdateLoginProfileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateLoginProfileRequest.h; sourceTree = "<group>"; };
+		A337813518B1912800FECC45 /* UAIAMUpdateLoginProfileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateLoginProfileRequest.m; sourceTree = "<group>"; };
+		A337813618B1912800FECC45 /* UAIAMUpdateSAMLProviderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateSAMLProviderRequest.h; sourceTree = "<group>"; };
+		A337813718B1912800FECC45 /* UAIAMUpdateSAMLProviderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateSAMLProviderRequest.m; sourceTree = "<group>"; };
+		A337813818B1912800FECC45 /* UAIAMUpdateServerCertificateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateServerCertificateRequest.h; sourceTree = "<group>"; };
+		A337813918B1912800FECC45 /* UAIAMUpdateServerCertificateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateServerCertificateRequest.m; sourceTree = "<group>"; };
+		A337813A18B1912800FECC45 /* UAIAMUpdateSigningCertificateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateSigningCertificateRequest.h; sourceTree = "<group>"; };
+		A337813B18B1912800FECC45 /* UAIAMUpdateSigningCertificateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateSigningCertificateRequest.m; sourceTree = "<group>"; };
+		A337813C18B1912800FECC45 /* UAIAMUpdateUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateUserRequest.h; sourceTree = "<group>"; };
+		A337813D18B1912800FECC45 /* UAIAMUpdateUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateUserRequest.m; sourceTree = "<group>"; };
+		A337813E18B1912800FECC45 /* UAIAMUploadServerCertificateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUploadServerCertificateRequest.h; sourceTree = "<group>"; };
+		A337813F18B1912800FECC45 /* UAIAMUploadServerCertificateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUploadServerCertificateRequest.m; sourceTree = "<group>"; };
+		A337814018B1912800FECC45 /* UAIAMUploadSigningCertificateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUploadSigningCertificateRequest.h; sourceTree = "<group>"; };
+		A337814118B1912800FECC45 /* UAIAMUploadSigningCertificateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUploadSigningCertificateRequest.m; sourceTree = "<group>"; };
+		A337818C18B1913500FECC45 /* UAIAMAddRoleToInstanceProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMAddRoleToInstanceProfileResponse.h; sourceTree = "<group>"; };
+		A337818D18B1913500FECC45 /* UAIAMAddRoleToInstanceProfileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMAddRoleToInstanceProfileResponse.m; sourceTree = "<group>"; };
+		A337818E18B1913500FECC45 /* UAIAMAddUserToGroupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMAddUserToGroupResponse.h; sourceTree = "<group>"; };
+		A337818F18B1913500FECC45 /* UAIAMAddUserToGroupResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMAddUserToGroupResponse.m; sourceTree = "<group>"; };
+		A337819018B1913500FECC45 /* UAIAMChangePasswordResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMChangePasswordResponse.h; sourceTree = "<group>"; };
+		A337819118B1913500FECC45 /* UAIAMChangePasswordResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMChangePasswordResponse.m; sourceTree = "<group>"; };
+		A337819218B1913500FECC45 /* UAIAMCreateAccessKeyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateAccessKeyResponse.h; sourceTree = "<group>"; };
+		A337819318B1913500FECC45 /* UAIAMCreateAccessKeyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateAccessKeyResponse.m; sourceTree = "<group>"; };
+		A337819418B1913500FECC45 /* UAIAMCreateAccountAliasResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateAccountAliasResponse.h; sourceTree = "<group>"; };
+		A337819518B1913500FECC45 /* UAIAMCreateAccountAliasResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateAccountAliasResponse.m; sourceTree = "<group>"; };
+		A337819618B1913500FECC45 /* UAIAMCreateGroupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateGroupResponse.h; sourceTree = "<group>"; };
+		A337819718B1913500FECC45 /* UAIAMCreateGroupResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateGroupResponse.m; sourceTree = "<group>"; };
+		A337819818B1913500FECC45 /* UAIAMCreateInstanceProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateInstanceProfileResponse.h; sourceTree = "<group>"; };
+		A337819918B1913500FECC45 /* UAIAMCreateInstanceProfileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateInstanceProfileResponse.m; sourceTree = "<group>"; };
+		A337819A18B1913500FECC45 /* UAIAMCreateLoginProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateLoginProfileResponse.h; sourceTree = "<group>"; };
+		A337819B18B1913500FECC45 /* UAIAMCreateLoginProfileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateLoginProfileResponse.m; sourceTree = "<group>"; };
+		A337819C18B1913500FECC45 /* UAIAMCreateRoleResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateRoleResponse.h; sourceTree = "<group>"; };
+		A337819D18B1913500FECC45 /* UAIAMCreateRoleResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateRoleResponse.m; sourceTree = "<group>"; };
+		A337819E18B1913500FECC45 /* UAIAMCreateSAMLProviderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateSAMLProviderResponse.h; sourceTree = "<group>"; };
+		A337819F18B1913500FECC45 /* UAIAMCreateSAMLProviderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateSAMLProviderResponse.m; sourceTree = "<group>"; };
+		A33781A018B1913500FECC45 /* UAIAMCreateUserResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateUserResponse.h; sourceTree = "<group>"; };
+		A33781A118B1913500FECC45 /* UAIAMCreateUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateUserResponse.m; sourceTree = "<group>"; };
+		A33781A218B1913500FECC45 /* UAIAMCreateVirtualMFADeviceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMCreateVirtualMFADeviceResponse.h; sourceTree = "<group>"; };
+		A33781A318B1913500FECC45 /* UAIAMCreateVirtualMFADeviceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMCreateVirtualMFADeviceResponse.m; sourceTree = "<group>"; };
+		A33781A418B1913500FECC45 /* UAIAMDeactivateMFADeviceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeactivateMFADeviceResponse.h; sourceTree = "<group>"; };
+		A33781A518B1913500FECC45 /* UAIAMDeactivateMFADeviceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeactivateMFADeviceResponse.m; sourceTree = "<group>"; };
+		A33781A618B1913500FECC45 /* UAIAMDeleteAccessKeyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteAccessKeyResponse.h; sourceTree = "<group>"; };
+		A33781A718B1913500FECC45 /* UAIAMDeleteAccessKeyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteAccessKeyResponse.m; sourceTree = "<group>"; };
+		A33781A818B1913500FECC45 /* UAIAMDeleteAccountAliasResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteAccountAliasResponse.h; sourceTree = "<group>"; };
+		A33781A918B1913500FECC45 /* UAIAMDeleteAccountAliasResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteAccountAliasResponse.m; sourceTree = "<group>"; };
+		A33781AA18B1913500FECC45 /* UAIAMDeleteAccountPasswordPolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteAccountPasswordPolicyResponse.h; sourceTree = "<group>"; };
+		A33781AB18B1913500FECC45 /* UAIAMDeleteAccountPasswordPolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteAccountPasswordPolicyResponse.m; sourceTree = "<group>"; };
+		A33781AC18B1913500FECC45 /* UAIAMDeleteGroupPolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteGroupPolicyResponse.h; sourceTree = "<group>"; };
+		A33781AD18B1913500FECC45 /* UAIAMDeleteGroupPolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteGroupPolicyResponse.m; sourceTree = "<group>"; };
+		A33781AE18B1913500FECC45 /* UAIAMDeleteGroupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteGroupResponse.h; sourceTree = "<group>"; };
+		A33781AF18B1913500FECC45 /* UAIAMDeleteGroupResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteGroupResponse.m; sourceTree = "<group>"; };
+		A33781B018B1913500FECC45 /* UAIAMDeleteInstanceProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteInstanceProfileResponse.h; sourceTree = "<group>"; };
+		A33781B118B1913500FECC45 /* UAIAMDeleteInstanceProfileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteInstanceProfileResponse.m; sourceTree = "<group>"; };
+		A33781B218B1913500FECC45 /* UAIAMDeleteLoginProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteLoginProfileResponse.h; sourceTree = "<group>"; };
+		A33781B318B1913500FECC45 /* UAIAMDeleteLoginProfileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteLoginProfileResponse.m; sourceTree = "<group>"; };
+		A33781B418B1913500FECC45 /* UAIAMDeleteRolePolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteRolePolicyResponse.h; sourceTree = "<group>"; };
+		A33781B518B1913500FECC45 /* UAIAMDeleteRolePolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteRolePolicyResponse.m; sourceTree = "<group>"; };
+		A33781B618B1913500FECC45 /* UAIAMDeleteRoleResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteRoleResponse.h; sourceTree = "<group>"; };
+		A33781B718B1913500FECC45 /* UAIAMDeleteRoleResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteRoleResponse.m; sourceTree = "<group>"; };
+		A33781B818B1913500FECC45 /* UAIAMDeleteSAMLProviderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteSAMLProviderResponse.h; sourceTree = "<group>"; };
+		A33781B918B1913500FECC45 /* UAIAMDeleteSAMLProviderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteSAMLProviderResponse.m; sourceTree = "<group>"; };
+		A33781BA18B1913500FECC45 /* UAIAMDeleteServerCertificateResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteServerCertificateResponse.h; sourceTree = "<group>"; };
+		A33781BB18B1913500FECC45 /* UAIAMDeleteServerCertificateResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteServerCertificateResponse.m; sourceTree = "<group>"; };
+		A33781BC18B1913500FECC45 /* UAIAMDeleteSigningCertificateResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteSigningCertificateResponse.h; sourceTree = "<group>"; };
+		A33781BD18B1913500FECC45 /* UAIAMDeleteSigningCertificateResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteSigningCertificateResponse.m; sourceTree = "<group>"; };
+		A33781BE18B1913500FECC45 /* UAIAMDeleteUserPolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteUserPolicyResponse.h; sourceTree = "<group>"; };
+		A33781BF18B1913500FECC45 /* UAIAMDeleteUserPolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteUserPolicyResponse.m; sourceTree = "<group>"; };
+		A33781C018B1913500FECC45 /* UAIAMDeleteUserResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteUserResponse.h; sourceTree = "<group>"; };
+		A33781C118B1913500FECC45 /* UAIAMDeleteUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteUserResponse.m; sourceTree = "<group>"; };
+		A33781C218B1913500FECC45 /* UAIAMDeleteVirtualMFADeviceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMDeleteVirtualMFADeviceResponse.h; sourceTree = "<group>"; };
+		A33781C318B1913500FECC45 /* UAIAMDeleteVirtualMFADeviceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMDeleteVirtualMFADeviceResponse.m; sourceTree = "<group>"; };
+		A33781C418B1913500FECC45 /* UAIAMEnableMFADeviceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMEnableMFADeviceResponse.h; sourceTree = "<group>"; };
+		A33781C518B1913500FECC45 /* UAIAMEnableMFADeviceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMEnableMFADeviceResponse.m; sourceTree = "<group>"; };
+		A33781C618B1913500FECC45 /* UAIAMGetAccountPasswordPolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetAccountPasswordPolicyResponse.h; sourceTree = "<group>"; };
+		A33781C718B1913500FECC45 /* UAIAMGetAccountPasswordPolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetAccountPasswordPolicyResponse.m; sourceTree = "<group>"; };
+		A33781C818B1913500FECC45 /* UAIAMGetAccountSummaryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetAccountSummaryResponse.h; sourceTree = "<group>"; };
+		A33781C918B1913500FECC45 /* UAIAMGetAccountSummaryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetAccountSummaryResponse.m; sourceTree = "<group>"; };
+		A33781CA18B1913500FECC45 /* UAIAMGetGroupPolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetGroupPolicyResponse.h; sourceTree = "<group>"; };
+		A33781CB18B1913500FECC45 /* UAIAMGetGroupPolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetGroupPolicyResponse.m; sourceTree = "<group>"; };
+		A33781CC18B1913500FECC45 /* UAIAMGetGroupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetGroupResponse.h; sourceTree = "<group>"; };
+		A33781CD18B1913500FECC45 /* UAIAMGetGroupResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetGroupResponse.m; sourceTree = "<group>"; };
+		A33781CE18B1913500FECC45 /* UAIAMGetInstanceProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetInstanceProfileResponse.h; sourceTree = "<group>"; };
+		A33781CF18B1913500FECC45 /* UAIAMGetInstanceProfileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetInstanceProfileResponse.m; sourceTree = "<group>"; };
+		A33781D018B1913500FECC45 /* UAIAMGetLoginProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetLoginProfileResponse.h; sourceTree = "<group>"; };
+		A33781D118B1913500FECC45 /* UAIAMGetLoginProfileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetLoginProfileResponse.m; sourceTree = "<group>"; };
+		A33781D218B1913500FECC45 /* UAIAMGetRolePolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetRolePolicyResponse.h; sourceTree = "<group>"; };
+		A33781D318B1913500FECC45 /* UAIAMGetRolePolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetRolePolicyResponse.m; sourceTree = "<group>"; };
+		A33781D418B1913500FECC45 /* UAIAMGetRoleResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetRoleResponse.h; sourceTree = "<group>"; };
+		A33781D518B1913500FECC45 /* UAIAMGetRoleResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetRoleResponse.m; sourceTree = "<group>"; };
+		A33781D618B1913500FECC45 /* UAIAMGetSAMLProviderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetSAMLProviderResponse.h; sourceTree = "<group>"; };
+		A33781D718B1913500FECC45 /* UAIAMGetSAMLProviderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetSAMLProviderResponse.m; sourceTree = "<group>"; };
+		A33781D818B1913500FECC45 /* UAIAMGetServerCertificateResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetServerCertificateResponse.h; sourceTree = "<group>"; };
+		A33781D918B1913500FECC45 /* UAIAMGetServerCertificateResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetServerCertificateResponse.m; sourceTree = "<group>"; };
+		A33781DA18B1913500FECC45 /* UAIAMGetUserPolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetUserPolicyResponse.h; sourceTree = "<group>"; };
+		A33781DB18B1913500FECC45 /* UAIAMGetUserPolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetUserPolicyResponse.m; sourceTree = "<group>"; };
+		A33781DC18B1913500FECC45 /* UAIAMGetUserResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMGetUserResponse.h; sourceTree = "<group>"; };
+		A33781DD18B1913500FECC45 /* UAIAMGetUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMGetUserResponse.m; sourceTree = "<group>"; };
+		A33781DE18B1913500FECC45 /* UAIAMListAccessKeysResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListAccessKeysResponse.h; sourceTree = "<group>"; };
+		A33781DF18B1913500FECC45 /* UAIAMListAccessKeysResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListAccessKeysResponse.m; sourceTree = "<group>"; };
+		A33781E018B1913500FECC45 /* UAIAMListAccountAliasesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListAccountAliasesResponse.h; sourceTree = "<group>"; };
+		A33781E118B1913500FECC45 /* UAIAMListAccountAliasesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListAccountAliasesResponse.m; sourceTree = "<group>"; };
+		A33781E218B1913500FECC45 /* UAIAMListGroupPoliciesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListGroupPoliciesResponse.h; sourceTree = "<group>"; };
+		A33781E318B1913500FECC45 /* UAIAMListGroupPoliciesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListGroupPoliciesResponse.m; sourceTree = "<group>"; };
+		A33781E418B1913500FECC45 /* UAIAMListGroupsForUserResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListGroupsForUserResponse.h; sourceTree = "<group>"; };
+		A33781E518B1913500FECC45 /* UAIAMListGroupsForUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListGroupsForUserResponse.m; sourceTree = "<group>"; };
+		A33781E618B1913500FECC45 /* UAIAMListGroupsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListGroupsResponse.h; sourceTree = "<group>"; };
+		A33781E718B1913500FECC45 /* UAIAMListGroupsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListGroupsResponse.m; sourceTree = "<group>"; };
+		A33781E818B1913500FECC45 /* UAIAMListInstanceProfilesForRoleResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListInstanceProfilesForRoleResponse.h; sourceTree = "<group>"; };
+		A33781E918B1913500FECC45 /* UAIAMListInstanceProfilesForRoleResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListInstanceProfilesForRoleResponse.m; sourceTree = "<group>"; };
+		A33781EA18B1913500FECC45 /* UAIAMListInstanceProfilesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListInstanceProfilesResponse.h; sourceTree = "<group>"; };
+		A33781EB18B1913500FECC45 /* UAIAMListInstanceProfilesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListInstanceProfilesResponse.m; sourceTree = "<group>"; };
+		A33781EC18B1913500FECC45 /* UAIAMListMFADevicesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListMFADevicesResponse.h; sourceTree = "<group>"; };
+		A33781ED18B1913500FECC45 /* UAIAMListMFADevicesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListMFADevicesResponse.m; sourceTree = "<group>"; };
+		A33781EE18B1913500FECC45 /* UAIAMListRolePoliciesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListRolePoliciesResponse.h; sourceTree = "<group>"; };
+		A33781EF18B1913500FECC45 /* UAIAMListRolePoliciesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListRolePoliciesResponse.m; sourceTree = "<group>"; };
+		A33781F018B1913500FECC45 /* UAIAMListRolesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListRolesResponse.h; sourceTree = "<group>"; };
+		A33781F118B1913500FECC45 /* UAIAMListRolesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListRolesResponse.m; sourceTree = "<group>"; };
+		A33781F218B1913500FECC45 /* UAIAMListSAMLProvidersResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListSAMLProvidersResponse.h; sourceTree = "<group>"; };
+		A33781F318B1913500FECC45 /* UAIAMListSAMLProvidersResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListSAMLProvidersResponse.m; sourceTree = "<group>"; };
+		A33781F418B1913500FECC45 /* UAIAMListServerCertificatesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListServerCertificatesResponse.h; sourceTree = "<group>"; };
+		A33781F518B1913500FECC45 /* UAIAMListServerCertificatesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListServerCertificatesResponse.m; sourceTree = "<group>"; };
+		A33781F618B1913500FECC45 /* UAIAMListSigningCertificatesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListSigningCertificatesResponse.h; sourceTree = "<group>"; };
+		A33781F718B1913500FECC45 /* UAIAMListSigningCertificatesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListSigningCertificatesResponse.m; sourceTree = "<group>"; };
+		A33781F818B1913500FECC45 /* UAIAMListUserPoliciesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListUserPoliciesResponse.h; sourceTree = "<group>"; };
+		A33781F918B1913500FECC45 /* UAIAMListUserPoliciesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListUserPoliciesResponse.m; sourceTree = "<group>"; };
+		A33781FA18B1913500FECC45 /* UAIAMListUsersResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListUsersResponse.h; sourceTree = "<group>"; };
+		A33781FB18B1913500FECC45 /* UAIAMListUsersResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListUsersResponse.m; sourceTree = "<group>"; };
+		A33781FC18B1913500FECC45 /* UAIAMListVirtualMFADevicesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMListVirtualMFADevicesResponse.h; sourceTree = "<group>"; };
+		A33781FD18B1913500FECC45 /* UAIAMListVirtualMFADevicesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMListVirtualMFADevicesResponse.m; sourceTree = "<group>"; };
+		A33781FE18B1913500FECC45 /* UAIAMPutGroupPolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMPutGroupPolicyResponse.h; sourceTree = "<group>"; };
+		A33781FF18B1913500FECC45 /* UAIAMPutGroupPolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMPutGroupPolicyResponse.m; sourceTree = "<group>"; };
+		A337820018B1913500FECC45 /* UAIAMPutRolePolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMPutRolePolicyResponse.h; sourceTree = "<group>"; };
+		A337820118B1913500FECC45 /* UAIAMPutRolePolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMPutRolePolicyResponse.m; sourceTree = "<group>"; };
+		A337820218B1913500FECC45 /* UAIAMPutUserPolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMPutUserPolicyResponse.h; sourceTree = "<group>"; };
+		A337820318B1913500FECC45 /* UAIAMPutUserPolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMPutUserPolicyResponse.m; sourceTree = "<group>"; };
+		A337820418B1913500FECC45 /* UAIAMRemoveRoleFromInstanceProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMRemoveRoleFromInstanceProfileResponse.h; sourceTree = "<group>"; };
+		A337820518B1913500FECC45 /* UAIAMRemoveRoleFromInstanceProfileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMRemoveRoleFromInstanceProfileResponse.m; sourceTree = "<group>"; };
+		A337820618B1913500FECC45 /* UAIAMRemoveUserFromGroupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMRemoveUserFromGroupResponse.h; sourceTree = "<group>"; };
+		A337820718B1913500FECC45 /* UAIAMRemoveUserFromGroupResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMRemoveUserFromGroupResponse.m; sourceTree = "<group>"; };
+		A337820818B1913500FECC45 /* UAIAMResyncMFADeviceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMResyncMFADeviceResponse.h; sourceTree = "<group>"; };
+		A337820918B1913500FECC45 /* UAIAMResyncMFADeviceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMResyncMFADeviceResponse.m; sourceTree = "<group>"; };
+		A337820A18B1913500FECC45 /* UAIAMUpdateAccessKeyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateAccessKeyResponse.h; sourceTree = "<group>"; };
+		A337820B18B1913500FECC45 /* UAIAMUpdateAccessKeyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateAccessKeyResponse.m; sourceTree = "<group>"; };
+		A337820C18B1913500FECC45 /* UAIAMUpdateAccountPasswordPolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateAccountPasswordPolicyResponse.h; sourceTree = "<group>"; };
+		A337820D18B1913500FECC45 /* UAIAMUpdateAccountPasswordPolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateAccountPasswordPolicyResponse.m; sourceTree = "<group>"; };
+		A337820E18B1913500FECC45 /* UAIAMUpdateAssumeRolePolicyResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateAssumeRolePolicyResponse.h; sourceTree = "<group>"; };
+		A337820F18B1913500FECC45 /* UAIAMUpdateAssumeRolePolicyResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateAssumeRolePolicyResponse.m; sourceTree = "<group>"; };
+		A337821018B1913500FECC45 /* UAIAMUpdateGroupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateGroupResponse.h; sourceTree = "<group>"; };
+		A337821118B1913500FECC45 /* UAIAMUpdateGroupResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateGroupResponse.m; sourceTree = "<group>"; };
+		A337821218B1913500FECC45 /* UAIAMUpdateLoginProfileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateLoginProfileResponse.h; sourceTree = "<group>"; };
+		A337821318B1913500FECC45 /* UAIAMUpdateLoginProfileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateLoginProfileResponse.m; sourceTree = "<group>"; };
+		A337821418B1913500FECC45 /* UAIAMUpdateSAMLProviderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateSAMLProviderResponse.h; sourceTree = "<group>"; };
+		A337821518B1913500FECC45 /* UAIAMUpdateSAMLProviderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateSAMLProviderResponse.m; sourceTree = "<group>"; };
+		A337821618B1913500FECC45 /* UAIAMUpdateServerCertificateResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateServerCertificateResponse.h; sourceTree = "<group>"; };
+		A337821718B1913500FECC45 /* UAIAMUpdateServerCertificateResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateServerCertificateResponse.m; sourceTree = "<group>"; };
+		A337821818B1913500FECC45 /* UAIAMUpdateSigningCertificateResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateSigningCertificateResponse.h; sourceTree = "<group>"; };
+		A337821918B1913500FECC45 /* UAIAMUpdateSigningCertificateResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateSigningCertificateResponse.m; sourceTree = "<group>"; };
+		A337821A18B1913500FECC45 /* UAIAMUpdateUserResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUpdateUserResponse.h; sourceTree = "<group>"; };
+		A337821B18B1913500FECC45 /* UAIAMUpdateUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUpdateUserResponse.m; sourceTree = "<group>"; };
+		A337821C18B1913500FECC45 /* UAIAMUploadServerCertificateResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUploadServerCertificateResponse.h; sourceTree = "<group>"; };
+		A337821D18B1913500FECC45 /* UAIAMUploadServerCertificateResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUploadServerCertificateResponse.m; sourceTree = "<group>"; };
+		A337821E18B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMUploadSigningCertificateResponse.h; sourceTree = "<group>"; };
+		A337821F18B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMUploadSigningCertificateResponse.m; sourceTree = "<group>"; };
+		A337826A18B195A300FECC45 /* UAIAMAccountSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMAccountSummary.h; sourceTree = "<group>"; };
+		A337826B18B195A300FECC45 /* UAIAMAccountSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMAccountSummary.m; sourceTree = "<group>"; };
+		A337826C18B195A300FECC45 /* UAIAMSigningCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMSigningCertificate.h; sourceTree = "<group>"; };
+		A337826D18B195A300FECC45 /* UAIAMSigningCertificate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMSigningCertificate.m; sourceTree = "<group>"; };
 		A3E01C1C18AD93E900C3B7DB /* AWS iOS SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AWS iOS SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E01C1F18AD93E900C3B7DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -4138,6 +4647,377 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
+		A337806C18B18D2700FECC45 /* IAM */ = {
+			isa = PBXGroup;
+			children = (
+				A337806D18B18D2700FECC45 /* Models */,
+				A337807018B18D2700FECC45 /* Requests */,
+				A337807318B18D2700FECC45 /* Responses */,
+				A337807618B18D2700FECC45 /* UAIAM.h */,
+				A337807718B18D2700FECC45 /* UAIAMDataTypes.h */,
+				A337807818B18D2700FECC45 /* UAIAMError.h */,
+				A337807918B18D2700FECC45 /* UAIAMError.m */,
+			);
+			path = IAM;
+			sourceTree = "<group>";
+		};
+		A337806D18B18D2700FECC45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A337826A18B195A300FECC45 /* UAIAMAccountSummary.h */,
+				A337826B18B195A300FECC45 /* UAIAMAccountSummary.m */,
+				A337826C18B195A300FECC45 /* UAIAMSigningCertificate.h */,
+				A337826D18B195A300FECC45 /* UAIAMSigningCertificate.m */,
+				A337807E18B1909F00FECC45 /* UAIAMAccessKey.h */,
+				A337807F18B1909F00FECC45 /* UAIAMAccessKey.m */,
+				A337808018B1909F00FECC45 /* UAIAMAccessKeyMetadata.h */,
+				A337808118B1909F00FECC45 /* UAIAMAccessKeyMetadata.m */,
+				A337808218B1909F00FECC45 /* UAIAMCertificate.h */,
+				A337808318B1909F00FECC45 /* UAIAMCertificate.m */,
+				A337808418B1909F00FECC45 /* UAIAMGroup.h */,
+				A337808518B1909F00FECC45 /* UAIAMGroup.m */,
+				A337808618B1909F00FECC45 /* UAIAMInstanceProfile.h */,
+				A337808718B1909F00FECC45 /* UAIAMInstanceProfile.m */,
+				A337808818B1909F00FECC45 /* UAIAMLoginProfile.h */,
+				A337808918B1909F00FECC45 /* UAIAMLoginProfile.m */,
+				A337808A18B1909F00FECC45 /* UAIAMMFADevice.h */,
+				A337808B18B1909F00FECC45 /* UAIAMMFADevice.m */,
+				A337808C18B1909F00FECC45 /* UAIAMPasswordPolicy.h */,
+				A337808D18B1909F00FECC45 /* UAIAMPasswordPolicy.m */,
+				A337808E18B1909F00FECC45 /* UAIAMRole.h */,
+				A337808F18B1909F00FECC45 /* UAIAMRole.m */,
+				A337809018B1909F00FECC45 /* UAIAMSAMLProviderList.h */,
+				A337809118B1909F00FECC45 /* UAIAMSAMLProviderList.m */,
+				A337809218B1909F00FECC45 /* UAIAMServerCertificate.h */,
+				A337809318B1909F00FECC45 /* UAIAMServerCertificate.m */,
+				A337809418B1909F00FECC45 /* UAIAMServerCertificateMetadata.h */,
+				A337809518B1909F00FECC45 /* UAIAMServerCertificateMetadata.m */,
+				A337809618B1909F00FECC45 /* UAIAMServerCertificateMetadataList.h */,
+				A337809718B1909F00FECC45 /* UAIAMServerCertificateMetadataList.m */,
+				A337809A18B1909F00FECC45 /* UAIAMUser.h */,
+				A337809B18B1909F00FECC45 /* UAIAMUser.m */,
+				A337809C18B1909F00FECC45 /* UAIAMVirtualMFADevice.h */,
+				A337809D18B1909F00FECC45 /* UAIAMVirtualMFADevice.m */,
+				A337806E18B18D2700FECC45 /* UAIAMModel.h */,
+				A337806F18B18D2700FECC45 /* UAIAMModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A337807018B18D2700FECC45 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A33780AE18B1912700FECC45 /* UAIAMAddRoleToInstanceProfileRequest.h */,
+				A33780AF18B1912700FECC45 /* UAIAMAddRoleToInstanceProfileRequest.m */,
+				A33780B018B1912700FECC45 /* UAIAMAddUserToGroupRequest.h */,
+				A33780B118B1912700FECC45 /* UAIAMAddUserToGroupRequest.m */,
+				A33780B218B1912700FECC45 /* UAIAMChangePasswordRequest.h */,
+				A33780B318B1912700FECC45 /* UAIAMChangePasswordRequest.m */,
+				A33780B418B1912700FECC45 /* UAIAMCreateAccessKeyRequest.h */,
+				A33780B518B1912700FECC45 /* UAIAMCreateAccessKeyRequest.m */,
+				A33780B618B1912700FECC45 /* UAIAMCreateAccountAliasRequest.h */,
+				A33780B718B1912700FECC45 /* UAIAMCreateAccountAliasRequest.m */,
+				A33780B818B1912700FECC45 /* UAIAMCreateGroupRequest.h */,
+				A33780B918B1912700FECC45 /* UAIAMCreateGroupRequest.m */,
+				A33780BA18B1912700FECC45 /* UAIAMCreateInstanceProfileRequest.h */,
+				A33780BB18B1912700FECC45 /* UAIAMCreateInstanceProfileRequest.m */,
+				A33780BC18B1912700FECC45 /* UAIAMCreateLoginProfileRequest.h */,
+				A33780BD18B1912700FECC45 /* UAIAMCreateLoginProfileRequest.m */,
+				A33780BE18B1912700FECC45 /* UAIAMCreateRoleRequest.h */,
+				A33780BF18B1912700FECC45 /* UAIAMCreateRoleRequest.m */,
+				A33780C018B1912700FECC45 /* UAIAMCreateSAMLProviderRequest.h */,
+				A33780C118B1912700FECC45 /* UAIAMCreateSAMLProviderRequest.m */,
+				A33780C218B1912700FECC45 /* UAIAMCreateUserRequest.h */,
+				A33780C318B1912700FECC45 /* UAIAMCreateUserRequest.m */,
+				A33780C418B1912700FECC45 /* UAIAMCreateVirtualMFADeviceRequest.h */,
+				A33780C518B1912700FECC45 /* UAIAMCreateVirtualMFADeviceRequest.m */,
+				A33780C618B1912700FECC45 /* UAIAMDeactivateMFADeviceRequest.h */,
+				A33780C718B1912700FECC45 /* UAIAMDeactivateMFADeviceRequest.m */,
+				A33780C818B1912700FECC45 /* UAIAMDeleteAccessKeyRequest.h */,
+				A33780C918B1912700FECC45 /* UAIAMDeleteAccessKeyRequest.m */,
+				A33780CA18B1912700FECC45 /* UAIAMDeleteAccountAliasRequest.h */,
+				A33780CB18B1912700FECC45 /* UAIAMDeleteAccountAliasRequest.m */,
+				A33780CC18B1912700FECC45 /* UAIAMDeleteAccountPasswordPolicyRequest.h */,
+				A33780CD18B1912700FECC45 /* UAIAMDeleteAccountPasswordPolicyRequest.m */,
+				A33780CE18B1912700FECC45 /* UAIAMDeleteGroupPolicyRequest.h */,
+				A33780CF18B1912700FECC45 /* UAIAMDeleteGroupPolicyRequest.m */,
+				A33780D018B1912700FECC45 /* UAIAMDeleteGroupRequest.h */,
+				A33780D118B1912700FECC45 /* UAIAMDeleteGroupRequest.m */,
+				A33780D218B1912700FECC45 /* UAIAMDeleteInstanceProfileRequest.h */,
+				A33780D318B1912700FECC45 /* UAIAMDeleteInstanceProfileRequest.m */,
+				A33780D418B1912700FECC45 /* UAIAMDeleteLoginProfileRequest.h */,
+				A33780D518B1912700FECC45 /* UAIAMDeleteLoginProfileRequest.m */,
+				A33780D618B1912700FECC45 /* UAIAMDeleteRolePolicyRequest.h */,
+				A33780D718B1912700FECC45 /* UAIAMDeleteRolePolicyRequest.m */,
+				A33780D818B1912700FECC45 /* UAIAMDeleteRoleRequest.h */,
+				A33780D918B1912700FECC45 /* UAIAMDeleteRoleRequest.m */,
+				A33780DA18B1912700FECC45 /* UAIAMDeleteSAMLProviderRequest.h */,
+				A33780DB18B1912700FECC45 /* UAIAMDeleteSAMLProviderRequest.m */,
+				A33780DC18B1912700FECC45 /* UAIAMDeleteServerCertificateRequest.h */,
+				A33780DD18B1912700FECC45 /* UAIAMDeleteServerCertificateRequest.m */,
+				A33780DE18B1912700FECC45 /* UAIAMDeleteSigningCertificateRequest.h */,
+				A33780DF18B1912700FECC45 /* UAIAMDeleteSigningCertificateRequest.m */,
+				A33780E018B1912700FECC45 /* UAIAMDeleteUserPolicyRequest.h */,
+				A33780E118B1912700FECC45 /* UAIAMDeleteUserPolicyRequest.m */,
+				A33780E218B1912700FECC45 /* UAIAMDeleteUserRequest.h */,
+				A33780E318B1912700FECC45 /* UAIAMDeleteUserRequest.m */,
+				A33780E418B1912700FECC45 /* UAIAMDeleteVirtualMFADeviceRequest.h */,
+				A33780E518B1912700FECC45 /* UAIAMDeleteVirtualMFADeviceRequest.m */,
+				A33780E618B1912700FECC45 /* UAIAMEnableMFADeviceRequest.h */,
+				A33780E718B1912700FECC45 /* UAIAMEnableMFADeviceRequest.m */,
+				A33780E818B1912700FECC45 /* UAIAMGetAccountPasswordPolicyRequest.h */,
+				A33780E918B1912700FECC45 /* UAIAMGetAccountPasswordPolicyRequest.m */,
+				A33780EA18B1912700FECC45 /* UAIAMGetAccountSummaryRequest.h */,
+				A33780EB18B1912700FECC45 /* UAIAMGetAccountSummaryRequest.m */,
+				A33780EC18B1912700FECC45 /* UAIAMGetGroupPolicyRequest.h */,
+				A33780ED18B1912700FECC45 /* UAIAMGetGroupPolicyRequest.m */,
+				A33780EE18B1912700FECC45 /* UAIAMGetGroupRequest.h */,
+				A33780EF18B1912700FECC45 /* UAIAMGetGroupRequest.m */,
+				A33780F018B1912700FECC45 /* UAIAMGetInstanceProfileRequest.h */,
+				A33780F118B1912700FECC45 /* UAIAMGetInstanceProfileRequest.m */,
+				A33780F218B1912700FECC45 /* UAIAMGetLoginProfileRequest.h */,
+				A33780F318B1912700FECC45 /* UAIAMGetLoginProfileRequest.m */,
+				A33780F418B1912700FECC45 /* UAIAMGetRolePolicyRequest.h */,
+				A33780F518B1912700FECC45 /* UAIAMGetRolePolicyRequest.m */,
+				A33780F618B1912700FECC45 /* UAIAMGetRoleRequest.h */,
+				A33780F718B1912700FECC45 /* UAIAMGetRoleRequest.m */,
+				A33780F818B1912700FECC45 /* UAIAMGetSAMLProviderRequest.h */,
+				A33780F918B1912700FECC45 /* UAIAMGetSAMLProviderRequest.m */,
+				A33780FA18B1912700FECC45 /* UAIAMGetServerCertificateRequest.h */,
+				A33780FB18B1912700FECC45 /* UAIAMGetServerCertificateRequest.m */,
+				A33780FC18B1912700FECC45 /* UAIAMGetUserPolicyRequest.h */,
+				A33780FD18B1912700FECC45 /* UAIAMGetUserPolicyRequest.m */,
+				A33780FE18B1912700FECC45 /* UAIAMGetUserRequest.h */,
+				A33780FF18B1912700FECC45 /* UAIAMGetUserRequest.m */,
+				A337810018B1912700FECC45 /* UAIAMListAccessKeysRequest.h */,
+				A337810118B1912700FECC45 /* UAIAMListAccessKeysRequest.m */,
+				A337810218B1912700FECC45 /* UAIAMListAccountAliasesRequest.h */,
+				A337810318B1912700FECC45 /* UAIAMListAccountAliasesRequest.m */,
+				A337810418B1912700FECC45 /* UAIAMListGroupPoliciesRequest.h */,
+				A337810518B1912700FECC45 /* UAIAMListGroupPoliciesRequest.m */,
+				A337810618B1912700FECC45 /* UAIAMListGroupsForUserRequest.h */,
+				A337810718B1912700FECC45 /* UAIAMListGroupsForUserRequest.m */,
+				A337810818B1912700FECC45 /* UAIAMListGroupsRequest.h */,
+				A337810918B1912700FECC45 /* UAIAMListGroupsRequest.m */,
+				A337810A18B1912700FECC45 /* UAIAMListInstanceProfilesForRoleRequest.h */,
+				A337810B18B1912700FECC45 /* UAIAMListInstanceProfilesForRoleRequest.m */,
+				A337810C18B1912700FECC45 /* UAIAMListInstanceProfilesRequest.h */,
+				A337810D18B1912700FECC45 /* UAIAMListInstanceProfilesRequest.m */,
+				A337810E18B1912700FECC45 /* UAIAMListMFADevicesRequest.h */,
+				A337810F18B1912700FECC45 /* UAIAMListMFADevicesRequest.m */,
+				A337811018B1912700FECC45 /* UAIAMListRolePoliciesRequest.h */,
+				A337811118B1912700FECC45 /* UAIAMListRolePoliciesRequest.m */,
+				A337811218B1912700FECC45 /* UAIAMListRolesRequest.h */,
+				A337811318B1912700FECC45 /* UAIAMListRolesRequest.m */,
+				A337811418B1912700FECC45 /* UAIAMListSAMLProvidersRequest.h */,
+				A337811518B1912700FECC45 /* UAIAMListSAMLProvidersRequest.m */,
+				A337811618B1912700FECC45 /* UAIAMListServerCertificatesRequest.h */,
+				A337811718B1912700FECC45 /* UAIAMListServerCertificatesRequest.m */,
+				A337811818B1912700FECC45 /* UAIAMListSigningCertificatesRequest.h */,
+				A337811918B1912700FECC45 /* UAIAMListSigningCertificatesRequest.m */,
+				A337811A18B1912700FECC45 /* UAIAMListUserPoliciesRequest.h */,
+				A337811B18B1912700FECC45 /* UAIAMListUserPoliciesRequest.m */,
+				A337811C18B1912700FECC45 /* UAIAMListUsersRequest.h */,
+				A337811D18B1912700FECC45 /* UAIAMListUsersRequest.m */,
+				A337811E18B1912700FECC45 /* UAIAMListVirtualMFADevicesRequest.h */,
+				A337811F18B1912700FECC45 /* UAIAMListVirtualMFADevicesRequest.m */,
+				A337812018B1912800FECC45 /* UAIAMPutGroupPolicyRequest.h */,
+				A337812118B1912800FECC45 /* UAIAMPutGroupPolicyRequest.m */,
+				A337812218B1912800FECC45 /* UAIAMPutRolePolicyRequest.h */,
+				A337812318B1912800FECC45 /* UAIAMPutRolePolicyRequest.m */,
+				A337812418B1912800FECC45 /* UAIAMPutUserPolicyRequest.h */,
+				A337812518B1912800FECC45 /* UAIAMPutUserPolicyRequest.m */,
+				A337812618B1912800FECC45 /* UAIAMRemoveRoleFromInstanceProfileRequest.h */,
+				A337812718B1912800FECC45 /* UAIAMRemoveRoleFromInstanceProfileRequest.m */,
+				A337812818B1912800FECC45 /* UAIAMRemoveUserFromGroupRequest.h */,
+				A337812918B1912800FECC45 /* UAIAMRemoveUserFromGroupRequest.m */,
+				A337812A18B1912800FECC45 /* UAIAMResyncMFADeviceRequest.h */,
+				A337812B18B1912800FECC45 /* UAIAMResyncMFADeviceRequest.m */,
+				A337812C18B1912800FECC45 /* UAIAMUpdateAccessKeyRequest.h */,
+				A337812D18B1912800FECC45 /* UAIAMUpdateAccessKeyRequest.m */,
+				A337812E18B1912800FECC45 /* UAIAMUpdateAccountPasswordPolicyRequest.h */,
+				A337812F18B1912800FECC45 /* UAIAMUpdateAccountPasswordPolicyRequest.m */,
+				A337813018B1912800FECC45 /* UAIAMUpdateAssumeRolePolicyRequest.h */,
+				A337813118B1912800FECC45 /* UAIAMUpdateAssumeRolePolicyRequest.m */,
+				A337813218B1912800FECC45 /* UAIAMUpdateGroupRequest.h */,
+				A337813318B1912800FECC45 /* UAIAMUpdateGroupRequest.m */,
+				A337813418B1912800FECC45 /* UAIAMUpdateLoginProfileRequest.h */,
+				A337813518B1912800FECC45 /* UAIAMUpdateLoginProfileRequest.m */,
+				A337813618B1912800FECC45 /* UAIAMUpdateSAMLProviderRequest.h */,
+				A337813718B1912800FECC45 /* UAIAMUpdateSAMLProviderRequest.m */,
+				A337813818B1912800FECC45 /* UAIAMUpdateServerCertificateRequest.h */,
+				A337813918B1912800FECC45 /* UAIAMUpdateServerCertificateRequest.m */,
+				A337813A18B1912800FECC45 /* UAIAMUpdateSigningCertificateRequest.h */,
+				A337813B18B1912800FECC45 /* UAIAMUpdateSigningCertificateRequest.m */,
+				A337813C18B1912800FECC45 /* UAIAMUpdateUserRequest.h */,
+				A337813D18B1912800FECC45 /* UAIAMUpdateUserRequest.m */,
+				A337813E18B1912800FECC45 /* UAIAMUploadServerCertificateRequest.h */,
+				A337813F18B1912800FECC45 /* UAIAMUploadServerCertificateRequest.m */,
+				A337814018B1912800FECC45 /* UAIAMUploadSigningCertificateRequest.h */,
+				A337814118B1912800FECC45 /* UAIAMUploadSigningCertificateRequest.m */,
+				A337807118B18D2700FECC45 /* UAIAMRequest.h */,
+				A337807218B18D2700FECC45 /* UAIAMRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		A337807318B18D2700FECC45 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A337818C18B1913500FECC45 /* UAIAMAddRoleToInstanceProfileResponse.h */,
+				A337818D18B1913500FECC45 /* UAIAMAddRoleToInstanceProfileResponse.m */,
+				A337818E18B1913500FECC45 /* UAIAMAddUserToGroupResponse.h */,
+				A337818F18B1913500FECC45 /* UAIAMAddUserToGroupResponse.m */,
+				A337819018B1913500FECC45 /* UAIAMChangePasswordResponse.h */,
+				A337819118B1913500FECC45 /* UAIAMChangePasswordResponse.m */,
+				A337819218B1913500FECC45 /* UAIAMCreateAccessKeyResponse.h */,
+				A337819318B1913500FECC45 /* UAIAMCreateAccessKeyResponse.m */,
+				A337819418B1913500FECC45 /* UAIAMCreateAccountAliasResponse.h */,
+				A337819518B1913500FECC45 /* UAIAMCreateAccountAliasResponse.m */,
+				A337819618B1913500FECC45 /* UAIAMCreateGroupResponse.h */,
+				A337819718B1913500FECC45 /* UAIAMCreateGroupResponse.m */,
+				A337819818B1913500FECC45 /* UAIAMCreateInstanceProfileResponse.h */,
+				A337819918B1913500FECC45 /* UAIAMCreateInstanceProfileResponse.m */,
+				A337819A18B1913500FECC45 /* UAIAMCreateLoginProfileResponse.h */,
+				A337819B18B1913500FECC45 /* UAIAMCreateLoginProfileResponse.m */,
+				A337819C18B1913500FECC45 /* UAIAMCreateRoleResponse.h */,
+				A337819D18B1913500FECC45 /* UAIAMCreateRoleResponse.m */,
+				A337819E18B1913500FECC45 /* UAIAMCreateSAMLProviderResponse.h */,
+				A337819F18B1913500FECC45 /* UAIAMCreateSAMLProviderResponse.m */,
+				A33781A018B1913500FECC45 /* UAIAMCreateUserResponse.h */,
+				A33781A118B1913500FECC45 /* UAIAMCreateUserResponse.m */,
+				A33781A218B1913500FECC45 /* UAIAMCreateVirtualMFADeviceResponse.h */,
+				A33781A318B1913500FECC45 /* UAIAMCreateVirtualMFADeviceResponse.m */,
+				A33781A418B1913500FECC45 /* UAIAMDeactivateMFADeviceResponse.h */,
+				A33781A518B1913500FECC45 /* UAIAMDeactivateMFADeviceResponse.m */,
+				A33781A618B1913500FECC45 /* UAIAMDeleteAccessKeyResponse.h */,
+				A33781A718B1913500FECC45 /* UAIAMDeleteAccessKeyResponse.m */,
+				A33781A818B1913500FECC45 /* UAIAMDeleteAccountAliasResponse.h */,
+				A33781A918B1913500FECC45 /* UAIAMDeleteAccountAliasResponse.m */,
+				A33781AA18B1913500FECC45 /* UAIAMDeleteAccountPasswordPolicyResponse.h */,
+				A33781AB18B1913500FECC45 /* UAIAMDeleteAccountPasswordPolicyResponse.m */,
+				A33781AC18B1913500FECC45 /* UAIAMDeleteGroupPolicyResponse.h */,
+				A33781AD18B1913500FECC45 /* UAIAMDeleteGroupPolicyResponse.m */,
+				A33781AE18B1913500FECC45 /* UAIAMDeleteGroupResponse.h */,
+				A33781AF18B1913500FECC45 /* UAIAMDeleteGroupResponse.m */,
+				A33781B018B1913500FECC45 /* UAIAMDeleteInstanceProfileResponse.h */,
+				A33781B118B1913500FECC45 /* UAIAMDeleteInstanceProfileResponse.m */,
+				A33781B218B1913500FECC45 /* UAIAMDeleteLoginProfileResponse.h */,
+				A33781B318B1913500FECC45 /* UAIAMDeleteLoginProfileResponse.m */,
+				A33781B418B1913500FECC45 /* UAIAMDeleteRolePolicyResponse.h */,
+				A33781B518B1913500FECC45 /* UAIAMDeleteRolePolicyResponse.m */,
+				A33781B618B1913500FECC45 /* UAIAMDeleteRoleResponse.h */,
+				A33781B718B1913500FECC45 /* UAIAMDeleteRoleResponse.m */,
+				A33781B818B1913500FECC45 /* UAIAMDeleteSAMLProviderResponse.h */,
+				A33781B918B1913500FECC45 /* UAIAMDeleteSAMLProviderResponse.m */,
+				A33781BA18B1913500FECC45 /* UAIAMDeleteServerCertificateResponse.h */,
+				A33781BB18B1913500FECC45 /* UAIAMDeleteServerCertificateResponse.m */,
+				A33781BC18B1913500FECC45 /* UAIAMDeleteSigningCertificateResponse.h */,
+				A33781BD18B1913500FECC45 /* UAIAMDeleteSigningCertificateResponse.m */,
+				A33781BE18B1913500FECC45 /* UAIAMDeleteUserPolicyResponse.h */,
+				A33781BF18B1913500FECC45 /* UAIAMDeleteUserPolicyResponse.m */,
+				A33781C018B1913500FECC45 /* UAIAMDeleteUserResponse.h */,
+				A33781C118B1913500FECC45 /* UAIAMDeleteUserResponse.m */,
+				A33781C218B1913500FECC45 /* UAIAMDeleteVirtualMFADeviceResponse.h */,
+				A33781C318B1913500FECC45 /* UAIAMDeleteVirtualMFADeviceResponse.m */,
+				A33781C418B1913500FECC45 /* UAIAMEnableMFADeviceResponse.h */,
+				A33781C518B1913500FECC45 /* UAIAMEnableMFADeviceResponse.m */,
+				A33781C618B1913500FECC45 /* UAIAMGetAccountPasswordPolicyResponse.h */,
+				A33781C718B1913500FECC45 /* UAIAMGetAccountPasswordPolicyResponse.m */,
+				A33781C818B1913500FECC45 /* UAIAMGetAccountSummaryResponse.h */,
+				A33781C918B1913500FECC45 /* UAIAMGetAccountSummaryResponse.m */,
+				A33781CA18B1913500FECC45 /* UAIAMGetGroupPolicyResponse.h */,
+				A33781CB18B1913500FECC45 /* UAIAMGetGroupPolicyResponse.m */,
+				A33781CC18B1913500FECC45 /* UAIAMGetGroupResponse.h */,
+				A33781CD18B1913500FECC45 /* UAIAMGetGroupResponse.m */,
+				A33781CE18B1913500FECC45 /* UAIAMGetInstanceProfileResponse.h */,
+				A33781CF18B1913500FECC45 /* UAIAMGetInstanceProfileResponse.m */,
+				A33781D018B1913500FECC45 /* UAIAMGetLoginProfileResponse.h */,
+				A33781D118B1913500FECC45 /* UAIAMGetLoginProfileResponse.m */,
+				A33781D218B1913500FECC45 /* UAIAMGetRolePolicyResponse.h */,
+				A33781D318B1913500FECC45 /* UAIAMGetRolePolicyResponse.m */,
+				A33781D418B1913500FECC45 /* UAIAMGetRoleResponse.h */,
+				A33781D518B1913500FECC45 /* UAIAMGetRoleResponse.m */,
+				A33781D618B1913500FECC45 /* UAIAMGetSAMLProviderResponse.h */,
+				A33781D718B1913500FECC45 /* UAIAMGetSAMLProviderResponse.m */,
+				A33781D818B1913500FECC45 /* UAIAMGetServerCertificateResponse.h */,
+				A33781D918B1913500FECC45 /* UAIAMGetServerCertificateResponse.m */,
+				A33781DA18B1913500FECC45 /* UAIAMGetUserPolicyResponse.h */,
+				A33781DB18B1913500FECC45 /* UAIAMGetUserPolicyResponse.m */,
+				A33781DC18B1913500FECC45 /* UAIAMGetUserResponse.h */,
+				A33781DD18B1913500FECC45 /* UAIAMGetUserResponse.m */,
+				A33781DE18B1913500FECC45 /* UAIAMListAccessKeysResponse.h */,
+				A33781DF18B1913500FECC45 /* UAIAMListAccessKeysResponse.m */,
+				A33781E018B1913500FECC45 /* UAIAMListAccountAliasesResponse.h */,
+				A33781E118B1913500FECC45 /* UAIAMListAccountAliasesResponse.m */,
+				A33781E218B1913500FECC45 /* UAIAMListGroupPoliciesResponse.h */,
+				A33781E318B1913500FECC45 /* UAIAMListGroupPoliciesResponse.m */,
+				A33781E418B1913500FECC45 /* UAIAMListGroupsForUserResponse.h */,
+				A33781E518B1913500FECC45 /* UAIAMListGroupsForUserResponse.m */,
+				A33781E618B1913500FECC45 /* UAIAMListGroupsResponse.h */,
+				A33781E718B1913500FECC45 /* UAIAMListGroupsResponse.m */,
+				A33781E818B1913500FECC45 /* UAIAMListInstanceProfilesForRoleResponse.h */,
+				A33781E918B1913500FECC45 /* UAIAMListInstanceProfilesForRoleResponse.m */,
+				A33781EA18B1913500FECC45 /* UAIAMListInstanceProfilesResponse.h */,
+				A33781EB18B1913500FECC45 /* UAIAMListInstanceProfilesResponse.m */,
+				A33781EC18B1913500FECC45 /* UAIAMListMFADevicesResponse.h */,
+				A33781ED18B1913500FECC45 /* UAIAMListMFADevicesResponse.m */,
+				A33781EE18B1913500FECC45 /* UAIAMListRolePoliciesResponse.h */,
+				A33781EF18B1913500FECC45 /* UAIAMListRolePoliciesResponse.m */,
+				A33781F018B1913500FECC45 /* UAIAMListRolesResponse.h */,
+				A33781F118B1913500FECC45 /* UAIAMListRolesResponse.m */,
+				A33781F218B1913500FECC45 /* UAIAMListSAMLProvidersResponse.h */,
+				A33781F318B1913500FECC45 /* UAIAMListSAMLProvidersResponse.m */,
+				A33781F418B1913500FECC45 /* UAIAMListServerCertificatesResponse.h */,
+				A33781F518B1913500FECC45 /* UAIAMListServerCertificatesResponse.m */,
+				A33781F618B1913500FECC45 /* UAIAMListSigningCertificatesResponse.h */,
+				A33781F718B1913500FECC45 /* UAIAMListSigningCertificatesResponse.m */,
+				A33781F818B1913500FECC45 /* UAIAMListUserPoliciesResponse.h */,
+				A33781F918B1913500FECC45 /* UAIAMListUserPoliciesResponse.m */,
+				A33781FA18B1913500FECC45 /* UAIAMListUsersResponse.h */,
+				A33781FB18B1913500FECC45 /* UAIAMListUsersResponse.m */,
+				A33781FC18B1913500FECC45 /* UAIAMListVirtualMFADevicesResponse.h */,
+				A33781FD18B1913500FECC45 /* UAIAMListVirtualMFADevicesResponse.m */,
+				A33781FE18B1913500FECC45 /* UAIAMPutGroupPolicyResponse.h */,
+				A33781FF18B1913500FECC45 /* UAIAMPutGroupPolicyResponse.m */,
+				A337820018B1913500FECC45 /* UAIAMPutRolePolicyResponse.h */,
+				A337820118B1913500FECC45 /* UAIAMPutRolePolicyResponse.m */,
+				A337820218B1913500FECC45 /* UAIAMPutUserPolicyResponse.h */,
+				A337820318B1913500FECC45 /* UAIAMPutUserPolicyResponse.m */,
+				A337820418B1913500FECC45 /* UAIAMRemoveRoleFromInstanceProfileResponse.h */,
+				A337820518B1913500FECC45 /* UAIAMRemoveRoleFromInstanceProfileResponse.m */,
+				A337820618B1913500FECC45 /* UAIAMRemoveUserFromGroupResponse.h */,
+				A337820718B1913500FECC45 /* UAIAMRemoveUserFromGroupResponse.m */,
+				A337820818B1913500FECC45 /* UAIAMResyncMFADeviceResponse.h */,
+				A337820918B1913500FECC45 /* UAIAMResyncMFADeviceResponse.m */,
+				A337820A18B1913500FECC45 /* UAIAMUpdateAccessKeyResponse.h */,
+				A337820B18B1913500FECC45 /* UAIAMUpdateAccessKeyResponse.m */,
+				A337820C18B1913500FECC45 /* UAIAMUpdateAccountPasswordPolicyResponse.h */,
+				A337820D18B1913500FECC45 /* UAIAMUpdateAccountPasswordPolicyResponse.m */,
+				A337820E18B1913500FECC45 /* UAIAMUpdateAssumeRolePolicyResponse.h */,
+				A337820F18B1913500FECC45 /* UAIAMUpdateAssumeRolePolicyResponse.m */,
+				A337821018B1913500FECC45 /* UAIAMUpdateGroupResponse.h */,
+				A337821118B1913500FECC45 /* UAIAMUpdateGroupResponse.m */,
+				A337821218B1913500FECC45 /* UAIAMUpdateLoginProfileResponse.h */,
+				A337821318B1913500FECC45 /* UAIAMUpdateLoginProfileResponse.m */,
+				A337821418B1913500FECC45 /* UAIAMUpdateSAMLProviderResponse.h */,
+				A337821518B1913500FECC45 /* UAIAMUpdateSAMLProviderResponse.m */,
+				A337821618B1913500FECC45 /* UAIAMUpdateServerCertificateResponse.h */,
+				A337821718B1913500FECC45 /* UAIAMUpdateServerCertificateResponse.m */,
+				A337821818B1913500FECC45 /* UAIAMUpdateSigningCertificateResponse.h */,
+				A337821918B1913500FECC45 /* UAIAMUpdateSigningCertificateResponse.m */,
+				A337821A18B1913500FECC45 /* UAIAMUpdateUserResponse.h */,
+				A337821B18B1913500FECC45 /* UAIAMUpdateUserResponse.m */,
+				A337821C18B1913500FECC45 /* UAIAMUploadServerCertificateResponse.h */,
+				A337821D18B1913500FECC45 /* UAIAMUploadServerCertificateResponse.m */,
+				A337821E18B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.h */,
+				A337821F18B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.m */,
+				A337807418B18D2700FECC45 /* UAIAMResponse.h */,
+				A337807518B18D2700FECC45 /* UAIAMResponse.m */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		A3E01C1318AD93E900C3B7DB = {
 			isa = PBXGroup;
 			children = (
@@ -4182,6 +5062,7 @@
 				A30FD1D218AD96D000CA52F7 /* CW */,
 				A33772A418ADA0F900FECC45 /* EC2 */,
 				A30FD1E118AD96D000CA52F7 /* ELB */,
+				A337806C18B18D2700FECC45 /* IAM */,
 				A30FD1EF18AD96D000CA52F7 /* Extensions */,
 				A30FD1FE18AD96D000CA52F7 /* SNS */,
 				A3E01C2E18AD93E900C3B7DB /* UAAppDelegate.h */,
@@ -4392,13 +5273,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A337825118B1913600FECC45 /* UAIAMListRolePoliciesResponse.m in Sources */,
 				A33773D818ADA2E700FECC45 /* UACWMetric.m in Sources */,
+				A337818718B1912800FECC45 /* UAIAMUpdateServerCertificateRequest.m in Sources */,
 				A337758B18ADA30100FECC45 /* UAEC2InstanceStatus.m in Sources */,
+				A337823318B1913600FECC45 /* UAIAMDeleteLoginProfileResponse.m in Sources */,
 				A33772E518ADA2B800FECC45 /* UAASInstance.m in Sources */,
+				A337815D18B1912800FECC45 /* UAIAMDeleteVirtualMFADeviceRequest.m in Sources */,
 				A33778D318ADA31500FECC45 /* UAEC2AssociateAddressResponse.m in Sources */,
 				A337791F18ADA31500FECC45 /* UAEC2DescribeInternetGatewaysResponse.m in Sources */,
 				A33773F418ADA2EF00FECC45 /* UACWDescribeAlarmsForMetricRequest.m in Sources */,
+				A337818B18B1912800FECC45 /* UAIAMUploadSigningCertificateRequest.m in Sources */,
 				A33775A918ADA30100FECC45 /* UAEC2PricingDetail.m in Sources */,
+				A33780A418B1909F00FECC45 /* UAIAMMFADevice.m in Sources */,
 				A337758418ADA30100FECC45 /* UAEC2InstanceMonitoring.m in Sources */,
 				A337773E18ADA30B00FECC45 /* UAEC2DeleteKeyPairRequest.m in Sources */,
 				A337772D18ADA30B00FECC45 /* UAEC2CreateReservedInstancesListingRequest.m in Sources */,
@@ -4411,8 +5298,11 @@
 				A33773A518ADA2D200FECC45 /* UAASCreateLaunchConfigurationResponse.m in Sources */,
 				A33775C518ADA30100FECC45 /* UAEC2SpotInstanceStatus.m in Sources */,
 				A337773718ADA30B00FECC45 /* UAEC2CreateVPNConnectionRequest.m in Sources */,
+				A337814D18B1912800FECC45 /* UAIAMCreateVirtualMFADeviceRequest.m in Sources */,
 				A3377A2118ADA32F00FECC45 /* UAELBDeleteLoadBalancerResponse.m in Sources */,
 				A337779618ADA30C00FECC45 /* UAEC2ReplaceRouteTableAssociationRequest.m in Sources */,
+				A337807B18B18D2700FECC45 /* UAIAMRequest.m in Sources */,
+				A337824C18B1913600FECC45 /* UAIAMListGroupsForUserResponse.m in Sources */,
 				A3377A1818ADA32F00FECC45 /* UAELBAttachLoadBalancerToSubnetsResponse.m in Sources */,
 				A337775918ADA30C00FECC45 /* UAEC2DescribeImagesRequest.m in Sources */,
 				A33775C818ADA30100FECC45 /* UAEC2SriovNetSupport.m in Sources */,
@@ -4423,11 +5313,15 @@
 				A33772EB18ADA2B800FECC45 /* UAASScalingPolicy.m in Sources */,
 				A337793318ADA31500FECC45 /* UAEC2DescribeTagsResponse.m in Sources */,
 				A337779318ADA30C00FECC45 /* UAEC2ReplaceNetworkACLAssociationRequest.m in Sources */,
+				A337814318B1912800FECC45 /* UAIAMAddUserToGroupRequest.m in Sources */,
 				A337790518ADA31500FECC45 /* UAEC2DeleteRouteResponse.m in Sources */,
+				A337825318B1913600FECC45 /* UAIAMListSAMLProvidersResponse.m in Sources */,
 				A30FD21618AD96D000CA52F7 /* UAAWSServiceHealthResponse.m in Sources */,
 				A33773B718ADA2D200FECC45 /* UAASDescribeScalingProcessTypesResponse.m in Sources */,
+				A337824118B1913600FECC45 /* UAIAMGetInstanceProfileResponse.m in Sources */,
 				A337755A18ADA30100FECC45 /* UAEC2CustomerGateway.m in Sources */,
 				A33778DB18ADA31500FECC45 /* UAEC2AuthorizeSecurityGroupIngressResponse.m in Sources */,
+				A337826618B1913600FECC45 /* UAIAMUpdateSigningCertificateResponse.m in Sources */,
 				A337755618ADA30100FECC45 /* UAEC2CancelledSpotInstanceRequest.m in Sources */,
 				A337775418ADA30C00FECC45 /* UAEC2DescribeConversionTasksRequest.m in Sources */,
 				A33778F918ADA31500FECC45 /* UAEC2CreateVPNConnectionResponse.m in Sources */,
@@ -4446,6 +5340,7 @@
 				A337733C18ADA2C500FECC45 /* UAASDeleteLaunchConfigurationRequest.m in Sources */,
 				A337735218ADA2C500FECC45 /* UAASPutNotificationConfigurationRequest.m in Sources */,
 				A337771C18ADA30B00FECC45 /* UAEC2CancelConversionTaskRequest.m in Sources */,
+				A337823118B1913600FECC45 /* UAIAMDeleteGroupResponse.m in Sources */,
 				A33775C418ADA30100FECC45 /* UAEC2SpotInstanceStateFault.m in Sources */,
 				A33778E018ADA31500FECC45 /* UAEC2CancelReservedInstancesListingResponse.m in Sources */,
 				A337795018ADA31500FECC45 /* UAEC2PurchaseReservedInstancesOfferingResponse.m in Sources */,
@@ -4456,6 +5351,7 @@
 				A337792518ADA31500FECC45 /* UAEC2DescribePlacementGroupsResponse.m in Sources */,
 				A337758518ADA30100FECC45 /* UAEC2InstanceNetworkInterface.m in Sources */,
 				A33773F518ADA2EF00FECC45 /* UACWDescribeAlarmsRequest.m in Sources */,
+				A337816418B1912800FECC45 /* UAIAMGetLoginProfileRequest.m in Sources */,
 				A337773D18ADA30B00FECC45 /* UAEC2DeleteInternetGatewayRequest.m in Sources */,
 				A337795118ADA31500FECC45 /* UAEC2RebootInstancesResponse.m in Sources */,
 				A33779D118ADA32800FECC45 /* UAELBCreateLoadBalancerListenersRequest.m in Sources */,
@@ -4464,6 +5360,7 @@
 				A3377A2218ADA32F00FECC45 /* UAELBDeregisterInstancesFromLoadBalancerResponse.m in Sources */,
 				A337735518ADA2C500FECC45 /* UAASResumeProcessesRequest.m in Sources */,
 				A337734318ADA2C500FECC45 /* UAASDescribeAutoScalingGroupsRequest.m in Sources */,
+				A337825918B1913600FECC45 /* UAIAMPutGroupPolicyResponse.m in Sources */,
 				A3377A8218ADA34200FECC45 /* UASNSGetEndpointAttributesRequest.m in Sources */,
 				A337777118ADA30C00FECC45 /* UAEC2DescribeTagsRequest.m in Sources */,
 				A30FD20E18AD96D000CA52F7 /* UAASRequest.m in Sources */,
@@ -4477,21 +5374,26 @@
 				A33779E118ADA32800FECC45 /* UAELBRegisterInstancesWithLoadBalancerRequest.m in Sources */,
 				A33778FF18ADA31500FECC45 /* UAEC2DeleteInternetGatewayResponse.m in Sources */,
 				A337779518ADA30C00FECC45 /* UAEC2ReplaceRouteRequest.m in Sources */,
+				A337815E18B1912800FECC45 /* UAIAMEnableMFADeviceRequest.m in Sources */,
 				A3377A8418ADA34200FECC45 /* UASNSGetSubscriptionAttributesRequest.m in Sources */,
 				A337759418ADA30100FECC45 /* UAEC2KernelID.m in Sources */,
 				A3377ACA18ADA34A00FECC45 /* UASNSDeleteEndpointResponse.m in Sources */,
 				A337777918ADA30C00FECC45 /* UAEC2DetachInternetGatewayRequest.m in Sources */,
+				A337814218B1912800FECC45 /* UAIAMAddRoleToInstanceProfileRequest.m in Sources */,
 				A337793F18ADA31500FECC45 /* UAEC2DisableVGWRoutePropagationResponse.m in Sources */,
 				A33778E118ADA31500FECC45 /* UAEC2CancelSpotInstanceRequestsResponse.m in Sources */,
 				A30FD22918AD96D000CA52F7 /* NSArray+UAArrayFlattening.m in Sources */,
+				A337824418B1913600FECC45 /* UAIAMGetRoleResponse.m in Sources */,
 				A337790018ADA31500FECC45 /* UAEC2DeleteKeyPairResponse.m in Sources */,
 				A30FD21A18AD96D000CA52F7 /* UAAWSRequest.m in Sources */,
 				A337759218ADA30100FECC45 /* UAEC2IPRange.m in Sources */,
 				A337755718ADA30100FECC45 /* UAEC2ConversionTask.m in Sources */,
 				A33773B818ADA2D200FECC45 /* UAASDescribeScheduledActionsResponse.m in Sources */,
+				A337822818B1913600FECC45 /* UAIAMCreateRoleResponse.m in Sources */,
 				A33779CF18ADA32800FECC45 /* UAELBCreateAppCookieStickinessPolicyRequest.m in Sources */,
 				A33775DA18ADA30100FECC45 /* UAEC2VolumeStatusInfo.m in Sources */,
 				A33778D618ADA31500FECC45 /* UAEC2AttachInternetGatewayResponse.m in Sources */,
+				A337826E18B195A300FECC45 /* UAIAMAccountSummary.m in Sources */,
 				A3377A8718ADA34200FECC45 /* UASNSListPlatformApplicationsRequest.m in Sources */,
 				A33779D218ADA32800FECC45 /* UAELBCreateLoadBalancerPolicyRequest.m in Sources */,
 				A33775C718ADA30100FECC45 /* UAEC2SpotPriceHistory.m in Sources */,
@@ -4500,6 +5402,7 @@
 				A337790118ADA31500FECC45 /* UAEC2DeleteNetworkACLEntryResponse.m in Sources */,
 				A337778D18ADA30C00FECC45 /* UAEC2ModifyVPCAttributeRequest.m in Sources */,
 				A33772B418ADA0F900FECC45 /* UAEC2Request.m in Sources */,
+				A337816618B1912800FECC45 /* UAIAMGetRoleRequest.m in Sources */,
 				A3377AD218ADA34A00FECC45 /* UASNSListPlatformApplicationsResponse.m in Sources */,
 				A337799018ADA32000FECC45 /* UAELBListenerDescription.m in Sources */,
 				A33779D718ADA32800FECC45 /* UAELBDeregisterInstancesFromLoadBalancerRequest.m in Sources */,
@@ -4510,7 +5413,9 @@
 				A3377A8318ADA34200FECC45 /* UASNSGetPlatformApplicationAttributesRequest.m in Sources */,
 				A337799418ADA32000FECC45 /* UAELBPolicyAttribute.m in Sources */,
 				A337774718ADA30B00FECC45 /* UAEC2DeleteSpotDatafeedSubscriptionRequest.m in Sources */,
+				A337824F18B1913600FECC45 /* UAIAMListInstanceProfilesResponse.m in Sources */,
 				A3377ADC18ADA34A00FECC45 /* UASNSSubscribeResponse.m in Sources */,
+				A337815518B1912800FECC45 /* UAIAMDeleteLoginProfileRequest.m in Sources */,
 				A33775B918ADA30100FECC45 /* UAEC2ReservedInstancesModification.m in Sources */,
 				A337756818ADA30100FECC45 /* UAEC2EBSInstanceBlockDeviceSpecification.m in Sources */,
 				A33779D818ADA32800FECC45 /* UAELBDescribeInstanceHealthRequest.m in Sources */,
@@ -4519,14 +5424,17 @@
 				A3377AC918ADA34A00FECC45 /* UASNSCreateTopicResponse.m in Sources */,
 				A33773DB18ADA2E700FECC45 /* UACWStatisticSet.m in Sources */,
 				A337791818ADA31500FECC45 /* UAEC2DescribeDHCPOptionsResponse.m in Sources */,
+				A337815C18B1912800FECC45 /* UAIAMDeleteUserRequest.m in Sources */,
 				A33778D218ADA31500FECC45 /* UAEC2AllocateAddressResponse.m in Sources */,
 				A337779F18ADA30C00FECC45 /* UAEC2RunInstancesRequest.m in Sources */,
 				A33773BB18ADA2D200FECC45 /* UAASDisableMetricsCollectionResponse.m in Sources */,
 				A337793018ADA31500FECC45 /* UAEC2DescribeSpotInstanceRequestsResponse.m in Sources */,
 				A33773BC18ADA2D200FECC45 /* UAASEnableMetricsCollectionResponse.m in Sources */,
+				A337823218B1913600FECC45 /* UAIAMDeleteInstanceProfileResponse.m in Sources */,
 				A337759B18ADA30100FECC45 /* UAEC2Monitoring.m in Sources */,
 				A33773C618ADA2D200FECC45 /* UAASUpdateAutoScalingGroupResponse.m in Sources */,
 				A33773FA18ADA2EF00FECC45 /* UACWPutMetricAlarmRequest.m in Sources */,
+				A337817A18B1912800FECC45 /* UAIAMListVirtualMFADevicesRequest.m in Sources */,
 				A33777A018ADA30C00FECC45 /* UAEC2StartInstancesRequest.m in Sources */,
 				A337776D18ADA30C00FECC45 /* UAEC2DescribeSpotDatafeedSubscriptionRequest.m in Sources */,
 				A337777D18ADA30C00FECC45 /* UAEC2DisableVGWRoutePropagationRequest.m in Sources */,
@@ -4534,7 +5442,9 @@
 				A3377AD518ADA34A00FECC45 /* UASNSListTopicsResponse.m in Sources */,
 				A3377A8A18ADA34200FECC45 /* UASNSListTopicsRequest.m in Sources */,
 				A337774518ADA30B00FECC45 /* UAEC2DeleteSecurityGroupRequest.m in Sources */,
+				A337822618B1913600FECC45 /* UAIAMCreateInstanceProfileResponse.m in Sources */,
 				A337778918ADA30C00FECC45 /* UAEC2ModifyNetworkInterfaceAttributeRequest.m in Sources */,
+				A337816318B1912800FECC45 /* UAIAMGetInstanceProfileRequest.m in Sources */,
 				A33778DE18ADA31500FECC45 /* UAEC2CancelConversionTaskResponse.m in Sources */,
 				A337758718ADA30100FECC45 /* UAEC2InstanceNetworkInterfaceAttachment.m in Sources */,
 				A33775DC18ADA30100FECC45 /* UAEC2VPCAttachment.m in Sources */,
@@ -4549,13 +5459,19 @@
 				A3377AC818ADA34A00FECC45 /* UASNSCreatePlatformApplicationResponse.m in Sources */,
 				A337794418ADA31500FECC45 /* UAEC2GetPasswordDataResponse.m in Sources */,
 				A337772A18ADA30B00FECC45 /* UAEC2CreateNetworkACLRequest.m in Sources */,
+				A337822F18B1913600FECC45 /* UAIAMDeleteAccountPasswordPolicyResponse.m in Sources */,
 				A3377A4718ADA33A00FECC45 /* UASNSTopicAttributes.m in Sources */,
 				A337798F18ADA32000FECC45 /* UAELBListener.m in Sources */,
 				A3377A7E18ADA34200FECC45 /* UASNSCreateTopicRequest.m in Sources */,
+				A337814618B1912800FECC45 /* UAIAMCreateAccountAliasRequest.m in Sources */,
+				A337825B18B1913600FECC45 /* UAIAMPutUserPolicyResponse.m in Sources */,
 				A33778EC18ADA31500FECC45 /* UAEC2CreateNetworkACLResponse.m in Sources */,
 				A3377A2618ADA32F00FECC45 /* UAELBDescribeLoadBalancerPolicyTypesResponse.m in Sources */,
+				A337816F18B1912800FECC45 /* UAIAMListGroupsRequest.m in Sources */,
 				A337734F18ADA2C500FECC45 /* UAASDisableMetricsCollectionRequest.m in Sources */,
+				A337814B18B1912800FECC45 /* UAIAMCreateSAMLProviderRequest.m in Sources */,
 				A33779DF18ADA32800FECC45 /* UAELBEnableAvailabilityZonesForLoadBalancerRequest.m in Sources */,
+				A337817518B1912800FECC45 /* UAIAMListSAMLProvidersRequest.m in Sources */,
 				A33779DD18ADA32800FECC45 /* UAELBDetachLoadBalancerFromSubnetsRequest.m in Sources */,
 				A33775D118ADA30100FECC45 /* UAEC2UserIdGroupPair.m in Sources */,
 				A337790B18ADA31500FECC45 /* UAEC2DeleteTagsResponse.m in Sources */,
@@ -4563,9 +5479,11 @@
 				A3377A8618ADA34200FECC45 /* UASNSListEndpointsByPlatformApplicationRequest.m in Sources */,
 				A337791618ADA31500FECC45 /* UAEC2DescribeConversionTasksResponse.m in Sources */,
 				A33775AD18ADA30100FECC45 /* UAEC2ProductCode.m in Sources */,
+				A337823418B1913600FECC45 /* UAIAMDeleteRolePolicyResponse.m in Sources */,
 				A3377A1918ADA32F00FECC45 /* UAELBConfigureHealthCheckResponse.m in Sources */,
 				A337759D18ADA30100FECC45 /* UAEC2NetworkACLAssociation.m in Sources */,
 				A337779718ADA30C00FECC45 /* UAEC2ReportInstanceStatusRequest.m in Sources */,
+				A337814818B1912800FECC45 /* UAIAMCreateInstanceProfileRequest.m in Sources */,
 				A337775618ADA30C00FECC45 /* UAEC2DescribeDHCPOptionsRequest.m in Sources */,
 				A3377A9018ADA34200FECC45 /* UASNSSetTopicAttributesRequest.m in Sources */,
 				A337756A18ADA30100FECC45 /* UAEC2EnableDNSHostnames.m in Sources */,
@@ -4573,8 +5491,10 @@
 				A337792418ADA31500FECC45 /* UAEC2DescribeNetworkInterfacesResponse.m in Sources */,
 				A33773F618ADA2EF00FECC45 /* UACWDisableAlarmActionsRequest.m in Sources */,
 				A3377ADB18ADA34A00FECC45 /* UASNSSetTopicAttributesResponse.m in Sources */,
+				A337814518B1912800FECC45 /* UAIAMCreateAccessKeyRequest.m in Sources */,
 				A3377A2B18ADA32F00FECC45 /* UAELBModifyLoadBalancerAttributesResponse.m in Sources */,
 				A3377AC518ADA34A00FECC45 /* UASNSAddPermissionResponse.m in Sources */,
+				A337818A18B1912800FECC45 /* UAIAMUploadServerCertificateRequest.m in Sources */,
 				A337771218ADA30B00FECC45 /* UAEC2AssociateDHCPOptionsRequest.m in Sources */,
 				A337734518ADA2C500FECC45 /* UAASDescribeAutoScalingNotificationTypesRequest.m in Sources */,
 				A33773C418ADA2D200FECC45 /* UAASSuspendProcessesResponse.m in Sources */,
@@ -4590,10 +5510,14 @@
 				A337741518ADA2F700FECC45 /* UACWDescribeAlarmsForMetricResponse.m in Sources */,
 				A337790D18ADA31500FECC45 /* UAEC2DeleteVPCResponse.m in Sources */,
 				A3377ADA18ADA34A00FECC45 /* UASNSSetSubscriptionAttributesResponse.m in Sources */,
+				A337818618B1912800FECC45 /* UAIAMUpdateSAMLProviderRequest.m in Sources */,
 				A33773B518ADA2D200FECC45 /* UAASDescribePoliciesResponse.m in Sources */,
+				A337824E18B1913600FECC45 /* UAIAMListInstanceProfilesForRoleResponse.m in Sources */,
 				A30FD22B18AD96D000CA52F7 /* NSValueTransformer+UAValueTransformerAdditions.m in Sources */,
+				A337823D18B1913600FECC45 /* UAIAMGetAccountPasswordPolicyResponse.m in Sources */,
 				A33775AF18ADA30100FECC45 /* UAEC2Ramdisk.m in Sources */,
 				A33773BD18ADA2D200FECC45 /* UAASExecutePolicyResponse.m in Sources */,
+				A337815818B1912800FECC45 /* UAIAMDeleteSAMLProviderRequest.m in Sources */,
 				A337795718ADA31500FECC45 /* UAEC2ReplaceRouteTableAssociationResponse.m in Sources */,
 				A3377A4118ADA33A00FECC45 /* UASNSEndpointAttributes.m in Sources */,
 				A337758818ADA30100FECC45 /* UAEC2InstanceNetworkInterfaceSpecification.m in Sources */,
@@ -4612,6 +5536,7 @@
 				A337793D18ADA31500FECC45 /* UAEC2DetachVolumeResponse.m in Sources */,
 				A33778E618ADA31500FECC45 /* UAEC2CreateDHCPOptionsResponse.m in Sources */,
 				A337792618ADA31500FECC45 /* UAEC2DescribeRegionsResponse.m in Sources */,
+				A337825C18B1913600FECC45 /* UAIAMRemoveRoleFromInstanceProfileResponse.m in Sources */,
 				A337774318ADA30B00FECC45 /* UAEC2DeleteRouteRequest.m in Sources */,
 				A3E01C3018AD93E900C3B7DB /* UAAppDelegate.m in Sources */,
 				A3377A2018ADA32F00FECC45 /* UAELBDeleteLoadBalancerPolicyResponse.m in Sources */,
@@ -4623,7 +5548,10 @@
 				A337733718ADA2C500FECC45 /* UAASAttachInstancesRequest.m in Sources */,
 				A33778D518ADA31500FECC45 /* UAEC2AssociateRouteTableResponse.m in Sources */,
 				A3377A2918ADA32F00FECC45 /* UAELBDisableAvailabilityZonesForLoadBalancerResponse.m in Sources */,
+				A337823618B1913600FECC45 /* UAIAMDeleteSAMLProviderResponse.m in Sources */,
 				A3377A8818ADA34200FECC45 /* UASNSListSubscriptionsByTopicRequest.m in Sources */,
+				A33780A918B1909F00FECC45 /* UAIAMServerCertificateMetadata.m in Sources */,
+				A33780A118B1909F00FECC45 /* UAIAMGroup.m in Sources */,
 				A33775B818ADA30100FECC45 /* UAEC2ReservedInstancesListing.m in Sources */,
 				A337773C18ADA30B00FECC45 /* UAEC2DeleteDHCPOptionsRequest.m in Sources */,
 				A337775C18ADA30C00FECC45 /* UAEC2DescribeInstanceStatusRequest.m in Sources */,
@@ -4634,10 +5562,15 @@
 				A337798918ADA32000FECC45 /* UAELBAppCookieStickinessPolicy.m in Sources */,
 				A337778B18ADA30C00FECC45 /* UAEC2ModifySnapshotAttributeRequest.m in Sources */,
 				A337773118ADA30B00FECC45 /* UAEC2CreateSnapshotRequest.m in Sources */,
+				A337815118B1912800FECC45 /* UAIAMDeleteAccountPasswordPolicyRequest.m in Sources */,
 				A33775C918ADA30100FECC45 /* UAEC2StateReason.m in Sources */,
+				A337816C18B1912800FECC45 /* UAIAMListAccountAliasesRequest.m in Sources */,
 				A337757518ADA30100FECC45 /* UAEC2IAMInstanceProfileSpecification.m in Sources */,
 				A337755318ADA30100FECC45 /* UAEC2BundleInstanceStorage.m in Sources */,
 				A337793A18ADA31500FECC45 /* UAEC2DescribeVPNGatewaysResponse.m in Sources */,
+				A337822518B1913600FECC45 /* UAIAMCreateGroupResponse.m in Sources */,
+				A337817218B1912800FECC45 /* UAIAMListMFADevicesRequest.m in Sources */,
+				A337826118B1913600FECC45 /* UAIAMUpdateAssumeRolePolicyResponse.m in Sources */,
 				A3377A1C18ADA32F00FECC45 /* UAELBCreateLoadBalancerListenersResponse.m in Sources */,
 				A337772E18ADA30B00FECC45 /* UAEC2CreateRouteRequest.m in Sources */,
 				A337755918ADA30100FECC45 /* UAEC2CreateVolumePermissionModifications.m in Sources */,
@@ -4649,10 +5582,12 @@
 				A3377A2418ADA32F00FECC45 /* UAELBDescribeLoadBalancerAttributesResponse.m in Sources */,
 				A337754E18ADA30100FECC45 /* UAEC2AutoEnableIO.m in Sources */,
 				A337791218ADA31500FECC45 /* UAEC2DescribeAccountAttributesResponse.m in Sources */,
+				A337825418B1913600FECC45 /* UAIAMListServerCertificatesResponse.m in Sources */,
 				A337791A18ADA31500FECC45 /* UAEC2DescribeImageAttributeResponse.m in Sources */,
 				A337757F18ADA30100FECC45 /* UAEC2InstanceCount.m in Sources */,
 				A3377AD718ADA34A00FECC45 /* UASNSRemovePermissionResponse.m in Sources */,
 				A30FD21718AD96D000CA52F7 /* UAAWSServiceHealthStatusResponse.m in Sources */,
+				A337818418B1912800FECC45 /* UAIAMUpdateGroupRequest.m in Sources */,
 				A337758E18ADA30100FECC45 /* UAEC2InstanceStatusSummary.m in Sources */,
 				A33775BF18ADA30100FECC45 /* UAEC2SecurityGroup.m in Sources */,
 				A33775BE18ADA30100FECC45 /* UAEC2S3Storage.m in Sources */,
@@ -4663,23 +5598,29 @@
 				A3377AD618ADA34A00FECC45 /* UASNSPublishResponse.m in Sources */,
 				A3377AC618ADA34A00FECC45 /* UASNSConfirmSubscriptionResponse.m in Sources */,
 				A3377AD018ADA34A00FECC45 /* UASNSGetTopicAttributesResponse.m in Sources */,
+				A337816918B1912800FECC45 /* UAIAMGetUserPolicyRequest.m in Sources */,
 				A33778D918ADA31500FECC45 /* UAEC2AttachVPNGatewayResponse.m in Sources */,
 				A30FD21518AD96D000CA52F7 /* UAAWSServiceHealthStatusRequest.m in Sources */,
 				A337756018ADA30100FECC45 /* UAEC2DisableApiTermination.m in Sources */,
+				A337817E18B1912800FECC45 /* UAIAMRemoveRoleFromInstanceProfileRequest.m in Sources */,
 				A33773A318ADA2D200FECC45 /* UAASAttachInstancesResponse.m in Sources */,
 				A337778318ADA30C00FECC45 /* UAEC2GetPasswordDataRequest.m in Sources */,
+				A337824A18B1913600FECC45 /* UAIAMListAccountAliasesResponse.m in Sources */,
 				A337735018ADA2C500FECC45 /* UAASEnableMetricsCollectionRequest.m in Sources */,
 				A3377A9118ADA34200FECC45 /* UASNSSubscribeRequest.m in Sources */,
 				A33779E418ADA32800FECC45 /* UAELBSetLoadBalancerPoliciesOfListenerRequest.m in Sources */,
 				A337771118ADA30B00FECC45 /* UAEC2AssociateAddressRequest.m in Sources */,
+				A337809E18B1909F00FECC45 /* UAIAMAccessKey.m in Sources */,
 				A33778F718ADA31500FECC45 /* UAEC2CreateVolumeResponse.m in Sources */,
 				A337758018ADA30100FECC45 /* UAEC2InstanceExportDetails.m in Sources */,
 				A33778F518ADA31500FECC45 /* UAEC2CreateSubnetResponse.m in Sources */,
 				A337759018ADA30100FECC45 /* UAEC2InternetGateway.m in Sources */,
+				A337823B18B1913600FECC45 /* UAIAMDeleteVirtualMFADeviceResponse.m in Sources */,
 				A33775B618ADA30100FECC45 /* UAEC2ReservedInstancesConfiguration.m in Sources */,
 				A3377A2318ADA32F00FECC45 /* UAELBDescribeInstanceHealthResponse.m in Sources */,
 				A30FD21C18AD96D000CA52F7 /* UAAWSResponse.m in Sources */,
 				A33778DD18ADA31500FECC45 /* UAEC2CancelBundleTaskResponse.m in Sources */,
+				A337814718B1912800FECC45 /* UAIAMCreateGroupRequest.m in Sources */,
 				A337756918ADA30100FECC45 /* UAEC2EBSOptimized.m in Sources */,
 				A30FD20C18AD96D000CA52F7 /* UAASError.m in Sources */,
 				A337777718ADA30C00FECC45 /* UAEC2DescribeVPNConnectionsRequest.m in Sources */,
@@ -4688,30 +5629,38 @@
 				A33778D418ADA31500FECC45 /* UAEC2AssociateDHCPOptionsResponse.m in Sources */,
 				A337771E18ADA30B00FECC45 /* UAEC2CancelReservedInstancesListingRequest.m in Sources */,
 				A337775318ADA30B00FECC45 /* UAEC2DescribeBundleTasksRequest.m in Sources */,
+				A337807A18B18D2700FECC45 /* UAIAMModel.m in Sources */,
 				A337793E18ADA31500FECC45 /* UAEC2DetachVPNGatewayResponse.m in Sources */,
 				A337799118ADA32000FECC45 /* UAELBLoadBalancerAttributes.m in Sources */,
+				A337824918B1913600FECC45 /* UAIAMListAccessKeysResponse.m in Sources */,
 				A337794C18ADA31500FECC45 /* UAEC2ModifySnapshotAttributeResponse.m in Sources */,
 				A337734D18ADA2C500FECC45 /* UAASDescribeTagsRequest.m in Sources */,
 				A33773C018ADA2D200FECC45 /* UAASPutScheduledUpdateGroupActionResponse.m in Sources */,
 				A3377A1F18ADA32F00FECC45 /* UAELBDeleteLoadBalancerListenersResponse.m in Sources */,
+				A337817818B1912800FECC45 /* UAIAMListUserPoliciesRequest.m in Sources */,
 				A337778418ADA30C00FECC45 /* UAEC2ImportInstanceRequest.m in Sources */,
 				A337733A18ADA2C500FECC45 /* UAASCreateOrUpdateTagsRequest.m in Sources */,
 				A3377A8C18ADA34200FECC45 /* UASNSRemovePermissionRequest.m in Sources */,
 				A33773C218ADA2D200FECC45 /* UAASSetDesiredCapacityResponse.m in Sources */,
 				A3377A4218ADA33A00FECC45 /* UASNSPlatformApplication.m in Sources */,
+				A337825A18B1913600FECC45 /* UAIAMPutRolePolicyResponse.m in Sources */,
 				A337774B18ADA30B00FECC45 /* UAEC2DeleteVPCRequest.m in Sources */,
 				A33778D818ADA31500FECC45 /* UAEC2AttachVolumeResponse.m in Sources */,
 				A337734818ADA2C500FECC45 /* UAASDescribeNotificationConfigurationsRequest.m in Sources */,
 				A337778518ADA30C00FECC45 /* UAEC2ImportKeyPairRequest.m in Sources */,
 				A337772418ADA30B00FECC45 /* UAEC2CreateDHCPOptionsRequest.m in Sources */,
+				A337825E18B1913600FECC45 /* UAIAMResyncMFADeviceResponse.m in Sources */,
 				A337790E18ADA31500FECC45 /* UAEC2DeleteVPNConnectionResponse.m in Sources */,
+				A337822C18B1913600FECC45 /* UAIAMDeactivateMFADeviceResponse.m in Sources */,
 				A337776E18ADA30C00FECC45 /* UAEC2DescribeSpotInstanceRequestsRequest.m in Sources */,
 				A337793B18ADA31500FECC45 /* UAEC2DetachInternetGatewayResponse.m in Sources */,
+				A337826018B1913600FECC45 /* UAIAMUpdateAccountPasswordPolicyResponse.m in Sources */,
 				A337791D18ADA31500FECC45 /* UAEC2DescribeInstancesResponse.m in Sources */,
 				A337771818ADA30B00FECC45 /* UAEC2AuthorizeSecurityGroupEgressRequest.m in Sources */,
 				A33773A718ADA2D200FECC45 /* UAASDeleteAutoScalingGroupResponse.m in Sources */,
 				A337794118ADA31500FECC45 /* UAEC2DisassociateRouteTableResponse.m in Sources */,
 				A337774218ADA30B00FECC45 /* UAEC2DeletePlacementGroupRequest.m in Sources */,
+				A337815B18B1912800FECC45 /* UAIAMDeleteUserPolicyRequest.m in Sources */,
 				A337741A18ADA2F700FECC45 /* UACWListMetricsResponse.m in Sources */,
 				A33775D718ADA30100FECC45 /* UAEC2VolumeStatusAction.m in Sources */,
 				A337776018ADA30C00FECC45 /* UAEC2DescribeNetworkACLsRequest.m in Sources */,
@@ -4719,30 +5668,42 @@
 				A33773BE18ADA2D200FECC45 /* UAASPutNotificationConfigurationResponse.m in Sources */,
 				A337794D18ADA31500FECC45 /* UAEC2ModifyVolumeAttributeResponse.m in Sources */,
 				A33778F218ADA31500FECC45 /* UAEC2CreateSecurityGroupResponse.m in Sources */,
+				A337809F18B1909F00FECC45 /* UAIAMAccessKeyMetadata.m in Sources */,
+				A337817718B1912800FECC45 /* UAIAMListSigningCertificatesRequest.m in Sources */,
 				A337741B18ADA2F700FECC45 /* UACWPutMetricAlarmResponse.m in Sources */,
 				A30FD21218AD96D000CA52F7 /* UAAWSServiceHealthOutage.m in Sources */,
 				A337791C18ADA31500FECC45 /* UAEC2DescribeInstanceAttributeResponse.m in Sources */,
+				A337814418B1912800FECC45 /* UAIAMChangePasswordRequest.m in Sources */,
 				A337792A18ADA31500FECC45 /* UAEC2DescribeReservedInstancesResponse.m in Sources */,
 				A337756518ADA30100FECC45 /* UAEC2DiskImageVolumeDescription.m in Sources */,
 				A337757E18ADA30100FECC45 /* UAEC2InstanceBlockDeviceMappingSpecification.m in Sources */,
 				A337792218ADA31500FECC45 /* UAEC2DescribeNetworkACLsResponse.m in Sources */,
+				A33780AC18B1909F00FECC45 /* UAIAMUser.m in Sources */,
 				A337772B18ADA30B00FECC45 /* UAEC2CreateNetworkInterfaceRequest.m in Sources */,
 				A3377A7B18ADA34200FECC45 /* UASNSConfirmSubscriptionRequest.m in Sources */,
 				A337796418ADA31500FECC45 /* UAEC2TerminateInstancesResponse.m in Sources */,
+				A337816B18B1912800FECC45 /* UAIAMListAccessKeysRequest.m in Sources */,
 				A33773B418ADA2D200FECC45 /* UAASDescribeNotificationConfigurationsResponse.m in Sources */,
 				A33778EB18ADA31500FECC45 /* UAEC2CreateNetworkACLEntryResponse.m in Sources */,
 				A3377A7D18ADA34200FECC45 /* UASNSCreatePlatformEndpointRequest.m in Sources */,
+				A337826318B1913600FECC45 /* UAIAMUpdateLoginProfileResponse.m in Sources */,
 				A3377A8918ADA34200FECC45 /* UASNSListSubscriptionsRequest.m in Sources */,
+				A337822A18B1913600FECC45 /* UAIAMCreateUserResponse.m in Sources */,
 				A33775BC18ADA30100FECC45 /* UAEC2RouteTable.m in Sources */,
 				A33777A218ADA30C00FECC45 /* UAEC2TerminateInstancesRequest.m in Sources */,
+				A337818218B1912800FECC45 /* UAIAMUpdateAccountPasswordPolicyRequest.m in Sources */,
 				A337757718ADA30100FECC45 /* UAEC2Image.m in Sources */,
 				A337777318ADA30C00FECC45 /* UAEC2DescribeVolumesRequest.m in Sources */,
+				A337823A18B1913600FECC45 /* UAIAMDeleteUserResponse.m in Sources */,
 				A30FD21D18AD96D000CA52F7 /* UACWError.m in Sources */,
+				A337815418B1912800FECC45 /* UAIAMDeleteInstanceProfileRequest.m in Sources */,
 				A33775A318ADA30100FECC45 /* UAEC2Options.m in Sources */,
 				A33773D718ADA2E700FECC45 /* UACWDimension.m in Sources */,
 				A3377A4318ADA33A00FECC45 /* UASNSPlatformApplicationAttributes.m in Sources */,
+				A337815918B1912800FECC45 /* UAIAMDeleteServerCertificateRequest.m in Sources */,
 				A337776318ADA30C00FECC45 /* UAEC2DescribePlacementGroupsRequest.m in Sources */,
 				A3377A8E18ADA34200FECC45 /* UASNSSetPlatformApplicationAttributesRequest.m in Sources */,
+				A337816A18B1912800FECC45 /* UAIAMGetUserRequest.m in Sources */,
 				A337791918ADA31500FECC45 /* UAEC2DescribeExportTasksResponse.m in Sources */,
 				A3377A8518ADA34200FECC45 /* UASNSGetTopicAttributesRequest.m in Sources */,
 				A337755D18ADA30100FECC45 /* UAEC2DHCPConfiguration.m in Sources */,
@@ -4752,14 +5713,21 @@
 				A337756D18ADA30100FECC45 /* UAEC2Entry.m in Sources */,
 				A337795A18ADA31500FECC45 /* UAEC2ReservedInstancesModificationResponse.m in Sources */,
 				A33773AF18ADA2D200FECC45 /* UAASDescribeAutoScalingGroupsResponse.m in Sources */,
+				A337825D18B1913600FECC45 /* UAIAMRemoveUserFromGroupResponse.m in Sources */,
 				A337793218ADA31500FECC45 /* UAEC2DescribeSubnetsResponse.m in Sources */,
+				A337824718B1913600FECC45 /* UAIAMGetUserPolicyResponse.m in Sources */,
+				A337823C18B1913600FECC45 /* UAIAMEnableMFADeviceResponse.m in Sources */,
+				A337826718B1913600FECC45 /* UAIAMUpdateUserResponse.m in Sources */,
 				A33773AE18ADA2D200FECC45 /* UAASDescribeAdjustmentTypesResponse.m in Sources */,
+				A33780A518B1909F00FECC45 /* UAIAMPasswordPolicy.m in Sources */,
 				A337735618ADA2C500FECC45 /* UAASSetDesiredCapacityRequest.m in Sources */,
 				A337777B18ADA30C00FECC45 /* UAEC2DetachVolumeRequest.m in Sources */,
 				A337779B18ADA30C00FECC45 /* UAEC2ResetNetworkInterfaceAttributeRequest.m in Sources */,
+				A337814918B1912800FECC45 /* UAIAMCreateLoginProfileRequest.m in Sources */,
 				A337773918ADA30B00FECC45 /* UAEC2CreateVPNGatewayRequest.m in Sources */,
 				A337771418ADA30B00FECC45 /* UAEC2AttachInternetGatewayRequest.m in Sources */,
 				A337795418ADA31500FECC45 /* UAEC2ReplaceNetworkACLAssociationResponse.m in Sources */,
+				A33780A818B1909F00FECC45 /* UAIAMServerCertificate.m in Sources */,
 				A30FD22A18AD96D000CA52F7 /* NSData+UAHMAC.m in Sources */,
 				A337735118ADA2C500FECC45 /* UAASExecutePolicyRequest.m in Sources */,
 				A337791518ADA31500FECC45 /* UAEC2DescribeBundleTasksResponse.m in Sources */,
@@ -4770,6 +5738,10 @@
 				A337795218ADA31500FECC45 /* UAEC2RegisterImageResponse.m in Sources */,
 				A337758218ADA30100FECC45 /* UAEC2InstanceLicense.m in Sources */,
 				A337793818ADA31500FECC45 /* UAEC2DescribeVPCsResponse.m in Sources */,
+				A337824218B1913600FECC45 /* UAIAMGetLoginProfileResponse.m in Sources */,
+				A337816518B1912800FECC45 /* UAIAMGetRolePolicyRequest.m in Sources */,
+				A337822B18B1913600FECC45 /* UAIAMCreateVirtualMFADeviceResponse.m in Sources */,
+				A337807C18B18D2700FECC45 /* UAIAMResponse.m in Sources */,
 				A337734E18ADA2C500FECC45 /* UAASDescribeTerminationPolicyTypesRequest.m in Sources */,
 				A337796618ADA31500FECC45 /* UAEC2UnmonitorInstancesResponse.m in Sources */,
 				A337771018ADA30B00FECC45 /* UAEC2AssignPrivateIPAddressesRequest.m in Sources */,
@@ -4778,11 +5750,15 @@
 				A337794A18ADA31500FECC45 /* UAEC2ModifyNetworkInterfaceAttributeResponse.m in Sources */,
 				A3377A7A18ADA34200FECC45 /* UASNSAddPermissionRequest.m in Sources */,
 				A30FD20D18AD96D000CA52F7 /* UAASModel.m in Sources */,
+				A337814F18B1912800FECC45 /* UAIAMDeleteAccessKeyRequest.m in Sources */,
+				A337817D18B1912800FECC45 /* UAIAMPutUserPolicyRequest.m in Sources */,
 				A337758D18ADA30100FECC45 /* UAEC2InstanceStatusEvent.m in Sources */,
 				A337759518ADA30100FECC45 /* UAEC2KeyPair.m in Sources */,
 				A337757818ADA30100FECC45 /* UAEC2ImportInstanceLaunchSpecification.m in Sources */,
 				A30FD22818AD96D000CA52F7 /* MTLXMLAdapter+UAAWSPayloadSerialisation.m in Sources */,
 				A337790F18ADA31500FECC45 /* UAEC2DeleteVPNConnectionRouteResponse.m in Sources */,
+				A337824D18B1913600FECC45 /* UAIAMListGroupsResponse.m in Sources */,
+				A337825618B1913600FECC45 /* UAIAMListUserPoliciesResponse.m in Sources */,
 				A337759818ADA30100FECC45 /* UAEC2LaunchSpecification.m in Sources */,
 				A337755B18ADA30100FECC45 /* UAEC2CustomerGatewayy.m in Sources */,
 				A337734218ADA2C500FECC45 /* UAASDescribeAdjustmentTypesRequest.m in Sources */,
@@ -4790,9 +5766,14 @@
 				A3377A7C18ADA34200FECC45 /* UASNSCreatePlatformApplicationRequest.m in Sources */,
 				A33778F018ADA31500FECC45 /* UAEC2CreateRouteResponse.m in Sources */,
 				A337799318ADA32000FECC45 /* UAELBPolicies.m in Sources */,
+				A33780AD18B1909F00FECC45 /* UAIAMVirtualMFADevice.m in Sources */,
+				A337823818B1913600FECC45 /* UAIAMDeleteSigningCertificateResponse.m in Sources */,
+				A337822D18B1913600FECC45 /* UAIAMDeleteAccessKeyResponse.m in Sources */,
 				A337779018ADA30C00FECC45 /* UAEC2RebootInstancesRequest.m in Sources */,
+				A33780A318B1909F00FECC45 /* UAIAMLoginProfile.m in Sources */,
 				A337792B18ADA31500FECC45 /* UAEC2DescribeRouteTablesResponse.m in Sources */,
 				A337774C18ADA30B00FECC45 /* UAEC2DeleteVPNConnectionRequest.m in Sources */,
+				A337824318B1913600FECC45 /* UAIAMGetRolePolicyResponse.m in Sources */,
 				A337790C18ADA31500FECC45 /* UAEC2DeleteVolumeResponse.m in Sources */,
 				A337774818ADA30B00FECC45 /* UAEC2DeleteSubnetRequest.m in Sources */,
 				A337777618ADA30C00FECC45 /* UAEC2DescribeVPCsRequest.m in Sources */,
@@ -4806,11 +5787,15 @@
 				A337792318ADA31500FECC45 /* UAEC2DescribeNetworkInterfaceAttributeResponse.m in Sources */,
 				A337778F18ADA30C00FECC45 /* UAEC2PurchaseReservedInstancesOfferingRequest.m in Sources */,
 				A337773018ADA30B00FECC45 /* UAEC2CreateSecurityGroupRequest.m in Sources */,
+				A337822418B1913600FECC45 /* UAIAMCreateAccountAliasResponse.m in Sources */,
 				A337772218ADA30B00FECC45 /* UAEC2CopySnapshotRequest.m in Sources */,
 				A33778F618ADA31500FECC45 /* UAEC2CreateTagsResponse.m in Sources */,
+				A337818518B1912800FECC45 /* UAIAMUpdateLoginProfileRequest.m in Sources */,
 				A337791B18ADA31500FECC45 /* UAEC2DescribeImagesResponse.m in Sources */,
+				A337814E18B1912800FECC45 /* UAIAMDeactivateMFADeviceRequest.m in Sources */,
 				A33778DC18ADA31500FECC45 /* UAEC2BundleInstanceResponse.m in Sources */,
 				A3377A2C18ADA32F00FECC45 /* UAELBRegisterInstancesWithLoadBalancerResponse.m in Sources */,
+				A337823918B1913600FECC45 /* UAIAMDeleteUserPolicyResponse.m in Sources */,
 				A337758A18ADA30100FECC45 /* UAEC2InstanceStateChange.m in Sources */,
 				A3377ADD18ADA34A00FECC45 /* UASNSUnsubscribeResponse.m in Sources */,
 				A337755218ADA30100FECC45 /* UAEC2BundleInstanceS3Storage.m in Sources */,
@@ -4829,6 +5814,7 @@
 				A337799518ADA32000FECC45 /* UAELBPolicyAttributeDescription.m in Sources */,
 				A33775A118ADA30100FECC45 /* UAEC2NetworkInterfaceAttachmentSpecification.m in Sources */,
 				A337755818ADA30100FECC45 /* UAEC2CreateVolumePermission.m in Sources */,
+				A337824B18B1913600FECC45 /* UAIAMListGroupPoliciesResponse.m in Sources */,
 				A33772E118ADA2B800FECC45 /* UAASBlockDeviceMapping.m in Sources */,
 				A33773A918ADA2D200FECC45 /* UAASDeleteNotificationConfigurationResponse.m in Sources */,
 				A337792D18ADA31500FECC45 /* UAEC2DescribeSnapshotAttributeResponse.m in Sources */,
@@ -4836,20 +5822,29 @@
 				A33778F418ADA31500FECC45 /* UAEC2CreateSpotDatafeedSubscriptionResponse.m in Sources */,
 				A337733918ADA2C500FECC45 /* UAASCreateLaunchConfigurationRequest.m in Sources */,
 				A33773A418ADA2D200FECC45 /* UAASCreateAutoScalingGroupResponse.m in Sources */,
+				A337817118B1912800FECC45 /* UAIAMListInstanceProfilesRequest.m in Sources */,
 				A337741C18ADA2F700FECC45 /* UACWPutMetricDataResponse.m in Sources */,
 				A337795918ADA31500FECC45 /* UAEC2RequestSpotInstancesResponse.m in Sources */,
 				A33775A818ADA30100FECC45 /* UAEC2PriceScheduleSpecification.m in Sources */,
+				A337815718B1912800FECC45 /* UAIAMDeleteRoleRequest.m in Sources */,
 				A33775B518ADA30100FECC45 /* UAEC2ReservedInstanceLimitPrice.m in Sources */,
 				A337734118ADA2C500FECC45 /* UAASDescribeAccountLimitsRequest.m in Sources */,
+				A337815618B1912800FECC45 /* UAIAMDeleteRolePolicyRequest.m in Sources */,
+				A337824818B1913600FECC45 /* UAIAMGetUserResponse.m in Sources */,
 				A337799218ADA32000FECC45 /* UAELBLoadBalancerDescription.m in Sources */,
 				A33779CD18ADA32800FECC45 /* UAELBAttachLoadBalancerToSubnetsRequest.m in Sources */,
+				A337817C18B1912800FECC45 /* UAIAMPutRolePolicyRequest.m in Sources */,
 				A337757318ADA30100FECC45 /* UAEC2GroupIdentifier.m in Sources */,
 				A3377AD818ADA34A00FECC45 /* UASNSSetEndpointAttributesResponse.m in Sources */,
 				A337791118ADA31500FECC45 /* UAEC2DeregisterImageResponse.m in Sources */,
 				A33775CF18ADA30100FECC45 /* UAEC2TargetConfiguration.m in Sources */,
+				A337823018B1913600FECC45 /* UAIAMDeleteGroupPolicyResponse.m in Sources */,
+				A337822718B1913600FECC45 /* UAIAMCreateLoginProfileResponse.m in Sources */,
 				A33778E818ADA31500FECC45 /* UAEC2CreateInstanceExportTaskResponse.m in Sources */,
 				A337777C18ADA30C00FECC45 /* UAEC2DetachVPNGatewayRequest.m in Sources */,
 				A33775A218ADA30100FECC45 /* UAEC2NetworkInterfaceSpecification.m in Sources */,
+				A337816018B1912800FECC45 /* UAIAMGetAccountSummaryRequest.m in Sources */,
+				A33780A718B1909F00FECC45 /* UAIAMSAMLProviderList.m in Sources */,
 				A337774618ADA30B00FECC45 /* UAEC2DeleteSnapshotRequest.m in Sources */,
 				A337794618ADA31500FECC45 /* UAEC2ImportKeyPairResponse.m in Sources */,
 				A33775AA18ADA30100FECC45 /* UAEC2PrivateIPAddress.m in Sources */,
@@ -4870,10 +5865,14 @@
 				A33778E918ADA31500FECC45 /* UAEC2CreateInternetGatewayResponse.m in Sources */,
 				A3377A9218ADA34200FECC45 /* UASNSUnsubscribeRequest.m in Sources */,
 				A337754A18ADA30100FECC45 /* UAEC2AccountAttribute.m in Sources */,
+				A337818318B1912800FECC45 /* UAIAMUpdateAssumeRolePolicyRequest.m in Sources */,
 				A33778EF18ADA31500FECC45 /* UAEC2CreateReservedInstancesListingResponse.m in Sources */,
+				A33780A018B1909F00FECC45 /* UAIAMCertificate.m in Sources */,
 				A33778E718ADA31500FECC45 /* UAEC2CreateImageResponse.m in Sources */,
+				A337822318B1913600FECC45 /* UAIAMCreateAccessKeyResponse.m in Sources */,
 				A30FD21418AD96D000CA52F7 /* UAAWSServiceHealthRequest.m in Sources */,
 				A33778E318ADA31500FECC45 /* UAEC2CopyImageResponse.m in Sources */,
+				A337824018B1913600FECC45 /* UAIAMGetGroupResponse.m in Sources */,
 				A3377AD918ADA34A00FECC45 /* UASNSSetPlatformApplicationAttributesResponse.m in Sources */,
 				A337771518ADA30B00FECC45 /* UAEC2AttachNetworkInterfaceRequest.m in Sources */,
 				A33773B318ADA2D200FECC45 /* UAASDescribeMetricCollectionTypesResponse.m in Sources */,
@@ -4900,10 +5899,13 @@
 				A337755118ADA30100FECC45 /* UAEC2BlockDeviceMapping.m in Sources */,
 				A3377A2E18ADA32F00FECC45 /* UAELBSetLoadBalancerPoliciesForBackendServerResponse.m in Sources */,
 				A337779118ADA30C00FECC45 /* UAEC2RegisterImageRequest.m in Sources */,
+				A337815F18B1912800FECC45 /* UAIAMGetAccountPasswordPolicyRequest.m in Sources */,
 				A337771D18ADA30B00FECC45 /* UAEC2CancelExportTaskRequest.m in Sources */,
 				A3E01C2C18AD93E900C3B7DB /* main.m in Sources */,
 				A33779CC18ADA32800FECC45 /* UAELBApplySecurityGroupsToLoadBalancerRequest.m in Sources */,
 				A337793118ADA31500FECC45 /* UAEC2DescribeSpotPriceHistoryResponse.m in Sources */,
+				A337826218B1913600FECC45 /* UAIAMUpdateGroupResponse.m in Sources */,
+				A337825018B1913600FECC45 /* UAIAMListMFADevicesResponse.m in Sources */,
 				A337759C18ADA30100FECC45 /* UAEC2NetworkACL.m in Sources */,
 				A337792C18ADA31500FECC45 /* UAEC2DescribeSecurityGroupsResponse.m in Sources */,
 				A33778DA18ADA31500FECC45 /* UAEC2AuthorizeSecurityGroupEgressResponse.m in Sources */,
@@ -4914,6 +5916,7 @@
 				A33775D418ADA30100FECC45 /* UAEC2VolumeAttachment.m in Sources */,
 				A337774118ADA30B00FECC45 /* UAEC2DeleteNetworkInterfaceRequest.m in Sources */,
 				A337741718ADA2F700FECC45 /* UACWDisableAlarmActionsResponse.m in Sources */,
+				A337818918B1912800FECC45 /* UAIAMUpdateUserRequest.m in Sources */,
 				A337779818ADA30C00FECC45 /* UAEC2RequestSpotInstancesRequest.m in Sources */,
 				A337776418ADA30C00FECC45 /* UAEC2DescribeRegionsRequest.m in Sources */,
 				A33775B018ADA30100FECC45 /* UAEC2RamdiskID.m in Sources */,
@@ -4930,18 +5933,23 @@
 				A33775B318ADA30100FECC45 /* UAEC2Reservation.m in Sources */,
 				A33772E418ADA2B800FECC45 /* UAASFilter.m in Sources */,
 				A337772918ADA30B00FECC45 /* UAEC2CreateNetworkACLEntryRequest.m in Sources */,
+				A337816218B1912800FECC45 /* UAIAMGetGroupRequest.m in Sources */,
 				A33772EC18ADA2B800FECC45 /* UAASScheduledUpdateGroupAction.m in Sources */,
 				A33773FB18ADA2EF00FECC45 /* UACWPutMetricDataRequest.m in Sources */,
 				A337777E18ADA30C00FECC45 /* UAEC2DisassociateAddressRequest.m in Sources */,
 				A33778E218ADA31500FECC45 /* UAEC2ConfirmProductInstanceResponse.m in Sources */,
 				A33773AC18ADA2D200FECC45 /* UAASDeleteTagsResponse.m in Sources */,
 				A30FD21F18AD96D000CA52F7 /* UACWRequest.m in Sources */,
+				A337825518B1913600FECC45 /* UAIAMListSigningCertificatesResponse.m in Sources */,
 				A33775D818ADA30100FECC45 /* UAEC2VolumeStatusDetail.m in Sources */,
+				A337815218B1912800FECC45 /* UAIAMDeleteGroupPolicyRequest.m in Sources */,
 				A337773518ADA30B00FECC45 /* UAEC2CreateVolumeRequest.m in Sources */,
 				A3377A2818ADA32F00FECC45 /* UAELBDetachLoadBalancerFromSubnetsResponse.m in Sources */,
 				A33778FB18ADA31500FECC45 /* UAEC2CreateVPNGatewayResponse.m in Sources */,
 				A33778EA18ADA31500FECC45 /* UAEC2CreateKeyPairResponse.m in Sources */,
 				A337795B18ADA31500FECC45 /* UAEC2ResetImageAttributeResponse.m in Sources */,
+				A337822E18B1913600FECC45 /* UAIAMDeleteAccountAliasResponse.m in Sources */,
+				A337822118B1913600FECC45 /* UAIAMAddUserToGroupResponse.m in Sources */,
 				A337792E18ADA31500FECC45 /* UAEC2DescribeSnapshotsResponse.m in Sources */,
 				A337795518ADA31500FECC45 /* UAEC2ReplaceNetworkACLEntryResponse.m in Sources */,
 				A33772DD18ADA2B800FECC45 /* UAASAdjustmentType.m in Sources */,
@@ -4952,20 +5960,27 @@
 				A337777218ADA30C00FECC45 /* UAEC2DescribeVolumeAttributeRequest.m in Sources */,
 				A337735418ADA2C500FECC45 /* UAASPutScheduledUpdateGroupActionRequest.m in Sources */,
 				A33775A618ADA30100FECC45 /* UAEC2PortRange.m in Sources */,
+				A337823E18B1913600FECC45 /* UAIAMGetAccountSummaryResponse.m in Sources */,
 				A337779C18ADA30C00FECC45 /* UAEC2ResetSnapshotAttributeRequest.m in Sources */,
+				A337825F18B1913600FECC45 /* UAIAMUpdateAccessKeyResponse.m in Sources */,
+				A337817F18B1912800FECC45 /* UAIAMRemoveUserFromGroupRequest.m in Sources */,
 				A33772DC18ADA2B800FECC45 /* UAASActivity.m in Sources */,
 				A33778FA18ADA31500FECC45 /* UAEC2CreateVPNConnectionRouteResponse.m in Sources */,
 				A3377A2D18ADA32F00FECC45 /* UAELBSetLoadBalancerListenerSSLCertificateResponse.m in Sources */,
+				A33780A618B1909F00FECC45 /* UAIAMRole.m in Sources */,
 				A337733F18ADA2C500FECC45 /* UAASDeleteScheduledActionRequest.m in Sources */,
+				A337826418B1913600FECC45 /* UAIAMUpdateSAMLProviderResponse.m in Sources */,
 				A33778D718ADA31500FECC45 /* UAEC2AttachNetworkInterfaceResponse.m in Sources */,
 				A337796118ADA31500FECC45 /* UAEC2RunInstancesResponse.m in Sources */,
 				A337790318ADA31500FECC45 /* UAEC2DeleteNetworkInterfaceResponse.m in Sources */,
 				A33772E318ADA2B800FECC45 /* UAASEnabledMetric.m in Sources */,
 				A3377A4418ADA33A00FECC45 /* UASNSSubscription.m in Sources */,
 				A337773218ADA30B00FECC45 /* UAEC2CreateSpotDatafeedSubscriptionRequest.m in Sources */,
+				A337807D18B18D2700FECC45 /* UAIAMError.m in Sources */,
 				A30FD22718AD96D000CA52F7 /* MTLQueryAdapter+UAAWSPayloadSerialisation.m in Sources */,
 				A30FD22C18AD96D000CA52F7 /* UASNSError.m in Sources */,
 				A30FD21318AD96D000CA52F7 /* UAAWSServiceHealthService.m in Sources */,
+				A337816118B1912800FECC45 /* UAIAMGetGroupPolicyRequest.m in Sources */,
 				A337790718ADA31500FECC45 /* UAEC2DeleteSecurityGroupResponse.m in Sources */,
 				A33778F318ADA31500FECC45 /* UAEC2CreateSnapshotResponse.m in Sources */,
 				A33779E318ADA32800FECC45 /* UAELBSetLoadBalancerPoliciesForBackendServerRequest.m in Sources */,
@@ -4975,16 +5990,21 @@
 				A30FD22F18AD96D000CA52F7 /* UASNSResponse.m in Sources */,
 				A337773318ADA30B00FECC45 /* UAEC2CreateSubnetRequest.m in Sources */,
 				A30FD22318AD96D000CA52F7 /* UAELBRequest.m in Sources */,
+				A337822218B1913600FECC45 /* UAIAMChangePasswordResponse.m in Sources */,
 				A337741918ADA2F700FECC45 /* UACWGetMetricStatisticsResponse.m in Sources */,
 				A337776C18ADA30C00FECC45 /* UAEC2DescribeSnapshotsRequest.m in Sources */,
+				A337818018B1912800FECC45 /* UAIAMResyncMFADeviceRequest.m in Sources */,
 				A33775B118ADA30100FECC45 /* UAEC2RecurringCharge.m in Sources */,
 				A30FD22E18AD96D000CA52F7 /* UASNSRequest.m in Sources */,
+				A337815A18B1912800FECC45 /* UAIAMDeleteSigningCertificateRequest.m in Sources */,
 				A337794E18ADA31500FECC45 /* UAEC2ModifyVPCAttributeResponse.m in Sources */,
 				A337741318ADA2F700FECC45 /* UACWDeleteAlarmsResponse.m in Sources */,
+				A337814C18B1912800FECC45 /* UAIAMCreateUserRequest.m in Sources */,
 				A337799818ADA32000FECC45 /* UAELBPolicyTypeDescription.m in Sources */,
 				A337772018ADA30B00FECC45 /* UAEC2ConfirmProductInstanceRequest.m in Sources */,
 				A33775D618ADA30100FECC45 /* UAEC2VolumeStatus.m in Sources */,
 				A337755018ADA30100FECC45 /* UAEC2AvailabilityZoneMessage.m in Sources */,
+				A337818818B1912800FECC45 /* UAIAMUpdateSigningCertificateRequest.m in Sources */,
 				A30FD21018AD96D000CA52F7 /* UAAWSServiceHealthError.m in Sources */,
 				A337793618ADA31500FECC45 /* UAEC2DescribeVolumeStatusResponse.m in Sources */,
 				A337774D18ADA30B00FECC45 /* UAEC2DeleteVPNConnectionRouteRequest.m in Sources */,
@@ -4995,13 +6015,18 @@
 				A337775518ADA30C00FECC45 /* UAEC2DescribeCustomerGatewaysRequest.m in Sources */,
 				A33775B418ADA30100FECC45 /* UAEC2ReservedInstance.m in Sources */,
 				A33779DA18ADA32800FECC45 /* UAELBDescribeLoadBalancerPoliciesRequest.m in Sources */,
+				A337822018B1913600FECC45 /* UAIAMAddRoleToInstanceProfileResponse.m in Sources */,
 				A337794818ADA31500FECC45 /* UAEC2ModifyImageAttributeResponse.m in Sources */,
 				A3377A4518ADA33A00FECC45 /* UASNSSubscriptionAttributes.m in Sources */,
 				A337759718ADA30100FECC45 /* UAEC2LaunchPermissionModifications.m in Sources */,
+				A337824518B1913600FECC45 /* UAIAMGetSAMLProviderResponse.m in Sources */,
+				A337825718B1913600FECC45 /* UAIAMListUsersResponse.m in Sources */,
 				A30FD21E18AD96D000CA52F7 /* UACWModel.m in Sources */,
 				A337799918ADA32000FECC45 /* UAELBSourceSecurityGroup.m in Sources */,
 				A337796518ADA31500FECC45 /* UAEC2UnassignPrivateIPAddressesResponse.m in Sources */,
 				A33778F818ADA31500FECC45 /* UAEC2CreateVPCResponse.m in Sources */,
+				A33780A218B1909F00FECC45 /* UAIAMInstanceProfile.m in Sources */,
+				A337815018B1912800FECC45 /* UAIAMDeleteAccountAliasRequest.m in Sources */,
 				A33772B318ADA0F900FECC45 /* UAEC2Model.m in Sources */,
 				A33775C618ADA30100FECC45 /* UAEC2SpotPlacement.m in Sources */,
 				A337741418ADA2F700FECC45 /* UACWDescribeAlarmHistoryResponse.m in Sources */,
@@ -5018,11 +6043,13 @@
 				A337734C18ADA2C500FECC45 /* UAASDescribeScheduledActionsRequest.m in Sources */,
 				A33773B218ADA2D200FECC45 /* UAASDescribeLaunchConfigurationsResponse.m in Sources */,
 				A337757B18ADA30100FECC45 /* UAEC2ImportVolumeTaskDetails.m in Sources */,
+				A337817318B1912800FECC45 /* UAIAMListRolePoliciesRequest.m in Sources */,
 				A337790A18ADA31500FECC45 /* UAEC2DeleteSubnetResponse.m in Sources */,
 				A337795E18ADA31500FECC45 /* UAEC2ResetSnapshotAttributeResponse.m in Sources */,
 				A33775CA18ADA30100FECC45 /* UAEC2Status.m in Sources */,
 				A337758118ADA30100FECC45 /* UAEC2InstanceInitiatedShutdownBehavior.m in Sources */,
 				A337775118ADA30B00FECC45 /* UAEC2DescribeAddressesRequest.m in Sources */,
+				A337814A18B1912800FECC45 /* UAIAMCreateRoleRequest.m in Sources */,
 				A33772E718ADA2B800FECC45 /* UAASMetricCollectionType.m in Sources */,
 				A3377A8F18ADA34200FECC45 /* UASNSSetSubscriptionAttributesRequest.m in Sources */,
 				A33772DE18ADA2B800FECC45 /* UAASAlarm.m in Sources */,
@@ -5050,6 +6077,8 @@
 				A33779DC18ADA32800FECC45 /* UAELBDescribeLoadBalancersRequest.m in Sources */,
 				A337779D18ADA30C00FECC45 /* UAEC2RevokeSecurityGroupEgressRequest.m in Sources */,
 				A337733E18ADA2C500FECC45 /* UAASDeletePolicyRequest.m in Sources */,
+				A337817418B1912800FECC45 /* UAIAMListRolesRequest.m in Sources */,
+				A337823F18B1913600FECC45 /* UAIAMGetGroupPolicyResponse.m in Sources */,
 				A33772E918ADA2B800FECC45 /* UAASNotificationConfiguration.m in Sources */,
 				A337755C18ADA30100FECC45 /* UAEC2DescriptionValue.m in Sources */,
 				A337778E18ADA30C00FECC45 /* UAEC2MonitorInstancesRequest.m in Sources */,
@@ -5058,31 +6087,44 @@
 				A33778EE18ADA31500FECC45 /* UAEC2CreatePlacementGroupResponse.m in Sources */,
 				A33779D318ADA32800FECC45 /* UAELBCreateLoadBalancerRequest.m in Sources */,
 				A337773618ADA30B00FECC45 /* UAEC2CreateVPCRequest.m in Sources */,
+				A337826818B1913600FECC45 /* UAIAMUploadServerCertificateResponse.m in Sources */,
 				A337794918ADA31500FECC45 /* UAEC2ModifyInstanceAttributeResponse.m in Sources */,
+				A337817918B1912800FECC45 /* UAIAMListUsersRequest.m in Sources */,
+				A337823718B1913600FECC45 /* UAIAMDeleteServerCertificateResponse.m in Sources */,
 				A3377A4018ADA33A00FECC45 /* UASNSEndpoint.m in Sources */,
 				A33777A318ADA30C00FECC45 /* UAEC2UnassignPrivateIPAddressesRequest.m in Sources */,
 				A33773BA18ADA2D200FECC45 /* UAASDescribeTerminationPolicyTypesResponse.m in Sources */,
 				A337759A18ADA30100FECC45 /* UAEC2LicenseCapacity.m in Sources */,
 				A337772818ADA30B00FECC45 /* UAEC2CreateKeyPairRequest.m in Sources */,
+				A337816818B1912800FECC45 /* UAIAMGetServerCertificateRequest.m in Sources */,
 				A337755518ADA30100FECC45 /* UAEC2BundleTaskError.m in Sources */,
 				A3377A2A18ADA32F00FECC45 /* UAELBEnableAvailabilityZonesForLoadBalancerResponse.m in Sources */,
+				A337825818B1913600FECC45 /* UAIAMListVirtualMFADevicesResponse.m in Sources */,
 				A337794B18ADA31500FECC45 /* UAEC2ModifyReservedInstancesResponse.m in Sources */,
 				A337776918ADA30C00FECC45 /* UAEC2DescribeRouteTablesRequest.m in Sources */,
+				A337826518B1913600FECC45 /* UAIAMUpdateServerCertificateResponse.m in Sources */,
 				A33775D018ADA30100FECC45 /* UAEC2UserData.m in Sources */,
+				A337817B18B1912800FECC45 /* UAIAMPutGroupPolicyRequest.m in Sources */,
 				A337754D18ADA30100FECC45 /* UAEC2Attachment.m in Sources */,
+				A337826918B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.m in Sources */,
 				A337798A18ADA32000FECC45 /* UAELBBackendServerDescription.m in Sources */,
 				A337741D18ADA2F700FECC45 /* UACWSetAlarmStateResponse.m in Sources */,
 				A337794518ADA31500FECC45 /* UAEC2ImportInstanceResponse.m in Sources */,
+				A337817618B1912800FECC45 /* UAIAMListServerCertificatesRequest.m in Sources */,
 				A337754B18ADA30100FECC45 /* UAEC2Address.m in Sources */,
 				A337777818ADA30C00FECC45 /* UAEC2DescribeVPNGatewaysRequest.m in Sources */,
 				A337793918ADA31500FECC45 /* UAEC2DescribeVPNConnectionsResponse.m in Sources */,
+				A337826F18B195A300FECC45 /* UAIAMSigningCertificate.m in Sources */,
+				A33780AA18B1909F00FECC45 /* UAIAMServerCertificateMetadataList.m in Sources */,
 				A3377AD418ADA34A00FECC45 /* UASNSListSubscriptionsResponse.m in Sources */,
 				A33775AE18ADA30100FECC45 /* UAEC2PropagatingVGW.m in Sources */,
 				A337757118ADA30100FECC45 /* UAEC2Fault.m in Sources */,
+				A337816E18B1912800FECC45 /* UAIAMListGroupsForUserRequest.m in Sources */,
 				A33775B718ADA30100FECC45 /* UAEC2ReservedInstancesID.m in Sources */,
 				A337774018ADA30B00FECC45 /* UAEC2DeleteNetworkACLRequest.m in Sources */,
 				A33772B218ADA0F900FECC45 /* UAEC2Error.m in Sources */,
 				A30FD21118AD96D000CA52F7 /* UAAWSServiceHealthModel.m in Sources */,
+				A337824618B1913600FECC45 /* UAIAMGetServerCertificateResponse.m in Sources */,
 				A337756118ADA30100FECC45 /* UAEC2DiskImage.m in Sources */,
 				A337735918ADA2C500FECC45 /* UAASTerminateInstanceInAutoScalingGroupRequest.m in Sources */,
 				A337795618ADA31500FECC45 /* UAEC2ReplaceRouteResponse.m in Sources */,
@@ -5097,15 +6139,21 @@
 				A337793C18ADA31500FECC45 /* UAEC2DetachNetworkInterfaceResponse.m in Sources */,
 				A337793718ADA31500FECC45 /* UAEC2DescribeVPCAttributeResponse.m in Sources */,
 				A337734B18ADA2C500FECC45 /* UAASDescribeScalingProcessTypesRequest.m in Sources */,
+				A337817018B1912800FECC45 /* UAIAMListInstanceProfilesForRoleRequest.m in Sources */,
+				A337815318B1912800FECC45 /* UAIAMDeleteGroupRequest.m in Sources */,
 				A337773F18ADA30B00FECC45 /* UAEC2DeleteNetworkACLEntryRequest.m in Sources */,
 				A33775C118ADA30100FECC45 /* UAEC2SourceDestCheck.m in Sources */,
 				A33773B118ADA2D200FECC45 /* UAASDescribeAutoScalingNotificationTypesResponse.m in Sources */,
 				A337778618ADA30C00FECC45 /* UAEC2ImportVolumeRequest.m in Sources */,
 				A337775A18ADA30C00FECC45 /* UAEC2DescribeInstanceAttributeRequest.m in Sources */,
+				A337823518B1913600FECC45 /* UAIAMDeleteRoleResponse.m in Sources */,
 				A33773F218ADA2EF00FECC45 /* UACWDeleteAlarmsRequest.m in Sources */,
 				A33779D518ADA32800FECC45 /* UAELBDeleteLoadBalancerPolicyRequest.m in Sources */,
 				A3377A1E18ADA32F00FECC45 /* UAELBCreateLoadBalancerResponse.m in Sources */,
+				A337816718B1912800FECC45 /* UAIAMGetSAMLProviderRequest.m in Sources */,
 				A3377AD118ADA34A00FECC45 /* UASNSListEndpointsByPlatformApplicationResponse.m in Sources */,
+				A337818118B1912800FECC45 /* UAIAMUpdateAccessKeyRequest.m in Sources */,
+				A337822918B1913600FECC45 /* UAIAMCreateSAMLProviderResponse.m in Sources */,
 				A337733B18ADA2C500FECC45 /* UAASDeleteAutoScalingGroupRequest.m in Sources */,
 				A337772318ADA30B00FECC45 /* UAEC2CreateCustomerGatewayRequest.m in Sources */,
 				A337770F18ADA30B00FECC45 /* UAEC2AllocateAddressRequest.m in Sources */,
@@ -5114,6 +6162,7 @@
 				A3377A2718ADA32F00FECC45 /* UAELBDescribeLoadBalancersResponse.m in Sources */,
 				A33779E018ADA32800FECC45 /* UAELBModifyLoadBalancerAttributesRequest.m in Sources */,
 				A337756318ADA30100FECC45 /* UAEC2DiskImageDetail.m in Sources */,
+				A337816D18B1912800FECC45 /* UAIAMListGroupPoliciesRequest.m in Sources */,
 				A337759618ADA30100FECC45 /* UAEC2LaunchPermission.m in Sources */,
 				A337777418ADA30C00FECC45 /* UAEC2DescribeVolumeStatusRequest.m in Sources */,
 				A33775AC18ADA30100FECC45 /* UAEC2PrivateIPAddressSpecifiction.m in Sources */,
@@ -5121,6 +6170,7 @@
 				A337792818ADA31500FECC45 /* UAEC2DescribeReservedInstancesModificationsResponse.m in Sources */,
 				A337778118ADA30C00FECC45 /* UAEC2EnableVolumeIORequest.m in Sources */,
 				A337759318ADA30100FECC45 /* UAEC2Kernel.m in Sources */,
+				A337825218B1913600FECC45 /* UAIAMListRolesResponse.m in Sources */,
 				A33773F318ADA2EF00FECC45 /* UACWDescribeAlarmHistoryRequest.m in Sources */,
 				A337758318ADA30100FECC45 /* UAEC2InstanceLicenseSpecification.m in Sources */,
 				A33775DD18ADA30100FECC45 /* UAEC2VPNConnection.m in Sources */,
