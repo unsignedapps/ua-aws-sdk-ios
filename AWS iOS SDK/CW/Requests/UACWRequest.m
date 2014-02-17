@@ -53,7 +53,7 @@
 
 - (UAAWSSignatureVersion)UA_SignatureVersion
 {
-    return UAAWSSignatureVersion2;
+    return UAAWSSignatureVersion4;
 }
 
 - (NSString *)UA_APIVersion

@@ -10,10 +10,10 @@
 
 @interface NSData (UAHMAC)
 
-- (NSData *)hmacSHA1WithKey:(NSString *)key;
-- (NSData *)hmacSHA256WithKey:(NSString *)key;
-
-- (NSData *)sha256;
-- (NSString *)hexString;
+- (NSData *)UA_hmacSHA1WithKey:(NSString *)key;
+- (NSData *)UA_hmacSHA256WithKey:(NSString *)key;
+- (NSData *)UA_hmacSHA256WithDataKey:(NSData *)key;
+- (NSData *)UA_sha256;
+- (NSString *)UA_hexString;
 
 @end

@@ -13,7 +13,7 @@
 
 @implementation NSData (UAHMAC)
 
-- (NSData *)hmacSHA1WithKey:(NSString *)key
+- (NSData *)UA_hmacSHA1WithKey:(NSString *)key
 {
     CCHmacContext context;
     const char    *keyCString = [key cStringUsingEncoding:NSASCIIStringEncoding];
@@ -29,7 +29,7 @@
     return [NSData dataWithBytes:digestRaw length:digestLength];
 }
 
-- (NSData *)hmacSHA256WithKey:(NSString *)key
+- (NSData *)UA_hmacSHA256WithKey:(NSString *)key
 {
     CCHmacContext context;
     const char    *keyCString = [key cStringUsingEncoding:NSASCIIStringEncoding];
@@ -46,7 +46,21 @@
     
 }
 
-- (NSData *)sha256
+- (NSData *)UA_hmacSHA256WithDataKey:(NSData *)key
+{
+    CCHmacContext context;
+    CCHmacInit(&context, kCCHmacAlgSHA256, [key bytes], [key length]);
+    CCHmacUpdate(&context, [self bytes], [self length]);
+    
+    unsigned char digestRaw[CC_SHA256_DIGEST_LENGTH];
+    NSInteger     digestLength = CC_SHA256_DIGEST_LENGTH;
+    
+    CCHmacFinal(&context, digestRaw);
+    
+    return [NSData dataWithBytes:digestRaw length:digestLength];
+    
+}
+- (NSData *)UA_sha256
 {
     const void *cString = [self bytes];
     unsigned char result[CC_SHA256_DIGEST_LENGTH];
@@ -56,7 +70,7 @@
     return [[NSData alloc] initWithBytes:result length:CC_SHA256_DIGEST_LENGTH];
 }
 
-- (NSString *)hexString
+- (NSString *)UA_hexString
 {
     const unsigned char *dataBuffer = (const unsigned char *)[self bytes];
     

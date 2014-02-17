@@ -12,13 +12,15 @@
 #import "NSData+UAHMAC.h"
 #import "NSString+DSURLEscape.h"
 #import "NSString+UAAWSRegions.h"
+#import "NSString+UAStringEncoding.h"
+#import "NSURL+UAAWSServiceName.h"
 
 @interface UAAWSRequestSigning ()
 
 + (NSString *)version2AuthenticatedRequestBodyForBody:(NSString *)body ofRequest:(UAAWSRequest<UAAWSRequest> *)request withCredentials:(UAAWSCredentials *)credentials;
 + (void)signURLRequestUsingV2:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request withCredentials:(UAAWSCredentials *)credentials;
 
-+ (void)signURLRequestUsingV4:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request inRegion:(UAAWSRegion)region withCredentials:(UAAWSCredentials *)credentials;
++ (void)signURLRequestUsingV4:(NSMutableURLRequest *)urlRequest atDate:(NSDate *)requestDate inRegion:(UAAWSRegion)region withCredentials:(UAAWSCredentials *)credentials;
 
 @end
 
@@ -34,7 +36,7 @@
             return [self signURLRequestUsingV2:urlRequest ofRequest:request withCredentials:credentials];
             
         case UAAWSSignatureVersion4:
-            return [self signURLRequestUsingV4:urlRequest ofRequest:request inRegion:region withCredentials:credentials];
+            return [self signURLRequestUsingV4:urlRequest atDate:[NSDate date] inRegion:region withCredentials:credentials];
             
         case UAAWSSignatureNotRequired:
             return;
@@ -69,7 +71,7 @@
                          urlRequest.URL.path,
                          parameters];
     
-    NSString *signature = [[[content dataUsingEncoding:NSUTF8StringEncoding] hmacSHA256WithKey:credentials.secretKey] base64EncodedStringWithOptions:kNilOptions];
+    NSString *signature = [[[content UA_UTF8Data] UA_hmacSHA256WithKey:credentials.secretKey] base64EncodedStringWithOptions:kNilOptions];
     
     // now we mix-in the signature value to the other parameters, and set it as the body again
     NSString *signedParameters = [parameters stringByAppendingFormat:@"&Signature=%@", [signature stringByURLEscaping]];
@@ -91,21 +93,22 @@
 
 #pragma mark - Version 4 Signatures
 
-+ (void)signURLRequestUsingV4:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request inRegion:(UAAWSRegion)region withCredentials:(UAAWSCredentials *)credentials
++ (void)signURLRequestUsingV4:(NSMutableURLRequest *)urlRequest atDate:(NSDate *)requestDate inRegion:(UAAWSRegion)region withCredentials:(UAAWSCredentials *)credentials
 {
     // Set the X-Amz-Date header
-    NSDate *now = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyyMMdd'T'HHmmss'Z'"];
-    NSString *xAmzDate = [dateFormatter stringFromDate:now];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+
+    NSString *xAmzDate = [dateFormatter stringFromDate:requestDate];
     [urlRequest setValue:xAmzDate forHTTPHeaderField:@"X-Amz-Date"];
     
     // Make sure we manually set the host header
-    [urlRequest setValue:urlRequest.URL.host forKey:@"Host"];
+    [urlRequest setValue:urlRequest.URL.host forHTTPHeaderField:@"Host"];
     
     // make a canonical copy of the headers for signing
     NSDictionary *headers = [UAAWSRequestSigning canonicalHeadersWithHeaders:urlRequest.allHTTPHeaderFields];
-    NSString *body = [[NSString alloc] initWithData:urlRequest.HTTPBody encoding:NSUTF8StringEncoding];
     
     // create the canonical request for signing
     NSString *canonicalRequest = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n%@\n%@",
@@ -114,7 +117,7 @@
                                   (urlRequest.URL.query ?: @""),
                                   [UAAWSRequestSigning canonicalHeaderStringWithHeaders:headers],
                                   [UAAWSRequestSigning signedHeaderStringForCanonicalHeaders:headers],
-                                  [[urlRequest.HTTPBody sha256] hexString]];
+                                  [[urlRequest.HTTPBody UA_sha256] UA_hexString]];
     
     // Now we have to sign all
     
@@ -122,20 +125,37 @@
     
     // reuse the date formatter to set this one
     [dateFormatter setDateFormat:@"yyyyMMdd"];
+    NSString *dateString = [dateFormatter stringFromDate:requestDate];
 
     // Scope
     NSString *scope = [NSString stringWithFormat:@"%@/%@/%@/aws4_request",
-                       [dateFormatter stringFromDate:now],
+                       dateString,
                        [NSString UA_regionStringForRegionValue:region],
-                       [urlRequest.URL.host substringToIndex:([urlRequest.URL.host rangeOfString:@"."].location)]];
+                       [urlRequest.URL UA_AWSServiceName]];
     
     // The string that gets signed
     NSString *signme = [NSString stringWithFormat:@"AWS4-HMAC-SHA256\n%@\n%@\n%@",
                         xAmzDate,
                         scope,
-                        [[[canonicalRequest dataUsingEncoding:NSUTF8StringEncoding] sha256] hexString]];
+                        [[[canonicalRequest UA_UTF8Data] UA_sha256] UA_hexString]];
     
+    // We run the key through several HMAC's before arriving at the final one
+    NSData *key = [[@"AWS4" stringByAppendingString:credentials.secretKey] UA_UTF8Data];
+    key = [[dateString UA_UTF8Data] UA_hmacSHA256WithDataKey:key];
+    key = [[[NSString UA_regionStringForRegionValue:region] UA_UTF8Data] UA_hmacSHA256WithDataKey:key];
+    key = [[[urlRequest.URL UA_AWSServiceName] UA_UTF8Data] UA_hmacSHA256WithDataKey:key];
+    key = [[@"aws4_request" UA_UTF8Data] UA_hmacSHA256WithDataKey:key];
     
+    // now that we have the derived key, finally sign the payload string
+    NSData *signature = [[signme UA_UTF8Data] UA_hmacSHA256WithDataKey:key];
+    
+    // Finally, the Authorization header!
+    NSString *authorization = [NSString stringWithFormat:@"AWS4-HMAC-SHA256 Credential=%@/%@, SignedHeaders=%@, Signature=%@",
+                               credentials.accessKey,
+                               scope,
+                               [UAAWSRequestSigning signedHeaderStringForCanonicalHeaders:headers],
+                               [signature UA_hexString]];
+    [urlRequest setValue:authorization forHTTPHeaderField:@"Authorization"];
 }
 
 + (NSDictionary *)canonicalHeadersWithHeaders:(NSDictionary *)headers
@@ -158,7 +178,7 @@
     for (NSString *header in [[headers allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)])
         [array addObject:[NSString stringWithFormat:@"%@:%@", header, [headers objectForKey:header]]];
 
-    return [array componentsJoinedByString:@"\n"];
+    return [[array componentsJoinedByString:@"\n"] stringByAppendingString:@"\n"];
 }
                                   
 

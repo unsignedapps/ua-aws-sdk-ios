@@ -1,5 +1,5 @@
 //
-//  UAEC2.h"
+//  UAEC2.h
 //  AWS iOS SDK
 //
 //  Created by Rob Amos on 05/02/2014.
@@ -8,7 +8,6 @@
 // Models, General config and Responses will be pulled in as needed.
 
 // Requests
-#import "UAEC2ActivateLicenseRequest.h"
 #import "UAEC2AllocateAddressRequest.h"
 #import "UAEC2AssignPrivateIPAddressesRequest.h"
 #import "UAEC2AssociateAddressRequest.h"
@@ -52,7 +51,6 @@
 #import "UAEC2CreateVPNConnectionRouteRequest.h"
 #import "UAEC2CreateVPNGatewayRequest.h"
 #import "UAEC2CreateVolumeRequest.h"
-#import "UAEC2DeactivateLicenseRequest.h"
 #import "UAEC2DeleteCustomerGatewayRequest.h"
 #import "UAEC2DeleteDHCPOptionsRequest.h"
 #import "UAEC2DeleteInternetGatewayRequest.h"
@@ -89,7 +87,6 @@
 #import "UAEC2DescribeInstancesRequest.h"
 #import "UAEC2DescribeInternetGatewaysRequest.h"
 #import "UAEC2DescribeKeyPairsRequest.h"
-#import "UAEC2DescribeLicensesRequest.h"
 #import "UAEC2DescribeNetworkACLsRequest.h"
 #import "UAEC2DescribeNetworkInterfaceAttributeRequest.h"
 #import "UAEC2DescribeNetworkInterfacesRequest.h"
@@ -315,7 +312,6 @@
 #import "UAEC2VPNStaticRoute.h"
 
 // Responses
-#import "UAEC2ActivateLicenseResponse.h"
 #import "UAEC2AllocateAddressResponse.h"
 #import "UAEC2AssociateAddressResponse.h"
 #import "UAEC2AssociateDHCPOptionsResponse.h"
@@ -358,7 +354,6 @@
 #import "UAEC2CreateVPNConnectionResponse.h"
 #import "UAEC2CreateVPNConnectionRouteResponse.h"
 #import "UAEC2CreateVPNGatewayResponse.h"
-#import "UAEC2DeactivateLicenseResponse.h"
 #import "UAEC2DeleteCustomerGatewayResponse.h"
 #import "UAEC2DeleteDHCPOptionsResponse.h"
 #import "UAEC2DeleteInternetGatewayResponse.h"
@@ -395,7 +390,6 @@
 #import "UAEC2DescribeInstanceStatusResponse.h"
 #import "UAEC2DescribeInternetGatewaysResponse.h"
 #import "UAEC2DescribeKeyPairsResponse.h"
-#import "UAEC2DescribeLicensesResponse.h"
 #import "UAEC2DescribeNetworkACLsResponse.h"
 #import "UAEC2DescribeNetworkInterfaceAttributeResponse.h"
 #import "UAEC2DescribeNetworkInterfacesResponse.h"
