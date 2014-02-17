@@ -299,7 +299,7 @@
     [request setHTTPBody:requestBody];
     
     // now the last thing we need to do is sign the request
-    [UAAWSRequestSigning signURLRequest:request ofRequest:protocolSelf withCredentials:credentials];
+    [UAAWSRequestSigning signURLRequest:request ofRequest:protocolSelf inRegion:region withCredentials:credentials];
     NSLog(@"-[%@] Posting request to %@: %@", NSStringFromClass([self class]), targetURL, [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
     return request;
 }

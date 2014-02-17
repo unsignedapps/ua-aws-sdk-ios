@@ -14,6 +14,6 @@
 
 @interface UAAWSRequestSigning : NSObject
 
-+ (void)signURLRequest:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request withCredentials:(UAAWSCredentials *)credentials;
++ (void)signURLRequest:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request inRegion:(UAAWSRegion)region withCredentials:(UAAWSCredentials *)credentials;
 
 @end

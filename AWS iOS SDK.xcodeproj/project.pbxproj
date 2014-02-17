@@ -912,6 +912,7 @@
 		A337826918B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337821F18B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.m */; };
 		A337826E18B195A300FECC45 /* UAIAMAccountSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = A337826B18B195A300FECC45 /* UAIAMAccountSummary.m */; };
 		A337826F18B195A300FECC45 /* UAIAMSigningCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = A337826D18B195A300FECC45 /* UAIAMSigningCertificate.m */; };
+		A337827518B1E13500FECC45 /* NSString+UAAWSRegions.m in Sources */ = {isa = PBXBuildFile; fileRef = A337827418B1E13500FECC45 /* NSString+UAAWSRegions.m */; };
 		A3E01C2018AD93E900C3B7DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C1F18AD93E900C3B7DB /* Foundation.framework */; };
 		A3E01C2218AD93E900C3B7DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */; };
 		A3E01C2418AD93E900C3B7DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2318AD93E900C3B7DB /* UIKit.framework */; };
@@ -2763,6 +2764,8 @@
 		A337826B18B195A300FECC45 /* UAIAMAccountSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMAccountSummary.m; sourceTree = "<group>"; };
 		A337826C18B195A300FECC45 /* UAIAMSigningCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAIAMSigningCertificate.h; sourceTree = "<group>"; };
 		A337826D18B195A300FECC45 /* UAIAMSigningCertificate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMSigningCertificate.m; sourceTree = "<group>"; };
+		A337827318B1E13500FECC45 /* NSString+UAAWSRegions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UAAWSRegions.h"; sourceTree = "<group>"; };
+		A337827418B1E13500FECC45 /* NSString+UAAWSRegions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UAAWSRegions.m"; sourceTree = "<group>"; };
 		A3E01C1C18AD93E900C3B7DB /* AWS iOS SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AWS iOS SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E01C1F18AD93E900C3B7DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -3100,6 +3103,8 @@
 				A30FD1CF18AD96D000CA52F7 /* UAAWSResponse.h */,
 				A30FD1D018AD96D000CA52F7 /* UAAWSResponse.m */,
 				A30FD1D118AD96D000CA52F7 /* UAAWSService.h */,
+				A337827318B1E13500FECC45 /* NSString+UAAWSRegions.h */,
+				A337827418B1E13500FECC45 /* NSString+UAAWSRegions.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -5366,6 +5371,7 @@
 				A30FD20E18AD96D000CA52F7 /* UAASRequest.m in Sources */,
 				A33775A718ADA30100FECC45 /* UAEC2PriceSchedule.m in Sources */,
 				A337778218ADA30C00FECC45 /* UAEC2GetConsoleOutputRequest.m in Sources */,
+				A337827518B1E13500FECC45 /* NSString+UAAWSRegions.m in Sources */,
 				A337757D18ADA30100FECC45 /* UAEC2InstanceBlockDeviceMapping.m in Sources */,
 				A337757018ADA30100FECC45 /* UAEC2ExportToS3TaskSpecification.m in Sources */,
 				A337734618ADA2C500FECC45 /* UAASDescribeLaunchConfigurationsRequest.m in Sources */,

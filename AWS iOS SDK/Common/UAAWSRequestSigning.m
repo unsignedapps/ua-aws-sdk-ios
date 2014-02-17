@@ -11,17 +11,20 @@
 #import "UAAWSCredentials.h"
 #import "NSData+UAHMAC.h"
 #import "NSString+DSURLEscape.h"
+#import "NSString+UAAWSRegions.h"
 
 @interface UAAWSRequestSigning ()
 
 + (NSString *)version2AuthenticatedRequestBodyForBody:(NSString *)body ofRequest:(UAAWSRequest<UAAWSRequest> *)request withCredentials:(UAAWSCredentials *)credentials;
 + (void)signURLRequestUsingV2:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request withCredentials:(UAAWSCredentials *)credentials;
 
++ (void)signURLRequestUsingV4:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request inRegion:(UAAWSRegion)region withCredentials:(UAAWSCredentials *)credentials;
+
 @end
 
 @implementation UAAWSRequestSigning
 
-+ (void)signURLRequest:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request withCredentials:(UAAWSCredentials *)credentials
++ (void)signURLRequest:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request inRegion:(UAAWSRegion)region withCredentials:(UAAWSCredentials *)credentials
 {
     UAAWSSignatureVersion version = [request UA_SignatureVersion];
     
@@ -31,7 +34,7 @@
             return [self signURLRequestUsingV2:urlRequest ofRequest:request withCredentials:credentials];
             
         case UAAWSSignatureVersion4:
-            NSAssert(NO, @"Version 4 signature not yet implemented.");
+            return [self signURLRequestUsingV4:urlRequest ofRequest:request inRegion:region withCredentials:credentials];
             
         case UAAWSSignatureNotRequired:
             return;
@@ -84,6 +87,85 @@
     return [body stringByAppendingFormat:@"&AWSAccessKeyId=%@&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=%@",
             credentials.accessKey,
             [[dateFormatter stringFromDate:[NSDate date]] stringByURLEscaping]];
+}
+
+#pragma mark - Version 4 Signatures
+
++ (void)signURLRequestUsingV4:(NSMutableURLRequest *)urlRequest ofRequest:(UAAWSRequest<UAAWSRequest> *)request inRegion:(UAAWSRegion)region withCredentials:(UAAWSCredentials *)credentials
+{
+    // Set the X-Amz-Date header
+    NSDate *now = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyyMMdd'T'HHmmss'Z'"];
+    NSString *xAmzDate = [dateFormatter stringFromDate:now];
+    [urlRequest setValue:xAmzDate forHTTPHeaderField:@"X-Amz-Date"];
+    
+    // Make sure we manually set the host header
+    [urlRequest setValue:urlRequest.URL.host forKey:@"Host"];
+    
+    // make a canonical copy of the headers for signing
+    NSDictionary *headers = [UAAWSRequestSigning canonicalHeadersWithHeaders:urlRequest.allHTTPHeaderFields];
+    NSString *body = [[NSString alloc] initWithData:urlRequest.HTTPBody encoding:NSUTF8StringEncoding];
+    
+    // create the canonical request for signing
+    NSString *canonicalRequest = [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n%@\n%@",
+                                  urlRequest.HTTPMethod,
+                                  (urlRequest.URL.path ?: @"/"),
+                                  (urlRequest.URL.query ?: @""),
+                                  [UAAWSRequestSigning canonicalHeaderStringWithHeaders:headers],
+                                  [UAAWSRequestSigning signedHeaderStringForCanonicalHeaders:headers],
+                                  [[urlRequest.HTTPBody sha256] hexString]];
+    
+    // Now we have to sign all
+    
+    // Assemble the Authorization Header
+    
+    // reuse the date formatter to set this one
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
+
+    // Scope
+    NSString *scope = [NSString stringWithFormat:@"%@/%@/%@/aws4_request",
+                       [dateFormatter stringFromDate:now],
+                       [NSString UA_regionStringForRegionValue:region],
+                       [urlRequest.URL.host substringToIndex:([urlRequest.URL.host rangeOfString:@"."].location)]];
+    
+    // The string that gets signed
+    NSString *signme = [NSString stringWithFormat:@"AWS4-HMAC-SHA256\n%@\n%@\n%@",
+                        xAmzDate,
+                        scope,
+                        [[[canonicalRequest dataUsingEncoding:NSUTF8StringEncoding] sha256] hexString]];
+    
+    
+}
+
++ (NSDictionary *)canonicalHeadersWithHeaders:(NSDictionary *)headers
+{
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:[headers count]];
+    NSCharacterSet *whitespaces = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+
+    // create a dictionary by trimming the headers and values appropriately. Also lowercase the header itself
+    for (NSString *header in headers)
+        [dictionary setObject:[[headers objectForKey:header] stringByTrimmingCharactersInSet:whitespaces]
+                       forKey:[[header stringByTrimmingCharactersInSet:whitespaces] lowercaseString]];
+
+    return [dictionary copy];
+}
+
++ (NSString *)canonicalHeaderStringWithHeaders:(NSDictionary *)headers
+{
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    for (NSString *header in [[headers allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)])
+        [array addObject:[NSString stringWithFormat:@"%@:%@", header, [headers objectForKey:header]]];
+
+    return [array componentsJoinedByString:@"\n"];
+}
+                                  
+
++ (NSString *)signedHeaderStringForCanonicalHeaders:(NSDictionary *)headers
+{
+    NSArray *allKeys = [[headers allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    return [allKeys componentsJoinedByString:@";"];
 }
 
 @end
