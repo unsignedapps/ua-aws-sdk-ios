@@ -59,8 +59,10 @@
     NSArray *parts = [body componentsSeparatedByString:@"&"];
     NSString *parameters = [[parts sortedArrayUsingComparator:^NSComparisonResult(NSString *param1, NSString *param2)
     {
-        return [param1 compare:param2];
-
+        // we compare only the key name
+        NSString *key1 = [param1 substringToIndex:[param1 rangeOfString:@"="].location];
+        NSString *key2 = [param2 substringToIndex:[param2 rangeOfString:@"="].location];
+        return [key1 compare:key2];
             
     }] componentsJoinedByString:@"&"];
     
@@ -70,6 +72,7 @@
                          urlRequest.URL.host,
                          urlRequest.URL.path,
                          parameters];
+    NSLog(@"Content to sign: %@", content);
     
     NSString *signature = [[[content UA_UTF8Data] UA_hmacSHA256WithKey:credentials.secretKey] base64EncodedStringWithOptions:kNilOptions];
     
