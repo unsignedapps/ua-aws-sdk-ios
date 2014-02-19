@@ -30,6 +30,16 @@
     };
 }
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return
+    @{
+        @"code": @"errorCode",
+        @"message": @"errorMessage",
+        @"requestID": [NSNull null]
+    };
+}
+
 #pragma mark - Error Generation
 
 - (NSError *)errorObject
