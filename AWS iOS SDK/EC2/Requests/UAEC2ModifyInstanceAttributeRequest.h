@@ -8,7 +8,7 @@
 
 #import "UAEC2Request.h"
 
-@class UAEC2InstanceBlockDeviceMappingSpecification, UAEC2SourceDestCheck, UAEC2DisableApiTermination, UAEC2InstanceType, UAEC2Kernel, UAEC2Ramdisk, UAEC2UserData, UAEC2InstanceInitiatedShutdownBehavior, UAEC2EBSOptimized, UAEC2SriovNetSupport, UAEC2ModifyInstanceAttributeResponse;
+@class UAEC2InstanceBlockDeviceMappingSpecification, UAEC2SourceDestCheck, UAEC2DisableApiTermination, UAEC2Kernel, UAEC2Ramdisk, UAEC2UserData, UAEC2InstanceInitiatedShutdownBehavior, UAEC2EBSOptimized, UAEC2SriovNetSupport, UAEC2ModifyInstanceAttributeResponse;
 
 typedef void(^UAEC2ModifyInstanceAttributeRequestCompletionBlock)(UAEC2ModifyInstanceAttributeResponse *response, NSError *error);
 typedef BOOL(^UAEC2ModifyInstanceAttributeRequestShouldContinueWaitingBlock)(UAEC2ModifyInstanceAttributeResponse *response, NSError *error);
@@ -22,7 +22,7 @@ typedef BOOL(^UAEC2ModifyInstanceAttributeRequestShouldContinueWaitingBlock)(UAE
 @property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
 @property (nonatomic, copy) UAEC2SourceDestCheck *sourceDestCheck;
 @property (nonatomic, copy) UAEC2DisableApiTermination *disableApiTermination;
-@property (nonatomic, copy) UAEC2InstanceType *instanceType;
+@property (nonatomic, copy) NSString *instanceType;
 @property (nonatomic, copy) UAEC2Kernel *kernel;
 @property (nonatomic, copy) UAEC2Ramdisk *ramdisk;
 @property (nonatomic, copy) UAEC2UserData *userData;

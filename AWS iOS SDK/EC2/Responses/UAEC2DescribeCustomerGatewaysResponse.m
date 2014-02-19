@@ -8,7 +8,7 @@
 //
 
 #import "UAEC2DescribeCustomerGatewaysResponse.h"
-#import "UAEC2CustomerGatewayy.h"
+#import "UAEC2CustomerGateway.h"
 
 @implementation UAEC2DescribeCustomerGatewaysResponse
 
@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)customerGatewaysXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2CustomerGatewayy class]];
+  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2CustomerGateway class]];
 }
 
 @end

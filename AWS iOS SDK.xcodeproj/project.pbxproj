@@ -237,7 +237,6 @@
 		A337758C18ADA30100FECC45 /* UAEC2InstanceStatusDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A33774A318ADA30000FECC45 /* UAEC2InstanceStatusDetails.m */; };
 		A337758D18ADA30100FECC45 /* UAEC2InstanceStatusEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A33774A518ADA30000FECC45 /* UAEC2InstanceStatusEvent.m */; };
 		A337758E18ADA30100FECC45 /* UAEC2InstanceStatusSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = A33774A718ADA30000FECC45 /* UAEC2InstanceStatusSummary.m */; };
-		A337758F18ADA30100FECC45 /* UAEC2InstanceType.m in Sources */ = {isa = PBXBuildFile; fileRef = A33774A918ADA30000FECC45 /* UAEC2InstanceType.m */; };
 		A337759018ADA30100FECC45 /* UAEC2InternetGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = A33774AB18ADA30000FECC45 /* UAEC2InternetGateway.m */; };
 		A337759118ADA30100FECC45 /* UAEC2IPPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = A33774AD18ADA30000FECC45 /* UAEC2IPPermission.m */; };
 		A337759218ADA30100FECC45 /* UAEC2IPRange.m in Sources */ = {isa = PBXBuildFile; fileRef = A33774AF18ADA30000FECC45 /* UAEC2IPRange.m */; };
@@ -1419,8 +1418,6 @@
 		A33774A518ADA30000FECC45 /* UAEC2InstanceStatusEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2InstanceStatusEvent.m; sourceTree = "<group>"; };
 		A33774A618ADA30000FECC45 /* UAEC2InstanceStatusSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2InstanceStatusSummary.h; sourceTree = "<group>"; };
 		A33774A718ADA30000FECC45 /* UAEC2InstanceStatusSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2InstanceStatusSummary.m; sourceTree = "<group>"; };
-		A33774A818ADA30000FECC45 /* UAEC2InstanceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2InstanceType.h; sourceTree = "<group>"; };
-		A33774A918ADA30000FECC45 /* UAEC2InstanceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2InstanceType.m; sourceTree = "<group>"; };
 		A33774AA18ADA30000FECC45 /* UAEC2InternetGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2InternetGateway.h; sourceTree = "<group>"; };
 		A33774AB18ADA30000FECC45 /* UAEC2InternetGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2InternetGateway.m; sourceTree = "<group>"; };
 		A33774AC18ADA30000FECC45 /* UAEC2IPPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2IPPermission.h; sourceTree = "<group>"; };
@@ -3729,8 +3726,6 @@
 				A33774A518ADA30000FECC45 /* UAEC2InstanceStatusEvent.m */,
 				A33774A618ADA30000FECC45 /* UAEC2InstanceStatusSummary.h */,
 				A33774A718ADA30000FECC45 /* UAEC2InstanceStatusSummary.m */,
-				A33774A818ADA30000FECC45 /* UAEC2InstanceType.h */,
-				A33774A918ADA30000FECC45 /* UAEC2InstanceType.m */,
 				A33774AA18ADA30000FECC45 /* UAEC2InternetGateway.h */,
 				A33774AB18ADA30000FECC45 /* UAEC2InternetGateway.m */,
 				A33774AC18ADA30000FECC45 /* UAEC2IPPermission.h */,
@@ -5547,7 +5542,6 @@
 				A337796218ADA31500FECC45 /* UAEC2StartInstancesResponse.m in Sources */,
 				A3377ACE18ADA34A00FECC45 /* UASNSGetPlatformApplicationAttributesResponse.m in Sources */,
 				A33775C218ADA30100FECC45 /* UAEC2SpotDatafeedSubscription.m in Sources */,
-				A337758F18ADA30100FECC45 /* UAEC2InstanceType.m in Sources */,
 				A337776718ADA30C00FECC45 /* UAEC2DescribeReservedInstancesOfferingsRequest.m in Sources */,
 				A337776818ADA30C00FECC45 /* UAEC2DescribeReservedInstancesRequest.m in Sources */,
 				A33775CC18ADA30100FECC45 /* UAEC2Subnet.m in Sources */,

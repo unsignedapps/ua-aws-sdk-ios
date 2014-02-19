@@ -9,7 +9,7 @@
 
 #import "UAEC2Response.h"
 
-@class UAEC2CustomerGatewayy;
+@class UAEC2CustomerGateway;
 
 @interface UAEC2DescribeCustomerGatewaysResponse : UAEC2Response
 
