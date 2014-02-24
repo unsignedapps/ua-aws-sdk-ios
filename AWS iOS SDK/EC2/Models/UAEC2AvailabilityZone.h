@@ -14,7 +14,7 @@
 @interface UAEC2AvailabilityZone : UAEC2Model
 
 @property (nonatomic, copy) NSString *zoneName;
-@property (nonatomic, copy) NSString *state;
+@property (nonatomic) UAEC2AvailabilityZoneState state;
 @property (nonatomic, copy) NSString *regionName;
 @property (nonatomic, copy) NSArray *messages;
 

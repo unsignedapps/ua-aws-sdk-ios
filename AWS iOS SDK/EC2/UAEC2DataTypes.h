@@ -104,6 +104,14 @@ typedef NS_ENUM(NSUInteger, UAEC2InstanceTenancy) {
 	UAEC2InstanceTenancyDedicated = 2
 };
 
+// UAEC2AvailabilityZoneState
+typedef NS_ENUM(NSUInteger, UAEC2AvailabilityZoneState) {
+	UAEC2AvailabilityZoneStateUnknown = 0,
+	UAEC2AvailabilityZoneStateAvailable = 1,
+	UAEC2AvailabilityZoneStateImpaired = 2,
+	UAEC2AvailabilityZoneStateUnavailable = 3
+};
+
 // UAEC2VolumeType
 typedef NS_ENUM(NSUInteger, UAEC2VolumeType) {
 	UAEC2VolumeTypeUnknown = 0,
