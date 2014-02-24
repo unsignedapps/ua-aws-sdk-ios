@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./PutGroupPolicyResponse/";
+    return @"./iam:PutGroupPolicyResponse/";
 }
 
 @end

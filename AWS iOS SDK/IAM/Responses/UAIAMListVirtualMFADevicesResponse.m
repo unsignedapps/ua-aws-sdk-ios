@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListVirtualMFADevicesResponse/ListVirtualMFADevicesResult/";
+    return @"./iam:ListVirtualMFADevicesResponse/iam:ListVirtualMFADevicesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,9 +26,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"virtualMFADevices": @"VirtualMFADevices/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"virtualMFADevices": @"iam:VirtualMFADevices/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

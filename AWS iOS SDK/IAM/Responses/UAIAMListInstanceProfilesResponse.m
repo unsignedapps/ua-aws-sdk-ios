@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListInstanceProfilesResponse/ListInstanceProfilesResult/";
+    return @"./iam:ListInstanceProfilesResponse/iam:ListInstanceProfilesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,9 +26,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"instanceProfiles": @"InstanceProfiles/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"instanceProfiles": @"iam:InstanceProfiles/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

@@ -25,10 +25,10 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"userName": @"UserName",
-        @"accessKeyID": @"AccessKeyId",
-        @"status": @"Status",
-        @"createDate": @"CreateDate"
+        @"userName": @"iam:UserName",
+        @"accessKeyID": @"iam:AccessKeyId",
+        @"status": @"iam:Status",
+        @"createDate": @"iam:CreateDate"
     }];
     return [keyPaths copy];
 }

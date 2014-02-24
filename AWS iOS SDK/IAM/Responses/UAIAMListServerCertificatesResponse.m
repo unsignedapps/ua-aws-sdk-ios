@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListServerCertificatesResponse/ListServerCertificatesResult/";
+    return @"./iam:ListServerCertificatesResponse/iam:ListServerCertificatesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,9 +26,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"serverCertificateMetadataList": @"ServerCertificateMetadataList/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"serverCertificateMetadataList": @"iam:ServerCertificateMetadataList/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

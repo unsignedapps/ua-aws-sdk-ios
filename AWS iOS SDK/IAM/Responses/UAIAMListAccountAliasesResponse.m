@@ -15,7 +15,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListAccountAliasesResponse/ListAccountAliasesResult/";
+    return @"./iam:ListAccountAliasesResponse/iam:ListAccountAliasesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -25,9 +25,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"accountAliases": @"AccountAliases/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"accountAliases": @"iam:AccountAliases/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

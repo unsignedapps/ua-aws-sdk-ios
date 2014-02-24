@@ -14,7 +14,7 @@
 @interface UAEC2Subnet : UAEC2Model
 
 @property (nonatomic, copy) NSString *subnetID;
-@property (nonatomic, copy) NSString *state;
+@property (nonatomic) UAEC2SubnetState state;
 @property (nonatomic, copy) NSString *vpcID;
 @property (nonatomic, copy) NSString *cidrBlock;
 @property (nonatomic, strong) NSNumber *availableIPAddressCount;

@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListSigningCertificatesResponse/ListSigningCertificatesResult/";
+    return @"./iam:ListSigningCertificatesResponse/iam:ListSigningCertificatesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,9 +26,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"certificates": @"Certificates/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"certificates": @"iam:Certificates/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

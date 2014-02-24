@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./DeleteGroupPolicyResponse/";
+    return @"./iam:DeleteGroupPolicyResponse/";
 }
 
 @end

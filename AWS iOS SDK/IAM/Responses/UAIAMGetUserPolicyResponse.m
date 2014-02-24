@@ -15,7 +15,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./GetUserPolicyResponse/GetUserPolicyResult/";
+    return @"./iam:GetUserPolicyResponse/iam:GetUserPolicyResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -25,9 +25,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"userName": @"UserName",
-        @"policyName": @"PolicyName",
-        @"policyDocument": @"PolicyDocument"
+        @"userName": @"iam:UserName",
+        @"policyName": @"iam:PolicyName",
+        @"policyDocument": @"iam:PolicyDocument"
     }];
     return [keyPaths copy];
 }

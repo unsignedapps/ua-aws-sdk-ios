@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./CreateVirtualMFADeviceResponse/CreateVirtualMFADeviceResult/";
+    return @"./iam:CreateVirtualMFADeviceResponse/iam:CreateVirtualMFADeviceResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"virtualMFADevice": @"VirtualMFADevice"
+        @"virtualMFADevice": @"iam:VirtualMFADevice"
     }];
     return [keyPaths copy];
 }

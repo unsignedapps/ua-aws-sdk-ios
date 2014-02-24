@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./CreateGroupResponse/CreateGroupResult/";
+    return @"./iam:CreateGroupResponse/iam:CreateGroupResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"group": @"Group"
+        @"group": @"iam:Group"
     }];
     return [keyPaths copy];
 }

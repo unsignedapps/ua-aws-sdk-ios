@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListUsersResponse/ListUsersResult/";
+    return @"./iam:ListUsersResponse/iam:ListUsersResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,9 +26,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"users": @"Users/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"users": @"iam:Users/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

@@ -25,14 +25,14 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"minimumPasswordLength": @"MinimumPasswordLength",
-        @"requireSymbols": @"RequireSymbols",
-        @"requireNumbers": @"RequireNumbers",
-        @"requireUppercaseCharacters": @"RequireUppercaseCharacters",
-        @"requireLowercaseCharacters": @"RequireLowercaseCharacters",
-        @"allowUsersToChangePassword": @"AllowUsersToChangePassword",
-        @"expirePasswords": @"ExpirePasswords",
-        @"maxPasswordAge": @"MaxPasswordAge"
+        @"minimumPasswordLength": @"iam:MinimumPasswordLength",
+        @"requireSymbols": @"iam:RequireSymbols",
+        @"requireNumbers": @"iam:RequireNumbers",
+        @"requireUppercaseCharacters": @"iam:RequireUppercaseCharacters",
+        @"requireLowercaseCharacters": @"iam:RequireLowercaseCharacters",
+        @"allowUsersToChangePassword": @"iam:AllowUsersToChangePassword",
+        @"expirePasswords": @"iam:ExpirePasswords",
+        @"maxPasswordAge": @"iam:MaxPasswordAge"
     }];
     return [keyPaths copy];
 }

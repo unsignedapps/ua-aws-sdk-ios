@@ -15,7 +15,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListRolePoliciesResponse/ListRolePoliciesResult/";
+    return @"./iam:ListRolePoliciesResponse/iam:ListRolePoliciesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -25,9 +25,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"policyNames": @"PolicyNames/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"policyNames": @"iam:PolicyNames/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

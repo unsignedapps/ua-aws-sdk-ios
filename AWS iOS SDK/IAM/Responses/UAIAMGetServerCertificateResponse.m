@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./GetServerCertificateResponse/GetServerCertificateResult/";
+    return @"./iam:GetServerCertificateResponse/iam:GetServerCertificateResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"serverCertificate": @"ServerCertificate"
+        @"serverCertificate": @"iam:ServerCertificate"
     }];
     return [keyPaths copy];
 }

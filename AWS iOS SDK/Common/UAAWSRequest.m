@@ -266,6 +266,11 @@
     NSAssert(credentials != nil, @"Credentials must be supplied via -setUA_Credentials: or the UAAWSOperationQueue delegate.");
 
     id<UAAWSRequest> protocolSelf = (id<UAAWSRequest>)self;
+
+    // if the service is region-free/global, lock it down to US-East-1
+    if ([protocolSelf UA_isRegionFree])
+        region = UAAWSRegionUSEast1;
+
     // obtain the base URL for connection
     NSURL *baseURL = [protocolSelf UA_EndpointURLForRegion:region];
     

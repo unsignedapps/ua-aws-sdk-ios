@@ -168,4 +168,10 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
 **/
 - (Class)UA_ErrorClass;
 
+/**
+ * The service is "region-free", that is, it operates without region restrictions,
+ * but the service will still run out of US-East-1.
+**/
+- (BOOL)UA_isRegionFree;
+
 @end

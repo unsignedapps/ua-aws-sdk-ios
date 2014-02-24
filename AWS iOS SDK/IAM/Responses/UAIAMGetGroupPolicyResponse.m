@@ -15,7 +15,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./GetGroupPolicyResponse/GetGroupPolicyResult/";
+    return @"./iam:GetGroupPolicyResponse/iam:GetGroupPolicyResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -25,9 +25,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"groupName": @"GroupName",
-        @"policyName": @"PolicyName",
-        @"policyDocument": @"PolicyDocument"
+        @"groupName": @"iam:GroupName",
+        @"policyName": @"iam:PolicyName",
+        @"policyDocument": @"iam:PolicyDocument"
     }];
     return [keyPaths copy];
 }

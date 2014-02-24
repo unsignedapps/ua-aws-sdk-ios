@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./CreateUserResponse/CreateUserResult/";
+    return @"./iam:CreateUserResponse/iam:CreateUserResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"user": @"User"
+        @"user": @"iam:User"
     }];
     return [keyPaths copy];
 }

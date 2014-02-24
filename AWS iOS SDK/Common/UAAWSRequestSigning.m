@@ -72,7 +72,7 @@
                          urlRequest.URL.host,
                          urlRequest.URL.path,
                          parameters];
-    NSLog(@"Content to sign: %@", content);
+//    NSLog(@"Content to sign: %@", content);
     
     NSString *signature = [[[content UA_UTF8Data] UA_hmacSHA256WithKey:credentials.secretKey] base64EncodedStringWithOptions:kNilOptions];
     

@@ -91,6 +91,10 @@
     return Nil;
 }
 
+- (BOOL)UA_isRegionFree
+{
+    return NO;
+}
 
 #pragma mark - Serializing defaults
 

@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./GetAccountPasswordPolicyResponse/GetAccountPasswordPolicyResult/";
+    return @"./iam:GetAccountPasswordPolicyResponse/iam:GetAccountPasswordPolicyResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"passwordPolicy": @"PasswordPolicy"
+        @"passwordPolicy": @"iam:PasswordPolicy"
     }];
     return [keyPaths copy];
 }

@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./DeleteAccessKeyResponse/";
+    return @"./iam:DeleteAccessKeyResponse/";
 }
 
 @end

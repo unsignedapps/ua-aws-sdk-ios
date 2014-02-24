@@ -25,9 +25,9 @@
     return nil;
 }
 
-//+ (NSDictionary *)XMLNamespaceMappings
-//{
-//    return @{ @"AutoScaling": @"http://autoscaling.amazonaws.com/doc/2011-01-01/" };
-//}
++ (NSDictionary *)XMLNamespaceMappings
+{
+    return @{ @"iam": @"https://iam.amazonaws.com/doc/2010-05-08/" };
+}
 
 @end

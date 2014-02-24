@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ChangePasswordResponse/";
+    return @"./iam:ChangePasswordResponse/";
 }
 
 @end

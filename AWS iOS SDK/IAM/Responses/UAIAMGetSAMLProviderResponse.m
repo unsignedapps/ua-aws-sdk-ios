@@ -15,7 +15,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./GetSAMLProviderResponse/GetSAMLProviderResult/";
+    return @"./iam:GetSAMLProviderResponse/iam:GetSAMLProviderResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -25,9 +25,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"sAMLMetadataDocument": @"SAMLMetadataDocument",
-        @"createDate": @"CreateDate",
-        @"validUntil": @"ValidUntil"
+        @"sAMLMetadataDocument": @"iam:SAMLMetadataDocument",
+        @"createDate": @"iam:CreateDate",
+        @"validUntil": @"iam:ValidUntil"
     }];
     return [keyPaths copy];
 }

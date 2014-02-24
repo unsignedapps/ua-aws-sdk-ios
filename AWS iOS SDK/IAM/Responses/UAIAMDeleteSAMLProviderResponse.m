@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./DeleteSAMLProviderResponse/";
+    return @"./iam:DeleteSAMLProviderResponse/";
 }
 
 @end

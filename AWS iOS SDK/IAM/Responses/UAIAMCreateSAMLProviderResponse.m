@@ -15,7 +15,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./CreateSAMLProviderResponse/CreateSAMLProviderResult/";
+    return @"./iam:CreateSAMLProviderResponse/iam:CreateSAMLProviderResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -25,7 +25,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"sAMLProviderARN": @"SAMLProviderArn"
+        @"sAMLProviderARN": @"iam:SAMLProviderArn"
     }];
     return [keyPaths copy];
 }

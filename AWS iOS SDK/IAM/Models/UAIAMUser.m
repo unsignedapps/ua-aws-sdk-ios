@@ -25,11 +25,11 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"path": @"Path",
-        @"userName": @"UserName",
-        @"userID": @"UserId",
-        @"arn": @"Arn",
-        @"createDate": @"CreateDate"
+        @"path": @"iam:Path",
+        @"userName": @"iam:UserName",
+        @"userID": @"iam:UserId",
+        @"arn": @"iam:Arn",
+        @"createDate": @"iam:CreateDate"
     }];
     return [keyPaths copy];
 }

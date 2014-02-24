@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListGroupsForUserResponse/ListGroupsForUserResult/";
+    return @"./iam:ListGroupsForUserResponse/iam:ListGroupsForUserResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,9 +26,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"groups": @"Groups/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"groups": @"iam:Groups/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

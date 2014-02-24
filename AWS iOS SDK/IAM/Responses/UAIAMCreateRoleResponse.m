@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./CreateRoleResponse/CreateRoleResult/";
+    return @"./iam:CreateRoleResponse/iam:CreateRoleResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"role": @"Role"
+        @"role": @"iam:Role"
     }];
     return [keyPaths copy];
 }

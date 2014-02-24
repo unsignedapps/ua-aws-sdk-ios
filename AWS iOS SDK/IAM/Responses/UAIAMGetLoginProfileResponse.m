@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./GetLoginProfileResponse/GetLoginProfileResult/";
+    return @"./iam:GetLoginProfileResponse/iam:GetLoginProfileResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"loginProfile": @"LoginProfile"
+        @"loginProfile": @"iam:LoginProfile"
     }];
     return [keyPaths copy];
 }

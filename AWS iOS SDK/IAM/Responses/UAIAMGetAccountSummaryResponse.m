@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./GetAccountSummaryResponse/GetAccountSummaryResult/";
+    return @"./iam:GetAccountSummaryResponse/iam:GetAccountSummaryResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"summaryMap": @"SummaryMap/entry"
+        @"summaryMap": @"iam:SummaryMap/iam:entry"
     }];
     return [keyPaths copy];
 }

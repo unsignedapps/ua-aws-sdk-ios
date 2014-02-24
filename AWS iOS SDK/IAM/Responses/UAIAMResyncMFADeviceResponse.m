@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ResyncMFADeviceResponse/";
+    return @"./iam:ResyncMFADeviceResponse/";
 }
 
 @end

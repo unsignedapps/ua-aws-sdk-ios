@@ -26,9 +26,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"serverCertificateMetadata": @"ServerCertificateMetadata",
-        @"certificateBody": @"CertificateBody",
-        @"certificateChain": @"CertificateChain"
+        @"serverCertificateMetadata": @"iam:ServerCertificateMetadata",
+        @"certificateBody": @"iam:CertificateBody",
+        @"certificateChain": @"iam:CertificateChain"
     }];
     return [keyPaths copy];
 }

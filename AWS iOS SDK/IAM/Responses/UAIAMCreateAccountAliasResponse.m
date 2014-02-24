@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./CreateAccountAliasResponse/";
+    return @"./iam:CreateAccountAliasResponse/";
 }
 
 @end

@@ -15,7 +15,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListGroupPoliciesResponse/ListGroupPoliciesResult/";
+    return @"./iam:ListGroupPoliciesResponse/iam:ListGroupPoliciesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -25,9 +25,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"policyNames": @"PolicyNames/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"policyNames": @"iam:PolicyNames/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

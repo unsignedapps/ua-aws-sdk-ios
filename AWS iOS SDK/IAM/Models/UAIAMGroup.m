@@ -25,11 +25,11 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"path": @"Path",
-        @"groupName": @"GroupName",
-        @"groupID": @"GroupId",
-        @"arn": @"Arn",
-        @"createDate": @"CreateDate"
+        @"path": @"iam:Path",
+        @"groupName": @"iam:GroupName",
+        @"groupID": @"iam:GroupId",
+        @"arn": @"iam:Arn",
+        @"createDate": @"iam:CreateDate"
     }];
     return [keyPaths copy];
 }

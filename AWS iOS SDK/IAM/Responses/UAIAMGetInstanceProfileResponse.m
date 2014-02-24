@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./GetInstanceProfileResponse/GetInstanceProfileResult/";
+    return @"./iam:GetInstanceProfileResponse/iam:GetInstanceProfileResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"instanceProfile": @"InstanceProfile"
+        @"instanceProfile": @"iam:InstanceProfile"
     }];
     return [keyPaths copy];
 }

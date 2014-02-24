@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./CreateAccessKeyResponse/CreateAccessKeyResult/";
+    return @"./iam:CreateAccessKeyResponse/iam:CreateAccessKeyResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,7 +26,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"accessKey": @"AccessKey"
+        @"accessKey": @"iam:AccessKey"
     }];
     return [keyPaths copy];
 }

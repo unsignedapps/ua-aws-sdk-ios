@@ -25,11 +25,11 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"userName": @"UserName",
-        @"certificateID": @"CertificateId",
-        @"certificateBody": @"CertificateBody",
-        @"status": @"Status",
-        @"uploadDate": @"UploadDate"
+        @"userName": @"iam:UserName",
+        @"certificateID": @"iam:CertificateId",
+        @"certificateBody": @"iam:CertificateBody",
+        @"status": @"iam:Status",
+        @"uploadDate": @"iam:UploadDate"
     }];
     return [keyPaths copy];
 }

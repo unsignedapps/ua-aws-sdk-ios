@@ -25,9 +25,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"arn": @"Arn",
-        @"validUntil": @"ValidUntil",
-        @"createDate": @"CreateDate"
+        @"arn": @"iam:Arn",
+        @"validUntil": @"iam:ValidUntil",
+        @"createDate": @"iam:CreateDate"
     }];
     return [keyPaths copy];
 }

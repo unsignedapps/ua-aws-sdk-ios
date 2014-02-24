@@ -26,12 +26,12 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"path": @"Path",
-        @"instanceProfileName": @"InstanceProfileName",
-        @"instanceProfileID": @"InstanceProfileId",
-        @"arn": @"Arn",
-        @"createDate": @"CreateDate",
-        @"roles": @"Roles/member"
+        @"path": @"iam:Path",
+        @"instanceProfileName": @"iam:InstanceProfileName",
+        @"instanceProfileID": @"iam:InstanceProfileId",
+        @"arn": @"iam:Arn",
+        @"createDate": @"iam:CreateDate",
+        @"roles": @"iam:Roles/iam:member"
     }];
     return [keyPaths copy];
 }

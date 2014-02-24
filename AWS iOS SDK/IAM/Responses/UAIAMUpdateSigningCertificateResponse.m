@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./UpdateSigningCertificateResponse/";
+    return @"./iam:UpdateSigningCertificateResponse/";
 }
 
 @end

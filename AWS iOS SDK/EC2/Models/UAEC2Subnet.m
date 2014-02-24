@@ -39,9 +39,75 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)stateQueryStringTransformer
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    {
+        if ([value isKindOfClass:[NSNumber class]])
+            return (NSNumber *)value;
+        
+		if ([value isEqualToString:@"pending"])
+		    return @(UAEC2SubnetStatePending);
+		if ([value isEqualToString:@"available"])
+		    return @(UAEC2SubnetStateAvailable);
+
+		return @(UAEC2SubnetStateUnknown);
+
+    } reverseBlock:^NSString *(NSNumber *value)
+    {
+        UAEC2SubnetState castValue = (UAEC2SubnetState)[value unsignedIntegerValue];
+        switch (castValue)
+        {
+			case UAEC2SubnetStatePending:
+			    return @"pending";
+			case UAEC2SubnetStateAvailable:
+			    return @"available";
+
+			case UAEC2SubnetStateUnknown:
+			default:
+				return nil;
+        }
+    }];
+}
+
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
   return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
+}
+
++ (NSValueTransformer *)stateXMLTransformer
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    {
+		if (nodes == nil || [nodes count] == 0)
+			return @(UAEC2SubnetStateUnknown);
+
+		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+        if ([value isKindOfClass:[NSNumber class]])
+            return (NSNumber *)value;
+        
+		if ([value isEqualToString:@"pending"])
+		    return @(UAEC2SubnetStatePending);
+		if ([value isEqualToString:@"available"])
+		    return @(UAEC2SubnetStateAvailable);
+
+		return @(UAEC2SubnetStateUnknown);
+
+    } reverseBlock:^NSString *(NSNumber *value)
+    {
+        UAEC2SubnetState castValue = (UAEC2SubnetState)[value unsignedIntegerValue];
+        switch (castValue)
+        {
+			case UAEC2SubnetStatePending:
+			    return @"pending";
+			case UAEC2SubnetStateAvailable:
+			    return @"available";
+
+			case UAEC2SubnetStateUnknown:
+			default:
+				return nil;
+        }
+    }];
 }
 
 + (NSValueTransformer *)availableIPAddressCountXMLTransformer

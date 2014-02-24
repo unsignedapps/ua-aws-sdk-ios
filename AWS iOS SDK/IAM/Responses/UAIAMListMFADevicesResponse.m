@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListMFADevicesResponse/ListMFADevicesResult/";
+    return @"./iam:ListMFADevicesResponse/iam:ListMFADevicesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,9 +26,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"mFADevices": @"MFADevices/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"mFADevices": @"iam:MFADevices/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }

@@ -15,7 +15,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./GetRolePolicyResponse/GetRolePolicyResult/";
+    return @"./iam:GetRolePolicyResponse/iam:GetRolePolicyResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -25,9 +25,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"roleName": @"RoleName",
-        @"policyName": @"PolicyName",
-        @"policyDocument": @"PolicyDocument"
+        @"roleName": @"iam:RoleName",
+        @"policyName": @"iam:PolicyName",
+        @"policyDocument": @"iam:PolicyDocument"
     }];
     return [keyPaths copy];
 }

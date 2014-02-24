@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./DeleteInstanceProfileResponse/";
+    return @"./iam:DeleteInstanceProfileResponse/";
 }
 
 @end

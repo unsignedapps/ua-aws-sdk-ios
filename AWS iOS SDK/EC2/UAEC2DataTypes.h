@@ -72,6 +72,13 @@ typedef NS_ENUM(NSUInteger, UAEC2NetworkInterfaceState) {
 	UAEC2NetworkInterfaceStateDetaching = 4
 };
 
+// UAEC2SubnetState
+typedef NS_ENUM(NSUInteger, UAEC2SubnetState) {
+	UAEC2SubnetStateUnknown = 0,
+	UAEC2SubnetStatePending = 1,
+	UAEC2SubnetStateAvailable = 2
+};
+
 // UAEC2VolumeState
 typedef NS_ENUM(NSUInteger, UAEC2VolumeState) {
 	UAEC2VolumeStateUnknown = 0,
@@ -81,6 +88,20 @@ typedef NS_ENUM(NSUInteger, UAEC2VolumeState) {
 	UAEC2VolumeStateDeleting = 4,
 	UAEC2VolumeStateDeleted = 5,
 	UAEC2VolumeStateError = 6
+};
+
+// UAEC2VPCState
+typedef NS_ENUM(NSUInteger, UAEC2VPCState) {
+	UAEC2VPCStateUnknown = 0,
+	UAEC2VPCStatePending = 1,
+	UAEC2VPCStateAvailable = 2
+};
+
+// UAEC2InstanceTenancy
+typedef NS_ENUM(NSUInteger, UAEC2InstanceTenancy) {
+	UAEC2InstanceTenancyUnknown = 0,
+	UAEC2InstanceTenancyDefault = 1,
+	UAEC2InstanceTenancyDedicated = 2
 };
 
 // UAEC2VolumeType

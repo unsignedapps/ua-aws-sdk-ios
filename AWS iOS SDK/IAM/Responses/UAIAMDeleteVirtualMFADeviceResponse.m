@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./DeleteVirtualMFADeviceResponse/";
+    return @"./iam:DeleteVirtualMFADeviceResponse/";
 }
 
 @end

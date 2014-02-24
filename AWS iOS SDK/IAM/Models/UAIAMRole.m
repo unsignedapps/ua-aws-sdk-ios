@@ -25,12 +25,12 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"path": @"Path",
-        @"roleName": @"RoleName",
-        @"roleID": @"RoleId",
-        @"arn": @"Arn",
-        @"createDate": @"CreateDate",
-        @"assumeRolePolicyDocument": @"AssumeRolePolicyDocument"
+        @"path": @"iam:Path",
+        @"roleName": @"iam:RoleName",
+        @"roleID": @"iam:RoleId",
+        @"arn": @"iam:Arn",
+        @"createDate": @"iam:CreateDate",
+        @"assumeRolePolicyDocument": @"iam:AssumeRolePolicyDocument"
     }];
     return [keyPaths copy];
 }

@@ -25,9 +25,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"userName": @"UserName",
-        @"serialNumber": @"SerialNumber",
-        @"enableDate": @"EnableDate"
+        @"userName": @"iam:UserName",
+        @"serialNumber": @"iam:SerialNumber",
+        @"enableDate": @"iam:EnableDate"
     }];
     return [keyPaths copy];
 }

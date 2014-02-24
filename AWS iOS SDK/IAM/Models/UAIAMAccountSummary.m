@@ -25,20 +25,20 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"users": @"entry/value[../key/text() = \"Users\"]",
-        @"usersQuota": @"entry/value[../key/text() = \"UsersQuota\"]",
-        @"groups": @"entry/value[../key/text() = \"Groups\"]",
-        @"groupsQuota": @"entry/value[../key/text() = \"GroupsQuota\"]",
-        @"serverCertificates": @"entry/value[../key/text() = \"ServerCertificates\"]",
-        @"serverCertificatesQuota": @"entry/value[../key/text() = \"ServerCertificatesQuota\"]",
-        @"userPolicySizeQuota": @"entry/value[../key/text() = \"UserPolicySizeQuota\"]",
-        @"groupPolicySizeQuota": @"entry/value[../key/text() = \"GroupPolicySizeQuota\"]",
-        @"groupsPerUserQuota": @"entry/value[../key/text() = \"GroupsPerUserQuota\"]",
-        @"signingCertificatesPerUserQuota": @"entry/value[../key/text() = \"SigningCertificatesPerUserQuota\"]",
-        @"accessKeysPerUserQuota": @"entry/value[../key/text() = \"AccessKeysPerUserQuota\"]",
-        @"mFADevices": @"entry/value[../key/text() = \"MFADevices\"]",
-        @"mFADevicesInUse": @"entry/value[../key/text() = \"MFADevicesInUse\"]",
-        @"accountMFAEnabled": @"entry/value[../key/text() = \"Users\"]"
+        @"users": @"iam:entry/iam:value[../iam:key/text() = \"Users\"]",
+        @"usersQuota": @"iam:entry/iam:value[../iam:key/text() = \"UsersQuota\"]",
+        @"groups": @"iam:entry/iam:value[../iam:key/text() = \"Groups\"]",
+        @"groupsQuota": @"iam:entry/iam:value[../iam:key/text() = \"GroupsQuota\"]",
+        @"serverCertificates": @"iam:entry/iam:value[../iam:key/text() = \"ServerCertificates\"]",
+        @"serverCertificatesQuota": @"iam:entry/iam:value[../iam:key/text() = \"ServerCertificatesQuota\"]",
+        @"userPolicySizeQuota": @"iam:entry/iam:value[../iam:key/text() = \"UserPolicySizeQuota\"]",
+        @"groupPolicySizeQuota": @"iam:entry/iam:value[../iam:key/text() = \"GroupPolicySizeQuota\"]",
+        @"groupsPerUserQuota": @"iam:entry/iam:value[../iam:key/text() = \"GroupsPerUserQuota\"]",
+        @"signingCertificatesPerUserQuota": @"iam:entry/iam:value[../iam:key/text() = \"SigningCertificatesPerUserQuota\"]",
+        @"accessKeysPerUserQuota": @"iam:entry/iam:value[../iam:key/text() = \"AccessKeysPerUserQuota\"]",
+        @"mFADevices": @"iam:entry/iam:value[../iam:key/text() = \"MFADevices\"]",
+        @"mFADevicesInUse": @"iam:entry/iam:value[../iam:key/text() = \"MFADevicesInUse\"]",
+        @"accountMFAEnabled": @"iam:entry/iam:value[../iam:key/text() = \"Users\"]"
     }];
     return [keyPaths copy];
 }

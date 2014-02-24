@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./AddRoleToInstanceProfileResponse/";
+    return @"./iam:AddRoleToInstanceProfileResponse/";
 }
 
 @end

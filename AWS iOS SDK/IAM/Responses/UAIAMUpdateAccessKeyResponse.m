@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./UpdateAccessKeyResponse/";
+    return @"./iam:UpdateAccessKeyResponse/";
 }
 
 @end

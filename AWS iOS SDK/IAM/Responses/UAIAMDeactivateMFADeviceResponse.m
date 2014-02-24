@@ -13,7 +13,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./DeactivateMFADeviceResponse/";
+    return @"./iam:DeactivateMFADeviceResponse/";
 }
 
 @end

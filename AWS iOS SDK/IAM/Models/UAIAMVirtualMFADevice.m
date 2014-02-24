@@ -26,11 +26,11 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"serialNumber": @"SerialNumber",
-        @"base32StringSeed": @"Base32StringSeed",
-        @"qRCodePNG": @"QRCodePNG",
-        @"user": @"User",
-        @"enableDate": @"EnableDate"
+        @"serialNumber": @"iam:SerialNumber",
+        @"base32StringSeed": @"iam:Base32StringSeed",
+        @"qRCodePNG": @"iam:QRCodePNG",
+        @"user": @"iam:User",
+        @"enableDate": @"iam:EnableDate"
     }];
     return [keyPaths copy];
 }

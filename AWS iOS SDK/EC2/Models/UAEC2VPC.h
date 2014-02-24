@@ -14,11 +14,11 @@
 @interface UAEC2VPC : UAEC2Model
 
 @property (nonatomic, copy) NSString *vpcID;
-@property (nonatomic, copy) NSString *state;
+@property (nonatomic) UAEC2VPCState state;
 @property (nonatomic, copy) NSString *cidrBlock;
 @property (nonatomic, copy) NSString *dhcpOptionsID;
 @property (nonatomic, copy) NSArray *tags;
-@property (nonatomic, copy) NSString *instanceTenancy;
+@property (nonatomic) UAEC2InstanceTenancy instanceTenancy;
 @property (nonatomic) BOOL isDefault;
 
 @end

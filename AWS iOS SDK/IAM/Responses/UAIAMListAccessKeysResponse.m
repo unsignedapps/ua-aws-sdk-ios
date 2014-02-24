@@ -16,7 +16,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ListAccessKeysResponse/ListAccessKeysResult/";
+    return @"./iam:ListAccessKeysResponse/iam:ListAccessKeysResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -26,9 +26,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"accessKeyMetadata": @"AccessKeyMetadata/member",
-        @"isTruncated": @"IsTruncated",
-        @"marker": @"Marker"
+        @"accessKeyMetadata": @"iam:AccessKeyMetadata/iam:member",
+        @"isTruncated": @"iam:IsTruncated",
+        @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }
