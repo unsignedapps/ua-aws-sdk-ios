@@ -64,7 +64,7 @@
 
 + (NSValueTransformer *)dhcpConfigurationsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2DHCPConfiguration class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2DHCPConfiguration class]];
 }
 
 - (void)addDHCPConfiguration:(UAEC2DHCPConfiguration *)dHCPConfiguration

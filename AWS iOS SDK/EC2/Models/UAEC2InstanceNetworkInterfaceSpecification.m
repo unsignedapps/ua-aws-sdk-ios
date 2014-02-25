@@ -21,16 +21,16 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"networkInterfaceID": @"networkInterfaceId",
-        @"deviceIndex": @"deviceIndex",
-        @"subnetID": @"subnetId",
-        @"descriptionValue": @"description",
-        @"privateIPAddress": @"privateIpAddress",
+        @"networkInterfaceID": @"NetworkInterfaceId",
+        @"deviceIndex": @"DeviceIndex",
+        @"subnetID": @"SubnetId",
+        @"descriptionValue": @"Description",
+        @"privateIPAddress": @"PrivateIpAddress",
         @"groups": @"SecurityGroupId",
-        @"deleteOnTermination": @"deleteOnTermination",
-        @"privateIPAddresses": @"privateIpAddressesSet",
-        @"secondaryPrivateIPAddressCount": @"secondaryPrivateIpAddressCount",
-        @"associatePublicIPAddress": @"associatePublicIpAddress"
+        @"deleteOnTermination": @"DeleteOnTermination",
+        @"privateIPAddresses": @"PrivateIpAddressesSet",
+        @"secondaryPrivateIPAddressCount": @"SecondaryPrivateIpAddressCount",
+        @"associatePublicIPAddress": @"AssociatePublicIpAddress"
     }];
     return [keyPaths copy];
 }
@@ -63,7 +63,7 @@
 
 + (NSValueTransformer *)privateIPAddressesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecifiction class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecifiction class]];
 }
 
 + (NSValueTransformer *)deviceIndexXMLTransformer

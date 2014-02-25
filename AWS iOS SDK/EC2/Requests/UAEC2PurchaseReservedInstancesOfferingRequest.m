@@ -66,7 +66,7 @@
 
 + (NSValueTransformer *)limitPriceQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2ReservedInstanceLimitPrice class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2ReservedInstanceLimitPrice class]];
 }
 
 #pragma mark - Invocation

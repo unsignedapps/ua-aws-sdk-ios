@@ -72,7 +72,7 @@
 
 + (NSValueTransformer *)ipPermissionsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2IPPermission class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2IPPermission class]];
 }
 
 - (void)addIPPermission:(UAEC2IPPermission *)iPPermission

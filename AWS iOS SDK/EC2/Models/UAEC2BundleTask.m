@@ -102,12 +102,12 @@
 
 + (NSValueTransformer *)storageQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2BundleInstanceStorage class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2BundleInstanceStorage class]];
 }
 
 + (NSValueTransformer *)bundleTaskErrorQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2BundleTaskError class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2BundleTaskError class]];
 }
 
 + (NSValueTransformer *)stateXMLTransformer

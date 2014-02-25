@@ -54,7 +54,7 @@
 
 + (NSValueTransformer *)s3QueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2S3Storage class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2S3Storage class]];
 }
 
 + (NSValueTransformer *)s3XMLTransformer

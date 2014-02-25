@@ -36,12 +36,12 @@
 
 + (NSValueTransformer *)dhcpConfigurationsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2DHCPConfiguration class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2DHCPConfiguration class]];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 + (NSValueTransformer *)dhcpConfigurationsXMLTransformer

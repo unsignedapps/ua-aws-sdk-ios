@@ -39,7 +39,7 @@
 
 + (NSValueTransformer *)eventsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceStatusEvent class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceStatusEvent class]];
 }
 
 + (NSValueTransformer *)instanceStateQueryStringTransformer
@@ -91,12 +91,12 @@
 
 + (NSValueTransformer *)systemStatusQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
 }
 
 + (NSValueTransformer *)instanceStatusQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
 }
 
 + (NSValueTransformer *)eventsXMLTransformer

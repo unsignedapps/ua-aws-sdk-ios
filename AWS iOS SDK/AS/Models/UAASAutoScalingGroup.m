@@ -86,7 +86,7 @@
 
 + (NSValueTransformer *)instancesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASInstance class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASInstance class]];
 }
 
 + (NSValueTransformer *)createdTimeQueryStringTransformer
@@ -96,17 +96,17 @@
 
 + (NSValueTransformer *)suspendedProcessesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASSuspendedProcess class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASSuspendedProcess class]];
 }
 
 + (NSValueTransformer *)enabledMetricsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASEnabledMetric class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASEnabledMetric class]];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASTag class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASTag class]];
 }
 
 + (NSValueTransformer *)minSizeXMLTransformer

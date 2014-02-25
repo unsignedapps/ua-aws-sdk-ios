@@ -59,7 +59,7 @@
 
 + (NSValueTransformer *)loadBalancerAttributesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAELBLoadBalancerAttributes class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBLoadBalancerAttributes class]];
 }
 
 #pragma mark - Invocation

@@ -42,12 +42,12 @@
 
 + (NSValueTransformer *)reservedInstancesIdsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2ReservedInstancesID class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2ReservedInstancesID class]];
 }
 
 + (NSValueTransformer *)modificationResultsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2ReservedInstancesModificationResponse class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2ReservedInstancesModificationResponse class]];
 }
 
 + (NSValueTransformer *)createDateQueryStringTransformer

@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)monitoringQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2Monitoring class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Monitoring class]];
 }
 
 + (NSValueTransformer *)monitoringXMLTransformer

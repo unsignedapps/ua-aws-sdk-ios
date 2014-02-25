@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)detailsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusDetail class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusDetail class]];
 }
 
 + (NSValueTransformer *)detailsXMLTransformer

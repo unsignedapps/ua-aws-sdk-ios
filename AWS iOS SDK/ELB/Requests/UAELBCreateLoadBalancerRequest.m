@@ -94,7 +94,7 @@
 
 + (NSValueTransformer *)listenersQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBListener class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBListener class]];
 }
 
 + (NSValueTransformer *)schemeQueryStringTransformer

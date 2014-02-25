@@ -61,7 +61,7 @@
 
 + (NSValueTransformer *)dimensionsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 - (void)addDimension:(UACWDimension *)dimension

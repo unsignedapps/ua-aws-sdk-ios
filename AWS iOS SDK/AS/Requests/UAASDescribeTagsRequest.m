@@ -60,7 +60,7 @@
 
 + (NSValueTransformer *)filtersQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASFilter class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASFilter class]];
 }
 
 - (void)addFilter:(UAASFilter *)filter

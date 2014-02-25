@@ -73,12 +73,12 @@
 
 + (NSValueTransformer *)launchSpecificationQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2ImportInstanceLaunchSpecification class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2ImportInstanceLaunchSpecification class]];
 }
 
 + (NSValueTransformer *)diskImagesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2DiskImage class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2DiskImage class]];
 }
 
 - (void)addDiskImage:(UAEC2DiskImage *)diskImage

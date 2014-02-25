@@ -92,7 +92,7 @@
 
 + (NSValueTransformer *)productCodesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2ProductCode class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2ProductCode class]];
 }
 
 + (NSValueTransformer *)architectureQueryStringTransformer
@@ -190,7 +190,7 @@
 
 + (NSValueTransformer *)stateReasonQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2StateReason class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2StateReason class]];
 }
 
 + (NSValueTransformer *)rootDeviceTypeQueryStringTransformer
@@ -226,7 +226,7 @@
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)virtualizationTypeQueryStringTransformer
@@ -262,7 +262,7 @@
 
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 + (NSValueTransformer *)hypervisorQueryStringTransformer

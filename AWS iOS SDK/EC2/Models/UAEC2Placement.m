@@ -20,9 +20,9 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"availabilityZone": @"availabilityZone",
-        @"groupName": @"groupName",
-        @"tenancy": @"tenancy"
+        @"availabilityZone": @"AvailabilityZone",
+        @"groupName": @"GroupName",
+        @"tenancy": @"Tenancy"
     }];
     return [keyPaths copy];
 }

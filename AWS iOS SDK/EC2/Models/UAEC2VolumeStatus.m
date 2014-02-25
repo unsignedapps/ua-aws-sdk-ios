@@ -39,17 +39,17 @@
 
 + (NSValueTransformer *)volumeStatusQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2VolumeStatusInfo class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2VolumeStatusInfo class]];
 }
 
 + (NSValueTransformer *)eventsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusEvent class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusEvent class]];
 }
 
 + (NSValueTransformer *)actionsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusAction class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusAction class]];
 }
 
 + (NSValueTransformer *)volumeStatusXMLTransformer

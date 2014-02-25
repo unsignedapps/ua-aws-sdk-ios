@@ -36,12 +36,12 @@
 
 + (NSValueTransformer *)appCookieStickinessPoliciesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBAppCookieStickinessPolicy class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBAppCookieStickinessPolicy class]];
 }
 
 + (NSValueTransformer *)lBCookieStickinessPoliciesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBLBCookieStickinessPolicy class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBLBCookieStickinessPolicy class]];
 }
 
 + (NSValueTransformer *)appCookieStickinessPoliciesXMLTransformer

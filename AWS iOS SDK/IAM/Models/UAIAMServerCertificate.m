@@ -35,7 +35,7 @@
 
 + (NSValueTransformer *)serverCertificateMetadataQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAIAMServerCertificateMetadata class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAIAMServerCertificateMetadata class]];
 }
 
 + (NSValueTransformer *)serverCertificateMetadataXMLTransformer

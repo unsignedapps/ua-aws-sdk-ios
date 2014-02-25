@@ -59,7 +59,7 @@
 
 + (NSValueTransformer *)metricDataQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWMetricDatum class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWMetricDatum class]];
 }
 
 - (void)addMetricDatum:(UACWMetricDatum *)metricDatum

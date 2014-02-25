@@ -20,8 +20,8 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"key": @"key",
-        @"value": @"value"
+        @"key": @"Key",
+        @"value": @"Value"
     }];
     return [keyPaths copy];
 }

@@ -20,10 +20,10 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"diskImageFormat": @"diskImageFormat",
-        @"containerFormat": @"containerFormat",
-        @"s3Bucket": @"s3Bucket",
-        @"s3Key": @"s3Key"
+        @"diskImageFormat": @"DiskImageFormat",
+        @"containerFormat": @"ContainerFormat",
+        @"s3Bucket": @"S3Bucket",
+        @"s3Key": @"S3Key"
     }];
     return [keyPaths copy];
 }

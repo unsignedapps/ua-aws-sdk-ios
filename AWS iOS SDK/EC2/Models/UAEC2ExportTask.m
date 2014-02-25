@@ -39,12 +39,12 @@
 
 + (NSValueTransformer *)instanceExportDetailsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2InstanceExportDetails class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceExportDetails class]];
 }
 
 + (NSValueTransformer *)exportToS3TaskQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2ExportToS3Task class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2ExportToS3Task class]];
 }
 
 + (NSValueTransformer *)instanceExportDetailsXMLTransformer

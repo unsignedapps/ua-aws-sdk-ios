@@ -20,8 +20,8 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"userID": @"userId",
-        @"group": @"group"
+        @"userID": @"UserId",
+        @"group": @"Group"
     }];
     return [keyPaths copy];
 }

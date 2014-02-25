@@ -40,12 +40,12 @@
 
 + (NSValueTransformer *)imageQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2DiskImageDescription class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DiskImageDescription class]];
 }
 
 + (NSValueTransformer *)volumeQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2DiskImageVolume class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DiskImageVolume class]];
 }
 
 + (NSValueTransformer *)bytesConvertedXMLTransformer

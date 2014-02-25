@@ -71,7 +71,7 @@
 
 + (NSValueTransformer *)messagesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2AvailabilityZoneMessage class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2AvailabilityZoneMessage class]];
 }
 
 + (NSValueTransformer *)stateXMLTransformer

@@ -59,7 +59,7 @@
 
 + (NSValueTransformer *)healthCheckQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
 }
 
 #pragma mark - Invocation

@@ -80,17 +80,17 @@
 
 + (NSValueTransformer *)descriptionValueQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
 }
 
 + (NSValueTransformer *)sourceDestCheckQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
 }
 
 + (NSValueTransformer *)attachmentQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2NetworkInterfaceAttachmentSpecification class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2NetworkInterfaceAttachmentSpecification class]];
 }
 
 - (void)addGroup:(NSString *)group

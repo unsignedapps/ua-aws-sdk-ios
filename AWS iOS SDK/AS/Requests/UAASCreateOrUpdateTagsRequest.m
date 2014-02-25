@@ -67,7 +67,7 @@
 
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASTag class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASTag class]];
 }
 
 - (void)addTag:(UAASTag *)tag

@@ -82,7 +82,7 @@
 
 + (NSValueTransformer *)placementQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2Placement class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Placement class]];
 }
 
 + (NSValueTransformer *)monitoringQueryStringTransformer

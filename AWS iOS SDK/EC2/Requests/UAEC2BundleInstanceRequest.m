@@ -65,7 +65,7 @@
 
 + (NSValueTransformer *)storageQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2Storage class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Storage class]];
 }
 
 #pragma mark - Invocation

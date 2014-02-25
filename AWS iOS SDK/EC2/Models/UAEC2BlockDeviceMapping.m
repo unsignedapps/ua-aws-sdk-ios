@@ -21,10 +21,10 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"virtualName": @"virtualName",
-        @"deviceName": @"deviceName",
-        @"ebs": @"ebs",
-        @"noDevice": @"noDevice"
+        @"virtualName": @"VirtualName",
+        @"deviceName": @"DeviceName",
+        @"ebs": @"Ebs",
+        @"noDevice": @"NoDevice"
     }];
     return [keyPaths copy];
 }
@@ -51,7 +51,7 @@
 
 + (NSValueTransformer *)ebsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2EBSBlockDevice class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2EBSBlockDevice class]];
 }
 
 + (NSValueTransformer *)ebsXMLTransformer

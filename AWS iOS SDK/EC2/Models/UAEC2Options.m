@@ -29,7 +29,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"staticRoutesOnly": @"staticRoutesOnly"
+        @"staticRoutesOnly": @"StaticRoutesOnly"
     }];
     return [keyPaths copy];
 }

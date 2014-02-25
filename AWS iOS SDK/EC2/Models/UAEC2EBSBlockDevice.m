@@ -20,11 +20,11 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"snapshotID": @"snapshotId",
-        @"volumeSize": @"volumeSize",
-        @"deleteOnTermination": @"deleteOnTermination",
-        @"volumeType": @"volumeType",
-        @"iops": @"iops"
+        @"snapshotID": @"SnapshotId",
+        @"volumeSize": @"VolumeSize",
+        @"deleteOnTermination": @"DeleteOnTermination",
+        @"volumeType": @"VolumeType",
+        @"iops": @"Iops"
     }];
     return [keyPaths copy];
 }

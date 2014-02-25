@@ -91,7 +91,7 @@
 
 + (NSValueTransformer *)launchSpecificationQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2LaunchSpecification class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchSpecification class]];
 }
 
 #pragma mark - Invocation

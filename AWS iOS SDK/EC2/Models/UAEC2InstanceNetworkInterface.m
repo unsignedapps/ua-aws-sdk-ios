@@ -49,22 +49,22 @@
 
 + (NSValueTransformer *)groupsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
 }
 
 + (NSValueTransformer *)attachmentQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAttachment class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAttachment class]];
 }
 
 + (NSValueTransformer *)associationQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
 }
 
 + (NSValueTransformer *)privateIPAddressesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstancePrivateIPAddress class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstancePrivateIPAddress class]];
 }
 
 + (NSValueTransformer *)sourceDestCheckXMLTransformer

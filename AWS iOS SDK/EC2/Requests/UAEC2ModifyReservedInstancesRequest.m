@@ -60,7 +60,7 @@
 
 + (NSValueTransformer *)targetConfigurationsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2ReservedInstancesConfiguration class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2ReservedInstancesConfiguration class]];
 }
 
 - (void)addReservedInstancesID:(NSString *)reservedInstancesID

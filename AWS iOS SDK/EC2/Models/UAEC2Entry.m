@@ -40,12 +40,12 @@
 
 + (NSValueTransformer *)icmpTypeCodeQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
 }
 
 + (NSValueTransformer *)portRangeQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2PortRange class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2PortRange class]];
 }
 
 + (NSValueTransformer *)ruleNumberXMLTransformer

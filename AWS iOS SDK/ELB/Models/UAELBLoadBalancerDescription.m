@@ -53,32 +53,32 @@
 
 + (NSValueTransformer *)listenerDescriptionsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBListenerDescription class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBListenerDescription class]];
 }
 
 + (NSValueTransformer *)policiesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAELBPolicies class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBPolicies class]];
 }
 
 + (NSValueTransformer *)backendServerDescriptionsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBBackendServerDescription class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBBackendServerDescription class]];
 }
 
 + (NSValueTransformer *)instancesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBInstance class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBInstance class]];
 }
 
 + (NSValueTransformer *)healthCheckQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
 }
 
 + (NSValueTransformer *)sourceSecurityGroupQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAELBSourceSecurityGroup class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBSourceSecurityGroup class]];
 }
 
 + (NSValueTransformer *)createdTimeQueryStringTransformer

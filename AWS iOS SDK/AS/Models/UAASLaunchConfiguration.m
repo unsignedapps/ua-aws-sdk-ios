@@ -66,7 +66,7 @@
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)createdTimeQueryStringTransformer

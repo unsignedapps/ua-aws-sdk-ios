@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)listenerQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAELBListener class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBListener class]];
 }
 
 + (NSValueTransformer *)listenerXMLTransformer

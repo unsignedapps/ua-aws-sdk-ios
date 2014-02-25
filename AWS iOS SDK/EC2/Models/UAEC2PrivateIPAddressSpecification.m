@@ -20,8 +20,8 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"privateIPAddress": @"privateIpAddress",
-        @"primary": @"primary"
+        @"privateIPAddress": @"PrivateIpAddress",
+        @"primary": @"Primary"
     }];
     return [keyPaths copy];
 }

@@ -78,12 +78,12 @@
 
 + (NSValueTransformer *)launchPermissionQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
 }
 
 + (NSValueTransformer *)descriptionValueQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
 }
 
 - (void)addUserID:(NSString *)userID

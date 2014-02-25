@@ -67,7 +67,7 @@
 
 + (NSValueTransformer *)optionsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2Options class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Options class]];
 }
 
 #pragma mark - Invocation

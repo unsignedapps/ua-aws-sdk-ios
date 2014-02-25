@@ -11,7 +11,6 @@
 #import "UAEC2RunInstancesResponse.h"
 #import "UAEC2Placement.h"
 #import "UAEC2BlockDeviceMapping.h"
-#import "UAEC2InstanceLicenseSpecification.h"
 #import "UAEC2InstanceNetworkInterfaceSpecification.h"
 #import "UAEC2IAMInstanceProfileSpecification.h"
 
@@ -24,7 +23,7 @@
 
 @implementation UAEC2RunInstancesRequest
 
-@synthesize action=_action, version=_version, dryRun=_dryRun, imageID=_imageID, minCount=_minCount, maxCount=_maxCount, keyName=_keyName, securityGroups=_securityGroups, securityGroupIDs=_securityGroupIDs, userData=_userData, instanceType=_instanceType, placement=_placement, kernelID=_kernelID, ramdiskID=_ramdiskID, blockDeviceMappings=_blockDeviceMappings, monitoringEnabled=_monitoringEnabled, subnetID=_subnetID, disableApiTermination=_disableApiTermination, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, license=_license, privateIPAddress=_privateIPAddress, clientToken=_clientToken, additionalInfo=_additionalInfo, networkInterfaces=_networkInterfaces, iamInstanceProfile=_iamInstanceProfile, ebsOptimized=_ebsOptimized;
+@synthesize action=_action, version=_version, dryRun=_dryRun, imageID=_imageID, minCount=_minCount, maxCount=_maxCount, keyName=_keyName, securityGroups=_securityGroups, securityGroupIDs=_securityGroupIDs, userData=_userData, instanceType=_instanceType, placement=_placement, kernelID=_kernelID, ramdiskID=_ramdiskID, blockDeviceMappings=_blockDeviceMappings, monitoringEnabled=_monitoringEnabled, subnetID=_subnetID, disableApiTermination=_disableApiTermination, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, privateIPAddress=_privateIPAddress, clientToken=_clientToken, additionalInfo=_additionalInfo, networkInterfaces=_networkInterfaces, iamInstanceProfile=_iamInstanceProfile, ebsOptimized=_ebsOptimized;
 
 - (id)init
 {
@@ -68,7 +67,6 @@
         @"subnetID": @"SubnetId",
         @"disableApiTermination": @"DisableApiTermination",
         @"instanceInitiatedShutdownBehavior": @"InstanceInitiatedShutdownBehavior",
-        @"license": @"License",
         @"privateIPAddress": @"PrivateIpAddress",
         @"clientToken": @"ClientToken",
         @"additionalInfo": @"AdditionalInfo",
@@ -106,11 +104,6 @@
   return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
-+ (NSValueTransformer *)licenseJSONTransformer
-{
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2InstanceLicenseSpecification class]];
-}
-
 + (NSValueTransformer *)networkInterfacesJSONTransformer
 {
   return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
@@ -128,12 +121,12 @@
 
 + (NSValueTransformer *)placementQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2Placement class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Placement class]];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)monitoringEnabledQueryStringTransformer
@@ -146,19 +139,14 @@
     return [MTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-+ (NSValueTransformer *)licenseQueryStringTransformer
-{
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2InstanceLicenseSpecification class]];
-}
-
 + (NSValueTransformer *)networkInterfacesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
 }
 
 + (NSValueTransformer *)iamInstanceProfileQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2IAMInstanceProfileSpecification class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2IAMInstanceProfileSpecification class]];
 }
 
 + (NSValueTransformer *)ebsOptimizedQueryStringTransformer

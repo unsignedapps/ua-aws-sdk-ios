@@ -43,7 +43,7 @@
 
 + (NSValueTransformer *)rolesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAIAMRole class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAIAMRole class]];
 }
 
 + (NSValueTransformer *)createDateXMLTransformer

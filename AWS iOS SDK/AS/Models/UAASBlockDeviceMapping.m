@@ -51,7 +51,7 @@
 
 + (NSValueTransformer *)ebsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAASEBSBlockDevice class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAASEBSBlockDevice class]];
 }
 
 + (NSValueTransformer *)ebsXMLTransformer

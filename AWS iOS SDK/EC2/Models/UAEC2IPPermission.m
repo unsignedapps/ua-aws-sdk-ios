@@ -22,11 +22,11 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"ipProtocol": @"ipProtocol",
-        @"fromPort": @"fromPort",
-        @"toPort": @"toPort",
-        @"userIdGroupPairs": @"groups",
-        @"ipRanges": @"ipRanges"
+        @"ipProtocol": @"IpProtocol",
+        @"fromPort": @"FromPort",
+        @"toPort": @"ToPort",
+        @"userIdGroupPairs": @"Groups",
+        @"ipRanges": @"IpRanges"
     }];
     return [keyPaths copy];
 }
@@ -54,12 +54,12 @@
 
 + (NSValueTransformer *)userIdGroupPairsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2UserIdGroupPair class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2UserIdGroupPair class]];
 }
 
 + (NSValueTransformer *)ipRangesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2IPRange class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2IPRange class]];
 }
 
 + (NSValueTransformer *)fromPortXMLTransformer

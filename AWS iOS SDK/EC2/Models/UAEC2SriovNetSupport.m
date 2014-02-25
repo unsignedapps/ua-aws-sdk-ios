@@ -29,7 +29,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"value": @"value"
+        @"value": @"Value"
     }];
     return [keyPaths copy];
 }

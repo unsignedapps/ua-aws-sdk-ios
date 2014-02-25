@@ -47,12 +47,12 @@
 
 + (NSValueTransformer *)addQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
 }
 
 + (NSValueTransformer *)removeQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
 }
 
 + (NSValueTransformer *)addXMLTransformer

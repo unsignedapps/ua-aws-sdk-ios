@@ -59,7 +59,7 @@
 
 + (NSValueTransformer *)instancesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBInstance class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBInstance class]];
 }
 
 - (void)addInstance:(UAELBInstance *)instance

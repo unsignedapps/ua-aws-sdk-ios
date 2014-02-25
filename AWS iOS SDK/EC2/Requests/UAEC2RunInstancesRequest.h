@@ -8,7 +8,7 @@
 
 #import "UAEC2Request.h"
 
-@class UAEC2Placement, UAEC2BlockDeviceMapping, UAEC2InstanceLicenseSpecification, UAEC2InstanceNetworkInterfaceSpecification, UAEC2IAMInstanceProfileSpecification, UAEC2RunInstancesResponse;
+@class UAEC2Placement, UAEC2BlockDeviceMapping, UAEC2InstanceNetworkInterfaceSpecification, UAEC2IAMInstanceProfileSpecification, UAEC2RunInstancesResponse;
 
 typedef void(^UAEC2RunInstancesRequestCompletionBlock)(UAEC2RunInstancesResponse *response, NSError *error);
 typedef BOOL(^UAEC2RunInstancesRequestShouldContinueWaitingBlock)(UAEC2RunInstancesResponse *response, NSError *error);
@@ -33,7 +33,6 @@ typedef BOOL(^UAEC2RunInstancesRequestShouldContinueWaitingBlock)(UAEC2RunInstan
 @property (nonatomic, copy) NSString *subnetID;
 @property (nonatomic) BOOL disableApiTermination;
 @property (nonatomic, copy) NSString *instanceInitiatedShutdownBehavior;
-@property (nonatomic, copy) UAEC2InstanceLicenseSpecification *license;
 @property (nonatomic, copy) NSString *privateIPAddress;
 @property (nonatomic, copy) NSString *clientToken;
 @property (nonatomic, copy) NSString *additionalInfo;

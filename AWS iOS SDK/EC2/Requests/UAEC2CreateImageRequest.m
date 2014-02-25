@@ -73,7 +73,7 @@
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
 - (void)addBlockDeviceMapping:(UAEC2BlockDeviceMapping *)blockDeviceMapping

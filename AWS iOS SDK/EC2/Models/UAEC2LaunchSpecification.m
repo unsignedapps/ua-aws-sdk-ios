@@ -25,22 +25,22 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"imageID": @"imageId",
-        @"keyName": @"keyName",
-        @"securityGroups": @"groupSet",
-        @"userData": @"userData",
+        @"imageID": @"ImageId",
+        @"keyName": @"KeyName",
+        @"securityGroups": @"GroupSet",
+        @"userData": @"UserData",
         @"decodedUserData": [NSNull null],
-        @"addressingType": @"addressingType",
-        @"instanceType": @"instanceType",
-        @"placement": @"placement",
-        @"kernelID": @"kernelId",
-        @"ramdiskID": @"ramdiskId",
-        @"blockDeviceMappings": @"blockDeviceMapping",
-        @"monitoringEnabled": @"monitoringEnabled",
-        @"subnetID": @"subnetId",
-        @"networkInterfaces": @"networkInterfaceSet",
-        @"iamInstanceProfile": @"iamInstanceProfile",
-        @"ebsOptimized": @"ebsOptimized"
+        @"addressingType": @"AddressingType",
+        @"instanceType": @"InstanceType",
+        @"placement": @"Placement",
+        @"kernelID": @"KernelId",
+        @"ramdiskID": @"RamdiskId",
+        @"blockDeviceMappings": @"BlockDeviceMapping",
+        @"monitoringEnabled": @"MonitoringEnabled",
+        @"subnetID": @"SubnetId",
+        @"networkInterfaces": @"NetworkInterfaceSet",
+        @"iamInstanceProfile": @"IamInstanceProfile",
+        @"ebsOptimized": @"EbsOptimized"
     }];
     return [keyPaths copy];
 }
@@ -96,27 +96,27 @@
 
 + (NSValueTransformer *)securityGroupsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
 }
 
 + (NSValueTransformer *)placementQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2SpotPlacement class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2SpotPlacement class]];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)networkInterfacesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
 }
 
 + (NSValueTransformer *)iamInstanceProfileQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2IAMInstanceProfileSpecification class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2IAMInstanceProfileSpecification class]];
 }
 
 + (NSValueTransformer *)securityGroupsXMLTransformer

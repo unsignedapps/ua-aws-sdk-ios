@@ -37,7 +37,7 @@
 
 + (NSValueTransformer *)faultQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2Fault class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Fault class]];
 }
 
 + (NSValueTransformer *)faultXMLTransformer

@@ -29,7 +29,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"cidrIP": @"cidrIp"
+        @"cidrIP": @"CidrIp"
     }];
     return [keyPaths copy];
 }

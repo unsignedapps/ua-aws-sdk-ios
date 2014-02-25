@@ -36,7 +36,7 @@
 
 + (NSValueTransformer *)associationQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
 }
 
 + (NSValueTransformer *)primaryXMLTransformer

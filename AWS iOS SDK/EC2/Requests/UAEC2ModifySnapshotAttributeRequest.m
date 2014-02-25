@@ -69,7 +69,7 @@
 
 + (NSValueTransformer *)createVolumePermissionQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2CreateVolumePermissionModifications class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2CreateVolumePermissionModifications class]];
 }
 
 - (void)addUserID:(NSString *)userID

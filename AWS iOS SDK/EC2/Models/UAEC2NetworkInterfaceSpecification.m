@@ -68,7 +68,7 @@
 
 + (NSValueTransformer *)privateIPAddressesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
 }
 
 + (NSValueTransformer *)associatePublicIPAddressQueryStringTransformer

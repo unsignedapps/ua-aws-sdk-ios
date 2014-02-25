@@ -61,7 +61,7 @@
 
 + (NSValueTransformer *)exportToS3TaskQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2ExportToS3Task class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2ExportToS3Task class]];
 }
 
 #pragma mark - Invocation

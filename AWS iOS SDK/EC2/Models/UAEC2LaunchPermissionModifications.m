@@ -47,12 +47,12 @@
 
 + (NSValueTransformer *)addQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2LaunchPermission class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2LaunchPermission class]];
 }
 
 + (NSValueTransformer *)removeQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2LaunchPermission class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2LaunchPermission class]];
 }
 
 + (NSValueTransformer *)addXMLTransformer

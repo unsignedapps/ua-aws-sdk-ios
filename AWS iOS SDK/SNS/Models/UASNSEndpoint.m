@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)attributesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UASNSEndpointAttributes class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UASNSEndpointAttributes class]];
 }
 
 + (NSValueTransformer *)attributesXMLTransformer

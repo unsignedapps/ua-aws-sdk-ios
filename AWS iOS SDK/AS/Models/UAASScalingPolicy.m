@@ -75,7 +75,7 @@
 
 + (NSValueTransformer *)alarmsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASAlarm class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASAlarm class]];
 }
 
 + (NSValueTransformer *)scalingAdjustmentXMLTransformer

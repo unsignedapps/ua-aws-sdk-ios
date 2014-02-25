@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)s3QueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2BundleInstanceS3Storage class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2BundleInstanceS3Storage class]];
 }
 
 + (NSValueTransformer *)s3XMLTransformer

@@ -56,7 +56,7 @@
 
 + (NSValueTransformer *)dimensionsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 + (NSValueTransformer *)timestampQueryStringTransformer
@@ -66,7 +66,7 @@
 
 + (NSValueTransformer *)statisticValuesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UACWStatisticSet class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UACWStatisticSet class]];
 }
 
 + (NSValueTransformer *)unitQueryStringTransformer

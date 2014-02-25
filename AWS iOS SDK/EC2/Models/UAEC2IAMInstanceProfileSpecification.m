@@ -20,8 +20,8 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"arn": @"arn",
-        @"name": @"name"
+        @"arn": @"Arn",
+        @"name": @"Name"
     }];
     return [keyPaths copy];
 }

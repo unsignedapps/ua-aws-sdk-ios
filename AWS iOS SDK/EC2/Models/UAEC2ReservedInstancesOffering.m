@@ -46,12 +46,12 @@
 
 + (NSValueTransformer *)recurringChargesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2RecurringCharge class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2RecurringCharge class]];
 }
 
 + (NSValueTransformer *)pricingDetailsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PricingDetail class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PricingDetail class]];
 }
 
 + (NSValueTransformer *)durationXMLTransformer

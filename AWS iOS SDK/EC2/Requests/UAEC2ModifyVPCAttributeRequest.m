@@ -66,12 +66,12 @@
 
 + (NSValueTransformer *)enableDNSSupportQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2EnableDNSSupport class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2EnableDNSSupport class]];
 }
 
 + (NSValueTransformer *)enableDNSHostnamesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2EnableDNSHostnames class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2EnableDNSHostnames class]];
 }
 
 #pragma mark - Invocation

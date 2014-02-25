@@ -37,7 +37,7 @@
 
 + (NSValueTransformer *)userQueryStringTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAIAMUser class]];
+	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAIAMUser class]];
 }
 
 + (NSValueTransformer *)enableDateQueryStringTransformer

@@ -61,7 +61,7 @@
 
 + (NSValueTransformer *)priceSchedulesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PriceScheduleSpecification class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PriceScheduleSpecification class]];
 }
 
 - (void)addPriceSchedule:(UAEC2PriceScheduleSpecification *)priceSchedule

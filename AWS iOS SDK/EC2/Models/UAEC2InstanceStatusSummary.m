@@ -73,7 +73,7 @@
 
 + (NSValueTransformer *)detailsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceStatusDetails class]];
+	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceStatusDetails class]];
 }
 
 + (NSValueTransformer *)statusXMLTransformer
