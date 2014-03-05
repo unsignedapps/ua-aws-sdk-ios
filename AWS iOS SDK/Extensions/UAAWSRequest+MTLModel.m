@@ -62,6 +62,8 @@ static BOOL MTLValidateAndSetValue(id obj, NSString *key, id value, BOOL forceUp
 
 @interface UAAWSRequest (MTLModelExtensionsInternal)
 
+@property (nonatomic) NSUInteger UA_PollingAttempts;
+
 // Enumerates all properties of the receiver's class hierarchy, starting at the
 // receiver, and continuing up until (but not including) MTLModel.
 //
@@ -194,8 +196,17 @@ static BOOL MTLValidateAndSetValue(id obj, NSString *key, id value, BOOL forceUp
 
 #pragma mark NSCopying
 
-- (instancetype)copyWithZone:(NSZone *)zone {
-	return [[self.class allocWithZone:zone] initWithDictionary:self.dictionaryValue error:NULL];
+- (instancetype)copyWithZone:(NSZone *)zone
+{
+	UAAWSRequest *copy = [[self.class allocWithZone:zone] initWithDictionary:self.dictionaryValue error:NULL];
+    [copy setUA_CheckImmediately:self.UA_CheckImmediately];
+    [copy setUA_Credentials:self.UA_Credentials];
+    [copy setUA_Owner:self.UA_Owner];
+    [copy setUA_Region:self.UA_Region];
+    [copy setUA_RequestCompletionBlock:self.UA_RequestCompletionBlock];
+    [copy setUA_ShouldContinueWaiting:self.UA_ShouldContinueWaiting];
+    [copy setUA_PollingAttempts:self.UA_PollingAttempts];
+    return copy;
 }
 
 #pragma mark NSObject

@@ -11,7 +11,6 @@
 #import "UAEC2ModifyInstanceAttributeResponse.h"
 #import "UAEC2InstanceBlockDeviceMappingSpecification.h"
 #import "UAEC2SourceDestCheck.h"
-#import "UAEC2DisableApiTermination.h"
 #import "UAEC2Kernel.h"
 #import "UAEC2Ramdisk.h"
 #import "UAEC2UserData.h"
@@ -60,7 +59,7 @@
         @"value": @"Value",
         @"blockDeviceMappings": @"BlockDeviceMapping",
         @"sourceDestCheck": @"SourceDestCheck",
-        @"disableApiTermination": @"DisableApiTermination",
+        @"disableApiTermination": @"DisableApiTermination.Value",
         @"instanceType": @"InstanceType.Value",
         @"kernel": @"Kernel",
         @"ramdisk": @"Ramdisk",
@@ -81,11 +80,6 @@
 + (NSValueTransformer *)sourceDestCheckJSONTransformer
 {
   return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
-}
-
-+ (NSValueTransformer *)disableApiTerminationJSONTransformer
-{
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2DisableApiTermination class]];
 }
 
 + (NSValueTransformer *)kernelJSONTransformer
@@ -135,7 +129,7 @@
 
 + (NSValueTransformer *)disableApiTerminationQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DisableApiTermination class]];
+    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)kernelQueryStringTransformer

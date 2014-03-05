@@ -16,7 +16,6 @@
 
 @interface UAAWSRequest ()
 
-@property (nonatomic) BOOL UA_CheckImmediately;
 @property (nonatomic) NSUInteger UA_PollingAttempts;
 @property (nonatomic, strong) UAAWSResponse *UA_Response;
 @property (nonatomic, strong) NSError *UA_Error;
@@ -160,7 +159,6 @@
     
     // secondly, start executing
     [self setExecuting:YES];
-    [self setUA_PollingAttempts:0];
     
     // fire the first (and often only) poll
     if ([self UA_CheckImmediately])
@@ -174,10 +172,12 @@
 
 - (void)UA_SchedulePoll
 {
-    NSTimer *timer = [NSTimer timerWithTimeInterval:[self UA_PollingInterval] target:self selector:@selector(UA_Poll) userInfo:nil repeats:NO];
-    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-    [runLoop addTimer:timer forMode:NSRunLoopCommonModes];
-    [runLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:[self UA_PollingInterval]]];
+    // we schedule polling on the main thread, basically it just re-adds a copy of this request back into the queue after the interval
+    __block UAAWSRequest *blockSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        [NSTimer scheduledTimerWithTimeInterval:[self UA_PollingInterval] target:[UAAWSOperationQueue sharedInstance] selector:@selector(addRequestFromTimer:) userInfo:[blockSelf copy] repeats:NO];
+    });
 }
 
 // Execute the connection
@@ -198,7 +198,7 @@
     }
     
     // Lets go!
-    NSLog(@"-[%@] Executing request.", NSStringFromClass([self class]));
+    NSLog(@"-[%@] Executing request (Attempt #%lu).", NSStringFromClass([self class]), (unsigned long)self.UA_PollingAttempts);
     __block UAAWSRequest *blockSelf = self;
     [self setUA_DataTask:[queue.session dataTaskWithRequest:[self UA_Payload] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
@@ -235,6 +235,8 @@
             {
                 NSLog(@"-[%@] Waiting.", NSStringFromClass([blockSelf class]));
                 [blockSelf UA_SchedulePoll];
+                [blockSelf setExecuting:NO];
+                [blockSelf setFinished:YES];
                 return;
             }
         }

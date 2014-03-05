@@ -70,6 +70,14 @@
     [self addOperations:requests waitUntilFinished:wait];
 }
 
+- (void)addRequestFromTimer:(NSTimer *)timer
+{
+    NSAssert(timer.userInfo != nil, @"You must supply the UAAWSRequest object as the timer's userInfo parameter when adding a request from a timer.");
+    NSAssert([timer.userInfo isKindOfClass:[UAAWSRequest class]], @"The timer object's userInfo parameter must be an UAAWSRequest object when adding a request from a timer.");
+    UAAWSRequest *request = (UAAWSRequest *)timer.userInfo;
+    [self addRequest:request];
+}
+
 #pragma mark - Execution Management
 
 - (void)cancel

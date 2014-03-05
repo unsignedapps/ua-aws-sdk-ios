@@ -82,6 +82,12 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
  **/
 @property (nonatomic, copy) UAAWSOperationShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
+/**
+ * Whether the request should poll immediately or wait. Useful for times when you've just issued a request that changes
+ * something and checking immediately would be a waste.
+**/
+@property (nonatomic) BOOL UA_CheckImmediately;
+
 
 /** @name Execution Management **/
 

@@ -54,4 +54,9 @@
 **/
 - (void)addRequests:(NSArray *)requests waitUntilFinished:(BOOL)wait;
 
+/**
+ * Adds a request to the queue from a timer.
+**/
+- (void)addRequestFromTimer:(NSTimer *)timer;
+
 @end

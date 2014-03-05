@@ -9,6 +9,6 @@
 #import "UAAWSRequest.h"
 #import <Mantle/Mantle.h>
 
-@interface UAAWSRequest (MTLModel) <MTLModel>
+@interface UAAWSRequest (MTLModel) <MTLModel, NSCopying>
 
 @end
