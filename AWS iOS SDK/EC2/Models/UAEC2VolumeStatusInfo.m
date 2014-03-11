@@ -34,12 +34,12 @@
 
 + (NSValueTransformer *)detailsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusDetail class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusDetail class]];
 }
 
 + (NSValueTransformer *)detailsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2VolumeStatusDetail class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VolumeStatusDetail class]];
 }
 
 @end

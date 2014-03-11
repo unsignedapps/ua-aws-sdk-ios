@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)terminatingInstancesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2InstanceStateChange class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceStateChange class]];
 }
 
 @end

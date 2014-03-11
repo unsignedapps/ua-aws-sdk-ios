@@ -44,4 +44,20 @@
     return [keyPaths copy];
 }
 
+- (void)setArn:(NSString *)arn
+{
+	_arn = arn;
+	
+	if (![self.UA_dirtyProperties containsObject:@"arn"])
+		[self.UA_dirtyProperties addObject:@"arn"];
+}
+
+- (void)setName:(NSString *)name
+{
+	_name = name;
+	
+	if (![self.UA_dirtyProperties containsObject:@"name"])
+		[self.UA_dirtyProperties addObject:@"name"];
+}
+
 @end

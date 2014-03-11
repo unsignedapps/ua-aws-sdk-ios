@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)processesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASProcessType class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASProcessType class]];
 }
 
 @end

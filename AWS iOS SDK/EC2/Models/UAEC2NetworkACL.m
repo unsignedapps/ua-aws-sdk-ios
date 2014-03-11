@@ -40,37 +40,37 @@
 
 + (NSValueTransformer *)entriesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Entry class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Entry class]];
 }
 
 + (NSValueTransformer *)associationsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2NetworkACLAssociation class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2NetworkACLAssociation class]];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 + (NSValueTransformer *)isDefaultXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)entriesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Entry class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Entry class]];
 }
 
 + (NSValueTransformer *)associationsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2NetworkACLAssociation class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2NetworkACLAssociation class]];
 }
 
 + (NSValueTransformer *)tagsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 @end

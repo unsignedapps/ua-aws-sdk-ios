@@ -36,12 +36,12 @@
 
 + (NSValueTransformer *)enableDNSSupportXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2EnableDNSSupport class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2EnableDNSSupport class]];
 }
 
 + (NSValueTransformer *)enableDNSHostnamesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2EnableDNSHostnames class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2EnableDNSHostnames class]];
 }
 
 @end

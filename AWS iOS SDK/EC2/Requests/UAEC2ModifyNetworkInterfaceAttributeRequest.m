@@ -58,39 +58,103 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setNetworkInterfaceID:(NSString *)networkInterfaceID
+{
+	_networkInterfaceID = networkInterfaceID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"networkInterfaceID"])
+		[self.UA_dirtyProperties addObject:@"networkInterfaceID"];
+}
+
+- (void)setDescriptionValue:(UAEC2DescriptionValue *)descriptionValue
+{
+	_descriptionValue = descriptionValue;
+	
+	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
+		[self.UA_dirtyProperties addObject:@"descriptionValue"];
+}
+
+- (void)setSourceDestCheck:(UAEC2SourceDestCheck *)sourceDestCheck
+{
+	_sourceDestCheck = sourceDestCheck;
+	
+	if (![self.UA_dirtyProperties containsObject:@"sourceDestCheck"])
+		[self.UA_dirtyProperties addObject:@"sourceDestCheck"];
+}
+
+- (void)setGroups:(NSMutableArray *)groups
+{
+	_groups = groups;
+	
+	if (![self.UA_dirtyProperties containsObject:@"groups"])
+		[self.UA_dirtyProperties addObject:@"groups"];
+}
+
+- (void)setAttachment:(UAEC2NetworkInterfaceAttachmentSpecification *)attachment
+{
+	_attachment = attachment;
+	
+	if (![self.UA_dirtyProperties containsObject:@"attachment"])
+		[self.UA_dirtyProperties addObject:@"attachment"];
+}
+
 + (NSValueTransformer *)descriptionValueJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
 }
 
 + (NSValueTransformer *)sourceDestCheckJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
 }
 
 + (NSValueTransformer *)attachmentJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2NetworkInterfaceAttachmentSpecification class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2NetworkInterfaceAttachmentSpecification class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)descriptionValueQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
 }
 
 + (NSValueTransformer *)sourceDestCheckQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
 }
 
 + (NSValueTransformer *)attachmentQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2NetworkInterfaceAttachmentSpecification class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2NetworkInterfaceAttachmentSpecification class]];
 }
 
 - (void)addGroup:(NSString *)group

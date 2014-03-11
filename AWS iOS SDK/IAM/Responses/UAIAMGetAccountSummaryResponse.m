@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)summaryMapXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAIAMAccountSummary class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMAccountSummary class]];
 }
 
 @end

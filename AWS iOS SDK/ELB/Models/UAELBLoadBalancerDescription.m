@@ -53,32 +53,32 @@
 
 + (NSValueTransformer *)listenerDescriptionsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBListenerDescription class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBListenerDescription class]];
 }
 
 + (NSValueTransformer *)policiesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBPolicies class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBPolicies class]];
 }
 
 + (NSValueTransformer *)backendServerDescriptionsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBBackendServerDescription class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBBackendServerDescription class]];
 }
 
 + (NSValueTransformer *)instancesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBInstance class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBInstance class]];
 }
 
 + (NSValueTransformer *)healthCheckQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
 }
 
 + (NSValueTransformer *)sourceSecurityGroupQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBSourceSecurityGroup class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBSourceSecurityGroup class]];
 }
 
 + (NSValueTransformer *)createdTimeQueryStringTransformer
@@ -88,7 +88,7 @@
 
 + (NSValueTransformer *)schemeQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -119,17 +119,17 @@
 
 + (NSValueTransformer *)listenerDescriptionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAELBListenerDescription class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBListenerDescription class]];
 }
 
 + (NSValueTransformer *)policiesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAELBPolicies class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAELBPolicies class]];
 }
 
 + (NSValueTransformer *)backendServerDescriptionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAELBBackendServerDescription class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBBackendServerDescription class]];
 }
 
 + (NSValueTransformer *)availabilityZonesXMLTransformer
@@ -144,17 +144,17 @@
 
 + (NSValueTransformer *)instancesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAELBInstance class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBInstance class]];
 }
 
 + (NSValueTransformer *)healthCheckXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAELBHealthCheck class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAELBHealthCheck class]];
 }
 
 + (NSValueTransformer *)sourceSecurityGroupXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAELBSourceSecurityGroup class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAELBSourceSecurityGroup class]];
 }
 
 + (NSValueTransformer *)securityGroupsXMLTransformer
@@ -164,17 +164,17 @@
 
 + (NSValueTransformer *)createdTimeXMLTransformer
 {
-    return [NSValueTransformer mtl_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 + (NSValueTransformer *)schemeXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
 			return @(UAELBSchemeUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         

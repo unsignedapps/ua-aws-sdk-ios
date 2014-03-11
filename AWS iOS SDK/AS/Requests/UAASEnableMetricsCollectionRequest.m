@@ -52,6 +52,46 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setAutoScalingGroupName:(NSString *)autoScalingGroupName
+{
+	_autoScalingGroupName = autoScalingGroupName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"autoScalingGroupName"])
+		[self.UA_dirtyProperties addObject:@"autoScalingGroupName"];
+}
+
+- (void)setMetrics:(NSMutableArray *)metrics
+{
+	_metrics = metrics;
+	
+	if (![self.UA_dirtyProperties containsObject:@"metrics"])
+		[self.UA_dirtyProperties addObject:@"metrics"];
+}
+
+- (void)setGranularity:(NSString *)granularity
+{
+	_granularity = granularity;
+	
+	if (![self.UA_dirtyProperties containsObject:@"granularity"])
+		[self.UA_dirtyProperties addObject:@"granularity"];
+}
+
 - (void)addMetric:(NSString *)metric
 {
 	if (self.metrics == nil)

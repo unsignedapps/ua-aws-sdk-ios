@@ -44,6 +44,22 @@
     return [keyPaths copy];
 }
 
+- (void)setType:(NSNumber *)type
+{
+	_type = type;
+	
+	if (![self.UA_dirtyProperties containsObject:@"type"])
+		[self.UA_dirtyProperties addObject:@"type"];
+}
+
+- (void)setCode:(NSNumber *)code
+{
+	_code = code;
+	
+	if (![self.UA_dirtyProperties containsObject:@"code"])
+		[self.UA_dirtyProperties addObject:@"code"];
+}
+
 + (NSValueTransformer *)typeXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

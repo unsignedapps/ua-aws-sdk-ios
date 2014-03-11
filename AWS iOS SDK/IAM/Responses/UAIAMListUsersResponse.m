@@ -35,12 +35,12 @@
 
 + (NSValueTransformer *)usersXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAIAMUser class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMUser class]];
 }
 
 + (NSValueTransformer *)isTruncatedXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

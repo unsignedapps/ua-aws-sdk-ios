@@ -53,12 +53,61 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setTopicARN:(NSString *)topicARN
+{
+	_topicARN = topicARN;
+	
+	if (![self.UA_dirtyProperties containsObject:@"topicARN"])
+		[self.UA_dirtyProperties addObject:@"topicARN"];
+}
+
+- (void)setLabel:(NSString *)label
+{
+	_label = label;
+	
+	if (![self.UA_dirtyProperties containsObject:@"label"])
+		[self.UA_dirtyProperties addObject:@"label"];
+}
+
+- (void)setAWSAccountID:(NSMutableArray *)aWSAccountID
+{
+	_aWSAccountID = aWSAccountID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"aWSAccountID"])
+		[self.UA_dirtyProperties addObject:@"aWSAccountID"];
+}
+
+- (void)setActionName:(NSMutableArray *)actionName
+{
+	_actionName = actionName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"actionName"])
+		[self.UA_dirtyProperties addObject:@"actionName"];
+}
+
 - (void)addAWSAccountID:(NSString *)aWSAccountID
 {
 	if (self.aWSAccountID == nil)
 		[self setAWSAccountID:[NSMutableArray array]];
 	[self.aWSAccountID addObject:aWSAccountID];
 }
+
 - (void)addActionName:(NSString *)actionName
 {
 	if (self.actionName == nil)

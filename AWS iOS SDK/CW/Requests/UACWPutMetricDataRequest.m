@@ -52,14 +52,46 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setNamespace:(NSString *)namespace
+{
+	_namespace = namespace;
+	
+	if (![self.UA_dirtyProperties containsObject:@"namespace"])
+		[self.UA_dirtyProperties addObject:@"namespace"];
+}
+
+- (void)setMetricData:(NSMutableArray *)metricData
+{
+	_metricData = metricData;
+	
+	if (![self.UA_dirtyProperties containsObject:@"metricData"])
+		[self.UA_dirtyProperties addObject:@"metricData"];
+}
+
 + (NSValueTransformer *)metricDataJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UACWMetricDatum class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UACWMetricDatum class]];
 }
 
 + (NSValueTransformer *)metricDataQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWMetricDatum class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UACWMetricDatum class]];
 }
 
 - (void)addMetricDatum:(UACWMetricDatum *)metricDatum

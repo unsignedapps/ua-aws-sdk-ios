@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)userXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMUser class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMUser class]];
 }
 
 @end

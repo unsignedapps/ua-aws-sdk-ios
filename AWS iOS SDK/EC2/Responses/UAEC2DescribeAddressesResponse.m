@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)addressesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Address class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Address class]];
 }
 
 @end

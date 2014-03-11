@@ -55,19 +55,75 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setSnapshotIDs:(NSMutableArray *)snapshotIDs
+{
+	_snapshotIDs = snapshotIDs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"snapshotIDs"])
+		[self.UA_dirtyProperties addObject:@"snapshotIDs"];
+}
+
+- (void)setOwnerIDs:(NSMutableArray *)ownerIDs
+{
+	_ownerIDs = ownerIDs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ownerIDs"])
+		[self.UA_dirtyProperties addObject:@"ownerIDs"];
+}
+
+- (void)setRestorableByUserIDs:(NSMutableArray *)restorableByUserIDs
+{
+	_restorableByUserIDs = restorableByUserIDs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"restorableByUserIDs"])
+		[self.UA_dirtyProperties addObject:@"restorableByUserIDs"];
+}
+
+- (void)setFilters:(NSMutableArray *)filters
+{
+	_filters = filters;
+	
+	if (![self.UA_dirtyProperties containsObject:@"filters"])
+		[self.UA_dirtyProperties addObject:@"filters"];
+}
+
 + (NSValueTransformer *)filtersJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)filtersQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
 - (void)addSnapshotID:(NSString *)snapshotID
@@ -76,18 +132,21 @@
 		[self setSnapshotIDs:[NSMutableArray array]];
 	[self.snapshotIDs addObject:snapshotID];
 }
+
 - (void)addOwnerID:(NSString *)ownerID
 {
 	if (self.ownerIDs == nil)
 		[self setOwnerIDs:[NSMutableArray array]];
 	[self.ownerIDs addObject:ownerID];
 }
+
 - (void)addRestorableByUserID:(NSString *)restorableByUserID
 {
 	if (self.restorableByUserIDs == nil)
 		[self setRestorableByUserIDs:[NSMutableArray array]];
 	[self.restorableByUserIDs addObject:restorableByUserID];
 }
+
 - (void)addFilter:(UAEC2Filter *)filter
 {
 	if (self.filters == nil)

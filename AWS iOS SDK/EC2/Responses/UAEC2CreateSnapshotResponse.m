@@ -42,7 +42,7 @@
 
 + (NSValueTransformer *)startTimeXMLTransformer
 {
-    return [NSValueTransformer mtl_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 + (NSValueTransformer *)volumeSizeXMLTransformer
@@ -52,7 +52,7 @@
 
 + (NSValueTransformer *)tagsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 @end

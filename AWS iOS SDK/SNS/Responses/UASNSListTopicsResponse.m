@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)topicsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UASNSTopic class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSTopic class]];
 }
 
 @end

@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)alarmHistoryItemsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UACWAlarmHistoryItem class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWAlarmHistoryItem class]];
 }
 
 @end

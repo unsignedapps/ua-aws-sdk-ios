@@ -43,7 +43,7 @@
 
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -95,17 +95,17 @@
 
 + (NSValueTransformer *)attachmentsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeAttachment class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeAttachment class]];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -141,12 +141,12 @@
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
 			return @(UAEC2VolumeStateUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         
@@ -192,27 +192,27 @@
 
 + (NSValueTransformer *)createTimeXMLTransformer
 {
-    return [NSValueTransformer mtl_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 + (NSValueTransformer *)attachmentsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2VolumeAttachment class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VolumeAttachment class]];
 }
 
 + (NSValueTransformer *)tagsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 + (NSValueTransformer *)volumeTypeXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
 			return @(UAEC2VolumeTypeUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         

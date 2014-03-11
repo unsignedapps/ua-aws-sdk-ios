@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)tagsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2TagDescription class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2TagDescription class]];
 }
 
 @end

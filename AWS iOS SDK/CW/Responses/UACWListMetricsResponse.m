@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)metricsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UACWMetric class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWMetric class]];
 }
 
 @end

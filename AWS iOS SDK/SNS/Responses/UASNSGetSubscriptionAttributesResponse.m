@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)attributesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UASNSSubscriptionAttributes class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UASNSSubscriptionAttributes class]];
 }
 
 @end

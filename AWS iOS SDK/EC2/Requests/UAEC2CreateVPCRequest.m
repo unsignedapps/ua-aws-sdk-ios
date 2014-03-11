@@ -52,9 +52,49 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setCidrBlock:(NSString *)cidrBlock
+{
+	_cidrBlock = cidrBlock;
+	
+	if (![self.UA_dirtyProperties containsObject:@"cidrBlock"])
+		[self.UA_dirtyProperties addObject:@"cidrBlock"];
+}
+
+- (void)setInstanceTenancy:(NSString *)instanceTenancy
+{
+	_instanceTenancy = instanceTenancy;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceTenancy"])
+		[self.UA_dirtyProperties addObject:@"instanceTenancy"];
+}
+
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 #pragma mark - Invocation

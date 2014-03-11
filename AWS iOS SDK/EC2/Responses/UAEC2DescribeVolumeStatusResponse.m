@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)volumeStatusesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2VolumeStatus class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VolumeStatus class]];
 }
 
 @end

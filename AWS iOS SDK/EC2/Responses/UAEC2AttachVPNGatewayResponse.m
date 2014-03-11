@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)vpcAttachmentXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2Attachment class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2Attachment class]];
 }
 
 @end

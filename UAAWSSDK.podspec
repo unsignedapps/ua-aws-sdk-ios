@@ -11,10 +11,9 @@ Pod::Spec.new do |s|
   s.author       = { "Rob Amos" => "uaawssdk@unsignedapps.com" }
   s.source       = { :git => "https://github.com/unsignedapps/ua-aws-sdk-ios.git", :tag => "0.1.1" }
   s.platform     = :ios, '7.0'
-  s.source_files = 'AWS iOS SDK/UAAWSSDK.h', 'AWS iOS SDK/**/*.{h,m}'
+  s.source_files = 'Vendor/**/**/*.{h,m}', 'Vendor/**/*.{h,m}', 'AWS iOS SDK/UAAWSSDK.h', 'AWS iOS SDK/**/*.{h,m}'
   s.exclude_files = 'Classes/Exclude', 'AWS iOS SDK/UAAppDelegate.*', 'AWS iOS SDK/main.m'
+  s.library      = 'xml2'
   s.requires_arc = true
-  s.dependency 'KissXML'
-  s.dependency 'Mantle'
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
 end

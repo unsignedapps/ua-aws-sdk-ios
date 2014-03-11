@@ -36,17 +36,17 @@
 
 + (NSValueTransformer *)associationQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
 }
 
 + (NSValueTransformer *)primaryXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)associationXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
 }
 
 @end

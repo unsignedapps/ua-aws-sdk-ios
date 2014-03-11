@@ -36,7 +36,7 @@
 
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -72,12 +72,12 @@
 
 + (NSValueTransformer *)statusXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
 			return @(UAIAMAccessKeyStatusUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         
@@ -107,7 +107,7 @@
 
 + (NSValueTransformer *)createDateXMLTransformer
 {
-    return [NSValueTransformer mtl_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 @end

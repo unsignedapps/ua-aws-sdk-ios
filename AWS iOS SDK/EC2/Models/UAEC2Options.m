@@ -51,14 +51,22 @@
     return [keyPaths copy];
 }
 
+- (void)setStaticRoutesOnly:(BOOL)staticRoutesOnly
+{
+	_staticRoutesOnly = staticRoutesOnly;
+	
+	if (![self.UA_dirtyProperties containsObject:@"staticRoutesOnly"])
+		[self.UA_dirtyProperties addObject:@"staticRoutesOnly"];
+}
+
 + (NSValueTransformer *)staticRoutesOnlyQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)staticRoutesOnlyXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

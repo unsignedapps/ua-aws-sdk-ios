@@ -7,11 +7,11 @@
 //
 
 #import "UAAWSResponse.h"
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 #import "NSValueTransformer+UAValueTransformerAdditions.h"
 #import "UAEC2DataTypes.h"
 
-@interface UAEC2Response : UAAWSResponse <MTLXMLSerializing>
+@interface UAEC2Response : UAAWSResponse <UAMTLXMLSerializing>
 
 @property (nonatomic, strong) NSString *requestID;
 

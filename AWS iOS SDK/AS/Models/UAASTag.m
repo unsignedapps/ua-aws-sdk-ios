@@ -50,9 +50,49 @@
     return [keyPaths copy];
 }
 
+- (void)setResourceID:(NSString *)resourceID
+{
+	_resourceID = resourceID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"resourceID"])
+		[self.UA_dirtyProperties addObject:@"resourceID"];
+}
+
+- (void)setResourceType:(NSString *)resourceType
+{
+	_resourceType = resourceType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"resourceType"])
+		[self.UA_dirtyProperties addObject:@"resourceType"];
+}
+
+- (void)setKey:(NSString *)key
+{
+	_key = key;
+	
+	if (![self.UA_dirtyProperties containsObject:@"key"])
+		[self.UA_dirtyProperties addObject:@"key"];
+}
+
+- (void)setValue:(NSString *)value
+{
+	_value = value;
+	
+	if (![self.UA_dirtyProperties containsObject:@"value"])
+		[self.UA_dirtyProperties addObject:@"value"];
+}
+
+- (void)setPropagateAtLaunch:(BOOL)propagateAtLaunch
+{
+	_propagateAtLaunch = propagateAtLaunch;
+	
+	if (![self.UA_dirtyProperties containsObject:@"propagateAtLaunch"])
+		[self.UA_dirtyProperties addObject:@"propagateAtLaunch"];
+}
+
 + (NSValueTransformer *)propagateAtLaunchXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

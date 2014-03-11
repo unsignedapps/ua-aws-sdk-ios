@@ -52,6 +52,46 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setLoadBalancerName:(NSString *)loadBalancerName
+{
+	_loadBalancerName = loadBalancerName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"loadBalancerName"])
+		[self.UA_dirtyProperties addObject:@"loadBalancerName"];
+}
+
+- (void)setPolicyName:(NSString *)policyName
+{
+	_policyName = policyName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"policyName"])
+		[self.UA_dirtyProperties addObject:@"policyName"];
+}
+
+- (void)setCookieExpirationPeriod:(NSNumber *)cookieExpirationPeriod
+{
+	_cookieExpirationPeriod = cookieExpirationPeriod;
+	
+	if (![self.UA_dirtyProperties containsObject:@"cookieExpirationPeriod"])
+		[self.UA_dirtyProperties addObject:@"cookieExpirationPeriod"];
+}
+
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBCreateLBCookieStickinessPolicyRequestCompletionBlock)completionBlock

@@ -6,10 +6,10 @@
 //
 //
 
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 #import "UAAWSError.h"
 
-@interface UAASError : MTLModel <MTLXMLSerializing, UAAWSError>
+@interface UAASError : UAMTLModel <UAMTLXMLSerializing, UAAWSError>
 
 @property (nonatomic) NSUInteger HTTPStatusCode;
 @property (nonatomic, copy) NSString *code;

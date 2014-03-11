@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)vpnConnectionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2VPNConnection class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VPNConnection class]];
 }
 
 @end

@@ -80,14 +80,125 @@
 		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
 }
 
+- (void)setArchitecture:(NSString *)architecture
+{
+	_architecture = architecture;
+	
+	if (![self.UA_dirtyProperties containsObject:@"architecture"])
+		[self.UA_dirtyProperties addObject:@"architecture"];
+}
+
+- (void)setGroupNames:(NSMutableArray *)groupNames
+{
+	_groupNames = groupNames;
+	
+	if (![self.UA_dirtyProperties containsObject:@"groupNames"])
+		[self.UA_dirtyProperties addObject:@"groupNames"];
+}
+
+- (void)setAdditionalInfo:(NSString *)additionalInfo
+{
+	_additionalInfo = additionalInfo;
+	
+	if (![self.UA_dirtyProperties containsObject:@"additionalInfo"])
+		[self.UA_dirtyProperties addObject:@"additionalInfo"];
+}
+
+- (void)setUserData:(NSString *)userData
+{
+	_userData = userData;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userData"])
+		[self.UA_dirtyProperties addObject:@"userData"];
+}
+
+- (void)setInstanceType:(NSString *)instanceType
+{
+	_instanceType = instanceType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceType"])
+		[self.UA_dirtyProperties addObject:@"instanceType"];
+}
+
+- (void)setPlacement:(UAEC2Placement *)placement
+{
+	_placement = placement;
+	
+	if (![self.UA_dirtyProperties containsObject:@"placement"])
+		[self.UA_dirtyProperties addObject:@"placement"];
+}
+
+- (void)setMonitoring:(BOOL)monitoring
+{
+	_monitoring = monitoring;
+	
+	if (![self.UA_dirtyProperties containsObject:@"monitoring"])
+		[self.UA_dirtyProperties addObject:@"monitoring"];
+}
+
+- (void)setSubnetID:(NSString *)subnetID
+{
+	_subnetID = subnetID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"subnetID"])
+		[self.UA_dirtyProperties addObject:@"subnetID"];
+}
+
+- (void)setInstanceInitiatedShutdownBehavior:(UAEC2InstanceInitiatedShutdownBehavior)instanceInitiatedShutdownBehavior
+{
+	_instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceInitiatedShutdownBehavior"])
+		[self.UA_dirtyProperties addObject:@"instanceInitiatedShutdownBehavior"];
+}
+
+- (void)setPrivateIPAddress:(NSString *)privateIPAddress
+{
+	_privateIPAddress = privateIPAddress;
+	
+	if (![self.UA_dirtyProperties containsObject:@"privateIPAddress"])
+		[self.UA_dirtyProperties addObject:@"privateIPAddress"];
+}
+
 + (NSValueTransformer *)placementQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Placement class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2Placement class]];
 }
 
 + (NSValueTransformer *)monitoringQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
+}
+
++ (NSValueTransformer *)instanceInitiatedShutdownBehaviorQueryStringTransformer
+{
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    {
+        if ([value isKindOfClass:[NSNumber class]])
+            return (NSNumber *)value;
+        
+		if ([value isEqualToString:@"stop"])
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorStop);
+		if ([value isEqualToString:@"terminate"])
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorTerminate);
+
+		return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
+
+    } reverseBlock:^NSString *(NSNumber *value)
+    {
+        UAEC2InstanceInitiatedShutdownBehavior castValue = (UAEC2InstanceInitiatedShutdownBehavior)[value unsignedIntegerValue];
+        switch (castValue)
+        {
+			case UAEC2InstanceInitiatedShutdownBehaviorStop:
+			    return @"stop";
+			case UAEC2InstanceInitiatedShutdownBehaviorTerminate:
+			    return @"terminate";
+
+			case UAEC2InstanceInitiatedShutdownBehaviorUnknown:
+			default:
+				return nil;
+        }
+    }];
 }
 
 + (NSValueTransformer *)groupNamesXMLTransformer
@@ -97,12 +208,47 @@
 
 + (NSValueTransformer *)placementXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2Placement class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2Placement class]];
 }
 
 + (NSValueTransformer *)monitoringXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
+}
+
++ (NSValueTransformer *)instanceInitiatedShutdownBehaviorXMLTransformer
+{
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    {
+		if (nodes == nil || [nodes count] == 0)
+			return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
+
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
+        if ([value isKindOfClass:[NSNumber class]])
+            return (NSNumber *)value;
+        
+		if ([value isEqualToString:@"stop"])
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorStop);
+		if ([value isEqualToString:@"terminate"])
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorTerminate);
+
+		return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
+
+    } reverseBlock:^NSString *(NSNumber *value)
+    {
+        UAEC2InstanceInitiatedShutdownBehavior castValue = (UAEC2InstanceInitiatedShutdownBehavior)[value unsignedIntegerValue];
+        switch (castValue)
+        {
+			case UAEC2InstanceInitiatedShutdownBehaviorStop:
+			    return @"stop";
+			case UAEC2InstanceInitiatedShutdownBehaviorTerminate:
+			    return @"terminate";
+
+			case UAEC2InstanceInitiatedShutdownBehaviorUnknown:
+			default:
+				return nil;
+        }
+    }];
 }
 
 @end

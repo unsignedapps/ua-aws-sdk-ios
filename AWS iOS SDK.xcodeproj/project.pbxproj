@@ -33,10 +33,10 @@
 		A30FD22218AD96D000CA52F7 /* UAELBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1E818AD96D000CA52F7 /* UAELBModel.m */; };
 		A30FD22318AD96D000CA52F7 /* UAELBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1EB18AD96D000CA52F7 /* UAELBRequest.m */; };
 		A30FD22418AD96D000CA52F7 /* UAELBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1EE18AD96D000CA52F7 /* UAELBResponse.m */; };
-		A30FD22518AD96D000CA52F7 /* UAAWSRequest+MTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1F118AD96D000CA52F7 /* UAAWSRequest+MTLModel.m */; };
-		A30FD22618AD96D000CA52F7 /* MTLJSONAdapter+UAAWSPayloadSerialisation.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1F318AD96D000CA52F7 /* MTLJSONAdapter+UAAWSPayloadSerialisation.m */; };
-		A30FD22718AD96D000CA52F7 /* MTLQueryAdapter+UAAWSPayloadSerialisation.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1F518AD96D000CA52F7 /* MTLQueryAdapter+UAAWSPayloadSerialisation.m */; };
-		A30FD22818AD96D000CA52F7 /* MTLXMLAdapter+UAAWSPayloadSerialisation.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1F718AD96D000CA52F7 /* MTLXMLAdapter+UAAWSPayloadSerialisation.m */; };
+		A30FD22518AD96D000CA52F7 /* UAAWSRequest+UAMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1F118AD96D000CA52F7 /* UAAWSRequest+UAMTLModel.m */; };
+		A30FD22618AD96D000CA52F7 /* UAMTLJSONAdapter+UAAWSPayloadSerialisation.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1F318AD96D000CA52F7 /* UAMTLJSONAdapter+UAAWSPayloadSerialisation.m */; };
+		A30FD22718AD96D000CA52F7 /* UAMTLQueryAdapter+UAAWSPayloadSerialisation.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1F518AD96D000CA52F7 /* UAMTLQueryAdapter+UAAWSPayloadSerialisation.m */; };
+		A30FD22818AD96D000CA52F7 /* UAMTLXMLAdapter+UAAWSPayloadSerialisation.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1F718AD96D000CA52F7 /* UAMTLXMLAdapter+UAAWSPayloadSerialisation.m */; };
 		A30FD22918AD96D000CA52F7 /* NSArray+UAArrayFlattening.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1F918AD96D000CA52F7 /* NSArray+UAArrayFlattening.m */; };
 		A30FD22A18AD96D000CA52F7 /* NSData+UAHMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1FB18AD96D000CA52F7 /* NSData+UAHMAC.m */; };
 		A30FD22B18AD96D000CA52F7 /* NSValueTransformer+UAValueTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A30FD1FD18AD96D000CA52F7 /* NSValueTransformer+UAValueTransformerAdditions.m */; };
@@ -223,7 +223,6 @@
 		A337757E18ADA30100FECC45 /* UAEC2InstanceBlockDeviceMappingSpecification.m in Sources */ = {isa = PBXBuildFile; fileRef = A337748718ADA30000FECC45 /* UAEC2InstanceBlockDeviceMappingSpecification.m */; };
 		A337757F18ADA30100FECC45 /* UAEC2InstanceCount.m in Sources */ = {isa = PBXBuildFile; fileRef = A337748918ADA30000FECC45 /* UAEC2InstanceCount.m */; };
 		A337758018ADA30100FECC45 /* UAEC2InstanceExportDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A337748B18ADA30000FECC45 /* UAEC2InstanceExportDetails.m */; };
-		A337758118ADA30100FECC45 /* UAEC2InstanceInitiatedShutdownBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = A337748D18ADA30000FECC45 /* UAEC2InstanceInitiatedShutdownBehavior.m */; };
 		A337758218ADA30100FECC45 /* UAEC2InstanceLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = A337748F18ADA30000FECC45 /* UAEC2InstanceLicense.m */; };
 		A337758318ADA30100FECC45 /* UAEC2InstanceLicenseSpecification.m in Sources */ = {isa = PBXBuildFile; fileRef = A337749118ADA30000FECC45 /* UAEC2InstanceLicenseSpecification.m */; };
 		A337758418ADA30100FECC45 /* UAEC2InstanceMonitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = A337749318ADA30000FECC45 /* UAEC2InstanceMonitoring.m */; };
@@ -301,7 +300,6 @@
 		A33775CD18ADA30100FECC45 /* UAEC2Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = A337752518ADA30100FECC45 /* UAEC2Tag.m */; };
 		A33775CE18ADA30100FECC45 /* UAEC2TagDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A337752718ADA30100FECC45 /* UAEC2TagDescription.m */; };
 		A33775CF18ADA30100FECC45 /* UAEC2TargetConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A337752918ADA30100FECC45 /* UAEC2TargetConfiguration.m */; };
-		A33775D018ADA30100FECC45 /* UAEC2UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = A337752B18ADA30100FECC45 /* UAEC2UserData.m */; };
 		A33775D118ADA30100FECC45 /* UAEC2UserIdGroupPair.m in Sources */ = {isa = PBXBuildFile; fileRef = A337752D18ADA30100FECC45 /* UAEC2UserIdGroupPair.m */; };
 		A33775D218ADA30100FECC45 /* UAEC2VGWTelemetry.m in Sources */ = {isa = PBXBuildFile; fileRef = A337752F18ADA30100FECC45 /* UAEC2VGWTelemetry.m */; };
 		A33775D318ADA30100FECC45 /* UAEC2Volume.m in Sources */ = {isa = PBXBuildFile; fileRef = A337753118ADA30100FECC45 /* UAEC2Volume.m */; };
@@ -924,10 +922,34 @@
 		A3E01C4018AD93E900C3B7DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C1F18AD93E900C3B7DB /* Foundation.framework */; };
 		A3E01C4118AD93E900C3B7DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2318AD93E900C3B7DB /* UIKit.framework */; };
 		A3E01C4918AD93E900C3B7DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3E01C4718AD93E900C3B7DB /* InfoPlist.strings */; };
-		BD717624219243119BCB074E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7E3239524A74BCA8C929A10 /* libPods.a */; };
+		E85464E918CF0F0D00CC2E3C /* UADDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B018CF0F0D00CC2E3C /* UADDXMLElementAdditions.m */; };
+		E85464EA18CF0F0D00CC2E3C /* NSString+UADDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B318CF0F0D00CC2E3C /* NSString+UADDXML.m */; };
+		E85464EB18CF0F0D00CC2E3C /* UADDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B818CF0F0D00CC2E3C /* UADDXMLDocument.m */; };
+		E85464EC18CF0F0D00CC2E3C /* UADDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464BA18CF0F0D00CC2E3C /* UADDXMLElement.m */; };
+		E85464ED18CF0F0D00CC2E3C /* UADDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464BC18CF0F0D00CC2E3C /* UADDXMLNode.m */; };
+		E85464EE18CF0F0D00CC2E3C /* UAEXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464C118CF0F0D00CC2E3C /* UAEXTRuntimeExtensions.m */; };
+		E85464EF18CF0F0D00CC2E3C /* UAEXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464C318CF0F0D00CC2E3C /* UAEXTScope.m */; };
+		E85464F018CF0F0D00CC2E3C /* NSArray+UAMTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464C618CF0F0D00CC2E3C /* NSArray+UAMTLManipulationAdditions.m */; };
+		E85464F118CF0F0D00CC2E3C /* NSDictionary+UAMTLManipulationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464C818CF0F0D00CC2E3C /* NSDictionary+UAMTLManipulationAdditions.m */; };
+		E85464F218CF0F0D00CC2E3C /* NSError+UAMTLModelException.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464CA18CF0F0D00CC2E3C /* NSError+UAMTLModelException.m */; };
+		E85464F318CF0F0D00CC2E3C /* NSObject+UAMTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464CC18CF0F0D00CC2E3C /* NSObject+UAMTLComparisonAdditions.m */; };
+		E85464F418CF0F0D00CC2E3C /* NSString+UAURLEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464CE18CF0F0D00CC2E3C /* NSString+UAURLEscape.m */; };
+		E85464F518CF0F0D00CC2E3C /* NSValueTransformer+UAMTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464D018CF0F0D00CC2E3C /* NSValueTransformer+UAMTLInversionAdditions.m */; };
+		E85464F618CF0F0D00CC2E3C /* NSValueTransformer+UAMTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464D218CF0F0D00CC2E3C /* NSValueTransformer+UAMTLPredefinedTransformerAdditions.m */; };
+		E85464F718CF0F0D00CC2E3C /* NSValueTransformer+UAMTLQueryStringTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464D418CF0F0D00CC2E3C /* NSValueTransformer+UAMTLQueryStringTransformerAdditions.m */; };
+		E85464F818CF0F0D00CC2E3C /* NSValueTransformer+UAMTLXMLTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464D618CF0F0D00CC2E3C /* NSValueTransformer+UAMTLXMLTransformerAdditions.m */; };
+		E85464F918CF0F0D00CC2E3C /* UAMTLJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464D918CF0F0D00CC2E3C /* UAMTLJSONAdapter.m */; };
+		E85464FA18CF0F0D00CC2E3C /* UAMTLManagedObjectAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464DB18CF0F0D00CC2E3C /* UAMTLManagedObjectAdapter.m */; };
+		E85464FB18CF0F0D00CC2E3C /* UAMTLModel+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464DD18CF0F0D00CC2E3C /* UAMTLModel+NSCoding.m */; };
+		E85464FC18CF0F0D00CC2E3C /* UAMTLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464DF18CF0F0D00CC2E3C /* UAMTLModel.m */; };
+		E85464FD18CF0F0D00CC2E3C /* UAMTLQueryAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E218CF0F0D00CC2E3C /* UAMTLQueryAdapter.m */; };
+		E85464FE18CF0F0D00CC2E3C /* UAMTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E418CF0F0D00CC2E3C /* UAMTLReflection.m */; };
+		E85464FF18CF0F0D00CC2E3C /* UAMTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E618CF0F0D00CC2E3C /* UAMTLValueTransformer.m */; };
+		E854650018CF0F0D00CC2E3C /* UAMTLXMLAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E818CF0F0D00CC2E3C /* UAMTLXMLAdapter.m */; };
 		E898A5E418B21532004DC298 /* NSString+UAStringEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */; };
 		E898A5E718B2162E004DC298 /* NSURL+UAAWSServiceName.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E618B2162E004DC298 /* NSURL+UAAWSServiceName.m */; };
 		E898A5E918B219FC004DC298 /* UAAWSRequestSigningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E818B219FC004DC298 /* UAAWSRequestSigningTests.m */; };
+		E8FAEC1118CC2DAD0018BB0E /* UAAWSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1006,14 +1028,14 @@
 		A30FD1EB18AD96D000CA52F7 /* UAELBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAELBRequest.m; sourceTree = "<group>"; };
 		A30FD1ED18AD96D000CA52F7 /* UAELBResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAELBResponse.h; sourceTree = "<group>"; };
 		A30FD1EE18AD96D000CA52F7 /* UAELBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAELBResponse.m; sourceTree = "<group>"; };
-		A30FD1F018AD96D000CA52F7 /* UAAWSRequest+MTLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UAAWSRequest+MTLModel.h"; sourceTree = "<group>"; };
-		A30FD1F118AD96D000CA52F7 /* UAAWSRequest+MTLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UAAWSRequest+MTLModel.m"; sourceTree = "<group>"; };
-		A30FD1F218AD96D000CA52F7 /* MTLJSONAdapter+UAAWSPayloadSerialisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTLJSONAdapter+UAAWSPayloadSerialisation.h"; sourceTree = "<group>"; };
-		A30FD1F318AD96D000CA52F7 /* MTLJSONAdapter+UAAWSPayloadSerialisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTLJSONAdapter+UAAWSPayloadSerialisation.m"; sourceTree = "<group>"; };
-		A30FD1F418AD96D000CA52F7 /* MTLQueryAdapter+UAAWSPayloadSerialisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTLQueryAdapter+UAAWSPayloadSerialisation.h"; sourceTree = "<group>"; };
-		A30FD1F518AD96D000CA52F7 /* MTLQueryAdapter+UAAWSPayloadSerialisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTLQueryAdapter+UAAWSPayloadSerialisation.m"; sourceTree = "<group>"; };
-		A30FD1F618AD96D000CA52F7 /* MTLXMLAdapter+UAAWSPayloadSerialisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTLXMLAdapter+UAAWSPayloadSerialisation.h"; sourceTree = "<group>"; };
-		A30FD1F718AD96D000CA52F7 /* MTLXMLAdapter+UAAWSPayloadSerialisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTLXMLAdapter+UAAWSPayloadSerialisation.m"; sourceTree = "<group>"; };
+		A30FD1F018AD96D000CA52F7 /* UAAWSRequest+UAMTLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UAAWSRequest+UAMTLModel.h"; sourceTree = "<group>"; };
+		A30FD1F118AD96D000CA52F7 /* UAAWSRequest+UAMTLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UAAWSRequest+UAMTLModel.m"; sourceTree = "<group>"; };
+		A30FD1F218AD96D000CA52F7 /* UAMTLJSONAdapter+UAAWSPayloadSerialisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UAMTLJSONAdapter+UAAWSPayloadSerialisation.h"; sourceTree = "<group>"; };
+		A30FD1F318AD96D000CA52F7 /* UAMTLJSONAdapter+UAAWSPayloadSerialisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UAMTLJSONAdapter+UAAWSPayloadSerialisation.m"; sourceTree = "<group>"; };
+		A30FD1F418AD96D000CA52F7 /* UAMTLQueryAdapter+UAAWSPayloadSerialisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UAMTLQueryAdapter+UAAWSPayloadSerialisation.h"; sourceTree = "<group>"; };
+		A30FD1F518AD96D000CA52F7 /* UAMTLQueryAdapter+UAAWSPayloadSerialisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UAMTLQueryAdapter+UAAWSPayloadSerialisation.m"; sourceTree = "<group>"; };
+		A30FD1F618AD96D000CA52F7 /* UAMTLXMLAdapter+UAAWSPayloadSerialisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UAMTLXMLAdapter+UAAWSPayloadSerialisation.h"; sourceTree = "<group>"; };
+		A30FD1F718AD96D000CA52F7 /* UAMTLXMLAdapter+UAAWSPayloadSerialisation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UAMTLXMLAdapter+UAAWSPayloadSerialisation.m"; sourceTree = "<group>"; };
 		A30FD1F818AD96D000CA52F7 /* NSArray+UAArrayFlattening.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+UAArrayFlattening.h"; sourceTree = "<group>"; };
 		A30FD1F918AD96D000CA52F7 /* NSArray+UAArrayFlattening.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+UAArrayFlattening.m"; sourceTree = "<group>"; };
 		A30FD1FA18AD96D000CA52F7 /* NSData+UAHMAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+UAHMAC.h"; sourceTree = "<group>"; };
@@ -1390,8 +1412,6 @@
 		A337748918ADA30000FECC45 /* UAEC2InstanceCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2InstanceCount.m; sourceTree = "<group>"; };
 		A337748A18ADA30000FECC45 /* UAEC2InstanceExportDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2InstanceExportDetails.h; sourceTree = "<group>"; };
 		A337748B18ADA30000FECC45 /* UAEC2InstanceExportDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2InstanceExportDetails.m; sourceTree = "<group>"; };
-		A337748C18ADA30000FECC45 /* UAEC2InstanceInitiatedShutdownBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2InstanceInitiatedShutdownBehavior.h; sourceTree = "<group>"; };
-		A337748D18ADA30000FECC45 /* UAEC2InstanceInitiatedShutdownBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2InstanceInitiatedShutdownBehavior.m; sourceTree = "<group>"; };
 		A337748E18ADA30000FECC45 /* UAEC2InstanceLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2InstanceLicense.h; sourceTree = "<group>"; };
 		A337748F18ADA30000FECC45 /* UAEC2InstanceLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2InstanceLicense.m; sourceTree = "<group>"; };
 		A337749018ADA30000FECC45 /* UAEC2InstanceLicenseSpecification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2InstanceLicenseSpecification.h; sourceTree = "<group>"; };
@@ -1546,8 +1566,6 @@
 		A337752718ADA30100FECC45 /* UAEC2TagDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2TagDescription.m; sourceTree = "<group>"; };
 		A337752818ADA30100FECC45 /* UAEC2TargetConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2TargetConfiguration.h; sourceTree = "<group>"; };
 		A337752918ADA30100FECC45 /* UAEC2TargetConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2TargetConfiguration.m; sourceTree = "<group>"; };
-		A337752A18ADA30100FECC45 /* UAEC2UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2UserData.h; sourceTree = "<group>"; };
-		A337752B18ADA30100FECC45 /* UAEC2UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2UserData.m; sourceTree = "<group>"; };
 		A337752C18ADA30100FECC45 /* UAEC2UserIdGroupPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2UserIdGroupPair.h; sourceTree = "<group>"; };
 		A337752D18ADA30100FECC45 /* UAEC2UserIdGroupPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2UserIdGroupPair.m; sourceTree = "<group>"; };
 		A337752E18ADA30100FECC45 /* UAEC2VGWTelemetry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2VGWTelemetry.h; sourceTree = "<group>"; };
@@ -2784,11 +2802,67 @@
 		A3E01C4818AD93E900C3B7DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE8AD1DDD4B44EA6B687ABB0 /* Pods-AWS iOS SDKTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWS iOS SDKTests.xcconfig"; path = "Pods/Pods-AWS iOS SDKTests.xcconfig"; sourceTree = "<group>"; };
 		D7E3239524A74BCA8C929A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85464AF18CF0F0D00CC2E3C /* UADDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXMLElementAdditions.h; sourceTree = "<group>"; };
+		E85464B018CF0F0D00CC2E3C /* UADDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDXMLElementAdditions.m; sourceTree = "<group>"; };
+		E85464B218CF0F0D00CC2E3C /* NSString+UADDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UADDXML.h"; sourceTree = "<group>"; };
+		E85464B318CF0F0D00CC2E3C /* NSString+UADDXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UADDXML.m"; sourceTree = "<group>"; };
+		E85464B518CF0F0D00CC2E3C /* UADDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXMLPrivate.h; sourceTree = "<group>"; };
+		E85464B618CF0F0D00CC2E3C /* UADDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXML.h; sourceTree = "<group>"; };
+		E85464B718CF0F0D00CC2E3C /* UADDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXMLDocument.h; sourceTree = "<group>"; };
+		E85464B818CF0F0D00CC2E3C /* UADDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDXMLDocument.m; sourceTree = "<group>"; };
+		E85464B918CF0F0D00CC2E3C /* UADDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXMLElement.h; sourceTree = "<group>"; };
+		E85464BA18CF0F0D00CC2E3C /* UADDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDXMLElement.m; sourceTree = "<group>"; };
+		E85464BB18CF0F0D00CC2E3C /* UADDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXMLNode.h; sourceTree = "<group>"; };
+		E85464BC18CF0F0D00CC2E3C /* UADDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDXMLNode.m; sourceTree = "<group>"; };
+		E85464BF18CF0F0D00CC2E3C /* UAEXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEXTKeyPathCoding.h; sourceTree = "<group>"; };
+		E85464C018CF0F0D00CC2E3C /* UAEXTRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		E85464C118CF0F0D00CC2E3C /* UAEXTRuntimeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		E85464C218CF0F0D00CC2E3C /* UAEXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEXTScope.h; sourceTree = "<group>"; };
+		E85464C318CF0F0D00CC2E3C /* UAEXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEXTScope.m; sourceTree = "<group>"; };
+		E85464C418CF0F0D00CC2E3C /* UAmetamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAmetamacros.h; sourceTree = "<group>"; };
+		E85464C518CF0F0D00CC2E3C /* NSArray+UAMTLManipulationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+UAMTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		E85464C618CF0F0D00CC2E3C /* NSArray+UAMTLManipulationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+UAMTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		E85464C718CF0F0D00CC2E3C /* NSDictionary+UAMTLManipulationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+UAMTLManipulationAdditions.h"; sourceTree = "<group>"; };
+		E85464C818CF0F0D00CC2E3C /* NSDictionary+UAMTLManipulationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+UAMTLManipulationAdditions.m"; sourceTree = "<group>"; };
+		E85464C918CF0F0D00CC2E3C /* NSError+UAMTLModelException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+UAMTLModelException.h"; sourceTree = "<group>"; };
+		E85464CA18CF0F0D00CC2E3C /* NSError+UAMTLModelException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+UAMTLModelException.m"; sourceTree = "<group>"; };
+		E85464CB18CF0F0D00CC2E3C /* NSObject+UAMTLComparisonAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+UAMTLComparisonAdditions.h"; sourceTree = "<group>"; };
+		E85464CC18CF0F0D00CC2E3C /* NSObject+UAMTLComparisonAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+UAMTLComparisonAdditions.m"; sourceTree = "<group>"; };
+		E85464CD18CF0F0D00CC2E3C /* NSString+UAURLEscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UAURLEscape.h"; sourceTree = "<group>"; };
+		E85464CE18CF0F0D00CC2E3C /* NSString+UAURLEscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UAURLEscape.m"; sourceTree = "<group>"; };
+		E85464CF18CF0F0D00CC2E3C /* NSValueTransformer+UAMTLInversionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+UAMTLInversionAdditions.h"; sourceTree = "<group>"; };
+		E85464D018CF0F0D00CC2E3C /* NSValueTransformer+UAMTLInversionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+UAMTLInversionAdditions.m"; sourceTree = "<group>"; };
+		E85464D118CF0F0D00CC2E3C /* NSValueTransformer+UAMTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+UAMTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
+		E85464D218CF0F0D00CC2E3C /* NSValueTransformer+UAMTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+UAMTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
+		E85464D318CF0F0D00CC2E3C /* NSValueTransformer+UAMTLQueryStringTransformerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+UAMTLQueryStringTransformerAdditions.h"; sourceTree = "<group>"; };
+		E85464D418CF0F0D00CC2E3C /* NSValueTransformer+UAMTLQueryStringTransformerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+UAMTLQueryStringTransformerAdditions.m"; sourceTree = "<group>"; };
+		E85464D518CF0F0D00CC2E3C /* NSValueTransformer+UAMTLXMLTransformerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+UAMTLXMLTransformerAdditions.h"; sourceTree = "<group>"; };
+		E85464D618CF0F0D00CC2E3C /* NSValueTransformer+UAMTLXMLTransformerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+UAMTLXMLTransformerAdditions.m"; sourceTree = "<group>"; };
+		E85464D718CF0F0D00CC2E3C /* UAMantle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMantle.h; sourceTree = "<group>"; };
+		E85464D818CF0F0D00CC2E3C /* UAMTLJSONAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLJSONAdapter.h; sourceTree = "<group>"; };
+		E85464D918CF0F0D00CC2E3C /* UAMTLJSONAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLJSONAdapter.m; sourceTree = "<group>"; };
+		E85464DA18CF0F0D00CC2E3C /* UAMTLManagedObjectAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLManagedObjectAdapter.h; sourceTree = "<group>"; };
+		E85464DB18CF0F0D00CC2E3C /* UAMTLManagedObjectAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLManagedObjectAdapter.m; sourceTree = "<group>"; };
+		E85464DC18CF0F0D00CC2E3C /* UAMTLModel+NSCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UAMTLModel+NSCoding.h"; sourceTree = "<group>"; };
+		E85464DD18CF0F0D00CC2E3C /* UAMTLModel+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UAMTLModel+NSCoding.m"; sourceTree = "<group>"; };
+		E85464DE18CF0F0D00CC2E3C /* UAMTLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLModel.h; sourceTree = "<group>"; };
+		E85464DF18CF0F0D00CC2E3C /* UAMTLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLModel.m; sourceTree = "<group>"; };
+		E85464E018CF0F0D00CC2E3C /* UAMTLModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLModelProtocol.h; sourceTree = "<group>"; };
+		E85464E118CF0F0D00CC2E3C /* UAMTLQueryAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLQueryAdapter.h; sourceTree = "<group>"; };
+		E85464E218CF0F0D00CC2E3C /* UAMTLQueryAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLQueryAdapter.m; sourceTree = "<group>"; };
+		E85464E318CF0F0D00CC2E3C /* UAMTLReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLReflection.h; sourceTree = "<group>"; };
+		E85464E418CF0F0D00CC2E3C /* UAMTLReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLReflection.m; sourceTree = "<group>"; };
+		E85464E518CF0F0D00CC2E3C /* UAMTLValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLValueTransformer.h; sourceTree = "<group>"; };
+		E85464E618CF0F0D00CC2E3C /* UAMTLValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLValueTransformer.m; sourceTree = "<group>"; };
+		E85464E718CF0F0D00CC2E3C /* UAMTLXMLAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLXMLAdapter.h; sourceTree = "<group>"; };
+		E85464E818CF0F0D00CC2E3C /* UAMTLXMLAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLXMLAdapter.m; sourceTree = "<group>"; };
 		E898A5E218B21532004DC298 /* NSString+UAStringEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UAStringEncoding.h"; sourceTree = "<group>"; };
 		E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UAStringEncoding.m"; sourceTree = "<group>"; };
 		E898A5E518B2162E004DC298 /* NSURL+UAAWSServiceName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+UAAWSServiceName.h"; sourceTree = "<group>"; };
 		E898A5E618B2162E004DC298 /* NSURL+UAAWSServiceName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UAAWSServiceName.m"; sourceTree = "<group>"; };
 		E898A5E818B219FC004DC298 /* UAAWSRequestSigningTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAAWSRequestSigningTests.m; sourceTree = "<group>"; };
+		E8FAEC0F18CC2DAD0018BB0E /* UAAWSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAAWSModel.h; sourceTree = "<group>"; };
+		E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAAWSModel.m; sourceTree = "<group>"; };
 		F112DDBF60D64931937F789A /* libPods-AWS iOS SDKTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AWS iOS SDKTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -2800,7 +2874,6 @@
 				A3E01C2218AD93E900C3B7DB /* CoreGraphics.framework in Frameworks */,
 				A3E01C2418AD93E900C3B7DB /* UIKit.framework in Frameworks */,
 				A3E01C2018AD93E900C3B7DB /* Foundation.framework in Frameworks */,
-				BD717624219243119BCB074E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3112,6 +3185,8 @@
 				A337827418B1E13500FECC45 /* NSString+UAAWSRegions.m */,
 				E898A5E218B21532004DC298 /* NSString+UAStringEncoding.h */,
 				E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */,
+				E8FAEC0F18CC2DAD0018BB0E /* UAAWSModel.h */,
+				E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -3394,14 +3469,14 @@
 		A30FD1EF18AD96D000CA52F7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A30FD1F018AD96D000CA52F7 /* UAAWSRequest+MTLModel.h */,
-				A30FD1F118AD96D000CA52F7 /* UAAWSRequest+MTLModel.m */,
-				A30FD1F218AD96D000CA52F7 /* MTLJSONAdapter+UAAWSPayloadSerialisation.h */,
-				A30FD1F318AD96D000CA52F7 /* MTLJSONAdapter+UAAWSPayloadSerialisation.m */,
-				A30FD1F418AD96D000CA52F7 /* MTLQueryAdapter+UAAWSPayloadSerialisation.h */,
-				A30FD1F518AD96D000CA52F7 /* MTLQueryAdapter+UAAWSPayloadSerialisation.m */,
-				A30FD1F618AD96D000CA52F7 /* MTLXMLAdapter+UAAWSPayloadSerialisation.h */,
-				A30FD1F718AD96D000CA52F7 /* MTLXMLAdapter+UAAWSPayloadSerialisation.m */,
+				A30FD1F018AD96D000CA52F7 /* UAAWSRequest+UAMTLModel.h */,
+				A30FD1F118AD96D000CA52F7 /* UAAWSRequest+UAMTLModel.m */,
+				A30FD1F218AD96D000CA52F7 /* UAMTLJSONAdapter+UAAWSPayloadSerialisation.h */,
+				A30FD1F318AD96D000CA52F7 /* UAMTLJSONAdapter+UAAWSPayloadSerialisation.m */,
+				A30FD1F418AD96D000CA52F7 /* UAMTLQueryAdapter+UAAWSPayloadSerialisation.h */,
+				A30FD1F518AD96D000CA52F7 /* UAMTLQueryAdapter+UAAWSPayloadSerialisation.m */,
+				A30FD1F618AD96D000CA52F7 /* UAMTLXMLAdapter+UAAWSPayloadSerialisation.h */,
+				A30FD1F718AD96D000CA52F7 /* UAMTLXMLAdapter+UAAWSPayloadSerialisation.m */,
 				A30FD1F818AD96D000CA52F7 /* NSArray+UAArrayFlattening.h */,
 				A30FD1F918AD96D000CA52F7 /* NSArray+UAArrayFlattening.m */,
 				A30FD1FA18AD96D000CA52F7 /* NSData+UAHMAC.h */,
@@ -3698,8 +3773,6 @@
 				A337748918ADA30000FECC45 /* UAEC2InstanceCount.m */,
 				A337748A18ADA30000FECC45 /* UAEC2InstanceExportDetails.h */,
 				A337748B18ADA30000FECC45 /* UAEC2InstanceExportDetails.m */,
-				A337748C18ADA30000FECC45 /* UAEC2InstanceInitiatedShutdownBehavior.h */,
-				A337748D18ADA30000FECC45 /* UAEC2InstanceInitiatedShutdownBehavior.m */,
 				A337748E18ADA30000FECC45 /* UAEC2InstanceLicense.h */,
 				A337748F18ADA30000FECC45 /* UAEC2InstanceLicense.m */,
 				A337749018ADA30000FECC45 /* UAEC2InstanceLicenseSpecification.h */,
@@ -3854,8 +3927,6 @@
 				A337752718ADA30100FECC45 /* UAEC2TagDescription.m */,
 				A337752818ADA30100FECC45 /* UAEC2TargetConfiguration.h */,
 				A337752918ADA30100FECC45 /* UAEC2TargetConfiguration.m */,
-				A337752A18ADA30100FECC45 /* UAEC2UserData.h */,
-				A337752B18ADA30100FECC45 /* UAEC2UserData.m */,
 				A337752C18ADA30100FECC45 /* UAEC2UserIdGroupPair.h */,
 				A337752D18ADA30100FECC45 /* UAEC2UserIdGroupPair.m */,
 				A337752E18ADA30100FECC45 /* UAEC2VGWTelemetry.h */,
@@ -5035,6 +5106,7 @@
 			children = (
 				A3E01C2518AD93E900C3B7DB /* AWS iOS SDK */,
 				A3E01C4418AD93E900C3B7DB /* AWS iOS SDKTests */,
+				E85464AC18CF0F0D00CC2E3C /* Vendor */,
 				A3E01C1E18AD93E900C3B7DB /* Frameworks */,
 				A3E01C1D18AD93E900C3B7DB /* Products */,
 				2DEC3C3259B4479DBA795A14 /* Pods.xcconfig */,
@@ -5119,6 +5191,115 @@
 				A3E01C4718AD93E900C3B7DB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E85464AC18CF0F0D00CC2E3C /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E85464AD18CF0F0D00CC2E3C /* KissXML */,
+				E85464BD18CF0F0D00CC2E3C /* Mantle */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		E85464AD18CF0F0D00CC2E3C /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				E85464AE18CF0F0D00CC2E3C /* Additions */,
+				E85464B118CF0F0D00CC2E3C /* Categories */,
+				E85464B418CF0F0D00CC2E3C /* Private */,
+				E85464B618CF0F0D00CC2E3C /* UADDXML.h */,
+				E85464B718CF0F0D00CC2E3C /* UADDXMLDocument.h */,
+				E85464B818CF0F0D00CC2E3C /* UADDXMLDocument.m */,
+				E85464B918CF0F0D00CC2E3C /* UADDXMLElement.h */,
+				E85464BA18CF0F0D00CC2E3C /* UADDXMLElement.m */,
+				E85464BB18CF0F0D00CC2E3C /* UADDXMLNode.h */,
+				E85464BC18CF0F0D00CC2E3C /* UADDXMLNode.m */,
+			);
+			path = KissXML;
+			sourceTree = "<group>";
+		};
+		E85464AE18CF0F0D00CC2E3C /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				E85464AF18CF0F0D00CC2E3C /* UADDXMLElementAdditions.h */,
+				E85464B018CF0F0D00CC2E3C /* UADDXMLElementAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		E85464B118CF0F0D00CC2E3C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E85464B218CF0F0D00CC2E3C /* NSString+UADDXML.h */,
+				E85464B318CF0F0D00CC2E3C /* NSString+UADDXML.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E85464B418CF0F0D00CC2E3C /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				E85464B518CF0F0D00CC2E3C /* UADDXMLPrivate.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		E85464BD18CF0F0D00CC2E3C /* Mantle */ = {
+			isa = PBXGroup;
+			children = (
+				E85464BE18CF0F0D00CC2E3C /* extobjc */,
+				E85464C518CF0F0D00CC2E3C /* NSArray+UAMTLManipulationAdditions.h */,
+				E85464C618CF0F0D00CC2E3C /* NSArray+UAMTLManipulationAdditions.m */,
+				E85464C718CF0F0D00CC2E3C /* NSDictionary+UAMTLManipulationAdditions.h */,
+				E85464C818CF0F0D00CC2E3C /* NSDictionary+UAMTLManipulationAdditions.m */,
+				E85464C918CF0F0D00CC2E3C /* NSError+UAMTLModelException.h */,
+				E85464CA18CF0F0D00CC2E3C /* NSError+UAMTLModelException.m */,
+				E85464CB18CF0F0D00CC2E3C /* NSObject+UAMTLComparisonAdditions.h */,
+				E85464CC18CF0F0D00CC2E3C /* NSObject+UAMTLComparisonAdditions.m */,
+				E85464CD18CF0F0D00CC2E3C /* NSString+UAURLEscape.h */,
+				E85464CE18CF0F0D00CC2E3C /* NSString+UAURLEscape.m */,
+				E85464CF18CF0F0D00CC2E3C /* NSValueTransformer+UAMTLInversionAdditions.h */,
+				E85464D018CF0F0D00CC2E3C /* NSValueTransformer+UAMTLInversionAdditions.m */,
+				E85464D118CF0F0D00CC2E3C /* NSValueTransformer+UAMTLPredefinedTransformerAdditions.h */,
+				E85464D218CF0F0D00CC2E3C /* NSValueTransformer+UAMTLPredefinedTransformerAdditions.m */,
+				E85464D318CF0F0D00CC2E3C /* NSValueTransformer+UAMTLQueryStringTransformerAdditions.h */,
+				E85464D418CF0F0D00CC2E3C /* NSValueTransformer+UAMTLQueryStringTransformerAdditions.m */,
+				E85464D518CF0F0D00CC2E3C /* NSValueTransformer+UAMTLXMLTransformerAdditions.h */,
+				E85464D618CF0F0D00CC2E3C /* NSValueTransformer+UAMTLXMLTransformerAdditions.m */,
+				E85464D718CF0F0D00CC2E3C /* UAMantle.h */,
+				E85464D818CF0F0D00CC2E3C /* UAMTLJSONAdapter.h */,
+				E85464D918CF0F0D00CC2E3C /* UAMTLJSONAdapter.m */,
+				E85464DA18CF0F0D00CC2E3C /* UAMTLManagedObjectAdapter.h */,
+				E85464DB18CF0F0D00CC2E3C /* UAMTLManagedObjectAdapter.m */,
+				E85464DC18CF0F0D00CC2E3C /* UAMTLModel+NSCoding.h */,
+				E85464DD18CF0F0D00CC2E3C /* UAMTLModel+NSCoding.m */,
+				E85464DE18CF0F0D00CC2E3C /* UAMTLModel.h */,
+				E85464DF18CF0F0D00CC2E3C /* UAMTLModel.m */,
+				E85464E018CF0F0D00CC2E3C /* UAMTLModelProtocol.h */,
+				E85464E118CF0F0D00CC2E3C /* UAMTLQueryAdapter.h */,
+				E85464E218CF0F0D00CC2E3C /* UAMTLQueryAdapter.m */,
+				E85464E318CF0F0D00CC2E3C /* UAMTLReflection.h */,
+				E85464E418CF0F0D00CC2E3C /* UAMTLReflection.m */,
+				E85464E518CF0F0D00CC2E3C /* UAMTLValueTransformer.h */,
+				E85464E618CF0F0D00CC2E3C /* UAMTLValueTransformer.m */,
+				E85464E718CF0F0D00CC2E3C /* UAMTLXMLAdapter.h */,
+				E85464E818CF0F0D00CC2E3C /* UAMTLXMLAdapter.m */,
+			);
+			path = Mantle;
+			sourceTree = "<group>";
+		};
+		E85464BE18CF0F0D00CC2E3C /* extobjc */ = {
+			isa = PBXGroup;
+			children = (
+				E85464BF18CF0F0D00CC2E3C /* UAEXTKeyPathCoding.h */,
+				E85464C018CF0F0D00CC2E3C /* UAEXTRuntimeExtensions.h */,
+				E85464C118CF0F0D00CC2E3C /* UAEXTRuntimeExtensions.m */,
+				E85464C218CF0F0D00CC2E3C /* UAEXTScope.h */,
+				E85464C318CF0F0D00CC2E3C /* UAEXTScope.m */,
+				E85464C418CF0F0D00CC2E3C /* UAmetamacros.h */,
+			);
+			path = extobjc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -5328,6 +5509,7 @@
 				A337779318ADA30C00FECC45 /* UAEC2ReplaceNetworkACLAssociationRequest.m in Sources */,
 				A337814318B1912800FECC45 /* UAIAMAddUserToGroupRequest.m in Sources */,
 				A337790518ADA31500FECC45 /* UAEC2DeleteRouteResponse.m in Sources */,
+				E85464F618CF0F0D00CC2E3C /* NSValueTransformer+UAMTLPredefinedTransformerAdditions.m in Sources */,
 				A337825318B1913600FECC45 /* UAIAMListSAMLProvidersResponse.m in Sources */,
 				A30FD21618AD96D000CA52F7 /* UAAWSServiceHealthResponse.m in Sources */,
 				A33773B718ADA2D200FECC45 /* UAASDescribeScalingProcessTypesResponse.m in Sources */,
@@ -5364,6 +5546,7 @@
 				A337792518ADA31500FECC45 /* UAEC2DescribePlacementGroupsResponse.m in Sources */,
 				A337758518ADA30100FECC45 /* UAEC2InstanceNetworkInterface.m in Sources */,
 				A33773F518ADA2EF00FECC45 /* UACWDescribeAlarmsRequest.m in Sources */,
+				E85464EE18CF0F0D00CC2E3C /* UAEXTRuntimeExtensions.m in Sources */,
 				A337816418B1912800FECC45 /* UAIAMGetLoginProfileRequest.m in Sources */,
 				A337773D18ADA30B00FECC45 /* UAEC2DeleteInternetGatewayRequest.m in Sources */,
 				A337795118ADA31500FECC45 /* UAEC2RebootInstancesResponse.m in Sources */,
@@ -5492,9 +5675,11 @@
 				A337790B18ADA31500FECC45 /* UAEC2DeleteTagsResponse.m in Sources */,
 				A33772DF18ADA2B800FECC45 /* UAASAutoScalingGroup.m in Sources */,
 				A3377A8618ADA34200FECC45 /* UASNSListEndpointsByPlatformApplicationRequest.m in Sources */,
+				E85464FB18CF0F0D00CC2E3C /* UAMTLModel+NSCoding.m in Sources */,
 				A337791618ADA31500FECC45 /* UAEC2DescribeConversionTasksResponse.m in Sources */,
 				A33775AD18ADA30100FECC45 /* UAEC2ProductCode.m in Sources */,
 				A337823418B1913600FECC45 /* UAIAMDeleteRolePolicyResponse.m in Sources */,
+				E85464F518CF0F0D00CC2E3C /* NSValueTransformer+UAMTLInversionAdditions.m in Sources */,
 				A3377A1918ADA32F00FECC45 /* UAELBConfigureHealthCheckResponse.m in Sources */,
 				A337759D18ADA30100FECC45 /* UAEC2NetworkACLAssociation.m in Sources */,
 				A337779718ADA30C00FECC45 /* UAEC2ReportInstanceStatusRequest.m in Sources */,
@@ -5505,6 +5690,7 @@
 				A33779DB18ADA32800FECC45 /* UAELBDescribeLoadBalancerPolicyTypesRequest.m in Sources */,
 				A337792418ADA31500FECC45 /* UAEC2DescribeNetworkInterfacesResponse.m in Sources */,
 				A33773F618ADA2EF00FECC45 /* UACWDisableAlarmActionsRequest.m in Sources */,
+				E85464FF18CF0F0D00CC2E3C /* UAMTLValueTransformer.m in Sources */,
 				A3377ADB18ADA34A00FECC45 /* UASNSSetTopicAttributesResponse.m in Sources */,
 				A337814518B1912800FECC45 /* UAIAMCreateAccessKeyRequest.m in Sources */,
 				A3377A2B18ADA32F00FECC45 /* UAELBModifyLoadBalancerAttributesResponse.m in Sources */,
@@ -5513,6 +5699,7 @@
 				A337771218ADA30B00FECC45 /* UAEC2AssociateDHCPOptionsRequest.m in Sources */,
 				A337734518ADA2C500FECC45 /* UAASDescribeAutoScalingNotificationTypesRequest.m in Sources */,
 				A33773C418ADA2D200FECC45 /* UAASSuspendProcessesResponse.m in Sources */,
+				E85464F418CF0F0D00CC2E3C /* NSString+UAURLEscape.m in Sources */,
 				A33778FD18ADA31500FECC45 /* UAEC2DeleteCustomerGatewayResponse.m in Sources */,
 				A33779CE18ADA32800FECC45 /* UAELBConfigureHealthCheckRequest.m in Sources */,
 				A337778C18ADA30C00FECC45 /* UAEC2ModifyVolumeAttributeRequest.m in Sources */,
@@ -5551,6 +5738,7 @@
 				A33778E618ADA31500FECC45 /* UAEC2CreateDHCPOptionsResponse.m in Sources */,
 				A337792618ADA31500FECC45 /* UAEC2DescribeRegionsResponse.m in Sources */,
 				A337825C18B1913600FECC45 /* UAIAMRemoveRoleFromInstanceProfileResponse.m in Sources */,
+				E8FAEC1118CC2DAD0018BB0E /* UAAWSModel.m in Sources */,
 				A337774318ADA30B00FECC45 /* UAEC2DeleteRouteRequest.m in Sources */,
 				A3E01C3018AD93E900C3B7DB /* UAAppDelegate.m in Sources */,
 				A3377A2018ADA32F00FECC45 /* UAELBDeleteLoadBalancerPolicyResponse.m in Sources */,
@@ -5612,6 +5800,7 @@
 				A3377AD618ADA34A00FECC45 /* UASNSPublishResponse.m in Sources */,
 				A3377AC618ADA34A00FECC45 /* UASNSConfirmSubscriptionResponse.m in Sources */,
 				A3377AD018ADA34A00FECC45 /* UASNSGetTopicAttributesResponse.m in Sources */,
+				E85464EB18CF0F0D00CC2E3C /* UADDXMLDocument.m in Sources */,
 				A337816918B1912800FECC45 /* UAIAMGetUserPolicyRequest.m in Sources */,
 				A33778D918ADA31500FECC45 /* UAEC2AttachVPNGatewayResponse.m in Sources */,
 				A30FD21518AD96D000CA52F7 /* UAAWSServiceHealthStatusRequest.m in Sources */,
@@ -5636,6 +5825,7 @@
 				A33778DD18ADA31500FECC45 /* UAEC2CancelBundleTaskResponse.m in Sources */,
 				A337814718B1912800FECC45 /* UAIAMCreateGroupRequest.m in Sources */,
 				A337756918ADA30100FECC45 /* UAEC2EBSOptimized.m in Sources */,
+				E85464ED18CF0F0D00CC2E3C /* UADDXMLNode.m in Sources */,
 				A30FD20C18AD96D000CA52F7 /* UAASError.m in Sources */,
 				A337777718ADA30C00FECC45 /* UAEC2DescribeVPNConnectionsRequest.m in Sources */,
 				A337735A18ADA2C500FECC45 /* UAASUpdateAutoScalingGroupRequest.m in Sources */,
@@ -5671,6 +5861,7 @@
 				A337826018B1913600FECC45 /* UAIAMUpdateAccountPasswordPolicyResponse.m in Sources */,
 				A337791D18ADA31500FECC45 /* UAEC2DescribeInstancesResponse.m in Sources */,
 				A337771818ADA30B00FECC45 /* UAEC2AuthorizeSecurityGroupEgressRequest.m in Sources */,
+				E85464F118CF0F0D00CC2E3C /* NSDictionary+UAMTLManipulationAdditions.m in Sources */,
 				A33773A718ADA2D200FECC45 /* UAASDeleteAutoScalingGroupResponse.m in Sources */,
 				A337794118ADA31500FECC45 /* UAEC2DisassociateRouteTableResponse.m in Sources */,
 				A337774218ADA30B00FECC45 /* UAEC2DeletePlacementGroupRequest.m in Sources */,
@@ -5686,6 +5877,7 @@
 				A337817718B1912800FECC45 /* UAIAMListSigningCertificatesRequest.m in Sources */,
 				A337741B18ADA2F700FECC45 /* UACWPutMetricAlarmResponse.m in Sources */,
 				A30FD21218AD96D000CA52F7 /* UAAWSServiceHealthOutage.m in Sources */,
+				E85464F818CF0F0D00CC2E3C /* NSValueTransformer+UAMTLXMLTransformerAdditions.m in Sources */,
 				A337791C18ADA31500FECC45 /* UAEC2DescribeInstanceAttributeResponse.m in Sources */,
 				A337814418B1912800FECC45 /* UAIAMChangePasswordRequest.m in Sources */,
 				A337792A18ADA31500FECC45 /* UAEC2DescribeReservedInstancesResponse.m in Sources */,
@@ -5719,6 +5911,7 @@
 				A3377A8E18ADA34200FECC45 /* UASNSSetPlatformApplicationAttributesRequest.m in Sources */,
 				A337816A18B1912800FECC45 /* UAIAMGetUserRequest.m in Sources */,
 				A337791918ADA31500FECC45 /* UAEC2DescribeExportTasksResponse.m in Sources */,
+				E85464F318CF0F0D00CC2E3C /* NSObject+UAMTLComparisonAdditions.m in Sources */,
 				A3377A8518ADA34200FECC45 /* UASNSGetTopicAttributesRequest.m in Sources */,
 				A337755D18ADA30100FECC45 /* UAEC2DHCPConfiguration.m in Sources */,
 				A337757A18ADA30100FECC45 /* UAEC2ImportInstanceVolumeDetailItem.m in Sources */,
@@ -5729,6 +5922,7 @@
 				A33773AF18ADA2D200FECC45 /* UAASDescribeAutoScalingGroupsResponse.m in Sources */,
 				A337825D18B1913600FECC45 /* UAIAMRemoveUserFromGroupResponse.m in Sources */,
 				A337793218ADA31500FECC45 /* UAEC2DescribeSubnetsResponse.m in Sources */,
+				E85464FE18CF0F0D00CC2E3C /* UAMTLReflection.m in Sources */,
 				A337824718B1913600FECC45 /* UAIAMGetUserPolicyResponse.m in Sources */,
 				A337823C18B1913600FECC45 /* UAIAMEnableMFADeviceResponse.m in Sources */,
 				A337826718B1913600FECC45 /* UAIAMUpdateUserResponse.m in Sources */,
@@ -5769,7 +5963,7 @@
 				A337758D18ADA30100FECC45 /* UAEC2InstanceStatusEvent.m in Sources */,
 				A337759518ADA30100FECC45 /* UAEC2KeyPair.m in Sources */,
 				A337757818ADA30100FECC45 /* UAEC2ImportInstanceLaunchSpecification.m in Sources */,
-				A30FD22818AD96D000CA52F7 /* MTLXMLAdapter+UAAWSPayloadSerialisation.m in Sources */,
+				A30FD22818AD96D000CA52F7 /* UAMTLXMLAdapter+UAAWSPayloadSerialisation.m in Sources */,
 				A337790F18ADA31500FECC45 /* UAEC2DeleteVPNConnectionRouteResponse.m in Sources */,
 				A337824D18B1913600FECC45 /* UAIAMListGroupsResponse.m in Sources */,
 				A337825618B1913600FECC45 /* UAIAMListUserPoliciesResponse.m in Sources */,
@@ -5804,6 +5998,7 @@
 				A337822418B1913600FECC45 /* UAIAMCreateAccountAliasResponse.m in Sources */,
 				A337772218ADA30B00FECC45 /* UAEC2CopySnapshotRequest.m in Sources */,
 				A33778F618ADA31500FECC45 /* UAEC2CreateTagsResponse.m in Sources */,
+				E85464EC18CF0F0D00CC2E3C /* UADDXMLElement.m in Sources */,
 				A337818518B1912800FECC45 /* UAIAMUpdateLoginProfileRequest.m in Sources */,
 				A337791B18ADA31500FECC45 /* UAEC2DescribeImagesResponse.m in Sources */,
 				A337814E18B1912800FECC45 /* UAIAMDeactivateMFADeviceRequest.m in Sources */,
@@ -5826,10 +6021,12 @@
 				A30FD22118AD96D000CA52F7 /* UAELBError.m in Sources */,
 				A337755F18ADA30100FECC45 /* UAEC2DHCPOptions.m in Sources */,
 				A337799518ADA32000FECC45 /* UAELBPolicyAttributeDescription.m in Sources */,
+				E85464FD18CF0F0D00CC2E3C /* UAMTLQueryAdapter.m in Sources */,
 				A33775A118ADA30100FECC45 /* UAEC2NetworkInterfaceAttachmentSpecification.m in Sources */,
 				A337755818ADA30100FECC45 /* UAEC2CreateVolumePermission.m in Sources */,
 				A337824B18B1913600FECC45 /* UAIAMListGroupPoliciesResponse.m in Sources */,
 				A33772E118ADA2B800FECC45 /* UAASBlockDeviceMapping.m in Sources */,
+				E854650018CF0F0D00CC2E3C /* UAMTLXMLAdapter.m in Sources */,
 				A33773A918ADA2D200FECC45 /* UAASDeleteNotificationConfigurationResponse.m in Sources */,
 				A337792D18ADA31500FECC45 /* UAEC2DescribeSnapshotAttributeResponse.m in Sources */,
 				A337771718ADA30B00FECC45 /* UAEC2AttachVPNGatewayRequest.m in Sources */,
@@ -5860,12 +6057,13 @@
 				A337816018B1912800FECC45 /* UAIAMGetAccountSummaryRequest.m in Sources */,
 				A33780A718B1909F00FECC45 /* UAIAMSAMLProviderList.m in Sources */,
 				A337774618ADA30B00FECC45 /* UAEC2DeleteSnapshotRequest.m in Sources */,
+				E85464EA18CF0F0D00CC2E3C /* NSString+UADDXML.m in Sources */,
 				A337794618ADA31500FECC45 /* UAEC2ImportKeyPairResponse.m in Sources */,
 				A33775AA18ADA30100FECC45 /* UAEC2PrivateIPAddress.m in Sources */,
 				A337758918ADA30100FECC45 /* UAEC2InstancePrivateIPAddress.m in Sources */,
-				A30FD22618AD96D000CA52F7 /* MTLJSONAdapter+UAAWSPayloadSerialisation.m in Sources */,
+				A30FD22618AD96D000CA52F7 /* UAMTLJSONAdapter+UAAWSPayloadSerialisation.m in Sources */,
 				A30FD21918AD96D000CA52F7 /* UAAWSOperationQueue.m in Sources */,
-				A30FD22518AD96D000CA52F7 /* UAAWSRequest+MTLModel.m in Sources */,
+				A30FD22518AD96D000CA52F7 /* UAAWSRequest+UAMTLModel.m in Sources */,
 				A337795F18ADA31500FECC45 /* UAEC2RevokeSecurityGroupEgressResponse.m in Sources */,
 				A33773A818ADA2D200FECC45 /* UAASDeleteLaunchConfigurationResponse.m in Sources */,
 				A337735318ADA2C500FECC45 /* UAASPutScalingPolicyRequest.m in Sources */,
@@ -5904,6 +6102,7 @@
 				A33778E418ADA31500FECC45 /* UAEC2CopySnapshotResponse.m in Sources */,
 				A337771618ADA30B00FECC45 /* UAEC2AttachVolumeRequest.m in Sources */,
 				A337779218ADA30C00FECC45 /* UAEC2ReleaseAddressRequest.m in Sources */,
+				E85464EF18CF0F0D00CC2E3C /* UAEXTScope.m in Sources */,
 				A337798B18ADA32000FECC45 /* UAELBHealthCheck.m in Sources */,
 				A3377ACB18ADA34A00FECC45 /* UASNSDeletePlatformApplicationResponse.m in Sources */,
 				A337772618ADA30B00FECC45 /* UAEC2CreateInstanceExportTaskRequest.m in Sources */,
@@ -5926,6 +6125,7 @@
 				A33778DA18ADA31500FECC45 /* UAEC2AuthorizeSecurityGroupEgressResponse.m in Sources */,
 				A337771F18ADA30B00FECC45 /* UAEC2CancelSpotInstanceRequestsRequest.m in Sources */,
 				A33775D218ADA30100FECC45 /* UAEC2VGWTelemetry.m in Sources */,
+				E85464F018CF0F0D00CC2E3C /* NSArray+UAMTLManipulationAdditions.m in Sources */,
 				A33773D618ADA2E700FECC45 /* UACWDatapoint.m in Sources */,
 				A337775718ADA30C00FECC45 /* UAEC2DescribeExportTasksRequest.m in Sources */,
 				A33775D418ADA30100FECC45 /* UAEC2VolumeAttachment.m in Sources */,
@@ -5992,7 +6192,7 @@
 				A3377A4418ADA33A00FECC45 /* UASNSSubscription.m in Sources */,
 				A337773218ADA30B00FECC45 /* UAEC2CreateSpotDatafeedSubscriptionRequest.m in Sources */,
 				A337807D18B18D2700FECC45 /* UAIAMError.m in Sources */,
-				A30FD22718AD96D000CA52F7 /* MTLQueryAdapter+UAAWSPayloadSerialisation.m in Sources */,
+				A30FD22718AD96D000CA52F7 /* UAMTLQueryAdapter+UAAWSPayloadSerialisation.m in Sources */,
 				A30FD22C18AD96D000CA52F7 /* UASNSError.m in Sources */,
 				A30FD21318AD96D000CA52F7 /* UAAWSServiceHealthService.m in Sources */,
 				A337816118B1912800FECC45 /* UAIAMGetGroupPolicyRequest.m in Sources */,
@@ -6037,6 +6237,7 @@
 				A337824518B1913600FECC45 /* UAIAMGetSAMLProviderResponse.m in Sources */,
 				A337825718B1913600FECC45 /* UAIAMListUsersResponse.m in Sources */,
 				A30FD21E18AD96D000CA52F7 /* UACWModel.m in Sources */,
+				E85464F918CF0F0D00CC2E3C /* UAMTLJSONAdapter.m in Sources */,
 				A337799918ADA32000FECC45 /* UAELBSourceSecurityGroup.m in Sources */,
 				A337796518ADA31500FECC45 /* UAEC2UnassignPrivateIPAddressesResponse.m in Sources */,
 				A33778F818ADA31500FECC45 /* UAEC2CreateVPCResponse.m in Sources */,
@@ -6062,7 +6263,6 @@
 				A337790A18ADA31500FECC45 /* UAEC2DeleteSubnetResponse.m in Sources */,
 				A337795E18ADA31500FECC45 /* UAEC2ResetSnapshotAttributeResponse.m in Sources */,
 				A33775CA18ADA30100FECC45 /* UAEC2Status.m in Sources */,
-				A337758118ADA30100FECC45 /* UAEC2InstanceInitiatedShutdownBehavior.m in Sources */,
 				A337775118ADA30B00FECC45 /* UAEC2DescribeAddressesRequest.m in Sources */,
 				A337814A18B1912800FECC45 /* UAIAMCreateRoleRequest.m in Sources */,
 				A33772E718ADA2B800FECC45 /* UAASMetricCollectionType.m in Sources */,
@@ -6118,7 +6318,6 @@
 				A337794B18ADA31500FECC45 /* UAEC2ModifyReservedInstancesResponse.m in Sources */,
 				A337776918ADA30C00FECC45 /* UAEC2DescribeRouteTablesRequest.m in Sources */,
 				A337826518B1913600FECC45 /* UAIAMUpdateServerCertificateResponse.m in Sources */,
-				A33775D018ADA30100FECC45 /* UAEC2UserData.m in Sources */,
 				A337817B18B1912800FECC45 /* UAIAMPutGroupPolicyRequest.m in Sources */,
 				A337754D18ADA30100FECC45 /* UAEC2Attachment.m in Sources */,
 				A337826918B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.m in Sources */,
@@ -6149,6 +6348,7 @@
 				A33779E218ADA32800FECC45 /* UAELBSetLoadBalancerListenerSSLCertificateRequest.m in Sources */,
 				A337757218ADA30100FECC45 /* UAEC2Filter.m in Sources */,
 				A30FD20F18AD96D000CA52F7 /* UAASResponse.m in Sources */,
+				E85464F718CF0F0D00CC2E3C /* NSValueTransformer+UAMTLQueryStringTransformerAdditions.m in Sources */,
 				A337735718ADA2C500FECC45 /* UAASSetInstanceHealthRequest.m in Sources */,
 				A337776A18ADA30C00FECC45 /* UAEC2DescribeSecurityGroupsRequest.m in Sources */,
 				A337793C18ADA31500FECC45 /* UAEC2DetachNetworkInterfaceResponse.m in Sources */,
@@ -6168,15 +6368,19 @@
 				A337816718B1912800FECC45 /* UAIAMGetSAMLProviderRequest.m in Sources */,
 				A3377AD118ADA34A00FECC45 /* UASNSListEndpointsByPlatformApplicationResponse.m in Sources */,
 				A337818118B1912800FECC45 /* UAIAMUpdateAccessKeyRequest.m in Sources */,
+				E85464FC18CF0F0D00CC2E3C /* UAMTLModel.m in Sources */,
 				A337822918B1913600FECC45 /* UAIAMCreateSAMLProviderResponse.m in Sources */,
 				A337733B18ADA2C500FECC45 /* UAASDeleteAutoScalingGroupRequest.m in Sources */,
 				A337772318ADA30B00FECC45 /* UAEC2CreateCustomerGatewayRequest.m in Sources */,
 				A337770F18ADA30B00FECC45 /* UAEC2AllocateAddressRequest.m in Sources */,
 				A33773AB18ADA2D200FECC45 /* UAASDeleteScheduledActionResponse.m in Sources */,
 				A337790618ADA31500FECC45 /* UAEC2DeleteRouteTableResponse.m in Sources */,
+				E85464FA18CF0F0D00CC2E3C /* UAMTLManagedObjectAdapter.m in Sources */,
 				A3377A2718ADA32F00FECC45 /* UAELBDescribeLoadBalancersResponse.m in Sources */,
 				A33779E018ADA32800FECC45 /* UAELBModifyLoadBalancerAttributesRequest.m in Sources */,
+				E85464F218CF0F0D00CC2E3C /* NSError+UAMTLModelException.m in Sources */,
 				A337756318ADA30100FECC45 /* UAEC2DiskImageDetail.m in Sources */,
+				E85464E918CF0F0D00CC2E3C /* UADDXMLElementAdditions.m in Sources */,
 				A337816D18B1912800FECC45 /* UAIAMListGroupPoliciesRequest.m in Sources */,
 				A337759618ADA30100FECC45 /* UAEC2LaunchPermission.m in Sources */,
 				A337777418ADA30C00FECC45 /* UAEC2DescribeVolumeStatusRequest.m in Sources */,

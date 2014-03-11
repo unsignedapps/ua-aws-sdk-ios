@@ -45,7 +45,7 @@
 
 + (NSValueTransformer *)dateJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSDate *(NSNumber *input)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSDate *(NSNumber *input)
     {
         return [NSDate dateWithTimeIntervalSince1970:[input integerValue]];
 
@@ -57,7 +57,7 @@
 
 + (NSValueTransformer *)serviceJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *input)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *input)
     {
         if (input == nil)
             return nil;
@@ -84,7 +84,7 @@
 
 + (NSValueTransformer *)regionJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *input)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *input)
     {
         if (input == nil)
             return nil;
@@ -110,7 +110,7 @@
 
 + (NSValueTransformer *)typeJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(id input)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(id input)
     {
         if ([input isKindOfClass:[NSNumber class]])
             return input;
@@ -128,7 +128,7 @@
 
 + (NSValueTransformer *)descriptionValueJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSAttributedString *(NSString *input)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSAttributedString *(NSString *input)
     {
         // the span's denote the titles, which should be bold instead of yellow.
         NSMutableString *string = [input mutableCopy];

@@ -35,12 +35,12 @@
 
 + (NSValueTransformer *)policyAttributeDescriptionsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBPolicyAttributeDescription class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBPolicyAttributeDescription class]];
 }
 
 + (NSValueTransformer *)policyAttributeDescriptionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAELBPolicyAttributeDescription class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBPolicyAttributeDescription class]];
 }
 
 @end

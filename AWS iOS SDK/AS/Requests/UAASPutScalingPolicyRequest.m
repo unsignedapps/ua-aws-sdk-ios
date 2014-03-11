@@ -55,9 +55,73 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setAutoScalingGroupName:(NSString *)autoScalingGroupName
+{
+	_autoScalingGroupName = autoScalingGroupName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"autoScalingGroupName"])
+		[self.UA_dirtyProperties addObject:@"autoScalingGroupName"];
+}
+
+- (void)setPolicyName:(NSString *)policyName
+{
+	_policyName = policyName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"policyName"])
+		[self.UA_dirtyProperties addObject:@"policyName"];
+}
+
+- (void)setScalingAdjustment:(NSNumber *)scalingAdjustment
+{
+	_scalingAdjustment = scalingAdjustment;
+	
+	if (![self.UA_dirtyProperties containsObject:@"scalingAdjustment"])
+		[self.UA_dirtyProperties addObject:@"scalingAdjustment"];
+}
+
+- (void)setAdjustmentType:(UAASScalingPolicyAdjustmentType)adjustmentType
+{
+	_adjustmentType = adjustmentType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"adjustmentType"])
+		[self.UA_dirtyProperties addObject:@"adjustmentType"];
+}
+
+- (void)setCooldown:(NSNumber *)cooldown
+{
+	_cooldown = cooldown;
+	
+	if (![self.UA_dirtyProperties containsObject:@"cooldown"])
+		[self.UA_dirtyProperties addObject:@"cooldown"];
+}
+
+- (void)setMinAdjustmentStep:(NSNumber *)minAdjustmentStep
+{
+	_minAdjustmentStep = minAdjustmentStep;
+	
+	if (![self.UA_dirtyProperties containsObject:@"minAdjustmentStep"])
+		[self.UA_dirtyProperties addObject:@"minAdjustmentStep"];
+}
+
 + (NSValueTransformer *)adjustmentTypeJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -92,7 +156,7 @@
 
 + (NSValueTransformer *)adjustmentTypeQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;

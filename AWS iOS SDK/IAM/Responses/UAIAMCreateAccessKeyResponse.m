@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)accessKeyXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMAccessKey class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMAccessKey class]];
 }
 
 @end

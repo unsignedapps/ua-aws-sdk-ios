@@ -48,24 +48,48 @@
     return [keyPaths copy];
 }
 
+- (void)setImage:(UAEC2DiskImageDetail *)image
+{
+	_image = image;
+	
+	if (![self.UA_dirtyProperties containsObject:@"image"])
+		[self.UA_dirtyProperties addObject:@"image"];
+}
+
+- (void)setDescriptionValue:(NSString *)descriptionValue
+{
+	_descriptionValue = descriptionValue;
+	
+	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
+		[self.UA_dirtyProperties addObject:@"descriptionValue"];
+}
+
+- (void)setVolume:(UAEC2VolumeDetail *)volume
+{
+	_volume = volume;
+	
+	if (![self.UA_dirtyProperties containsObject:@"volume"])
+		[self.UA_dirtyProperties addObject:@"volume"];
+}
+
 + (NSValueTransformer *)imageQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DiskImageDetail class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2DiskImageDetail class]];
 }
 
 + (NSValueTransformer *)volumeQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2VolumeDetail class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2VolumeDetail class]];
 }
 
 + (NSValueTransformer *)imageXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2DiskImageDetail class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2DiskImageDetail class]];
 }
 
 + (NSValueTransformer *)volumeXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2VolumeDetail class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2VolumeDetail class]];
 }
 
 @end

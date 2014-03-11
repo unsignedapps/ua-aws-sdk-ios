@@ -22,7 +22,7 @@
 @property (nonatomic, copy) UAEC2Placement *placement;
 @property (nonatomic) BOOL monitoring;
 @property (nonatomic, copy) NSString *subnetID;
-@property (nonatomic, copy) NSString *instanceInitiatedShutdownBehavior;
+@property (nonatomic) UAEC2InstanceInitiatedShutdownBehavior instanceInitiatedShutdownBehavior;
 @property (nonatomic, copy) NSString *privateIPAddress;
 
 @end

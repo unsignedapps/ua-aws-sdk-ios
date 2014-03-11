@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)autoScalingInstancesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASAutoScalingInstanceDetails class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASAutoScalingInstanceDetails class]];
 }
 
 @end

@@ -34,12 +34,12 @@
 
 + (NSValueTransformer *)listenerQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBListener class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBListener class]];
 }
 
 + (NSValueTransformer *)listenerXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAELBListener class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAELBListener class]];
 }
 
 + (NSValueTransformer *)policyNamesXMLTransformer

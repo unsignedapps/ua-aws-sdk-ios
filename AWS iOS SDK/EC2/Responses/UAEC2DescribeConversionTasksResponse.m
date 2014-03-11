@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)conversionTasksXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2ConversionTask class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ConversionTask class]];
 }
 
 @end

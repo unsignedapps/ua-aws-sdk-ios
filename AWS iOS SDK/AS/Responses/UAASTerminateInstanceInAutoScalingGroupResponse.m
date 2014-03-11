@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)activityXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAASActivity class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAASActivity class]];
 }
 
 @end

@@ -7,10 +7,10 @@
 //
 
 #import <Kiwi/Kiwi.h>
-#import <Mantle/Mantle.h>
-#import "MTLQueryAdapter.h"
+#import "UAMantle.h"
+#import "UAMTLQueryAdapter.h"
 
-@interface MTLQueryAdapter (InternalMethods)
+@interface UAMTLQueryAdapter (InternalMethods)
 
 + (NSString *)queryStringFromDictionary:(NSDictionary *)dictionary;
 
@@ -18,7 +18,7 @@
 
 SPEC_BEGIN(MTLQueryAdapterTests)
 
-describe(@"MTLQueryAdapter", ^
+describe(@"UAMTLQueryAdapter", ^
 {
     
     context(@"when encoding to query strings", ^
@@ -40,7 +40,7 @@ describe(@"MTLQueryAdapter", ^
             };
             NSString *expectedQueryString = @"AWSAccessKeyId=0GS7553JW74RRM612K02EXAMPLE&Expires=2010-10-10T12%3A00%3A00Z&ImageId=ami-2bb65342&MaxCount=3&MinCount=1&Signature=lBP67vCvGlDMBQ1dofZxg8E8SUEXAMPLE&SignatureMethod=HmacSHA256&SignatureVersion=2&Version=2013-10-15";
             
-            NSString *queryString = [MTLQueryAdapter queryStringFromDictionary:input];
+            NSString *queryString = [UAMTLQueryAdapter queryStringFromDictionary:input];
             
             [[queryString should] beNonNil];
             [[queryString should] equal:expectedQueryString];
@@ -64,7 +64,7 @@ describe(@"MTLQueryAdapter", ^
             };
             NSString *expectedQueryString = @"AWSAccessKeyId=0GS7553JW74RRM612K02EXAMPLE&Expires=2010-10-10T12%3A00%3A00Z&ImageId=ami-2bb65342&MaxCount=3&MinCount=1&Monitoring.Enabled=true&Placement.AvailabilityZone=us-east-1b&Signature=lBP67vCvGlDMBQ1dofZxg8E8SUEXAMPLE&SignatureMethod=HmacSHA256&SignatureVersion=2&Version=2013-10-15";
             
-            NSString *queryString = [MTLQueryAdapter queryStringFromDictionary:input];
+            NSString *queryString = [UAMTLQueryAdapter queryStringFromDictionary:input];
             
             [[queryString should] beNonNil];
             [[queryString should] equal:expectedQueryString];
@@ -93,7 +93,7 @@ describe(@"MTLQueryAdapter", ^
             };
             NSString *expectedQueryString = @"BlockDeviceMapping.1.DeviceName=%2Fdev%2Fsdj&BlockDeviceMapping.1.Ebs.NoDevice=true&BlockDeviceMapping.2.DeviceName=%2Fdev%2Fsdh&BlockDeviceMapping.2.Ebs.VolumeSize=300&BlockDeviceMapping.3.DeviceName=%2Fdev%2Fsdc&BlockDeviceMapping.3.VirtualName=ephemeral1&ImageId.1=ami-72aa081b";
             
-            NSString *queryString = [MTLQueryAdapter queryStringFromDictionary:input];
+            NSString *queryString = [UAMTLQueryAdapter queryStringFromDictionary:input];
             
             [[queryString should] beNonNil];
             [[queryString should] equal:expectedQueryString];

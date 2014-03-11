@@ -1,30 +1,14 @@
 PODS:
-  - KissXML (5.0)
   - Kiwi/ARC (2.2.3)
   - Kiwi/NonARC (2.2.3)
   - Kiwi/XCTest (2.2.3):
     - Kiwi/ARC
     - Kiwi/NonARC
-  - Mantle (1.3.1):
-    - KissXML
-    - Mantle/extobjc
-  - Mantle/extobjc (1.3.1):
-    - KissXML
 
 DEPENDENCIES:
-  - KissXML (from `~/Projects/KissXML/`)
   - Kiwi/XCTest
-  - Mantle (from `~/Projects/Mantle/`)
-
-EXTERNAL SOURCES:
-  KissXML:
-    :path: ~/Projects/KissXML/
-  Mantle:
-    :path: ~/Projects/Mantle/
 
 SPEC CHECKSUMS:
-  KissXML: ba1bc0135ef4146d270e5e57c73216fa8f50c11d
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
-  Mantle: e31c3e18813746fd5dadd4af04024c1dc73a492f
 
 COCOAPODS: 0.29.0

@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)targetConfigurationXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2TargetConfiguration class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2TargetConfiguration class]];
 }
 
 @end

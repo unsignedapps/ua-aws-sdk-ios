@@ -45,24 +45,40 @@
     return [keyPaths copy];
 }
 
+- (void)setAdd:(NSMutableArray *)add
+{
+	_add = add;
+	
+	if (![self.UA_dirtyProperties containsObject:@"add"])
+		[self.UA_dirtyProperties addObject:@"add"];
+}
+
+- (void)setRemove:(NSMutableArray *)remove
+{
+	_remove = remove;
+	
+	if (![self.UA_dirtyProperties containsObject:@"remove"])
+		[self.UA_dirtyProperties addObject:@"remove"];
+}
+
 + (NSValueTransformer *)addQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
 }
 
 + (NSValueTransformer *)removeQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
 }
 
 + (NSValueTransformer *)addXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
 }
 
 + (NSValueTransformer *)removeXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
 }
 
 @end

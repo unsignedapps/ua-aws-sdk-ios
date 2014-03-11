@@ -49,47 +49,47 @@
 
 + (NSValueTransformer *)groupsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
 }
 
 + (NSValueTransformer *)attachmentQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAttachment class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAttachment class]];
 }
 
 + (NSValueTransformer *)associationQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
 }
 
 + (NSValueTransformer *)privateIPAddressesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstancePrivateIPAddress class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2InstancePrivateIPAddress class]];
 }
 
 + (NSValueTransformer *)sourceDestCheckXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)groupsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
 }
 
 + (NSValueTransformer *)attachmentXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAttachment class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAttachment class]];
 }
 
 + (NSValueTransformer *)associationXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceAssociation class]];
 }
 
 + (NSValueTransformer *)privateIPAddressesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2InstancePrivateIPAddress class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstancePrivateIPAddress class]];
 }
 
 @end

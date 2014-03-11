@@ -13,7 +13,7 @@
 #import "UAASScalingPolicy.h"
 
 #import <KissXML/DDXML.h>
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 
 SPEC_BEGIN(UAASDescribePoliciesResponseSpec)
 
@@ -23,12 +23,12 @@ describe(@"UAASDescribePoliciesResponse", ^
     {
 	    NSString *xml = @"<DescribePoliciesResponse xmlns=\"http://autoscaling.amazonaws.com/doc/2011-01-01/\"><DescribePoliciesResult><ScalingPolicies><member><PolicyARN>arn:aws:autoscaling:us-east-1:803981987763:scalingPolicy:c322761b-3172-4d56-9a21-0ed9d6161d67:autoScalingGroupName/my-test-asg:policyName/MyScaleDownPolicy</PolicyARN><AdjustmentType>ChangeInCapacity</AdjustmentType><ScalingAdjustment>-1</ScalingAdjustment><PolicyName>MyScaleDownPolicy</PolicyName><AutoScalingGroupName>my-test-asg</AutoScalingGroupName><Cooldown>60</Cooldown><Alarms><member><AlarmName>TestQueue</AlarmName><AlarmARN>arn:aws:cloudwatch:us-east-1:803981987763:alarm:TestQueue</AlarmARN></member></Alarms></member><member><PolicyARN>arn:aws:autoscaling:us-east-1:803981987763:scalingPolicy:c55a5cdd-9be0-435b-b60b-a8dd313159f5:autoScalingGroupName/my-test-asg:policyName/MyScaleUpPolicy</PolicyARN><AdjustmentType>ChangeInCapacity</AdjustmentType><ScalingAdjustment>1</ScalingAdjustment><PolicyName>MyScaleUpPolicy</PolicyName><AutoScalingGroupName>my-test-asg</AutoScalingGroupName><Cooldown>60</Cooldown><Alarms><member><AlarmName>TestQueue</AlarmName><AlarmARN>arn:aws:cloudwatch:us-east-1:803981987763:alarm:TestQueue</AlarmARN></member></Alarms></member></ScalingPolicies></DescribePoliciesResult><ResponseMetadata><RequestId>ec3bffad-b739-11e2-b38d-15fbEXAMPLE</RequestId></ResponseMetadata></DescribePoliciesResponse> ";
 	    NSError *parseError = nil;
-	    DDXMLDocument *xmlDictionary = [[DDXMLDocument alloc] initWithXMLString:xml options:0 error:&parseError];
+	    UADDXMLDocument *xmlDictionary = [[UADDXMLDocument alloc] initWithXMLString:xml options:0 error:&parseError];
 	    [[parseError should] beNil];
 	    [[xmlDictionary should] beNonNil];
         
 	    NSError *serialisationError = nil;
-	    UAASDescribePoliciesResponse *describePoliciesResponse = [MTLXMLAdapter modelOfClass:[UAASDescribePoliciesResponse class] fromXMLNode:xmlDictionary error:&serialisationError];
+	    UAASDescribePoliciesResponse *describePoliciesResponse = [UAMTLXMLAdapter modelOfClass:[UAASDescribePoliciesResponse class] fromXMLNode:xmlDictionary error:&serialisationError];
 	    [[serialisationError should] beNil];
 	    [[describePoliciesResponse should] beNonNil];
         

@@ -14,7 +14,7 @@
 #import "UAASLaunchConfiguration.h"
 
 #import <KissXML/DDXML.h>
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 
 SPEC_BEGIN(UAASDescribeLaunchConfigurationsResponseSpec)
 
@@ -24,12 +24,12 @@ describe(@"UAASDescribeLaunchConfigurationsResponse", ^
     {
 	    NSString *xml = @"<DescribeLaunchConfigurationsResponse xmlns=\"http://autoscaling.amazonaws.com/doc/2011-01-01/\"><DescribeLaunchConfigurationsResult><LaunchConfigurations><member><AssociatePublicIpAddress>true</AssociatePublicIpAddress><SecurityGroups/><CreatedTime>2013-01-21T23:04:42.000Z</CreatedTime><KernelId/><LaunchConfigurationName>my-test-lc</LaunchConfigurationName><UserData/><InstanceType>m1.small</InstanceType><LaunchConfigurationARN>arn:aws:autoscaling:us-east-1:803981987763:launchConfiguration:9dbbbf87-6141-428a-a409-0752edbe6cad:launchConfigurationName/my-test-lc</LaunchConfigurationARN><BlockDeviceMappings/><ImageId>ami-514ac838</ImageId><KeyName/><RamdiskId/><InstanceMonitoring><Enabled>true</Enabled></InstanceMonitoring><EbsOptimized>false</EbsOptimized></member></LaunchConfigurations></DescribeLaunchConfigurationsResult><ResponseMetadata><RequestId>d05a22f8-b690-11e2-bf8e-2113fEXAMPLE</RequestId></ResponseMetadata></DescribeLaunchConfigurationsResponse> ";
 	    NSError *parseError = nil;
-	    DDXMLDocument *xmlDictionary = [[DDXMLDocument alloc] initWithXMLString:xml options:0 error:&parseError];
+	    UADDXMLDocument *xmlDictionary = [[UADDXMLDocument alloc] initWithXMLString:xml options:0 error:&parseError];
 	    [[parseError should] beNil];
 	    [[xmlDictionary should] beNonNil];
         
 	    NSError *serialisationError = nil;
-	    UAASDescribeLaunchConfigurationsResponse *describeLaunchConfigurationsResponse = [MTLXMLAdapter modelOfClass:[UAASDescribeLaunchConfigurationsResponse class] fromXMLNode:xmlDictionary error:&serialisationError];
+	    UAASDescribeLaunchConfigurationsResponse *describeLaunchConfigurationsResponse = [UAMTLXMLAdapter modelOfClass:[UAASDescribeLaunchConfigurationsResponse class] fromXMLNode:xmlDictionary error:&serialisationError];
 	    [[serialisationError should] beNil];
 	    [[describeLaunchConfigurationsResponse should] beNonNil];
         

@@ -55,9 +55,73 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setAlarmNames:(NSMutableArray *)alarmNames
+{
+	_alarmNames = alarmNames;
+	
+	if (![self.UA_dirtyProperties containsObject:@"alarmNames"])
+		[self.UA_dirtyProperties addObject:@"alarmNames"];
+}
+
+- (void)setAlarmNamePrefix:(NSString *)alarmNamePrefix
+{
+	_alarmNamePrefix = alarmNamePrefix;
+	
+	if (![self.UA_dirtyProperties containsObject:@"alarmNamePrefix"])
+		[self.UA_dirtyProperties addObject:@"alarmNamePrefix"];
+}
+
+- (void)setStateValue:(UACWAlarmState)stateValue
+{
+	_stateValue = stateValue;
+	
+	if (![self.UA_dirtyProperties containsObject:@"stateValue"])
+		[self.UA_dirtyProperties addObject:@"stateValue"];
+}
+
+- (void)setActionPrefix:(NSString *)actionPrefix
+{
+	_actionPrefix = actionPrefix;
+	
+	if (![self.UA_dirtyProperties containsObject:@"actionPrefix"])
+		[self.UA_dirtyProperties addObject:@"actionPrefix"];
+}
+
+- (void)setMaxRecords:(NSNumber *)maxRecords
+{
+	_maxRecords = maxRecords;
+	
+	if (![self.UA_dirtyProperties containsObject:@"maxRecords"])
+		[self.UA_dirtyProperties addObject:@"maxRecords"];
+}
+
+- (void)setNextToken:(NSString *)nextToken
+{
+	_nextToken = nextToken;
+	
+	if (![self.UA_dirtyProperties containsObject:@"nextToken"])
+		[self.UA_dirtyProperties addObject:@"nextToken"];
+}
+
 + (NSValueTransformer *)stateValueJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -92,7 +156,7 @@
 
 + (NSValueTransformer *)stateValueQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;

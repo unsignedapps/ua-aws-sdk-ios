@@ -56,6 +56,78 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setInstances:(NSMutableArray *)instances
+{
+	_instances = instances;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instances"])
+		[self.UA_dirtyProperties addObject:@"instances"];
+}
+
+- (void)setStatus:(NSString *)status
+{
+	_status = status;
+	
+	if (![self.UA_dirtyProperties containsObject:@"status"])
+		[self.UA_dirtyProperties addObject:@"status"];
+}
+
+- (void)setStartTime:(NSDate *)startTime
+{
+	_startTime = startTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"startTime"])
+		[self.UA_dirtyProperties addObject:@"startTime"];
+}
+
+- (void)setEndTime:(NSDate *)endTime
+{
+	_endTime = endTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"endTime"])
+		[self.UA_dirtyProperties addObject:@"endTime"];
+}
+
+- (void)setReasonCodes:(NSMutableArray *)reasonCodes
+{
+	_reasonCodes = reasonCodes;
+	
+	if (![self.UA_dirtyProperties containsObject:@"reasonCodes"])
+		[self.UA_dirtyProperties addObject:@"reasonCodes"];
+}
+
+- (void)setDescriptionValue:(NSString *)descriptionValue
+{
+	_descriptionValue = descriptionValue;
+	
+	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
+		[self.UA_dirtyProperties addObject:@"descriptionValue"];
+}
+
 + (NSValueTransformer *)startTimeJSONTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -68,7 +140,7 @@
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)startTimeQueryStringTransformer
@@ -87,6 +159,7 @@
 		[self setInstances:[NSMutableArray array]];
 	[self.instances addObject:instance];
 }
+
 - (void)addReasonCode:(NSString *)reasonCode
 {
 	if (self.reasonCodes == nil)

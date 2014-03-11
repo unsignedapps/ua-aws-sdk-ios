@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)placementGroupsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2PlacementGroup class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2PlacementGroup class]];
 }
 
 @end

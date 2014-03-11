@@ -60,34 +60,122 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setNetworkACLID:(NSString *)networkACLID
+{
+	_networkACLID = networkACLID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"networkACLID"])
+		[self.UA_dirtyProperties addObject:@"networkACLID"];
+}
+
+- (void)setRuleNumber:(NSNumber *)ruleNumber
+{
+	_ruleNumber = ruleNumber;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ruleNumber"])
+		[self.UA_dirtyProperties addObject:@"ruleNumber"];
+}
+
+- (void)setProtocol:(NSString *)protocol
+{
+	_protocol = protocol;
+	
+	if (![self.UA_dirtyProperties containsObject:@"protocol"])
+		[self.UA_dirtyProperties addObject:@"protocol"];
+}
+
+- (void)setRuleAction:(NSString *)ruleAction
+{
+	_ruleAction = ruleAction;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ruleAction"])
+		[self.UA_dirtyProperties addObject:@"ruleAction"];
+}
+
+- (void)setEgress:(BOOL)egress
+{
+	_egress = egress;
+	
+	if (![self.UA_dirtyProperties containsObject:@"egress"])
+		[self.UA_dirtyProperties addObject:@"egress"];
+}
+
+- (void)setCidrBlock:(NSString *)cidrBlock
+{
+	_cidrBlock = cidrBlock;
+	
+	if (![self.UA_dirtyProperties containsObject:@"cidrBlock"])
+		[self.UA_dirtyProperties addObject:@"cidrBlock"];
+}
+
+- (void)setIcmpTypeCode:(UAEC2IcmpTypeCode *)icmpTypeCode
+{
+	_icmpTypeCode = icmpTypeCode;
+	
+	if (![self.UA_dirtyProperties containsObject:@"icmpTypeCode"])
+		[self.UA_dirtyProperties addObject:@"icmpTypeCode"];
+}
+
+- (void)setPortRange:(UAEC2PortRange *)portRange
+{
+	_portRange = portRange;
+	
+	if (![self.UA_dirtyProperties containsObject:@"portRange"])
+		[self.UA_dirtyProperties addObject:@"portRange"];
+}
+
 + (NSValueTransformer *)icmpTypeCodeJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
 }
 
 + (NSValueTransformer *)portRangeJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2PortRange class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2PortRange class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)egressQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)icmpTypeCodeQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
 }
 
 + (NSValueTransformer *)portRangeQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2PortRange class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2PortRange class]];
 }
 
 #pragma mark - Invocation

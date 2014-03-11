@@ -10,7 +10,7 @@
 #import "UAAWSRequest.h"
 #import "UAAWSCredentials.h"
 #import "NSData+UAHMAC.h"
-#import "NSString+DSURLEscape.h"
+#import "NSString+UAURLEscape.h"
 #import "NSString+UAAWSRegions.h"
 #import "NSString+UAStringEncoding.h"
 #import "NSURL+UAAWSServiceName.h"

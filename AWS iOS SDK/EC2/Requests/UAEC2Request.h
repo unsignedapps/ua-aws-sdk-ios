@@ -8,9 +8,9 @@
 
 #import "UAAWSRequest.h"
 #import "UAEC2DataTypes.h"
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 #import "NSValueTransformer+UAValueTransformerAdditions.h"
 
-@interface UAEC2Request : UAAWSRequest <UAAWSRequest, MTLQuerySerializing>
+@interface UAEC2Request : UAAWSRequest <UAAWSRequest, UAMTLQuerySerializing>
 
 @end

@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)metricAlarmsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UACWMetricAlarm class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWMetricAlarm class]];
 }
 
 @end

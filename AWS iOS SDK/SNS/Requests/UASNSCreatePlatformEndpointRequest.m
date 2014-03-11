@@ -53,6 +53,54 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setPlatformApplicationARN:(NSString *)platformApplicationARN
+{
+	_platformApplicationARN = platformApplicationARN;
+	
+	if (![self.UA_dirtyProperties containsObject:@"platformApplicationARN"])
+		[self.UA_dirtyProperties addObject:@"platformApplicationARN"];
+}
+
+- (void)setToken:(NSString *)token
+{
+	_token = token;
+	
+	if (![self.UA_dirtyProperties containsObject:@"token"])
+		[self.UA_dirtyProperties addObject:@"token"];
+}
+
+- (void)setCustomUserData:(NSString *)customUserData
+{
+	_customUserData = customUserData;
+	
+	if (![self.UA_dirtyProperties containsObject:@"customUserData"])
+		[self.UA_dirtyProperties addObject:@"customUserData"];
+}
+
+- (void)setAttributes:(NSMutableDictionary *)attributes
+{
+	_attributes = attributes;
+	
+	if (![self.UA_dirtyProperties containsObject:@"attributes"])
+		[self.UA_dirtyProperties addObject:@"attributes"];
+}
+
 + (NSValueTransformer *)attributesJSONTransformer
 {
     return [NSValueTransformer UA_JSONKeyValueTransformer];

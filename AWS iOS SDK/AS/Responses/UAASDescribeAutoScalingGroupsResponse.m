@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)autoScalingGroupsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASAutoScalingGroup class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASAutoScalingGroup class]];
 }
 
 @end

@@ -32,12 +32,12 @@
 
 + (NSValueTransformer *)recentOutagesJSONTransformer
 {
-    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAAWSServiceHealthOutage class]];
+    return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAAWSServiceHealthOutage class]];
 }
 
 + (NSValueTransformer *)currentOutagesJSONTransformer
 {
-    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAAWSServiceHealthOutage class]];
+    return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAAWSServiceHealthOutage class]];
 }
 
 #pragma mark - Querying Recent Outages

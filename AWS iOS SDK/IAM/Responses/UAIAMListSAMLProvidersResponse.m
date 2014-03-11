@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)sAMLProviderListXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAIAMSAMLProviderList class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMSAMLProviderList class]];
 }
 
 @end

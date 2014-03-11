@@ -38,12 +38,12 @@
 
 + (NSValueTransformer *)imageQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DiskImageDescription class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2DiskImageDescription class]];
 }
 
 + (NSValueTransformer *)volumeQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DiskImageVolumeDescription class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2DiskImageVolumeDescription class]];
 }
 
 + (NSValueTransformer *)bytesConvertedXMLTransformer
@@ -53,12 +53,12 @@
 
 + (NSValueTransformer *)imageXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2DiskImageDescription class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2DiskImageDescription class]];
 }
 
 + (NSValueTransformer *)volumeXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2DiskImageVolumeDescription class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2DiskImageVolumeDescription class]];
 }
 
 @end

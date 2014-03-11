@@ -53,19 +53,59 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setInstanceID:(NSString *)instanceID
+{
+	_instanceID = instanceID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceID"])
+		[self.UA_dirtyProperties addObject:@"instanceID"];
+}
+
+- (void)setStorage:(UAEC2Storage *)storage
+{
+	_storage = storage;
+	
+	if (![self.UA_dirtyProperties containsObject:@"storage"])
+		[self.UA_dirtyProperties addObject:@"storage"];
+}
+
 + (NSValueTransformer *)storageJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2Storage class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2Storage class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)storageQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Storage class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2Storage class]];
 }
 
 #pragma mark - Invocation

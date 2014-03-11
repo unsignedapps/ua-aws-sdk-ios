@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)instanceStatesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAELBInstanceStateDetails class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBInstanceStateDetails class]];
 }
 
 @end

@@ -111,6 +111,10 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
 **/
 + (UAAWSOperationShouldContinueWaitingBlock)UA_ShouldContinueWaitingBlockUntilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)values;
 
+
+// An array of all properties that have been modified (are "dirty").
+@property (nonatomic, strong) NSMutableArray *UA_dirtyProperties;
+
 @end
 
 @protocol UAAWSRequest <NSObject>
@@ -163,14 +167,14 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
  * The class used for responses to the request.
  *
  * Typically this is supplied on a per-request basis, and must
- * subclass UAAWSResponse, and conform to <MTLModel>.
+ * subclass UAAWSResponse, and conform to <UAMTLModel>.
 **/
 - (Class)UA_ResponseClass;
 
 /**
  * The class used to generate errors from the the response.
  *
- * This class *must* subclass NSObject and conform to <MTLModel, UAAWSError>.
+ * This class *must* subclass NSObject and conform to <UAMTLModel, UAAWSError>.
 **/
 - (Class)UA_ErrorClass;
 

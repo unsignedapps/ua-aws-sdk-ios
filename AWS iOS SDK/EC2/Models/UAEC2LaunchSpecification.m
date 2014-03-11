@@ -94,64 +94,184 @@
 		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
 }
 
+- (void)setImageID:(NSString *)imageID
+{
+	_imageID = imageID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"imageID"])
+		[self.UA_dirtyProperties addObject:@"imageID"];
+}
+
+- (void)setKeyName:(NSString *)keyName
+{
+	_keyName = keyName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"keyName"])
+		[self.UA_dirtyProperties addObject:@"keyName"];
+}
+
+- (void)setSecurityGroups:(NSMutableArray *)securityGroups
+{
+	_securityGroups = securityGroups;
+	
+	if (![self.UA_dirtyProperties containsObject:@"securityGroups"])
+		[self.UA_dirtyProperties addObject:@"securityGroups"];
+}
+
+- (void)setUserData:(NSString *)userData
+{
+	_userData = userData;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userData"])
+		[self.UA_dirtyProperties addObject:@"userData"];
+}
+
+- (void)setAddressingType:(NSString *)addressingType
+{
+	_addressingType = addressingType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"addressingType"])
+		[self.UA_dirtyProperties addObject:@"addressingType"];
+}
+
+- (void)setInstanceType:(NSString *)instanceType
+{
+	_instanceType = instanceType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceType"])
+		[self.UA_dirtyProperties addObject:@"instanceType"];
+}
+
+- (void)setPlacement:(UAEC2SpotPlacement *)placement
+{
+	_placement = placement;
+	
+	if (![self.UA_dirtyProperties containsObject:@"placement"])
+		[self.UA_dirtyProperties addObject:@"placement"];
+}
+
+- (void)setKernelID:(NSString *)kernelID
+{
+	_kernelID = kernelID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"kernelID"])
+		[self.UA_dirtyProperties addObject:@"kernelID"];
+}
+
+- (void)setRamdiskID:(NSString *)ramdiskID
+{
+	_ramdiskID = ramdiskID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ramdiskID"])
+		[self.UA_dirtyProperties addObject:@"ramdiskID"];
+}
+
+- (void)setBlockDeviceMappings:(NSMutableArray *)blockDeviceMappings
+{
+	_blockDeviceMappings = blockDeviceMappings;
+	
+	if (![self.UA_dirtyProperties containsObject:@"blockDeviceMappings"])
+		[self.UA_dirtyProperties addObject:@"blockDeviceMappings"];
+}
+
+- (void)setMonitoringEnabled:(BOOL)monitoringEnabled
+{
+	_monitoringEnabled = monitoringEnabled;
+	
+	if (![self.UA_dirtyProperties containsObject:@"monitoringEnabled"])
+		[self.UA_dirtyProperties addObject:@"monitoringEnabled"];
+}
+
+- (void)setSubnetID:(NSString *)subnetID
+{
+	_subnetID = subnetID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"subnetID"])
+		[self.UA_dirtyProperties addObject:@"subnetID"];
+}
+
+- (void)setNetworkInterfaces:(NSMutableArray *)networkInterfaces
+{
+	_networkInterfaces = networkInterfaces;
+	
+	if (![self.UA_dirtyProperties containsObject:@"networkInterfaces"])
+		[self.UA_dirtyProperties addObject:@"networkInterfaces"];
+}
+
+- (void)setIamInstanceProfile:(UAEC2IAMInstanceProfileSpecification *)iamInstanceProfile
+{
+	_iamInstanceProfile = iamInstanceProfile;
+	
+	if (![self.UA_dirtyProperties containsObject:@"iamInstanceProfile"])
+		[self.UA_dirtyProperties addObject:@"iamInstanceProfile"];
+}
+
+- (void)setEbsOptimized:(BOOL)ebsOptimized
+{
+	_ebsOptimized = ebsOptimized;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ebsOptimized"])
+		[self.UA_dirtyProperties addObject:@"ebsOptimized"];
+}
+
 + (NSValueTransformer *)securityGroupsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
 }
 
 + (NSValueTransformer *)placementQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2SpotPlacement class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2SpotPlacement class]];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)networkInterfacesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
 }
 
 + (NSValueTransformer *)iamInstanceProfileQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2IAMInstanceProfileSpecification class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2IAMInstanceProfileSpecification class]];
 }
 
 + (NSValueTransformer *)securityGroupsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
 }
 
 + (NSValueTransformer *)placementXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2SpotPlacement class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2SpotPlacement class]];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)monitoringEnabledXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)networkInterfacesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceNetworkInterfaceSpecification class]];
 }
 
 + (NSValueTransformer *)iamInstanceProfileXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2IAMInstanceProfileSpecification class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2IAMInstanceProfileSpecification class]];
 }
 
 + (NSValueTransformer *)ebsOptimizedXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

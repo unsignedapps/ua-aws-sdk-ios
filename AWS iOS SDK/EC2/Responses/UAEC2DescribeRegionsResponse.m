@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)regionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Region class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Region class]];
 }
 
 @end

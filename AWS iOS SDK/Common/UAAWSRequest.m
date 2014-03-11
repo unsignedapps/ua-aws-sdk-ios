@@ -21,7 +21,6 @@
 @property (nonatomic, strong) NSError *UA_Error;
 @property (nonatomic, strong) NSURLSessionDataTask *UA_DataTask;
 
-
 - (void)UA_Poll;
 
 /**
@@ -55,7 +54,7 @@
 
 @implementation UAAWSRequest
 
-@synthesize UA_CheckImmediately=_UA_CheckImmediately, UA_Error=_UA_Error, UA_Owner=_UA_Owner, UA_PollingAttempts=_UA_PollingAttempts, UA_Queue=_UA_Queue, UA_RequestCompletionBlock=_UA_RequestCompletionBlock, UA_Response=_UA_Response, UA_ShouldContinueWaiting=_UA_ShouldContinueWaiting, UA_DataTask=_UA_DataTask, UA_Credentials=_UA_Credentials, UA_Region=_UA_Region;
+@synthesize UA_CheckImmediately=_UA_CheckImmediately, UA_Error=_UA_Error, UA_Owner=_UA_Owner, UA_PollingAttempts=_UA_PollingAttempts, UA_Queue=_UA_Queue, UA_RequestCompletionBlock=_UA_RequestCompletionBlock, UA_Response=_UA_Response, UA_ShouldContinueWaiting=_UA_ShouldContinueWaiting, UA_DataTask=_UA_DataTask, UA_Credentials=_UA_Credentials, UA_Region=_UA_Region, UA_dirtyProperties=_UA_dirtyProperties;
 
 - (id)init
 {
@@ -64,6 +63,7 @@
         [self setUA_CheckImmediately:YES];
         [self setExecuting:NO];
         [self setFinished:NO];
+        [self setUA_dirtyProperties:[[NSMutableArray alloc] initWithCapacity:0]];
         [self setQueuePriority:NSOperationQueuePriorityLow];
     }
     return self;

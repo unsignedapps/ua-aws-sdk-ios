@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)reservationsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Reservation class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Reservation class]];
 }
 
 @end

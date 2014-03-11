@@ -55,7 +55,7 @@
 
 + (NSValueTransformer *)healthCheckTypeQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -86,7 +86,7 @@
 
 + (NSValueTransformer *)instancesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASInstance class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAASInstance class]];
 }
 
 + (NSValueTransformer *)createdTimeQueryStringTransformer
@@ -96,17 +96,17 @@
 
 + (NSValueTransformer *)suspendedProcessesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASSuspendedProcess class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAASSuspendedProcess class]];
 }
 
 + (NSValueTransformer *)enabledMetricsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASEnabledMetric class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAASEnabledMetric class]];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASTag class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAASTag class]];
 }
 
 + (NSValueTransformer *)minSizeXMLTransformer
@@ -141,12 +141,12 @@
 
 + (NSValueTransformer *)healthCheckTypeXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
 			return @(UAASHealthCheckTypeUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         
@@ -181,27 +181,27 @@
 
 + (NSValueTransformer *)instancesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASInstance class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASInstance class]];
 }
 
 + (NSValueTransformer *)createdTimeXMLTransformer
 {
-    return [NSValueTransformer mtl_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 + (NSValueTransformer *)suspendedProcessesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASSuspendedProcess class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASSuspendedProcess class]];
 }
 
 + (NSValueTransformer *)enabledMetricsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASEnabledMetric class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASEnabledMetric class]];
 }
 
 + (NSValueTransformer *)tagsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASTag class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASTag class]];
 }
 
 + (NSValueTransformer *)terminationPoliciesXMLTransformer

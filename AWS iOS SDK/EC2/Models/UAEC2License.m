@@ -38,22 +38,22 @@
 
 + (NSValueTransformer *)capacitiesQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2LicenseCapacity class]];
+  return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2LicenseCapacity class]];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
-  return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
+  return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 + (NSValueTransformer *)capacitiesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2LicenseCapacity class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2LicenseCapacity class]];
 }
 
 + (NSValueTransformer *)tagsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 @end

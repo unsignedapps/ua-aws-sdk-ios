@@ -39,32 +39,32 @@
 
 + (NSValueTransformer *)volumeStatusQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2VolumeStatusInfo class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2VolumeStatusInfo class]];
 }
 
 + (NSValueTransformer *)eventsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusEvent class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusEvent class]];
 }
 
 + (NSValueTransformer *)actionsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusAction class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2VolumeStatusAction class]];
 }
 
 + (NSValueTransformer *)volumeStatusXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2VolumeStatusInfo class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2VolumeStatusInfo class]];
 }
 
 + (NSValueTransformer *)eventsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2VolumeStatusEvent class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VolumeStatusEvent class]];
 }
 
 + (NSValueTransformer *)actionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2VolumeStatusAction class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VolumeStatusAction class]];
 }
 
 @end

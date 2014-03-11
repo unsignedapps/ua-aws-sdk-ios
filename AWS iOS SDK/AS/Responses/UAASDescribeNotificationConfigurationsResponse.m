@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)notificationConfigurationsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASNotificationConfiguration class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASNotificationConfiguration class]];
 }
 
 @end

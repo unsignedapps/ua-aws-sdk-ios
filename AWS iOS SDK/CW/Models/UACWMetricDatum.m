@@ -54,9 +54,57 @@
     return [keyPaths copy];
 }
 
+- (void)setMetricName:(NSString *)metricName
+{
+	_metricName = metricName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"metricName"])
+		[self.UA_dirtyProperties addObject:@"metricName"];
+}
+
+- (void)setDimensions:(NSMutableArray *)dimensions
+{
+	_dimensions = dimensions;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dimensions"])
+		[self.UA_dirtyProperties addObject:@"dimensions"];
+}
+
+- (void)setTimestamp:(NSDate *)timestamp
+{
+	_timestamp = timestamp;
+	
+	if (![self.UA_dirtyProperties containsObject:@"timestamp"])
+		[self.UA_dirtyProperties addObject:@"timestamp"];
+}
+
+- (void)setValue:(NSNumber *)value
+{
+	_value = value;
+	
+	if (![self.UA_dirtyProperties containsObject:@"value"])
+		[self.UA_dirtyProperties addObject:@"value"];
+}
+
+- (void)setStatisticValues:(UACWStatisticSet *)statisticValues
+{
+	_statisticValues = statisticValues;
+	
+	if (![self.UA_dirtyProperties containsObject:@"statisticValues"])
+		[self.UA_dirtyProperties addObject:@"statisticValues"];
+}
+
+- (void)setUnit:(UACWUnit)unit
+{
+	_unit = unit;
+	
+	if (![self.UA_dirtyProperties containsObject:@"unit"])
+		[self.UA_dirtyProperties addObject:@"unit"];
+}
+
 + (NSValueTransformer *)dimensionsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 + (NSValueTransformer *)timestampQueryStringTransformer
@@ -66,12 +114,12 @@
 
 + (NSValueTransformer *)statisticValuesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UACWStatisticSet class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UACWStatisticSet class]];
 }
 
 + (NSValueTransformer *)unitQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -202,12 +250,12 @@
 
 + (NSValueTransformer *)dimensionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UACWDimension class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 + (NSValueTransformer *)timestampXMLTransformer
 {
-    return [NSValueTransformer mtl_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 + (NSValueTransformer *)valueXMLTransformer
@@ -217,17 +265,17 @@
 
 + (NSValueTransformer *)statisticValuesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UACWStatisticSet class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UACWStatisticSet class]];
 }
 
 + (NSValueTransformer *)unitXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
 			return @(UACWUnitUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         

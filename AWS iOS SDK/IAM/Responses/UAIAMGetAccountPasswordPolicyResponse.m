@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)passwordPolicyXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMPasswordPolicy class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMPasswordPolicy class]];
 }
 
 @end

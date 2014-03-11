@@ -16,7 +16,7 @@
 #import "UAASAutoScalingGroup.h"
 
 #import <KissXML/DDXML.h>
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 
 SPEC_BEGIN(UAASDescribeAutoScalingGroupsResponseSpec)
 
@@ -25,12 +25,12 @@ describe(@"UAASDescribeAutoScalingGroupsResponse", ^
 	it(@"should import an XML string.", ^{
 	    NSString *xml = @"<DescribeAutoScalingGroupsResponse xmlns=\"http://autoscaling.amazonaws.com/doc/2011-01-01/\"><DescribeAutoScalingGroupsResult><AutoScalingGroups><member><Tags/><SuspendedProcesses/><AutoScalingGroupName>my-test-asg-lbs</AutoScalingGroupName><HealthCheckType>ELB</HealthCheckType><CreatedTime>2013-05-06T17:47:15.000Z</CreatedTime><EnabledMetrics/><LaunchConfigurationName>my-test-lc</LaunchConfigurationName><Instances/><DesiredCapacity>2</DesiredCapacity><AvailabilityZones><member>us-east-1b</member><member>us-east-1a</member></AvailabilityZones><LoadBalancerNames><member>my-test-asg-loadbalancer</member></LoadBalancerNames><MinSize>2</MinSize><VPCZoneIdentifier/><HealthCheckGracePeriod>120</HealthCheckGracePeriod><DefaultCooldown>300</DefaultCooldown><AutoScalingGroupARN>arn:aws:autoscaling:us-east-1:803981987763:autoScalingGroup:ca861182-c8f9-4ca7-b1eb-cd35505f5ebb:autoScalingGroupName/my-test-asg-lbs</AutoScalingGroupARN><TerminationPolicies><member>Default</member></TerminationPolicies><MaxSize>10</MaxSize></member></AutoScalingGroups></DescribeAutoScalingGroupsResult><ResponseMetadata><RequestId>0f02a07d-b677-11e2-9eb0-dd50EXAMPLE</RequestId></ResponseMetadata></DescribeAutoScalingGroupsResponse>";
 	    NSError *parseError = nil;
-	    DDXMLDocument *xmlDictionary = [[DDXMLDocument alloc] initWithXMLString:xml options:0 error:&parseError];
+	    UADDXMLDocument *xmlDictionary = [[UADDXMLDocument alloc] initWithXMLString:xml options:0 error:&parseError];
 	    [[parseError should] beNil];
 	    [[xmlDictionary should] beNonNil];
         
 	    NSError *serialisationError = nil;
-	    UAASDescribeAutoScalingGroupsResponse *describeAutoScalingGroupsResponse = [MTLXMLAdapter modelOfClass:[UAASDescribeAutoScalingGroupsResponse class] fromXMLNode:xmlDictionary error:&serialisationError];
+	    UAASDescribeAutoScalingGroupsResponse *describeAutoScalingGroupsResponse = [UAMTLXMLAdapter modelOfClass:[UAASDescribeAutoScalingGroupsResponse class] fromXMLNode:xmlDictionary error:&serialisationError];
 	    [[serialisationError should] beNil];
 	    [[describeAutoScalingGroupsResponse should] beNonNil];
         

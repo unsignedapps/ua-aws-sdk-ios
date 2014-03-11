@@ -45,32 +45,32 @@
 
 + (NSValueTransformer *)launchPermissionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2LaunchPermission class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2LaunchPermission class]];
 }
 
 + (NSValueTransformer *)productCodesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2ProductCode class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ProductCode class]];
 }
 
 + (NSValueTransformer *)kernelIDXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2KernelID class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2KernelID class]];
 }
 
 + (NSValueTransformer *)ramdiskIDXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2RamdiskID class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2RamdiskID class]];
 }
 
 + (NSValueTransformer *)sriovNetSupportXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2SriovNetSupport class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2SriovNetSupport class]];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
 @end

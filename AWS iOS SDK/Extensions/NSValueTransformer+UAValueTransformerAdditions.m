@@ -7,7 +7,7 @@
 //
 
 #import "NSValueTransformer+UAValueTransformerAdditions.h"
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 
 @implementation NSValueTransformer (UAValueTransformerAdditions)
 
@@ -18,7 +18,7 @@
     dateFormatter.dateFormat = dateFormat;
     dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str)
     {
         return [dateFormatter dateFromString:str];
 
@@ -29,7 +29,7 @@
 }
 
 + (NSValueTransformer *)UA_JSONTransformerForDouble {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(id object)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(id object)
     {
         if ([object isKindOfClass:[NSNumber class]])
             return object;
@@ -45,7 +45,7 @@
 }
 
 + (NSValueTransformer *)UA_XMLTransformerForDouble {
-	return [MTLValueTransformer reversibleTransformerWithForwardBlock:^ id (NSArray *nodes)
+	return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^ id (NSArray *nodes)
     {
         if ([nodes[0] stringValue] != nil && ![[nodes[0] stringValue] isEqualToString:@""])
             return @([nodes[0] stringValue].doubleValue);
@@ -60,7 +60,7 @@
 
 + (NSValueTransformer *)UA_JSONTransformerForBooleanString
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *booleanString)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *booleanString)
     {
         return @([booleanString boolValue]);
 
@@ -72,7 +72,7 @@
 
 + (NSValueTransformer *)UA_XMLTransformerForBooleanString
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
         return @([[nodes[0] stringValue] boolValue]);
 
@@ -84,13 +84,13 @@
 
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfStrings
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *nodes)
     {
         if (nodes == nil || ![nodes isKindOfClass:[NSArray class]])
             return nil;
 
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[nodes count]];
-        for (DDXMLNode *node in nodes)
+        for (UADDXMLNode *node in nodes)
             [array addObject:[node stringValue]];
         
         return [array copy];
@@ -103,13 +103,13 @@
 
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfNumbers
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *nodes)
     {
         if (nodes == nil || ![nodes isKindOfClass:[NSArray class]])
             return nil;
 
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[nodes count]];
-        for (DDXMLNode *node in nodes)
+        for (UADDXMLNode *node in nodes)
             [array addObject:[NSNumber numberWithDouble:[[node stringValue] doubleValue]]];
 
         return [array copy];
@@ -122,7 +122,7 @@
 
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfDatesWithFormat:(NSString *)dateFormat
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *nodes)
     {
         if (nodes == nil || ![nodes isKindOfClass:[NSArray class]])
             return nil;
@@ -133,7 +133,7 @@
         dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
 
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[nodes count]];
-        for (DDXMLNode *node in nodes)
+        for (UADDXMLNode *node in nodes)
             [array addObject:[dateFormatter dateFromString:[node stringValue]]];
         
         return [array copy];
@@ -148,7 +148,7 @@
 
 + (NSValueTransformer *)UA_JSONKeyValueTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSDictionary *(id input)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSDictionary *(id input)
     {
         if ([input isKindOfClass:[NSDictionary class]])
             return input;
@@ -174,21 +174,21 @@
 
 + (NSValueTransformer *)UA_XMLKeyValueTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSDictionary *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSDictionary *(NSArray *nodes)
     {
         if (nodes == nil || [nodes count] == 0)
             return nil;
 
         NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
-        for (DDXMLNode *node in nodes)
+        for (UADDXMLNode *node in nodes)
         {
             // Slightly dodgy, but we only really support key/value pairs like so: <element><key>xxx</key><value>yyy</value></element> (key/value elements can appear in either order)
             NSArray *children = node.children;
             if ([children count] != 2)
                 continue;
 
-            DDXMLNode *first = children[0];
-            DDXMLNode *second = children[1];
+            UADDXMLNode *first = children[0];
+            UADDXMLNode *second = children[1];
             
             if ([first.localName isEqualToString:@"key"])
                 [dictionary setObject:[second stringValue] forKey:[first stringValue]];

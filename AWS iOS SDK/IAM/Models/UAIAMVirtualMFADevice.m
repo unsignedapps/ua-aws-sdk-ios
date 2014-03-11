@@ -37,7 +37,7 @@
 
 + (NSValueTransformer *)userQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAIAMUser class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAIAMUser class]];
 }
 
 + (NSValueTransformer *)enableDateQueryStringTransformer
@@ -47,12 +47,12 @@
 
 + (NSValueTransformer *)userXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMUser class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMUser class]];
 }
 
 + (NSValueTransformer *)enableDateXMLTransformer
 {
-    return [NSValueTransformer mtl_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 @end

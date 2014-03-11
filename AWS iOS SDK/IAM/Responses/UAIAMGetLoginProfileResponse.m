@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)loginProfileXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMLoginProfile class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMLoginProfile class]];
 }
 
 @end

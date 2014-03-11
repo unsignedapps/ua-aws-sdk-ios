@@ -59,6 +59,94 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setStartTime:(NSDate *)startTime
+{
+	_startTime = startTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"startTime"])
+		[self.UA_dirtyProperties addObject:@"startTime"];
+}
+
+- (void)setEndTime:(NSDate *)endTime
+{
+	_endTime = endTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"endTime"])
+		[self.UA_dirtyProperties addObject:@"endTime"];
+}
+
+- (void)setInstanceTypes:(NSMutableArray *)instanceTypes
+{
+	_instanceTypes = instanceTypes;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceTypes"])
+		[self.UA_dirtyProperties addObject:@"instanceTypes"];
+}
+
+- (void)setProductDescriptions:(NSMutableArray *)productDescriptions
+{
+	_productDescriptions = productDescriptions;
+	
+	if (![self.UA_dirtyProperties containsObject:@"productDescriptions"])
+		[self.UA_dirtyProperties addObject:@"productDescriptions"];
+}
+
+- (void)setFilters:(NSMutableArray *)filters
+{
+	_filters = filters;
+	
+	if (![self.UA_dirtyProperties containsObject:@"filters"])
+		[self.UA_dirtyProperties addObject:@"filters"];
+}
+
+- (void)setAvailabilityZone:(NSString *)availabilityZone
+{
+	_availabilityZone = availabilityZone;
+	
+	if (![self.UA_dirtyProperties containsObject:@"availabilityZone"])
+		[self.UA_dirtyProperties addObject:@"availabilityZone"];
+}
+
+- (void)setMaxResults:(NSNumber *)maxResults
+{
+	_maxResults = maxResults;
+	
+	if (![self.UA_dirtyProperties containsObject:@"maxResults"])
+		[self.UA_dirtyProperties addObject:@"maxResults"];
+}
+
+- (void)setNextToken:(NSString *)nextToken
+{
+	_nextToken = nextToken;
+	
+	if (![self.UA_dirtyProperties containsObject:@"nextToken"])
+		[self.UA_dirtyProperties addObject:@"nextToken"];
+}
+
 + (NSValueTransformer *)startTimeJSONTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -71,12 +159,12 @@
 
 + (NSValueTransformer *)filtersJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)startTimeQueryStringTransformer
@@ -91,7 +179,7 @@
 
 + (NSValueTransformer *)filtersQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
 - (void)addInstanceType:(NSString *)instanceType
@@ -100,12 +188,14 @@
 		[self setInstanceTypes:[NSMutableArray array]];
 	[self.instanceTypes addObject:instanceType];
 }
+
 - (void)addProductionDescription:(NSString *)productionDescription
 {
 	if (self.productDescriptions == nil)
 		[self setProductDescriptions:[NSMutableArray array]];
 	[self.productDescriptions addObject:productionDescription];
 }
+
 - (void)addFilter:(UAEC2Filter *)filter
 {
 	if (self.filters == nil)

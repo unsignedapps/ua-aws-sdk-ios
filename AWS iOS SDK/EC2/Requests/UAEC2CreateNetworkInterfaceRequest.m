@@ -57,19 +57,91 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setSubnetID:(NSString *)subnetID
+{
+	_subnetID = subnetID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"subnetID"])
+		[self.UA_dirtyProperties addObject:@"subnetID"];
+}
+
+- (void)setDescriptionValue:(NSString *)descriptionValue
+{
+	_descriptionValue = descriptionValue;
+	
+	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
+		[self.UA_dirtyProperties addObject:@"descriptionValue"];
+}
+
+- (void)setPrivateIPAddress:(NSString *)privateIPAddress
+{
+	_privateIPAddress = privateIPAddress;
+	
+	if (![self.UA_dirtyProperties containsObject:@"privateIPAddress"])
+		[self.UA_dirtyProperties addObject:@"privateIPAddress"];
+}
+
+- (void)setGroups:(NSMutableArray *)groups
+{
+	_groups = groups;
+	
+	if (![self.UA_dirtyProperties containsObject:@"groups"])
+		[self.UA_dirtyProperties addObject:@"groups"];
+}
+
+- (void)setPrivateIPAddresses:(NSMutableArray *)privateIPAddresses
+{
+	_privateIPAddresses = privateIPAddresses;
+	
+	if (![self.UA_dirtyProperties containsObject:@"privateIPAddresses"])
+		[self.UA_dirtyProperties addObject:@"privateIPAddresses"];
+}
+
+- (void)setSecondaryPrivateIPAddressCount:(NSNumber *)secondaryPrivateIPAddressCount
+{
+	_secondaryPrivateIPAddressCount = secondaryPrivateIPAddressCount;
+	
+	if (![self.UA_dirtyProperties containsObject:@"secondaryPrivateIPAddressCount"])
+		[self.UA_dirtyProperties addObject:@"secondaryPrivateIPAddressCount"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
 + (NSValueTransformer *)privateIPAddressesJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
 }
 
 + (NSValueTransformer *)privateIPAddressesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 - (void)addGroup:(NSString *)group
@@ -78,6 +150,7 @@
 		[self setGroups:[NSMutableArray array]];
 	[self.groups addObject:group];
 }
+
 - (void)addPrivateIPAddress:(UAEC2PrivateIPAddressSpecification *)privateIPAddress
 {
 	if (self.privateIPAddresses == nil)

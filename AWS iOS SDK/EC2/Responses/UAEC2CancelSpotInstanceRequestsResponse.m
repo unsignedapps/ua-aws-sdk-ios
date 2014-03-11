@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)cancelledSpotInstanceRequestsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2CancelledSpotInstanceRequest class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2CancelledSpotInstanceRequest class]];
 }
 
 @end

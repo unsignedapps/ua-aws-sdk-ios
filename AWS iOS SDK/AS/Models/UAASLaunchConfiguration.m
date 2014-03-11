@@ -66,7 +66,7 @@
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)createdTimeQueryStringTransformer
@@ -81,27 +81,27 @@
 
 + (NSValueTransformer *)blockDeviceMappingsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)instanceMonitoringXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)createdTimeXMLTransformer
 {
-    return [NSValueTransformer mtl_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 + (NSValueTransformer *)ebsOptimizedXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)associatePublicIPAddressXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

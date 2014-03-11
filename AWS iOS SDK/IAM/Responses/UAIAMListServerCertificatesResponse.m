@@ -35,12 +35,12 @@
 
 + (NSValueTransformer *)serverCertificateMetadataListXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAIAMServerCertificateMetadataList class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMServerCertificateMetadataList class]];
 }
 
 + (NSValueTransformer *)isTruncatedXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

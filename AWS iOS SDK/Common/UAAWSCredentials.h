@@ -6,9 +6,9 @@
 //
 //
 
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 
-@interface UAAWSCredentials : MTLModel <MTLQuerySerializing>
+@interface UAAWSCredentials : UAMTLModel <UAMTLQuerySerializing>
 
 /** Inits the credential with the access key and the secret key.
  *

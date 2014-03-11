@@ -27,9 +27,27 @@
     @{
         @"instanceID": @"ec2:instanceId",
         @"timestamp": @"ec2:timestamp",
-        @"output": @"ec2:output"
+        @"output": @"ec2:output",
+        @"decodedOutput": [NSNull null]
     }];
     return [keyPaths copy];
+}
+
+- (NSString *)decodedOutput
+{
+    if (self.output == nil)
+        return nil;
+    
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.output options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (void)setDecodedOutput:(NSString *)decodedOutput
+{
+    if (decodedOutput == nil)
+        [self setOutput:nil];
+    else
+		[self setOutput:[[decodedOutput dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
 }
 
 @end

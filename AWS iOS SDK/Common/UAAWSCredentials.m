@@ -31,7 +31,7 @@
     return self;
 }
 
-#pragma mark - MTLQuerySerializing Methods
+#pragma mark - UAMTLQuerySerializing Methods
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {

@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)subnetXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2Subnet class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2Subnet class]];
 }
 
 @end

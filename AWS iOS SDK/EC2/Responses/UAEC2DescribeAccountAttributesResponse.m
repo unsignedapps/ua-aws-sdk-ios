@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)accountAttributesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2AccountAttribute class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2AccountAttribute class]];
 }
 
 @end

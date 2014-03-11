@@ -37,12 +37,12 @@
 
 + (NSValueTransformer *)faultQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Fault class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2Fault class]];
 }
 
 + (NSValueTransformer *)faultXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2Fault class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2Fault class]];
 }
 
 @end

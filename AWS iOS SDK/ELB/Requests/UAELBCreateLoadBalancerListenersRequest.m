@@ -52,14 +52,46 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setLoadBalancerName:(NSString *)loadBalancerName
+{
+	_loadBalancerName = loadBalancerName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"loadBalancerName"])
+		[self.UA_dirtyProperties addObject:@"loadBalancerName"];
+}
+
+- (void)setListeners:(NSMutableArray *)listeners
+{
+	_listeners = listeners;
+	
+	if (![self.UA_dirtyProperties containsObject:@"listeners"])
+		[self.UA_dirtyProperties addObject:@"listeners"];
+}
+
 + (NSValueTransformer *)listenersJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAELBListener class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBListener class]];
 }
 
 + (NSValueTransformer *)listenersQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBListener class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBListener class]];
 }
 
 - (void)addListener:(UAELBListener *)listener

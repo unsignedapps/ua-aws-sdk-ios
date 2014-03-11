@@ -65,9 +65,145 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setAlarmName:(NSString *)alarmName
+{
+	_alarmName = alarmName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"alarmName"])
+		[self.UA_dirtyProperties addObject:@"alarmName"];
+}
+
+- (void)setAlarmDescription:(NSString *)alarmDescription
+{
+	_alarmDescription = alarmDescription;
+	
+	if (![self.UA_dirtyProperties containsObject:@"alarmDescription"])
+		[self.UA_dirtyProperties addObject:@"alarmDescription"];
+}
+
+- (void)setActionsEnabled:(BOOL)actionsEnabled
+{
+	_actionsEnabled = actionsEnabled;
+	
+	if (![self.UA_dirtyProperties containsObject:@"actionsEnabled"])
+		[self.UA_dirtyProperties addObject:@"actionsEnabled"];
+}
+
+- (void)setOKActions:(NSMutableArray *)oKActions
+{
+	_oKActions = oKActions;
+	
+	if (![self.UA_dirtyProperties containsObject:@"oKActions"])
+		[self.UA_dirtyProperties addObject:@"oKActions"];
+}
+
+- (void)setAlarmActions:(NSMutableArray *)alarmActions
+{
+	_alarmActions = alarmActions;
+	
+	if (![self.UA_dirtyProperties containsObject:@"alarmActions"])
+		[self.UA_dirtyProperties addObject:@"alarmActions"];
+}
+
+- (void)setInsufficientDataActions:(NSMutableArray *)insufficientDataActions
+{
+	_insufficientDataActions = insufficientDataActions;
+	
+	if (![self.UA_dirtyProperties containsObject:@"insufficientDataActions"])
+		[self.UA_dirtyProperties addObject:@"insufficientDataActions"];
+}
+
+- (void)setMetricName:(NSString *)metricName
+{
+	_metricName = metricName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"metricName"])
+		[self.UA_dirtyProperties addObject:@"metricName"];
+}
+
+- (void)setNamespace:(NSString *)namespace
+{
+	_namespace = namespace;
+	
+	if (![self.UA_dirtyProperties containsObject:@"namespace"])
+		[self.UA_dirtyProperties addObject:@"namespace"];
+}
+
+- (void)setStatistic:(UACWStatistic)statistic
+{
+	_statistic = statistic;
+	
+	if (![self.UA_dirtyProperties containsObject:@"statistic"])
+		[self.UA_dirtyProperties addObject:@"statistic"];
+}
+
+- (void)setDimensions:(NSMutableArray *)dimensions
+{
+	_dimensions = dimensions;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dimensions"])
+		[self.UA_dirtyProperties addObject:@"dimensions"];
+}
+
+- (void)setPeriod:(NSNumber *)period
+{
+	_period = period;
+	
+	if (![self.UA_dirtyProperties containsObject:@"period"])
+		[self.UA_dirtyProperties addObject:@"period"];
+}
+
+- (void)setUnit:(UACWUnit)unit
+{
+	_unit = unit;
+	
+	if (![self.UA_dirtyProperties containsObject:@"unit"])
+		[self.UA_dirtyProperties addObject:@"unit"];
+}
+
+- (void)setEvaluationPeriods:(NSNumber *)evaluationPeriods
+{
+	_evaluationPeriods = evaluationPeriods;
+	
+	if (![self.UA_dirtyProperties containsObject:@"evaluationPeriods"])
+		[self.UA_dirtyProperties addObject:@"evaluationPeriods"];
+}
+
+- (void)setThreshold:(NSNumber *)threshold
+{
+	_threshold = threshold;
+	
+	if (![self.UA_dirtyProperties containsObject:@"threshold"])
+		[self.UA_dirtyProperties addObject:@"threshold"];
+}
+
+- (void)setComparisonOperator:(UACWMetricAlarmComparisonOperator)comparisonOperator
+{
+	_comparisonOperator = comparisonOperator;
+	
+	if (![self.UA_dirtyProperties containsObject:@"comparisonOperator"])
+		[self.UA_dirtyProperties addObject:@"comparisonOperator"];
+}
+
 + (NSValueTransformer *)statisticJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -110,12 +246,12 @@
 
 + (NSValueTransformer *)dimensionsJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UACWDimension class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 + (NSValueTransformer *)unitJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -246,7 +382,7 @@
 
 + (NSValueTransformer *)comparisonOperatorJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -285,12 +421,12 @@
 
 + (NSValueTransformer *)actionsEnabledQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)statisticQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -333,12 +469,12 @@
 
 + (NSValueTransformer *)dimensionsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 + (NSValueTransformer *)unitQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -469,7 +605,7 @@
 
 + (NSValueTransformer *)comparisonOperatorQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -512,18 +648,21 @@
 		[self setOKActions:[NSMutableArray array]];
 	[self.oKActions addObject:oKAction];
 }
+
 - (void)addAlarmAction:(NSString *)alarmAction
 {
 	if (self.alarmActions == nil)
 		[self setAlarmActions:[NSMutableArray array]];
 	[self.alarmActions addObject:alarmAction];
 }
+
 - (void)addInsufficientDataAction:(NSString *)insufficientDataAction
 {
 	if (self.insufficientDataActions == nil)
 		[self setInsufficientDataActions:[NSMutableArray array]];
 	[self.insufficientDataActions addObject:insufficientDataAction];
 }
+
 - (void)addDimension:(UACWDimension *)dimension
 {
 	if (self.dimensions == nil)

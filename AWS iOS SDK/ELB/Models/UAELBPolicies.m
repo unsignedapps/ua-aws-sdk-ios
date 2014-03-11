@@ -36,22 +36,22 @@
 
 + (NSValueTransformer *)appCookieStickinessPoliciesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBAppCookieStickinessPolicy class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBAppCookieStickinessPolicy class]];
 }
 
 + (NSValueTransformer *)lBCookieStickinessPoliciesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBLBCookieStickinessPolicy class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBLBCookieStickinessPolicy class]];
 }
 
 + (NSValueTransformer *)appCookieStickinessPoliciesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAELBAppCookieStickinessPolicy class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBAppCookieStickinessPolicy class]];
 }
 
 + (NSValueTransformer *)lBCookieStickinessPoliciesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAELBLBCookieStickinessPolicy class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBLBCookieStickinessPolicy class]];
 }
 
 + (NSValueTransformer *)otherPoliciesXMLTransformer

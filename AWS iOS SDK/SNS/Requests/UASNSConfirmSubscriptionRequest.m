@@ -52,6 +52,46 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setTopicARN:(NSString *)topicARN
+{
+	_topicARN = topicARN;
+	
+	if (![self.UA_dirtyProperties containsObject:@"topicARN"])
+		[self.UA_dirtyProperties addObject:@"topicARN"];
+}
+
+- (void)setToken:(NSString *)token
+{
+	_token = token;
+	
+	if (![self.UA_dirtyProperties containsObject:@"token"])
+		[self.UA_dirtyProperties addObject:@"token"];
+}
+
+- (void)setAuthenticateOnUnsubscribe:(NSString *)authenticateOnUnsubscribe
+{
+	_authenticateOnUnsubscribe = authenticateOnUnsubscribe;
+	
+	if (![self.UA_dirtyProperties containsObject:@"authenticateOnUnsubscribe"])
+		[self.UA_dirtyProperties addObject:@"authenticateOnUnsubscribe"];
+}
+
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASNSConfirmSubscriptionRequestCompletionBlock)completionBlock

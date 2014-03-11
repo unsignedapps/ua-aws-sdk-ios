@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)policyDescriptionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAELBPolicyDescription class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBPolicyDescription class]];
 }
 
 @end

@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)dhcpOptionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2DHCPOption class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2DHCPOption class]];
 }
 
 @end

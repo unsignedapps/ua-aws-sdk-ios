@@ -54,19 +54,67 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setReservedInstancesOfferingID:(NSString *)reservedInstancesOfferingID
+{
+	_reservedInstancesOfferingID = reservedInstancesOfferingID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"reservedInstancesOfferingID"])
+		[self.UA_dirtyProperties addObject:@"reservedInstancesOfferingID"];
+}
+
+- (void)setInstanceCount:(NSNumber *)instanceCount
+{
+	_instanceCount = instanceCount;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceCount"])
+		[self.UA_dirtyProperties addObject:@"instanceCount"];
+}
+
+- (void)setLimitPrice:(UAEC2ReservedInstanceLimitPrice *)limitPrice
+{
+	_limitPrice = limitPrice;
+	
+	if (![self.UA_dirtyProperties containsObject:@"limitPrice"])
+		[self.UA_dirtyProperties addObject:@"limitPrice"];
+}
+
 + (NSValueTransformer *)limitPriceJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2ReservedInstanceLimitPrice class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2ReservedInstanceLimitPrice class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)limitPriceQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2ReservedInstanceLimitPrice class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2ReservedInstanceLimitPrice class]];
 }
 
 #pragma mark - Invocation

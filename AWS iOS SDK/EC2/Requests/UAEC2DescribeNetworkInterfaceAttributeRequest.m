@@ -55,9 +55,73 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setNetworkInterfaceID:(NSString *)networkInterfaceID
+{
+	_networkInterfaceID = networkInterfaceID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"networkInterfaceID"])
+		[self.UA_dirtyProperties addObject:@"networkInterfaceID"];
+}
+
+- (void)setDescriptionValue:(NSString *)descriptionValue
+{
+	_descriptionValue = descriptionValue;
+	
+	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
+		[self.UA_dirtyProperties addObject:@"descriptionValue"];
+}
+
+- (void)setSourceDestCheck:(NSString *)sourceDestCheck
+{
+	_sourceDestCheck = sourceDestCheck;
+	
+	if (![self.UA_dirtyProperties containsObject:@"sourceDestCheck"])
+		[self.UA_dirtyProperties addObject:@"sourceDestCheck"];
+}
+
+- (void)setGroups:(NSString *)groups
+{
+	_groups = groups;
+	
+	if (![self.UA_dirtyProperties containsObject:@"groups"])
+		[self.UA_dirtyProperties addObject:@"groups"];
+}
+
+- (void)setAttachment:(NSString *)attachment
+{
+	_attachment = attachment;
+	
+	if (![self.UA_dirtyProperties containsObject:@"attachment"])
+		[self.UA_dirtyProperties addObject:@"attachment"];
+}
+
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 #pragma mark - Invocation

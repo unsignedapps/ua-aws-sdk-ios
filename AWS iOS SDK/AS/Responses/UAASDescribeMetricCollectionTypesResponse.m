@@ -35,12 +35,12 @@
 
 + (NSValueTransformer *)metricsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASMetricCollectionType class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASMetricCollectionType class]];
 }
 
 + (NSValueTransformer *)granularitiesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASMetricGranularityType class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASMetricGranularityType class]];
 }
 
 @end

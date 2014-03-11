@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)snapshotsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Snapshot class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Snapshot class]];
 }
 
 @end

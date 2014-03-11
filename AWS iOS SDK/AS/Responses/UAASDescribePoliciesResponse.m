@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)scalingPoliciesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASScalingPolicy class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASScalingPolicy class]];
 }
 
 @end

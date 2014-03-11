@@ -32,7 +32,7 @@ typedef BOOL(^UAEC2RunInstancesRequestShouldContinueWaitingBlock)(UAEC2RunInstan
 @property (nonatomic) BOOL monitoringEnabled;
 @property (nonatomic, copy) NSString *subnetID;
 @property (nonatomic) BOOL disableApiTermination;
-@property (nonatomic, copy) NSString *instanceInitiatedShutdownBehavior;
+@property (nonatomic) UAEC2InstanceInitiatedShutdownBehavior instanceInitiatedShutdownBehavior;
 @property (nonatomic, copy) NSString *privateIPAddress;
 @property (nonatomic, copy) NSString *clientToken;
 @property (nonatomic, copy) NSString *additionalInfo;

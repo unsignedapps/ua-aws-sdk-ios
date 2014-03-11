@@ -6,8 +6,8 @@
 //
 //
 
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 
-@interface UAAWSResponse : MTLModel <MTLJSONSerializing>
+@interface UAAWSResponse : UAMTLModel <UAMTLJSONSerializing>
 
 @end

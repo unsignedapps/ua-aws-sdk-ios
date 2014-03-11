@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)virtualMFADeviceXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMVirtualMFADevice class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMVirtualMFADevice class]];
 }
 
 @end

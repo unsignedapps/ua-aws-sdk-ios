@@ -35,12 +35,12 @@
 
 + (NSValueTransformer *)mFADevicesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAIAMMFADevice class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMMFADevice class]];
 }
 
 + (NSValueTransformer *)isTruncatedXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

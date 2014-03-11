@@ -40,12 +40,12 @@
 
 + (NSValueTransformer *)icmpTypeCodeQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
 }
 
 + (NSValueTransformer *)portRangeQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2PortRange class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2PortRange class]];
 }
 
 + (NSValueTransformer *)ruleNumberXMLTransformer
@@ -55,17 +55,17 @@
 
 + (NSValueTransformer *)egressXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)icmpTypeCodeXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2IcmpTypeCode class]];
 }
 
 + (NSValueTransformer *)portRangeXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2PortRange class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2PortRange class]];
 }
 
 @end

@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)keyPairsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2KeyPair class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2KeyPair class]];
 }
 
 @end

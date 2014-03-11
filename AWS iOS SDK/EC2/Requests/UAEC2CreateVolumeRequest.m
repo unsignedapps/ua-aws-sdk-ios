@@ -55,9 +55,73 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setSize:(NSNumber *)size
+{
+	_size = size;
+	
+	if (![self.UA_dirtyProperties containsObject:@"size"])
+		[self.UA_dirtyProperties addObject:@"size"];
+}
+
+- (void)setSnapshotID:(NSString *)snapshotID
+{
+	_snapshotID = snapshotID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"snapshotID"])
+		[self.UA_dirtyProperties addObject:@"snapshotID"];
+}
+
+- (void)setAvailabilityZone:(NSString *)availabilityZone
+{
+	_availabilityZone = availabilityZone;
+	
+	if (![self.UA_dirtyProperties containsObject:@"availabilityZone"])
+		[self.UA_dirtyProperties addObject:@"availabilityZone"];
+}
+
+- (void)setVolumeType:(NSString *)volumeType
+{
+	_volumeType = volumeType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"volumeType"])
+		[self.UA_dirtyProperties addObject:@"volumeType"];
+}
+
+- (void)setIops:(NSNumber *)iops
+{
+	_iops = iops;
+	
+	if (![self.UA_dirtyProperties containsObject:@"iops"])
+		[self.UA_dirtyProperties addObject:@"iops"];
+}
+
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 #pragma mark - Invocation

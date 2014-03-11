@@ -44,4 +44,20 @@
     return [keyPaths copy];
 }
 
+- (void)setKey:(NSString *)key
+{
+	_key = key;
+	
+	if (![self.UA_dirtyProperties containsObject:@"key"])
+		[self.UA_dirtyProperties addObject:@"key"];
+}
+
+- (void)setValue:(NSString *)value
+{
+	_value = value;
+	
+	if (![self.UA_dirtyProperties containsObject:@"value"])
+		[self.UA_dirtyProperties addObject:@"value"];
+}
+
 @end

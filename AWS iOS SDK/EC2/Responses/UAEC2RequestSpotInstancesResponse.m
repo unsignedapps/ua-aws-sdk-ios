@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)spotInstanceRequestsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2SpotInstanceRequest class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2SpotInstanceRequest class]];
 }
 
 @end

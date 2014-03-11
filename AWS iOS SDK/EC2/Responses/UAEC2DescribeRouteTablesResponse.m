@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)routeTablesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2RouteTable class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2RouteTable class]];
 }
 
 @end

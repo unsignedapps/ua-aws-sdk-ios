@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)launchConfigurationsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASLaunchConfiguration class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASLaunchConfiguration class]];
 }
 
 @end

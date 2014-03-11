@@ -51,14 +51,22 @@
     return [keyPaths copy];
 }
 
+- (void)setValue:(BOOL)value
+{
+	_value = value;
+	
+	if (![self.UA_dirtyProperties containsObject:@"value"])
+		[self.UA_dirtyProperties addObject:@"value"];
+}
+
 + (NSValueTransformer *)valueQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)valueXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

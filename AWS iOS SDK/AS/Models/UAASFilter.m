@@ -44,6 +44,22 @@
     return [keyPaths copy];
 }
 
+- (void)setName:(NSString *)name
+{
+	_name = name;
+	
+	if (![self.UA_dirtyProperties containsObject:@"name"])
+		[self.UA_dirtyProperties addObject:@"name"];
+}
+
+- (void)setValues:(NSMutableArray *)values
+{
+	_values = values;
+	
+	if (![self.UA_dirtyProperties containsObject:@"values"])
+		[self.UA_dirtyProperties addObject:@"values"];
+}
+
 + (NSValueTransformer *)valuesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];

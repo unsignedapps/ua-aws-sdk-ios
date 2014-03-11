@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)customerGatewaysXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2CustomerGateway class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2CustomerGateway class]];
 }
 
 @end

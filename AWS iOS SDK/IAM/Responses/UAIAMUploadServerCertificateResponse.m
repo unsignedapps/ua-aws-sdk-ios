@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)serverCertificateMetadataXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMServerCertificateMetadata class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMServerCertificateMetadata class]];
 }
 
 @end

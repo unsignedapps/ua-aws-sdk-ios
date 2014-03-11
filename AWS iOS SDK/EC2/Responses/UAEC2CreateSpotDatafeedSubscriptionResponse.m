@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)spotDatafeedSubscriptionXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2SpotDatafeedSubscription class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2SpotDatafeedSubscription class]];
 }
 
 @end

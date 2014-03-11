@@ -44,4 +44,20 @@
     return [keyPaths copy];
 }
 
+- (void)setAttributeName:(NSString *)attributeName
+{
+	_attributeName = attributeName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"attributeName"])
+		[self.UA_dirtyProperties addObject:@"attributeName"];
+}
+
+- (void)setAttributeValue:(NSString *)attributeValue
+{
+	_attributeValue = attributeValue;
+	
+	if (![self.UA_dirtyProperties containsObject:@"attributeValue"])
+		[self.UA_dirtyProperties addObject:@"attributeValue"];
+}
+
 @end

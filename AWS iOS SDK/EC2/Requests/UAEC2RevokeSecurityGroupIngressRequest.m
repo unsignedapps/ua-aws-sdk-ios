@@ -60,19 +60,115 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setGroupName:(NSString *)groupName
+{
+	_groupName = groupName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"groupName"])
+		[self.UA_dirtyProperties addObject:@"groupName"];
+}
+
+- (void)setGroupID:(NSString *)groupID
+{
+	_groupID = groupID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"groupID"])
+		[self.UA_dirtyProperties addObject:@"groupID"];
+}
+
+- (void)setSourceSecurityGroupName:(NSString *)sourceSecurityGroupName
+{
+	_sourceSecurityGroupName = sourceSecurityGroupName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"sourceSecurityGroupName"])
+		[self.UA_dirtyProperties addObject:@"sourceSecurityGroupName"];
+}
+
+- (void)setSourceSecurityGroupOwnerID:(NSString *)sourceSecurityGroupOwnerID
+{
+	_sourceSecurityGroupOwnerID = sourceSecurityGroupOwnerID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"sourceSecurityGroupOwnerID"])
+		[self.UA_dirtyProperties addObject:@"sourceSecurityGroupOwnerID"];
+}
+
+- (void)setIpProtocol:(NSString *)ipProtocol
+{
+	_ipProtocol = ipProtocol;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ipProtocol"])
+		[self.UA_dirtyProperties addObject:@"ipProtocol"];
+}
+
+- (void)setFromPort:(NSNumber *)fromPort
+{
+	_fromPort = fromPort;
+	
+	if (![self.UA_dirtyProperties containsObject:@"fromPort"])
+		[self.UA_dirtyProperties addObject:@"fromPort"];
+}
+
+- (void)setToPort:(NSNumber *)toPort
+{
+	_toPort = toPort;
+	
+	if (![self.UA_dirtyProperties containsObject:@"toPort"])
+		[self.UA_dirtyProperties addObject:@"toPort"];
+}
+
+- (void)setCidrIP:(NSString *)cidrIP
+{
+	_cidrIP = cidrIP;
+	
+	if (![self.UA_dirtyProperties containsObject:@"cidrIP"])
+		[self.UA_dirtyProperties addObject:@"cidrIP"];
+}
+
+- (void)setIpPermissions:(NSMutableArray *)ipPermissions
+{
+	_ipPermissions = ipPermissions;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ipPermissions"])
+		[self.UA_dirtyProperties addObject:@"ipPermissions"];
+}
+
 + (NSValueTransformer *)ipPermissionsJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2IPPermission class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2IPPermission class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)ipPermissionsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2IPPermission class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2IPPermission class]];
 }
 
 - (void)addIPPermission:(UAEC2IPPermission *)iPPermission

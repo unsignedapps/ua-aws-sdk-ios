@@ -44,4 +44,20 @@
     return [keyPaths copy];
 }
 
+- (void)setUserID:(NSString *)userID
+{
+	_userID = userID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userID"])
+		[self.UA_dirtyProperties addObject:@"userID"];
+}
+
+- (void)setGroup:(NSString *)group
+{
+	_group = group;
+	
+	if (![self.UA_dirtyProperties containsObject:@"group"])
+		[self.UA_dirtyProperties addObject:@"group"];
+}
+
 @end

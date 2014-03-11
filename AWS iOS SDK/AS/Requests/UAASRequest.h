@@ -7,10 +7,10 @@
 //
 
 #import "UAAWSRequest.h"
-#import <Mantle/Mantle.h>
+#import "UAMantle.h"
 #import "NSValueTransformer+UAValueTransformerAdditions.h"
 #import "UAASDataTypes.h"
 
-@interface UAASRequest : UAAWSRequest <UAAWSRequest, MTLQuerySerializing>
+@interface UAASRequest : UAAWSRequest <UAAWSRequest, UAMTLQuerySerializing>
 
 @end

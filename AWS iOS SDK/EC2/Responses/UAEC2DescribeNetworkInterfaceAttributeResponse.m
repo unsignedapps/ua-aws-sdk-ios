@@ -39,17 +39,17 @@
 
 + (NSValueTransformer *)sourceDestCheckXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2SourceDestCheck class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2SourceDestCheck class]];
 }
 
 + (NSValueTransformer *)groupsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
 }
 
 + (NSValueTransformer *)attachmentXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2NetworkInterfaceAttachment class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2NetworkInterfaceAttachment class]];
 }
 
 @end

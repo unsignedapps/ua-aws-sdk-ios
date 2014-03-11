@@ -54,14 +54,62 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setReservedInstancesID:(NSString *)reservedInstancesID
+{
+	_reservedInstancesID = reservedInstancesID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"reservedInstancesID"])
+		[self.UA_dirtyProperties addObject:@"reservedInstancesID"];
+}
+
+- (void)setInstanceCount:(NSNumber *)instanceCount
+{
+	_instanceCount = instanceCount;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceCount"])
+		[self.UA_dirtyProperties addObject:@"instanceCount"];
+}
+
+- (void)setPriceSchedules:(NSMutableArray *)priceSchedules
+{
+	_priceSchedules = priceSchedules;
+	
+	if (![self.UA_dirtyProperties containsObject:@"priceSchedules"])
+		[self.UA_dirtyProperties addObject:@"priceSchedules"];
+}
+
+- (void)setClientToken:(NSString *)clientToken
+{
+	_clientToken = clientToken;
+	
+	if (![self.UA_dirtyProperties containsObject:@"clientToken"])
+		[self.UA_dirtyProperties addObject:@"clientToken"];
+}
+
 + (NSValueTransformer *)priceSchedulesJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2PriceScheduleSpecification class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2PriceScheduleSpecification class]];
 }
 
 + (NSValueTransformer *)priceSchedulesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PriceScheduleSpecification class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2PriceScheduleSpecification class]];
 }
 
 - (void)addPriceSchedule:(UAEC2PriceScheduleSpecification *)priceSchedule

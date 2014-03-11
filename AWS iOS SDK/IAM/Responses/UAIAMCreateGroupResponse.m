@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)groupXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMGroup class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMGroup class]];
 }
 
 @end

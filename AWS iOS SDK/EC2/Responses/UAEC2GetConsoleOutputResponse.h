@@ -14,5 +14,6 @@
 @property (nonatomic, copy) NSString *instanceID;
 @property (nonatomic, copy) NSString *timestamp;
 @property (nonatomic, copy) NSString *output;
+@property (nonatomic, copy) NSString *decodedOutput;
 
 @end

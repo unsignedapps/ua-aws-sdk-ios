@@ -52,6 +52,46 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setLoadBalancerName:(NSString *)loadBalancerName
+{
+	_loadBalancerName = loadBalancerName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"loadBalancerName"])
+		[self.UA_dirtyProperties addObject:@"loadBalancerName"];
+}
+
+- (void)setLoadBalancerPort:(NSNumber *)loadBalancerPort
+{
+	_loadBalancerPort = loadBalancerPort;
+	
+	if (![self.UA_dirtyProperties containsObject:@"loadBalancerPort"])
+		[self.UA_dirtyProperties addObject:@"loadBalancerPort"];
+}
+
+- (void)setPolicyNames:(NSMutableArray *)policyNames
+{
+	_policyNames = policyNames;
+	
+	if (![self.UA_dirtyProperties containsObject:@"policyNames"])
+		[self.UA_dirtyProperties addObject:@"policyNames"];
+}
+
 - (void)addPolicyName:(NSString *)policyName
 {
 	if (self.policyNames == nil)

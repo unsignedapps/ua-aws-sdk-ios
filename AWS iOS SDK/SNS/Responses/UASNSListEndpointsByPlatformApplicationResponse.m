@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)endpointsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UASNSEndpoint class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSEndpoint class]];
 }
 
 @end

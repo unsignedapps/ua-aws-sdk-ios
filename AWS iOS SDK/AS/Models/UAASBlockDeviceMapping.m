@@ -49,19 +49,51 @@
     return [keyPaths copy];
 }
 
+- (void)setVirtualName:(NSString *)virtualName
+{
+	_virtualName = virtualName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"virtualName"])
+		[self.UA_dirtyProperties addObject:@"virtualName"];
+}
+
+- (void)setDeviceName:(NSString *)deviceName
+{
+	_deviceName = deviceName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"deviceName"])
+		[self.UA_dirtyProperties addObject:@"deviceName"];
+}
+
+- (void)setEbs:(UAASEBSBlockDevice *)ebs
+{
+	_ebs = ebs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ebs"])
+		[self.UA_dirtyProperties addObject:@"ebs"];
+}
+
+- (void)setNoDevice:(BOOL)noDevice
+{
+	_noDevice = noDevice;
+	
+	if (![self.UA_dirtyProperties containsObject:@"noDevice"])
+		[self.UA_dirtyProperties addObject:@"noDevice"];
+}
+
 + (NSValueTransformer *)ebsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAASEBSBlockDevice class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAASEBSBlockDevice class]];
 }
 
 + (NSValueTransformer *)ebsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAASEBSBlockDevice class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAASEBSBlockDevice class]];
 }
 
 + (NSValueTransformer *)noDeviceXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

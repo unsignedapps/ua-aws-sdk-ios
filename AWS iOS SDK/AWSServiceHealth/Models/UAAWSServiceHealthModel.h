@@ -6,10 +6,10 @@
 //
 //
 
-#import <Mantle/Mantle.h>
+#import "UAAWSModel.h"
 #import "NSValueTransformer+UAValueTransformerAdditions.h"
 #import "UAAWSServiceHealthDataTypes.h"
 
-@interface UAAWSServiceHealthModel : MTLModel <MTLJSONSerializing>
+@interface UAAWSServiceHealthModel : UAAWSModel <UAMTLJSONSerializing>
 
 @end

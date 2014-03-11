@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)internetGatewaysXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2InternetGateway class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InternetGateway class]];
 }
 
 @end

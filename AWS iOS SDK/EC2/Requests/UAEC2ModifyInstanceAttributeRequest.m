@@ -13,8 +13,6 @@
 #import "UAEC2SourceDestCheck.h"
 #import "UAEC2Kernel.h"
 #import "UAEC2Ramdisk.h"
-#import "UAEC2UserData.h"
-#import "UAEC2InstanceInitiatedShutdownBehavior.h"
 #import "UAEC2EBSOptimized.h"
 #import "UAEC2SriovNetSupport.h"
 
@@ -63,8 +61,9 @@
         @"instanceType": @"InstanceType.Value",
         @"kernel": @"Kernel",
         @"ramdisk": @"Ramdisk",
-        @"userData": @"UserData",
-        @"instanceInitiatedShutdownBehavior": @"InstanceInitiatedShutdownBehavior",
+        @"userData": @"UserData.Value",
+        @"decodedUserData": [NSNull null],
+        @"instanceInitiatedShutdownBehavior": @"InstanceInitiatedShutdownBehavior.Value",
         @"groups": @"GroupId",
         @"ebsOptimized": @"EbsOptimized",
         @"sriovNetSupport": @"SriovNetSupport"
@@ -72,94 +71,289 @@
     return [keyPaths copy];
 }
 
+- (NSString *)decodedUserData
+{
+    if (self.userData == nil)
+        return nil;
+    
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (void)setDecodedUserData:(NSString *)decodedUserData
+{
+    if (decodedUserData == nil)
+        [self setUserData:nil];
+    else
+		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
+}
+
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setInstanceID:(NSString *)instanceID
+{
+	_instanceID = instanceID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceID"])
+		[self.UA_dirtyProperties addObject:@"instanceID"];
+}
+
+- (void)setAttribute:(NSString *)attribute
+{
+	_attribute = attribute;
+	
+	if (![self.UA_dirtyProperties containsObject:@"attribute"])
+		[self.UA_dirtyProperties addObject:@"attribute"];
+}
+
+- (void)setValue:(NSString *)value
+{
+	_value = value;
+	
+	if (![self.UA_dirtyProperties containsObject:@"value"])
+		[self.UA_dirtyProperties addObject:@"value"];
+}
+
+- (void)setBlockDeviceMappings:(NSMutableArray *)blockDeviceMappings
+{
+	_blockDeviceMappings = blockDeviceMappings;
+	
+	if (![self.UA_dirtyProperties containsObject:@"blockDeviceMappings"])
+		[self.UA_dirtyProperties addObject:@"blockDeviceMappings"];
+}
+
+- (void)setSourceDestCheck:(UAEC2SourceDestCheck *)sourceDestCheck
+{
+	_sourceDestCheck = sourceDestCheck;
+	
+	if (![self.UA_dirtyProperties containsObject:@"sourceDestCheck"])
+		[self.UA_dirtyProperties addObject:@"sourceDestCheck"];
+}
+
+- (void)setDisableApiTermination:(BOOL)disableApiTermination
+{
+	_disableApiTermination = disableApiTermination;
+	
+	if (![self.UA_dirtyProperties containsObject:@"disableApiTermination"])
+		[self.UA_dirtyProperties addObject:@"disableApiTermination"];
+}
+
+- (void)setInstanceType:(NSString *)instanceType
+{
+	_instanceType = instanceType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceType"])
+		[self.UA_dirtyProperties addObject:@"instanceType"];
+}
+
+- (void)setKernel:(UAEC2Kernel *)kernel
+{
+	_kernel = kernel;
+	
+	if (![self.UA_dirtyProperties containsObject:@"kernel"])
+		[self.UA_dirtyProperties addObject:@"kernel"];
+}
+
+- (void)setRamdisk:(UAEC2Ramdisk *)ramdisk
+{
+	_ramdisk = ramdisk;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ramdisk"])
+		[self.UA_dirtyProperties addObject:@"ramdisk"];
+}
+
+- (void)setUserData:(NSString *)userData
+{
+	_userData = userData;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userData"])
+		[self.UA_dirtyProperties addObject:@"userData"];
+}
+
+- (void)setInstanceInitiatedShutdownBehavior:(UAEC2InstanceInitiatedShutdownBehavior)instanceInitiatedShutdownBehavior
+{
+	_instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceInitiatedShutdownBehavior"])
+		[self.UA_dirtyProperties addObject:@"instanceInitiatedShutdownBehavior"];
+}
+
+- (void)setGroups:(NSMutableArray *)groups
+{
+	_groups = groups;
+	
+	if (![self.UA_dirtyProperties containsObject:@"groups"])
+		[self.UA_dirtyProperties addObject:@"groups"];
+}
+
+- (void)setEbsOptimized:(UAEC2EBSOptimized *)ebsOptimized
+{
+	_ebsOptimized = ebsOptimized;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ebsOptimized"])
+		[self.UA_dirtyProperties addObject:@"ebsOptimized"];
+}
+
+- (void)setSriovNetSupport:(UAEC2SriovNetSupport *)sriovNetSupport
+{
+	_sriovNetSupport = sriovNetSupport;
+	
+	if (![self.UA_dirtyProperties containsObject:@"sriovNetSupport"])
+		[self.UA_dirtyProperties addObject:@"sriovNetSupport"];
+}
+
 + (NSValueTransformer *)blockDeviceMappingsJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2InstanceBlockDeviceMappingSpecification class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2InstanceBlockDeviceMappingSpecification class]];
 }
 
 + (NSValueTransformer *)sourceDestCheckJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
 }
 
 + (NSValueTransformer *)kernelJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2Kernel class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2Kernel class]];
 }
 
 + (NSValueTransformer *)ramdiskJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2Ramdisk class]];
-}
-
-+ (NSValueTransformer *)userDataJSONTransformer
-{
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2UserData class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2Ramdisk class]];
 }
 
 + (NSValueTransformer *)instanceInitiatedShutdownBehaviorJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2InstanceInitiatedShutdownBehavior class]];
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    {
+        if ([value isKindOfClass:[NSNumber class]])
+            return (NSNumber *)value;
+        
+		if ([value isEqualToString:@"stop"])
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorStop);
+		if ([value isEqualToString:@"terminate"])
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorTerminate);
+
+		return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
+
+    } reverseBlock:^NSString *(NSNumber *value)
+    {
+        UAEC2InstanceInitiatedShutdownBehavior castValue = (UAEC2InstanceInitiatedShutdownBehavior)[value unsignedIntegerValue];
+        switch (castValue)
+        {
+			case UAEC2InstanceInitiatedShutdownBehaviorStop:
+			    return @"stop";
+			case UAEC2InstanceInitiatedShutdownBehaviorTerminate:
+			    return @"terminate";
+
+			case UAEC2InstanceInitiatedShutdownBehaviorUnknown:
+			default:
+				return nil;
+        }
+    }];
 }
 
 + (NSValueTransformer *)ebsOptimizedJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2EBSOptimized class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2EBSOptimized class]];
 }
 
 + (NSValueTransformer *)sriovNetSupportJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2SriovNetSupport class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2SriovNetSupport class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceBlockDeviceMappingSpecification class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceBlockDeviceMappingSpecification class]];
 }
 
 + (NSValueTransformer *)sourceDestCheckQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
 }
 
 + (NSValueTransformer *)disableApiTerminationQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)kernelQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Kernel class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2Kernel class]];
 }
 
 + (NSValueTransformer *)ramdiskQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2Ramdisk class]];
-}
-
-+ (NSValueTransformer *)userDataQueryStringTransformer
-{
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2UserData class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2Ramdisk class]];
 }
 
 + (NSValueTransformer *)instanceInitiatedShutdownBehaviorQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceInitiatedShutdownBehavior class]];
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    {
+        if ([value isKindOfClass:[NSNumber class]])
+            return (NSNumber *)value;
+        
+		if ([value isEqualToString:@"stop"])
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorStop);
+		if ([value isEqualToString:@"terminate"])
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorTerminate);
+
+		return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
+
+    } reverseBlock:^NSString *(NSNumber *value)
+    {
+        UAEC2InstanceInitiatedShutdownBehavior castValue = (UAEC2InstanceInitiatedShutdownBehavior)[value unsignedIntegerValue];
+        switch (castValue)
+        {
+			case UAEC2InstanceInitiatedShutdownBehaviorStop:
+			    return @"stop";
+			case UAEC2InstanceInitiatedShutdownBehaviorTerminate:
+			    return @"terminate";
+
+			case UAEC2InstanceInitiatedShutdownBehaviorUnknown:
+			default:
+				return nil;
+        }
+    }];
 }
 
 + (NSValueTransformer *)ebsOptimizedQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2EBSOptimized class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2EBSOptimized class]];
 }
 
 + (NSValueTransformer *)sriovNetSupportQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2SriovNetSupport class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2SriovNetSupport class]];
 }
 
 - (void)addBlockDeviceMapping:(UAEC2InstanceBlockDeviceMappingSpecification *)blockDeviceMapping
@@ -168,6 +362,7 @@
 		[self setBlockDeviceMappings:[NSMutableArray array]];
 	[self.blockDeviceMappings addObject:blockDeviceMapping];
 }
+
 - (void)addGroup:(NSString *)group
 {
 	if (self.groups == nil)

@@ -65,29 +65,165 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setLaunchConfigurationName:(NSString *)launchConfigurationName
+{
+	_launchConfigurationName = launchConfigurationName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"launchConfigurationName"])
+		[self.UA_dirtyProperties addObject:@"launchConfigurationName"];
+}
+
+- (void)setImageID:(NSString *)imageID
+{
+	_imageID = imageID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"imageID"])
+		[self.UA_dirtyProperties addObject:@"imageID"];
+}
+
+- (void)setKeyName:(NSString *)keyName
+{
+	_keyName = keyName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"keyName"])
+		[self.UA_dirtyProperties addObject:@"keyName"];
+}
+
+- (void)setSecurityGroups:(NSMutableArray *)securityGroups
+{
+	_securityGroups = securityGroups;
+	
+	if (![self.UA_dirtyProperties containsObject:@"securityGroups"])
+		[self.UA_dirtyProperties addObject:@"securityGroups"];
+}
+
+- (void)setUserData:(NSString *)userData
+{
+	_userData = userData;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userData"])
+		[self.UA_dirtyProperties addObject:@"userData"];
+}
+
+- (void)setInstanceID:(NSString *)instanceID
+{
+	_instanceID = instanceID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceID"])
+		[self.UA_dirtyProperties addObject:@"instanceID"];
+}
+
+- (void)setInstanceType:(NSString *)instanceType
+{
+	_instanceType = instanceType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceType"])
+		[self.UA_dirtyProperties addObject:@"instanceType"];
+}
+
+- (void)setKernelID:(NSString *)kernelID
+{
+	_kernelID = kernelID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"kernelID"])
+		[self.UA_dirtyProperties addObject:@"kernelID"];
+}
+
+- (void)setRamdiskID:(NSString *)ramdiskID
+{
+	_ramdiskID = ramdiskID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ramdiskID"])
+		[self.UA_dirtyProperties addObject:@"ramdiskID"];
+}
+
+- (void)setBlockDeviceMappings:(NSMutableArray *)blockDeviceMappings
+{
+	_blockDeviceMappings = blockDeviceMappings;
+	
+	if (![self.UA_dirtyProperties containsObject:@"blockDeviceMappings"])
+		[self.UA_dirtyProperties addObject:@"blockDeviceMappings"];
+}
+
+- (void)setInstanceMonitoringEnabled:(BOOL)instanceMonitoringEnabled
+{
+	_instanceMonitoringEnabled = instanceMonitoringEnabled;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceMonitoringEnabled"])
+		[self.UA_dirtyProperties addObject:@"instanceMonitoringEnabled"];
+}
+
+- (void)setSpotPrice:(NSString *)spotPrice
+{
+	_spotPrice = spotPrice;
+	
+	if (![self.UA_dirtyProperties containsObject:@"spotPrice"])
+		[self.UA_dirtyProperties addObject:@"spotPrice"];
+}
+
+- (void)setIamInstanceProfile:(NSString *)iamInstanceProfile
+{
+	_iamInstanceProfile = iamInstanceProfile;
+	
+	if (![self.UA_dirtyProperties containsObject:@"iamInstanceProfile"])
+		[self.UA_dirtyProperties addObject:@"iamInstanceProfile"];
+}
+
+- (void)setEbsOptimized:(BOOL)ebsOptimized
+{
+	_ebsOptimized = ebsOptimized;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ebsOptimized"])
+		[self.UA_dirtyProperties addObject:@"ebsOptimized"];
+}
+
+- (void)setAssociatePublicIPAddress:(BOOL)associatePublicIPAddress
+{
+	_associatePublicIPAddress = associatePublicIPAddress;
+	
+	if (![self.UA_dirtyProperties containsObject:@"associatePublicIPAddress"])
+		[self.UA_dirtyProperties addObject:@"associatePublicIPAddress"];
+}
+
 + (NSValueTransformer *)blockDeviceMappingsJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)instanceMonitoringEnabledQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)ebsOptimizedQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)associatePublicIPAddressQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 - (void)addSecurityGroup:(NSString *)securityGroup
@@ -96,6 +232,7 @@
 		[self setSecurityGroups:[NSMutableArray array]];
 	[self.securityGroups addObject:securityGroup];
 }
+
 - (void)addBlockDeviceMapping:(UAASBlockDeviceMapping *)blockDeviceMapping
 {
 	if (self.blockDeviceMappings == nil)

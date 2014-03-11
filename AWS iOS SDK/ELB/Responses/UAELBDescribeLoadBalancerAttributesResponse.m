@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)loadBalancerAttributesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAELBLoadBalancerAttributes class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAELBLoadBalancerAttributes class]];
 }
 
 @end

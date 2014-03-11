@@ -8,7 +8,7 @@
 
 #import "UAEC2Request.h"
 
-@class UAEC2InstanceBlockDeviceMappingSpecification, UAEC2SourceDestCheck, UAEC2Kernel, UAEC2Ramdisk, UAEC2UserData, UAEC2InstanceInitiatedShutdownBehavior, UAEC2EBSOptimized, UAEC2SriovNetSupport, UAEC2ModifyInstanceAttributeResponse;
+@class UAEC2InstanceBlockDeviceMappingSpecification, UAEC2SourceDestCheck, UAEC2Kernel, UAEC2Ramdisk, UAEC2EBSOptimized, UAEC2SriovNetSupport, UAEC2ModifyInstanceAttributeResponse;
 
 typedef void(^UAEC2ModifyInstanceAttributeRequestCompletionBlock)(UAEC2ModifyInstanceAttributeResponse *response, NSError *error);
 typedef BOOL(^UAEC2ModifyInstanceAttributeRequestShouldContinueWaitingBlock)(UAEC2ModifyInstanceAttributeResponse *response, NSError *error);
@@ -25,8 +25,9 @@ typedef BOOL(^UAEC2ModifyInstanceAttributeRequestShouldContinueWaitingBlock)(UAE
 @property (nonatomic, copy) NSString *instanceType;
 @property (nonatomic, copy) UAEC2Kernel *kernel;
 @property (nonatomic, copy) UAEC2Ramdisk *ramdisk;
-@property (nonatomic, copy) UAEC2UserData *userData;
-@property (nonatomic, copy) UAEC2InstanceInitiatedShutdownBehavior *instanceInitiatedShutdownBehavior;
+@property (nonatomic, copy) NSString *userData;
+@property (nonatomic, copy) NSString *decodedUserData;
+@property (nonatomic) UAEC2InstanceInitiatedShutdownBehavior instanceInitiatedShutdownBehavior;
 @property (nonatomic, strong) NSMutableArray *groups;
 @property (nonatomic, copy) UAEC2EBSOptimized *ebsOptimized;
 @property (nonatomic, copy) UAEC2SriovNetSupport *sriovNetSupport;

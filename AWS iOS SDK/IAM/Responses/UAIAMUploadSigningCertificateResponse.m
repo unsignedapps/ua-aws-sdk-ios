@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)certificateXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMSigningCertificate class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMSigningCertificate class]];
 }
 
 @end

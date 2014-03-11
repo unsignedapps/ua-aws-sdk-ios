@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)platformApplicationsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UASNSPlatformApplication class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSPlatformApplication class]];
 }
 
 @end

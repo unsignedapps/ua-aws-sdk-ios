@@ -58,6 +58,94 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setAutoScalingGroupName:(NSString *)autoScalingGroupName
+{
+	_autoScalingGroupName = autoScalingGroupName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"autoScalingGroupName"])
+		[self.UA_dirtyProperties addObject:@"autoScalingGroupName"];
+}
+
+- (void)setScheduledActionName:(NSString *)scheduledActionName
+{
+	_scheduledActionName = scheduledActionName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"scheduledActionName"])
+		[self.UA_dirtyProperties addObject:@"scheduledActionName"];
+}
+
+- (void)setTime:(NSDate *)time
+{
+	_time = time;
+	
+	if (![self.UA_dirtyProperties containsObject:@"time"])
+		[self.UA_dirtyProperties addObject:@"time"];
+}
+
+- (void)setStartTime:(NSDate *)startTime
+{
+	_startTime = startTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"startTime"])
+		[self.UA_dirtyProperties addObject:@"startTime"];
+}
+
+- (void)setEndTime:(NSDate *)endTime
+{
+	_endTime = endTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"endTime"])
+		[self.UA_dirtyProperties addObject:@"endTime"];
+}
+
+- (void)setRecurrence:(NSString *)recurrence
+{
+	_recurrence = recurrence;
+	
+	if (![self.UA_dirtyProperties containsObject:@"recurrence"])
+		[self.UA_dirtyProperties addObject:@"recurrence"];
+}
+
+- (void)setMinSize:(NSNumber *)minSize
+{
+	_minSize = minSize;
+	
+	if (![self.UA_dirtyProperties containsObject:@"minSize"])
+		[self.UA_dirtyProperties addObject:@"minSize"];
+}
+
+- (void)setMaxSize:(NSNumber *)maxSize
+{
+	_maxSize = maxSize;
+	
+	if (![self.UA_dirtyProperties containsObject:@"maxSize"])
+		[self.UA_dirtyProperties addObject:@"maxSize"];
+}
+
+- (void)setDesiredCapacity:(NSNumber *)desiredCapacity
+{
+	_desiredCapacity = desiredCapacity;
+	
+	if (![self.UA_dirtyProperties containsObject:@"desiredCapacity"])
+		[self.UA_dirtyProperties addObject:@"desiredCapacity"];
+}
+
 + (NSValueTransformer *)timeJSONTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];

@@ -36,12 +36,12 @@
 
 + (NSValueTransformer *)autoEnableIOXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2AutoEnableIO class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2AutoEnableIO class]];
 }
 
 + (NSValueTransformer *)productCodesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2ProductCode class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ProductCode class]];
 }
 
 @end

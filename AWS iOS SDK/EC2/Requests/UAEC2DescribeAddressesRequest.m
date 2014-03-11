@@ -54,19 +54,67 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setPublicIPs:(NSMutableArray *)publicIPs
+{
+	_publicIPs = publicIPs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"publicIPs"])
+		[self.UA_dirtyProperties addObject:@"publicIPs"];
+}
+
+- (void)setFilters:(NSMutableArray *)filters
+{
+	_filters = filters;
+	
+	if (![self.UA_dirtyProperties containsObject:@"filters"])
+		[self.UA_dirtyProperties addObject:@"filters"];
+}
+
+- (void)setAllocationIDs:(NSMutableArray *)allocationIDs
+{
+	_allocationIDs = allocationIDs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"allocationIDs"])
+		[self.UA_dirtyProperties addObject:@"allocationIDs"];
+}
+
 + (NSValueTransformer *)filtersJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)filtersQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
 - (void)addPublicIP:(NSString *)publicIP
@@ -75,12 +123,14 @@
 		[self setPublicIPs:[NSMutableArray array]];
 	[self.publicIPs addObject:publicIP];
 }
+
 - (void)addFilter:(UAEC2Filter *)filter
 {
 	if (self.filters == nil)
 		[self setFilters:[NSMutableArray array]];
 	[self.filters addObject:filter];
 }
+
 - (void)addAllocationID:(NSString *)allocationID
 {
 	if (self.allocationIDs == nil)

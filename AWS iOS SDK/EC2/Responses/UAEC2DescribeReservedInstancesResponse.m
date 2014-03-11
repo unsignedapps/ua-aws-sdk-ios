@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)reservedInstancesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2ReservedInstance class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ReservedInstance class]];
 }
 
 @end

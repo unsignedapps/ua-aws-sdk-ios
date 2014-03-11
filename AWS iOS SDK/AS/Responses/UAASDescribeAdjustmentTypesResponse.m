@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)adjustmentTypesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASAdjustmentType class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASAdjustmentType class]];
 }
 
 @end

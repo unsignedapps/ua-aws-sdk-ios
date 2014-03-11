@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)instanceProfileXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMInstanceProfile class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMInstanceProfile class]];
 }
 
 @end

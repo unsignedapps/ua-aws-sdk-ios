@@ -53,14 +53,62 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setNetworkACLID:(NSString *)networkACLID
+{
+	_networkACLID = networkACLID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"networkACLID"])
+		[self.UA_dirtyProperties addObject:@"networkACLID"];
+}
+
+- (void)setRuleNumber:(NSNumber *)ruleNumber
+{
+	_ruleNumber = ruleNumber;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ruleNumber"])
+		[self.UA_dirtyProperties addObject:@"ruleNumber"];
+}
+
+- (void)setEgress:(BOOL)egress
+{
+	_egress = egress;
+	
+	if (![self.UA_dirtyProperties containsObject:@"egress"])
+		[self.UA_dirtyProperties addObject:@"egress"];
+}
+
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)egressQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 #pragma mark - Invocation

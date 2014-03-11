@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)availabilityZonesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2AvailabilityZone class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2AvailabilityZone class]];
 }
 
 @end

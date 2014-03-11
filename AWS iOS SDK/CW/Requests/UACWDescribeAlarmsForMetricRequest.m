@@ -56,9 +56,73 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setMetricName:(NSString *)metricName
+{
+	_metricName = metricName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"metricName"])
+		[self.UA_dirtyProperties addObject:@"metricName"];
+}
+
+- (void)setNamespace:(NSString *)namespace
+{
+	_namespace = namespace;
+	
+	if (![self.UA_dirtyProperties containsObject:@"namespace"])
+		[self.UA_dirtyProperties addObject:@"namespace"];
+}
+
+- (void)setStatistic:(UACWStatistic)statistic
+{
+	_statistic = statistic;
+	
+	if (![self.UA_dirtyProperties containsObject:@"statistic"])
+		[self.UA_dirtyProperties addObject:@"statistic"];
+}
+
+- (void)setDimensions:(NSMutableArray *)dimensions
+{
+	_dimensions = dimensions;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dimensions"])
+		[self.UA_dirtyProperties addObject:@"dimensions"];
+}
+
+- (void)setPeriod:(NSNumber *)period
+{
+	_period = period;
+	
+	if (![self.UA_dirtyProperties containsObject:@"period"])
+		[self.UA_dirtyProperties addObject:@"period"];
+}
+
+- (void)setUnit:(UACWUnit)unit
+{
+	_unit = unit;
+	
+	if (![self.UA_dirtyProperties containsObject:@"unit"])
+		[self.UA_dirtyProperties addObject:@"unit"];
+}
+
 + (NSValueTransformer *)statisticJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -101,12 +165,12 @@
 
 + (NSValueTransformer *)dimensionsJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UACWDimension class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 + (NSValueTransformer *)unitJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -237,7 +301,7 @@
 
 + (NSValueTransformer *)statisticQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -280,12 +344,12 @@
 
 + (NSValueTransformer *)dimensionsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 + (NSValueTransformer *)unitQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;

@@ -58,9 +58,89 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setNamespace:(NSString *)namespace
+{
+	_namespace = namespace;
+	
+	if (![self.UA_dirtyProperties containsObject:@"namespace"])
+		[self.UA_dirtyProperties addObject:@"namespace"];
+}
+
+- (void)setMetricName:(NSString *)metricName
+{
+	_metricName = metricName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"metricName"])
+		[self.UA_dirtyProperties addObject:@"metricName"];
+}
+
+- (void)setDimensions:(NSMutableArray *)dimensions
+{
+	_dimensions = dimensions;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dimensions"])
+		[self.UA_dirtyProperties addObject:@"dimensions"];
+}
+
+- (void)setStartTime:(NSDate *)startTime
+{
+	_startTime = startTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"startTime"])
+		[self.UA_dirtyProperties addObject:@"startTime"];
+}
+
+- (void)setEndTime:(NSDate *)endTime
+{
+	_endTime = endTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"endTime"])
+		[self.UA_dirtyProperties addObject:@"endTime"];
+}
+
+- (void)setPeriod:(NSNumber *)period
+{
+	_period = period;
+	
+	if (![self.UA_dirtyProperties containsObject:@"period"])
+		[self.UA_dirtyProperties addObject:@"period"];
+}
+
+- (void)setStatistics:(NSMutableArray *)statistics
+{
+	_statistics = statistics;
+	
+	if (![self.UA_dirtyProperties containsObject:@"statistics"])
+		[self.UA_dirtyProperties addObject:@"statistics"];
+}
+
+- (void)setUnit:(UACWUnit)unit
+{
+	_unit = unit;
+	
+	if (![self.UA_dirtyProperties containsObject:@"unit"])
+		[self.UA_dirtyProperties addObject:@"unit"];
+}
+
 + (NSValueTransformer *)dimensionsJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UACWDimension class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 + (NSValueTransformer *)startTimeJSONTransformer
@@ -75,7 +155,7 @@
 
 + (NSValueTransformer *)statisticsQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *values)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *values)
     {
 		NSNumber *(^stringToEnumBlock)(NSString *value) = ^NSNumber *(NSString *value)
 		{
@@ -134,7 +214,7 @@
 
 + (NSValueTransformer *)unitJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -265,7 +345,7 @@
 
 + (NSValueTransformer *)dimensionsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
 + (NSValueTransformer *)startTimeQueryStringTransformer
@@ -280,7 +360,7 @@
 
 + (NSValueTransformer *)statisticsJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *values)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *values)
     {
 		NSNumber *(^stringToEnumBlock)(NSString *value) = ^NSNumber *(NSString *value)
 		{
@@ -339,7 +419,7 @@
 
 + (NSValueTransformer *)unitQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -474,6 +554,7 @@
 		[self setDimensions:[NSMutableArray array]];
 	[self.dimensions addObject:dimension];
 }
+
 - (void)addStatistic:(UACWStatistic)statistic
 {
 	if (self.statistics == nil)

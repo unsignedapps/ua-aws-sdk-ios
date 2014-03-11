@@ -56,14 +56,78 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setLoadBalancerName:(NSString *)loadBalancerName
+{
+	_loadBalancerName = loadBalancerName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"loadBalancerName"])
+		[self.UA_dirtyProperties addObject:@"loadBalancerName"];
+}
+
+- (void)setListeners:(NSMutableArray *)listeners
+{
+	_listeners = listeners;
+	
+	if (![self.UA_dirtyProperties containsObject:@"listeners"])
+		[self.UA_dirtyProperties addObject:@"listeners"];
+}
+
+- (void)setAvailabilityZones:(NSMutableArray *)availabilityZones
+{
+	_availabilityZones = availabilityZones;
+	
+	if (![self.UA_dirtyProperties containsObject:@"availabilityZones"])
+		[self.UA_dirtyProperties addObject:@"availabilityZones"];
+}
+
+- (void)setSubnets:(NSMutableArray *)subnets
+{
+	_subnets = subnets;
+	
+	if (![self.UA_dirtyProperties containsObject:@"subnets"])
+		[self.UA_dirtyProperties addObject:@"subnets"];
+}
+
+- (void)setSecurityGroups:(NSMutableArray *)securityGroups
+{
+	_securityGroups = securityGroups;
+	
+	if (![self.UA_dirtyProperties containsObject:@"securityGroups"])
+		[self.UA_dirtyProperties addObject:@"securityGroups"];
+}
+
+- (void)setScheme:(UAELBScheme)scheme
+{
+	_scheme = scheme;
+	
+	if (![self.UA_dirtyProperties containsObject:@"scheme"])
+		[self.UA_dirtyProperties addObject:@"scheme"];
+}
+
 + (NSValueTransformer *)listenersJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAELBListener class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBListener class]];
 }
 
 + (NSValueTransformer *)schemeJSONTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -94,12 +158,12 @@
 
 + (NSValueTransformer *)listenersQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAELBListener class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBListener class]];
 }
 
 + (NSValueTransformer *)schemeQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -134,18 +198,21 @@
 		[self setListeners:[NSMutableArray array]];
 	[self.listeners addObject:listener];
 }
+
 - (void)addAvailabilityZone:(NSString *)availabilityZone
 {
 	if (self.availabilityZones == nil)
 		[self setAvailabilityZones:[NSMutableArray array]];
 	[self.availabilityZones addObject:availabilityZone];
 }
+
 - (void)addSubnet:(NSString *)subnet
 {
 	if (self.subnets == nil)
 		[self setSubnets:[NSMutableArray array]];
 	[self.subnets addObject:subnet];
 }
+
 - (void)addSecurityGroup:(NSString *)securityGroup
 {
 	if (self.securityGroups == nil)

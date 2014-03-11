@@ -6,10 +6,10 @@
 //
 //
 
-#import <Mantle/Mantle.h>
+#import "UAAWSModel.h"
 #import "NSValueTransformer+UAValueTransformerAdditions.h"
 #import "UACWDataTypes.h"
 
-@interface UACWModel : MTLModel <MTLXMLSerializing, MTLQuerySerializing>
+@interface UACWModel : UAAWSModel <UAMTLXMLSerializing, UAMTLQuerySerializing>
 
 @end

@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)bundleTaskXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2BundleTask class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2BundleTask class]];
 }
 
 @end

@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)spotPriceHistoryXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2SpotPriceHistory class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2SpotPriceHistory class]];
 }
 
 @end

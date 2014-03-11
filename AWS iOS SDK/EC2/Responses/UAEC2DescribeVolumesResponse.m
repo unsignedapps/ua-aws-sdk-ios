@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)volumesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Volume class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Volume class]];
 }
 
 @end

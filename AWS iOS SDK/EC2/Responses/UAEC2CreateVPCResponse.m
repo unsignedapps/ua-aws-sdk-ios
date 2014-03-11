@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)vpcXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2VPC class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2VPC class]];
 }
 
 @end

@@ -61,19 +61,99 @@
     return [keyPaths copy];
 }
 
+- (void)setNetworkInterfaceID:(NSString *)networkInterfaceID
+{
+	_networkInterfaceID = networkInterfaceID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"networkInterfaceID"])
+		[self.UA_dirtyProperties addObject:@"networkInterfaceID"];
+}
+
+- (void)setDeviceIndex:(NSNumber *)deviceIndex
+{
+	_deviceIndex = deviceIndex;
+	
+	if (![self.UA_dirtyProperties containsObject:@"deviceIndex"])
+		[self.UA_dirtyProperties addObject:@"deviceIndex"];
+}
+
+- (void)setSubnetID:(NSString *)subnetID
+{
+	_subnetID = subnetID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"subnetID"])
+		[self.UA_dirtyProperties addObject:@"subnetID"];
+}
+
+- (void)setDescriptionValue:(NSString *)descriptionValue
+{
+	_descriptionValue = descriptionValue;
+	
+	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
+		[self.UA_dirtyProperties addObject:@"descriptionValue"];
+}
+
+- (void)setPrivateIPAddress:(NSString *)privateIPAddress
+{
+	_privateIPAddress = privateIPAddress;
+	
+	if (![self.UA_dirtyProperties containsObject:@"privateIPAddress"])
+		[self.UA_dirtyProperties addObject:@"privateIPAddress"];
+}
+
+- (void)setGroups:(NSMutableArray *)groups
+{
+	_groups = groups;
+	
+	if (![self.UA_dirtyProperties containsObject:@"groups"])
+		[self.UA_dirtyProperties addObject:@"groups"];
+}
+
+- (void)setDeleteOnTermination:(BOOL)deleteOnTermination
+{
+	_deleteOnTermination = deleteOnTermination;
+	
+	if (![self.UA_dirtyProperties containsObject:@"deleteOnTermination"])
+		[self.UA_dirtyProperties addObject:@"deleteOnTermination"];
+}
+
+- (void)setPrivateIPAddresses:(NSMutableArray *)privateIPAddresses
+{
+	_privateIPAddresses = privateIPAddresses;
+	
+	if (![self.UA_dirtyProperties containsObject:@"privateIPAddresses"])
+		[self.UA_dirtyProperties addObject:@"privateIPAddresses"];
+}
+
+- (void)setSecondaryPrivateIPAddressCount:(NSNumber *)secondaryPrivateIPAddressCount
+{
+	_secondaryPrivateIPAddressCount = secondaryPrivateIPAddressCount;
+	
+	if (![self.UA_dirtyProperties containsObject:@"secondaryPrivateIPAddressCount"])
+		[self.UA_dirtyProperties addObject:@"secondaryPrivateIPAddressCount"];
+}
+
+- (void)setAssociatePublicIPAddress:(BOOL)associatePublicIPAddress
+{
+	_associatePublicIPAddress = associatePublicIPAddress;
+	
+	if (![self.UA_dirtyProperties containsObject:@"associatePublicIPAddress"])
+		[self.UA_dirtyProperties addObject:@"associatePublicIPAddress"];
+}
+
 + (NSValueTransformer *)deleteOnTerminationQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)privateIPAddressesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
 }
 
 + (NSValueTransformer *)associatePublicIPAddressQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)deviceIndexXMLTransformer
@@ -88,12 +168,12 @@
 
 + (NSValueTransformer *)deleteOnTerminationXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)privateIPAddressesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
 }
 
 + (NSValueTransformer *)secondaryPrivateIPAddressCountXMLTransformer
@@ -103,7 +183,7 @@
 
 + (NSValueTransformer *)associatePublicIPAddressXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

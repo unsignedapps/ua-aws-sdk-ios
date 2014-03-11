@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)networkInterfaceXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2NetworkInterface class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2NetworkInterface class]];
 }
 
 @end

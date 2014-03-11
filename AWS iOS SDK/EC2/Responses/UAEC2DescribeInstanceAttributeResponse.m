@@ -63,38 +63,38 @@
 
 + (NSValueTransformer *)disableApiTerminationXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)instanceInitiatedShutdownBehaviorXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceInitiatedShutdownBehaviourUnknown);
+			return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         
 		if ([value isEqualToString:@"stop"])
-		    return @(UAEC2InstanceInitiatedShutdownBehaviourStop);
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorStop);
 		if ([value isEqualToString:@"terminate"])
-		    return @(UAEC2InstanceInitiatedShutdownBehaviourTerminate);
+		    return @(UAEC2InstanceInitiatedShutdownBehaviorTerminate);
 
-		return @(UAEC2InstanceInitiatedShutdownBehaviourUnknown);
+		return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
 
     } reverseBlock:^NSString *(NSNumber *value)
     {
-        UAEC2InstanceInitiatedShutdownBehaviour castValue = (UAEC2InstanceInitiatedShutdownBehaviour)[value unsignedIntegerValue];
+        UAEC2InstanceInitiatedShutdownBehavior castValue = (UAEC2InstanceInitiatedShutdownBehavior)[value unsignedIntegerValue];
         switch (castValue)
         {
-			case UAEC2InstanceInitiatedShutdownBehaviourStop:
+			case UAEC2InstanceInitiatedShutdownBehaviorStop:
 			    return @"stop";
-			case UAEC2InstanceInitiatedShutdownBehaviourTerminate:
+			case UAEC2InstanceInitiatedShutdownBehaviorTerminate:
 			    return @"terminate";
 
-			case UAEC2InstanceInitiatedShutdownBehaviourUnknown:
+			case UAEC2InstanceInitiatedShutdownBehaviorUnknown:
 			default:
 				return nil;
         }
@@ -103,17 +103,17 @@
 
 + (NSValueTransformer *)blockDeviceMappingsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2InstanceBlockDeviceMapping class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceBlockDeviceMapping class]];
 }
 
 + (NSValueTransformer *)productCodesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2ProductCode class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ProductCode class]];
 }
 
 + (NSValueTransformer *)ebsOptimizedXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

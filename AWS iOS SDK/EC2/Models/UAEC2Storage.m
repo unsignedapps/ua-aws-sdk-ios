@@ -52,14 +52,22 @@
     return [keyPaths copy];
 }
 
+- (void)setS3:(UAEC2S3Storage *)s3
+{
+	_s3 = s3;
+	
+	if (![self.UA_dirtyProperties containsObject:@"s3"])
+		[self.UA_dirtyProperties addObject:@"s3"];
+}
+
 + (NSValueTransformer *)s3QueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2S3Storage class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2S3Storage class]];
 }
 
 + (NSValueTransformer *)s3XMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2S3Storage class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2S3Storage class]];
 }
 
 @end

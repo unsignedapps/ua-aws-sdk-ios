@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)imagesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Image class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Image class]];
 }
 
 @end

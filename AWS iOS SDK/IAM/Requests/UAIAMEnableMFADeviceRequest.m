@@ -53,6 +53,54 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setUserName:(NSString *)userName
+{
+	_userName = userName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userName"])
+		[self.UA_dirtyProperties addObject:@"userName"];
+}
+
+- (void)setSerialNumber:(NSString *)serialNumber
+{
+	_serialNumber = serialNumber;
+	
+	if (![self.UA_dirtyProperties containsObject:@"serialNumber"])
+		[self.UA_dirtyProperties addObject:@"serialNumber"];
+}
+
+- (void)setAuthenticationCode1:(NSString *)authenticationCode1
+{
+	_authenticationCode1 = authenticationCode1;
+	
+	if (![self.UA_dirtyProperties containsObject:@"authenticationCode1"])
+		[self.UA_dirtyProperties addObject:@"authenticationCode1"];
+}
+
+- (void)setAuthenticationCode2:(NSString *)authenticationCode2
+{
+	_authenticationCode2 = authenticationCode2;
+	
+	if (![self.UA_dirtyProperties containsObject:@"authenticationCode2"])
+		[self.UA_dirtyProperties addObject:@"authenticationCode2"];
+}
+
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMEnableMFADeviceRequestCompletionBlock)completionBlock

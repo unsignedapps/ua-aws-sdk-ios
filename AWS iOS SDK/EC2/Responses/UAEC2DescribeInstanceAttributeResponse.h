@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString *userData;
 @property (nonatomic, copy) NSString *decodedUserData;
 @property (nonatomic) BOOL disableApiTermination;
-@property (nonatomic) UAEC2InstanceInitiatedShutdownBehaviour instanceInitiatedShutdownBehavior;
+@property (nonatomic) UAEC2InstanceInitiatedShutdownBehavior instanceInitiatedShutdownBehavior;
 @property (nonatomic, copy) NSString *rootDeviceName;
 @property (nonatomic, copy) NSArray *blockDeviceMappings;
 @property (nonatomic, copy) NSArray *productCodes;

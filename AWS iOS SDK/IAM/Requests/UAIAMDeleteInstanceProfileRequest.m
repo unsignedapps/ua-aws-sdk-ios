@@ -59,6 +59,30 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setInstanceProfileName:(NSString *)instanceProfileName
+{
+	_instanceProfileName = instanceProfileName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"instanceProfileName"])
+		[self.UA_dirtyProperties addObject:@"instanceProfileName"];
+}
+
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMDeleteInstanceProfileRequestCompletionBlock)completionBlock

@@ -52,14 +52,54 @@
     return [keyPaths copy];
 }
 
+- (void)setIpProtocol:(NSString *)ipProtocol
+{
+	_ipProtocol = ipProtocol;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ipProtocol"])
+		[self.UA_dirtyProperties addObject:@"ipProtocol"];
+}
+
+- (void)setFromPort:(NSNumber *)fromPort
+{
+	_fromPort = fromPort;
+	
+	if (![self.UA_dirtyProperties containsObject:@"fromPort"])
+		[self.UA_dirtyProperties addObject:@"fromPort"];
+}
+
+- (void)setToPort:(NSNumber *)toPort
+{
+	_toPort = toPort;
+	
+	if (![self.UA_dirtyProperties containsObject:@"toPort"])
+		[self.UA_dirtyProperties addObject:@"toPort"];
+}
+
+- (void)setUserIdGroupPairs:(NSMutableArray *)userIdGroupPairs
+{
+	_userIdGroupPairs = userIdGroupPairs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userIdGroupPairs"])
+		[self.UA_dirtyProperties addObject:@"userIdGroupPairs"];
+}
+
+- (void)setIpRanges:(NSMutableArray *)ipRanges
+{
+	_ipRanges = ipRanges;
+	
+	if (![self.UA_dirtyProperties containsObject:@"ipRanges"])
+		[self.UA_dirtyProperties addObject:@"ipRanges"];
+}
+
 + (NSValueTransformer *)userIdGroupPairsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2UserIdGroupPair class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2UserIdGroupPair class]];
 }
 
 + (NSValueTransformer *)ipRangesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2IPRange class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2IPRange class]];
 }
 
 + (NSValueTransformer *)fromPortXMLTransformer
@@ -74,12 +114,12 @@
 
 + (NSValueTransformer *)userIdGroupPairsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2UserIdGroupPair class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2UserIdGroupPair class]];
 }
 
 + (NSValueTransformer *)ipRangesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2IPRange class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2IPRange class]];
 }
 
 @end

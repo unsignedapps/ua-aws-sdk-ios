@@ -73,12 +73,12 @@
 
 - (Class)UA_RequestSerialisationClass
 {
-    return [MTLQueryAdapter class];
+    return [UAMTLQueryAdapter class];
 }
 
 - (Class)UA_ResponseSerialisationClass
 {
-    return [MTLXMLAdapter class];
+    return [UAMTLXMLAdapter class];
 }
 
 - (Class)UA_ErrorClass

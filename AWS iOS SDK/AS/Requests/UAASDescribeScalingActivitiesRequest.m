@@ -53,6 +53,54 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setActivityIDs:(NSMutableArray *)activityIDs
+{
+	_activityIDs = activityIDs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"activityIDs"])
+		[self.UA_dirtyProperties addObject:@"activityIDs"];
+}
+
+- (void)setAutoScalingGroupName:(NSString *)autoScalingGroupName
+{
+	_autoScalingGroupName = autoScalingGroupName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"autoScalingGroupName"])
+		[self.UA_dirtyProperties addObject:@"autoScalingGroupName"];
+}
+
+- (void)setMaxRecords:(NSNumber *)maxRecords
+{
+	_maxRecords = maxRecords;
+	
+	if (![self.UA_dirtyProperties containsObject:@"maxRecords"])
+		[self.UA_dirtyProperties addObject:@"maxRecords"];
+}
+
+- (void)setNextToken:(NSString *)nextToken
+{
+	_nextToken = nextToken;
+	
+	if (![self.UA_dirtyProperties containsObject:@"nextToken"])
+		[self.UA_dirtyProperties addObject:@"nextToken"];
+}
+
 - (void)addActivityID:(NSString *)activityID
 {
 	if (self.activityIDs == nil)

@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)healthCheckXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAELBHealthCheck class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAELBHealthCheck class]];
 }
 
 @end

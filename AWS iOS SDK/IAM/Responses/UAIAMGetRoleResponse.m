@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)roleXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAIAMRole class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMRole class]];
 }
 
 @end

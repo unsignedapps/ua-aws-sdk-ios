@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)datapointsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UACWDatapoint class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWDatapoint class]];
 }
 
 @end

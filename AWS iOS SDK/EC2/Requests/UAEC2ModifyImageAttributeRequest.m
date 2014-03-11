@@ -61,29 +61,125 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setImageID:(NSString *)imageID
+{
+	_imageID = imageID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"imageID"])
+		[self.UA_dirtyProperties addObject:@"imageID"];
+}
+
+- (void)setAttribute:(NSString *)attribute
+{
+	_attribute = attribute;
+	
+	if (![self.UA_dirtyProperties containsObject:@"attribute"])
+		[self.UA_dirtyProperties addObject:@"attribute"];
+}
+
+- (void)setOperationType:(NSString *)operationType
+{
+	_operationType = operationType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"operationType"])
+		[self.UA_dirtyProperties addObject:@"operationType"];
+}
+
+- (void)setUserIDs:(NSMutableArray *)userIDs
+{
+	_userIDs = userIDs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userIDs"])
+		[self.UA_dirtyProperties addObject:@"userIDs"];
+}
+
+- (void)setUserGroups:(NSMutableArray *)userGroups
+{
+	_userGroups = userGroups;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userGroups"])
+		[self.UA_dirtyProperties addObject:@"userGroups"];
+}
+
+- (void)setProductCodes:(NSMutableArray *)productCodes
+{
+	_productCodes = productCodes;
+	
+	if (![self.UA_dirtyProperties containsObject:@"productCodes"])
+		[self.UA_dirtyProperties addObject:@"productCodes"];
+}
+
+- (void)setValue:(NSString *)value
+{
+	_value = value;
+	
+	if (![self.UA_dirtyProperties containsObject:@"value"])
+		[self.UA_dirtyProperties addObject:@"value"];
+}
+
+- (void)setLaunchPermission:(UAEC2LaunchPermissionModifications *)launchPermission
+{
+	_launchPermission = launchPermission;
+	
+	if (![self.UA_dirtyProperties containsObject:@"launchPermission"])
+		[self.UA_dirtyProperties addObject:@"launchPermission"];
+}
+
+- (void)setDescriptionValue:(UAEC2DescriptionValue *)descriptionValue
+{
+	_descriptionValue = descriptionValue;
+	
+	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
+		[self.UA_dirtyProperties addObject:@"descriptionValue"];
+}
+
 + (NSValueTransformer *)launchPermissionJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
 }
 
 + (NSValueTransformer *)descriptionValueJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)launchPermissionQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
 }
 
 + (NSValueTransformer *)descriptionValueQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
 }
 
 - (void)addUserID:(NSString *)userID
@@ -92,12 +188,14 @@
 		[self setUserIDs:[NSMutableArray array]];
 	[self.userIDs addObject:userID];
 }
+
 - (void)addUserGroup:(NSString *)userGroup
 {
 	if (self.userGroups == nil)
 		[self setUserGroups:[NSMutableArray array]];
 	[self.userGroups addObject:userGroup];
 }
+
 - (void)addProductCode:(NSString *)productCode
 {
 	if (self.productCodes == nil)

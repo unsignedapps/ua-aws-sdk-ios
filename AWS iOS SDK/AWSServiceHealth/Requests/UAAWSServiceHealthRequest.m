@@ -38,12 +38,12 @@
 
 - (Class)UA_RequestSerialisationClass
 {
-    return [MTLQueryAdapter class];
+    return [UAMTLQueryAdapter class];
 }
 
 - (Class)UA_ResponseSerialisationClass
 {
-    return [MTLJSONAdapter class];
+    return [UAMTLJSONAdapter class];
 }
 
 - (Class)UA_ErrorClass

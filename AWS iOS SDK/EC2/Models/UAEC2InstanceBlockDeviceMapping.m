@@ -34,12 +34,12 @@
 
 + (NSValueTransformer *)ebsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2EBSInstanceBlockDevice class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2EBSInstanceBlockDevice class]];
 }
 
 + (NSValueTransformer *)ebsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2EBSInstanceBlockDevice class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2EBSInstanceBlockDevice class]];
 }
 
 @end

@@ -39,12 +39,12 @@
 
 + (NSValueTransformer *)eventsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceStatusEvent class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2InstanceStatusEvent class]];
 }
 
 + (NSValueTransformer *)instanceStateQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -91,27 +91,27 @@
 
 + (NSValueTransformer *)systemStatusQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
 }
 
 + (NSValueTransformer *)instanceStatusQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
 }
 
 + (NSValueTransformer *)eventsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2InstanceStatusEvent class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceStatusEvent class]];
 }
 
 + (NSValueTransformer *)instanceStateXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
 			return @(UAEC2InstanceStateUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         
@@ -157,12 +157,12 @@
 
 + (NSValueTransformer *)systemStatusXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
 }
 
 + (NSValueTransformer *)instanceStatusXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2InstanceStatusSummary class]];
 }
 
 @end

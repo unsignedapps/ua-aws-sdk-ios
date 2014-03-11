@@ -46,6 +46,30 @@
     return [keyPaths copy];
 }
 
+- (void)setFormat:(NSString *)format
+{
+	_format = format;
+	
+	if (![self.UA_dirtyProperties containsObject:@"format"])
+		[self.UA_dirtyProperties addObject:@"format"];
+}
+
+- (void)setBytes:(NSNumber *)bytes
+{
+	_bytes = bytes;
+	
+	if (![self.UA_dirtyProperties containsObject:@"bytes"])
+		[self.UA_dirtyProperties addObject:@"bytes"];
+}
+
+- (void)setImportManifestUrl:(NSString *)importManifestUrl
+{
+	_importManifestUrl = importManifestUrl;
+	
+	if (![self.UA_dirtyProperties containsObject:@"importManifestUrl"])
+		[self.UA_dirtyProperties addObject:@"importManifestUrl"];
+}
+
 + (NSValueTransformer *)bytesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

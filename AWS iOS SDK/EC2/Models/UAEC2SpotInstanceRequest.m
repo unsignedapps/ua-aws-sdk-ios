@@ -51,17 +51,17 @@
 
 + (NSValueTransformer *)faultQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2SpotInstanceStateFault class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2SpotInstanceStateFault class]];
 }
 
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2SpotInstanceStatus class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2SpotInstanceStatus class]];
 }
 
 + (NSValueTransformer *)launchSpecificationQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchSpecification class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchSpecification class]];
 }
 
 + (NSValueTransformer *)createTimeQueryStringTransformer
@@ -71,32 +71,32 @@
 
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 + (NSValueTransformer *)faultXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2SpotInstanceStateFault class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2SpotInstanceStateFault class]];
 }
 
 + (NSValueTransformer *)statusXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2SpotInstanceStatus class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2SpotInstanceStatus class]];
 }
 
 + (NSValueTransformer *)launchSpecificationXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2LaunchSpecification class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2LaunchSpecification class]];
 }
 
 + (NSValueTransformer *)createTimeXMLTransformer
 {
-    return [NSValueTransformer mtl_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 + (NSValueTransformer *)tagsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
 @end

@@ -55,6 +55,70 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setAutoScalingGroupName:(NSString *)autoScalingGroupName
+{
+	_autoScalingGroupName = autoScalingGroupName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"autoScalingGroupName"])
+		[self.UA_dirtyProperties addObject:@"autoScalingGroupName"];
+}
+
+- (void)setScheduledActionNames:(NSMutableArray *)scheduledActionNames
+{
+	_scheduledActionNames = scheduledActionNames;
+	
+	if (![self.UA_dirtyProperties containsObject:@"scheduledActionNames"])
+		[self.UA_dirtyProperties addObject:@"scheduledActionNames"];
+}
+
+- (void)setStartTime:(NSDate *)startTime
+{
+	_startTime = startTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"startTime"])
+		[self.UA_dirtyProperties addObject:@"startTime"];
+}
+
+- (void)setEndTime:(NSDate *)endTime
+{
+	_endTime = endTime;
+	
+	if (![self.UA_dirtyProperties containsObject:@"endTime"])
+		[self.UA_dirtyProperties addObject:@"endTime"];
+}
+
+- (void)setNextToken:(NSString *)nextToken
+{
+	_nextToken = nextToken;
+	
+	if (![self.UA_dirtyProperties containsObject:@"nextToken"])
+		[self.UA_dirtyProperties addObject:@"nextToken"];
+}
+
+- (void)setMaxRecords:(NSNumber *)maxRecords
+{
+	_maxRecords = maxRecords;
+	
+	if (![self.UA_dirtyProperties containsObject:@"maxRecords"])
+		[self.UA_dirtyProperties addObject:@"maxRecords"];
+}
+
 + (NSValueTransformer *)startTimeJSONTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];

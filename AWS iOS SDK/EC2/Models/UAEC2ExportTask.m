@@ -39,22 +39,22 @@
 
 + (NSValueTransformer *)instanceExportDetailsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceExportDetails class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2InstanceExportDetails class]];
 }
 
 + (NSValueTransformer *)exportToS3TaskQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2ExportToS3Task class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2ExportToS3Task class]];
 }
 
 + (NSValueTransformer *)instanceExportDetailsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2InstanceExportDetails class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2InstanceExportDetails class]];
 }
 
 + (NSValueTransformer *)exportToS3TaskXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UAEC2ExportToS3Task class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2ExportToS3Task class]];
 }
 
 @end

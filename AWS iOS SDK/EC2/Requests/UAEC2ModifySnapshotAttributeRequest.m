@@ -57,19 +57,91 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setSnapshotID:(NSString *)snapshotID
+{
+	_snapshotID = snapshotID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"snapshotID"])
+		[self.UA_dirtyProperties addObject:@"snapshotID"];
+}
+
+- (void)setAttribute:(NSString *)attribute
+{
+	_attribute = attribute;
+	
+	if (![self.UA_dirtyProperties containsObject:@"attribute"])
+		[self.UA_dirtyProperties addObject:@"attribute"];
+}
+
+- (void)setOperationType:(NSString *)operationType
+{
+	_operationType = operationType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"operationType"])
+		[self.UA_dirtyProperties addObject:@"operationType"];
+}
+
+- (void)setUserIDs:(NSMutableArray *)userIDs
+{
+	_userIDs = userIDs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"userIDs"])
+		[self.UA_dirtyProperties addObject:@"userIDs"];
+}
+
+- (void)setGroupNames:(NSMutableArray *)groupNames
+{
+	_groupNames = groupNames;
+	
+	if (![self.UA_dirtyProperties containsObject:@"groupNames"])
+		[self.UA_dirtyProperties addObject:@"groupNames"];
+}
+
+- (void)setCreateVolumePermission:(UAEC2CreateVolumePermissionModifications *)createVolumePermission
+{
+	_createVolumePermission = createVolumePermission;
+	
+	if (![self.UA_dirtyProperties containsObject:@"createVolumePermission"])
+		[self.UA_dirtyProperties addObject:@"createVolumePermission"];
+}
+
 + (NSValueTransformer *)createVolumePermissionJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAEC2CreateVolumePermissionModifications class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2CreateVolumePermissionModifications class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)createVolumePermissionQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAEC2CreateVolumePermissionModifications class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2CreateVolumePermissionModifications class]];
 }
 
 - (void)addUserID:(NSString *)userID
@@ -78,6 +150,7 @@
 		[self setUserIDs:[NSMutableArray array]];
 	[self.userIDs addObject:userID];
 }
+
 - (void)addGroupName:(NSString *)groupName
 {
 	if (self.groupNames == nil)

@@ -44,14 +44,30 @@
     return [keyPaths copy];
 }
 
+- (void)setVolumeID:(NSString *)volumeID
+{
+	_volumeID = volumeID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"volumeID"])
+		[self.UA_dirtyProperties addObject:@"volumeID"];
+}
+
+- (void)setDeleteOnTermination:(BOOL)deleteOnTermination
+{
+	_deleteOnTermination = deleteOnTermination;
+	
+	if (![self.UA_dirtyProperties containsObject:@"deleteOnTermination"])
+		[self.UA_dirtyProperties addObject:@"deleteOnTermination"];
+}
+
 + (NSValueTransformer *)deleteOnTerminationQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)deleteOnTerminationXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

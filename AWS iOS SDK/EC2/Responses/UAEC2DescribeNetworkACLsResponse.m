@@ -33,7 +33,7 @@
 
 + (NSValueTransformer *)networkACLsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2NetworkACL class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2NetworkACL class]];
 }
 
 @end

@@ -169,11 +169,11 @@ typedef NS_ENUM(NSUInteger, UAEC2Hypervisor) {
 	UAEC2HypervisorXen = 2
 };
 
-// UAEC2InstanceInitiatedShutdownBehaviour
-typedef NS_ENUM(NSUInteger, UAEC2InstanceInitiatedShutdownBehaviour) {
-	UAEC2InstanceInitiatedShutdownBehaviourUnknown = 0,
-	UAEC2InstanceInitiatedShutdownBehaviourStop = 1,
-	UAEC2InstanceInitiatedShutdownBehaviourTerminate = 2
+// UAEC2InstanceInitiatedShutdownBehavior
+typedef NS_ENUM(NSUInteger, UAEC2InstanceInitiatedShutdownBehavior) {
+	UAEC2InstanceInitiatedShutdownBehaviorUnknown = 0,
+	UAEC2InstanceInitiatedShutdownBehaviorStop = 1,
+	UAEC2InstanceInitiatedShutdownBehaviorTerminate = 2
 };
 
 // UAEC2InstanceStatusDetailsName

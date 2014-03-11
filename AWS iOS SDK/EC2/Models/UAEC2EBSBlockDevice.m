@@ -50,9 +50,49 @@
     return [keyPaths copy];
 }
 
+- (void)setSnapshotID:(NSString *)snapshotID
+{
+	_snapshotID = snapshotID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"snapshotID"])
+		[self.UA_dirtyProperties addObject:@"snapshotID"];
+}
+
+- (void)setVolumeSize:(NSNumber *)volumeSize
+{
+	_volumeSize = volumeSize;
+	
+	if (![self.UA_dirtyProperties containsObject:@"volumeSize"])
+		[self.UA_dirtyProperties addObject:@"volumeSize"];
+}
+
+- (void)setDeleteOnTermination:(BOOL)deleteOnTermination
+{
+	_deleteOnTermination = deleteOnTermination;
+	
+	if (![self.UA_dirtyProperties containsObject:@"deleteOnTermination"])
+		[self.UA_dirtyProperties addObject:@"deleteOnTermination"];
+}
+
+- (void)setVolumeType:(UAEC2VolumeType)volumeType
+{
+	_volumeType = volumeType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"volumeType"])
+		[self.UA_dirtyProperties addObject:@"volumeType"];
+}
+
+- (void)setIops:(NSNumber *)iops
+{
+	_iops = iops;
+	
+	if (![self.UA_dirtyProperties containsObject:@"iops"])
+		[self.UA_dirtyProperties addObject:@"iops"];
+}
+
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -88,17 +128,17 @@
 
 + (NSValueTransformer *)deleteOnTerminationXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)volumeTypeXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
 			return @(UAEC2VolumeTypeUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         

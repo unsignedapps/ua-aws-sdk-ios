@@ -34,7 +34,7 @@
 
 + (NSValueTransformer *)scheduledUpdateGroupActionsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASScheduledUpdateGroupAction class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASScheduledUpdateGroupAction class]];
 }
 
 @end

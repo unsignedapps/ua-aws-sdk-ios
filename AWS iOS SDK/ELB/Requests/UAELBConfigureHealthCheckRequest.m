@@ -52,14 +52,46 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setLoadBalancerName:(NSString *)loadBalancerName
+{
+	_loadBalancerName = loadBalancerName;
+	
+	if (![self.UA_dirtyProperties containsObject:@"loadBalancerName"])
+		[self.UA_dirtyProperties addObject:@"loadBalancerName"];
+}
+
+- (void)setHealthCheck:(UAELBHealthCheck *)healthCheck
+{
+	_healthCheck = healthCheck;
+	
+	if (![self.UA_dirtyProperties containsObject:@"healthCheck"])
+		[self.UA_dirtyProperties addObject:@"healthCheck"];
+}
+
 + (NSValueTransformer *)healthCheckJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
 }
 
 + (NSValueTransformer *)healthCheckQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
 }
 
 #pragma mark - Invocation

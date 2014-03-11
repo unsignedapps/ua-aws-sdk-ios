@@ -36,12 +36,12 @@
 
 + (NSValueTransformer *)volumesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2ImportInstanceVolumeDetailItem class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2ImportInstanceVolumeDetailItem class]];
 }
 
 + (NSValueTransformer *)volumesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAEC2ImportInstanceVolumeDetailItem class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ImportInstanceVolumeDetailItem class]];
 }
 
 @end

@@ -51,9 +51,17 @@
     return [keyPaths copy];
 }
 
+- (void)setCrossZoneLoadBalancing:(BOOL)crossZoneLoadBalancing
+{
+	_crossZoneLoadBalancing = crossZoneLoadBalancing;
+	
+	if (![self.UA_dirtyProperties containsObject:@"crossZoneLoadBalancing"])
+		[self.UA_dirtyProperties addObject:@"crossZoneLoadBalancing"];
+}
+
 + (NSValueTransformer *)crossZoneLoadBalancingXMLTransformer
 {
-    return [MTLValueTransformer UA_XMLTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

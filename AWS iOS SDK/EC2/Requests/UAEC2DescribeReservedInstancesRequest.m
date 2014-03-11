@@ -54,19 +54,67 @@
     return [keyPaths copy];
 }
 
+- (void)setAction:(NSString *)action
+{
+	_action = action;
+	
+	if (![self.UA_dirtyProperties containsObject:@"action"])
+		[self.UA_dirtyProperties addObject:@"action"];
+}
+
+- (void)setVersion:(NSString *)version
+{
+	_version = version;
+	
+	if (![self.UA_dirtyProperties containsObject:@"version"])
+		[self.UA_dirtyProperties addObject:@"version"];
+}
+
+- (void)setDryRun:(BOOL)dryRun
+{
+	_dryRun = dryRun;
+	
+	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
+		[self.UA_dirtyProperties addObject:@"dryRun"];
+}
+
+- (void)setReservedInstancesIDs:(NSMutableArray *)reservedInstancesIDs
+{
+	_reservedInstancesIDs = reservedInstancesIDs;
+	
+	if (![self.UA_dirtyProperties containsObject:@"reservedInstancesIDs"])
+		[self.UA_dirtyProperties addObject:@"reservedInstancesIDs"];
+}
+
+- (void)setFilters:(NSMutableArray *)filters
+{
+	_filters = filters;
+	
+	if (![self.UA_dirtyProperties containsObject:@"filters"])
+		[self.UA_dirtyProperties addObject:@"filters"];
+}
+
+- (void)setOfferingType:(NSString *)offeringType
+{
+	_offeringType = offeringType;
+	
+	if (![self.UA_dirtyProperties containsObject:@"offeringType"])
+		[self.UA_dirtyProperties addObject:@"offeringType"];
+}
+
 + (NSValueTransformer *)filtersJSONTransformer
 {
-  return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
-    return [MTLValueTransformer UA_JSONTransformerForBooleanString];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)filtersQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
 - (void)addReservedInstancesID:(NSString *)reservedInstancesID
@@ -75,6 +123,7 @@
 		[self setReservedInstancesIDs:[NSMutableArray array]];
 	[self.reservedInstancesIDs addObject:reservedInstancesID];
 }
+
 - (void)addFilter:(UAEC2Filter *)filter
 {
 	if (self.filters == nil)

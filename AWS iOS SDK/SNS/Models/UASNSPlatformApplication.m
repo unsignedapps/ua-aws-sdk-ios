@@ -34,12 +34,12 @@
 
 + (NSValueTransformer *)attributesQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringDictionaryTransformerWithModelClass:[UASNSPlatformApplicationAttributes class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UASNSPlatformApplicationAttributes class]];
 }
 
 + (NSValueTransformer *)attributesXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLTransformerWithModelClass:[UASNSPlatformApplicationAttributes class]];
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UASNSPlatformApplicationAttributes class]];
 }
 
 @end

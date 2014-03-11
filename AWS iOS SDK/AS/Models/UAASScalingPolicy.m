@@ -40,7 +40,7 @@
 
 + (NSValueTransformer *)adjustmentTypeQueryStringTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
@@ -75,7 +75,7 @@
 
 + (NSValueTransformer *)alarmsQueryStringTransformer
 {
-	return [NSValueTransformer mtl_QueryStringArrayTransformerWithModelClass:[UAASAlarm class]];
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAASAlarm class]];
 }
 
 + (NSValueTransformer *)scalingAdjustmentXMLTransformer
@@ -85,12 +85,12 @@
 
 + (NSValueTransformer *)adjustmentTypeXMLTransformer
 {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
 			return @(UAASScalingPolicyAdjustmentTypeUnknown);
 
-		NSString *value = [((DDXMLElement *)nodes.firstObject) stringValue];
+		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         
@@ -129,7 +129,7 @@
 
 + (NSValueTransformer *)alarmsXMLTransformer
 {
-  return [NSValueTransformer mtl_XMLArrayTransformerWithModelClass:[UAASAlarm class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASAlarm class]];
 }
 
 + (NSValueTransformer *)minAdjustmentStepXMLTransformer
