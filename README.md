@@ -42,7 +42,7 @@ You can either either install using [CocoaPods](http://cocoapods.org) (search fo
 
 It is recommended that you only `#import` the service that you're looking to use, and not the whole SDK.
 
-```
+```objc
 #import <UAAWSSDK/UAAutoScaling.h>
 #import <UAAWSSDK/UACloudWatch.h>
 #import <UAAWSSDK/UAEC2.h>
@@ -53,7 +53,7 @@ It is recommended that you only `#import` the service that you're looking to use
 
 you can of course import the lot if you like:
 
-```
+```objc
 #import <UAAWSSDK/UAAWSSDK.h>
 ```
 
@@ -61,7 +61,7 @@ you can of course import the lot if you like:
 
 As always, you will need to know your Access Key and Secret Key to use this SDK. Likewise you need to select a region to target your requests to (otherwise we default to US-East-1). You can either supply them on a per-request basis:
 
-```
+```objc
 UAEC2DescribeInstancesRequest *request = [[UAEC2DescribeInstancesRequest alloc] init];
 [request setUA_Credentials:[[UAAWSCredentials alloc] initWithAccessKey:@"xxx" secretKey:@"yyy"]];
 [request setUA_Region:UAAWSRegionAPSoutheast2];
@@ -70,7 +70,7 @@ UAEC2DescribeInstancesRequest *request = [[UAEC2DescribeInstancesRequest alloc] 
 or, create a small authentication delegate and provide that to the UAAWSOperationQueue:
 
 in *MyAuthProvider.h*:
-```
+```objc
 #import <UAAWSSDK/UAAWSOperationAuthenticationDelegate.h>
 
 @interface MyAuthProvider : NSObject <UAAWSOperationAuthenticationDelegate>
@@ -79,7 +79,7 @@ in *MyAuthProvider.h*:
 ```
 
 and *MyAuthProvider.m*:
-```
+```objc
 #import "MyAuthProvider.h"
 
 @implementation MyAuthProvider
@@ -99,7 +99,7 @@ and *MyAuthProvider.m*:
 
 then in your code:
 
-```
+```objc
 [[UAAWSOperationQueue sharedInstance] setDelegate:[[MyAuthProvider alloc] init]];
 ```
 
@@ -109,14 +109,14 @@ The `UAAWSOperationQueue` will strongly retain its Authentication Delegate, so y
 
 To execute your requests against the AWS APIs, you need only create, and then `invoke` them:
 
-```
+```objc
 UAEC2DescribeInstancesRequest *request = [[UAEC2DescribeInstancesRequest alloc] init];
 [request invoke];
 ```
 
 Of course, that will discard the output and you won't know what happened. The preferred way is to invoke it with an owner and a completion block:
 
-```
+```objc
 UAEC2DescribeInstancesRequest *request = [[UAEC2DescribeInstancesRequest alloc] init];
 [request invokeWithOwner:self completionBlock:^(UAEC2DescribeInstancesResponse *response, NSError *error) {
     if (error != nil) {
@@ -134,7 +134,7 @@ Of course, there's one final way to execute requests if you want all of the cont
 
 All requests will extend `NSOperation`, so you can add them directly to the singleton queue that this SDK provides:
 
-```
+```objc
 [[UAAWSOperationQueue sharedInstance] addRequest:request];
 ```
 
@@ -146,7 +146,7 @@ Some requests against the AWS APIs can be long lived, or take time to execute. W
 
 A weak reference to the request's owner will be maintained and allow you to cancel operations that are no longer needed:
 
-```
+```objc
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -164,12 +164,13 @@ One of the features that is great in the AWS SDK for PHP is the concept of waite
 Not all changes you make in AWS via the APIs occur instantly. For instance, it takes time to stop an EC2 Instance, or to create an EC2 Image of an instance. In this SDK, you can use  `-waitWithOwner:untilValueAtKeyPath:isInArray:completionBlock:` to let the SDK poll the API for you until the conditions are met. *Note: waiting requests will not block others requests, a copy is made and given to a NSTimer on the main thread to be inserted back into the queue at the configured interval.*
 
 For example, in respond to a `UAEC2StartInstancesRequest` request, you could use a `UAEC2DescribeInstancesRequest` to wait until that instance has reached a *Running* state:
-```
+```objc
 UAEC2DescribeInstancesRequest *request = [[UAEC2DescribeInstancesRequest alloc] init];
 [request addInstanceID:@"i-12345678"];
 [request waitWithOwner:self
-untilValueAtKeyPath:@"reservations.@unionOfObjects.instances.@unionOfObjects.state"
-isInArray:@[ @(UAEC2InstanceStateRunning) ] completionBlock:^(UAEC2DescribeInstancesResponse *response, NSError *error)
+   untilValueAtKeyPath:@"reservations.@unionOfObjects.instances.@unionOfObjects.state"
+             isInArray:@[ @(UAEC2InstanceStateRunning) ]
+       completionBlock:^(UAEC2DescribeInstancesResponse *response, NSError *error)
 {
     if (error != nil) {
         // do something with the error
