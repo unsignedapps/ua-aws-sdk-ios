@@ -57,6 +57,15 @@ you can of course import the lot if you like:
 #import <UAAWSSDK/UAAWSSDK.h>
 ```
 
+When installing via CocoaPods, you can use subspecs to limit the installation to specific services:
+
+```ruby
+platform :ios, '7.0'
+
+pod 'UAAWSSDK/EC2'
+pod 'UAAWSSDK/CW'
+```
+
 ## Authentication and Region selection
 
 As always, you will need to know your Access Key and Secret Key to use this SDK. Likewise you need to select a region to target your requests to (otherwise we default to US-East-1). You can either supply them on a per-request basis:
@@ -150,7 +159,7 @@ A weak reference to the request's owner will be maintained and allow you to canc
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+
     [[UAAWSOperationQueue sharedInstance] cancelAllRequestsForOwner:self];
 }
 ```
