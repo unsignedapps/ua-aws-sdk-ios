@@ -3,6 +3,8 @@
 
 This is a port of the [AWS iOS SDK for PHP](https://github.com/aws/aws-sdk-php) to Objective-C. It is designed for increased coverage of the official AWS SDK for iOS (eventually), and for the improved usage of queuing and blocks for handling responses.
 
+*Note: This is pre-release software and as such is subject to changes that may break backwards compatibility. Particularly, not all enums have been set for EC2-related objects yet.*
+
 ## Advantages
 
 The Unsigned Apps Edition has the following advantages over the official AWS SDK for iOS:
