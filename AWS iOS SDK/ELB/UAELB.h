@@ -36,6 +36,7 @@
 #import "UAELBSetLoadBalancerPoliciesOfListenerRequest.h"
 
 // Models
+#import "UAELBAccessLog.h"
 #import "UAELBAppCookieStickinessPolicy.h"
 #import "UAELBBackendServerDescription.h"
 #import "UAELBHealthCheck.h"
