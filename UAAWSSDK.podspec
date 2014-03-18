@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
     ss.source_files = 'Vendor/**/**/*.{h,m}', 'Vendor/**/*.{h,m}', 'AWS iOS SDK/UAAWSSDK.h', 'AWS iOS SDK/Common/*.{h,m}', 'AWS iOS SDK/Extensions/*.{h,m}'
   end
 
-  %w[ AS AWSServiceHealth CW EC2 ELB IAM SNS ].each do |name|
+  %w[ AS AWSServiceHealth CW EC2 ELB IAM SNS SQS ].each do |name|
     s.subspec name do |ss|
       ss.source_files = "AWS iOS SDK/#{name}/*.{h,m}", "AWS iOS SDK/#{name}/**/*.{h,m}"
       ss.dependency 'UAAWSSDK/Common'
