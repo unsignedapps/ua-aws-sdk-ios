@@ -146,7 +146,7 @@
 
 #pragma mark - Dictionary Transforming
 
-+ (NSValueTransformer *)UA_JSONKeyValueTransformer
++ (NSValueTransformer *)UA_JSONKeyValueTransformerWithKeyName:(NSString *)keyName valueName:(NSString *)valueName
 {
     return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSDictionary *(id input)
     {
@@ -157,7 +157,7 @@
         {
             NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
             for (NSDictionary *item in (NSArray *)input)
-                [dictionary setObject:[item objectForKey:@"value"] forKey:[item objectForKey:@"key"]];
+                [dictionary setObject:[item objectForKey:valueName] forKey:[item objectForKey:keYName]];
             return [dictionary copy];
         }
         
@@ -167,12 +167,12 @@
     {
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[dictionary count]];
         for (NSString *key in dictionary)
-            [array addObject:@{ @"key": key, @"value": [dictionary objectForKey:key] }];
+            [array addObject:@{ keyName: key, valueName: [dictionary objectForKey:key] }];
         return [array copy];
     }];
 }
 
-+ (NSValueTransformer *)UA_XMLKeyValueTransformer
++ (NSValueTransformer *)UA_XMLKeyValueTransformerWithKeyName:(NSString *)keyName valueName:(NSString *)valueName
 {
     return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSDictionary *(NSArray *nodes)
     {
@@ -190,7 +190,7 @@
             UADDXMLNode *first = children[0];
             UADDXMLNode *second = children[1];
             
-            if ([first.localName isEqualToString:@"key"])
+            if ([first.localName isEqualToString:keyName])
                 [dictionary setObject:[second stringValue] forKey:[first stringValue]];
             else
                 [dictionary setObject:[first stringValue] forKey:[second stringValue]];
@@ -201,7 +201,7 @@
     {
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[dictionary count]];
         for (NSString *key in dictionary)
-            [array addObject:@{ @"key": key, @"value": [dictionary objectForKey:key] }];
+            [array addObject:@{ keyName: key, valueName: [dictionary objectForKey:key] }];
         return [array copy];
     }];
 }

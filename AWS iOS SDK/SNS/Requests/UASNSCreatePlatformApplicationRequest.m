@@ -133,7 +133,7 @@
 
 + (NSValueTransformer *)attributesJSONTransformer
 {
-    return [NSValueTransformer UA_JSONKeyValueTransformer];
+    return [NSValueTransformer UA_JSONKeyValueTransformerWithKeyName:@"key" valueName:@"value"];
 }
 
 + (NSValueTransformer *)platformQueryStringTransformer
@@ -177,7 +177,7 @@
 
 + (NSValueTransformer *)attributesQueryStringTransformer
 {
-    return [NSValueTransformer UA_JSONKeyValueTransformer];
+    return [NSValueTransformer UA_JSONKeyValueTransformerWithKeyName:@"key" valueName:@"value"];
 }
 
 #pragma mark - Invocation
