@@ -7,7 +7,12 @@
 //
 
 #import "UAASError.h"
+
+#ifdef UA_COMPILED_FRAMEWORK
+#import <UAAWSCommon/UAAWSRequest.h>
+#else
 #import "UAAWSRequest.h"
+#endif
 
 @implementation UAASError
 

@@ -6,8 +6,13 @@
 //
 //
 
+#ifdef UA_COMPILED_FRAMEWORK
+#import <UAAWSCommon/UAMantle.h>
+#import <UAAWSCommon/UAAWSError.h>
+#else
 #import "UAMantle.h"
 #import "UAAWSError.h"
+#endif
 
 @interface UAASError : UAMTLModel <UAMTLXMLSerializing, UAAWSError>
 
