@@ -922,6 +922,53 @@
 		A3E01C4018AD93E900C3B7DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C1F18AD93E900C3B7DB /* Foundation.framework */; };
 		A3E01C4118AD93E900C3B7DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2318AD93E900C3B7DB /* UIKit.framework */; };
 		A3E01C4918AD93E900C3B7DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3E01C4718AD93E900C3B7DB /* InfoPlist.strings */; };
+		A3F8137D18D8046E00767D9F /* UASQSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8137218D8046E00767D9F /* UASQSModel.m */; };
+		A3F8137E18D8046E00767D9F /* UASQSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8137518D8046E00767D9F /* UASQSRequest.m */; };
+		A3F8137F18D8046E00767D9F /* UASQSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8137818D8046E00767D9F /* UASQSResponse.m */; };
+		A3F8138018D8046E00767D9F /* UASQSError.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8137C18D8046E00767D9F /* UASQSError.m */; };
+		A3F8139B18D807E400767D9F /* UASQSBatchResultError.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8138218D807E400767D9F /* UASQSBatchResultError.m */; };
+		A3F8139C18D807E400767D9F /* UASQSBatchResultErrorEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8138418D807E400767D9F /* UASQSBatchResultErrorEntry.m */; };
+		A3F8139D18D807E400767D9F /* UASQSChangeMessageVisibilityBatchRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8138618D807E400767D9F /* UASQSChangeMessageVisibilityBatchRequestEntry.m */; };
+		A3F8139E18D807E400767D9F /* UASQSChangeMessageVisibilityBatchResultEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8138818D807E400767D9F /* UASQSChangeMessageVisibilityBatchResultEntry.m */; };
+		A3F813A018D807E400767D9F /* UASQSDeleteMessageBatchRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8138C18D807E400767D9F /* UASQSDeleteMessageBatchRequestEntry.m */; };
+		A3F813A118D807E400767D9F /* UASQSDeleteMessageBatchResultEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8138E18D807E400767D9F /* UASQSDeleteMessageBatchResultEntry.m */; };
+		A3F813A318D807E400767D9F /* UASQSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8139218D807E400767D9F /* UASQSMessage.m */; };
+		A3F813A618D807E400767D9F /* UASQSSendMessageBatchRequestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8139818D807E400767D9F /* UASQSSendMessageBatchRequestEntry.m */; };
+		A3F813A718D807E400767D9F /* UASQSSendMessageBatchResultEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8139A18D807E400767D9F /* UASQSSendMessageBatchResultEntry.m */; };
+		A3F813C818D807F100767D9F /* UASQSAddPermissionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813A918D807F100767D9F /* UASQSAddPermissionRequest.m */; };
+		A3F813C918D807F100767D9F /* UASQSChangeMessageVisibilityBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813AB18D807F100767D9F /* UASQSChangeMessageVisibilityBatchRequest.m */; };
+		A3F813CA18D807F100767D9F /* UASQSChangeMessageVisibilityRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813AD18D807F100767D9F /* UASQSChangeMessageVisibilityRequest.m */; };
+		A3F813CB18D807F100767D9F /* UASQSCreateQueueRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813AF18D807F100767D9F /* UASQSCreateQueueRequest.m */; };
+		A3F813CC18D807F100767D9F /* UASQSDeleteMessageBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813B118D807F100767D9F /* UASQSDeleteMessageBatchRequest.m */; };
+		A3F813CD18D807F100767D9F /* UASQSDeleteMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813B318D807F100767D9F /* UASQSDeleteMessageRequest.m */; };
+		A3F813CE18D807F100767D9F /* UASQSDeleteQueueRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813B518D807F100767D9F /* UASQSDeleteQueueRequest.m */; };
+		A3F813CF18D807F100767D9F /* UASQSGetQueueAttributesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813B718D807F100767D9F /* UASQSGetQueueAttributesRequest.m */; };
+		A3F813D018D807F100767D9F /* UASQSGetQueueUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813B918D807F100767D9F /* UASQSGetQueueUrlRequest.m */; };
+		A3F813D118D807F100767D9F /* UASQSListDeadLetterSourceQueuesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813BB18D807F100767D9F /* UASQSListDeadLetterSourceQueuesRequest.m */; };
+		A3F813D218D807F100767D9F /* UASQSListQueuesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813BD18D807F100767D9F /* UASQSListQueuesRequest.m */; };
+		A3F813D318D807F100767D9F /* UASQSReceiveMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813BF18D807F100767D9F /* UASQSReceiveMessageRequest.m */; };
+		A3F813D418D807F100767D9F /* UASQSRemovePermissionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813C118D807F100767D9F /* UASQSRemovePermissionRequest.m */; };
+		A3F813D518D807F100767D9F /* UASQSSendMessageBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813C318D807F100767D9F /* UASQSSendMessageBatchRequest.m */; };
+		A3F813D618D807F100767D9F /* UASQSSendMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813C518D807F100767D9F /* UASQSSendMessageRequest.m */; };
+		A3F813D718D807F100767D9F /* UASQSSetQueueAttributesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813C718D807F100767D9F /* UASQSSetQueueAttributesRequest.m */; };
+		A3F813F018D807FA00767D9F /* UASQSAddPermissionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813D918D807FA00767D9F /* UASQSAddPermissionResponse.m */; };
+		A3F813F118D807FA00767D9F /* UASQSChangeMessageVisibilityBatchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813DB18D807FA00767D9F /* UASQSChangeMessageVisibilityBatchResponse.m */; };
+		A3F813F218D807FA00767D9F /* UASQSChangeMessageVisibilityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813DD18D807FA00767D9F /* UASQSChangeMessageVisibilityResponse.m */; };
+		A3F813F318D807FA00767D9F /* UASQSCreateQueueResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813DF18D807FA00767D9F /* UASQSCreateQueueResponse.m */; };
+		A3F813F418D807FA00767D9F /* UASQSDeleteMessageBatchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813E118D807FA00767D9F /* UASQSDeleteMessageBatchResponse.m */; };
+		A3F813F518D807FA00767D9F /* UASQSGetQueueAttributesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813E318D807FA00767D9F /* UASQSGetQueueAttributesResponse.m */; };
+		A3F813F618D807FA00767D9F /* UASQSGetQueueUrlResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813E518D807FA00767D9F /* UASQSGetQueueUrlResponse.m */; };
+		A3F813F718D807FA00767D9F /* UASQSListDeadLetterSourceQueuesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813E718D807FA00767D9F /* UASQSListDeadLetterSourceQueuesResponse.m */; };
+		A3F813F818D807FA00767D9F /* UASQSListQueuesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813E918D807FA00767D9F /* UASQSListQueuesResponse.m */; };
+		A3F813F918D807FA00767D9F /* UASQSReceiveMessageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813EB18D807FA00767D9F /* UASQSReceiveMessageResponse.m */; };
+		A3F813FA18D807FA00767D9F /* UASQSSendMessageBatchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813ED18D807FA00767D9F /* UASQSSendMessageBatchResponse.m */; };
+		A3F813FB18D807FA00767D9F /* UASQSSendMessageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813EF18D807FA00767D9F /* UASQSSendMessageResponse.m */; };
+		A3F813FE18D80D8000767D9F /* UASQSSetQueueAttributesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F813FD18D80D8000767D9F /* UASQSSetQueueAttributesResponse.m */; };
+		A3F8140518D80DDB00767D9F /* UASQSDeleteMessageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8140018D80DDB00767D9F /* UASQSDeleteMessageResponse.m */; };
+		A3F8140618D80DDB00767D9F /* UASQSDeleteQueueResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8140218D80DDB00767D9F /* UASQSDeleteQueueResponse.m */; };
+		A3F8140718D80DDB00767D9F /* UASQSRemovePermissionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8140418D80DDB00767D9F /* UASQSRemovePermissionResponse.m */; };
+		A3F8140A18D80E2300767D9F /* UAELBAccessLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8140918D80E2300767D9F /* UAELBAccessLog.m */; };
+		A3F8140E18D80ED200767D9F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140D18D80ED200767D9F /* libxml2.dylib */; };
 		E85464E918CF0F0D00CC2E3C /* UADDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B018CF0F0D00CC2E3C /* UADDXMLElementAdditions.m */; };
 		E85464EA18CF0F0D00CC2E3C /* NSString+UADDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B318CF0F0D00CC2E3C /* NSString+UADDXML.m */; };
 		E85464EB18CF0F0D00CC2E3C /* UADDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B818CF0F0D00CC2E3C /* UADDXMLDocument.m */; };
@@ -963,7 +1010,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2DEC3C3259B4479DBA795A14 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A30FD19F18AD96D000CA52F7 /* UAASDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAASDataTypes.h; sourceTree = "<group>"; };
 		A30FD1A018AD96D000CA52F7 /* UAASError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAASError.h; sourceTree = "<group>"; };
 		A30FD1A118AD96D000CA52F7 /* UAASError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAASError.m; sourceTree = "<group>"; };
@@ -2800,6 +2846,102 @@
 		A3E01C3E18AD93E900C3B7DB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A3E01C4618AD93E900C3B7DB /* AWS iOS SDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AWS iOS SDKTests-Info.plist"; sourceTree = "<group>"; };
 		A3E01C4818AD93E900C3B7DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3F8137118D8046E00767D9F /* UASQSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSModel.h; sourceTree = "<group>"; };
+		A3F8137218D8046E00767D9F /* UASQSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSModel.m; sourceTree = "<group>"; };
+		A3F8137418D8046E00767D9F /* UASQSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSRequest.h; sourceTree = "<group>"; };
+		A3F8137518D8046E00767D9F /* UASQSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSRequest.m; sourceTree = "<group>"; };
+		A3F8137718D8046E00767D9F /* UASQSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSResponse.h; sourceTree = "<group>"; };
+		A3F8137818D8046E00767D9F /* UASQSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSResponse.m; sourceTree = "<group>"; };
+		A3F8137918D8046E00767D9F /* UASQS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQS.h; sourceTree = "<group>"; };
+		A3F8137A18D8046E00767D9F /* UASQSDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSDataTypes.h; sourceTree = "<group>"; };
+		A3F8137B18D8046E00767D9F /* UASQSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSError.h; sourceTree = "<group>"; };
+		A3F8137C18D8046E00767D9F /* UASQSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSError.m; sourceTree = "<group>"; };
+		A3F8138118D807E400767D9F /* UASQSBatchResultError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSBatchResultError.h; sourceTree = "<group>"; };
+		A3F8138218D807E400767D9F /* UASQSBatchResultError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSBatchResultError.m; sourceTree = "<group>"; };
+		A3F8138318D807E400767D9F /* UASQSBatchResultErrorEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSBatchResultErrorEntry.h; sourceTree = "<group>"; };
+		A3F8138418D807E400767D9F /* UASQSBatchResultErrorEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSBatchResultErrorEntry.m; sourceTree = "<group>"; };
+		A3F8138518D807E400767D9F /* UASQSChangeMessageVisibilityBatchRequestEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSChangeMessageVisibilityBatchRequestEntry.h; sourceTree = "<group>"; };
+		A3F8138618D807E400767D9F /* UASQSChangeMessageVisibilityBatchRequestEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSChangeMessageVisibilityBatchRequestEntry.m; sourceTree = "<group>"; };
+		A3F8138718D807E400767D9F /* UASQSChangeMessageVisibilityBatchResultEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSChangeMessageVisibilityBatchResultEntry.h; sourceTree = "<group>"; };
+		A3F8138818D807E400767D9F /* UASQSChangeMessageVisibilityBatchResultEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSChangeMessageVisibilityBatchResultEntry.m; sourceTree = "<group>"; };
+		A3F8138B18D807E400767D9F /* UASQSDeleteMessageBatchRequestEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSDeleteMessageBatchRequestEntry.h; sourceTree = "<group>"; };
+		A3F8138C18D807E400767D9F /* UASQSDeleteMessageBatchRequestEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSDeleteMessageBatchRequestEntry.m; sourceTree = "<group>"; };
+		A3F8138D18D807E400767D9F /* UASQSDeleteMessageBatchResultEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSDeleteMessageBatchResultEntry.h; sourceTree = "<group>"; };
+		A3F8138E18D807E400767D9F /* UASQSDeleteMessageBatchResultEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSDeleteMessageBatchResultEntry.m; sourceTree = "<group>"; };
+		A3F8139118D807E400767D9F /* UASQSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSMessage.h; sourceTree = "<group>"; };
+		A3F8139218D807E400767D9F /* UASQSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSMessage.m; sourceTree = "<group>"; };
+		A3F8139718D807E400767D9F /* UASQSSendMessageBatchRequestEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSSendMessageBatchRequestEntry.h; sourceTree = "<group>"; };
+		A3F8139818D807E400767D9F /* UASQSSendMessageBatchRequestEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSSendMessageBatchRequestEntry.m; sourceTree = "<group>"; };
+		A3F8139918D807E400767D9F /* UASQSSendMessageBatchResultEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSSendMessageBatchResultEntry.h; sourceTree = "<group>"; };
+		A3F8139A18D807E400767D9F /* UASQSSendMessageBatchResultEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSSendMessageBatchResultEntry.m; sourceTree = "<group>"; };
+		A3F813A818D807F100767D9F /* UASQSAddPermissionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSAddPermissionRequest.h; sourceTree = "<group>"; };
+		A3F813A918D807F100767D9F /* UASQSAddPermissionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSAddPermissionRequest.m; sourceTree = "<group>"; };
+		A3F813AA18D807F100767D9F /* UASQSChangeMessageVisibilityBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSChangeMessageVisibilityBatchRequest.h; sourceTree = "<group>"; };
+		A3F813AB18D807F100767D9F /* UASQSChangeMessageVisibilityBatchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSChangeMessageVisibilityBatchRequest.m; sourceTree = "<group>"; };
+		A3F813AC18D807F100767D9F /* UASQSChangeMessageVisibilityRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSChangeMessageVisibilityRequest.h; sourceTree = "<group>"; };
+		A3F813AD18D807F100767D9F /* UASQSChangeMessageVisibilityRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSChangeMessageVisibilityRequest.m; sourceTree = "<group>"; };
+		A3F813AE18D807F100767D9F /* UASQSCreateQueueRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSCreateQueueRequest.h; sourceTree = "<group>"; };
+		A3F813AF18D807F100767D9F /* UASQSCreateQueueRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSCreateQueueRequest.m; sourceTree = "<group>"; };
+		A3F813B018D807F100767D9F /* UASQSDeleteMessageBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSDeleteMessageBatchRequest.h; sourceTree = "<group>"; };
+		A3F813B118D807F100767D9F /* UASQSDeleteMessageBatchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSDeleteMessageBatchRequest.m; sourceTree = "<group>"; };
+		A3F813B218D807F100767D9F /* UASQSDeleteMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSDeleteMessageRequest.h; sourceTree = "<group>"; };
+		A3F813B318D807F100767D9F /* UASQSDeleteMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSDeleteMessageRequest.m; sourceTree = "<group>"; };
+		A3F813B418D807F100767D9F /* UASQSDeleteQueueRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSDeleteQueueRequest.h; sourceTree = "<group>"; };
+		A3F813B518D807F100767D9F /* UASQSDeleteQueueRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSDeleteQueueRequest.m; sourceTree = "<group>"; };
+		A3F813B618D807F100767D9F /* UASQSGetQueueAttributesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSGetQueueAttributesRequest.h; sourceTree = "<group>"; };
+		A3F813B718D807F100767D9F /* UASQSGetQueueAttributesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSGetQueueAttributesRequest.m; sourceTree = "<group>"; };
+		A3F813B818D807F100767D9F /* UASQSGetQueueUrlRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSGetQueueUrlRequest.h; sourceTree = "<group>"; };
+		A3F813B918D807F100767D9F /* UASQSGetQueueUrlRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSGetQueueUrlRequest.m; sourceTree = "<group>"; };
+		A3F813BA18D807F100767D9F /* UASQSListDeadLetterSourceQueuesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSListDeadLetterSourceQueuesRequest.h; sourceTree = "<group>"; };
+		A3F813BB18D807F100767D9F /* UASQSListDeadLetterSourceQueuesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSListDeadLetterSourceQueuesRequest.m; sourceTree = "<group>"; };
+		A3F813BC18D807F100767D9F /* UASQSListQueuesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSListQueuesRequest.h; sourceTree = "<group>"; };
+		A3F813BD18D807F100767D9F /* UASQSListQueuesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSListQueuesRequest.m; sourceTree = "<group>"; };
+		A3F813BE18D807F100767D9F /* UASQSReceiveMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSReceiveMessageRequest.h; sourceTree = "<group>"; };
+		A3F813BF18D807F100767D9F /* UASQSReceiveMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSReceiveMessageRequest.m; sourceTree = "<group>"; };
+		A3F813C018D807F100767D9F /* UASQSRemovePermissionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSRemovePermissionRequest.h; sourceTree = "<group>"; };
+		A3F813C118D807F100767D9F /* UASQSRemovePermissionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSRemovePermissionRequest.m; sourceTree = "<group>"; };
+		A3F813C218D807F100767D9F /* UASQSSendMessageBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSSendMessageBatchRequest.h; sourceTree = "<group>"; };
+		A3F813C318D807F100767D9F /* UASQSSendMessageBatchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSSendMessageBatchRequest.m; sourceTree = "<group>"; };
+		A3F813C418D807F100767D9F /* UASQSSendMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSSendMessageRequest.h; sourceTree = "<group>"; };
+		A3F813C518D807F100767D9F /* UASQSSendMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSSendMessageRequest.m; sourceTree = "<group>"; };
+		A3F813C618D807F100767D9F /* UASQSSetQueueAttributesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSSetQueueAttributesRequest.h; sourceTree = "<group>"; };
+		A3F813C718D807F100767D9F /* UASQSSetQueueAttributesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSSetQueueAttributesRequest.m; sourceTree = "<group>"; };
+		A3F813D818D807FA00767D9F /* UASQSAddPermissionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSAddPermissionResponse.h; sourceTree = "<group>"; };
+		A3F813D918D807FA00767D9F /* UASQSAddPermissionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSAddPermissionResponse.m; sourceTree = "<group>"; };
+		A3F813DA18D807FA00767D9F /* UASQSChangeMessageVisibilityBatchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSChangeMessageVisibilityBatchResponse.h; sourceTree = "<group>"; };
+		A3F813DB18D807FA00767D9F /* UASQSChangeMessageVisibilityBatchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSChangeMessageVisibilityBatchResponse.m; sourceTree = "<group>"; };
+		A3F813DC18D807FA00767D9F /* UASQSChangeMessageVisibilityResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSChangeMessageVisibilityResponse.h; sourceTree = "<group>"; };
+		A3F813DD18D807FA00767D9F /* UASQSChangeMessageVisibilityResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSChangeMessageVisibilityResponse.m; sourceTree = "<group>"; };
+		A3F813DE18D807FA00767D9F /* UASQSCreateQueueResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSCreateQueueResponse.h; sourceTree = "<group>"; };
+		A3F813DF18D807FA00767D9F /* UASQSCreateQueueResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSCreateQueueResponse.m; sourceTree = "<group>"; };
+		A3F813E018D807FA00767D9F /* UASQSDeleteMessageBatchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSDeleteMessageBatchResponse.h; sourceTree = "<group>"; };
+		A3F813E118D807FA00767D9F /* UASQSDeleteMessageBatchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSDeleteMessageBatchResponse.m; sourceTree = "<group>"; };
+		A3F813E218D807FA00767D9F /* UASQSGetQueueAttributesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSGetQueueAttributesResponse.h; sourceTree = "<group>"; };
+		A3F813E318D807FA00767D9F /* UASQSGetQueueAttributesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSGetQueueAttributesResponse.m; sourceTree = "<group>"; };
+		A3F813E418D807FA00767D9F /* UASQSGetQueueUrlResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSGetQueueUrlResponse.h; sourceTree = "<group>"; };
+		A3F813E518D807FA00767D9F /* UASQSGetQueueUrlResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSGetQueueUrlResponse.m; sourceTree = "<group>"; };
+		A3F813E618D807FA00767D9F /* UASQSListDeadLetterSourceQueuesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSListDeadLetterSourceQueuesResponse.h; sourceTree = "<group>"; };
+		A3F813E718D807FA00767D9F /* UASQSListDeadLetterSourceQueuesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSListDeadLetterSourceQueuesResponse.m; sourceTree = "<group>"; };
+		A3F813E818D807FA00767D9F /* UASQSListQueuesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSListQueuesResponse.h; sourceTree = "<group>"; };
+		A3F813E918D807FA00767D9F /* UASQSListQueuesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSListQueuesResponse.m; sourceTree = "<group>"; };
+		A3F813EA18D807FA00767D9F /* UASQSReceiveMessageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSReceiveMessageResponse.h; sourceTree = "<group>"; };
+		A3F813EB18D807FA00767D9F /* UASQSReceiveMessageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSReceiveMessageResponse.m; sourceTree = "<group>"; };
+		A3F813EC18D807FA00767D9F /* UASQSSendMessageBatchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSSendMessageBatchResponse.h; sourceTree = "<group>"; };
+		A3F813ED18D807FA00767D9F /* UASQSSendMessageBatchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSSendMessageBatchResponse.m; sourceTree = "<group>"; };
+		A3F813EE18D807FA00767D9F /* UASQSSendMessageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSSendMessageResponse.h; sourceTree = "<group>"; };
+		A3F813EF18D807FA00767D9F /* UASQSSendMessageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSSendMessageResponse.m; sourceTree = "<group>"; };
+		A3F813FC18D80D8000767D9F /* UASQSSetQueueAttributesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSSetQueueAttributesResponse.h; sourceTree = "<group>"; };
+		A3F813FD18D80D8000767D9F /* UASQSSetQueueAttributesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSSetQueueAttributesResponse.m; sourceTree = "<group>"; };
+		A3F813FF18D80DDB00767D9F /* UASQSDeleteMessageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSDeleteMessageResponse.h; sourceTree = "<group>"; };
+		A3F8140018D80DDB00767D9F /* UASQSDeleteMessageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSDeleteMessageResponse.m; sourceTree = "<group>"; };
+		A3F8140118D80DDB00767D9F /* UASQSDeleteQueueResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSDeleteQueueResponse.h; sourceTree = "<group>"; };
+		A3F8140218D80DDB00767D9F /* UASQSDeleteQueueResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSDeleteQueueResponse.m; sourceTree = "<group>"; };
+		A3F8140318D80DDB00767D9F /* UASQSRemovePermissionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UASQSRemovePermissionResponse.h; sourceTree = "<group>"; };
+		A3F8140418D80DDB00767D9F /* UASQSRemovePermissionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSRemovePermissionResponse.m; sourceTree = "<group>"; };
+		A3F8140818D80E2300767D9F /* UAELBAccessLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAELBAccessLog.h; sourceTree = "<group>"; };
+		A3F8140918D80E2300767D9F /* UAELBAccessLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAELBAccessLog.m; sourceTree = "<group>"; };
+		A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		A3F8140D18D80ED200767D9F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		AE8AD1DDD4B44EA6B687ABB0 /* Pods-AWS iOS SDKTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWS iOS SDKTests.xcconfig"; path = "Pods/Pods-AWS iOS SDKTests.xcconfig"; sourceTree = "<group>"; };
 		D7E3239524A74BCA8C929A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85464AF18CF0F0D00CC2E3C /* UADDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXMLElementAdditions.h; sourceTree = "<group>"; };
@@ -2871,6 +3013,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F8140E18D80ED200767D9F /* libxml2.dylib in Frameworks */,
 				A3E01C2218AD93E900C3B7DB /* CoreGraphics.framework in Frameworks */,
 				A3E01C2418AD93E900C3B7DB /* UIKit.framework in Frameworks */,
 				A3E01C2018AD93E900C3B7DB /* Foundation.framework in Frameworks */,
@@ -3308,6 +3451,8 @@
 		A30FD1E618AD96D000CA52F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A3F8140818D80E2300767D9F /* UAELBAccessLog.h */,
+				A3F8140918D80E2300767D9F /* UAELBAccessLog.m */,
 				A337796718ADA32000FECC45 /* UAELBAppCookieStickinessPolicy.h */,
 				A337796818ADA32000FECC45 /* UAELBAppCookieStickinessPolicy.m */,
 				A337796918ADA32000FECC45 /* UAELBBackendServerDescription.h */,
@@ -3328,6 +3473,8 @@
 				A337797818ADA32000FECC45 /* UAELBLoadBalancerAttributes.m */,
 				A337797918ADA32000FECC45 /* UAELBLoadBalancerDescription.h */,
 				A337797A18ADA32000FECC45 /* UAELBLoadBalancerDescription.m */,
+				A30FD1E718AD96D000CA52F7 /* UAELBModel.h */,
+				A30FD1E818AD96D000CA52F7 /* UAELBModel.m */,
 				A337797B18ADA32000FECC45 /* UAELBPolicies.h */,
 				A337797C18ADA32000FECC45 /* UAELBPolicies.m */,
 				A337797D18ADA32000FECC45 /* UAELBPolicyAttribute.h */,
@@ -3342,8 +3489,6 @@
 				A337798618ADA32000FECC45 /* UAELBPolicyTypeDescription.m */,
 				A337798718ADA32000FECC45 /* UAELBSourceSecurityGroup.h */,
 				A337798818ADA32000FECC45 /* UAELBSourceSecurityGroup.m */,
-				A30FD1E718AD96D000CA52F7 /* UAELBModel.h */,
-				A30FD1E818AD96D000CA52F7 /* UAELBModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -5109,7 +5254,6 @@
 				E85464AC18CF0F0D00CC2E3C /* Vendor */,
 				A3E01C1E18AD93E900C3B7DB /* Frameworks */,
 				A3E01C1D18AD93E900C3B7DB /* Products */,
-				2DEC3C3259B4479DBA795A14 /* Pods.xcconfig */,
 				AE8AD1DDD4B44EA6B687ABB0 /* Pods-AWS iOS SDKTests.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -5126,6 +5270,8 @@
 		A3E01C1E18AD93E900C3B7DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3F8140D18D80ED200767D9F /* libxml2.dylib */,
+				A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */,
 				A3E01C1F18AD93E900C3B7DB /* Foundation.framework */,
 				A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */,
 				A3E01C2318AD93E900C3B7DB /* UIKit.framework */,
@@ -5149,6 +5295,7 @@
 				A337806C18B18D2700FECC45 /* IAM */,
 				A30FD1EF18AD96D000CA52F7 /* Extensions */,
 				A30FD1FE18AD96D000CA52F7 /* SNS */,
+				A3F8136F18D8046E00767D9F /* SQS */,
 				A3E01C2E18AD93E900C3B7DB /* UAAppDelegate.h */,
 				A3E01C2F18AD93E900C3B7DB /* UAAppDelegate.m */,
 				A3E01C3118AD93E900C3B7DB /* Main.storyboard */,
@@ -5191,6 +5338,129 @@
 				A3E01C4718AD93E900C3B7DB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A3F8136F18D8046E00767D9F /* SQS */ = {
+			isa = PBXGroup;
+			children = (
+				A3F8137018D8046E00767D9F /* Models */,
+				A3F8137318D8046E00767D9F /* Requests */,
+				A3F8137618D8046E00767D9F /* Responses */,
+				A3F8137918D8046E00767D9F /* UASQS.h */,
+				A3F8137A18D8046E00767D9F /* UASQSDataTypes.h */,
+				A3F8137B18D8046E00767D9F /* UASQSError.h */,
+				A3F8137C18D8046E00767D9F /* UASQSError.m */,
+			);
+			path = SQS;
+			sourceTree = "<group>";
+		};
+		A3F8137018D8046E00767D9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A3F8138118D807E400767D9F /* UASQSBatchResultError.h */,
+				A3F8138218D807E400767D9F /* UASQSBatchResultError.m */,
+				A3F8138318D807E400767D9F /* UASQSBatchResultErrorEntry.h */,
+				A3F8138418D807E400767D9F /* UASQSBatchResultErrorEntry.m */,
+				A3F8138518D807E400767D9F /* UASQSChangeMessageVisibilityBatchRequestEntry.h */,
+				A3F8138618D807E400767D9F /* UASQSChangeMessageVisibilityBatchRequestEntry.m */,
+				A3F8138718D807E400767D9F /* UASQSChangeMessageVisibilityBatchResultEntry.h */,
+				A3F8138818D807E400767D9F /* UASQSChangeMessageVisibilityBatchResultEntry.m */,
+				A3F8138B18D807E400767D9F /* UASQSDeleteMessageBatchRequestEntry.h */,
+				A3F8138C18D807E400767D9F /* UASQSDeleteMessageBatchRequestEntry.m */,
+				A3F8138D18D807E400767D9F /* UASQSDeleteMessageBatchResultEntry.h */,
+				A3F8138E18D807E400767D9F /* UASQSDeleteMessageBatchResultEntry.m */,
+				A3F8139118D807E400767D9F /* UASQSMessage.h */,
+				A3F8139218D807E400767D9F /* UASQSMessage.m */,
+				A3F8137118D8046E00767D9F /* UASQSModel.h */,
+				A3F8137218D8046E00767D9F /* UASQSModel.m */,
+				A3F8139718D807E400767D9F /* UASQSSendMessageBatchRequestEntry.h */,
+				A3F8139818D807E400767D9F /* UASQSSendMessageBatchRequestEntry.m */,
+				A3F8139918D807E400767D9F /* UASQSSendMessageBatchResultEntry.h */,
+				A3F8139A18D807E400767D9F /* UASQSSendMessageBatchResultEntry.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3F8137318D8046E00767D9F /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A3F813A818D807F100767D9F /* UASQSAddPermissionRequest.h */,
+				A3F813A918D807F100767D9F /* UASQSAddPermissionRequest.m */,
+				A3F813AA18D807F100767D9F /* UASQSChangeMessageVisibilityBatchRequest.h */,
+				A3F813AB18D807F100767D9F /* UASQSChangeMessageVisibilityBatchRequest.m */,
+				A3F813AC18D807F100767D9F /* UASQSChangeMessageVisibilityRequest.h */,
+				A3F813AD18D807F100767D9F /* UASQSChangeMessageVisibilityRequest.m */,
+				A3F813AE18D807F100767D9F /* UASQSCreateQueueRequest.h */,
+				A3F813AF18D807F100767D9F /* UASQSCreateQueueRequest.m */,
+				A3F813B018D807F100767D9F /* UASQSDeleteMessageBatchRequest.h */,
+				A3F813B118D807F100767D9F /* UASQSDeleteMessageBatchRequest.m */,
+				A3F813B218D807F100767D9F /* UASQSDeleteMessageRequest.h */,
+				A3F813B318D807F100767D9F /* UASQSDeleteMessageRequest.m */,
+				A3F813B418D807F100767D9F /* UASQSDeleteQueueRequest.h */,
+				A3F813B518D807F100767D9F /* UASQSDeleteQueueRequest.m */,
+				A3F813B618D807F100767D9F /* UASQSGetQueueAttributesRequest.h */,
+				A3F813B718D807F100767D9F /* UASQSGetQueueAttributesRequest.m */,
+				A3F813B818D807F100767D9F /* UASQSGetQueueUrlRequest.h */,
+				A3F813B918D807F100767D9F /* UASQSGetQueueUrlRequest.m */,
+				A3F813BA18D807F100767D9F /* UASQSListDeadLetterSourceQueuesRequest.h */,
+				A3F813BB18D807F100767D9F /* UASQSListDeadLetterSourceQueuesRequest.m */,
+				A3F813BC18D807F100767D9F /* UASQSListQueuesRequest.h */,
+				A3F813BD18D807F100767D9F /* UASQSListQueuesRequest.m */,
+				A3F813BE18D807F100767D9F /* UASQSReceiveMessageRequest.h */,
+				A3F813BF18D807F100767D9F /* UASQSReceiveMessageRequest.m */,
+				A3F813C018D807F100767D9F /* UASQSRemovePermissionRequest.h */,
+				A3F813C118D807F100767D9F /* UASQSRemovePermissionRequest.m */,
+				A3F8137418D8046E00767D9F /* UASQSRequest.h */,
+				A3F8137518D8046E00767D9F /* UASQSRequest.m */,
+				A3F813C218D807F100767D9F /* UASQSSendMessageBatchRequest.h */,
+				A3F813C318D807F100767D9F /* UASQSSendMessageBatchRequest.m */,
+				A3F813C418D807F100767D9F /* UASQSSendMessageRequest.h */,
+				A3F813C518D807F100767D9F /* UASQSSendMessageRequest.m */,
+				A3F813C618D807F100767D9F /* UASQSSetQueueAttributesRequest.h */,
+				A3F813C718D807F100767D9F /* UASQSSetQueueAttributesRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		A3F8137618D8046E00767D9F /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A3F813D818D807FA00767D9F /* UASQSAddPermissionResponse.h */,
+				A3F813D918D807FA00767D9F /* UASQSAddPermissionResponse.m */,
+				A3F813DA18D807FA00767D9F /* UASQSChangeMessageVisibilityBatchResponse.h */,
+				A3F813DB18D807FA00767D9F /* UASQSChangeMessageVisibilityBatchResponse.m */,
+				A3F813DC18D807FA00767D9F /* UASQSChangeMessageVisibilityResponse.h */,
+				A3F813DD18D807FA00767D9F /* UASQSChangeMessageVisibilityResponse.m */,
+				A3F813DE18D807FA00767D9F /* UASQSCreateQueueResponse.h */,
+				A3F813DF18D807FA00767D9F /* UASQSCreateQueueResponse.m */,
+				A3F813E018D807FA00767D9F /* UASQSDeleteMessageBatchResponse.h */,
+				A3F813E118D807FA00767D9F /* UASQSDeleteMessageBatchResponse.m */,
+				A3F813FF18D80DDB00767D9F /* UASQSDeleteMessageResponse.h */,
+				A3F8140018D80DDB00767D9F /* UASQSDeleteMessageResponse.m */,
+				A3F8140118D80DDB00767D9F /* UASQSDeleteQueueResponse.h */,
+				A3F8140218D80DDB00767D9F /* UASQSDeleteQueueResponse.m */,
+				A3F813E218D807FA00767D9F /* UASQSGetQueueAttributesResponse.h */,
+				A3F813E318D807FA00767D9F /* UASQSGetQueueAttributesResponse.m */,
+				A3F813E418D807FA00767D9F /* UASQSGetQueueUrlResponse.h */,
+				A3F813E518D807FA00767D9F /* UASQSGetQueueUrlResponse.m */,
+				A3F813E618D807FA00767D9F /* UASQSListDeadLetterSourceQueuesResponse.h */,
+				A3F813E718D807FA00767D9F /* UASQSListDeadLetterSourceQueuesResponse.m */,
+				A3F813E818D807FA00767D9F /* UASQSListQueuesResponse.h */,
+				A3F813E918D807FA00767D9F /* UASQSListQueuesResponse.m */,
+				A3F813EA18D807FA00767D9F /* UASQSReceiveMessageResponse.h */,
+				A3F813EB18D807FA00767D9F /* UASQSReceiveMessageResponse.m */,
+				A3F8140318D80DDB00767D9F /* UASQSRemovePermissionResponse.h */,
+				A3F8140418D80DDB00767D9F /* UASQSRemovePermissionResponse.m */,
+				A3F8137718D8046E00767D9F /* UASQSResponse.h */,
+				A3F8137818D8046E00767D9F /* UASQSResponse.m */,
+				A3F813EC18D807FA00767D9F /* UASQSSendMessageBatchResponse.h */,
+				A3F813ED18D807FA00767D9F /* UASQSSendMessageBatchResponse.m */,
+				A3F813EE18D807FA00767D9F /* UASQSSendMessageResponse.h */,
+				A3F813EF18D807FA00767D9F /* UASQSSendMessageResponse.m */,
+				A3F813FC18D80D8000767D9F /* UASQSSetQueueAttributesResponse.h */,
+				A3F813FD18D80D8000767D9F /* UASQSSetQueueAttributesResponse.m */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		E85464AC18CF0F0D00CC2E3C /* Vendor */ = {
@@ -5309,11 +5579,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3E01C4E18AD93E900C3B7DB /* Build configuration list for PBXNativeTarget "AWS iOS SDK" */;
 			buildPhases = (
-				C62AF56C80174FD79DDA59A4 /* Check Pods Manifest.lock */,
 				A3E01C1818AD93E900C3B7DB /* Sources */,
 				A3E01C1918AD93E900C3B7DB /* Frameworks */,
 				A3E01C1A18AD93E900C3B7DB /* Resources */,
-				D0EC7B5321AC45FE968DF0EA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -5415,36 +5683,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-AWS iOS SDKTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C62AF56C80174FD79DDA59A4 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D0EC7B5321AC45FE968DF0EA /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DBA6ED4D5A324A51B2D12284 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -5472,6 +5710,7 @@
 				A337818718B1912800FECC45 /* UAIAMUpdateServerCertificateRequest.m in Sources */,
 				A337758B18ADA30100FECC45 /* UAEC2InstanceStatus.m in Sources */,
 				A337823318B1913600FECC45 /* UAIAMDeleteLoginProfileResponse.m in Sources */,
+				A3F813D118D807F100767D9F /* UASQSListDeadLetterSourceQueuesRequest.m in Sources */,
 				A33772E518ADA2B800FECC45 /* UAASInstance.m in Sources */,
 				A337815D18B1912800FECC45 /* UAIAMDeleteVirtualMFADeviceRequest.m in Sources */,
 				A33778D318ADA31500FECC45 /* UAEC2AssociateAddressResponse.m in Sources */,
@@ -5486,6 +5725,7 @@
 				A33772EE18ADA2B800FECC45 /* UAASTag.m in Sources */,
 				A337773B18ADA30B00FECC45 /* UAEC2DeleteCustomerGatewayRequest.m in Sources */,
 				A337775218ADA30B00FECC45 /* UAEC2DescribeAvailabilityZonesRequest.m in Sources */,
+				A3F813F818D807FA00767D9F /* UASQSListQueuesResponse.m in Sources */,
 				A337794318ADA31500FECC45 /* UAEC2GetConsoleOutputResponse.m in Sources */,
 				A337794718ADA31500FECC45 /* UAEC2ImportVolumeResponse.m in Sources */,
 				A337759E18ADA30100FECC45 /* UAEC2NetworkInterface.m in Sources */,
@@ -5517,6 +5757,7 @@
 				A337755A18ADA30100FECC45 /* UAEC2CustomerGateway.m in Sources */,
 				A33778DB18ADA31500FECC45 /* UAEC2AuthorizeSecurityGroupIngressResponse.m in Sources */,
 				A337826618B1913600FECC45 /* UAIAMUpdateSigningCertificateResponse.m in Sources */,
+				A3F813D518D807F100767D9F /* UASQSSendMessageBatchRequest.m in Sources */,
 				A337755618ADA30100FECC45 /* UAEC2CancelledSpotInstanceRequest.m in Sources */,
 				A337775418ADA30C00FECC45 /* UAEC2DescribeConversionTasksRequest.m in Sources */,
 				A33778F918ADA31500FECC45 /* UAEC2CreateVPNConnectionResponse.m in Sources */,
@@ -5528,6 +5769,7 @@
 				A33773C318ADA2D200FECC45 /* UAASSetInstanceHealthResponse.m in Sources */,
 				A337795C18ADA31500FECC45 /* UAEC2ResetInstanceAttributeResponse.m in Sources */,
 				A337795818ADA31500FECC45 /* UAEC2ReportInstanceStatusResponse.m in Sources */,
+				A3F813A318D807E400767D9F /* UASQSMessage.m in Sources */,
 				A337755E18ADA30100FECC45 /* UAEC2DHCPOption.m in Sources */,
 				A337798E18ADA32000FECC45 /* UAELBLBCookieStickinessPolicy.m in Sources */,
 				A33772E818ADA2B800FECC45 /* UAASMetricGranularityType.m in Sources */,
@@ -5541,6 +5783,8 @@
 				A337795018ADA31500FECC45 /* UAEC2PurchaseReservedInstancesOfferingResponse.m in Sources */,
 				A337792918ADA31500FECC45 /* UAEC2DescribeReservedInstancesOfferingsResponse.m in Sources */,
 				A337756718ADA30100FECC45 /* UAEC2EBSInstanceBlockDevice.m in Sources */,
+				A3F813A618D807E400767D9F /* UASQSSendMessageBatchRequestEntry.m in Sources */,
+				A3F813A018D807E400767D9F /* UASQSDeleteMessageBatchRequestEntry.m in Sources */,
 				A33773AD18ADA2D200FECC45 /* UAASDescribeAccountLimitsResponse.m in Sources */,
 				A33775CD18ADA30100FECC45 /* UAEC2Tag.m in Sources */,
 				A337792518ADA31500FECC45 /* UAEC2DescribePlacementGroupsResponse.m in Sources */,
@@ -5550,6 +5794,7 @@
 				A337816418B1912800FECC45 /* UAIAMGetLoginProfileRequest.m in Sources */,
 				A337773D18ADA30B00FECC45 /* UAEC2DeleteInternetGatewayRequest.m in Sources */,
 				A337795118ADA31500FECC45 /* UAEC2RebootInstancesResponse.m in Sources */,
+				A3F813CC18D807F100767D9F /* UASQSDeleteMessageBatchRequest.m in Sources */,
 				A33779D118ADA32800FECC45 /* UAELBCreateLoadBalancerListenersRequest.m in Sources */,
 				A337756F18ADA30100FECC45 /* UAEC2ExportToS3Task.m in Sources */,
 				A33779D018ADA32800FECC45 /* UAELBCreateLBCookieStickinessPolicyRequest.m in Sources */,
@@ -5572,19 +5817,23 @@
 				A33778FF18ADA31500FECC45 /* UAEC2DeleteInternetGatewayResponse.m in Sources */,
 				A337779518ADA30C00FECC45 /* UAEC2ReplaceRouteRequest.m in Sources */,
 				A337815E18B1912800FECC45 /* UAIAMEnableMFADeviceRequest.m in Sources */,
+				A3F8140A18D80E2300767D9F /* UAELBAccessLog.m in Sources */,
 				A3377A8418ADA34200FECC45 /* UASNSGetSubscriptionAttributesRequest.m in Sources */,
 				A337759418ADA30100FECC45 /* UAEC2KernelID.m in Sources */,
 				A3377ACA18ADA34A00FECC45 /* UASNSDeleteEndpointResponse.m in Sources */,
 				A337777918ADA30C00FECC45 /* UAEC2DetachInternetGatewayRequest.m in Sources */,
 				A337814218B1912800FECC45 /* UAIAMAddRoleToInstanceProfileRequest.m in Sources */,
 				A337793F18ADA31500FECC45 /* UAEC2DisableVGWRoutePropagationResponse.m in Sources */,
+				A3F8140718D80DDB00767D9F /* UASQSRemovePermissionResponse.m in Sources */,
 				A33778E118ADA31500FECC45 /* UAEC2CancelSpotInstanceRequestsResponse.m in Sources */,
 				A30FD22918AD96D000CA52F7 /* NSArray+UAArrayFlattening.m in Sources */,
+				A3F8139C18D807E400767D9F /* UASQSBatchResultErrorEntry.m in Sources */,
 				A337824418B1913600FECC45 /* UAIAMGetRoleResponse.m in Sources */,
 				A337790018ADA31500FECC45 /* UAEC2DeleteKeyPairResponse.m in Sources */,
 				A30FD21A18AD96D000CA52F7 /* UAAWSRequest.m in Sources */,
 				A337759218ADA30100FECC45 /* UAEC2IPRange.m in Sources */,
 				A337755718ADA30100FECC45 /* UAEC2ConversionTask.m in Sources */,
+				A3F8139B18D807E400767D9F /* UASQSBatchResultError.m in Sources */,
 				A33773B818ADA2D200FECC45 /* UAASDescribeScheduledActionsResponse.m in Sources */,
 				A337822818B1913600FECC45 /* UAIAMCreateRoleResponse.m in Sources */,
 				A33779CF18ADA32800FECC45 /* UAELBCreateAppCookieStickinessPolicyRequest.m in Sources */,
@@ -5598,6 +5847,7 @@
 				A337798C18ADA32000FECC45 /* UAELBInstance.m in Sources */,
 				A337790118ADA31500FECC45 /* UAEC2DeleteNetworkACLEntryResponse.m in Sources */,
 				A337778D18ADA30C00FECC45 /* UAEC2ModifyVPCAttributeRequest.m in Sources */,
+				A3F8140518D80DDB00767D9F /* UASQSDeleteMessageResponse.m in Sources */,
 				A33772B418ADA0F900FECC45 /* UAEC2Request.m in Sources */,
 				A337816618B1912800FECC45 /* UAIAMGetRoleRequest.m in Sources */,
 				A3377AD218ADA34A00FECC45 /* UASNSListPlatformApplicationsResponse.m in Sources */,
@@ -5620,6 +5870,7 @@
 				A337754C18ADA30100FECC45 /* UAEC2AssignPrivateIPAddresses.m in Sources */,
 				A3377AC918ADA34A00FECC45 /* UASNSCreateTopicResponse.m in Sources */,
 				A33773DB18ADA2E700FECC45 /* UACWStatisticSet.m in Sources */,
+				A3F813C818D807F100767D9F /* UASQSAddPermissionRequest.m in Sources */,
 				A337791818ADA31500FECC45 /* UAEC2DescribeDHCPOptionsResponse.m in Sources */,
 				A337815C18B1912800FECC45 /* UAIAMDeleteUserRequest.m in Sources */,
 				A33778D218ADA31500FECC45 /* UAEC2AllocateAddressResponse.m in Sources */,
@@ -5653,6 +5904,7 @@
 				E898A5E718B2162E004DC298 /* NSURL+UAAWSServiceName.m in Sources */,
 				A337772C18ADA30B00FECC45 /* UAEC2CreatePlacementGroupRequest.m in Sources */,
 				A337756618ADA30100FECC45 /* UAEC2EBSBlockDevice.m in Sources */,
+				A3F813F718D807FA00767D9F /* UASQSListDeadLetterSourceQueuesResponse.m in Sources */,
 				A337741618ADA2F700FECC45 /* UACWDescribeAlarmsResponse.m in Sources */,
 				A3377AC818ADA34A00FECC45 /* UASNSCreatePlatformApplicationResponse.m in Sources */,
 				A337794418ADA31500FECC45 /* UAEC2GetPasswordDataResponse.m in Sources */,
@@ -5708,6 +5960,7 @@
 				A3377ACF18ADA34A00FECC45 /* UASNSGetSubscriptionAttributesResponse.m in Sources */,
 				A3377A8B18ADA34200FECC45 /* UASNSPublishRequest.m in Sources */,
 				A3377A7F18ADA34200FECC45 /* UASNSDeleteEndpointRequest.m in Sources */,
+				A3F813CB18D807F100767D9F /* UASQSCreateQueueRequest.m in Sources */,
 				A337794018ADA31500FECC45 /* UAEC2DisassociateAddressResponse.m in Sources */,
 				A337741518ADA2F700FECC45 /* UACWDescribeAlarmsForMetricResponse.m in Sources */,
 				A337790D18ADA31500FECC45 /* UAEC2DeleteVPCResponse.m in Sources */,
@@ -5724,10 +5977,12 @@
 				A3377A4118ADA33A00FECC45 /* UASNSEndpointAttributes.m in Sources */,
 				A337758818ADA30100FECC45 /* UAEC2InstanceNetworkInterfaceSpecification.m in Sources */,
 				A33779D418ADA32800FECC45 /* UAELBDeleteLoadBalancerListenersRequest.m in Sources */,
+				A3F813CF18D807F100767D9F /* UASQSGetQueueAttributesRequest.m in Sources */,
 				A33777A418ADA30C00FECC45 /* UAEC2UnmonitorInstancesRequest.m in Sources */,
 				A337756218ADA30100FECC45 /* UAEC2DiskImageDescription.m in Sources */,
 				A337796218ADA31500FECC45 /* UAEC2StartInstancesResponse.m in Sources */,
 				A3377ACE18ADA34A00FECC45 /* UASNSGetPlatformApplicationAttributesResponse.m in Sources */,
+				A3F8140618D80DDB00767D9F /* UASQSDeleteQueueResponse.m in Sources */,
 				A33775C218ADA30100FECC45 /* UAEC2SpotDatafeedSubscription.m in Sources */,
 				A337776718ADA30C00FECC45 /* UAEC2DescribeReservedInstancesOfferingsRequest.m in Sources */,
 				A337776818ADA30C00FECC45 /* UAEC2DescribeReservedInstancesRequest.m in Sources */,
@@ -5781,6 +6036,7 @@
 				A33773FC18ADA2EF00FECC45 /* UACWSetAlarmStateRequest.m in Sources */,
 				A337775D18ADA30C00FECC45 /* UAEC2DescribeInternetGatewaysRequest.m in Sources */,
 				A337754F18ADA30100FECC45 /* UAEC2AvailabilityZone.m in Sources */,
+				A3F813F018D807FA00767D9F /* UASQSAddPermissionResponse.m in Sources */,
 				A3377A2418ADA32F00FECC45 /* UAELBDescribeLoadBalancerAttributesResponse.m in Sources */,
 				A337754E18ADA30100FECC45 /* UAEC2AutoEnableIO.m in Sources */,
 				A337791218ADA31500FECC45 /* UAEC2DescribeAccountAttributesResponse.m in Sources */,
@@ -5798,6 +6054,7 @@
 				A33775CB18ADA30100FECC45 /* UAEC2Storage.m in Sources */,
 				A337775818ADA30C00FECC45 /* UAEC2DescribeImageAttributeRequest.m in Sources */,
 				A3377AD618ADA34A00FECC45 /* UASNSPublishResponse.m in Sources */,
+				A3F813CA18D807F100767D9F /* UASQSChangeMessageVisibilityRequest.m in Sources */,
 				A3377AC618ADA34A00FECC45 /* UASNSConfirmSubscriptionResponse.m in Sources */,
 				A3377AD018ADA34A00FECC45 /* UASNSGetTopicAttributesResponse.m in Sources */,
 				E85464EB18CF0F0D00CC2E3C /* UADDXMLDocument.m in Sources */,
@@ -5807,10 +6064,12 @@
 				A337756018ADA30100FECC45 /* UAEC2DisableApiTermination.m in Sources */,
 				A337817E18B1912800FECC45 /* UAIAMRemoveRoleFromInstanceProfileRequest.m in Sources */,
 				A33773A318ADA2D200FECC45 /* UAASAttachInstancesResponse.m in Sources */,
+				A3F813FA18D807FA00767D9F /* UASQSSendMessageBatchResponse.m in Sources */,
 				A337778318ADA30C00FECC45 /* UAEC2GetPasswordDataRequest.m in Sources */,
 				A337824A18B1913600FECC45 /* UAIAMListAccountAliasesResponse.m in Sources */,
 				A337735018ADA2C500FECC45 /* UAASEnableMetricsCollectionRequest.m in Sources */,
 				A3377A9118ADA34200FECC45 /* UASNSSubscribeRequest.m in Sources */,
+				A3F8138018D8046E00767D9F /* UASQSError.m in Sources */,
 				A33779E418ADA32800FECC45 /* UAELBSetLoadBalancerPoliciesOfListenerRequest.m in Sources */,
 				A337771118ADA30B00FECC45 /* UAEC2AssociateAddressRequest.m in Sources */,
 				A337809E18B1909F00FECC45 /* UAIAMAccessKey.m in Sources */,
@@ -5850,6 +6109,7 @@
 				A337825A18B1913600FECC45 /* UAIAMPutRolePolicyResponse.m in Sources */,
 				A337774B18ADA30B00FECC45 /* UAEC2DeleteVPCRequest.m in Sources */,
 				A33778D818ADA31500FECC45 /* UAEC2AttachVolumeResponse.m in Sources */,
+				A3F813FB18D807FA00767D9F /* UASQSSendMessageResponse.m in Sources */,
 				A337734818ADA2C500FECC45 /* UAASDescribeNotificationConfigurationsRequest.m in Sources */,
 				A337778518ADA30C00FECC45 /* UAEC2ImportKeyPairRequest.m in Sources */,
 				A337772418ADA30B00FECC45 /* UAEC2CreateDHCPOptionsRequest.m in Sources */,
@@ -5894,6 +6154,7 @@
 				A3377A7D18ADA34200FECC45 /* UASNSCreatePlatformEndpointRequest.m in Sources */,
 				A337826318B1913600FECC45 /* UAIAMUpdateLoginProfileResponse.m in Sources */,
 				A3377A8918ADA34200FECC45 /* UASNSListSubscriptionsRequest.m in Sources */,
+				A3F813D718D807F100767D9F /* UASQSSetQueueAttributesRequest.m in Sources */,
 				A337822A18B1913600FECC45 /* UAIAMCreateUserResponse.m in Sources */,
 				A33775BC18ADA30100FECC45 /* UAEC2RouteTable.m in Sources */,
 				A33777A218ADA30C00FECC45 /* UAEC2TerminateInstancesRequest.m in Sources */,
@@ -5938,6 +6199,7 @@
 				A33780A818B1909F00FECC45 /* UAIAMServerCertificate.m in Sources */,
 				A30FD22A18AD96D000CA52F7 /* NSData+UAHMAC.m in Sources */,
 				A337735118ADA2C500FECC45 /* UAASExecutePolicyRequest.m in Sources */,
+				A3F813CE18D807F100767D9F /* UASQSDeleteQueueRequest.m in Sources */,
 				A337791518ADA31500FECC45 /* UAEC2DescribeBundleTasksResponse.m in Sources */,
 				A337771B18ADA30B00FECC45 /* UAEC2CancelBundleTaskRequest.m in Sources */,
 				A337773818ADA30B00FECC45 /* UAEC2CreateVPNConnectionRouteRequest.m in Sources */,
@@ -5945,6 +6207,7 @@
 				A337775E18ADA30C00FECC45 /* UAEC2DescribeKeyPairsRequest.m in Sources */,
 				A337795218ADA31500FECC45 /* UAEC2RegisterImageResponse.m in Sources */,
 				A337758218ADA30100FECC45 /* UAEC2InstanceLicense.m in Sources */,
+				A3F813F518D807FA00767D9F /* UASQSGetQueueAttributesResponse.m in Sources */,
 				A337793818ADA31500FECC45 /* UAEC2DescribeVPCsResponse.m in Sources */,
 				A337824218B1913600FECC45 /* UAIAMGetLoginProfileResponse.m in Sources */,
 				A337816518B1912800FECC45 /* UAIAMGetRolePolicyRequest.m in Sources */,
@@ -5983,6 +6246,7 @@
 				A337774C18ADA30B00FECC45 /* UAEC2DeleteVPNConnectionRequest.m in Sources */,
 				A337824318B1913600FECC45 /* UAIAMGetRolePolicyResponse.m in Sources */,
 				A337790C18ADA31500FECC45 /* UAEC2DeleteVolumeResponse.m in Sources */,
+				A3F813F618D807FA00767D9F /* UASQSGetQueueUrlResponse.m in Sources */,
 				A337774818ADA30B00FECC45 /* UAEC2DeleteSubnetRequest.m in Sources */,
 				A337777618ADA30C00FECC45 /* UAEC2DescribeVPCsRequest.m in Sources */,
 				A33778E518ADA31500FECC45 /* UAEC2CreateCustomerGatewayResponse.m in Sources */,
@@ -6075,6 +6339,7 @@
 				A33773AA18ADA2D200FECC45 /* UAASDeletePolicyResponse.m in Sources */,
 				A337734418ADA2C500FECC45 /* UAASDescribeAutoScalingInstancesRequest.m in Sources */,
 				A33778E918ADA31500FECC45 /* UAEC2CreateInternetGatewayResponse.m in Sources */,
+				A3F813F218D807FA00767D9F /* UASQSChangeMessageVisibilityResponse.m in Sources */,
 				A3377A9218ADA34200FECC45 /* UASNSUnsubscribeRequest.m in Sources */,
 				A337754A18ADA30100FECC45 /* UAEC2AccountAttribute.m in Sources */,
 				A337818318B1912800FECC45 /* UAIAMUpdateAssumeRolePolicyRequest.m in Sources */,
@@ -6095,6 +6360,7 @@
 				A337759118ADA30100FECC45 /* UAEC2IPPermission.m in Sources */,
 				A337776B18ADA30C00FECC45 /* UAEC2DescribeSnapshotAttributeRequest.m in Sources */,
 				A337799618ADA32000FECC45 /* UAELBPolicyAttributeTypeDescription.m in Sources */,
+				A3F813D018D807F100767D9F /* UASQSGetQueueUrlRequest.m in Sources */,
 				A337779E18ADA30C00FECC45 /* UAEC2RevokeSecurityGroupIngressRequest.m in Sources */,
 				A337776618ADA30C00FECC45 /* UAEC2DescribeReservedInstancesModificationsRequest.m in Sources */,
 				A337790918ADA31500FECC45 /* UAEC2DeleteSpotDatafeedSubscriptionResponse.m in Sources */,
@@ -6125,6 +6391,8 @@
 				A33778DA18ADA31500FECC45 /* UAEC2AuthorizeSecurityGroupEgressResponse.m in Sources */,
 				A337771F18ADA30B00FECC45 /* UAEC2CancelSpotInstanceRequestsRequest.m in Sources */,
 				A33775D218ADA30100FECC45 /* UAEC2VGWTelemetry.m in Sources */,
+				A3F813C918D807F100767D9F /* UASQSChangeMessageVisibilityBatchRequest.m in Sources */,
+				A3F813D218D807F100767D9F /* UASQSListQueuesRequest.m in Sources */,
 				E85464F018CF0F0D00CC2E3C /* NSArray+UAMTLManipulationAdditions.m in Sources */,
 				A33773D618ADA2E700FECC45 /* UACWDatapoint.m in Sources */,
 				A337775718ADA30C00FECC45 /* UAEC2DescribeExportTasksRequest.m in Sources */,
@@ -6142,6 +6410,8 @@
 				A337733818ADA2C500FECC45 /* UAASCreateAutoScalingGroupRequest.m in Sources */,
 				A33773BF18ADA2D200FECC45 /* UAASPutScalingPolicyResponse.m in Sources */,
 				A3377ACD18ADA34A00FECC45 /* UASNSGetEndpointAttributesResponse.m in Sources */,
+				A3F8137F18D8046E00767D9F /* UASQSResponse.m in Sources */,
+				A3F813F118D807FA00767D9F /* UASQSChangeMessageVisibilityBatchResponse.m in Sources */,
 				A337779418ADA30C00FECC45 /* UAEC2ReplaceNetworkACLEntryRequest.m in Sources */,
 				A337735818ADA2C500FECC45 /* UAASSuspendProcessesRequest.m in Sources */,
 				A30FD22218AD96D000CA52F7 /* UAELBModel.m in Sources */,
@@ -6184,10 +6454,12 @@
 				A3377A2D18ADA32F00FECC45 /* UAELBSetLoadBalancerListenerSSLCertificateResponse.m in Sources */,
 				A33780A618B1909F00FECC45 /* UAIAMRole.m in Sources */,
 				A337733F18ADA2C500FECC45 /* UAASDeleteScheduledActionRequest.m in Sources */,
+				A3F813A118D807E400767D9F /* UASQSDeleteMessageBatchResultEntry.m in Sources */,
 				A337826418B1913600FECC45 /* UAIAMUpdateSAMLProviderResponse.m in Sources */,
 				A33778D718ADA31500FECC45 /* UAEC2AttachNetworkInterfaceResponse.m in Sources */,
 				A337796118ADA31500FECC45 /* UAEC2RunInstancesResponse.m in Sources */,
 				A337790318ADA31500FECC45 /* UAEC2DeleteNetworkInterfaceResponse.m in Sources */,
+				A3F813FE18D80D8000767D9F /* UASQSSetQueueAttributesResponse.m in Sources */,
 				A33772E318ADA2B800FECC45 /* UAASEnabledMetric.m in Sources */,
 				A3377A4418ADA33A00FECC45 /* UASNSSubscription.m in Sources */,
 				A337773218ADA30B00FECC45 /* UAEC2CreateSpotDatafeedSubscriptionRequest.m in Sources */,
@@ -6217,6 +6489,7 @@
 				A337814C18B1912800FECC45 /* UAIAMCreateUserRequest.m in Sources */,
 				A337799818ADA32000FECC45 /* UAELBPolicyTypeDescription.m in Sources */,
 				A337772018ADA30B00FECC45 /* UAEC2ConfirmProductInstanceRequest.m in Sources */,
+				A3F813D618D807F100767D9F /* UASQSSendMessageRequest.m in Sources */,
 				A33775D618ADA30100FECC45 /* UAEC2VolumeStatus.m in Sources */,
 				A337755018ADA30100FECC45 /* UAEC2AvailabilityZoneMessage.m in Sources */,
 				A337818818B1912800FECC45 /* UAIAMUpdateSigningCertificateRequest.m in Sources */,
@@ -6237,9 +6510,11 @@
 				A337824518B1913600FECC45 /* UAIAMGetSAMLProviderResponse.m in Sources */,
 				A337825718B1913600FECC45 /* UAIAMListUsersResponse.m in Sources */,
 				A30FD21E18AD96D000CA52F7 /* UACWModel.m in Sources */,
+				A3F8139E18D807E400767D9F /* UASQSChangeMessageVisibilityBatchResultEntry.m in Sources */,
 				E85464F918CF0F0D00CC2E3C /* UAMTLJSONAdapter.m in Sources */,
 				A337799918ADA32000FECC45 /* UAELBSourceSecurityGroup.m in Sources */,
 				A337796518ADA31500FECC45 /* UAEC2UnassignPrivateIPAddressesResponse.m in Sources */,
+				A3F813F418D807FA00767D9F /* UASQSDeleteMessageBatchResponse.m in Sources */,
 				A33778F818ADA31500FECC45 /* UAEC2CreateVPCResponse.m in Sources */,
 				A33780A218B1909F00FECC45 /* UAIAMInstanceProfile.m in Sources */,
 				A337815018B1912800FECC45 /* UAIAMDeleteAccountAliasRequest.m in Sources */,
@@ -6256,6 +6531,7 @@
 				A337759F18ADA30100FECC45 /* UAEC2NetworkInterfaceAssociation.m in Sources */,
 				A337756C18ADA30100FECC45 /* UAEC2EnableVGWRoutePropagation.m in Sources */,
 				A30FD21B18AD96D000CA52F7 /* UAAWSRequestSigning.m in Sources */,
+				A3F813D318D807F100767D9F /* UASQSReceiveMessageRequest.m in Sources */,
 				A337734C18ADA2C500FECC45 /* UAASDescribeScheduledActionsRequest.m in Sources */,
 				A33773B218ADA2D200FECC45 /* UAASDescribeLaunchConfigurationsResponse.m in Sources */,
 				A337757B18ADA30100FECC45 /* UAEC2ImportVolumeTaskDetails.m in Sources */,
@@ -6282,12 +6558,14 @@
 				A33775A518ADA30100FECC45 /* UAEC2PlacementGroup.m in Sources */,
 				A33778ED18ADA31500FECC45 /* UAEC2CreateNetworkInterfaceResponse.m in Sources */,
 				A33772ED18ADA2B800FECC45 /* UAASSuspendedProcess.m in Sources */,
+				A3F8139D18D807E400767D9F /* UASQSChangeMessageVisibilityBatchRequestEntry.m in Sources */,
 				A33775DE18ADA30100FECC45 /* UAEC2VPNGateway.m in Sources */,
 				A33772B518ADA0F900FECC45 /* UAEC2Response.m in Sources */,
 				A337772118ADA30B00FECC45 /* UAEC2CopyImageRequest.m in Sources */,
 				A33773B618ADA2D200FECC45 /* UAASDescribeScalingActivitiesResponse.m in Sources */,
 				A33779D618ADA32800FECC45 /* UAELBDeleteLoadBalancerRequest.m in Sources */,
 				A337791E18ADA31500FECC45 /* UAEC2DescribeInstanceStatusResponse.m in Sources */,
+				A3F813F318D807FA00767D9F /* UASQSCreateQueueResponse.m in Sources */,
 				A3377A1A18ADA32F00FECC45 /* UAELBCreateAppCookieStickinessPolicyResponse.m in Sources */,
 				A33779DC18ADA32800FECC45 /* UAELBDescribeLoadBalancersRequest.m in Sources */,
 				A337779D18ADA30C00FECC45 /* UAEC2RevokeSecurityGroupEgressRequest.m in Sources */,
@@ -6307,6 +6585,7 @@
 				A337817918B1912800FECC45 /* UAIAMListUsersRequest.m in Sources */,
 				A337823718B1913600FECC45 /* UAIAMDeleteServerCertificateResponse.m in Sources */,
 				A3377A4018ADA33A00FECC45 /* UASNSEndpoint.m in Sources */,
+				A3F813CD18D807F100767D9F /* UASQSDeleteMessageRequest.m in Sources */,
 				A33777A318ADA30C00FECC45 /* UAEC2UnassignPrivateIPAddressesRequest.m in Sources */,
 				A33773BA18ADA2D200FECC45 /* UAASDescribeTerminationPolicyTypesResponse.m in Sources */,
 				A337759A18ADA30100FECC45 /* UAEC2LicenseCapacity.m in Sources */,
@@ -6350,6 +6629,7 @@
 				A30FD20F18AD96D000CA52F7 /* UAASResponse.m in Sources */,
 				E85464F718CF0F0D00CC2E3C /* NSValueTransformer+UAMTLQueryStringTransformerAdditions.m in Sources */,
 				A337735718ADA2C500FECC45 /* UAASSetInstanceHealthRequest.m in Sources */,
+				A3F813A718D807E400767D9F /* UASQSSendMessageBatchResultEntry.m in Sources */,
 				A337776A18ADA30C00FECC45 /* UAEC2DescribeSecurityGroupsRequest.m in Sources */,
 				A337793C18ADA31500FECC45 /* UAEC2DetachNetworkInterfaceResponse.m in Sources */,
 				A337793718ADA31500FECC45 /* UAEC2DescribeVPCAttributeResponse.m in Sources */,
@@ -6361,7 +6641,9 @@
 				A33773B118ADA2D200FECC45 /* UAASDescribeAutoScalingNotificationTypesResponse.m in Sources */,
 				A337778618ADA30C00FECC45 /* UAEC2ImportVolumeRequest.m in Sources */,
 				A337775A18ADA30C00FECC45 /* UAEC2DescribeInstanceAttributeRequest.m in Sources */,
+				A3F813F918D807FA00767D9F /* UASQSReceiveMessageResponse.m in Sources */,
 				A337823518B1913600FECC45 /* UAIAMDeleteRoleResponse.m in Sources */,
+				A3F8137E18D8046E00767D9F /* UASQSRequest.m in Sources */,
 				A33773F218ADA2EF00FECC45 /* UACWDeleteAlarmsRequest.m in Sources */,
 				A33779D518ADA32800FECC45 /* UAELBDeleteLoadBalancerPolicyRequest.m in Sources */,
 				A3377A1E18ADA32F00FECC45 /* UAELBCreateLoadBalancerResponse.m in Sources */,
@@ -6374,12 +6656,14 @@
 				A337772318ADA30B00FECC45 /* UAEC2CreateCustomerGatewayRequest.m in Sources */,
 				A337770F18ADA30B00FECC45 /* UAEC2AllocateAddressRequest.m in Sources */,
 				A33773AB18ADA2D200FECC45 /* UAASDeleteScheduledActionResponse.m in Sources */,
+				A3F8137D18D8046E00767D9F /* UASQSModel.m in Sources */,
 				A337790618ADA31500FECC45 /* UAEC2DeleteRouteTableResponse.m in Sources */,
 				E85464FA18CF0F0D00CC2E3C /* UAMTLManagedObjectAdapter.m in Sources */,
 				A3377A2718ADA32F00FECC45 /* UAELBDescribeLoadBalancersResponse.m in Sources */,
 				A33779E018ADA32800FECC45 /* UAELBModifyLoadBalancerAttributesRequest.m in Sources */,
 				E85464F218CF0F0D00CC2E3C /* NSError+UAMTLModelException.m in Sources */,
 				A337756318ADA30100FECC45 /* UAEC2DiskImageDetail.m in Sources */,
+				A3F813D418D807F100767D9F /* UASQSRemovePermissionRequest.m in Sources */,
 				E85464E918CF0F0D00CC2E3C /* UADDXMLElementAdditions.m in Sources */,
 				A337816D18B1912800FECC45 /* UAIAMListGroupPoliciesRequest.m in Sources */,
 				A337759618ADA30100FECC45 /* UAEC2LaunchPermission.m in Sources */,
@@ -6479,6 +6763,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -6511,6 +6800,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -6519,7 +6813,6 @@
 		};
 		A3E01C4F18AD93E900C3B7DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DEC3C3259B4479DBA795A14 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -6533,7 +6826,6 @@
 		};
 		A3E01C5018AD93E900C3B7DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DEC3C3259B4479DBA795A14 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -64,3 +64,4 @@ typedef NS_ENUM(NSUInteger, UAASScalingActivityStatus) {
 	UAASScalingActivityStatusFailed = 7,
 	UAASScalingActivityStatusCancelled = 8
 };
+

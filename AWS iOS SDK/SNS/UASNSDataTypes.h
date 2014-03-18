@@ -30,3 +30,4 @@ typedef NS_ENUM(NSUInteger, UASNSTopicAttribute) {
 	UASNSTopicAttributeDisplayName = 2,
 	UASNSTopicAttributeDeliveryPolicy = 3
 };
+

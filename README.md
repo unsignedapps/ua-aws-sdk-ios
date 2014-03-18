@@ -26,6 +26,7 @@ At the moment, we support the following AWS Services:
 * ELB
 * IAM (not supported by the official SDK)
 * SNS
+* SQS
 * VPC (not supported by the official SDK)
 
 Our target is the to support the full offering, or at least as much as the [AWS SDK for PHP]() supports, as all code is generated from their service definitions.

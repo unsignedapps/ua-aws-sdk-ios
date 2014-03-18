@@ -20,3 +20,4 @@ typedef NS_ENUM(NSUInteger, UAIAMSigningCertificateStatus) {
 	UAIAMSigningCertificateStatusActive = 1,
 	UAIAMSigningCertificateStatusInactive = 2
 };
+

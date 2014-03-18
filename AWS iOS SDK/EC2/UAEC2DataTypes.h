@@ -277,3 +277,4 @@ typedef NS_ENUM(NSUInteger, UAEC2ResourceType) {
 	UAEC2ResourceTypeVPNConnection = 16,
 	UAEC2ResourceTypeVPNGateway = 17
 };
+
