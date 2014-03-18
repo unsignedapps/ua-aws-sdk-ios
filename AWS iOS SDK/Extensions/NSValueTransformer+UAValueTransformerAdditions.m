@@ -157,7 +157,7 @@
         {
             NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
             for (NSDictionary *item in (NSArray *)input)
-                [dictionary setObject:[item objectForKey:valueName] forKey:[item objectForKey:keYName]];
+                [dictionary setObject:[item objectForKey:valueName] forKey:[item objectForKey:keyName]];
             return [dictionary copy];
         }
         

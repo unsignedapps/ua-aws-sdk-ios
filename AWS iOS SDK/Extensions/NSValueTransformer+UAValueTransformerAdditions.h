@@ -19,7 +19,7 @@
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfStrings;
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfNumbers;
 + (NSValueTransformer *)UA_XMLTransformerForArrayOfDatesWithFormat:(NSString *)dateFormat;
-+ (NSValueTransformer *)UA_JSONKeyValueTransformer;
-+ (NSValueTransformer *)UA_XMLKeyValueTransformer;
++ (NSValueTransformer *)UA_JSONKeyValueTransformerWithKeyName:(NSString *)keyName valueName:(NSString *)valueName;
++ (NSValueTransformer *)UA_XMLKeyValueTransformerWithKeyName:(NSString *)keyName valueName:(NSString *)valueName;
 
 @end
