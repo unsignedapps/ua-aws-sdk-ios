@@ -232,7 +232,7 @@ The block should not return anything.
 
 The block to be used to determine if this request should continue to wait or not.
 
-The `UAAWSOperationQueueShouldContinueWaitingBlock` (and its kin) has two arguments: a `UAAWSResponse` subclass (`response), and an NSError (`error`). In the event of a successful request, the `response` argument will be non-nil, and the `error` nil. If an error occurred `response` will be nil and the `error` non-nil.
+The `UAAWSOperationQueueShouldContinueWaitingBlock` (and its kin) has two arguments: a `UAAWSResponse` subclass (`response`), and an NSError (`error`). In the event of a successful request, the `response` argument will be non-nil, and the `error` nil. If an error occurred `response` will be nil and the `error` non-nil.
 
 The block should return `YES` if the request is to continue waiting, `NO` otherwise.
 
