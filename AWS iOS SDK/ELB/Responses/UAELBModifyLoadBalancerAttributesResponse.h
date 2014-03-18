@@ -9,6 +9,11 @@
 
 #import "UAELBResponse.h"
 
+@class UAELBLoadBalancerAttributes;
+
 @interface UAELBModifyLoadBalancerAttributesResponse : UAELBResponse
+
+@property (nonatomic, copy) NSString *loadBalancerName;
+@property (nonatomic, copy) UAELBLoadBalancerAttributes *loadBalancerAttributes;
 
 @end

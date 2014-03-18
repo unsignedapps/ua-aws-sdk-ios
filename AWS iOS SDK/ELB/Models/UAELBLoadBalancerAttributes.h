@@ -9,10 +9,11 @@
 
 #import "UAELBModel.h"
 
+@class UAELBAccessLog;
+
 @interface UAELBLoadBalancerAttributes : UAELBModel
 
 @property (nonatomic) BOOL crossZoneLoadBalancing;
-
-- (id)initWithCrossZoneLoadBalancing:(BOOL)crossZoneLoadBalancing;
+@property (nonatomic, copy) UAELBAccessLog *accessLog;
 
 @end

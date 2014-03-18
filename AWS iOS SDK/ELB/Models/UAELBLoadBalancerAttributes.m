@@ -8,19 +8,11 @@
 //
 
 #import "UAELBLoadBalancerAttributes.h"
+#import "UAELBAccessLog.h"
 
 @implementation UAELBLoadBalancerAttributes
 
-@synthesize crossZoneLoadBalancing=_crossZoneLoadBalancing;
-
-- (id)initWithCrossZoneLoadBalancing:(BOOL)crossZoneLoadBalancing
-{
-	if (self = [self init])
-	{
-		[self setCrossZoneLoadBalancing:crossZoneLoadBalancing];
-	}
-	return self;
-}
+@synthesize crossZoneLoadBalancing=_crossZoneLoadBalancing, accessLog=_accessLog;
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {
@@ -29,7 +21,8 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"crossZoneLoadBalancing": @"CrossZoneLoadBalancing.Enabled"
+        @"crossZoneLoadBalancing": @"CrossZoneLoadBalancing.Enabled",
+        @"accessLog": @"AccessLog"
     }];
     return [keyPaths copy];
 }
@@ -46,7 +39,8 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"crossZoneLoadBalancing": @"ElasticLoadBalancing:CrossZoneLoadBalancing/ElasticLoadBalancing:Enabled"
+        @"crossZoneLoadBalancing": @"ElasticLoadBalancing:CrossZoneLoadBalancing/ElasticLoadBalancing:Enabled",
+        @"accessLog": @"ElasticLoadBalancing:AccessLog"
     }];
     return [keyPaths copy];
 }
@@ -59,9 +53,27 @@
 		[self.UA_dirtyProperties addObject:@"crossZoneLoadBalancing"];
 }
 
+- (void)setAccessLog:(UAELBAccessLog *)accessLog
+{
+	_accessLog = accessLog;
+	
+	if (![self.UA_dirtyProperties containsObject:@"accessLog"])
+		[self.UA_dirtyProperties addObject:@"accessLog"];
+}
+
++ (NSValueTransformer *)accessLogQueryStringTransformer
+{
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBAccessLog class]];
+}
+
 + (NSValueTransformer *)crossZoneLoadBalancingXMLTransformer
 {
     return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
+}
+
++ (NSValueTransformer *)accessLogXMLTransformer
+{
+  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAELBAccessLog class]];
 }
 
 @end
