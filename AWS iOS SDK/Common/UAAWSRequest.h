@@ -184,4 +184,12 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
 **/
 - (BOOL)UA_isRegionFree;
 
+/**
+ * Whether or not this request is considered to be "read only".
+ *
+ * These typically use the IAM "Read Only" template as the basis for each request to
+ * decide if it is read-only or not.
+**/
+- (BOOL)UA_isReadOnly;
+
 @end

@@ -61,6 +61,12 @@
     return YES;
 }
 
+- (BOOL)UA_isReadOnly
+{
+    // we're a read-only service
+    return YES;
+}
+
 
 #pragma mark - Serializing defaults
 

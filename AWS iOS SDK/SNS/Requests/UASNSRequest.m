@@ -96,6 +96,13 @@
     return NO;
 }
 
+- (BOOL)UA_isReadOnly
+{
+    // according to the read-only IAM template, all Get* and List* SNS methods are read only.
+    NSString *klass = NSStringFromClass([self class]);
+    return [klass rangeOfString:@"UASNSGet"].location == 0 || [klass rangeOfString:@"UASNSList"].location == 0;
+}
+
 #pragma mark - Serializing defaults
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey

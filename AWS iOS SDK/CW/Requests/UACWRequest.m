@@ -96,6 +96,13 @@
     return NO;
 }
 
+- (BOOL)UA_isReadOnly
+{
+    // according to the read-only IAM template, all Describe*, Get* and List* methods are read only.
+    NSString *klass = NSStringFromClass([self class]);
+    return [klass rangeOfString:@"UACWDescribe"].location == 0 || [klass rangeOfString:@"UACWGet"].location == 0 || [klass rangeOfString:@"UACWList"].location == 0;
+}
+
 
 #pragma mark - Serializing defaults
 

@@ -96,6 +96,13 @@
     return NO;
 }
 
+- (BOOL)UA_isReadOnly
+{
+    // according to the read-only IAM template, these methods are readonly.
+    NSString *klass = NSStringFromClass([self class]);
+    return [klass isEqualToString:@"UASQSGetQueueAttributes"] || [klass isEqualToString:@"UASQSListQueues"] || [klass isEqualToString:@"UASQSReceiveMessage"];
+}
+
 #pragma mark - Serializing defaults
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey

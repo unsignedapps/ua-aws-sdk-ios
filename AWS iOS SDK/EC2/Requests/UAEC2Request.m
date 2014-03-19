@@ -96,6 +96,12 @@
     return NO;
 }
 
+- (BOOL)UA_isReadOnly
+{
+    // according to the read-only IAM template, all Describe* EC2 methods are read only.
+    return [NSStringFromClass([self class]) rangeOfString:@"UAEC2Describe"].location == 0;
+}
+
 
 #pragma mark - Serializing defaults
 

@@ -63,6 +63,14 @@
 }
 
 
+- (BOOL)UA_isReadOnly
+{
+    // according to the read-only IAM template, all Get* and List* IAM methods are read only.
+    NSString *klass = NSStringFromClass([self class]);
+    return [klass rangeOfString:@"UAIAMGet"].location == 0 || [klass rangeOfString:@"UAIAMList"].location == 0;
+}
+
+
 #pragma mark - Serializing defaults
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey

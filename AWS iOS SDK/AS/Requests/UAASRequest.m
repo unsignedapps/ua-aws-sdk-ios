@@ -96,6 +96,12 @@
     return NO;
 }
 
+- (BOOL)UA_isReadOnly
+{
+    // according to the read-only IAM template, all Describe* methods are read only.
+    return [NSStringFromClass([self class]) rangeOfString:@"UAASDescribe"].location == 0;
+}
+
 #pragma mark - Serializing defaults
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
