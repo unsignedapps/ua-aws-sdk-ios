@@ -14,13 +14,13 @@
 @interface UAEC2SpotInstanceRequest : UAEC2Model
 
 @property (nonatomic, copy) NSString *spotInstanceRequestID;
-@property (nonatomic, copy) NSString *spotPrice;
-@property (nonatomic, copy) NSString *type;
-@property (nonatomic, copy) NSString *state;
+@property (nonatomic, strong) NSNumber *spotPrice;
+@property (nonatomic) UAEC2SpotInstanceRequestType type;
+@property (nonatomic) UAEC2SpotInstanceRequestState state;
 @property (nonatomic, copy) UAEC2SpotInstanceStateFault *fault;
 @property (nonatomic, copy) UAEC2SpotInstanceStatus *status;
-@property (nonatomic, copy) NSString *validFrom;
-@property (nonatomic, copy) NSString *validUntil;
+@property (nonatomic, strong) NSDate *validFrom;
+@property (nonatomic, strong) NSDate *validUntil;
 @property (nonatomic, copy) NSString *launchGroup;
 @property (nonatomic, copy) NSString *availabilityZoneGroup;
 @property (nonatomic, copy) UAEC2LaunchSpecification *launchSpecification;

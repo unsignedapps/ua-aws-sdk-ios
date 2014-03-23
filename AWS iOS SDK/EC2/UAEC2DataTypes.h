@@ -256,6 +256,23 @@ typedef NS_ENUM(NSUInteger, UAEC2SnapshotState) {
 	UAEC2SnapshotStateError = 3
 };
 
+// UAEC2SpotInstanceRequestType
+typedef NS_ENUM(NSUInteger, UAEC2SpotInstanceRequestType) {
+	UAEC2SpotInstanceRequestTypeUnknown = 0,
+	UAEC2SpotInstanceRequestTypeOneTime = 1,
+	UAEC2SpotInstanceRequestTypePersistent = 2
+};
+
+// UAEC2SpotInstanceRequestState
+typedef NS_ENUM(NSUInteger, UAEC2SpotInstanceRequestState) {
+	UAEC2SpotInstanceRequestStateUnknown = 0,
+	UAEC2SpotInstanceRequestStateOpen = 1,
+	UAEC2SpotInstanceRequestStateActive = 2,
+	UAEC2SpotInstanceRequestStateClosed = 3,
+	UAEC2SpotInstanceRequestStateCancelled = 4,
+	UAEC2SpotInstanceRequestStateFailed = 5
+};
+
 // UAEC2ResourceType
 typedef NS_ENUM(NSUInteger, UAEC2ResourceType) {
 	UAEC2ResourceTypeUnknown = 0,
