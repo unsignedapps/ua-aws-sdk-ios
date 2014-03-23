@@ -37,7 +37,7 @@
         @"fixedPrice": @"ec2:fixedPrice",
         @"instanceCount": @"ec2:instanceCount",
         @"productDescription": @"ec2:productDescription",
-        @"state": @"ec2:status",
+        @"state": @"ec2:state",
         @"tags": @"ec2:tagSet/ec2:item",
         @"instanceTenancy": @"ec2:instanceTenancy",
         @"currencyCode": @"ec2:currencyCode",
