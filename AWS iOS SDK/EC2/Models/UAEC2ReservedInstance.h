@@ -16,8 +16,8 @@
 @property (nonatomic, copy) NSString *reservedInstancesID;
 @property (nonatomic, copy) NSString *instanceType;
 @property (nonatomic, copy) NSString *availabilityZone;
-@property (nonatomic, copy) NSString *start;
-@property (nonatomic, copy) NSString *end;
+@property (nonatomic, strong) NSDate *start;
+@property (nonatomic, strong) NSDate *end;
 @property (nonatomic, strong) NSNumber *duration;
 @property (nonatomic, strong) NSNumber *usagePrice;
 @property (nonatomic, strong) NSNumber *fixedPrice;

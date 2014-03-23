@@ -47,6 +47,16 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)startQueryStringTransformer
+{
+    return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
++ (NSValueTransformer *)endQueryStringTransformer
+{
+    return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
 + (NSValueTransformer *)stateQueryStringTransformer
 {
     return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
@@ -94,6 +104,16 @@
 + (NSValueTransformer *)recurringChargesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2RecurringCharge class]];
+}
+
++ (NSValueTransformer *)startXMLTransformer
+{
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
++ (NSValueTransformer *)endXMLTransformer
+{
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
 + (NSValueTransformer *)durationXMLTransformer
