@@ -64,32 +64,32 @@
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         
+		if ([value isEqualToString:@"payment-pending"])
+		    return @(UAEC2ReservedInstanceStatePaymentPending);
 		if ([value isEqualToString:@"active"])
-		    return @(UAEC2ReservedInstanceListingStateActive);
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2ReservedInstanceListingStatePending);
-		if ([value isEqualToString:@"cancelled"])
-		    return @(UAEC2ReservedInstanceListingStateCancelled);
-		if ([value isEqualToString:@"closed"])
-		    return @(UAEC2ReservedInstanceListingStateClosed);
+		    return @(UAEC2ReservedInstanceStateActive);
+		if ([value isEqualToString:@"payment-failed"])
+		    return @(UAEC2ReservedInstanceStatePaymentFailed);
+		if ([value isEqualToString:@"retired"])
+		    return @(UAEC2ReservedInstanceStateRetired);
 
-		return @(UAEC2ReservedInstanceListingStateUnknown);
+		return @(UAEC2ReservedInstanceStateUnknown);
 
     } reverseBlock:^NSString *(NSNumber *value)
     {
-        UAEC2ReservedInstanceListingState castValue = (UAEC2ReservedInstanceListingState)[value unsignedIntegerValue];
+        UAEC2ReservedInstanceState castValue = (UAEC2ReservedInstanceState)[value unsignedIntegerValue];
         switch (castValue)
         {
-			case UAEC2ReservedInstanceListingStateActive:
+			case UAEC2ReservedInstanceStatePaymentPending:
+			    return @"payment-pending";
+			case UAEC2ReservedInstanceStateActive:
 			    return @"active";
-			case UAEC2ReservedInstanceListingStatePending:
-			    return @"pending";
-			case UAEC2ReservedInstanceListingStateCancelled:
-			    return @"cancelled";
-			case UAEC2ReservedInstanceListingStateClosed:
-			    return @"closed";
+			case UAEC2ReservedInstanceStatePaymentFailed:
+			    return @"payment-failed";
+			case UAEC2ReservedInstanceStateRetired:
+			    return @"retired";
 
-			case UAEC2ReservedInstanceListingStateUnknown:
+			case UAEC2ReservedInstanceStateUnknown:
 			default:
 				return nil;
         }
@@ -141,38 +141,38 @@
     return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
     {
 		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2ReservedInstanceListingStateUnknown);
+			return @(UAEC2ReservedInstanceStateUnknown);
 
 		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
         
+		if ([value isEqualToString:@"payment-pending"])
+		    return @(UAEC2ReservedInstanceStatePaymentPending);
 		if ([value isEqualToString:@"active"])
-		    return @(UAEC2ReservedInstanceListingStateActive);
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2ReservedInstanceListingStatePending);
-		if ([value isEqualToString:@"cancelled"])
-		    return @(UAEC2ReservedInstanceListingStateCancelled);
-		if ([value isEqualToString:@"closed"])
-		    return @(UAEC2ReservedInstanceListingStateClosed);
+		    return @(UAEC2ReservedInstanceStateActive);
+		if ([value isEqualToString:@"payment-failed"])
+		    return @(UAEC2ReservedInstanceStatePaymentFailed);
+		if ([value isEqualToString:@"retired"])
+		    return @(UAEC2ReservedInstanceStateRetired);
 
-		return @(UAEC2ReservedInstanceListingStateUnknown);
+		return @(UAEC2ReservedInstanceStateUnknown);
 
     } reverseBlock:^NSString *(NSNumber *value)
     {
-        UAEC2ReservedInstanceListingState castValue = (UAEC2ReservedInstanceListingState)[value unsignedIntegerValue];
+        UAEC2ReservedInstanceState castValue = (UAEC2ReservedInstanceState)[value unsignedIntegerValue];
         switch (castValue)
         {
-			case UAEC2ReservedInstanceListingStateActive:
+			case UAEC2ReservedInstanceStatePaymentPending:
+			    return @"payment-pending";
+			case UAEC2ReservedInstanceStateActive:
 			    return @"active";
-			case UAEC2ReservedInstanceListingStatePending:
-			    return @"pending";
-			case UAEC2ReservedInstanceListingStateCancelled:
-			    return @"cancelled";
-			case UAEC2ReservedInstanceListingStateClosed:
-			    return @"closed";
+			case UAEC2ReservedInstanceStatePaymentFailed:
+			    return @"payment-failed";
+			case UAEC2ReservedInstanceStateRetired:
+			    return @"retired";
 
-			case UAEC2ReservedInstanceListingStateUnknown:
+			case UAEC2ReservedInstanceStateUnknown:
 			default:
 				return nil;
         }

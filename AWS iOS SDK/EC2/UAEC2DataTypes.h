@@ -239,13 +239,13 @@ typedef NS_ENUM(NSUInteger, UAEC2InstanceVirtualizationType) {
 	UAEC2InstanceVirtualizationTypeHvm = 2
 };
 
-// UAEC2ReservedInstanceListingState
-typedef NS_ENUM(NSUInteger, UAEC2ReservedInstanceListingState) {
-	UAEC2ReservedInstanceListingStateUnknown = 0,
-	UAEC2ReservedInstanceListingStateActive = 1,
-	UAEC2ReservedInstanceListingStatePending = 2,
-	UAEC2ReservedInstanceListingStateCancelled = 3,
-	UAEC2ReservedInstanceListingStateClosed = 4
+// UAEC2ReservedInstanceState
+typedef NS_ENUM(NSUInteger, UAEC2ReservedInstanceState) {
+	UAEC2ReservedInstanceStateUnknown = 0,
+	UAEC2ReservedInstanceStatePaymentPending = 1,
+	UAEC2ReservedInstanceStateActive = 2,
+	UAEC2ReservedInstanceStatePaymentFailed = 3,
+	UAEC2ReservedInstanceStateRetired = 4
 };
 
 // UAEC2SnapshotState

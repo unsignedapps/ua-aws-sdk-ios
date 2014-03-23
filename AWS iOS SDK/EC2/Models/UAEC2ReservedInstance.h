@@ -23,7 +23,7 @@
 @property (nonatomic, strong) NSNumber *fixedPrice;
 @property (nonatomic, strong) NSNumber *instanceCount;
 @property (nonatomic, copy) NSString *productDescription;
-@property (nonatomic) UAEC2ReservedInstanceListingState state;
+@property (nonatomic) UAEC2ReservedInstanceState state;
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic, copy) NSString *instanceTenancy;
 @property (nonatomic, copy) NSString *currencyCode;
