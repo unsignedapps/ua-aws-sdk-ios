@@ -47,7 +47,7 @@
         @"version": @"Version",
         @"dryRun": @"DryRun",
         @"volumeID": @"VolumeId",
-        @"autoEnableIO": @"AutoEnableIO"
+        @"autoEnableIO": @"AutoEnableIO.Value"
     }];
     return [keyPaths copy];
 }
