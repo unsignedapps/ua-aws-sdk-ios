@@ -49,7 +49,7 @@
         @"sourceRegion": @"SourceRegion",
         @"sourceImageID": @"SourceImageId",
         @"name": @"Name",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description",
         @"clientToken": @"ClientToken"
     }];
     return [keyPaths copy];
