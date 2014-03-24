@@ -8,7 +8,6 @@
 //
 
 #import "UAEC2DescribeVolumeAttributeResponse.h"
-#import "UAEC2AutoEnableIO.h"
 #import "UAEC2ProductCode.h"
 
 @implementation UAEC2DescribeVolumeAttributeResponse
@@ -28,7 +27,7 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"volumeID": @"ec2:volumeId",
-        @"autoEnableIO": @"ec2:autoEnableIO",
+        @"autoEnableIO": @"ec2:autoEnableIO/ec2:value",
         @"productCodes": @"ec2:productCodes/ec2:item"
     }];
     return [keyPaths copy];
@@ -36,7 +35,7 @@
 
 + (NSValueTransformer *)autoEnableIOXMLTransformer
 {
-  return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2AutoEnableIO class]];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)productCodesXMLTransformer

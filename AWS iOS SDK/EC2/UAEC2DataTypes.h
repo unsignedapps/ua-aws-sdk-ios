@@ -295,3 +295,29 @@ typedef NS_ENUM(NSUInteger, UAEC2ResourceType) {
 	UAEC2ResourceTypeVPNGateway = 17
 };
 
+// UAEC2VolumeStatusName
+typedef NS_ENUM(NSUInteger, UAEC2VolumeStatusName) {
+	UAEC2VolumeStatusNameUnknown = 0,
+	UAEC2VolumeStatusNameIoEnabled = 1,
+	UAEC2VolumeStatusNameIoPerformance = 2
+};
+
+// UAEC2VolumeStatusDetailStatus
+typedef NS_ENUM(NSUInteger, UAEC2VolumeStatusDetailStatus) {
+	UAEC2VolumeStatusDetailStatusUnknown = 0,
+	UAEC2VolumeStatusDetailStatusPassed = 1,
+	UAEC2VolumeStatusDetailStatusFailed = 2,
+	UAEC2VolumeStatusDetailStatusNormal = 3,
+	UAEC2VolumeStatusDetailStatusDegraded = 4,
+	UAEC2VolumeStatusDetailStatusSeverelyDegraded = 5,
+	UAEC2VolumeStatusDetailStatusStalled = 6
+};
+
+// UAEC2VolumeStatusInfoStatus
+typedef NS_ENUM(NSUInteger, UAEC2VolumeStatusInfoStatus) {
+	UAEC2VolumeStatusInfoStatusUnknown = 0,
+	UAEC2VolumeStatusInfoStatusOk = 1,
+	UAEC2VolumeStatusInfoStatusImpaired = 2,
+	UAEC2VolumeStatusInfoStatusInsufficientData = 3
+};
+

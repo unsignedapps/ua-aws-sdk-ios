@@ -9,12 +9,12 @@
 
 #import "UAEC2Response.h"
 
-@class UAEC2AutoEnableIO, UAEC2ProductCode;
+@class UAEC2ProductCode;
 
 @interface UAEC2DescribeVolumeAttributeResponse : UAEC2Response
 
 @property (nonatomic, copy) NSString *volumeID;
-@property (nonatomic, copy) UAEC2AutoEnableIO *autoEnableIO;
+@property (nonatomic) BOOL autoEnableIO;
 @property (nonatomic, copy) NSArray *productCodes;
 
 @end

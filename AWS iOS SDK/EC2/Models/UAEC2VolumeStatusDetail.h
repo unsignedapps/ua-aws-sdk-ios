@@ -11,7 +11,7 @@
 
 @interface UAEC2VolumeStatusDetail : UAEC2Model
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *status;
+@property (nonatomic) UAEC2VolumeStatusName name;
+@property (nonatomic) UAEC2VolumeStatusDetailStatus status;
 
 @end
