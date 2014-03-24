@@ -103,7 +103,7 @@
 		[self.UA_dirtyProperties addObject:@"availabilityZone"];
 }
 
-- (void)setVolumeType:(NSString *)volumeType
+- (void)setVolumeType:(UAEC2VolumeType)volumeType
 {
 	_volumeType = volumeType;
 	
@@ -119,9 +119,71 @@
 		[self.UA_dirtyProperties addObject:@"iops"];
 }
 
++ (NSValueTransformer *)volumeTypeJSONTransformer
+{
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    {
+        if ([value isKindOfClass:[NSNumber class]])
+            return (NSNumber *)value;
+        
+		if ([value isEqualToString:@"standard"])
+		    return @(UAEC2VolumeTypeStandard);
+		if ([value isEqualToString:@"io1"])
+		    return @(UAEC2VolumeTypeIo1);
+
+		return @(UAEC2VolumeTypeUnknown);
+
+    } reverseBlock:^NSString *(NSNumber *value)
+    {
+        UAEC2VolumeType castValue = (UAEC2VolumeType)[value unsignedIntegerValue];
+        switch (castValue)
+        {
+			case UAEC2VolumeTypeStandard:
+			    return @"standard";
+			case UAEC2VolumeTypeIo1:
+			    return @"io1";
+
+			case UAEC2VolumeTypeUnknown:
+			default:
+				return nil;
+        }
+    }];
+}
+
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
+}
+
++ (NSValueTransformer *)volumeTypeQueryStringTransformer
+{
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
+    {
+        if ([value isKindOfClass:[NSNumber class]])
+            return (NSNumber *)value;
+        
+		if ([value isEqualToString:@"standard"])
+		    return @(UAEC2VolumeTypeStandard);
+		if ([value isEqualToString:@"io1"])
+		    return @(UAEC2VolumeTypeIo1);
+
+		return @(UAEC2VolumeTypeUnknown);
+
+    } reverseBlock:^NSString *(NSNumber *value)
+    {
+        UAEC2VolumeType castValue = (UAEC2VolumeType)[value unsignedIntegerValue];
+        switch (castValue)
+        {
+			case UAEC2VolumeTypeStandard:
+			    return @"standard";
+			case UAEC2VolumeTypeIo1:
+			    return @"io1";
+
+			case UAEC2VolumeTypeUnknown:
+			default:
+				return nil;
+        }
+    }];
 }
 
 #pragma mark - Invocation

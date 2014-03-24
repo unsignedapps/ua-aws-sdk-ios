@@ -19,7 +19,7 @@ typedef BOOL(^UAEC2CreateVolumeRequestShouldContinueWaitingBlock)(UAEC2CreateVol
 @property (nonatomic, strong) NSNumber *size;
 @property (nonatomic, copy) NSString *snapshotID;
 @property (nonatomic, copy) NSString *availabilityZone;
-@property (nonatomic, copy) NSString *volumeType;
+@property (nonatomic) UAEC2VolumeType volumeType;
 @property (nonatomic, strong) NSNumber *iops;
 // @property (nonatomic, copy) UAEC2CreateVolumeRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2CreateVolumeRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
