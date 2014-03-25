@@ -51,7 +51,7 @@
         @"startTime": @"StartTime",
         @"endTime": @"EndTime",
         @"reasonCodes": @"ReasonCode",
-        @"descriptionValue": @"DescriptionValue"
+        @"descriptionValue": @"Description"
     }];
     return [keyPaths copy];
 }

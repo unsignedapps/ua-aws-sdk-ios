@@ -10,7 +10,6 @@
 #import "UAEC2ModifyImageAttributeRequest.h"
 #import "UAEC2ModifyImageAttributeResponse.h"
 #import "UAEC2LaunchPermissionModifications.h"
-#import "UAEC2DescriptionValue.h"
 
 @interface UAEC2ModifyImageAttributeRequest ()
 
@@ -56,7 +55,7 @@
         @"productCodes": @"ProductCode",
         @"value": @"Value",
         @"launchPermission": @"LaunchPermission",
-        @"descriptionValue": @"DescriptionValue"
+        @"descriptionValue": @"Description.Value"
     }];
     return [keyPaths copy];
 }
@@ -149,7 +148,7 @@
 		[self.UA_dirtyProperties addObject:@"launchPermission"];
 }
 
-- (void)setDescriptionValue:(UAEC2DescriptionValue *)descriptionValue
+- (void)setDescriptionValue:(NSString *)descriptionValue
 {
 	_descriptionValue = descriptionValue;
 	
@@ -162,11 +161,6 @@
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
 }
 
-+ (NSValueTransformer *)descriptionValueJSONTransformer
-{
-  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
-}
-
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
@@ -175,11 +169,6 @@
 + (NSValueTransformer *)launchPermissionQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
-}
-
-+ (NSValueTransformer *)descriptionValueQueryStringTransformer
-{
-	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
 }
 
 - (void)addUserID:(NSString *)userID

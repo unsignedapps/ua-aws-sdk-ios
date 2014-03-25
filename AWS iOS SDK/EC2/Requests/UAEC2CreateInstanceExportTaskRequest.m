@@ -46,7 +46,7 @@
     @{
         @"action": @"Action",
         @"version": @"Version",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description",
         @"instanceID": @"InstanceId",
         @"targetEnvironment": @"TargetEnvironment",
         @"exportToS3Task": @"ExportToS3"

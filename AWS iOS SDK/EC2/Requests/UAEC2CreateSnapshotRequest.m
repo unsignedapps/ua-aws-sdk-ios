@@ -47,7 +47,7 @@
         @"version": @"Version",
         @"dryRun": @"DryRun",
         @"volumeID": @"VolumeId",
-        @"descriptionValue": @"DescriptionValue"
+        @"descriptionValue": @"Description"
     }];
     return [keyPaths copy];
 }

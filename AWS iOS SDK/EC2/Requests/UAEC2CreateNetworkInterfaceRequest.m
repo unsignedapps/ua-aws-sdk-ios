@@ -47,7 +47,7 @@
         @"action": @"Action",
         @"version": @"Version",
         @"subnetID": @"SubnetId",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description",
         @"privateIPAddress": @"PrivateIpAddress",
         @"groups": @"SecurityGroupId",
         @"privateIPAddresses": @"PrivateIpAddresses",

@@ -23,7 +23,7 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"image": @"Image",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description",
         @"volume": @"Volume"
     }];
     return [keyPaths copy];
@@ -42,7 +42,7 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"image": @"ec2:Image",
-        @"descriptionValue": @"ec2:DescriptionValue",
+        @"descriptionValue": @"ec2:Description",
         @"volume": @"ec2:Volume"
     }];
     return [keyPaths copy];

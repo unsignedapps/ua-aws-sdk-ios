@@ -50,7 +50,7 @@
         @"dryRun": @"DryRun",
         @"availabilityZone": @"AvailabilityZone",
         @"image": @"Image",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description",
         @"volume": @"Volume"
     }];
     return [keyPaths copy];

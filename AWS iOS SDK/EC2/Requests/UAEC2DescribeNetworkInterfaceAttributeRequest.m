@@ -47,7 +47,7 @@
         @"version": @"Version",
         @"dryRun": @"DryRun",
         @"networkInterfaceID": @"NetworkInterfaceId",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description",
         @"sourceDestCheck": @"SourceDestCheck",
         @"groups": @"GroupSet",
         @"attachment": @"Attachment"

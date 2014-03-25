@@ -49,7 +49,7 @@
         @"dryRun": @"DryRun",
         @"instanceID": @"InstanceId",
         @"name": @"Name",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description",
         @"noReboot": @"NoReboot",
         @"blockDeviceMappings": @"BlockDeviceMapping"
     }];

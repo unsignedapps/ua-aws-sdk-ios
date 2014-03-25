@@ -48,7 +48,7 @@
         @"action": @"Action",
         @"version": @"Version",
         @"dryRun": @"DryRun",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description",
         @"launchSpecification": @"LaunchSpecification",
         @"diskImages": @"DiskImage",
         @"platform": @"Platform"

@@ -49,7 +49,7 @@
         @"dryRun": @"DryRun",
         @"imageLocation": @"ImageLocation",
         @"name": @"Name",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description",
         @"architecture": @"Architecture",
         @"kernelID": @"KernelId",
         @"ramdiskID": @"RamdiskId",

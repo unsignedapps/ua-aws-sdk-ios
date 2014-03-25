@@ -8,7 +8,7 @@
 
 #import "UAEC2Request.h"
 
-@class UAEC2LaunchPermissionModifications, UAEC2DescriptionValue, UAEC2ModifyImageAttributeResponse;
+@class UAEC2LaunchPermissionModifications, UAEC2ModifyImageAttributeResponse;
 
 typedef void(^UAEC2ModifyImageAttributeRequestCompletionBlock)(UAEC2ModifyImageAttributeResponse *response, NSError *error);
 typedef BOOL(^UAEC2ModifyImageAttributeRequestShouldContinueWaitingBlock)(UAEC2ModifyImageAttributeResponse *response, NSError *error);
@@ -24,7 +24,7 @@ typedef BOOL(^UAEC2ModifyImageAttributeRequestShouldContinueWaitingBlock)(UAEC2M
 @property (nonatomic, strong) NSMutableArray *productCodes;
 @property (nonatomic, copy) NSString *value;
 @property (nonatomic, copy) UAEC2LaunchPermissionModifications *launchPermission;
-@property (nonatomic, copy) UAEC2DescriptionValue *descriptionValue;
+@property (nonatomic, copy) NSString *descriptionValue;
 // @property (nonatomic, copy) UAEC2ModifyImageAttributeRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2ModifyImageAttributeRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

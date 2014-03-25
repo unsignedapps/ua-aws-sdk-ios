@@ -9,7 +9,6 @@
 
 #import "UAEC2ModifyNetworkInterfaceAttributeRequest.h"
 #import "UAEC2ModifyNetworkInterfaceAttributeResponse.h"
-#import "UAEC2DescriptionValue.h"
 #import "UAEC2SourceDestCheck.h"
 #import "UAEC2NetworkInterfaceAttachmentSpecification.h"
 
@@ -50,7 +49,7 @@
         @"version": @"Version",
         @"dryRun": @"DryRun",
         @"networkInterfaceID": @"NetworkInterfaceId",
-        @"descriptionValue": @"DescriptionValue",
+        @"descriptionValue": @"Description.Value",
         @"sourceDestCheck": @"SourceDestCheck",
         @"groups": @"SecurityGroupId",
         @"attachment": @"Attachment"
@@ -90,7 +89,7 @@
 		[self.UA_dirtyProperties addObject:@"networkInterfaceID"];
 }
 
-- (void)setDescriptionValue:(UAEC2DescriptionValue *)descriptionValue
+- (void)setDescriptionValue:(NSString *)descriptionValue
 {
 	_descriptionValue = descriptionValue;
 	
@@ -122,11 +121,6 @@
 		[self.UA_dirtyProperties addObject:@"attachment"];
 }
 
-+ (NSValueTransformer *)descriptionValueJSONTransformer
-{
-  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
-}
-
 + (NSValueTransformer *)sourceDestCheckJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
@@ -140,11 +134,6 @@
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
-}
-
-+ (NSValueTransformer *)descriptionValueQueryStringTransformer
-{
-	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2DescriptionValue class]];
 }
 
 + (NSValueTransformer *)sourceDestCheckQueryStringTransformer

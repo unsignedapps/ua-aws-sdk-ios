@@ -48,7 +48,7 @@
         @"dryRun": @"DryRun",
         @"sourceRegion": @"SourceRegion",
         @"sourceSnapshotID": @"SourceSnapshotId",
-        @"descriptionValue": @"DescriptionValue"
+        @"descriptionValue": @"Description"
     }];
     return [keyPaths copy];
 }
