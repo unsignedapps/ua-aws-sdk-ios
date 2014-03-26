@@ -172,7 +172,6 @@
 		A337754B18ADA30100FECC45 /* UAEC2Address.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742118ADA30000FECC45 /* UAEC2Address.m */; };
 		A337754C18ADA30100FECC45 /* UAEC2AssignPrivateIPAddresses.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742318ADA30000FECC45 /* UAEC2AssignPrivateIPAddresses.m */; };
 		A337754D18ADA30100FECC45 /* UAEC2Attachment.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742518ADA30000FECC45 /* UAEC2Attachment.m */; };
-		A337754E18ADA30100FECC45 /* UAEC2AutoEnableIO.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742718ADA30000FECC45 /* UAEC2AutoEnableIO.m */; };
 		A337754F18ADA30100FECC45 /* UAEC2AvailabilityZone.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742918ADA30000FECC45 /* UAEC2AvailabilityZone.m */; };
 		A337755018ADA30100FECC45 /* UAEC2AvailabilityZoneMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742B18ADA30000FECC45 /* UAEC2AvailabilityZoneMessage.m */; };
 		A337755118ADA30100FECC45 /* UAEC2BlockDeviceMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742D18ADA30000FECC45 /* UAEC2BlockDeviceMapping.m */; };
@@ -186,7 +185,6 @@
 		A337755918ADA30100FECC45 /* UAEC2CreateVolumePermissionModifications.m in Sources */ = {isa = PBXBuildFile; fileRef = A337743D18ADA30000FECC45 /* UAEC2CreateVolumePermissionModifications.m */; };
 		A337755A18ADA30100FECC45 /* UAEC2CustomerGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = A337743F18ADA30000FECC45 /* UAEC2CustomerGateway.m */; };
 		A337755B18ADA30100FECC45 /* UAEC2CustomerGatewayy.m in Sources */ = {isa = PBXBuildFile; fileRef = A337744118ADA30000FECC45 /* UAEC2CustomerGatewayy.m */; };
-		A337755C18ADA30100FECC45 /* UAEC2DescriptionValue.m in Sources */ = {isa = PBXBuildFile; fileRef = A337744318ADA30000FECC45 /* UAEC2DescriptionValue.m */; };
 		A337755D18ADA30100FECC45 /* UAEC2DHCPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A337744518ADA30000FECC45 /* UAEC2DHCPConfiguration.m */; };
 		A337755E18ADA30100FECC45 /* UAEC2DHCPOption.m in Sources */ = {isa = PBXBuildFile; fileRef = A337744718ADA30000FECC45 /* UAEC2DHCPOption.m */; };
 		A337755F18ADA30100FECC45 /* UAEC2DHCPOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = A337744918ADA30000FECC45 /* UAEC2DHCPOptions.m */; };
@@ -969,6 +967,20 @@
 		A3F8140718D80DDB00767D9F /* UASQSRemovePermissionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8140418D80DDB00767D9F /* UASQSRemovePermissionResponse.m */; };
 		A3F8140A18D80E2300767D9F /* UAELBAccessLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8140918D80E2300767D9F /* UAELBAccessLog.m */; };
 		A3F8140E18D80ED200767D9F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140D18D80ED200767D9F /* libxml2.dylib */; };
+		A3F8141718E27DEF00767D9F /* UAEC2AccepterVPCInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8141018E27DEF00767D9F /* UAEC2AccepterVPCInfo.m */; };
+		A3F8141818E27DEF00767D9F /* UAEC2RequesterVPCInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8141218E27DEF00767D9F /* UAEC2RequesterVPCInfo.m */; };
+		A3F8141918E27DEF00767D9F /* UAEC2VPCPeeringConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8141418E27DEF00767D9F /* UAEC2VPCPeeringConnection.m */; };
+		A3F8141A18E27DEF00767D9F /* UAEC2VPCPeeringConnectionStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8141618E27DEF00767D9F /* UAEC2VPCPeeringConnectionStatus.m */; };
+		A3F8142518E27E4A00767D9F /* UAEC2AcceptVPCPeeringConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8141C18E27E4A00767D9F /* UAEC2AcceptVPCPeeringConnectionRequest.m */; };
+		A3F8142618E27E4A00767D9F /* UAEC2CreateVPCPeeringConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8141E18E27E4A00767D9F /* UAEC2CreateVPCPeeringConnectionRequest.m */; };
+		A3F8142718E27E4A00767D9F /* UAEC2DeleteVPCPeeringConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8142018E27E4A00767D9F /* UAEC2DeleteVPCPeeringConnectionRequest.m */; };
+		A3F8142818E27E4A00767D9F /* UAEC2DescribeVPCPeeringConnectionsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8142218E27E4A00767D9F /* UAEC2DescribeVPCPeeringConnectionsRequest.m */; };
+		A3F8142918E27E4A00767D9F /* UAEC2RejectVPCPeeringConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8142418E27E4A00767D9F /* UAEC2RejectVPCPeeringConnectionRequest.m */; };
+		A3F8143418E27ECD00767D9F /* UAEC2AcceptVPCPeeringConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8142B18E27ECD00767D9F /* UAEC2AcceptVPCPeeringConnectionResponse.m */; };
+		A3F8143518E27ECD00767D9F /* UAEC2CreateVPCPeeringConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8142D18E27ECD00767D9F /* UAEC2CreateVPCPeeringConnectionResponse.m */; };
+		A3F8143618E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8142F18E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.m */; };
+		A3F8143718E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8143118E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.m */; };
+		A3F8143818E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8143318E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m */; };
 		E85464E918CF0F0D00CC2E3C /* UADDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B018CF0F0D00CC2E3C /* UADDXMLElementAdditions.m */; };
 		E85464EA18CF0F0D00CC2E3C /* NSString+UADDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B318CF0F0D00CC2E3C /* NSString+UADDXML.m */; };
 		E85464EB18CF0F0D00CC2E3C /* UADDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B818CF0F0D00CC2E3C /* UADDXMLDocument.m */; };
@@ -1356,8 +1368,6 @@
 		A337742318ADA30000FECC45 /* UAEC2AssignPrivateIPAddresses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AssignPrivateIPAddresses.m; sourceTree = "<group>"; };
 		A337742418ADA30000FECC45 /* UAEC2Attachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2Attachment.h; sourceTree = "<group>"; };
 		A337742518ADA30000FECC45 /* UAEC2Attachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2Attachment.m; sourceTree = "<group>"; };
-		A337742618ADA30000FECC45 /* UAEC2AutoEnableIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AutoEnableIO.h; sourceTree = "<group>"; };
-		A337742718ADA30000FECC45 /* UAEC2AutoEnableIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AutoEnableIO.m; sourceTree = "<group>"; };
 		A337742818ADA30000FECC45 /* UAEC2AvailabilityZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AvailabilityZone.h; sourceTree = "<group>"; };
 		A337742918ADA30000FECC45 /* UAEC2AvailabilityZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AvailabilityZone.m; sourceTree = "<group>"; };
 		A337742A18ADA30000FECC45 /* UAEC2AvailabilityZoneMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AvailabilityZoneMessage.h; sourceTree = "<group>"; };
@@ -1384,8 +1394,6 @@
 		A337743F18ADA30000FECC45 /* UAEC2CustomerGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2CustomerGateway.m; sourceTree = "<group>"; };
 		A337744018ADA30000FECC45 /* UAEC2CustomerGatewayy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2CustomerGatewayy.h; sourceTree = "<group>"; };
 		A337744118ADA30000FECC45 /* UAEC2CustomerGatewayy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2CustomerGatewayy.m; sourceTree = "<group>"; };
-		A337744218ADA30000FECC45 /* UAEC2DescriptionValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2DescriptionValue.h; sourceTree = "<group>"; };
-		A337744318ADA30000FECC45 /* UAEC2DescriptionValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2DescriptionValue.m; sourceTree = "<group>"; };
 		A337744418ADA30000FECC45 /* UAEC2DHCPConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2DHCPConfiguration.h; sourceTree = "<group>"; };
 		A337744518ADA30000FECC45 /* UAEC2DHCPConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2DHCPConfiguration.m; sourceTree = "<group>"; };
 		A337744618ADA30000FECC45 /* UAEC2DHCPOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2DHCPOption.h; sourceTree = "<group>"; };
@@ -2942,6 +2950,34 @@
 		A3F8140918D80E2300767D9F /* UAELBAccessLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAELBAccessLog.m; sourceTree = "<group>"; };
 		A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		A3F8140D18D80ED200767D9F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		A3F8140F18E27DEF00767D9F /* UAEC2AccepterVPCInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AccepterVPCInfo.h; sourceTree = "<group>"; };
+		A3F8141018E27DEF00767D9F /* UAEC2AccepterVPCInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AccepterVPCInfo.m; sourceTree = "<group>"; };
+		A3F8141118E27DEF00767D9F /* UAEC2RequesterVPCInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2RequesterVPCInfo.h; sourceTree = "<group>"; };
+		A3F8141218E27DEF00767D9F /* UAEC2RequesterVPCInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2RequesterVPCInfo.m; sourceTree = "<group>"; };
+		A3F8141318E27DEF00767D9F /* UAEC2VPCPeeringConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2VPCPeeringConnection.h; sourceTree = "<group>"; };
+		A3F8141418E27DEF00767D9F /* UAEC2VPCPeeringConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2VPCPeeringConnection.m; sourceTree = "<group>"; };
+		A3F8141518E27DEF00767D9F /* UAEC2VPCPeeringConnectionStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2VPCPeeringConnectionStatus.h; sourceTree = "<group>"; };
+		A3F8141618E27DEF00767D9F /* UAEC2VPCPeeringConnectionStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2VPCPeeringConnectionStatus.m; sourceTree = "<group>"; };
+		A3F8141B18E27E4A00767D9F /* UAEC2AcceptVPCPeeringConnectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AcceptVPCPeeringConnectionRequest.h; sourceTree = "<group>"; };
+		A3F8141C18E27E4A00767D9F /* UAEC2AcceptVPCPeeringConnectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AcceptVPCPeeringConnectionRequest.m; sourceTree = "<group>"; };
+		A3F8141D18E27E4A00767D9F /* UAEC2CreateVPCPeeringConnectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2CreateVPCPeeringConnectionRequest.h; sourceTree = "<group>"; };
+		A3F8141E18E27E4A00767D9F /* UAEC2CreateVPCPeeringConnectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2CreateVPCPeeringConnectionRequest.m; sourceTree = "<group>"; };
+		A3F8141F18E27E4A00767D9F /* UAEC2DeleteVPCPeeringConnectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2DeleteVPCPeeringConnectionRequest.h; sourceTree = "<group>"; };
+		A3F8142018E27E4A00767D9F /* UAEC2DeleteVPCPeeringConnectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2DeleteVPCPeeringConnectionRequest.m; sourceTree = "<group>"; };
+		A3F8142118E27E4A00767D9F /* UAEC2DescribeVPCPeeringConnectionsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2DescribeVPCPeeringConnectionsRequest.h; sourceTree = "<group>"; };
+		A3F8142218E27E4A00767D9F /* UAEC2DescribeVPCPeeringConnectionsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2DescribeVPCPeeringConnectionsRequest.m; sourceTree = "<group>"; };
+		A3F8142318E27E4A00767D9F /* UAEC2RejectVPCPeeringConnectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2RejectVPCPeeringConnectionRequest.h; sourceTree = "<group>"; };
+		A3F8142418E27E4A00767D9F /* UAEC2RejectVPCPeeringConnectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2RejectVPCPeeringConnectionRequest.m; sourceTree = "<group>"; };
+		A3F8142A18E27ECD00767D9F /* UAEC2AcceptVPCPeeringConnectionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AcceptVPCPeeringConnectionResponse.h; sourceTree = "<group>"; };
+		A3F8142B18E27ECD00767D9F /* UAEC2AcceptVPCPeeringConnectionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AcceptVPCPeeringConnectionResponse.m; sourceTree = "<group>"; };
+		A3F8142C18E27ECD00767D9F /* UAEC2CreateVPCPeeringConnectionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2CreateVPCPeeringConnectionResponse.h; sourceTree = "<group>"; };
+		A3F8142D18E27ECD00767D9F /* UAEC2CreateVPCPeeringConnectionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2CreateVPCPeeringConnectionResponse.m; sourceTree = "<group>"; };
+		A3F8142E18E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2DeleteVPCPeeringConnectionResponse.h; sourceTree = "<group>"; };
+		A3F8142F18E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2DeleteVPCPeeringConnectionResponse.m; sourceTree = "<group>"; };
+		A3F8143018E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2DescribeVPCPeeringConnectionsResponse.h; sourceTree = "<group>"; };
+		A3F8143118E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2DescribeVPCPeeringConnectionsResponse.m; sourceTree = "<group>"; };
+		A3F8143218E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2RejectVPCPeeringConnectionResponse.h; sourceTree = "<group>"; };
+		A3F8143318E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2RejectVPCPeeringConnectionResponse.m; sourceTree = "<group>"; };
 		AE8AD1DDD4B44EA6B687ABB0 /* Pods-AWS iOS SDKTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWS iOS SDKTests.xcconfig"; path = "Pods/Pods-AWS iOS SDKTests.xcconfig"; sourceTree = "<group>"; };
 		D7E3239524A74BCA8C929A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85464AF18CF0F0D00CC2E3C /* UADDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXMLElementAdditions.h; sourceTree = "<group>"; };
@@ -3808,6 +3844,8 @@
 		A33772A918ADA0F900FECC45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A3F8140F18E27DEF00767D9F /* UAEC2AccepterVPCInfo.h */,
+				A3F8141018E27DEF00767D9F /* UAEC2AccepterVPCInfo.m */,
 				A337741E18ADA30000FECC45 /* UAEC2AccountAttribute.h */,
 				A337741F18ADA30000FECC45 /* UAEC2AccountAttribute.m */,
 				A337742018ADA30000FECC45 /* UAEC2Address.h */,
@@ -3816,8 +3854,6 @@
 				A337742318ADA30000FECC45 /* UAEC2AssignPrivateIPAddresses.m */,
 				A337742418ADA30000FECC45 /* UAEC2Attachment.h */,
 				A337742518ADA30000FECC45 /* UAEC2Attachment.m */,
-				A337742618ADA30000FECC45 /* UAEC2AutoEnableIO.h */,
-				A337742718ADA30000FECC45 /* UAEC2AutoEnableIO.m */,
 				A337742818ADA30000FECC45 /* UAEC2AvailabilityZone.h */,
 				A337742918ADA30000FECC45 /* UAEC2AvailabilityZone.m */,
 				A337742A18ADA30000FECC45 /* UAEC2AvailabilityZoneMessage.h */,
@@ -3844,8 +3880,6 @@
 				A337743F18ADA30000FECC45 /* UAEC2CustomerGateway.m */,
 				A337744018ADA30000FECC45 /* UAEC2CustomerGatewayy.h */,
 				A337744118ADA30000FECC45 /* UAEC2CustomerGatewayy.m */,
-				A337744218ADA30000FECC45 /* UAEC2DescriptionValue.h */,
-				A337744318ADA30000FECC45 /* UAEC2DescriptionValue.m */,
 				A337744418ADA30000FECC45 /* UAEC2DHCPConfiguration.h */,
 				A337744518ADA30000FECC45 /* UAEC2DHCPConfiguration.m */,
 				A337744618ADA30000FECC45 /* UAEC2DHCPOption.h */,
@@ -3966,6 +4000,8 @@
 				A33774BD18ADA30000FECC45 /* UAEC2License.m */,
 				A33774BE18ADA30000FECC45 /* UAEC2LicenseCapacity.h */,
 				A33774BF18ADA30000FECC45 /* UAEC2LicenseCapacity.m */,
+				A33772AA18ADA0F900FECC45 /* UAEC2Model.h */,
+				A33772AB18ADA0F900FECC45 /* UAEC2Model.m */,
 				A33774C018ADA30000FECC45 /* UAEC2Monitoring.h */,
 				A33774C118ADA30000FECC45 /* UAEC2Monitoring.m */,
 				A33774C218ADA30000FECC45 /* UAEC2NetworkACL.h */,
@@ -4014,6 +4050,8 @@
 				A33774ED18ADA30000FECC45 /* UAEC2RecurringCharge.m */,
 				A33774EE18ADA30000FECC45 /* UAEC2Region.h */,
 				A33774EF18ADA30000FECC45 /* UAEC2Region.m */,
+				A3F8141118E27DEF00767D9F /* UAEC2RequesterVPCInfo.h */,
+				A3F8141218E27DEF00767D9F /* UAEC2RequesterVPCInfo.m */,
 				A33774F018ADA30000FECC45 /* UAEC2Reservation.h */,
 				A33774F118ADA30000FECC45 /* UAEC2Reservation.m */,
 				A33774F218ADA30000FECC45 /* UAEC2ReservedInstance.h */,
@@ -4096,14 +4134,16 @@
 				A337754118ADA30100FECC45 /* UAEC2VPC.m */,
 				A337754218ADA30100FECC45 /* UAEC2VPCAttachment.h */,
 				A337754318ADA30100FECC45 /* UAEC2VPCAttachment.m */,
+				A3F8141318E27DEF00767D9F /* UAEC2VPCPeeringConnection.h */,
+				A3F8141418E27DEF00767D9F /* UAEC2VPCPeeringConnection.m */,
+				A3F8141518E27DEF00767D9F /* UAEC2VPCPeeringConnectionStatus.h */,
+				A3F8141618E27DEF00767D9F /* UAEC2VPCPeeringConnectionStatus.m */,
 				A337754418ADA30100FECC45 /* UAEC2VPNConnection.h */,
 				A337754518ADA30100FECC45 /* UAEC2VPNConnection.m */,
 				A337754618ADA30100FECC45 /* UAEC2VPNGateway.h */,
 				A337754718ADA30100FECC45 /* UAEC2VPNGateway.m */,
 				A337754818ADA30100FECC45 /* UAEC2VPNStaticRoute.h */,
 				A337754918ADA30100FECC45 /* UAEC2VPNStaticRoute.m */,
-				A33772AA18ADA0F900FECC45 /* UAEC2Model.h */,
-				A33772AB18ADA0F900FECC45 /* UAEC2Model.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -4111,6 +4151,8 @@
 		A33772AC18ADA0F900FECC45 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				A3F8141B18E27E4A00767D9F /* UAEC2AcceptVPCPeeringConnectionRequest.h */,
+				A3F8141C18E27E4A00767D9F /* UAEC2AcceptVPCPeeringConnectionRequest.m */,
 				A33775E218ADA30A00FECC45 /* UAEC2AllocateAddressRequest.h */,
 				A33775E318ADA30A00FECC45 /* UAEC2AllocateAddressRequest.m */,
 				A33775E418ADA30A00FECC45 /* UAEC2AssignPrivateIPAddressesRequest.h */,
@@ -4189,6 +4231,8 @@
 				A337762D18ADA30B00FECC45 /* UAEC2CreateTagsRequest.m */,
 				A337762E18ADA30B00FECC45 /* UAEC2CreateVolumeRequest.h */,
 				A337762F18ADA30B00FECC45 /* UAEC2CreateVolumeRequest.m */,
+				A3F8141D18E27E4A00767D9F /* UAEC2CreateVPCPeeringConnectionRequest.h */,
+				A3F8141E18E27E4A00767D9F /* UAEC2CreateVPCPeeringConnectionRequest.m */,
 				A337763018ADA30B00FECC45 /* UAEC2CreateVPCRequest.h */,
 				A337763118ADA30B00FECC45 /* UAEC2CreateVPCRequest.m */,
 				A337763218ADA30B00FECC45 /* UAEC2CreateVPNConnectionRequest.h */,
@@ -4229,6 +4273,8 @@
 				A337765718ADA30B00FECC45 /* UAEC2DeleteTagsRequest.m */,
 				A337765818ADA30B00FECC45 /* UAEC2DeleteVolumeRequest.h */,
 				A337765918ADA30B00FECC45 /* UAEC2DeleteVolumeRequest.m */,
+				A3F8141F18E27E4A00767D9F /* UAEC2DeleteVPCPeeringConnectionRequest.h */,
+				A3F8142018E27E4A00767D9F /* UAEC2DeleteVPCPeeringConnectionRequest.m */,
 				A337765A18ADA30B00FECC45 /* UAEC2DeleteVPCRequest.h */,
 				A337765B18ADA30B00FECC45 /* UAEC2DeleteVPCRequest.m */,
 				A337765C18ADA30B00FECC45 /* UAEC2DeleteVPNConnectionRequest.h */,
@@ -4313,6 +4359,8 @@
 				A33776AD18ADA30B00FECC45 /* UAEC2DescribeVolumeStatusRequest.m */,
 				A33776AE18ADA30B00FECC45 /* UAEC2DescribeVPCAttributeRequest.h */,
 				A33776AF18ADA30B00FECC45 /* UAEC2DescribeVPCAttributeRequest.m */,
+				A3F8142118E27E4A00767D9F /* UAEC2DescribeVPCPeeringConnectionsRequest.h */,
+				A3F8142218E27E4A00767D9F /* UAEC2DescribeVPCPeeringConnectionsRequest.m */,
 				A33776B018ADA30B00FECC45 /* UAEC2DescribeVPCsRequest.h */,
 				A33776B118ADA30B00FECC45 /* UAEC2DescribeVPCsRequest.m */,
 				A33776B218ADA30B00FECC45 /* UAEC2DescribeVPNConnectionsRequest.h */,
@@ -4369,6 +4417,8 @@
 				A33776E518ADA30B00FECC45 /* UAEC2RebootInstancesRequest.m */,
 				A33776E618ADA30B00FECC45 /* UAEC2RegisterImageRequest.h */,
 				A33776E718ADA30B00FECC45 /* UAEC2RegisterImageRequest.m */,
+				A3F8142318E27E4A00767D9F /* UAEC2RejectVPCPeeringConnectionRequest.h */,
+				A3F8142418E27E4A00767D9F /* UAEC2RejectVPCPeeringConnectionRequest.m */,
 				A33776E818ADA30B00FECC45 /* UAEC2ReleaseAddressRequest.h */,
 				A33776E918ADA30B00FECC45 /* UAEC2ReleaseAddressRequest.m */,
 				A33776EA18ADA30B00FECC45 /* UAEC2ReplaceNetworkACLAssociationRequest.h */,
@@ -4381,6 +4431,8 @@
 				A33776F118ADA30B00FECC45 /* UAEC2ReplaceRouteTableAssociationRequest.m */,
 				A33776F218ADA30B00FECC45 /* UAEC2ReportInstanceStatusRequest.h */,
 				A33776F318ADA30B00FECC45 /* UAEC2ReportInstanceStatusRequest.m */,
+				A33772AD18ADA0F900FECC45 /* UAEC2Request.h */,
+				A33772AE18ADA0F900FECC45 /* UAEC2Request.m */,
 				A33776F418ADA30B00FECC45 /* UAEC2RequestSpotInstancesRequest.h */,
 				A33776F518ADA30B00FECC45 /* UAEC2RequestSpotInstancesRequest.m */,
 				A33776F618ADA30B00FECC45 /* UAEC2ResetImageAttributeRequest.h */,
@@ -4407,8 +4459,6 @@
 				A337770B18ADA30B00FECC45 /* UAEC2UnassignPrivateIPAddressesRequest.m */,
 				A337770C18ADA30B00FECC45 /* UAEC2UnmonitorInstancesRequest.h */,
 				A337770D18ADA30B00FECC45 /* UAEC2UnmonitorInstancesRequest.m */,
-				A33772AD18ADA0F900FECC45 /* UAEC2Request.h */,
-				A33772AE18ADA0F900FECC45 /* UAEC2Request.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -4416,6 +4466,8 @@
 		A33772AF18ADA0F900FECC45 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				A3F8142A18E27ECD00767D9F /* UAEC2AcceptVPCPeeringConnectionResponse.h */,
+				A3F8142B18E27ECD00767D9F /* UAEC2AcceptVPCPeeringConnectionResponse.m */,
 				A33777A718ADA31300FECC45 /* UAEC2AllocateAddressResponse.h */,
 				A33777A818ADA31300FECC45 /* UAEC2AllocateAddressResponse.m */,
 				A33777A918ADA31300FECC45 /* UAEC2AssociateAddressResponse.h */,
@@ -4492,6 +4544,8 @@
 				A33777F018ADA31300FECC45 /* UAEC2CreateTagsResponse.m */,
 				A33777F118ADA31300FECC45 /* UAEC2CreateVolumeResponse.h */,
 				A33777F218ADA31300FECC45 /* UAEC2CreateVolumeResponse.m */,
+				A3F8142C18E27ECD00767D9F /* UAEC2CreateVPCPeeringConnectionResponse.h */,
+				A3F8142D18E27ECD00767D9F /* UAEC2CreateVPCPeeringConnectionResponse.m */,
 				A33777F318ADA31300FECC45 /* UAEC2CreateVPCResponse.h */,
 				A33777F418ADA31300FECC45 /* UAEC2CreateVPCResponse.m */,
 				A33777F518ADA31300FECC45 /* UAEC2CreateVPNConnectionResponse.h */,
@@ -4532,6 +4586,8 @@
 				A337781A18ADA31400FECC45 /* UAEC2DeleteTagsResponse.m */,
 				A337781B18ADA31400FECC45 /* UAEC2DeleteVolumeResponse.h */,
 				A337781C18ADA31400FECC45 /* UAEC2DeleteVolumeResponse.m */,
+				A3F8142E18E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.h */,
+				A3F8142F18E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.m */,
 				A337781D18ADA31400FECC45 /* UAEC2DeleteVPCResponse.h */,
 				A337781E18ADA31400FECC45 /* UAEC2DeleteVPCResponse.m */,
 				A337781F18ADA31400FECC45 /* UAEC2DeleteVPNConnectionResponse.h */,
@@ -4616,6 +4672,8 @@
 				A337787018ADA31400FECC45 /* UAEC2DescribeVolumeStatusResponse.m */,
 				A337787118ADA31400FECC45 /* UAEC2DescribeVPCAttributeResponse.h */,
 				A337787218ADA31400FECC45 /* UAEC2DescribeVPCAttributeResponse.m */,
+				A3F8143018E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.h */,
+				A3F8143118E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.m */,
 				A337787318ADA31400FECC45 /* UAEC2DescribeVPCsResponse.h */,
 				A337787418ADA31400FECC45 /* UAEC2DescribeVPCsResponse.m */,
 				A337787518ADA31400FECC45 /* UAEC2DescribeVPNConnectionsResponse.h */,
@@ -4670,6 +4728,8 @@
 				A33778A618ADA31400FECC45 /* UAEC2RebootInstancesResponse.m */,
 				A33778A718ADA31400FECC45 /* UAEC2RegisterImageResponse.h */,
 				A33778A818ADA31400FECC45 /* UAEC2RegisterImageResponse.m */,
+				A3F8143218E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.h */,
+				A3F8143318E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m */,
 				A33778A918ADA31400FECC45 /* UAEC2ReleaseAddressResponse.h */,
 				A33778AA18ADA31400FECC45 /* UAEC2ReleaseAddressResponse.m */,
 				A33778AB18ADA31400FECC45 /* UAEC2ReplaceNetworkACLAssociationResponse.h */,
@@ -4694,6 +4754,8 @@
 				A33778BE18ADA31500FECC45 /* UAEC2ResetNetworkInterfaceAttributeResponse.m */,
 				A33778BF18ADA31500FECC45 /* UAEC2ResetSnapshotAttributeResponse.h */,
 				A33778C018ADA31500FECC45 /* UAEC2ResetSnapshotAttributeResponse.m */,
+				A33772B018ADA0F900FECC45 /* UAEC2Response.h */,
+				A33772B118ADA0F900FECC45 /* UAEC2Response.m */,
 				A33778C118ADA31500FECC45 /* UAEC2RevokeSecurityGroupEgressResponse.h */,
 				A33778C218ADA31500FECC45 /* UAEC2RevokeSecurityGroupEgressResponse.m */,
 				A33778C318ADA31500FECC45 /* UAEC2RevokeSecurityGroupIngressResponse.h */,
@@ -4710,8 +4772,6 @@
 				A33778CE18ADA31500FECC45 /* UAEC2UnassignPrivateIPAddressesResponse.m */,
 				A33778CF18ADA31500FECC45 /* UAEC2UnmonitorInstancesResponse.h */,
 				A33778D018ADA31500FECC45 /* UAEC2UnmonitorInstancesResponse.m */,
-				A33772B018ADA0F900FECC45 /* UAEC2Response.h */,
-				A33772B118ADA0F900FECC45 /* UAEC2Response.m */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -5752,6 +5812,7 @@
 				E85464F618CF0F0D00CC2E3C /* NSValueTransformer+UAMTLPredefinedTransformerAdditions.m in Sources */,
 				A337825318B1913600FECC45 /* UAIAMListSAMLProvidersResponse.m in Sources */,
 				A30FD21618AD96D000CA52F7 /* UAAWSServiceHealthResponse.m in Sources */,
+				A3F8141718E27DEF00767D9F /* UAEC2AccepterVPCInfo.m in Sources */,
 				A33773B718ADA2D200FECC45 /* UAASDescribeScalingProcessTypesResponse.m in Sources */,
 				A337824118B1913600FECC45 /* UAIAMGetInstanceProfileResponse.m in Sources */,
 				A337755A18ADA30100FECC45 /* UAEC2CustomerGateway.m in Sources */,
@@ -5920,6 +5981,8 @@
 				A337816F18B1912800FECC45 /* UAIAMListGroupsRequest.m in Sources */,
 				A337734F18ADA2C500FECC45 /* UAASDisableMetricsCollectionRequest.m in Sources */,
 				A337814B18B1912800FECC45 /* UAIAMCreateSAMLProviderRequest.m in Sources */,
+				A3F8141918E27DEF00767D9F /* UAEC2VPCPeeringConnection.m in Sources */,
+				A3F8142918E27E4A00767D9F /* UAEC2RejectVPCPeeringConnectionRequest.m in Sources */,
 				A33779DF18ADA32800FECC45 /* UAELBEnableAvailabilityZonesForLoadBalancerRequest.m in Sources */,
 				A337817518B1912800FECC45 /* UAIAMListSAMLProvidersRequest.m in Sources */,
 				A33779DD18ADA32800FECC45 /* UAELBDetachLoadBalancerFromSubnetsRequest.m in Sources */,
@@ -5953,6 +6016,7 @@
 				A33773C418ADA2D200FECC45 /* UAASSuspendProcessesResponse.m in Sources */,
 				E85464F418CF0F0D00CC2E3C /* NSString+UAURLEscape.m in Sources */,
 				A33778FD18ADA31500FECC45 /* UAEC2DeleteCustomerGatewayResponse.m in Sources */,
+				A3F8143818E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m in Sources */,
 				A33779CE18ADA32800FECC45 /* UAELBConfigureHealthCheckRequest.m in Sources */,
 				A337778C18ADA30C00FECC45 /* UAEC2ModifyVolumeAttributeRequest.m in Sources */,
 				A337778018ADA30C00FECC45 /* UAEC2EnableVGWRoutePropagationRequest.m in Sources */,
@@ -5986,6 +6050,7 @@
 				A33775C218ADA30100FECC45 /* UAEC2SpotDatafeedSubscription.m in Sources */,
 				A337776718ADA30C00FECC45 /* UAEC2DescribeReservedInstancesOfferingsRequest.m in Sources */,
 				A337776818ADA30C00FECC45 /* UAEC2DescribeReservedInstancesRequest.m in Sources */,
+				A3F8143518E27ECD00767D9F /* UAEC2CreateVPCPeeringConnectionResponse.m in Sources */,
 				A33775CC18ADA30100FECC45 /* UAEC2Subnet.m in Sources */,
 				A337755418ADA30100FECC45 /* UAEC2BundleTask.m in Sources */,
 				A337777018ADA30C00FECC45 /* UAEC2DescribeSubnetsRequest.m in Sources */,
@@ -6038,7 +6103,6 @@
 				A337754F18ADA30100FECC45 /* UAEC2AvailabilityZone.m in Sources */,
 				A3F813F018D807FA00767D9F /* UASQSAddPermissionResponse.m in Sources */,
 				A3377A2418ADA32F00FECC45 /* UAELBDescribeLoadBalancerAttributesResponse.m in Sources */,
-				A337754E18ADA30100FECC45 /* UAEC2AutoEnableIO.m in Sources */,
 				A337791218ADA31500FECC45 /* UAEC2DescribeAccountAttributesResponse.m in Sources */,
 				A337825418B1913600FECC45 /* UAIAMListServerCertificatesResponse.m in Sources */,
 				A337791A18ADA31500FECC45 /* UAEC2DescribeImageAttributeResponse.m in Sources */,
@@ -6215,6 +6279,7 @@
 				A337807C18B18D2700FECC45 /* UAIAMResponse.m in Sources */,
 				A337734E18ADA2C500FECC45 /* UAASDescribeTerminationPolicyTypesRequest.m in Sources */,
 				A337796618ADA31500FECC45 /* UAEC2UnmonitorInstancesResponse.m in Sources */,
+				A3F8141A18E27DEF00767D9F /* UAEC2VPCPeeringConnectionStatus.m in Sources */,
 				A337771018ADA30B00FECC45 /* UAEC2AssignPrivateIPAddressesRequest.m in Sources */,
 				A33772E218ADA2B800FECC45 /* UAASEBSBlockDevice.m in Sources */,
 				A337792F18ADA31500FECC45 /* UAEC2DescribeSpotDatafeedSubscriptionResponse.m in Sources */,
@@ -6236,6 +6301,7 @@
 				A33775CE18ADA30100FECC45 /* UAEC2TagDescription.m in Sources */,
 				A3377A7C18ADA34200FECC45 /* UASNSCreatePlatformApplicationRequest.m in Sources */,
 				A33778F018ADA31500FECC45 /* UAEC2CreateRouteResponse.m in Sources */,
+				A3F8143418E27ECD00767D9F /* UAEC2AcceptVPCPeeringConnectionResponse.m in Sources */,
 				A337799318ADA32000FECC45 /* UAELBPolicies.m in Sources */,
 				A33780AD18B1909F00FECC45 /* UAIAMVirtualMFADevice.m in Sources */,
 				A337823818B1913600FECC45 /* UAIAMDeleteSigningCertificateResponse.m in Sources */,
@@ -6273,6 +6339,7 @@
 				A3377ADD18ADA34A00FECC45 /* UASNSUnsubscribeResponse.m in Sources */,
 				A337755218ADA30100FECC45 /* UAEC2BundleInstanceS3Storage.m in Sources */,
 				A33773F818ADA2EF00FECC45 /* UACWGetMetricStatisticsRequest.m in Sources */,
+				A3F8143718E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.m in Sources */,
 				A3377A8118ADA34200FECC45 /* UASNSDeleteTopicRequest.m in Sources */,
 				A337776518ADA30C00FECC45 /* UAEC2DescribeReservedInstancesListingsRequest.m in Sources */,
 				A337795D18ADA31500FECC45 /* UAEC2ResetNetworkInterfaceAttributeResponse.m in Sources */,
@@ -6282,6 +6349,7 @@
 				A337777518ADA30C00FECC45 /* UAEC2DescribeVPCAttributeRequest.m in Sources */,
 				A337793518ADA31500FECC45 /* UAEC2DescribeVolumesResponse.m in Sources */,
 				A337773418ADA30B00FECC45 /* UAEC2CreateTagsRequest.m in Sources */,
+				A3F8142618E27E4A00767D9F /* UAEC2CreateVPCPeeringConnectionRequest.m in Sources */,
 				A30FD22118AD96D000CA52F7 /* UAELBError.m in Sources */,
 				A337755F18ADA30100FECC45 /* UAEC2DHCPOptions.m in Sources */,
 				A337799518ADA32000FECC45 /* UAELBPolicyAttributeDescription.m in Sources */,
@@ -6319,6 +6387,7 @@
 				A337777C18ADA30C00FECC45 /* UAEC2DetachVPNGatewayRequest.m in Sources */,
 				A33775A218ADA30100FECC45 /* UAEC2NetworkInterfaceSpecification.m in Sources */,
 				A337816018B1912800FECC45 /* UAIAMGetAccountSummaryRequest.m in Sources */,
+				A3F8142718E27E4A00767D9F /* UAEC2DeleteVPCPeeringConnectionRequest.m in Sources */,
 				A33780A718B1909F00FECC45 /* UAIAMSAMLProviderList.m in Sources */,
 				A337774618ADA30B00FECC45 /* UAEC2DeleteSnapshotRequest.m in Sources */,
 				E85464EA18CF0F0D00CC2E3C /* NSString+UADDXML.m in Sources */,
@@ -6498,6 +6567,7 @@
 				A337774D18ADA30B00FECC45 /* UAEC2DeleteVPNConnectionRouteRequest.m in Sources */,
 				A337758618ADA30100FECC45 /* UAEC2InstanceNetworkInterfaceAssociation.m in Sources */,
 				A33775DF18ADA30100FECC45 /* UAEC2VPNStaticRoute.m in Sources */,
+				A3F8142518E27E4A00767D9F /* UAEC2AcceptVPCPeeringConnectionRequest.m in Sources */,
 				A337772718ADA30B00FECC45 /* UAEC2CreateInternetGatewayRequest.m in Sources */,
 				A337794F18ADA31500FECC45 /* UAEC2MonitorInstancesResponse.m in Sources */,
 				A337775518ADA30C00FECC45 /* UAEC2DescribeCustomerGatewaysRequest.m in Sources */,
@@ -6536,6 +6606,7 @@
 				A33773B218ADA2D200FECC45 /* UAASDescribeLaunchConfigurationsResponse.m in Sources */,
 				A337757B18ADA30100FECC45 /* UAEC2ImportVolumeTaskDetails.m in Sources */,
 				A337817318B1912800FECC45 /* UAIAMListRolePoliciesRequest.m in Sources */,
+				A3F8141818E27DEF00767D9F /* UAEC2RequesterVPCInfo.m in Sources */,
 				A337790A18ADA31500FECC45 /* UAEC2DeleteSubnetResponse.m in Sources */,
 				A337795E18ADA31500FECC45 /* UAEC2ResetSnapshotAttributeResponse.m in Sources */,
 				A33775CA18ADA30100FECC45 /* UAEC2Status.m in Sources */,
@@ -6573,7 +6644,6 @@
 				A337817418B1912800FECC45 /* UAIAMListRolesRequest.m in Sources */,
 				A337823F18B1913600FECC45 /* UAIAMGetGroupPolicyResponse.m in Sources */,
 				A33772E918ADA2B800FECC45 /* UAASNotificationConfiguration.m in Sources */,
-				A337755C18ADA30100FECC45 /* UAEC2DescriptionValue.m in Sources */,
 				A337778E18ADA30C00FECC45 /* UAEC2MonitorInstancesRequest.m in Sources */,
 				A337798D18ADA32000FECC45 /* UAELBInstanceStateDetails.m in Sources */,
 				A3377A2518ADA32F00FECC45 /* UAELBDescribeLoadBalancerPoliciesResponse.m in Sources */,
@@ -6608,6 +6678,7 @@
 				A337777818ADA30C00FECC45 /* UAEC2DescribeVPNGatewaysRequest.m in Sources */,
 				A337793918ADA31500FECC45 /* UAEC2DescribeVPNConnectionsResponse.m in Sources */,
 				A337826F18B195A300FECC45 /* UAIAMSigningCertificate.m in Sources */,
+				A3F8143618E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.m in Sources */,
 				A33780AA18B1909F00FECC45 /* UAIAMServerCertificateMetadataList.m in Sources */,
 				A3377AD418ADA34A00FECC45 /* UASNSListSubscriptionsResponse.m in Sources */,
 				A33775AE18ADA30100FECC45 /* UAEC2PropagatingVGW.m in Sources */,
@@ -6658,6 +6729,7 @@
 				A33773AB18ADA2D200FECC45 /* UAASDeleteScheduledActionResponse.m in Sources */,
 				A3F8137D18D8046E00767D9F /* UASQSModel.m in Sources */,
 				A337790618ADA31500FECC45 /* UAEC2DeleteRouteTableResponse.m in Sources */,
+				A3F8142818E27E4A00767D9F /* UAEC2DescribeVPCPeeringConnectionsRequest.m in Sources */,
 				E85464FA18CF0F0D00CC2E3C /* UAMTLManagedObjectAdapter.m in Sources */,
 				A3377A2718ADA32F00FECC45 /* UAELBDescribeLoadBalancersResponse.m in Sources */,
 				A33779E018ADA32800FECC45 /* UAELBModifyLoadBalancerAttributesRequest.m in Sources */,

@@ -27,7 +27,7 @@
 
 + (NSDictionary *)XMLNamespaceMappings
 {
-    return @{ @"ec2": @"http://ec2.amazonaws.com/doc/2013-10-15/" };
+    return @{ @"ec2": @"http://ec2.amazonaws.com/doc/2014-02-01/" };
 }
 
 @end

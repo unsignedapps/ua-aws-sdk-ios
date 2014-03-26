@@ -16,8 +16,10 @@
 NSString * const UAMTLXMLAdapterErrorDomain = @"UAMTLXMLAdapterErrorDomain";
 const NSInteger UAMTLXMLAdapterErrorNoClassFound = 2;
 
+#if !DEBUG
 // An exception was thrown and caught.
 static const NSInteger UAMTLXMLAdapterErrorExceptionThrown = 1;
+#endif
 
 // Associated with the NSException that was caught.
 static NSString * const UAMTLXMLAdapterThrownExceptionErrorKey = @"UAMTLXMLAdapterThrownException";

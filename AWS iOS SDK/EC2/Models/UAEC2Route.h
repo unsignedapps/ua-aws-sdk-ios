@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSString *instanceID;
 @property (nonatomic, copy) NSString *instanceOwnerID;
 @property (nonatomic, copy) NSString *networkInterfaceID;
+@property (nonatomic, copy) NSString *vpcPeeringConnectionID;
 @property (nonatomic, copy) NSString *state;
 
 @end

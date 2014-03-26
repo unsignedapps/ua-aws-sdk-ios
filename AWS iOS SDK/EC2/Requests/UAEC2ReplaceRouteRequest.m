@@ -19,14 +19,14 @@
 
 @implementation UAEC2ReplaceRouteRequest
 
-@synthesize action=_action, version=_version, dryRun=_dryRun, routeTableID=_routeTableID, destinationCidrBlock=_destinationCidrBlock, gatewayID=_gatewayID, instanceID=_instanceID, networkInterfaceID=_networkInterfaceID;
+@synthesize action=_action, version=_version, dryRun=_dryRun, routeTableID=_routeTableID, destinationCidrBlock=_destinationCidrBlock, gatewayID=_gatewayID, instanceID=_instanceID, networkInterfaceID=_networkInterfaceID, vpcPeeringConnectionID=_vpcPeeringConnectionID;
 
 - (id)init
 {
 	if (self = [super init])
 	{
 		[self setAction:@"ReplaceRoute"];
-		[self setVersion:@"2013-10-15"];
+		[self setVersion:@"2014-02-01"];
 	}
 	return self;
 }
@@ -50,7 +50,8 @@
         @"destinationCidrBlock": @"DestinationCidrBlock",
         @"gatewayID": @"GatewayId",
         @"instanceID": @"InstanceId",
-        @"networkInterfaceID": @"NetworkInterfaceId"
+        @"networkInterfaceID": @"NetworkInterfaceId",
+        @"vpcPeeringConnectionID": @"VpcPeeringConnectionId"
     }];
     return [keyPaths copy];
 }
@@ -117,6 +118,14 @@
 	
 	if (![self.UA_dirtyProperties containsObject:@"networkInterfaceID"])
 		[self.UA_dirtyProperties addObject:@"networkInterfaceID"];
+}
+
+- (void)setVpcPeeringConnectionID:(NSString *)vpcPeeringConnectionID
+{
+	_vpcPeeringConnectionID = vpcPeeringConnectionID;
+	
+	if (![self.UA_dirtyProperties containsObject:@"vpcPeeringConnectionID"])
+		[self.UA_dirtyProperties addObject:@"vpcPeeringConnectionID"];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer

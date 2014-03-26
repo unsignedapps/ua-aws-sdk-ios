@@ -13,8 +13,10 @@ NSString * const UAMTLJSONAdapterErrorDomain = @"UAMTLJSONAdapterErrorDomain";
 const NSInteger UAMTLJSONAdapterErrorNoClassFound = 2;
 const NSInteger UAMTLJSONAdapterErrorInvalidJSONDictionary = 3;
 
+#if !DEBUG
 // An exception was thrown and caught.
 static const NSInteger UAMTLJSONAdapterErrorExceptionThrown = 1;
+#endif
 
 // Associated with the NSException that was caught.
 static NSString * const UAMTLJSONAdapterThrownExceptionErrorKey = @"UAMTLJSONAdapterThrownException";

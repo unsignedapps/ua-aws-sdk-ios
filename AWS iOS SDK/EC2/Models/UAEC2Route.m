@@ -11,7 +11,7 @@
 
 @implementation UAEC2Route
 
-@synthesize destinationCidrBlock=_destinationCidrBlock, gatewayID=_gatewayID, instanceID=_instanceID, instanceOwnerID=_instanceOwnerID, networkInterfaceID=_networkInterfaceID, state=_state;
+@synthesize destinationCidrBlock=_destinationCidrBlock, gatewayID=_gatewayID, instanceID=_instanceID, instanceOwnerID=_instanceOwnerID, networkInterfaceID=_networkInterfaceID, vpcPeeringConnectionID=_vpcPeeringConnectionID, state=_state;
 
 + (NSString *)XPathPrefix
 {
@@ -30,6 +30,7 @@
         @"instanceID": @"ec2:instanceId",
         @"instanceOwnerID": @"ec2:instanceOwnerId",
         @"networkInterfaceID": @"ec2:networkInterfaceId",
+        @"vpcPeeringConnectionID": @"ec2:vpcPeeringConnectionId",
         @"state": @"ec2:state"
     }];
     return [keyPaths copy];

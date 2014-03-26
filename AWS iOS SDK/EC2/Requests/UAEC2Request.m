@@ -58,7 +58,7 @@
 
 - (NSString *)UA_APIVersion
 {
-    return @"2013-10-15";
+    return @"2014-02-01";
 }
 
 - (NSString *)UA_RequestPath

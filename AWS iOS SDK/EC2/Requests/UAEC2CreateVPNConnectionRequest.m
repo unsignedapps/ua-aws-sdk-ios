@@ -27,7 +27,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"CreateVpnConnection"];
-		[self setVersion:@"2013-10-15"];
+		[self setVersion:@"2014-02-01"];
 	}
 	return self;
 }

@@ -21,6 +21,7 @@ typedef BOOL(^UAEC2CreateRouteRequestShouldContinueWaitingBlock)(UAEC2CreateRout
 @property (nonatomic, copy) NSString *gatewayID;
 @property (nonatomic, copy) NSString *instanceID;
 @property (nonatomic, copy) NSString *networkInterfaceID;
+@property (nonatomic, copy) NSString *vpcPeeringConnectionID;
 // @property (nonatomic, copy) UAEC2CreateRouteRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2CreateRouteRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

@@ -7,6 +7,19 @@
 //
 //
 
+// UAEC2VPCPeeringConnectionState
+typedef NS_ENUM(NSUInteger, UAEC2VPCPeeringConnectionState) {
+	UAEC2VPCPeeringConnectionStateUnknown = 0,
+	UAEC2VPCPeeringConnectionStateInitiatingRequest = 1,
+	UAEC2VPCPeeringConnectionStatePendingAcceptance = 2,
+	UAEC2VPCPeeringConnectionStateFailed = 3,
+	UAEC2VPCPeeringConnectionStateExpired = 4,
+	UAEC2VPCPeeringConnectionStateProvisioning = 5,
+	UAEC2VPCPeeringConnectionStateActive = 6,
+	UAEC2VPCPeeringConnectionStateDeleted = 7,
+	UAEC2VPCPeeringConnectionStateRejected = 8
+};
+
 // UAEC2Domain
 typedef NS_ENUM(NSUInteger, UAEC2Domain) {
 	UAEC2DomainUnknown = 0,
