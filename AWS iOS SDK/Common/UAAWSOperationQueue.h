@@ -32,7 +32,7 @@
 /**
  * Returns the shared UAAWSOperationQueue instance.
 **/
-+ (id)sharedInstance;
++ (id)sharedInstance __attribute__((const));
 
 /**
  * Cancels the operation of the queue.
@@ -55,8 +55,8 @@
 - (void)addRequests:(NSArray *)requests waitUntilFinished:(BOOL)wait;
 
 /**
- * Adds a request to the queue from a timer.
+ * Adds a request after the specified interval has ellapsed.
 **/
-- (void)addRequestFromTimer:(NSTimer *)timer;
+- (void)addRequest:(UAAWSRequest *)request afterInterval:(NSTimeInterval)interval;
 
 @end

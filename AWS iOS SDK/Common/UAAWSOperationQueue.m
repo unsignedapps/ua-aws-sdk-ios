@@ -15,8 +15,12 @@
 
 @interface UAAWSOperationQueue ()
 
+// keep an array of request adding timers
+@property (nonatomic, strong) NSMutableArray *timers;
+
 - (UAAWSCredentials *)credentialsForRequest:(UAAWSRequest *)request;
 - (UAAWSRegion)regionForRequest:(UAAWSRequest *)request;
+- (void)addRequestFromTimer:(NSTimer *)timer;
 
 @end
 
@@ -24,7 +28,7 @@
 
 @implementation UAAWSOperationQueue
 
-@synthesize cancelled=_cancelled, delegate=_delegate, session=_session;
+@synthesize cancelled=_cancelled, delegate=_delegate, session=_session, timers=_timers;
 
 + (id)sharedInstance
 {
@@ -51,6 +55,9 @@
         // Create a NSURLSession for our use, private browsing style
         NSURLSessionConfiguration *privateBrowsing = [NSURLSessionConfiguration ephemeralSessionConfiguration];
         [self setSession:[NSURLSession sessionWithConfiguration:privateBrowsing delegate:self delegateQueue:self]];
+        
+        // an array for request adding timers
+        [self setTimers:[[NSMutableArray alloc] initWithCapacity:0]];
     }
     return self;
 }
@@ -76,6 +83,16 @@
     NSAssert([timer.userInfo isKindOfClass:[UAAWSRequest class]], @"The timer object's userInfo parameter must be an UAAWSRequest object when adding a request from a timer.");
     UAAWSRequest *request = (UAAWSRequest *)timer.userInfo;
     [self addRequest:request];
+    
+    // remove it from the list now
+    if ([self.timers containsObject:timer])
+        [self.timers removeObject:timer];
+}
+
+- (void)addRequest:(UAAWSRequest *)request afterInterval:(NSTimeInterval)interval
+{
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(addRequestFromTimer:) userInfo:request repeats:NO];
+    [self.timers addObject:timer];
 }
 
 #pragma mark - Execution Management
@@ -91,6 +108,7 @@
     if (owner == nil || [self operationCount] == 0)
         return;
     
+    // cancel operations in the queue
     for (NSOperation *op in self.operations)
     {
         if ([op isKindOfClass:[UAAWSRequest class]])
@@ -99,6 +117,19 @@
             id innerOwner = request.UA_Owner;
             if (innerOwner != nil && [innerOwner isEqual:owner])
                 [request cancel];
+        }
+    }
+    
+    // cancel operations that are scheduled to be added
+    for (NSTimer *timer in self.timers)
+    {
+        UAAWSRequest *request = (UAAWSRequest *)timer.userInfo;
+        id innerOwner = request.UA_Owner;
+        if (innerOwner != nil && [innerOwner isEqual:owner])
+        {
+            [request cancel];
+            [timer invalidate];
+            [self.timers removeObject:timer];
         }
     }
 }

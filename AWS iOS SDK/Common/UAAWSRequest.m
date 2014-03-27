@@ -176,7 +176,7 @@
     __block UAAWSRequest *blockSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^
     {
-        [NSTimer scheduledTimerWithTimeInterval:[self UA_PollingInterval] target:[UAAWSOperationQueue sharedInstance] selector:@selector(addRequestFromTimer:) userInfo:[blockSelf copy] repeats:NO];
+        [[UAAWSOperationQueue sharedInstance] addRequest:[blockSelf copy] afterInterval:[self UA_PollingInterval]];
     });
 }
 
