@@ -13,8 +13,8 @@
 
 @property (nonatomic, copy) NSString *eventType;
 @property (nonatomic, copy) NSString *descriptionValue;
-@property (nonatomic, copy) NSString *notBefore;
-@property (nonatomic, copy) NSString *notAfter;
+@property (nonatomic, strong) NSDate *notBefore;
+@property (nonatomic, strong) NSDate *notAfter;
 @property (nonatomic, copy) NSString *eventID;
 
 @end

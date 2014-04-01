@@ -81,6 +81,8 @@
 		    return @(UAEC2VolumeStatusDetailStatusSeverelyDegraded);
 		if ([value isEqualToString:@"stalled"])
 		    return @(UAEC2VolumeStatusDetailStatusStalled);
+		if ([value isEqualToString:@"not-applicable"])
+		    return @(UAEC2VolumeStatusDetailStatusNotApplicable);
 
 		return @(UAEC2VolumeStatusDetailStatusUnknown);
 
@@ -101,6 +103,8 @@
 			    return @"severely-degraded";
 			case UAEC2VolumeStatusDetailStatusStalled:
 			    return @"stalled";
+			case UAEC2VolumeStatusDetailStatusNotApplicable:
+			    return @"not-applicable";
 
 			case UAEC2VolumeStatusDetailStatusUnknown:
 			default:
@@ -167,6 +171,8 @@
 		    return @(UAEC2VolumeStatusDetailStatusSeverelyDegraded);
 		if ([value isEqualToString:@"stalled"])
 		    return @(UAEC2VolumeStatusDetailStatusStalled);
+		if ([value isEqualToString:@"not-applicable"])
+		    return @(UAEC2VolumeStatusDetailStatusNotApplicable);
 
 		return @(UAEC2VolumeStatusDetailStatusUnknown);
 
@@ -187,6 +193,8 @@
 			    return @"severely-degraded";
 			case UAEC2VolumeStatusDetailStatusStalled:
 			    return @"stalled";
+			case UAEC2VolumeStatusDetailStatusNotApplicable:
+			    return @"not-applicable";
 
 			case UAEC2VolumeStatusDetailStatusUnknown:
 			default:

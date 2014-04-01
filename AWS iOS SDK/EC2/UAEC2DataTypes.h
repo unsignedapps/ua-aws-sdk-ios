@@ -323,7 +323,8 @@ typedef NS_ENUM(NSUInteger, UAEC2VolumeStatusDetailStatus) {
 	UAEC2VolumeStatusDetailStatusNormal = 3,
 	UAEC2VolumeStatusDetailStatusDegraded = 4,
 	UAEC2VolumeStatusDetailStatusSeverelyDegraded = 5,
-	UAEC2VolumeStatusDetailStatusStalled = 6
+	UAEC2VolumeStatusDetailStatusStalled = 6,
+	UAEC2VolumeStatusDetailStatusNotApplicable = 7
 };
 
 // UAEC2VolumeStatusInfoStatus
