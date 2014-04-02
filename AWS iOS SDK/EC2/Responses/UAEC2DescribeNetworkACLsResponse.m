@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2NetworkACL *)networkACLAtIndex:(NSUInteger)index
+{
+    if (self.networkACLs == nil || index >= ([self.networkACLs count]-1))
+        return nil;
+
+    return [self.networkACLs objectAtIndex:index];
+}
+
 + (NSValueTransformer *)networkACLsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2NetworkACL class]];

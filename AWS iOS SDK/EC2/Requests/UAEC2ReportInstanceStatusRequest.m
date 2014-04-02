@@ -56,6 +56,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)instanceAtIndex:(NSUInteger)index
+{
+    if (self.instances == nil || index >= ([self.instances count]-1))
+        return nil;
+
+    return [self.instances objectAtIndex:index];
+}
+
+- (NSString *)reasonCodeAtIndex:(NSUInteger)index
+{
+    if (self.reasonCodes == nil || index >= ([self.reasonCodes count]-1))
+        return nil;
+
+    return [self.reasonCodes objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

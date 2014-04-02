@@ -32,4 +32,19 @@
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic, copy) NSArray *privateIPAddresses;
 
+/**
+ * Retrieves the UAEC2GroupIdentifier at the specified index.
+**/
+- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2PrivateIPAddress at the specified index.
+**/
+- (UAEC2PrivateIPAddress *)privateIPAddressAtIndex:(NSUInteger)index;
+
 @end

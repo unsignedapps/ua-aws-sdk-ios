@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *alarmHistoryItems;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UACWAlarmHistoryItem at the specified index.
+**/
+- (UACWAlarmHistoryItem *)alarmHistoryItemAtIndex:(NSUInteger)index;
+
 @end

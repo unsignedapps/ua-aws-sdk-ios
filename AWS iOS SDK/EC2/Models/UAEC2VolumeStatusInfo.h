@@ -16,4 +16,9 @@
 @property (nonatomic) UAEC2VolumeStatusInfoStatus status;
 @property (nonatomic, copy) NSArray *details;
 
+/**
+ * Retrieves the UAEC2VolumeStatusDetail at the specified index.
+**/
+- (UAEC2VolumeStatusDetail *)detailAtIndex:(NSUInteger)index;
+
 @end

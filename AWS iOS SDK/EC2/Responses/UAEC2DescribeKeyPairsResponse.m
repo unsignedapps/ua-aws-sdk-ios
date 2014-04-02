@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2KeyPair *)keyPairAtIndex:(NSUInteger)index
+{
+    if (self.keyPairs == nil || index >= ([self.keyPairs count]-1))
+        return nil;
+
+    return [self.keyPairs objectAtIndex:index];
+}
+
 + (NSValueTransformer *)keyPairsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2KeyPair class]];

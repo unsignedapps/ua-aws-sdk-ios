@@ -33,6 +33,14 @@
     return [keyPaths copy];
 }
 
+- (UAIAMGroup *)groupAtIndex:(NSUInteger)index
+{
+    if (self.groups == nil || index >= ([self.groups count]-1))
+        return nil;
+
+    return [self.groups objectAtIndex:index];
+}
+
 + (NSValueTransformer *)groupsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMGroup class]];

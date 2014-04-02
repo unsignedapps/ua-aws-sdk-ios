@@ -25,6 +25,11 @@ typedef BOOL(^UAASDescribeScheduledActionsRequestShouldContinueWaitingBlock)(UAA
 // @property (nonatomic, copy) UAASDescribeScheduledActionsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)scheduledActionNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a ScheduledActionName to the scheduledActionNames property.
  *
  * This will initialise scheduledActionNames with an empty mutable array if necessary.

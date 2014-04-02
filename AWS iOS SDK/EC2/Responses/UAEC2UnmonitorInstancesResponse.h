@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *instanceMonitorings;
 
+/**
+ * Retrieves the UAEC2InstanceMonitoring at the specified index.
+**/
+- (UAEC2InstanceMonitoring *)instanceMonitoringAtIndex:(NSUInteger)index;
+
 @end

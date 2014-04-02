@@ -92,33 +92,9 @@
 
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"standard"])
-		    return @(UAASEBSBlockDeviceVolumeTypeStandard);
-		if ([value isEqualToString:@"io1"])
-		    return @(UAASEBSBlockDeviceVolumeTypeIo1);
-
-		return @(UAASEBSBlockDeviceVolumeTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASEBSBlockDeviceVolumeType castValue = (UAASEBSBlockDeviceVolumeType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASEBSBlockDeviceVolumeTypeStandard:
-			    return @"standard";
-			case UAASEBSBlockDeviceVolumeTypeIo1:
-			    return @"io1";
-
-			case UAASEBSBlockDeviceVolumeTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIo1) ]
+                                               stringValues:@[ @"standard", @"io1" ]
+                                               unknownValue:@(UAASEBSBlockDeviceVolumeTypeUnknown)];
 }
 
 + (NSValueTransformer *)volumeSizeXMLTransformer
@@ -128,37 +104,9 @@
 
 + (NSValueTransformer *)volumeTypeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAASEBSBlockDeviceVolumeTypeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"standard"])
-		    return @(UAASEBSBlockDeviceVolumeTypeStandard);
-		if ([value isEqualToString:@"io1"])
-		    return @(UAASEBSBlockDeviceVolumeTypeIo1);
-
-		return @(UAASEBSBlockDeviceVolumeTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASEBSBlockDeviceVolumeType castValue = (UAASEBSBlockDeviceVolumeType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASEBSBlockDeviceVolumeTypeStandard:
-			    return @"standard";
-			case UAASEBSBlockDeviceVolumeTypeIo1:
-			    return @"io1";
-
-			case UAASEBSBlockDeviceVolumeTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIo1) ]
+                                               stringValues:@[ @"standard", @"io1" ]
+                                               unknownValue:@(UAASEBSBlockDeviceVolumeTypeUnknown)];
 }
 
 + (NSValueTransformer *)deleteOnTerminationXMLTransformer

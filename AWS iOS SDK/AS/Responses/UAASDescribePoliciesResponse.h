@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *scalingPolicies;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAASScalingPolicy at the specified index.
+**/
+- (UAASScalingPolicy *)scalingPolicyAtIndex:(NSUInteger)index;
+
 @end

@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAASLaunchConfiguration *)launchConfigurationAtIndex:(NSUInteger)index
+{
+    if (self.launchConfigurations == nil || index >= ([self.launchConfigurations count]-1))
+        return nil;
+
+    return [self.launchConfigurations objectAtIndex:index];
+}
+
 + (NSValueTransformer *)launchConfigurationsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASLaunchConfiguration class]];

@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Reservation *)reservationAtIndex:(NSUInteger)index
+{
+    if (self.reservations == nil || index >= ([self.reservations count]-1))
+        return nil;
+
+    return [self.reservations objectAtIndex:index];
+}
+
 + (NSValueTransformer *)reservationsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Reservation class]];

@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2ExportTask *)exportTaskAtIndex:(NSUInteger)index
+{
+    if (self.exportTasks == nil || index >= ([self.exportTasks count]-1))
+        return nil;
+
+    return [self.exportTasks objectAtIndex:index];
+}
+
 + (NSValueTransformer *)exportTasksXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ExportTask class]];

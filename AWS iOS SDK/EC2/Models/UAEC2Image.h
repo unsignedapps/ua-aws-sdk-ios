@@ -36,4 +36,19 @@
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic) UAEC2Hypervisor hypervisor;
 
+/**
+ * Retrieves the UAEC2ProductCode at the specified index.
+**/
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2BlockDeviceMapping at the specified index.
+**/
+- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

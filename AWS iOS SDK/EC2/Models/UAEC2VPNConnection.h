@@ -24,4 +24,19 @@
 @property (nonatomic, copy) UAEC2Options *options;
 @property (nonatomic, copy) NSArray *routes;
 
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2VGWTelemetry at the specified index.
+**/
+- (UAEC2VGWTelemetry *)vgwTelemetryAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2VPNStaticRoute at the specified index.
+**/
+- (UAEC2VPNStaticRoute *)routeAtIndex:(NSUInteger)index;
+
 @end

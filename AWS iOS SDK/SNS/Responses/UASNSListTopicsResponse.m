@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UASNSTopic *)topicAtIndex:(NSUInteger)index
+{
+    if (self.topics == nil || index >= ([self.topics count]-1))
+        return nil;
+
+    return [self.topics objectAtIndex:index];
+}
+
 + (NSValueTransformer *)topicsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSTopic class]];

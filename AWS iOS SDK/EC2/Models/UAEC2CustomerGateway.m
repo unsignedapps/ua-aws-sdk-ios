@@ -36,6 +36,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];

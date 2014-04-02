@@ -23,4 +23,14 @@
 @property (nonatomic, copy) NSString *statusMessage;
 @property (nonatomic, copy) NSString *clientToken;
 
+/**
+ * Retrieves the UAEC2ReservedInstancesID at the specified index.
+**/
+- (UAEC2ReservedInstancesID *)reservedInstancesIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2ReservedInstancesModificationResponse at the specified index.
+**/
+- (UAEC2ReservedInstancesModificationResponse *)modificationResultAtIndex:(NSUInteger)index;
+
 @end

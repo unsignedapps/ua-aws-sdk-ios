@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *spotInstanceRequests;
 
+/**
+ * Retrieves the UAEC2SpotInstanceRequest at the specified index.
+**/
+- (UAEC2SpotInstanceRequest *)spotInstanceRequestAtIndex:(NSUInteger)index;
+
 @end

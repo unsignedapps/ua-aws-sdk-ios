@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *availabilityZones;
 
+/**
+ * Retrieves the UAEC2AvailabilityZone at the specified index.
+**/
+- (UAEC2AvailabilityZone *)availabilityZoneAtIndex:(NSUInteger)index;
+
 @end

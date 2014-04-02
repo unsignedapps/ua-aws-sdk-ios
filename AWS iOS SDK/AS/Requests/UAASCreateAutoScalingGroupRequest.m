@@ -65,6 +65,38 @@
     return [keyPaths copy];
 }
 
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
+{
+    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
+        return nil;
+
+    return [self.availabilityZones objectAtIndex:index];
+}
+
+- (NSString *)loadBalancerNameAtIndex:(NSUInteger)index
+{
+    if (self.loadBalancerNames == nil || index >= ([self.loadBalancerNames count]-1))
+        return nil;
+
+    return [self.loadBalancerNames objectAtIndex:index];
+}
+
+- (NSString *)terminationPolicyAtIndex:(NSUInteger)index
+{
+    if (self.terminationPolicies == nil || index >= ([self.terminationPolicies count]-1))
+        return nil;
+
+    return [self.terminationPolicies objectAtIndex:index];
+}
+
+- (UAASTag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

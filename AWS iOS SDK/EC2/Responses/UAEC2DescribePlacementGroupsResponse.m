@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2PlacementGroup *)placementGroupAtIndex:(NSUInteger)index
+{
+    if (self.placementGroups == nil || index >= ([self.placementGroups count]-1))
+        return nil;
+
+    return [self.placementGroups objectAtIndex:index];
+}
+
 + (NSValueTransformer *)placementGroupsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2PlacementGroup class]];

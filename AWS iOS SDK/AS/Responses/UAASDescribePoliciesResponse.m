@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAASScalingPolicy *)scalingPolicyAtIndex:(NSUInteger)index
+{
+    if (self.scalingPolicies == nil || index >= ([self.scalingPolicies count]-1))
+        return nil;
+
+    return [self.scalingPolicies objectAtIndex:index];
+}
+
 + (NSValueTransformer *)scalingPoliciesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASScalingPolicy class]];

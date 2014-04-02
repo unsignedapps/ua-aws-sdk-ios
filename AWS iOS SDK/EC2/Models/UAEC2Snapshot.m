@@ -40,39 +40,19 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2SnapshotStatePending);
-		if ([value isEqualToString:@"completed"])
-		    return @(UAEC2SnapshotStateCompleted);
-		if ([value isEqualToString:@"error"])
-		    return @(UAEC2SnapshotStateError);
-
-		return @(UAEC2SnapshotStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2SnapshotState castValue = (UAEC2SnapshotState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2SnapshotStatePending:
-			    return @"pending";
-			case UAEC2SnapshotStateCompleted:
-			    return @"completed";
-			case UAEC2SnapshotStateError:
-			    return @"error";
-
-			case UAEC2SnapshotStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2SnapshotStatePending), @(UAEC2SnapshotStateCompleted), @(UAEC2SnapshotStateError) ]
+                                               stringValues:@[ @"pending", @"completed", @"error" ]
+                                               unknownValue:@(UAEC2SnapshotStateUnknown)];
 }
 
 + (NSValueTransformer *)startTimeQueryStringTransformer
@@ -87,41 +67,9 @@
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2SnapshotStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2SnapshotStatePending);
-		if ([value isEqualToString:@"completed"])
-		    return @(UAEC2SnapshotStateCompleted);
-		if ([value isEqualToString:@"error"])
-		    return @(UAEC2SnapshotStateError);
-
-		return @(UAEC2SnapshotStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2SnapshotState castValue = (UAEC2SnapshotState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2SnapshotStatePending:
-			    return @"pending";
-			case UAEC2SnapshotStateCompleted:
-			    return @"completed";
-			case UAEC2SnapshotStateError:
-			    return @"error";
-
-			case UAEC2SnapshotStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2SnapshotStatePending), @(UAEC2SnapshotStateCompleted), @(UAEC2SnapshotStateError) ]
+                                               stringValues:@[ @"pending", @"completed", @"error" ]
+                                               unknownValue:@(UAEC2SnapshotStateUnknown)];
 }
 
 + (NSValueTransformer *)startTimeXMLTransformer

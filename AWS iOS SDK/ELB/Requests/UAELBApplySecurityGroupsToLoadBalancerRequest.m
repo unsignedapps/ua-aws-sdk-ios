@@ -51,6 +51,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)securityGroupAtIndex:(NSUInteger)index
+{
+    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
+        return nil;
+
+    return [self.securityGroups objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

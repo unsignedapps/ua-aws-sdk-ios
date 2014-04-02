@@ -27,4 +27,14 @@
 @property (nonatomic) BOOL marketplace;
 @property (nonatomic, copy) NSArray *pricingDetails;
 
+/**
+ * Retrieves the UAEC2RecurringCharge at the specified index.
+**/
+- (UAEC2RecurringCharge *)recurringChargeAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2PricingDetail at the specified index.
+**/
+- (UAEC2PricingDetail *)pricingDetailAtIndex:(NSUInteger)index;
+
 @end

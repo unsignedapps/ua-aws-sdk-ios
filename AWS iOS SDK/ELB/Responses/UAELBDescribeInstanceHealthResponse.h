@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *instanceStates;
 
+/**
+ * Retrieves the UAELBInstanceStateDetails at the specified index.
+**/
+- (UAELBInstanceStateDetails *)instanceStateAtIndex:(NSUInteger)index;
+
 @end

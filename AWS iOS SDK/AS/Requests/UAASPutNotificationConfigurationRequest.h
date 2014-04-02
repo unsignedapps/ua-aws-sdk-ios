@@ -22,6 +22,11 @@ typedef BOOL(^UAASPutNotificationConfigurationRequestShouldContinueWaitingBlock)
 // @property (nonatomic, copy) UAASPutNotificationConfigurationRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)notificationTypeAtIndex:(NSUInteger)index;
+
+/**
  * Adds a NotificationType to the notificationTypes property.
  *
  * This will initialise notificationTypes with an empty mutable array if necessary.

@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *reservations;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAEC2Reservation at the specified index.
+**/
+- (UAEC2Reservation *)reservationAtIndex:(NSUInteger)index;
+
 @end

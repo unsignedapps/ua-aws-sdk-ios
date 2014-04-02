@@ -38,41 +38,9 @@
 
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"attaching"])
-		    return @(UAEC2NetworkInterfaceAttachmentStatusAttaching);
-		if ([value isEqualToString:@"attached"])
-		    return @(UAEC2NetworkInterfaceAttachmentStatusAttached);
-		if ([value isEqualToString:@"detaching"])
-		    return @(UAEC2NetworkInterfaceAttachmentStatusDetaching);
-		if ([value isEqualToString:@"detached"])
-		    return @(UAEC2NetworkInterfaceAttachmentStatusDetached);
-
-		return @(UAEC2NetworkInterfaceAttachmentStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2NetworkInterfaceAttachmentStatus castValue = (UAEC2NetworkInterfaceAttachmentStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2NetworkInterfaceAttachmentStatusAttaching:
-			    return @"attaching";
-			case UAEC2NetworkInterfaceAttachmentStatusAttached:
-			    return @"attached";
-			case UAEC2NetworkInterfaceAttachmentStatusDetaching:
-			    return @"detaching";
-			case UAEC2NetworkInterfaceAttachmentStatusDetached:
-			    return @"detached";
-
-			case UAEC2NetworkInterfaceAttachmentStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2NetworkInterfaceAttachmentStatusAttaching), @(UAEC2NetworkInterfaceAttachmentStatusAttached), @(UAEC2NetworkInterfaceAttachmentStatusDetaching), @(UAEC2NetworkInterfaceAttachmentStatusDetached) ]
+                                               stringValues:@[ @"attaching", @"attached", @"detaching", @"detached" ]
+                                               unknownValue:@(UAEC2NetworkInterfaceAttachmentStatusUnknown)];
 }
 
 + (NSValueTransformer *)attachTimeQueryStringTransformer
@@ -87,45 +55,9 @@
 
 + (NSValueTransformer *)statusXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2NetworkInterfaceAttachmentStatusUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"attaching"])
-		    return @(UAEC2NetworkInterfaceAttachmentStatusAttaching);
-		if ([value isEqualToString:@"attached"])
-		    return @(UAEC2NetworkInterfaceAttachmentStatusAttached);
-		if ([value isEqualToString:@"detaching"])
-		    return @(UAEC2NetworkInterfaceAttachmentStatusDetaching);
-		if ([value isEqualToString:@"detached"])
-		    return @(UAEC2NetworkInterfaceAttachmentStatusDetached);
-
-		return @(UAEC2NetworkInterfaceAttachmentStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2NetworkInterfaceAttachmentStatus castValue = (UAEC2NetworkInterfaceAttachmentStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2NetworkInterfaceAttachmentStatusAttaching:
-			    return @"attaching";
-			case UAEC2NetworkInterfaceAttachmentStatusAttached:
-			    return @"attached";
-			case UAEC2NetworkInterfaceAttachmentStatusDetaching:
-			    return @"detaching";
-			case UAEC2NetworkInterfaceAttachmentStatusDetached:
-			    return @"detached";
-
-			case UAEC2NetworkInterfaceAttachmentStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2NetworkInterfaceAttachmentStatusAttaching), @(UAEC2NetworkInterfaceAttachmentStatusAttached), @(UAEC2NetworkInterfaceAttachmentStatusDetaching), @(UAEC2NetworkInterfaceAttachmentStatusDetached) ]
+                                               stringValues:@[ @"attaching", @"attached", @"detaching", @"detached" ]
+                                               unknownValue:@(UAEC2NetworkInterfaceAttachmentStatusUnknown)];
 }
 
 + (NSValueTransformer *)attachTimeXMLTransformer

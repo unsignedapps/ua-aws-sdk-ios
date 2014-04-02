@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeVPNConnectionsRequestShouldContinueWaitingBlock)(UAEC
 // @property (nonatomic, copy) UAEC2DescribeVPNConnectionsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)vpnConnectionIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a VPNConnectionID to the vpnConnectionIDs property.
  *
  * This will initialise vpnConnectionIDs with an empty mutable array if necessary.

@@ -43,6 +43,26 @@ typedef BOOL(^UAEC2RunInstancesRequestShouldContinueWaitingBlock)(UAEC2RunInstan
 // @property (nonatomic, copy) UAEC2RunInstancesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)securityGroupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)securityGroupIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2BlockDeviceMapping at the specified index.
+**/
+- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2InstanceNetworkInterfaceSpecification at the specified index.
+**/
+- (UAEC2InstanceNetworkInterfaceSpecification *)networkInterfaceAtIndex:(NSUInteger)index;
+
+/**
  * Adds a SecurityGroup to the securityGroups property.
  *
  * This will initialise securityGroups with an empty mutable array if necessary.

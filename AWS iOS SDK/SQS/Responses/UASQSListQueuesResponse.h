@@ -13,4 +13,9 @@
 
 @property (nonatomic, copy) NSArray *queueUrls;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)queueURLAtIndex:(NSUInteger)index;
+
 @end

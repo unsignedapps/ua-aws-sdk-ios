@@ -24,6 +24,26 @@ typedef BOOL(^UAEC2DescribeImagesRequestShouldContinueWaitingBlock)(UAEC2Describ
 // @property (nonatomic, copy) UAEC2DescribeImagesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)imageIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)ownerAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)executableUserAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a ImageID to the imageIDs property.
  *
  * This will initialise imageIDs with an empty mutable array if necessary.

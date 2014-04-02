@@ -17,4 +17,9 @@
 @property (nonatomic) BOOL isTruncated;
 @property (nonatomic, copy) NSString *marker;
 
+/**
+ * Retrieves the UAIAMVirtualMFADevice at the specified index.
+**/
+- (UAIAMVirtualMFADevice *)virtualMFADeviceAtIndex:(NSUInteger)index;
+
 @end

@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2VPCPeeringConnection *)vpcPeeringConnectionAtIndex:(NSUInteger)index
+{
+    if (self.vpcPeeringConnections == nil || index >= ([self.vpcPeeringConnections count]-1))
+        return nil;
+
+    return [self.vpcPeeringConnections objectAtIndex:index];
+}
+
 + (NSValueTransformer *)vpcPeeringConnectionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VPCPeeringConnection class]];

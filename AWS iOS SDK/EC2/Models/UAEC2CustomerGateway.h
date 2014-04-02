@@ -20,4 +20,9 @@
 @property (nonatomic, copy) NSString *bgpASN;
 @property (nonatomic, copy) NSArray *tags;
 
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

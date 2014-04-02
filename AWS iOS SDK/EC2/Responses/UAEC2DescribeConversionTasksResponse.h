@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *conversionTasks;
 
+/**
+ * Retrieves the UAEC2ConversionTask at the specified index.
+**/
+- (UAEC2ConversionTask *)conversionTaskAtIndex:(NSUInteger)index;
+
 @end

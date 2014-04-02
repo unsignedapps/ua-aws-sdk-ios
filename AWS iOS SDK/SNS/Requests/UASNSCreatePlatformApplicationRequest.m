@@ -94,41 +94,9 @@
 
 + (NSValueTransformer *)platformJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ADM"])
-		    return @(UASNSPlatformApplicationTypeADM);
-		if ([value isEqualToString:@"APNS"])
-		    return @(UASNSPlatformApplicationTypeAPNS);
-		if ([value isEqualToString:@"APNS_SANDBOX"])
-		    return @(UASNSPlatformApplicationTypeAPNS_SANDBOX);
-		if ([value isEqualToString:@"GCM"])
-		    return @(UASNSPlatformApplicationTypeGCM);
-
-		return @(UASNSPlatformApplicationTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UASNSPlatformApplicationType castValue = (UASNSPlatformApplicationType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UASNSPlatformApplicationTypeADM:
-			    return @"ADM";
-			case UASNSPlatformApplicationTypeAPNS:
-			    return @"APNS";
-			case UASNSPlatformApplicationTypeAPNS_SANDBOX:
-			    return @"APNS_SANDBOX";
-			case UASNSPlatformApplicationTypeGCM:
-			    return @"GCM";
-
-			case UASNSPlatformApplicationTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSPlatformApplicationTypeAdm), @(UASNSPlatformApplicationTypeApns), @(UASNSPlatformApplicationTypeApnsSandbox), @(UASNSPlatformApplicationTypeGcm) ]
+                                               stringValues:@[ @"ADM", @"APNS", @"APNS_SANDBOX", @"GCM" ]
+                                               unknownValue:@(UASNSPlatformApplicationTypeUnknown)];
 }
 
 + (NSValueTransformer *)attributesJSONTransformer
@@ -138,41 +106,9 @@
 
 + (NSValueTransformer *)platformQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ADM"])
-		    return @(UASNSPlatformApplicationTypeADM);
-		if ([value isEqualToString:@"APNS"])
-		    return @(UASNSPlatformApplicationTypeAPNS);
-		if ([value isEqualToString:@"APNS_SANDBOX"])
-		    return @(UASNSPlatformApplicationTypeAPNS_SANDBOX);
-		if ([value isEqualToString:@"GCM"])
-		    return @(UASNSPlatformApplicationTypeGCM);
-
-		return @(UASNSPlatformApplicationTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UASNSPlatformApplicationType castValue = (UASNSPlatformApplicationType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UASNSPlatformApplicationTypeADM:
-			    return @"ADM";
-			case UASNSPlatformApplicationTypeAPNS:
-			    return @"APNS";
-			case UASNSPlatformApplicationTypeAPNS_SANDBOX:
-			    return @"APNS_SANDBOX";
-			case UASNSPlatformApplicationTypeGCM:
-			    return @"GCM";
-
-			case UASNSPlatformApplicationTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSPlatformApplicationTypeAdm), @(UASNSPlatformApplicationTypeApns), @(UASNSPlatformApplicationTypeApnsSandbox), @(UASNSPlatformApplicationTypeGcm) ]
+                                               stringValues:@[ @"ADM", @"APNS", @"APNS_SANDBOX", @"GCM" ]
+                                               unknownValue:@(UASNSPlatformApplicationTypeUnknown)];
 }
 
 + (NSValueTransformer *)attributesQueryStringTransformer

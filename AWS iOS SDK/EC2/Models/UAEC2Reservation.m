@@ -36,6 +36,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index
+{
+    if (self.groups == nil || index >= ([self.groups count]-1))
+        return nil;
+
+    return [self.groups objectAtIndex:index];
+}
+
+- (UAEC2Instance *)instanceAtIndex:(NSUInteger)index
+{
+    if (self.instances == nil || index >= ([self.instances count]-1))
+        return nil;
+
+    return [self.instances objectAtIndex:index];
+}
+
 + (NSValueTransformer *)groupsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];

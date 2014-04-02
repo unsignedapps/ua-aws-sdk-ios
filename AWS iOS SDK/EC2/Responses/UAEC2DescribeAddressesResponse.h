@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *addresses;
 
+/**
+ * Retrieves the UAEC2Address at the specified index.
+**/
+- (UAEC2Address *)addressAtIndex:(NSUInteger)index;
+
 @end

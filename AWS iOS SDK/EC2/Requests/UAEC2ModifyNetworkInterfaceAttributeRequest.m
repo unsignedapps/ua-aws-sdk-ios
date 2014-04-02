@@ -57,6 +57,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)groupAtIndex:(NSUInteger)index
+{
+    if (self.groups == nil || index >= ([self.groups count]-1))
+        return nil;
+
+    return [self.groups objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

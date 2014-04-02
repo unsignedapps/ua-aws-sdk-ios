@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *launchConfigurations;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAASLaunchConfiguration at the specified index.
+**/
+- (UAASLaunchConfiguration *)launchConfigurationAtIndex:(NSUInteger)index;
+
 @end

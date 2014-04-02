@@ -34,198 +34,30 @@
 
 + (NSValueTransformer *)currentStateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2InstanceStatePending);
-		if ([value isEqualToString:@"running"])
-		    return @(UAEC2InstanceStateRunning);
-		if ([value isEqualToString:@"shutting-down"])
-		    return @(UAEC2InstanceStateShuttingDown);
-		if ([value isEqualToString:@"terminated"])
-		    return @(UAEC2InstanceStateTerminated);
-		if ([value isEqualToString:@"stopping"])
-		    return @(UAEC2InstanceStateStopping);
-		if ([value isEqualToString:@"stopped"])
-		    return @(UAEC2InstanceStateStopped);
-
-		return @(UAEC2InstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceState castValue = (UAEC2InstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatePending:
-			    return @"pending";
-			case UAEC2InstanceStateRunning:
-			    return @"running";
-			case UAEC2InstanceStateShuttingDown:
-			    return @"shutting-down";
-			case UAEC2InstanceStateTerminated:
-			    return @"terminated";
-			case UAEC2InstanceStateStopping:
-			    return @"stopping";
-			case UAEC2InstanceStateStopped:
-			    return @"stopped";
-
-			case UAEC2InstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatePending), @(UAEC2InstanceStateRunning), @(UAEC2InstanceStateShuttingDown), @(UAEC2InstanceStateTerminated), @(UAEC2InstanceStateStopping), @(UAEC2InstanceStateStopped) ]
+                                               stringValues:@[ @"pending", @"running", @"shutting-down", @"terminated", @"stopping", @"stopped" ]
+                                               unknownValue:@(UAEC2InstanceStateUnknown)];
 }
 
 + (NSValueTransformer *)previousStateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2InstanceStatePending);
-		if ([value isEqualToString:@"running"])
-		    return @(UAEC2InstanceStateRunning);
-		if ([value isEqualToString:@"shutting-down"])
-		    return @(UAEC2InstanceStateShuttingDown);
-		if ([value isEqualToString:@"terminated"])
-		    return @(UAEC2InstanceStateTerminated);
-		if ([value isEqualToString:@"stopping"])
-		    return @(UAEC2InstanceStateStopping);
-		if ([value isEqualToString:@"stopped"])
-		    return @(UAEC2InstanceStateStopped);
-
-		return @(UAEC2InstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceState castValue = (UAEC2InstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatePending:
-			    return @"pending";
-			case UAEC2InstanceStateRunning:
-			    return @"running";
-			case UAEC2InstanceStateShuttingDown:
-			    return @"shutting-down";
-			case UAEC2InstanceStateTerminated:
-			    return @"terminated";
-			case UAEC2InstanceStateStopping:
-			    return @"stopping";
-			case UAEC2InstanceStateStopped:
-			    return @"stopped";
-
-			case UAEC2InstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatePending), @(UAEC2InstanceStateRunning), @(UAEC2InstanceStateShuttingDown), @(UAEC2InstanceStateTerminated), @(UAEC2InstanceStateStopping), @(UAEC2InstanceStateStopped) ]
+                                               stringValues:@[ @"pending", @"running", @"shutting-down", @"terminated", @"stopping", @"stopped" ]
+                                               unknownValue:@(UAEC2InstanceStateUnknown)];
 }
 
 + (NSValueTransformer *)currentStateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2InstanceStatePending);
-		if ([value isEqualToString:@"running"])
-		    return @(UAEC2InstanceStateRunning);
-		if ([value isEqualToString:@"shutting-down"])
-		    return @(UAEC2InstanceStateShuttingDown);
-		if ([value isEqualToString:@"terminated"])
-		    return @(UAEC2InstanceStateTerminated);
-		if ([value isEqualToString:@"stopping"])
-		    return @(UAEC2InstanceStateStopping);
-		if ([value isEqualToString:@"stopped"])
-		    return @(UAEC2InstanceStateStopped);
-
-		return @(UAEC2InstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceState castValue = (UAEC2InstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatePending:
-			    return @"pending";
-			case UAEC2InstanceStateRunning:
-			    return @"running";
-			case UAEC2InstanceStateShuttingDown:
-			    return @"shutting-down";
-			case UAEC2InstanceStateTerminated:
-			    return @"terminated";
-			case UAEC2InstanceStateStopping:
-			    return @"stopping";
-			case UAEC2InstanceStateStopped:
-			    return @"stopped";
-
-			case UAEC2InstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatePending), @(UAEC2InstanceStateRunning), @(UAEC2InstanceStateShuttingDown), @(UAEC2InstanceStateTerminated), @(UAEC2InstanceStateStopping), @(UAEC2InstanceStateStopped) ]
+                                               stringValues:@[ @"pending", @"running", @"shutting-down", @"terminated", @"stopping", @"stopped" ]
+                                               unknownValue:@(UAEC2InstanceStateUnknown)];
 }
 
 + (NSValueTransformer *)previousStateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2InstanceStatePending);
-		if ([value isEqualToString:@"running"])
-		    return @(UAEC2InstanceStateRunning);
-		if ([value isEqualToString:@"shutting-down"])
-		    return @(UAEC2InstanceStateShuttingDown);
-		if ([value isEqualToString:@"terminated"])
-		    return @(UAEC2InstanceStateTerminated);
-		if ([value isEqualToString:@"stopping"])
-		    return @(UAEC2InstanceStateStopping);
-		if ([value isEqualToString:@"stopped"])
-		    return @(UAEC2InstanceStateStopped);
-
-		return @(UAEC2InstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceState castValue = (UAEC2InstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatePending:
-			    return @"pending";
-			case UAEC2InstanceStateRunning:
-			    return @"running";
-			case UAEC2InstanceStateShuttingDown:
-			    return @"shutting-down";
-			case UAEC2InstanceStateTerminated:
-			    return @"terminated";
-			case UAEC2InstanceStateStopping:
-			    return @"stopping";
-			case UAEC2InstanceStateStopped:
-			    return @"stopped";
-
-			case UAEC2InstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatePending), @(UAEC2InstanceStateRunning), @(UAEC2InstanceStateShuttingDown), @(UAEC2InstanceStateTerminated), @(UAEC2InstanceStateStopping), @(UAEC2InstanceStateStopped) ]
+                                               stringValues:@[ @"pending", @"running", @"shutting-down", @"terminated", @"stopping", @"stopped" ]
+                                               unknownValue:@(UAEC2InstanceStateUnknown)];
 }
 
 @end

@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *accountAttributes;
 
+/**
+ * Retrieves the UAEC2AccountAttribute at the specified index.
+**/
+- (UAEC2AccountAttribute *)accountAttributeAtIndex:(NSUInteger)index;
+
 @end

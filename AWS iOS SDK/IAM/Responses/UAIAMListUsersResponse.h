@@ -17,4 +17,9 @@
 @property (nonatomic) BOOL isTruncated;
 @property (nonatomic, copy) NSString *marker;
 
+/**
+ * Retrieves the UAIAMUser at the specified index.
+**/
+- (UAIAMUser *)userAtIndex:(NSUInteger)index;
+
 @end

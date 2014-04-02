@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeSubnetsRequestShouldContinueWaitingBlock)(UAEC2Descri
 // @property (nonatomic, copy) UAEC2DescribeSubnetsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)subnetIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a SubnetID to the subnetIDs property.
  *
  * This will initialise subnetIDs with an empty mutable array if necessary.

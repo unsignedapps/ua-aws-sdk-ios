@@ -19,4 +19,14 @@
 @property (nonatomic, copy) NSArray *groups;
 @property (nonatomic, copy) NSArray *instances;
 
+/**
+ * Retrieves the UAEC2GroupIdentifier at the specified index.
+**/
+- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Instance at the specified index.
+**/
+- (UAEC2Instance *)instanceAtIndex:(NSUInteger)index;
+
 @end

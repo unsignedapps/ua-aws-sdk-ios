@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2ReservedInstance *)reservedInstanceAtIndex:(NSUInteger)index
+{
+    if (self.reservedInstances == nil || index >= ([self.reservedInstances count]-1))
+        return nil;
+
+    return [self.reservedInstances objectAtIndex:index];
+}
+
 + (NSValueTransformer *)reservedInstancesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ReservedInstance class]];

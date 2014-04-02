@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UACWMetric *)metricAtIndex:(NSUInteger)index
+{
+    if (self.metrics == nil || index >= ([self.metrics count]-1))
+        return nil;
+
+    return [self.metrics objectAtIndex:index];
+}
+
 + (NSValueTransformer *)metricsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWMetric class]];

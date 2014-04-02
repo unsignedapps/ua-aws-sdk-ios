@@ -23,6 +23,11 @@ typedef BOOL(^UAEC2AssignPrivateIPAddressesRequestShouldContinueWaitingBlock)(UA
 // @property (nonatomic, copy) UAEC2AssignPrivateIPAddressesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)privateIPAddressAtIndex:(NSUInteger)index;
+
+/**
  * Adds a PrivateIPAddress to the privateIPAddresses property.
  *
  * This will initialise privateIPAddresses with an empty mutable array if necessary.

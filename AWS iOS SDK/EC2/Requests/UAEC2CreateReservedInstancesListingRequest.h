@@ -23,6 +23,11 @@ typedef BOOL(^UAEC2CreateReservedInstancesListingRequestShouldContinueWaitingBlo
 // @property (nonatomic, copy) UAEC2CreateReservedInstancesListingRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAEC2PriceScheduleSpecification at the specified index.
+**/
+- (UAEC2PriceScheduleSpecification *)priceScheduleAtIndex:(NSUInteger)index;
+
+/**
  * Adds a PriceSchedule to the priceSchedules property.
  *
  * This will initialise priceSchedules with an empty mutable array if necessary.

@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2CustomerGateway *)customerGatewayAtIndex:(NSUInteger)index
+{
+    if (self.customerGateways == nil || index >= ([self.customerGateways count]-1))
+        return nil;
+
+    return [self.customerGateways objectAtIndex:index];
+}
+
 + (NSValueTransformer *)customerGatewaysXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2CustomerGateway class]];

@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *routeTables;
 
+/**
+ * Retrieves the UAEC2RouteTable at the specified index.
+**/
+- (UAEC2RouteTable *)routeTableAtIndex:(NSUInteger)index;
+
 @end

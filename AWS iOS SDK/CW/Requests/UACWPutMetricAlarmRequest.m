@@ -65,6 +65,38 @@
     return [keyPaths copy];
 }
 
+- (NSString *)oKActionAtIndex:(NSUInteger)index
+{
+    if (self.oKActions == nil || index >= ([self.oKActions count]-1))
+        return nil;
+
+    return [self.oKActions objectAtIndex:index];
+}
+
+- (NSString *)alarmActionAtIndex:(NSUInteger)index
+{
+    if (self.alarmActions == nil || index >= ([self.alarmActions count]-1))
+        return nil;
+
+    return [self.alarmActions objectAtIndex:index];
+}
+
+- (NSString *)insufficientDataActionAtIndex:(NSUInteger)index
+{
+    if (self.insufficientDataActions == nil || index >= ([self.insufficientDataActions count]-1))
+        return nil;
+
+    return [self.insufficientDataActions objectAtIndex:index];
+}
+
+- (UACWDimension *)dimensionAtIndex:(NSUInteger)index
+{
+    if (self.dimensions == nil || index >= ([self.dimensions count]-1))
+        return nil;
+
+    return [self.dimensions objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;
@@ -203,45 +235,9 @@
 
 + (NSValueTransformer *)statisticJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"SampleCount"])
-		    return @(UACWStatisticSampleCount);
-		if ([value isEqualToString:@"Average"])
-		    return @(UACWStatisticAverage);
-		if ([value isEqualToString:@"Sum"])
-		    return @(UACWStatisticSum);
-		if ([value isEqualToString:@"Minimum"])
-		    return @(UACWStatisticMinimum);
-		if ([value isEqualToString:@"Maximum"])
-		    return @(UACWStatisticMaximum);
-
-		return @(UACWStatisticUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWStatistic castValue = (UACWStatistic)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWStatisticSampleCount:
-			    return @"SampleCount";
-			case UACWStatisticAverage:
-			    return @"Average";
-			case UACWStatisticSum:
-			    return @"Sum";
-			case UACWStatisticMinimum:
-			    return @"Minimum";
-			case UACWStatisticMaximum:
-			    return @"Maximum";
-
-			case UACWStatisticUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWStatisticSampleCount), @(UACWStatisticAverage), @(UACWStatisticSum), @(UACWStatisticMinimum), @(UACWStatisticMaximum) ]
+                                               stringValues:@[ @"SampleCount", @"Average", @"Sum", @"Minimum", @"Maximum" ]
+                                               unknownValue:@(UACWStatisticUnknown)];
 }
 
 + (NSValueTransformer *)dimensionsJSONTransformer
@@ -251,172 +247,16 @@
 
 + (NSValueTransformer *)unitJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"None"])
-		    return @(UACWUnitNone);
-		if ([value isEqualToString:@"Seconds"])
-		    return @(UACWUnitSeconds);
-		if ([value isEqualToString:@"Microseconds"])
-		    return @(UACWUnitMicroseconds);
-		if ([value isEqualToString:@"Milliseconds"])
-		    return @(UACWUnitMilliseconds);
-		if ([value isEqualToString:@"Bytes"])
-		    return @(UACWUnitBytes);
-		if ([value isEqualToString:@"Kilobytes"])
-		    return @(UACWUnitKilobytes);
-		if ([value isEqualToString:@"Megabytes"])
-		    return @(UACWUnitMegabytes);
-		if ([value isEqualToString:@"Gigabytes"])
-		    return @(UACWUnitGigabytes);
-		if ([value isEqualToString:@"Terabytes"])
-		    return @(UACWUnitTerabytes);
-		if ([value isEqualToString:@"Bits"])
-		    return @(UACWUnitBits);
-		if ([value isEqualToString:@"Kilobits"])
-		    return @(UACWUnitKilobits);
-		if ([value isEqualToString:@"Megabits"])
-		    return @(UACWUnitMegabits);
-		if ([value isEqualToString:@"Gigabits"])
-		    return @(UACWUnitGigabits);
-		if ([value isEqualToString:@"Terabits"])
-		    return @(UACWUnitTerabits);
-		if ([value isEqualToString:@"Percent"])
-		    return @(UACWUnitPercent);
-		if ([value isEqualToString:@"Count"])
-		    return @(UACWUnitCount);
-		if ([value isEqualToString:@"Bytes/Second"])
-		    return @(UACWUnitBytesPerSecond);
-		if ([value isEqualToString:@"Kilobytes/Second"])
-		    return @(UACWUnitKilobytesPerSecond);
-		if ([value isEqualToString:@"Megabytes/Second"])
-		    return @(UACWUnitMegabytesPerSecond);
-		if ([value isEqualToString:@"Gigabytes/Second"])
-		    return @(UACWUnitGigabytesPerSecond);
-		if ([value isEqualToString:@"Terabytes/Second"])
-		    return @(UACWUnitTerabytesPerSecond);
-		if ([value isEqualToString:@"Bits/Second"])
-		    return @(UACWUnitBitsPerSecond);
-		if ([value isEqualToString:@"Kilobits/Second"])
-		    return @(UACWUnitKilobitsPerSecond);
-		if ([value isEqualToString:@"Megabits/Second"])
-		    return @(UACWUnitMegabitsPerSecond);
-		if ([value isEqualToString:@"Gigabits/Second"])
-		    return @(UACWUnitGigabitsPerSecond);
-		if ([value isEqualToString:@"Terabits/Second"])
-		    return @(UACWUnitTerabitsPerSecond);
-		if ([value isEqualToString:@"Count/Second"])
-		    return @(UACWUnitCountPerSecond);
-
-		return @(UACWUnitUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWUnit castValue = (UACWUnit)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWUnitNone:
-			    return @"None";
-			case UACWUnitSeconds:
-			    return @"Seconds";
-			case UACWUnitMicroseconds:
-			    return @"Microseconds";
-			case UACWUnitMilliseconds:
-			    return @"Milliseconds";
-			case UACWUnitBytes:
-			    return @"Bytes";
-			case UACWUnitKilobytes:
-			    return @"Kilobytes";
-			case UACWUnitMegabytes:
-			    return @"Megabytes";
-			case UACWUnitGigabytes:
-			    return @"Gigabytes";
-			case UACWUnitTerabytes:
-			    return @"Terabytes";
-			case UACWUnitBits:
-			    return @"Bits";
-			case UACWUnitKilobits:
-			    return @"Kilobits";
-			case UACWUnitMegabits:
-			    return @"Megabits";
-			case UACWUnitGigabits:
-			    return @"Gigabits";
-			case UACWUnitTerabits:
-			    return @"Terabits";
-			case UACWUnitPercent:
-			    return @"Percent";
-			case UACWUnitCount:
-			    return @"Count";
-			case UACWUnitBytesPerSecond:
-			    return @"Bytes/Second";
-			case UACWUnitKilobytesPerSecond:
-			    return @"Kilobytes/Second";
-			case UACWUnitMegabytesPerSecond:
-			    return @"Megabytes/Second";
-			case UACWUnitGigabytesPerSecond:
-			    return @"Gigabytes/Second";
-			case UACWUnitTerabytesPerSecond:
-			    return @"Terabytes/Second";
-			case UACWUnitBitsPerSecond:
-			    return @"Bits/Second";
-			case UACWUnitKilobitsPerSecond:
-			    return @"Kilobits/Second";
-			case UACWUnitMegabitsPerSecond:
-			    return @"Megabits/Second";
-			case UACWUnitGigabitsPerSecond:
-			    return @"Gigabits/Second";
-			case UACWUnitTerabitsPerSecond:
-			    return @"Terabits/Second";
-			case UACWUnitCountPerSecond:
-			    return @"Count/Second";
-
-			case UACWUnitUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWUnitNone), @(UACWUnitSeconds), @(UACWUnitMicroseconds), @(UACWUnitMilliseconds), @(UACWUnitBytes), @(UACWUnitKilobytes), @(UACWUnitMegabytes), @(UACWUnitGigabytes), @(UACWUnitTerabytes), @(UACWUnitBits), @(UACWUnitKilobits), @(UACWUnitMegabits), @(UACWUnitGigabits), @(UACWUnitTerabits), @(UACWUnitPercent), @(UACWUnitCount), @(UACWUnitBytesPerSecond), @(UACWUnitKilobytesPerSecond), @(UACWUnitMegabytesPerSecond), @(UACWUnitGigabytesPerSecond), @(UACWUnitTerabytesPerSecond), @(UACWUnitBitsPerSecond), @(UACWUnitKilobitsPerSecond), @(UACWUnitMegabitsPerSecond), @(UACWUnitGigabitsPerSecond), @(UACWUnitTerabitsPerSecond), @(UACWUnitCountPerSecond) ]
+                                               stringValues:@[ @"None", @"Seconds", @"Microseconds", @"Milliseconds", @"Bytes", @"Kilobytes", @"Megabytes", @"Gigabytes", @"Terabytes", @"Bits", @"Kilobits", @"Megabits", @"Gigabits", @"Terabits", @"Percent", @"Count", @"Bytes/Second", @"Kilobytes/Second", @"Megabytes/Second", @"Gigabytes/Second", @"Terabytes/Second", @"Bits/Second", @"Kilobits/Second", @"Megabits/Second", @"Gigabits/Second", @"Terabits/Second", @"Count/Second" ]
+                                               unknownValue:@(UACWUnitUnknown)];
 }
 
 + (NSValueTransformer *)comparisonOperatorJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"GreaterThanOrEqualToThreshold"])
-		    return @(UACWMetricAlarmComparisonOperatorGreaterThanOrEqualToThreshold);
-		if ([value isEqualToString:@"GreaterThanThreshold"])
-		    return @(UACWMetricAlarmComparisonOperatorGreaterThanThreshold);
-		if ([value isEqualToString:@"LessThanThreshold"])
-		    return @(UACWMetricAlarmComparisonOperatorLessThanThreshold);
-		if ([value isEqualToString:@"LessThanOrEqualToThreshold"])
-		    return @(UACWMetricAlarmComparisonOperatorLessThanOrEqualToThreshold);
-
-		return @(UACWMetricAlarmComparisonOperatorUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWMetricAlarmComparisonOperator castValue = (UACWMetricAlarmComparisonOperator)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWMetricAlarmComparisonOperatorGreaterThanOrEqualToThreshold:
-			    return @"GreaterThanOrEqualToThreshold";
-			case UACWMetricAlarmComparisonOperatorGreaterThanThreshold:
-			    return @"GreaterThanThreshold";
-			case UACWMetricAlarmComparisonOperatorLessThanThreshold:
-			    return @"LessThanThreshold";
-			case UACWMetricAlarmComparisonOperatorLessThanOrEqualToThreshold:
-			    return @"LessThanOrEqualToThreshold";
-
-			case UACWMetricAlarmComparisonOperatorUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWMetricAlarmComparisonOperatorGreaterThanOrEqualToThreshold), @(UACWMetricAlarmComparisonOperatorGreaterThanThreshold), @(UACWMetricAlarmComparisonOperatorLessThanThreshold), @(UACWMetricAlarmComparisonOperatorLessThanOrEqualToThreshold) ]
+                                               stringValues:@[ @"GreaterThanOrEqualToThreshold", @"GreaterThanThreshold", @"LessThanThreshold", @"LessThanOrEqualToThreshold" ]
+                                               unknownValue:@(UACWMetricAlarmComparisonOperatorUnknown)];
 }
 
 + (NSValueTransformer *)actionsEnabledQueryStringTransformer
@@ -426,45 +266,9 @@
 
 + (NSValueTransformer *)statisticQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"SampleCount"])
-		    return @(UACWStatisticSampleCount);
-		if ([value isEqualToString:@"Average"])
-		    return @(UACWStatisticAverage);
-		if ([value isEqualToString:@"Sum"])
-		    return @(UACWStatisticSum);
-		if ([value isEqualToString:@"Minimum"])
-		    return @(UACWStatisticMinimum);
-		if ([value isEqualToString:@"Maximum"])
-		    return @(UACWStatisticMaximum);
-
-		return @(UACWStatisticUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWStatistic castValue = (UACWStatistic)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWStatisticSampleCount:
-			    return @"SampleCount";
-			case UACWStatisticAverage:
-			    return @"Average";
-			case UACWStatisticSum:
-			    return @"Sum";
-			case UACWStatisticMinimum:
-			    return @"Minimum";
-			case UACWStatisticMaximum:
-			    return @"Maximum";
-
-			case UACWStatisticUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWStatisticSampleCount), @(UACWStatisticAverage), @(UACWStatisticSum), @(UACWStatisticMinimum), @(UACWStatisticMaximum) ]
+                                               stringValues:@[ @"SampleCount", @"Average", @"Sum", @"Minimum", @"Maximum" ]
+                                               unknownValue:@(UACWStatisticUnknown)];
 }
 
 + (NSValueTransformer *)dimensionsQueryStringTransformer
@@ -474,172 +278,16 @@
 
 + (NSValueTransformer *)unitQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"None"])
-		    return @(UACWUnitNone);
-		if ([value isEqualToString:@"Seconds"])
-		    return @(UACWUnitSeconds);
-		if ([value isEqualToString:@"Microseconds"])
-		    return @(UACWUnitMicroseconds);
-		if ([value isEqualToString:@"Milliseconds"])
-		    return @(UACWUnitMilliseconds);
-		if ([value isEqualToString:@"Bytes"])
-		    return @(UACWUnitBytes);
-		if ([value isEqualToString:@"Kilobytes"])
-		    return @(UACWUnitKilobytes);
-		if ([value isEqualToString:@"Megabytes"])
-		    return @(UACWUnitMegabytes);
-		if ([value isEqualToString:@"Gigabytes"])
-		    return @(UACWUnitGigabytes);
-		if ([value isEqualToString:@"Terabytes"])
-		    return @(UACWUnitTerabytes);
-		if ([value isEqualToString:@"Bits"])
-		    return @(UACWUnitBits);
-		if ([value isEqualToString:@"Kilobits"])
-		    return @(UACWUnitKilobits);
-		if ([value isEqualToString:@"Megabits"])
-		    return @(UACWUnitMegabits);
-		if ([value isEqualToString:@"Gigabits"])
-		    return @(UACWUnitGigabits);
-		if ([value isEqualToString:@"Terabits"])
-		    return @(UACWUnitTerabits);
-		if ([value isEqualToString:@"Percent"])
-		    return @(UACWUnitPercent);
-		if ([value isEqualToString:@"Count"])
-		    return @(UACWUnitCount);
-		if ([value isEqualToString:@"Bytes/Second"])
-		    return @(UACWUnitBytesPerSecond);
-		if ([value isEqualToString:@"Kilobytes/Second"])
-		    return @(UACWUnitKilobytesPerSecond);
-		if ([value isEqualToString:@"Megabytes/Second"])
-		    return @(UACWUnitMegabytesPerSecond);
-		if ([value isEqualToString:@"Gigabytes/Second"])
-		    return @(UACWUnitGigabytesPerSecond);
-		if ([value isEqualToString:@"Terabytes/Second"])
-		    return @(UACWUnitTerabytesPerSecond);
-		if ([value isEqualToString:@"Bits/Second"])
-		    return @(UACWUnitBitsPerSecond);
-		if ([value isEqualToString:@"Kilobits/Second"])
-		    return @(UACWUnitKilobitsPerSecond);
-		if ([value isEqualToString:@"Megabits/Second"])
-		    return @(UACWUnitMegabitsPerSecond);
-		if ([value isEqualToString:@"Gigabits/Second"])
-		    return @(UACWUnitGigabitsPerSecond);
-		if ([value isEqualToString:@"Terabits/Second"])
-		    return @(UACWUnitTerabitsPerSecond);
-		if ([value isEqualToString:@"Count/Second"])
-		    return @(UACWUnitCountPerSecond);
-
-		return @(UACWUnitUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWUnit castValue = (UACWUnit)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWUnitNone:
-			    return @"None";
-			case UACWUnitSeconds:
-			    return @"Seconds";
-			case UACWUnitMicroseconds:
-			    return @"Microseconds";
-			case UACWUnitMilliseconds:
-			    return @"Milliseconds";
-			case UACWUnitBytes:
-			    return @"Bytes";
-			case UACWUnitKilobytes:
-			    return @"Kilobytes";
-			case UACWUnitMegabytes:
-			    return @"Megabytes";
-			case UACWUnitGigabytes:
-			    return @"Gigabytes";
-			case UACWUnitTerabytes:
-			    return @"Terabytes";
-			case UACWUnitBits:
-			    return @"Bits";
-			case UACWUnitKilobits:
-			    return @"Kilobits";
-			case UACWUnitMegabits:
-			    return @"Megabits";
-			case UACWUnitGigabits:
-			    return @"Gigabits";
-			case UACWUnitTerabits:
-			    return @"Terabits";
-			case UACWUnitPercent:
-			    return @"Percent";
-			case UACWUnitCount:
-			    return @"Count";
-			case UACWUnitBytesPerSecond:
-			    return @"Bytes/Second";
-			case UACWUnitKilobytesPerSecond:
-			    return @"Kilobytes/Second";
-			case UACWUnitMegabytesPerSecond:
-			    return @"Megabytes/Second";
-			case UACWUnitGigabytesPerSecond:
-			    return @"Gigabytes/Second";
-			case UACWUnitTerabytesPerSecond:
-			    return @"Terabytes/Second";
-			case UACWUnitBitsPerSecond:
-			    return @"Bits/Second";
-			case UACWUnitKilobitsPerSecond:
-			    return @"Kilobits/Second";
-			case UACWUnitMegabitsPerSecond:
-			    return @"Megabits/Second";
-			case UACWUnitGigabitsPerSecond:
-			    return @"Gigabits/Second";
-			case UACWUnitTerabitsPerSecond:
-			    return @"Terabits/Second";
-			case UACWUnitCountPerSecond:
-			    return @"Count/Second";
-
-			case UACWUnitUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWUnitNone), @(UACWUnitSeconds), @(UACWUnitMicroseconds), @(UACWUnitMilliseconds), @(UACWUnitBytes), @(UACWUnitKilobytes), @(UACWUnitMegabytes), @(UACWUnitGigabytes), @(UACWUnitTerabytes), @(UACWUnitBits), @(UACWUnitKilobits), @(UACWUnitMegabits), @(UACWUnitGigabits), @(UACWUnitTerabits), @(UACWUnitPercent), @(UACWUnitCount), @(UACWUnitBytesPerSecond), @(UACWUnitKilobytesPerSecond), @(UACWUnitMegabytesPerSecond), @(UACWUnitGigabytesPerSecond), @(UACWUnitTerabytesPerSecond), @(UACWUnitBitsPerSecond), @(UACWUnitKilobitsPerSecond), @(UACWUnitMegabitsPerSecond), @(UACWUnitGigabitsPerSecond), @(UACWUnitTerabitsPerSecond), @(UACWUnitCountPerSecond) ]
+                                               stringValues:@[ @"None", @"Seconds", @"Microseconds", @"Milliseconds", @"Bytes", @"Kilobytes", @"Megabytes", @"Gigabytes", @"Terabytes", @"Bits", @"Kilobits", @"Megabits", @"Gigabits", @"Terabits", @"Percent", @"Count", @"Bytes/Second", @"Kilobytes/Second", @"Megabytes/Second", @"Gigabytes/Second", @"Terabytes/Second", @"Bits/Second", @"Kilobits/Second", @"Megabits/Second", @"Gigabits/Second", @"Terabits/Second", @"Count/Second" ]
+                                               unknownValue:@(UACWUnitUnknown)];
 }
 
 + (NSValueTransformer *)comparisonOperatorQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"GreaterThanOrEqualToThreshold"])
-		    return @(UACWMetricAlarmComparisonOperatorGreaterThanOrEqualToThreshold);
-		if ([value isEqualToString:@"GreaterThanThreshold"])
-		    return @(UACWMetricAlarmComparisonOperatorGreaterThanThreshold);
-		if ([value isEqualToString:@"LessThanThreshold"])
-		    return @(UACWMetricAlarmComparisonOperatorLessThanThreshold);
-		if ([value isEqualToString:@"LessThanOrEqualToThreshold"])
-		    return @(UACWMetricAlarmComparisonOperatorLessThanOrEqualToThreshold);
-
-		return @(UACWMetricAlarmComparisonOperatorUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWMetricAlarmComparisonOperator castValue = (UACWMetricAlarmComparisonOperator)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWMetricAlarmComparisonOperatorGreaterThanOrEqualToThreshold:
-			    return @"GreaterThanOrEqualToThreshold";
-			case UACWMetricAlarmComparisonOperatorGreaterThanThreshold:
-			    return @"GreaterThanThreshold";
-			case UACWMetricAlarmComparisonOperatorLessThanThreshold:
-			    return @"LessThanThreshold";
-			case UACWMetricAlarmComparisonOperatorLessThanOrEqualToThreshold:
-			    return @"LessThanOrEqualToThreshold";
-
-			case UACWMetricAlarmComparisonOperatorUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWMetricAlarmComparisonOperatorGreaterThanOrEqualToThreshold), @(UACWMetricAlarmComparisonOperatorGreaterThanThreshold), @(UACWMetricAlarmComparisonOperatorLessThanThreshold), @(UACWMetricAlarmComparisonOperatorLessThanOrEqualToThreshold) ]
+                                               stringValues:@[ @"GreaterThanOrEqualToThreshold", @"GreaterThanThreshold", @"LessThanThreshold", @"LessThanOrEqualToThreshold" ]
+                                               unknownValue:@(UACWMetricAlarmComparisonOperatorUnknown)];
 }
 
 - (void)addOKAction:(NSString *)oKAction

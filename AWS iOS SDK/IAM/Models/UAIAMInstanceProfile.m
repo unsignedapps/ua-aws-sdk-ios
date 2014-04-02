@@ -36,6 +36,14 @@
     return [keyPaths copy];
 }
 
+- (UAIAMRole *)roleAtIndex:(NSUInteger)index
+{
+    if (self.roles == nil || index >= ([self.roles count]-1))
+        return nil;
+
+    return [self.roles objectAtIndex:index];
+}
+
 + (NSValueTransformer *)createDateQueryStringTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];

@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAASScheduledUpdateGroupAction *)scheduledUpdateGroupActionAtIndex:(NSUInteger)index
+{
+    if (self.scheduledUpdateGroupActions == nil || index >= ([self.scheduledUpdateGroupActions count]-1))
+        return nil;
+
+    return [self.scheduledUpdateGroupActions objectAtIndex:index];
+}
+
 + (NSValueTransformer *)scheduledUpdateGroupActionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASScheduledUpdateGroupAction class]];

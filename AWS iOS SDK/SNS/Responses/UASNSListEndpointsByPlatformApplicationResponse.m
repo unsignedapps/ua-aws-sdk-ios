@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UASNSEndpoint *)endpointAtIndex:(NSUInteger)index
+{
+    if (self.endpoints == nil || index >= ([self.endpoints count]-1))
+        return nil;
+
+    return [self.endpoints objectAtIndex:index];
+}
+
 + (NSValueTransformer *)endpointsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSEndpoint class]];

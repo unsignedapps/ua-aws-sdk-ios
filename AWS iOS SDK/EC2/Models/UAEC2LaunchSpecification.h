@@ -30,4 +30,19 @@
 @property (nonatomic, copy) UAEC2IAMInstanceProfileSpecification *iamInstanceProfile;
 @property (nonatomic) BOOL ebsOptimized;
 
+/**
+ * Retrieves the UAEC2GroupIdentifier at the specified index.
+**/
+- (UAEC2GroupIdentifier *)securityGroupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2BlockDeviceMapping at the specified index.
+**/
+- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2InstanceNetworkInterfaceSpecification at the specified index.
+**/
+- (UAEC2InstanceNetworkInterfaceSpecification *)networkInterfaceAtIndex:(NSUInteger)index;
+
 @end

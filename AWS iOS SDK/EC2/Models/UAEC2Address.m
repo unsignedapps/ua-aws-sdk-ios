@@ -39,68 +39,16 @@
 
 + (NSValueTransformer *)domainQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"standard"])
-		    return @(UAEC2DomainStandard);
-		if ([value isEqualToString:@"vpc"])
-		    return @(UAEC2DomainVPC);
-
-		return @(UAEC2DomainUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2Domain castValue = (UAEC2Domain)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2DomainStandard:
-			    return @"standard";
-			case UAEC2DomainVPC:
-			    return @"vpc";
-
-			case UAEC2DomainUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2DomainStandard), @(UAEC2DomainVPC) ]
+                                               stringValues:@[ @"standard", @"vpc" ]
+                                               unknownValue:@(UAEC2DomainUnknown)];
 }
 
 + (NSValueTransformer *)domainXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2DomainUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"standard"])
-		    return @(UAEC2DomainStandard);
-		if ([value isEqualToString:@"vpc"])
-		    return @(UAEC2DomainVPC);
-
-		return @(UAEC2DomainUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2Domain castValue = (UAEC2Domain)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2DomainStandard:
-			    return @"standard";
-			case UAEC2DomainVPC:
-			    return @"vpc";
-
-			case UAEC2DomainUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2DomainStandard), @(UAEC2DomainVPC) ]
+                                               stringValues:@[ @"standard", @"vpc" ]
+                                               unknownValue:@(UAEC2DomainUnknown)];
 }
 
 @end

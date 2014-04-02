@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *vpcs;
 
+/**
+ * Retrieves the UAEC2VPC at the specified index.
+**/
+- (UAEC2VPC *)vpcAtIndex:(NSUInteger)index;
+
 @end

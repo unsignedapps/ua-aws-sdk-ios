@@ -52,6 +52,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)notificationTypeAtIndex:(NSUInteger)index
+{
+    if (self.notificationTypes == nil || index >= ([self.notificationTypes count]-1))
+        return nil;
+
+    return [self.notificationTypes objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, UAASInstanceLifecycleState) {
 typedef NS_ENUM(NSUInteger, UAASHealthCheckType) {
 	UAASHealthCheckTypeUnknown = 0,
 	UAASHealthCheckTypeEC2 = 1,
-	UAASHealthCheckTypeELB = 2
+	UAASHealthCheckTypeElb = 2
 };
 
 // UAASEBSBlockDeviceVolumeType

@@ -16,4 +16,14 @@
 @property (nonatomic, copy) NSArray *metrics;
 @property (nonatomic, copy) NSArray *granularities;
 
+/**
+ * Retrieves the UAASMetricCollectionType at the specified index.
+**/
+- (UAASMetricCollectionType *)metricAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAASMetricGranularityType at the specified index.
+**/
+- (UAASMetricGranularityType *)granularityAtIndex:(NSUInteger)index;
+
 @end

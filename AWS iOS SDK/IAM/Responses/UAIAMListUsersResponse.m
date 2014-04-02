@@ -33,6 +33,14 @@
     return [keyPaths copy];
 }
 
+- (UAIAMUser *)userAtIndex:(NSUInteger)index
+{
+    if (self.users == nil || index >= ([self.users count]-1))
+        return nil;
+
+    return [self.users objectAtIndex:index];
+}
+
 + (NSValueTransformer *)usersXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMUser class]];

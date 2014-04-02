@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *snapshots;
 
+/**
+ * Retrieves the UAEC2Snapshot at the specified index.
+**/
+- (UAEC2Snapshot *)snapshotAtIndex:(NSUInteger)index;
+
 @end

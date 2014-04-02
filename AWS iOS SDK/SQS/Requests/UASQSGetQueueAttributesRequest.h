@@ -21,6 +21,11 @@ typedef BOOL(^UASQSGetQueueAttributesRequestShouldContinueWaitingBlock)(UASQSGet
 // @property (nonatomic, copy) UASQSGetQueueAttributesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)attributeNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a AttributeName to the attributeNames property.
  *
  * This will initialise attributeNames with an empty mutable array if necessary.

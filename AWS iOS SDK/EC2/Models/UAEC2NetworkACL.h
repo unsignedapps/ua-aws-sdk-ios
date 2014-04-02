@@ -20,4 +20,19 @@
 @property (nonatomic, copy) NSArray *associations;
 @property (nonatomic, copy) NSArray *tags;
 
+/**
+ * Retrieves the UAEC2Entry at the specified index.
+**/
+- (UAEC2Entry *)entryAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2NetworkACLAssociation at the specified index.
+**/
+- (UAEC2NetworkACLAssociation *)associationAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

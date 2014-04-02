@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2BundleTask *)bundleTaskAtIndex:(NSUInteger)index
+{
+    if (self.bundleTasks == nil || index >= ([self.bundleTasks count]-1))
+        return nil;
+
+    return [self.bundleTasks objectAtIndex:index];
+}
+
 + (NSValueTransformer *)bundleTasksXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2BundleTask class]];

@@ -53,6 +53,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)bundleIDAtIndex:(NSUInteger)index
+{
+    if (self.bundleIDs == nil || index >= ([self.bundleIDs count]-1))
+        return nil;
+
+    return [self.bundleIDs objectAtIndex:index];
+}
+
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
+{
+    if (self.filters == nil || index >= ([self.filters count]-1))
+        return nil;
+
+    return [self.filters objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UACWAlarmHistoryItem *)alarmHistoryItemAtIndex:(NSUInteger)index
+{
+    if (self.alarmHistoryItems == nil || index >= ([self.alarmHistoryItems count]-1))
+        return nil;
+
+    return [self.alarmHistoryItems objectAtIndex:index];
+}
+
 + (NSValueTransformer *)alarmHistoryItemsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWAlarmHistoryItem class]];

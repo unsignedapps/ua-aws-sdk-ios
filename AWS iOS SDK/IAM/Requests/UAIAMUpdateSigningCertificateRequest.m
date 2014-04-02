@@ -94,64 +94,16 @@
 
 + (NSValueTransformer *)statusJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Active"])
-		    return @(UAIAMSigningCertificateStatusActive);
-		if ([value isEqualToString:@"Inactive"])
-		    return @(UAIAMSigningCertificateStatusInactive);
-
-		return @(UAIAMSigningCertificateStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAIAMSigningCertificateStatus castValue = (UAIAMSigningCertificateStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAIAMSigningCertificateStatusActive:
-			    return @"Active";
-			case UAIAMSigningCertificateStatusInactive:
-			    return @"Inactive";
-
-			case UAIAMSigningCertificateStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAIAMSigningCertificateStatusActive), @(UAIAMSigningCertificateStatusInactive) ]
+                                               stringValues:@[ @"Active", @"Inactive" ]
+                                               unknownValue:@(UAIAMSigningCertificateStatusUnknown)];
 }
 
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Active"])
-		    return @(UAIAMSigningCertificateStatusActive);
-		if ([value isEqualToString:@"Inactive"])
-		    return @(UAIAMSigningCertificateStatusInactive);
-
-		return @(UAIAMSigningCertificateStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAIAMSigningCertificateStatus castValue = (UAIAMSigningCertificateStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAIAMSigningCertificateStatusActive:
-			    return @"Active";
-			case UAIAMSigningCertificateStatusInactive:
-			    return @"Inactive";
-
-			case UAIAMSigningCertificateStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAIAMSigningCertificateStatusActive), @(UAIAMSigningCertificateStatusInactive) ]
+                                               stringValues:@[ @"Active", @"Inactive" ]
+                                               unknownValue:@(UAIAMSigningCertificateStatusUnknown)];
 }
 
 #pragma mark - Invocation

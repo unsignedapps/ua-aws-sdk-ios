@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeAvailabilityZonesRequestShouldContinueWaitingBlock)(U
 // @property (nonatomic, copy) UAEC2DescribeAvailabilityZonesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)zoneNameAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a ZoneName to the zoneNames property.
  *
  * This will initialise zoneNames with an empty mutable array if necessary.

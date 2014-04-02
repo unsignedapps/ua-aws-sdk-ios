@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *reservedInstancesOfferings;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAEC2ReservedInstancesOffering at the specified index.
+**/
+- (UAEC2ReservedInstancesOffering *)reservedInstancesOfferingAtIndex:(NSUInteger)index;
+
 @end

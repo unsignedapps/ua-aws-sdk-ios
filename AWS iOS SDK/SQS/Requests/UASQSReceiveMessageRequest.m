@@ -54,6 +54,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)attributeNameAtIndex:(NSUInteger)index
+{
+    if (self.attributeNames == nil || index >= ([self.attributeNames count]-1))
+        return nil;
+
+    return [self.attributeNames objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

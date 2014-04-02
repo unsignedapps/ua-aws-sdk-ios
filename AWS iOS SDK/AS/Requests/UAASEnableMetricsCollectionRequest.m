@@ -52,6 +52,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)metricAtIndex:(NSUInteger)index
+{
+    if (self.metrics == nil || index >= ([self.metrics count]-1))
+        return nil;
+
+    return [self.metrics objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

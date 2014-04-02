@@ -17,4 +17,9 @@
 @property (nonatomic, copy) NSString *metricName;
 @property (nonatomic, copy) NSArray *dimensions;
 
+/**
+ * Retrieves the UACWDimension at the specified index.
+**/
+- (UACWDimension *)dimensionAtIndex:(NSUInteger)index;
+
 @end

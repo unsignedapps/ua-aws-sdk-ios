@@ -21,6 +21,11 @@ typedef BOOL(^UAELBRegisterInstancesWithLoadBalancerRequestShouldContinueWaiting
 // @property (nonatomic, copy) UAELBRegisterInstancesWithLoadBalancerRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAELBInstance at the specified index.
+**/
+- (UAELBInstance *)instanceAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Instance to the instances property.
  *
  * This will initialise instances with an empty mutable array if necessary.

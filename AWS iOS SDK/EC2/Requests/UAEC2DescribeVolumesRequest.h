@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeVolumesRequestShouldContinueWaitingBlock)(UAEC2Descri
 // @property (nonatomic, copy) UAEC2DescribeVolumesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)volumeIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a VolumeID to the volumeIDs property.
  *
  * This will initialise volumeIDs with an empty mutable array if necessary.

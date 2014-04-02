@@ -30,4 +30,34 @@
 @property (nonatomic, copy) NSDate *createdTime;
 @property (nonatomic) UAELBScheme scheme;
 
+/**
+ * Retrieves the UAELBListenerDescription at the specified index.
+**/
+- (UAELBListenerDescription *)listenerDescriptionAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAELBBackendServerDescription at the specified index.
+**/
+- (UAELBBackendServerDescription *)backendServerDescriptionAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)subnetAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAELBInstance at the specified index.
+**/
+- (UAELBInstance *)instanceAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)securityGroupAtIndex:(NSUInteger)index;
+
 @end

@@ -41,53 +41,9 @@
 
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2BundleTaskStatePending);
-		if ([value isEqualToString:@"waiting-for-shutdown"])
-		    return @(UAEC2BundleTaskStateWaitingForShutdown);
-		if ([value isEqualToString:@"bundling"])
-		    return @(UAEC2BundleTaskStateBundling);
-		if ([value isEqualToString:@"storing"])
-		    return @(UAEC2BundleTaskStateStoring);
-		if ([value isEqualToString:@"cancelling"])
-		    return @(UAEC2BundleTaskStateCancelling);
-		if ([value isEqualToString:@"complete"])
-		    return @(UAEC2BundleTaskStateComplete);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2BundleTaskStateFailed);
-
-		return @(UAEC2BundleTaskStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2BundleTaskState castValue = (UAEC2BundleTaskState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2BundleTaskStatePending:
-			    return @"pending";
-			case UAEC2BundleTaskStateWaitingForShutdown:
-			    return @"waiting-for-shutdown";
-			case UAEC2BundleTaskStateBundling:
-			    return @"bundling";
-			case UAEC2BundleTaskStateStoring:
-			    return @"storing";
-			case UAEC2BundleTaskStateCancelling:
-			    return @"cancelling";
-			case UAEC2BundleTaskStateComplete:
-			    return @"complete";
-			case UAEC2BundleTaskStateFailed:
-			    return @"failed";
-
-			case UAEC2BundleTaskStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2BundleTaskStatePending), @(UAEC2BundleTaskStateWaitingForShutdown), @(UAEC2BundleTaskStateBundling), @(UAEC2BundleTaskStateStoring), @(UAEC2BundleTaskStateCancelling), @(UAEC2BundleTaskStateComplete), @(UAEC2BundleTaskStateFailed) ]
+                                               stringValues:@[ @"pending", @"waiting-for-shutdown", @"bundling", @"storing", @"cancelling", @"complete", @"failed" ]
+                                               unknownValue:@(UAEC2BundleTaskStateUnknown)];
 }
 
 + (NSValueTransformer *)startTimeQueryStringTransformer
@@ -112,57 +68,9 @@
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2BundleTaskStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2BundleTaskStatePending);
-		if ([value isEqualToString:@"waiting-for-shutdown"])
-		    return @(UAEC2BundleTaskStateWaitingForShutdown);
-		if ([value isEqualToString:@"bundling"])
-		    return @(UAEC2BundleTaskStateBundling);
-		if ([value isEqualToString:@"storing"])
-		    return @(UAEC2BundleTaskStateStoring);
-		if ([value isEqualToString:@"cancelling"])
-		    return @(UAEC2BundleTaskStateCancelling);
-		if ([value isEqualToString:@"complete"])
-		    return @(UAEC2BundleTaskStateComplete);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2BundleTaskStateFailed);
-
-		return @(UAEC2BundleTaskStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2BundleTaskState castValue = (UAEC2BundleTaskState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2BundleTaskStatePending:
-			    return @"pending";
-			case UAEC2BundleTaskStateWaitingForShutdown:
-			    return @"waiting-for-shutdown";
-			case UAEC2BundleTaskStateBundling:
-			    return @"bundling";
-			case UAEC2BundleTaskStateStoring:
-			    return @"storing";
-			case UAEC2BundleTaskStateCancelling:
-			    return @"cancelling";
-			case UAEC2BundleTaskStateComplete:
-			    return @"complete";
-			case UAEC2BundleTaskStateFailed:
-			    return @"failed";
-
-			case UAEC2BundleTaskStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2BundleTaskStatePending), @(UAEC2BundleTaskStateWaitingForShutdown), @(UAEC2BundleTaskStateBundling), @(UAEC2BundleTaskStateStoring), @(UAEC2BundleTaskStateCancelling), @(UAEC2BundleTaskStateComplete), @(UAEC2BundleTaskStateFailed) ]
+                                               stringValues:@[ @"pending", @"waiting-for-shutdown", @"bundling", @"storing", @"cancelling", @"complete", @"failed" ]
+                                               unknownValue:@(UAEC2BundleTaskStateUnknown)];
 }
 
 + (NSValueTransformer *)startTimeXMLTransformer

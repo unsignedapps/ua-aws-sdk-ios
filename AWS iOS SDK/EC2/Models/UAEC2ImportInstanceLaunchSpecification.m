@@ -63,6 +63,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)groupNameAtIndex:(NSUInteger)index
+{
+    if (self.groupNames == nil || index >= ([self.groupNames count]-1))
+        return nil;
+
+    return [self.groupNames objectAtIndex:index];
+}
+
 - (NSString *)decodedUserData
 {
     if (self.userData == nil)
@@ -172,33 +180,9 @@
 
 + (NSValueTransformer *)instanceInitiatedShutdownBehaviorQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"stop"])
-		    return @(UAEC2InstanceInitiatedShutdownBehaviorStop);
-		if ([value isEqualToString:@"terminate"])
-		    return @(UAEC2InstanceInitiatedShutdownBehaviorTerminate);
-
-		return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceInitiatedShutdownBehavior castValue = (UAEC2InstanceInitiatedShutdownBehavior)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceInitiatedShutdownBehaviorStop:
-			    return @"stop";
-			case UAEC2InstanceInitiatedShutdownBehaviorTerminate:
-			    return @"terminate";
-
-			case UAEC2InstanceInitiatedShutdownBehaviorUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceInitiatedShutdownBehaviorStop), @(UAEC2InstanceInitiatedShutdownBehaviorTerminate) ]
+                                               stringValues:@[ @"stop", @"terminate" ]
+                                               unknownValue:@(UAEC2InstanceInitiatedShutdownBehaviorUnknown)];
 }
 
 + (NSValueTransformer *)groupNamesXMLTransformer
@@ -218,37 +202,9 @@
 
 + (NSValueTransformer *)instanceInitiatedShutdownBehaviorXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"stop"])
-		    return @(UAEC2InstanceInitiatedShutdownBehaviorStop);
-		if ([value isEqualToString:@"terminate"])
-		    return @(UAEC2InstanceInitiatedShutdownBehaviorTerminate);
-
-		return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceInitiatedShutdownBehavior castValue = (UAEC2InstanceInitiatedShutdownBehavior)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceInitiatedShutdownBehaviorStop:
-			    return @"stop";
-			case UAEC2InstanceInitiatedShutdownBehaviorTerminate:
-			    return @"terminate";
-
-			case UAEC2InstanceInitiatedShutdownBehaviorUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceInitiatedShutdownBehaviorStop), @(UAEC2InstanceInitiatedShutdownBehaviorTerminate) ]
+                                               stringValues:@[ @"stop", @"terminate" ]
+                                               unknownValue:@(UAEC2InstanceInitiatedShutdownBehaviorUnknown)];
 }
 
 @end

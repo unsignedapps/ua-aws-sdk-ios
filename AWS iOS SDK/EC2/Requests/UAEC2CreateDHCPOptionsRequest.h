@@ -21,6 +21,11 @@ typedef BOOL(^UAEC2CreateDHCPOptionsRequestShouldContinueWaitingBlock)(UAEC2Crea
 // @property (nonatomic, copy) UAEC2CreateDHCPOptionsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAEC2DHCPConfiguration at the specified index.
+**/
+- (UAEC2DHCPConfiguration *)dhcpConfigurationAtIndex:(NSUInteger)index;
+
+/**
  * Adds a DHCPConfiguration to the dhcpConfigurations property.
  *
  * This will initialise dhcpConfigurations with an empty mutable array if necessary.

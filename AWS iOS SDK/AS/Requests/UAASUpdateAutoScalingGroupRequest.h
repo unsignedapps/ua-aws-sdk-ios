@@ -31,6 +31,16 @@ typedef BOOL(^UAASUpdateAutoScalingGroupRequestShouldContinueWaitingBlock)(UAASU
 // @property (nonatomic, copy) UAASUpdateAutoScalingGroupRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)terminationPolicyAtIndex:(NSUInteger)index;
+
+/**
  * Adds a AvailabilityZone to the availabilityZones property.
  *
  * This will initialise availabilityZones with an empty mutable array if necessary.

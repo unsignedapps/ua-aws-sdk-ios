@@ -28,6 +28,11 @@ typedef BOOL(^UAEC2RevokeSecurityGroupEgressRequestShouldContinueWaitingBlock)(U
 // @property (nonatomic, copy) UAEC2RevokeSecurityGroupEgressRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAEC2IPPermission at the specified index.
+**/
+- (UAEC2IPPermission *)ipPermissionAtIndex:(NSUInteger)index;
+
+/**
  * Adds a IPPermission to the ipPermissions property.
  *
  * This will initialise ipPermissions with an empty mutable array if necessary.

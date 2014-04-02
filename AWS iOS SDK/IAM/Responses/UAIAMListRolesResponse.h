@@ -17,4 +17,9 @@
 @property (nonatomic) BOOL isTruncated;
 @property (nonatomic, copy) NSString *marker;
 
+/**
+ * Retrieves the UAIAMRole at the specified index.
+**/
+- (UAIAMRole *)roleAtIndex:(NSUInteger)index;
+
 @end

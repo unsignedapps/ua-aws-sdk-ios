@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *keyPairs;
 
+/**
+ * Retrieves the UAEC2KeyPair at the specified index.
+**/
+- (UAEC2KeyPair *)keyPairAtIndex:(NSUInteger)index;
+
 @end

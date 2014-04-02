@@ -37,92 +37,16 @@
 
 + (NSValueTransformer *)lifecycleStateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Pending"])
-		    return @(UAASInstanceLifecycleStatePending);
-		if ([value isEqualToString:@"Quarantined"])
-		    return @(UAASInstanceLifecycleStateQuarantined);
-		if ([value isEqualToString:@"InService"])
-		    return @(UAASInstanceLifecycleStateInService);
-		if ([value isEqualToString:@"Terminating"])
-		    return @(UAASInstanceLifecycleStateTerminating);
-		if ([value isEqualToString:@"Terminated"])
-		    return @(UAASInstanceLifecycleStateTerminated);
-
-		return @(UAASInstanceLifecycleStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASInstanceLifecycleState castValue = (UAASInstanceLifecycleState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASInstanceLifecycleStatePending:
-			    return @"Pending";
-			case UAASInstanceLifecycleStateQuarantined:
-			    return @"Quarantined";
-			case UAASInstanceLifecycleStateInService:
-			    return @"InService";
-			case UAASInstanceLifecycleStateTerminating:
-			    return @"Terminating";
-			case UAASInstanceLifecycleStateTerminated:
-			    return @"Terminated";
-
-			case UAASInstanceLifecycleStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASInstanceLifecycleStatePending), @(UAASInstanceLifecycleStateQuarantined), @(UAASInstanceLifecycleStateInService), @(UAASInstanceLifecycleStateTerminating), @(UAASInstanceLifecycleStateTerminated) ]
+                                               stringValues:@[ @"Pending", @"Quarantined", @"InService", @"Terminating", @"Terminated" ]
+                                               unknownValue:@(UAASInstanceLifecycleStateUnknown)];
 }
 
 + (NSValueTransformer *)lifecycleStateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAASInstanceLifecycleStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Pending"])
-		    return @(UAASInstanceLifecycleStatePending);
-		if ([value isEqualToString:@"Quarantined"])
-		    return @(UAASInstanceLifecycleStateQuarantined);
-		if ([value isEqualToString:@"InService"])
-		    return @(UAASInstanceLifecycleStateInService);
-		if ([value isEqualToString:@"Terminating"])
-		    return @(UAASInstanceLifecycleStateTerminating);
-		if ([value isEqualToString:@"Terminated"])
-		    return @(UAASInstanceLifecycleStateTerminated);
-
-		return @(UAASInstanceLifecycleStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASInstanceLifecycleState castValue = (UAASInstanceLifecycleState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASInstanceLifecycleStatePending:
-			    return @"Pending";
-			case UAASInstanceLifecycleStateQuarantined:
-			    return @"Quarantined";
-			case UAASInstanceLifecycleStateInService:
-			    return @"InService";
-			case UAASInstanceLifecycleStateTerminating:
-			    return @"Terminating";
-			case UAASInstanceLifecycleStateTerminated:
-			    return @"Terminated";
-
-			case UAASInstanceLifecycleStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASInstanceLifecycleStatePending), @(UAASInstanceLifecycleStateQuarantined), @(UAASInstanceLifecycleStateInService), @(UAASInstanceLifecycleStateTerminating), @(UAASInstanceLifecycleStateTerminated) ]
+                                               stringValues:@[ @"Pending", @"Quarantined", @"InService", @"Terminating", @"Terminated" ]
+                                               unknownValue:@(UAASInstanceLifecycleStateUnknown)];
 }
 
 @end

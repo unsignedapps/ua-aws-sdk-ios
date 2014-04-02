@@ -30,6 +30,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
+{
+    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
+        return nil;
+
+    return [self.availabilityZones objectAtIndex:index];
+}
+
 + (NSValueTransformer *)availabilityZonesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];

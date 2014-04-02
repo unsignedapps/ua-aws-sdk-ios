@@ -31,4 +31,14 @@
 @property (nonatomic) BOOL ebsOptimized;
 @property (nonatomic) BOOL associatePublicIPAddress;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)securityGroupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAASBlockDeviceMapping at the specified index.
+**/
+- (UAASBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
 @end

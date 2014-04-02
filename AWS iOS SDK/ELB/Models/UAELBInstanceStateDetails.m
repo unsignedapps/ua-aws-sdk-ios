@@ -35,134 +35,30 @@
 
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"InService"])
-		    return @(UAELBInstanceStateInService);
-		if ([value isEqualToString:@"OutOfService"])
-		    return @(UAELBInstanceStateOutOfService);
-
-		return @(UAELBInstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAELBInstanceState castValue = (UAELBInstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAELBInstanceStateInService:
-			    return @"InService";
-			case UAELBInstanceStateOutOfService:
-			    return @"OutOfService";
-
-			case UAELBInstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBInstanceStateInService), @(UAELBInstanceStateOutOfService) ]
+                                               stringValues:@[ @"InService", @"OutOfService" ]
+                                               unknownValue:@(UAELBInstanceStateUnknown)];
 }
 
 + (NSValueTransformer *)reasonCodeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ELB"])
-		    return @(UAELBInstanceStateReasonCodeELB);
-		if ([value isEqualToString:@"Instance"])
-		    return @(UAELBInstanceStateReasonCodeInstance);
-
-		return @(UAELBInstanceStateReasonCodeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAELBInstanceStateReasonCode castValue = (UAELBInstanceStateReasonCode)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAELBInstanceStateReasonCodeELB:
-			    return @"ELB";
-			case UAELBInstanceStateReasonCodeInstance:
-			    return @"Instance";
-
-			case UAELBInstanceStateReasonCodeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBInstanceStateReasonCodeElb), @(UAELBInstanceStateReasonCodeInstance) ]
+                                               stringValues:@[ @"ELB", @"Instance" ]
+                                               unknownValue:@(UAELBInstanceStateReasonCodeUnknown)];
 }
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAELBInstanceStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"InService"])
-		    return @(UAELBInstanceStateInService);
-		if ([value isEqualToString:@"OutOfService"])
-		    return @(UAELBInstanceStateOutOfService);
-
-		return @(UAELBInstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAELBInstanceState castValue = (UAELBInstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAELBInstanceStateInService:
-			    return @"InService";
-			case UAELBInstanceStateOutOfService:
-			    return @"OutOfService";
-
-			case UAELBInstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBInstanceStateInService), @(UAELBInstanceStateOutOfService) ]
+                                               stringValues:@[ @"InService", @"OutOfService" ]
+                                               unknownValue:@(UAELBInstanceStateUnknown)];
 }
 
 + (NSValueTransformer *)reasonCodeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAELBInstanceStateReasonCodeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ELB"])
-		    return @(UAELBInstanceStateReasonCodeELB);
-		if ([value isEqualToString:@"Instance"])
-		    return @(UAELBInstanceStateReasonCodeInstance);
-
-		return @(UAELBInstanceStateReasonCodeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAELBInstanceStateReasonCode castValue = (UAELBInstanceStateReasonCode)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAELBInstanceStateReasonCodeELB:
-			    return @"ELB";
-			case UAELBInstanceStateReasonCodeInstance:
-			    return @"Instance";
-
-			case UAELBInstanceStateReasonCodeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBInstanceStateReasonCodeElb), @(UAELBInstanceStateReasonCodeInstance) ]
+                                               stringValues:@[ @"ELB", @"Instance" ]
+                                               unknownValue:@(UAELBInstanceStateReasonCodeUnknown)];
 }
 
 @end

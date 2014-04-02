@@ -53,6 +53,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
+{
+    if (self.filters == nil || index >= ([self.filters count]-1))
+        return nil;
+
+    return [self.filters objectAtIndex:index];
+}
+
+- (NSString *)conversionTaskIDAtIndex:(NSUInteger)index
+{
+    if (self.conversionTaskIDs == nil || index >= ([self.conversionTaskIDs count]-1))
+        return nil;
+
+    return [self.conversionTaskIDs objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

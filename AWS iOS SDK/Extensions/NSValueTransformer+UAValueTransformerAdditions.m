@@ -276,8 +276,23 @@ NSString * const UADDBParseErrorInputKey = @"Input";
 
     return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
+        if (value == nil)
+            return unknownValue;
+
+        // support for direct NSNumber values
         if ([value isKindOfClass:[NSNumber class]])
             return (NSNumber *)value;
+        
+        // support for XML elements
+        if ([value isKindOfClass:[NSArray class]])
+        {
+            NSArray *arrayValue = (NSArray *)value;
+            if ([arrayValue count] == 0 || ![arrayValue.firstObject isKindOfClass:[UADDXMLElement class]])
+                return unknownValue;
+            
+            UADDXMLElement *element = (UADDXMLElement *)arrayValue.firstObject;
+            value = [element stringValue];
+        }
         
         NSUInteger index = [stringValues indexOfObject:value];
         if (index == NSNotFound)
@@ -292,6 +307,28 @@ NSString * const UADDBParseErrorInputKey = @"Input";
             return nil;
         
         return [stringValues objectAtIndex:index];
+    }];
+}
+
++ (NSValueTransformer *)UA_ENUMArrayTransformerWithValues:(NSArray *)values stringValues:(NSArray *)stringValues unknownValue:(NSNumber *)unknownValue
+{
+    NSValueTransformer *transformer = [NSValueTransformer UA_ENUMTransformerWithValues:values
+                                                                          stringValues:stringValues
+                                                                          unknownValue:unknownValue];
+
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *values)
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[values count]];
+        for (NSString *value in values)
+            [array addObject:[transformer transformedValue:value]];
+        return [array copy];
+        
+    } reverseBlock:^NSArray *(NSArray *values)
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[values count]];
+        for (NSNumber *value in values)
+            [array addObject:[transformer reverseTransformedValue:value]];
+        return [array copy];
     }];
 }
 

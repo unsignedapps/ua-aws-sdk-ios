@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSArray *datapoints;
 
+/**
+ * Retrieves the UACWDatapoint at the specified index.
+**/
+- (UACWDatapoint *)datapointAtIndex:(NSUInteger)index;
+
 @end

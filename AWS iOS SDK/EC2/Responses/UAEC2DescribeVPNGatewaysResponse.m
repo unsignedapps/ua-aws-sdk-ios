@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2VPNGateway *)vpnGatewayAtIndex:(NSUInteger)index
+{
+    if (self.vpnGateways == nil || index >= ([self.vpnGateways count]-1))
+        return nil;
+
+    return [self.vpnGateways objectAtIndex:index];
+}
+
 + (NSValueTransformer *)vpnGatewaysXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VPNGateway class]];

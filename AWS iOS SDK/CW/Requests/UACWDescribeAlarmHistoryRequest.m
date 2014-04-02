@@ -121,37 +121,9 @@
 
 + (NSValueTransformer *)historyItemTypeJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ConfigurationUpdate"])
-		    return @(UACWAlarmHistoryItemTypeConfigurationUpdate);
-		if ([value isEqualToString:@"StateUpdate"])
-		    return @(UACWAlarmHistoryItemTypeStateUpdate);
-		if ([value isEqualToString:@"Action"])
-		    return @(UACWAlarmHistoryItemTypeAction);
-
-		return @(UACWAlarmHistoryItemTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWAlarmHistoryItemType castValue = (UACWAlarmHistoryItemType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWAlarmHistoryItemTypeConfigurationUpdate:
-			    return @"ConfigurationUpdate";
-			case UACWAlarmHistoryItemTypeStateUpdate:
-			    return @"StateUpdate";
-			case UACWAlarmHistoryItemTypeAction:
-			    return @"Action";
-
-			case UACWAlarmHistoryItemTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWAlarmHistoryItemTypeConfigurationUpdate), @(UACWAlarmHistoryItemTypeStateUpdate), @(UACWAlarmHistoryItemTypeAction) ]
+                                               stringValues:@[ @"ConfigurationUpdate", @"StateUpdate", @"Action" ]
+                                               unknownValue:@(UACWAlarmHistoryItemTypeUnknown)];
 }
 
 + (NSValueTransformer *)startDateJSONTransformer
@@ -166,37 +138,9 @@
 
 + (NSValueTransformer *)historyItemTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ConfigurationUpdate"])
-		    return @(UACWAlarmHistoryItemTypeConfigurationUpdate);
-		if ([value isEqualToString:@"StateUpdate"])
-		    return @(UACWAlarmHistoryItemTypeStateUpdate);
-		if ([value isEqualToString:@"Action"])
-		    return @(UACWAlarmHistoryItemTypeAction);
-
-		return @(UACWAlarmHistoryItemTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWAlarmHistoryItemType castValue = (UACWAlarmHistoryItemType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWAlarmHistoryItemTypeConfigurationUpdate:
-			    return @"ConfigurationUpdate";
-			case UACWAlarmHistoryItemTypeStateUpdate:
-			    return @"StateUpdate";
-			case UACWAlarmHistoryItemTypeAction:
-			    return @"Action";
-
-			case UACWAlarmHistoryItemTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWAlarmHistoryItemTypeConfigurationUpdate), @(UACWAlarmHistoryItemTypeStateUpdate), @(UACWAlarmHistoryItemTypeAction) ]
+                                               stringValues:@[ @"ConfigurationUpdate", @"StateUpdate", @"Action" ]
+                                               unknownValue:@(UACWAlarmHistoryItemTypeUnknown)];
 }
 
 + (NSValueTransformer *)startDateQueryStringTransformer

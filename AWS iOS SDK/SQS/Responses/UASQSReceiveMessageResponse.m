@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UASQSMessage *)messageAtIndex:(NSUInteger)index
+{
+    if (self.messages == nil || index >= ([self.messages count]-1))
+        return nil;
+
+    return [self.messages objectAtIndex:index];
+}
+
 + (NSValueTransformer *)messagesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASQSMessage class]];

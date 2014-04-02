@@ -51,6 +51,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)subnetAtIndex:(NSUInteger)index
+{
+    if (self.subnets == nil || index >= ([self.subnets count]-1))
+        return nil;
+
+    return [self.subnets objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

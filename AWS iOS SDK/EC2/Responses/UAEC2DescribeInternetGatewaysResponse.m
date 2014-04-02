@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2InternetGateway *)internetGatewayAtIndex:(NSUInteger)index
+{
+    if (self.internetGateways == nil || index >= ([self.internetGateways count]-1))
+        return nil;
+
+    return [self.internetGateways objectAtIndex:index];
+}
+
 + (NSValueTransformer *)internetGatewaysXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InternetGateway class]];

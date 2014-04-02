@@ -16,4 +16,14 @@
 @property (nonatomic, copy) NSArray *successful;
 @property (nonatomic, copy) NSArray *failed;
 
+/**
+ * Retrieves the UASQSChangeMessageVisibilityBatchResultEntry at the specified index.
+**/
+- (UASQSChangeMessageVisibilityBatchResultEntry *)successfulAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UASQSBatchResultError at the specified index.
+**/
+- (UASQSBatchResultError *)failedAtIndex:(NSUInteger)index;
+
 @end

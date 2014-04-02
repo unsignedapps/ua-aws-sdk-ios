@@ -22,6 +22,11 @@ typedef BOOL(^UAEC2DescribeReservedInstancesListingsRequestShouldContinueWaiting
 // @property (nonatomic, copy) UAEC2DescribeReservedInstancesListingsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Filter to the filters property.
  *
  * This will initialise filters with an empty mutable array if necessary.

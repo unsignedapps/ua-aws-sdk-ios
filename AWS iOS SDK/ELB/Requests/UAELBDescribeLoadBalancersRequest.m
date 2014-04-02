@@ -51,6 +51,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)loadBalancerNameAtIndex:(NSUInteger)index
+{
+    if (self.loadBalancerNames == nil || index >= ([self.loadBalancerNames count]-1))
+        return nil;
+
+    return [self.loadBalancerNames objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

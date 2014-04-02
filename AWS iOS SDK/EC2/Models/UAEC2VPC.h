@@ -21,4 +21,9 @@
 @property (nonatomic) UAEC2InstanceTenancy instanceTenancy;
 @property (nonatomic) BOOL isDefault;
 
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

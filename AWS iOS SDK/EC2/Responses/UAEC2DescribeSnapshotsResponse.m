@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Snapshot *)snapshotAtIndex:(NSUInteger)index
+{
+    if (self.snapshots == nil || index >= ([self.snapshots count]-1))
+        return nil;
+
+    return [self.snapshots objectAtIndex:index];
+}
+
 + (NSValueTransformer *)snapshotsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Snapshot class]];

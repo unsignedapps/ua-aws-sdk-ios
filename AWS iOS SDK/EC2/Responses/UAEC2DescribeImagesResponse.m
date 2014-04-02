@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Image *)imageAtIndex:(NSUInteger)index
+{
+    if (self.images == nil || index >= ([self.images count]-1))
+        return nil;
+
+    return [self.images objectAtIndex:index];
+}
+
 + (NSValueTransformer *)imagesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Image class]];

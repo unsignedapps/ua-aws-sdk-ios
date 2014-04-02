@@ -94,64 +94,16 @@
 
 + (NSValueTransformer *)attributeNameJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"DeliveryPolicy"])
-		    return @(UASNSSubscriptionAttributeDeliveryPolicy);
-		if ([value isEqualToString:@"RawMessageDelivery"])
-		    return @(UASNSSubscriptionAttributeRawMessageDelivery);
-
-		return @(UASNSSubscriptionAttributeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UASNSSubscriptionAttribute castValue = (UASNSSubscriptionAttribute)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UASNSSubscriptionAttributeDeliveryPolicy:
-			    return @"DeliveryPolicy";
-			case UASNSSubscriptionAttributeRawMessageDelivery:
-			    return @"RawMessageDelivery";
-
-			case UASNSSubscriptionAttributeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSSubscriptionAttributeDeliveryPolicy), @(UASNSSubscriptionAttributeRawMessageDelivery) ]
+                                               stringValues:@[ @"DeliveryPolicy", @"RawMessageDelivery" ]
+                                               unknownValue:@(UASNSSubscriptionAttributeUnknown)];
 }
 
 + (NSValueTransformer *)attributeNameQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"DeliveryPolicy"])
-		    return @(UASNSSubscriptionAttributeDeliveryPolicy);
-		if ([value isEqualToString:@"RawMessageDelivery"])
-		    return @(UASNSSubscriptionAttributeRawMessageDelivery);
-
-		return @(UASNSSubscriptionAttributeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UASNSSubscriptionAttribute castValue = (UASNSSubscriptionAttribute)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UASNSSubscriptionAttributeDeliveryPolicy:
-			    return @"DeliveryPolicy";
-			case UASNSSubscriptionAttributeRawMessageDelivery:
-			    return @"RawMessageDelivery";
-
-			case UASNSSubscriptionAttributeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSSubscriptionAttributeDeliveryPolicy), @(UASNSSubscriptionAttributeRawMessageDelivery) ]
+                                               stringValues:@[ @"DeliveryPolicy", @"RawMessageDelivery" ]
+                                               unknownValue:@(UASNSSubscriptionAttributeUnknown)];
 }
 
 #pragma mark - Invocation

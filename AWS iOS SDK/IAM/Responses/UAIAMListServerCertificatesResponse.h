@@ -17,4 +17,9 @@
 @property (nonatomic) BOOL isTruncated;
 @property (nonatomic, copy) NSString *marker;
 
+/**
+ * Retrieves the UAIAMServerCertificateMetadataList at the specified index.
+**/
+- (UAIAMServerCertificateMetadataList *)serverCertificateMetadataListAtIndex:(NSUInteger)index;
+
 @end

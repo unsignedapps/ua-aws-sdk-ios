@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)attributeValueAtIndex:(NSUInteger)index
+{
+    if (self.attributeValues == nil || index >= ([self.attributeValues count]-1))
+        return nil;
+
+    return [self.attributeValues objectAtIndex:index];
+}
+
 + (NSValueTransformer *)attributeValuesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];

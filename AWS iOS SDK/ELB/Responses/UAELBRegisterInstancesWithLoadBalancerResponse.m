@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAELBInstance *)instanceAtIndex:(NSUInteger)index
+{
+    if (self.instances == nil || index >= ([self.instances count]-1))
+        return nil;
+
+    return [self.instances objectAtIndex:index];
+}
+
 + (NSValueTransformer *)instancesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBInstance class]];

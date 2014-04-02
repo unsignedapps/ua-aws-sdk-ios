@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *messages;
 
+/**
+ * Retrieves the UASQSMessage at the specified index.
+**/
+- (UASQSMessage *)messageAtIndex:(NSUInteger)index;
+
 @end

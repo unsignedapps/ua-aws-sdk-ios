@@ -21,6 +21,11 @@ typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELB
 // @property (nonatomic, copy) UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)loadBalancerNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a LoadBalancerName to the loadBalancerNames property.
  *
  * This will initialise loadBalancerNames with an empty mutable array if necessary.

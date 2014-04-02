@@ -25,6 +25,11 @@ typedef BOOL(^UACWDescribeAlarmsRequestShouldContinueWaitingBlock)(UACWDescribeA
 // @property (nonatomic, copy) UACWDescribeAlarmsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)alarmNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a AlarmName to the alarmNames property.
  *
  * This will initialise alarmNames with an empty mutable array if necessary.

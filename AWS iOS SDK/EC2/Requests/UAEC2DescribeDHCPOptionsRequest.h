@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeDHCPOptionsRequestShouldContinueWaitingBlock)(UAEC2De
 // @property (nonatomic, copy) UAEC2DescribeDHCPOptionsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)dhcpOptionsIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a DHCPOptionsID to the dhcpOptionsIDs property.
  *
  * This will initialise dhcpOptionsIDs with an empty mutable array if necessary.

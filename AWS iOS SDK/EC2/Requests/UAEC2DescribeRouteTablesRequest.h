@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeRouteTablesRequestShouldContinueWaitingBlock)(UAEC2De
 // @property (nonatomic, copy) UAEC2DescribeRouteTablesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)routeTableIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a RouteTableID to the routeTableIDs property.
  *
  * This will initialise routeTableIDs with an empty mutable array if necessary.

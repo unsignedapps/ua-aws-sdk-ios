@@ -21,6 +21,11 @@ typedef BOOL(^UAELBDeleteLoadBalancerListenersRequestShouldContinueWaitingBlock)
 // @property (nonatomic, copy) UAELBDeleteLoadBalancerListenersRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSNumber at the specified index.
+**/
+- (NSNumber *)loadBalancerPortAtIndex:(NSUInteger)index;
+
+/**
  * Adds a LoadBalancerPort to the loadBalancerPorts property.
  *
  * This will initialise loadBalancerPorts with an empty mutable array if necessary.

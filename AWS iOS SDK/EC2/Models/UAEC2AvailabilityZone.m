@@ -34,39 +34,19 @@
     return [keyPaths copy];
 }
 
+- (UAEC2AvailabilityZoneMessage *)messageAtIndex:(NSUInteger)index
+{
+    if (self.messages == nil || index >= ([self.messages count]-1))
+        return nil;
+
+    return [self.messages objectAtIndex:index];
+}
+
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2AvailabilityZoneStateAvailable);
-		if ([value isEqualToString:@"impaired"])
-		    return @(UAEC2AvailabilityZoneStateImpaired);
-		if ([value isEqualToString:@"unavailable"])
-		    return @(UAEC2AvailabilityZoneStateUnavailable);
-
-		return @(UAEC2AvailabilityZoneStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2AvailabilityZoneState castValue = (UAEC2AvailabilityZoneState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2AvailabilityZoneStateAvailable:
-			    return @"available";
-			case UAEC2AvailabilityZoneStateImpaired:
-			    return @"impaired";
-			case UAEC2AvailabilityZoneStateUnavailable:
-			    return @"unavailable";
-
-			case UAEC2AvailabilityZoneStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2AvailabilityZoneStateAvailable), @(UAEC2AvailabilityZoneStateImpaired), @(UAEC2AvailabilityZoneStateUnavailable) ]
+                                               stringValues:@[ @"available", @"impaired", @"unavailable" ]
+                                               unknownValue:@(UAEC2AvailabilityZoneStateUnknown)];
 }
 
 + (NSValueTransformer *)messagesQueryStringTransformer
@@ -76,41 +56,9 @@
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2AvailabilityZoneStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2AvailabilityZoneStateAvailable);
-		if ([value isEqualToString:@"impaired"])
-		    return @(UAEC2AvailabilityZoneStateImpaired);
-		if ([value isEqualToString:@"unavailable"])
-		    return @(UAEC2AvailabilityZoneStateUnavailable);
-
-		return @(UAEC2AvailabilityZoneStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2AvailabilityZoneState castValue = (UAEC2AvailabilityZoneState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2AvailabilityZoneStateAvailable:
-			    return @"available";
-			case UAEC2AvailabilityZoneStateImpaired:
-			    return @"impaired";
-			case UAEC2AvailabilityZoneStateUnavailable:
-			    return @"unavailable";
-
-			case UAEC2AvailabilityZoneStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2AvailabilityZoneStateAvailable), @(UAEC2AvailabilityZoneStateImpaired), @(UAEC2AvailabilityZoneStateUnavailable) ]
+                                               stringValues:@[ @"available", @"impaired", @"unavailable" ]
+                                               unknownValue:@(UAEC2AvailabilityZoneStateUnknown)];
 }
 
 + (NSValueTransformer *)messagesXMLTransformer

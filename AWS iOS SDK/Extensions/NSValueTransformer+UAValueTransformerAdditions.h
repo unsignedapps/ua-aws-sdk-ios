@@ -29,6 +29,7 @@ extern NSString * const UADDBParseErrorInputKey;
 + (NSValueTransformer *)UA_JSONDictionaryTransformerWithItemTransformer:(NSValueTransformer *)valueTransformer;
 
 + (NSValueTransformer *)UA_ENUMTransformerWithValues:(NSArray *)values stringValues:(NSArray *)stringValues unknownValue:(NSNumber *)unknownValue;
++ (NSValueTransformer *)UA_ENUMArrayTransformerWithValues:(NSArray *)values stringValues:(NSArray *)stringValues unknownValue:(NSNumber *)unknownValue;
 
 /**
  * Transforms a DynamoDB Attribute Value JSON dictionary to a properly typed dictionary.

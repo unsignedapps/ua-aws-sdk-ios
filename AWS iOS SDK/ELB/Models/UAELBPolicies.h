@@ -17,4 +17,19 @@
 @property (nonatomic, copy) NSArray *lBCookieStickinessPolicies;
 @property (nonatomic, copy) NSArray *otherPolicies;
 
+/**
+ * Retrieves the UAELBAppCookieStickinessPolicy at the specified index.
+**/
+- (UAELBAppCookieStickinessPolicy *)appCookieStickinessPolicyAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAELBLBCookieStickinessPolicy at the specified index.
+**/
+- (UAELBLBCookieStickinessPolicy *)lBCookieStickinessPolicyAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)otherPolicyAtIndex:(NSUInteger)index;
+
 @end

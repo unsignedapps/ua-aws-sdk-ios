@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Volume *)volumeAtIndex:(NSUInteger)index
+{
+    if (self.volumes == nil || index >= ([self.volumes count]-1))
+        return nil;
+
+    return [self.volumes objectAtIndex:index];
+}
+
 + (NSValueTransformer *)volumesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Volume class]];

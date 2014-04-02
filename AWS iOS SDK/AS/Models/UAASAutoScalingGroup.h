@@ -34,4 +34,39 @@
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic, copy) NSArray *terminationPolicies;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)loadBalancerNameAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAASInstance at the specified index.
+**/
+- (UAASInstance *)instanceAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAASSuspendedProcess at the specified index.
+**/
+- (UAASSuspendedProcess *)suspendedProcessAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAASEnabledMetric at the specified index.
+**/
+- (UAASEnabledMetric *)enabledMetricAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAASTag at the specified index.
+**/
+- (UAASTag *)tagAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)terminationPolicyAtIndex:(NSUInteger)index;
+
 @end

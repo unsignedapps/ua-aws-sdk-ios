@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *volumes;
 
+/**
+ * Retrieves the UAEC2Volume at the specified index.
+**/
+- (UAEC2Volume *)volumeAtIndex:(NSUInteger)index;
+
 @end

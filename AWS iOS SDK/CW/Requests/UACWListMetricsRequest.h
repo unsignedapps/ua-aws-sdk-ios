@@ -23,6 +23,11 @@ typedef BOOL(^UACWListMetricsRequestShouldContinueWaitingBlock)(UACWListMetricsR
 // @property (nonatomic, copy) UACWListMetricsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UACWDimension at the specified index.
+**/
+- (UACWDimension *)dimensionAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Dimension to the dimensions property.
  *
  * This will initialise dimensions with an empty mutable array if necessary.

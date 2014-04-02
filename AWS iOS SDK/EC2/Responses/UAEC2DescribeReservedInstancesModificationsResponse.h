@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *reservedInstancesModifications;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAEC2ReservedInstancesModification at the specified index.
+**/
+- (UAEC2ReservedInstancesModification *)reservedInstancesModificationAtIndex:(NSUInteger)index;
+
 @end

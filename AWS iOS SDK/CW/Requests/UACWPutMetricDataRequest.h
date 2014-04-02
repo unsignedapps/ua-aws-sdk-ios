@@ -21,6 +21,11 @@ typedef BOOL(^UACWPutMetricDataRequestShouldContinueWaitingBlock)(UACWPutMetricD
 // @property (nonatomic, copy) UACWPutMetricDataRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UACWMetricDatum at the specified index.
+**/
+- (UACWMetricDatum *)metricDatumAtIndex:(NSUInteger)index;
+
+/**
  * Adds a MetricDatum to the metricData property.
  *
  * This will initialise metricData with an empty mutable array if necessary.

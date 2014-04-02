@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeBundleTasksRequestShouldContinueWaitingBlock)(UAEC2De
 // @property (nonatomic, copy) UAEC2DescribeBundleTasksRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)bundleIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a BundleID to the bundleIDs property.
  *
  * This will initialise bundleIDs with an empty mutable array if necessary.

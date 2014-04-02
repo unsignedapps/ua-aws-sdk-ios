@@ -52,6 +52,14 @@
     return [keyPaths copy];
 }
 
+- (UASQSDeleteMessageBatchRequestEntry *)entryAtIndex:(NSUInteger)index
+{
+    if (self.entries == nil || index >= ([self.entries count]-1))
+        return nil;
+
+    return [self.entries objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

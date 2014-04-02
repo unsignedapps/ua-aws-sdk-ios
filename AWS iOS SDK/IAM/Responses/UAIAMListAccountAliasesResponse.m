@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)accountAliasAtIndex:(NSUInteger)index
+{
+    if (self.accountAliases == nil || index >= ([self.accountAliases count]-1))
+        return nil;
+
+    return [self.accountAliases objectAtIndex:index];
+}
+
 + (NSValueTransformer *)accountAliasesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];

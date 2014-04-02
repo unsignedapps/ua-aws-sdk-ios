@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeRegionsRequestShouldContinueWaitingBlock)(UAEC2Descri
 // @property (nonatomic, copy) UAEC2DescribeRegionsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)regionNameAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a RegionName to the regionNames property.
  *
  * This will initialise regionNames with an empty mutable array if necessary.

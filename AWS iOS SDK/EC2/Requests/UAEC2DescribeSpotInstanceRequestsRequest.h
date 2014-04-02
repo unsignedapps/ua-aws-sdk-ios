@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeSpotInstanceRequestsRequestShouldContinueWaitingBlock
 // @property (nonatomic, copy) UAEC2DescribeSpotInstanceRequestsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)spotInstanceRequestIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a SpotInstanceRequestID to the spotInstanceRequestIDs property.
  *
  * This will initialise spotInstanceRequestIDs with an empty mutable array if necessary.

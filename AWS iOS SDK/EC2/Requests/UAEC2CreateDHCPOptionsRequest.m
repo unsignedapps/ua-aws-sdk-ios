@@ -52,6 +52,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2DHCPConfiguration *)dhcpConfigurationAtIndex:(NSUInteger)index
+{
+    if (self.dhcpConfigurations == nil || index >= ([self.dhcpConfigurations count]-1))
+        return nil;
+
+    return [self.dhcpConfigurations objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

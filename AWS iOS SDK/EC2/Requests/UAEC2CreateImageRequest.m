@@ -56,6 +56,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
+{
+    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
+        return nil;
+
+    return [self.blockDeviceMappings objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

@@ -21,6 +21,11 @@ typedef BOOL(^UAASDisableMetricsCollectionRequestShouldContinueWaitingBlock)(UAA
 // @property (nonatomic, copy) UAASDisableMetricsCollectionRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)metricAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Metric to the metrics property.
  *
  * This will initialise metrics with an empty mutable array if necessary.

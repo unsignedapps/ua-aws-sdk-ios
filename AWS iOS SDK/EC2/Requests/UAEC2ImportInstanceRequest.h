@@ -24,6 +24,11 @@ typedef BOOL(^UAEC2ImportInstanceRequestShouldContinueWaitingBlock)(UAEC2ImportI
 // @property (nonatomic, copy) UAEC2ImportInstanceRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAEC2DiskImage at the specified index.
+**/
+- (UAEC2DiskImage *)diskImageAtIndex:(NSUInteger)index;
+
+/**
  * Adds a DiskImage to the diskImages property.
  *
  * This will initialise diskImages with an empty mutable array if necessary.

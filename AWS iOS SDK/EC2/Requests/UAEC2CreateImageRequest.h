@@ -25,6 +25,11 @@ typedef BOOL(^UAEC2CreateImageRequestShouldContinueWaitingBlock)(UAEC2CreateImag
 // @property (nonatomic, copy) UAEC2CreateImageRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAEC2BlockDeviceMapping at the specified index.
+**/
+- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
+/**
  * Adds a BlockDeviceMapping to the blockDeviceMappings property.
  *
  * This will initialise blockDeviceMappings with an empty mutable array if necessary.

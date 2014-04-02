@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *platformApplications;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UASNSPlatformApplication at the specified index.
+**/
+- (UASNSPlatformApplication *)platformApplicationAtIndex:(NSUInteger)index;
+
 @end

@@ -37,6 +37,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index
+{
+    if (self.groups == nil || index >= ([self.groups count]-1))
+        return nil;
+
+    return [self.groups objectAtIndex:index];
+}
+
 + (NSValueTransformer *)sourceDestCheckXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2SourceDestCheck class]];

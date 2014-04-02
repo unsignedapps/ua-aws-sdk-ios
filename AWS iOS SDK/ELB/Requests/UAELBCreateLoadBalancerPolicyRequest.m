@@ -54,6 +54,14 @@
     return [keyPaths copy];
 }
 
+- (UAELBPolicyAttribute *)policyAttributeAtIndex:(NSUInteger)index
+{
+    if (self.policyAttributes == nil || index >= ([self.policyAttributes count]-1))
+        return nil;
+
+    return [self.policyAttributes objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

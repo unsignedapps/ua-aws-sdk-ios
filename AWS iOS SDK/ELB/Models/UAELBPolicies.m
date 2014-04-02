@@ -34,6 +34,30 @@
     return [keyPaths copy];
 }
 
+- (UAELBAppCookieStickinessPolicy *)appCookieStickinessPolicyAtIndex:(NSUInteger)index
+{
+    if (self.appCookieStickinessPolicies == nil || index >= ([self.appCookieStickinessPolicies count]-1))
+        return nil;
+
+    return [self.appCookieStickinessPolicies objectAtIndex:index];
+}
+
+- (UAELBLBCookieStickinessPolicy *)lBCookieStickinessPolicyAtIndex:(NSUInteger)index
+{
+    if (self.lBCookieStickinessPolicies == nil || index >= ([self.lBCookieStickinessPolicies count]-1))
+        return nil;
+
+    return [self.lBCookieStickinessPolicies objectAtIndex:index];
+}
+
+- (NSString *)otherPolicyAtIndex:(NSUInteger)index
+{
+    if (self.otherPolicies == nil || index >= ([self.otherPolicies count]-1))
+        return nil;
+
+    return [self.otherPolicies objectAtIndex:index];
+}
+
 + (NSValueTransformer *)appCookieStickinessPoliciesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBAppCookieStickinessPolicy class]];

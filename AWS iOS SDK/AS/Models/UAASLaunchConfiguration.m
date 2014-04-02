@@ -47,6 +47,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)securityGroupAtIndex:(NSUInteger)index
+{
+    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
+        return nil;
+
+    return [self.securityGroups objectAtIndex:index];
+}
+
 - (NSString *)decodedUserData
 {
     if (self.userData == nil)
@@ -62,6 +70,12 @@
         [self setUserData:nil];
     else
 		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
+}- (UAASBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
+{
+    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
+        return nil;
+
+    return [self.blockDeviceMappings objectAtIndex:index];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer

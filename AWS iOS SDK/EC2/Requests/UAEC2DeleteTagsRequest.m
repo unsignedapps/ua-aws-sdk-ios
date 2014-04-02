@@ -53,6 +53,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)resourceAtIndex:(NSUInteger)index
+{
+    if (self.resources == nil || index >= ([self.resources count]-1))
+        return nil;
+
+    return [self.resources objectAtIndex:index];
+}
+
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

@@ -22,6 +22,11 @@ typedef BOOL(^UAASDescribeLaunchConfigurationsRequestShouldContinueWaitingBlock)
 // @property (nonatomic, copy) UAASDescribeLaunchConfigurationsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)launchConfigurationNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a LaunchConfigurationName to the launchConfigurationNames property.
  *
  * This will initialise launchConfigurationNames with an empty mutable array if necessary.

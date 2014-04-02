@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *networkInterfaces;
 
+/**
+ * Retrieves the UAEC2NetworkInterface at the specified index.
+**/
+- (UAEC2NetworkInterface *)networkInterfaceAtIndex:(NSUInteger)index;
+
 @end

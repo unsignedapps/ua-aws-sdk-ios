@@ -59,6 +59,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)policyTypeNameAtIndex:(NSUInteger)index
+{
+    if (self.policyTypeNames == nil || index >= ([self.policyTypeNames count]-1))
+        return nil;
+
+    return [self.policyTypeNames objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

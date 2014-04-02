@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *adjustmentTypes;
 
+/**
+ * Retrieves the UAASAdjustmentType at the specified index.
+**/
+- (UAASAdjustmentType *)adjustmentTypeAtIndex:(NSUInteger)index;
+
 @end

@@ -39,6 +39,38 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Route *)routeAtIndex:(NSUInteger)index
+{
+    if (self.routes == nil || index >= ([self.routes count]-1))
+        return nil;
+
+    return [self.routes objectAtIndex:index];
+}
+
+- (UAEC2RouteTableAssociation *)associationAtIndex:(NSUInteger)index
+{
+    if (self.associations == nil || index >= ([self.associations count]-1))
+        return nil;
+
+    return [self.associations objectAtIndex:index];
+}
+
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
+- (UAEC2PropagatingVGW *)propagatingVGWAtIndex:(NSUInteger)index
+{
+    if (self.propagatingVGWs == nil || index >= ([self.propagatingVGWs count]-1))
+        return nil;
+
+    return [self.propagatingVGWs objectAtIndex:index];
+}
+
 + (NSValueTransformer *)routesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Route class]];

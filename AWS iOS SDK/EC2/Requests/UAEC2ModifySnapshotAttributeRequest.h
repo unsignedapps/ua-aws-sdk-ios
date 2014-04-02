@@ -26,6 +26,16 @@ typedef BOOL(^UAEC2ModifySnapshotAttributeRequestShouldContinueWaitingBlock)(UAE
 // @property (nonatomic, copy) UAEC2ModifySnapshotAttributeRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)userIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)groupNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a UserID to the userIDs property.
  *
  * This will initialise userIDs with an empty mutable array if necessary.

@@ -33,6 +33,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
+{
+    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
+        return nil;
+
+    return [self.productCodes objectAtIndex:index];
+}
+
 + (NSValueTransformer *)autoEnableIOXMLTransformer
 {
     return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];

@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAASNotificationConfiguration *)notificationConfigurationAtIndex:(NSUInteger)index
+{
+    if (self.notificationConfigurations == nil || index >= ([self.notificationConfigurations count]-1))
+        return nil;
+
+    return [self.notificationConfigurations objectAtIndex:index];
+}
+
 + (NSValueTransformer *)notificationConfigurationsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASNotificationConfiguration class]];

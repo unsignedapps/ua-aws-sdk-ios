@@ -61,6 +61,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
+{
+    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
+        return nil;
+
+    return [self.availabilityZones objectAtIndex:index];
+}
+
+- (NSString *)terminationPolicyAtIndex:(NSUInteger)index
+{
+    if (self.terminationPolicies == nil || index >= ([self.terminationPolicies count]-1))
+        return nil;
+
+    return [self.terminationPolicies objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

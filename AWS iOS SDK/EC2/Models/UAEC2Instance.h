@@ -52,4 +52,29 @@
 @property (nonatomic) BOOL ebsOptimized;
 @property (nonatomic, copy) NSString *sriovNetSupport;
 
+/**
+ * Retrieves the UAEC2ProductCode at the specified index.
+**/
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2InstanceBlockDeviceMapping at the specified index.
+**/
+- (UAEC2InstanceBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2GroupIdentifier at the specified index.
+**/
+- (UAEC2GroupIdentifier *)securityGroupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2InstanceNetworkInterface at the specified index.
+**/
+- (UAEC2InstanceNetworkInterface *)networkInterfaceAtIndex:(NSUInteger)index;
+
 @end

@@ -22,6 +22,11 @@ typedef BOOL(^UAEC2DescribeExportTasksRequestShouldContinueWaitingBlock)(UAEC2De
 - (id)initWithExportTaskIDs:(NSArray *)exportTaskIDs;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)exportTaskIDAtIndex:(NSUInteger)index;
+
+/**
  * Adds a ExportTaskID to the exportTaskIDs property.
  *
  * This will initialise exportTaskIDs with an empty mutable array if necessary.

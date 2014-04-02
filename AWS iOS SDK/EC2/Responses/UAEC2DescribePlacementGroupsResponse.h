@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *placementGroups;
 
+/**
+ * Retrieves the UAEC2PlacementGroup at the specified index.
+**/
+- (UAEC2PlacementGroup *)placementGroupAtIndex:(NSUInteger)index;
+
 @end

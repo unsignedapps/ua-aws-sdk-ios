@@ -19,4 +19,14 @@
 @property (nonatomic, strong) NSMutableArray *userIdGroupPairs;
 @property (nonatomic, strong) NSMutableArray *ipRanges;
 
+/**
+ * Retrieves the UAEC2UserIdGroupPair at the specified index.
+**/
+- (UAEC2UserIdGroupPair *)userIdGroupPairAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2IPRange at the specified index.
+**/
+- (UAEC2IPRange *)ipRangeAtIndex:(NSUInteger)index;
+
 @end

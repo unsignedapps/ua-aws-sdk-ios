@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeNetworkACLsRequestShouldContinueWaitingBlock)(UAEC2De
 // @property (nonatomic, copy) UAEC2DescribeNetworkACLsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)networkACLIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a NetworkACLID to the networkACLIDs property.
  *
  * This will initialise networkACLIDs with an empty mutable array if necessary.

@@ -13,4 +13,9 @@
 
 @property (nonatomic, copy) NSArray *terminationPolicyTypes;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)terminationPolicyTypeAtIndex:(NSUInteger)index;
+
 @end

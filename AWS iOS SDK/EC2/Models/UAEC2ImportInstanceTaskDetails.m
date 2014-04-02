@@ -34,6 +34,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2ImportInstanceVolumeDetailItem *)volumeAtIndex:(NSUInteger)index
+{
+    if (self.volumes == nil || index >= ([self.volumes count]-1))
+        return nil;
+
+    return [self.volumes objectAtIndex:index];
+}
+
 + (NSValueTransformer *)volumesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2ImportInstanceVolumeDetailItem class]];

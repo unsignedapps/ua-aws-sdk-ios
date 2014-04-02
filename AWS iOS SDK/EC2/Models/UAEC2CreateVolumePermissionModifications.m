@@ -45,6 +45,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2CreateVolumePermission *)addAtIndex:(NSUInteger)index
+{
+    if (self.add == nil || index >= ([self.add count]-1))
+        return nil;
+
+    return [self.add objectAtIndex:index];
+}
+
+- (UAEC2CreateVolumePermission *)removeAtIndex:(NSUInteger)index
+{
+    if (self.remove == nil || index >= ([self.remove count]-1))
+        return nil;
+
+    return [self.remove objectAtIndex:index];
+}
+
 - (void)setAdd:(NSMutableArray *)add
 {
 	_add = add;

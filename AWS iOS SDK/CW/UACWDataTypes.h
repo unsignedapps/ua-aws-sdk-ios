@@ -19,8 +19,8 @@ typedef NS_ENUM(NSUInteger, UACWAlarmHistoryItemType) {
 typedef NS_ENUM(NSUInteger, UACWAlarmState) {
 	UACWAlarmStateUnknown = 0,
 	UACWAlarmStateOK = 1,
-	UACWAlarmStateALARM = 2,
-	UACWAlarmStateINSUFFICIENT_DATA = 3
+	UACWAlarmStateAlarm = 2,
+	UACWAlarmStateInsufficientData = 3
 };
 
 // UACWStatistic

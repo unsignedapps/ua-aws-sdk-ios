@@ -17,4 +17,14 @@
 @property (nonatomic, copy) NSArray *attachments;
 @property (nonatomic, copy) NSArray *tags;
 
+/**
+ * Retrieves the UAEC2Attachment at the specified index.
+**/
+- (UAEC2Attachment *)attachmentAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

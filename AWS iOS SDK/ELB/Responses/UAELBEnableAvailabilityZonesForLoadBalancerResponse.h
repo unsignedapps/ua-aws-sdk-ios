@@ -13,4 +13,9 @@
 
 @property (nonatomic, copy) NSArray *availabilityZones;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index;
+
 @end

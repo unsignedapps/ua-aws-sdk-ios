@@ -24,4 +24,14 @@
 @property (nonatomic) UAEC2VolumeType volumeType;
 @property (nonatomic, strong) NSNumber *iops;
 
+/**
+ * Retrieves the UAEC2VolumeAttachment at the specified index.
+**/
+- (UAEC2VolumeAttachment *)attachmentAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

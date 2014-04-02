@@ -21,6 +21,11 @@ typedef BOOL(^UAELBEnableAvailabilityZonesForLoadBalancerRequestShouldContinueWa
 // @property (nonatomic, copy) UAELBEnableAvailabilityZonesForLoadBalancerRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index;
+
+/**
  * Adds a AvailabilityZone to the availabilityZones property.
  *
  * This will initialise availabilityZones with an empty mutable array if necessary.

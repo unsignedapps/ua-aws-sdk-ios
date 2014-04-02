@@ -17,4 +17,9 @@
 @property (nonatomic) BOOL isTruncated;
 @property (nonatomic, copy) NSString *marker;
 
+/**
+ * Retrieves the UAIAMGroup at the specified index.
+**/
+- (UAIAMGroup *)groupAtIndex:(NSUInteger)index;
+
 @end

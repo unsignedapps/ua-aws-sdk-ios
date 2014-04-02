@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAASProcessType *)processAtIndex:(NSUInteger)index
+{
+    if (self.processes == nil || index >= ([self.processes count]-1))
+        return nil;
+
+    return [self.processes objectAtIndex:index];
+}
+
 + (NSValueTransformer *)processesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASProcessType class]];

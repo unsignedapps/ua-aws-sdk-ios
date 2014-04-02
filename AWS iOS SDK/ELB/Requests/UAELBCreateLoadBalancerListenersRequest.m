@@ -52,6 +52,14 @@
     return [keyPaths copy];
 }
 
+- (UAELBListener *)listenerAtIndex:(NSUInteger)index
+{
+    if (self.listeners == nil || index >= ([self.listeners count]-1))
+        return nil;
+
+    return [self.listeners objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

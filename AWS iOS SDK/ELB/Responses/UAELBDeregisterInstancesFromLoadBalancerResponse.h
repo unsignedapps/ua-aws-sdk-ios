@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *instances;
 
+/**
+ * Retrieves the UAELBInstance at the specified index.
+**/
+- (UAELBInstance *)instanceAtIndex:(NSUInteger)index;
+
 @end

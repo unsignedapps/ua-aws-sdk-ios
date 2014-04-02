@@ -33,116 +33,16 @@
 
 + (NSValueTransformer *)codeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"initiating-request"])
-		    return @(UAEC2VPCPeeringConnectionStateInitiatingRequest);
-		if ([value isEqualToString:@"pending-acceptance"])
-		    return @(UAEC2VPCPeeringConnectionStatePendingAcceptance);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2VPCPeeringConnectionStateFailed);
-		if ([value isEqualToString:@"expired"])
-		    return @(UAEC2VPCPeeringConnectionStateExpired);
-		if ([value isEqualToString:@"provisioning"])
-		    return @(UAEC2VPCPeeringConnectionStateProvisioning);
-		if ([value isEqualToString:@"active"])
-		    return @(UAEC2VPCPeeringConnectionStateActive);
-		if ([value isEqualToString:@"deleted"])
-		    return @(UAEC2VPCPeeringConnectionStateDeleted);
-		if ([value isEqualToString:@"rejected"])
-		    return @(UAEC2VPCPeeringConnectionStateRejected);
-
-		return @(UAEC2VPCPeeringConnectionStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VPCPeeringConnectionState castValue = (UAEC2VPCPeeringConnectionState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VPCPeeringConnectionStateInitiatingRequest:
-			    return @"initiating-request";
-			case UAEC2VPCPeeringConnectionStatePendingAcceptance:
-			    return @"pending-acceptance";
-			case UAEC2VPCPeeringConnectionStateFailed:
-			    return @"failed";
-			case UAEC2VPCPeeringConnectionStateExpired:
-			    return @"expired";
-			case UAEC2VPCPeeringConnectionStateProvisioning:
-			    return @"provisioning";
-			case UAEC2VPCPeeringConnectionStateActive:
-			    return @"active";
-			case UAEC2VPCPeeringConnectionStateDeleted:
-			    return @"deleted";
-			case UAEC2VPCPeeringConnectionStateRejected:
-			    return @"rejected";
-
-			case UAEC2VPCPeeringConnectionStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VPCPeeringConnectionStateInitiatingRequest), @(UAEC2VPCPeeringConnectionStatePendingAcceptance), @(UAEC2VPCPeeringConnectionStateFailed), @(UAEC2VPCPeeringConnectionStateExpired), @(UAEC2VPCPeeringConnectionStateProvisioning), @(UAEC2VPCPeeringConnectionStateActive), @(UAEC2VPCPeeringConnectionStateDeleted), @(UAEC2VPCPeeringConnectionStateRejected) ]
+                                               stringValues:@[ @"initiating-request", @"pending-acceptance", @"failed", @"expired", @"provisioning", @"active", @"deleted", @"rejected" ]
+                                               unknownValue:@(UAEC2VPCPeeringConnectionStateUnknown)];
 }
 
 + (NSValueTransformer *)codeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2VPCPeeringConnectionStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"initiating-request"])
-		    return @(UAEC2VPCPeeringConnectionStateInitiatingRequest);
-		if ([value isEqualToString:@"pending-acceptance"])
-		    return @(UAEC2VPCPeeringConnectionStatePendingAcceptance);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2VPCPeeringConnectionStateFailed);
-		if ([value isEqualToString:@"expired"])
-		    return @(UAEC2VPCPeeringConnectionStateExpired);
-		if ([value isEqualToString:@"provisioning"])
-		    return @(UAEC2VPCPeeringConnectionStateProvisioning);
-		if ([value isEqualToString:@"active"])
-		    return @(UAEC2VPCPeeringConnectionStateActive);
-		if ([value isEqualToString:@"deleted"])
-		    return @(UAEC2VPCPeeringConnectionStateDeleted);
-		if ([value isEqualToString:@"rejected"])
-		    return @(UAEC2VPCPeeringConnectionStateRejected);
-
-		return @(UAEC2VPCPeeringConnectionStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VPCPeeringConnectionState castValue = (UAEC2VPCPeeringConnectionState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VPCPeeringConnectionStateInitiatingRequest:
-			    return @"initiating-request";
-			case UAEC2VPCPeeringConnectionStatePendingAcceptance:
-			    return @"pending-acceptance";
-			case UAEC2VPCPeeringConnectionStateFailed:
-			    return @"failed";
-			case UAEC2VPCPeeringConnectionStateExpired:
-			    return @"expired";
-			case UAEC2VPCPeeringConnectionStateProvisioning:
-			    return @"provisioning";
-			case UAEC2VPCPeeringConnectionStateActive:
-			    return @"active";
-			case UAEC2VPCPeeringConnectionStateDeleted:
-			    return @"deleted";
-			case UAEC2VPCPeeringConnectionStateRejected:
-			    return @"rejected";
-
-			case UAEC2VPCPeeringConnectionStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VPCPeeringConnectionStateInitiatingRequest), @(UAEC2VPCPeeringConnectionStatePendingAcceptance), @(UAEC2VPCPeeringConnectionStateFailed), @(UAEC2VPCPeeringConnectionStateExpired), @(UAEC2VPCPeeringConnectionStateProvisioning), @(UAEC2VPCPeeringConnectionStateActive), @(UAEC2VPCPeeringConnectionStateDeleted), @(UAEC2VPCPeeringConnectionStateRejected) ]
+                                               stringValues:@[ @"initiating-request", @"pending-acceptance", @"failed", @"expired", @"provisioning", @"active", @"deleted", @"rejected" ]
+                                               unknownValue:@(UAEC2VPCPeeringConnectionStateUnknown)];
 }
 
 @end

@@ -21,6 +21,11 @@ typedef BOOL(^UAELBCreateLoadBalancerListenersRequestShouldContinueWaitingBlock)
 // @property (nonatomic, copy) UAELBCreateLoadBalancerListenersRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAELBListener at the specified index.
+**/
+- (UAELBListener *)listenerAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Listener to the listeners property.
  *
  * This will initialise listeners with an empty mutable array if necessary.

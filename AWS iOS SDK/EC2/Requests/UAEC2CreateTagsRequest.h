@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2CreateTagsRequestShouldContinueWaitingBlock)(UAEC2CreateTagsR
 // @property (nonatomic, copy) UAEC2CreateTagsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)resourceAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Resource to the resources property.
  *
  * This will initialise resources with an empty mutable array if necessary.

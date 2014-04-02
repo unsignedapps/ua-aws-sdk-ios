@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *volumeStatuses;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAEC2VolumeStatus at the specified index.
+**/
+- (UAEC2VolumeStatus *)volumeStatusAtIndex:(NSUInteger)index;
+
 @end

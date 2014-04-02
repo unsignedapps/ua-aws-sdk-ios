@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Subnet *)subnetAtIndex:(NSUInteger)index
+{
+    if (self.subnets == nil || index >= ([self.subnets count]-1))
+        return nil;
+
+    return [self.subnets objectAtIndex:index];
+}
+
 + (NSValueTransformer *)subnetsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Subnet class]];

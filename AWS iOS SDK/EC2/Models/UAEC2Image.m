@@ -55,39 +55,35 @@
     return [keyPaths copy];
 }
 
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
+{
+    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
+        return nil;
+
+    return [self.productCodes objectAtIndex:index];
+}
+
+- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
+{
+    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
+        return nil;
+
+    return [self.blockDeviceMappings objectAtIndex:index];
+}
+
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2ImageStateAvailable);
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2ImageStatePending);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2ImageStateFailed);
-
-		return @(UAEC2ImageStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ImageState castValue = (UAEC2ImageState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ImageStateAvailable:
-			    return @"available";
-			case UAEC2ImageStatePending:
-			    return @"pending";
-			case UAEC2ImageStateFailed:
-			    return @"failed";
-
-			case UAEC2ImageStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ImageStateAvailable), @(UAEC2ImageStatePending), @(UAEC2ImageStateFailed) ]
+                                               stringValues:@[ @"available", @"pending", @"failed" ]
+                                               unknownValue:@(UAEC2ImageStateUnknown)];
 }
 
 + (NSValueTransformer *)productCodesQueryStringTransformer
@@ -97,95 +93,23 @@
 
 + (NSValueTransformer *)architectureQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"i386"])
-		    return @(UAEC2ArchitectureI386);
-		if ([value isEqualToString:@"x86_64"])
-		    return @(UAEC2ArchitectureX86_64);
-
-		return @(UAEC2ArchitectureUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2Architecture castValue = (UAEC2Architecture)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ArchitectureI386:
-			    return @"i386";
-			case UAEC2ArchitectureX86_64:
-			    return @"x86_64";
-
-			case UAEC2ArchitectureUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX86_64) ]
+                                               stringValues:@[ @"i386", @"x86_64" ]
+                                               unknownValue:@(UAEC2ArchitectureUnknown)];
 }
 
 + (NSValueTransformer *)imageTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"machine"])
-		    return @(UAEC2ImageTypeMachine);
-		if ([value isEqualToString:@"kernel"])
-		    return @(UAEC2ImageTypeKernel);
-		if ([value isEqualToString:@"ramkdisk"])
-		    return @(UAEC2ImageTypeRamkdisk);
-
-		return @(UAEC2ImageTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ImageType castValue = (UAEC2ImageType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ImageTypeMachine:
-			    return @"machine";
-			case UAEC2ImageTypeKernel:
-			    return @"kernel";
-			case UAEC2ImageTypeRamkdisk:
-			    return @"ramkdisk";
-
-			case UAEC2ImageTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ImageTypeMachine), @(UAEC2ImageTypeKernel), @(UAEC2ImageTypeRamkdisk) ]
+                                               stringValues:@[ @"machine", @"kernel", @"ramkdisk" ]
+                                               unknownValue:@(UAEC2ImageTypeUnknown)];
 }
 
 + (NSValueTransformer *)sriovNetSupportQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"simple"])
-		    return @(UAEC2ImageSriovNetSupportSimple);
-
-		return @(UAEC2ImageSriovNetSupportUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ImageSriovNetSupport castValue = (UAEC2ImageSriovNetSupport)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ImageSriovNetSupportSimple:
-			    return @"simple";
-
-			case UAEC2ImageSriovNetSupportUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ImageSriovNetSupportSimple) ]
+                                               stringValues:@[ @"simple" ]
+                                               unknownValue:@(UAEC2ImageSriovNetSupportUnknown)];
 }
 
 + (NSValueTransformer *)stateReasonQueryStringTransformer
@@ -195,33 +119,9 @@
 
 + (NSValueTransformer *)rootDeviceTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ebs"])
-		    return @(UAEC2RootDeviceTypeEBS);
-		if ([value isEqualToString:@"instance-store"])
-		    return @(UAEC2RootDeviceTypeInstanceStore);
-
-		return @(UAEC2RootDeviceTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2RootDeviceType castValue = (UAEC2RootDeviceType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2RootDeviceTypeEBS:
-			    return @"ebs";
-			case UAEC2RootDeviceTypeInstanceStore:
-			    return @"instance-store";
-
-			case UAEC2RootDeviceTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2RootDeviceTypeEBS), @(UAEC2RootDeviceTypeInstanceStore) ]
+                                               stringValues:@[ @"ebs", @"instance-store" ]
+                                               unknownValue:@(UAEC2RootDeviceTypeUnknown)];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
@@ -231,33 +131,9 @@
 
 + (NSValueTransformer *)virtualizationTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"paravirtual"])
-		    return @(UAEC2VirtualizationTypeParavirtual);
-		if ([value isEqualToString:@"hvm"])
-		    return @(UAEC2VirtualizationTypeHvm);
-
-		return @(UAEC2VirtualizationTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VirtualizationType castValue = (UAEC2VirtualizationType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VirtualizationTypeParavirtual:
-			    return @"paravirtual";
-			case UAEC2VirtualizationTypeHvm:
-			    return @"hvm";
-
-			case UAEC2VirtualizationTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VirtualizationTypeParavirtual), @(UAEC2VirtualizationTypeHvm) ]
+                                               stringValues:@[ @"paravirtual", @"hvm" ]
+                                               unknownValue:@(UAEC2VirtualizationTypeUnknown)];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
@@ -267,72 +143,16 @@
 
 + (NSValueTransformer *)hypervisorQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ovm"])
-		    return @(UAEC2HypervisorOvm);
-		if ([value isEqualToString:@"xen"])
-		    return @(UAEC2HypervisorXen);
-
-		return @(UAEC2HypervisorUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2Hypervisor castValue = (UAEC2Hypervisor)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2HypervisorOvm:
-			    return @"ovm";
-			case UAEC2HypervisorXen:
-			    return @"xen";
-
-			case UAEC2HypervisorUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2HypervisorOvm), @(UAEC2HypervisorXen) ]
+                                               stringValues:@[ @"ovm", @"xen" ]
+                                               unknownValue:@(UAEC2HypervisorUnknown)];
 }
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2ImageStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2ImageStateAvailable);
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2ImageStatePending);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2ImageStateFailed);
-
-		return @(UAEC2ImageStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ImageState castValue = (UAEC2ImageState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ImageStateAvailable:
-			    return @"available";
-			case UAEC2ImageStatePending:
-			    return @"pending";
-			case UAEC2ImageStateFailed:
-			    return @"failed";
-
-			case UAEC2ImageStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ImageStateAvailable), @(UAEC2ImageStatePending), @(UAEC2ImageStateFailed) ]
+                                               stringValues:@[ @"available", @"pending", @"failed" ]
+                                               unknownValue:@(UAEC2ImageStateUnknown)];
 }
 
 + (NSValueTransformer *)isPublicXMLTransformer
@@ -347,107 +167,23 @@
 
 + (NSValueTransformer *)architectureXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2ArchitectureUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"i386"])
-		    return @(UAEC2ArchitectureI386);
-		if ([value isEqualToString:@"x86_64"])
-		    return @(UAEC2ArchitectureX86_64);
-
-		return @(UAEC2ArchitectureUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2Architecture castValue = (UAEC2Architecture)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ArchitectureI386:
-			    return @"i386";
-			case UAEC2ArchitectureX86_64:
-			    return @"x86_64";
-
-			case UAEC2ArchitectureUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX86_64) ]
+                                               stringValues:@[ @"i386", @"x86_64" ]
+                                               unknownValue:@(UAEC2ArchitectureUnknown)];
 }
 
 + (NSValueTransformer *)imageTypeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2ImageTypeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"machine"])
-		    return @(UAEC2ImageTypeMachine);
-		if ([value isEqualToString:@"kernel"])
-		    return @(UAEC2ImageTypeKernel);
-		if ([value isEqualToString:@"ramkdisk"])
-		    return @(UAEC2ImageTypeRamkdisk);
-
-		return @(UAEC2ImageTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ImageType castValue = (UAEC2ImageType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ImageTypeMachine:
-			    return @"machine";
-			case UAEC2ImageTypeKernel:
-			    return @"kernel";
-			case UAEC2ImageTypeRamkdisk:
-			    return @"ramkdisk";
-
-			case UAEC2ImageTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ImageTypeMachine), @(UAEC2ImageTypeKernel), @(UAEC2ImageTypeRamkdisk) ]
+                                               stringValues:@[ @"machine", @"kernel", @"ramkdisk" ]
+                                               unknownValue:@(UAEC2ImageTypeUnknown)];
 }
 
 + (NSValueTransformer *)sriovNetSupportXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2ImageSriovNetSupportUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"simple"])
-		    return @(UAEC2ImageSriovNetSupportSimple);
-
-		return @(UAEC2ImageSriovNetSupportUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ImageSriovNetSupport castValue = (UAEC2ImageSriovNetSupport)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ImageSriovNetSupportSimple:
-			    return @"simple";
-
-			case UAEC2ImageSriovNetSupportUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ImageSriovNetSupportSimple) ]
+                                               stringValues:@[ @"simple" ]
+                                               unknownValue:@(UAEC2ImageSriovNetSupportUnknown)];
 }
 
 + (NSValueTransformer *)stateReasonXMLTransformer
@@ -457,37 +193,9 @@
 
 + (NSValueTransformer *)rootDeviceTypeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2RootDeviceTypeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ebs"])
-		    return @(UAEC2RootDeviceTypeEBS);
-		if ([value isEqualToString:@"instance-store"])
-		    return @(UAEC2RootDeviceTypeInstanceStore);
-
-		return @(UAEC2RootDeviceTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2RootDeviceType castValue = (UAEC2RootDeviceType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2RootDeviceTypeEBS:
-			    return @"ebs";
-			case UAEC2RootDeviceTypeInstanceStore:
-			    return @"instance-store";
-
-			case UAEC2RootDeviceTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2RootDeviceTypeEBS), @(UAEC2RootDeviceTypeInstanceStore) ]
+                                               stringValues:@[ @"ebs", @"instance-store" ]
+                                               unknownValue:@(UAEC2RootDeviceTypeUnknown)];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsXMLTransformer
@@ -497,37 +205,9 @@
 
 + (NSValueTransformer *)virtualizationTypeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2VirtualizationTypeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"paravirtual"])
-		    return @(UAEC2VirtualizationTypeParavirtual);
-		if ([value isEqualToString:@"hvm"])
-		    return @(UAEC2VirtualizationTypeHvm);
-
-		return @(UAEC2VirtualizationTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VirtualizationType castValue = (UAEC2VirtualizationType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VirtualizationTypeParavirtual:
-			    return @"paravirtual";
-			case UAEC2VirtualizationTypeHvm:
-			    return @"hvm";
-
-			case UAEC2VirtualizationTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VirtualizationTypeParavirtual), @(UAEC2VirtualizationTypeHvm) ]
+                                               stringValues:@[ @"paravirtual", @"hvm" ]
+                                               unknownValue:@(UAEC2VirtualizationTypeUnknown)];
 }
 
 + (NSValueTransformer *)tagsXMLTransformer
@@ -537,37 +217,9 @@
 
 + (NSValueTransformer *)hypervisorXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2HypervisorUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ovm"])
-		    return @(UAEC2HypervisorOvm);
-		if ([value isEqualToString:@"xen"])
-		    return @(UAEC2HypervisorXen);
-
-		return @(UAEC2HypervisorUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2Hypervisor castValue = (UAEC2Hypervisor)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2HypervisorOvm:
-			    return @"ovm";
-			case UAEC2HypervisorXen:
-			    return @"xen";
-
-			case UAEC2HypervisorUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2HypervisorOvm), @(UAEC2HypervisorXen) ]
+                                               stringValues:@[ @"ovm", @"xen" ]
+                                               unknownValue:@(UAEC2HypervisorUnknown)];
 }
 
 @end

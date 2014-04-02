@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeInternetGatewaysRequestShouldContinueWaitingBlock)(UA
 // @property (nonatomic, copy) UAEC2DescribeInternetGatewaysRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)internetGatewayIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a InternetGatewayID to the internetGatewayIDs property.
  *
  * This will initialise internetGatewayIDs with an empty mutable array if necessary.

@@ -54,6 +54,14 @@
     return [keyPaths copy];
 }
 
+- (UACWDimension *)dimensionAtIndex:(NSUInteger)index
+{
+    if (self.dimensions == nil || index >= ([self.dimensions count]-1))
+        return nil;
+
+    return [self.dimensions objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

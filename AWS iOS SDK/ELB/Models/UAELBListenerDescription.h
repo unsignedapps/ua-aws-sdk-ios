@@ -16,4 +16,9 @@
 @property (nonatomic, copy) UAELBListener *listener;
 @property (nonatomic, copy) NSArray *policyNames;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)policyNameAtIndex:(NSUInteger)index;
+
 @end

@@ -22,6 +22,11 @@ typedef BOOL(^UAASDescribeAutoScalingGroupsRequestShouldContinueWaitingBlock)(UA
 // @property (nonatomic, copy) UAASDescribeAutoScalingGroupsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)autoScalingGroupNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a AutoScalingGroupName to the autoScalingGroupNames property.
  *
  * This will initialise autoScalingGroupNames with an empty mutable array if necessary.

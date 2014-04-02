@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *instanceStatuses;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAEC2InstanceStatus at the specified index.
+**/
+- (UAEC2InstanceStatus *)instanceStatusAtIndex:(NSUInteger)index;
+
 @end

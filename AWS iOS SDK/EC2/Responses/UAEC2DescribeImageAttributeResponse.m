@@ -43,6 +43,30 @@
     return [keyPaths copy];
 }
 
+- (UAEC2LaunchPermission *)launchPermissionAtIndex:(NSUInteger)index
+{
+    if (self.launchPermissions == nil || index >= ([self.launchPermissions count]-1))
+        return nil;
+
+    return [self.launchPermissions objectAtIndex:index];
+}
+
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
+{
+    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
+        return nil;
+
+    return [self.productCodes objectAtIndex:index];
+}
+
+- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
+{
+    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
+        return nil;
+
+    return [self.blockDeviceMappings objectAtIndex:index];
+}
+
 + (NSValueTransformer *)launchPermissionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2LaunchPermission class]];

@@ -22,6 +22,11 @@ typedef BOOL(^UAELBSetLoadBalancerPoliciesForBackendServerRequestShouldContinueW
 // @property (nonatomic, copy) UAELBSetLoadBalancerPoliciesForBackendServerRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)policyNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a PolicyName to the policyNames property.
  *
  * This will initialise policyNames with an empty mutable array if necessary.

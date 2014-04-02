@@ -52,6 +52,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)autoScalingGroupNameAtIndex:(NSUInteger)index
+{
+    if (self.autoScalingGroupNames == nil || index >= ([self.autoScalingGroupNames count]-1))
+        return nil;
+
+    return [self.autoScalingGroupNames objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

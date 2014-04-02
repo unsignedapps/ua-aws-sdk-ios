@@ -17,4 +17,9 @@
 @property (nonatomic) BOOL autoEnableIO;
 @property (nonatomic, copy) NSArray *productCodes;
 
+/**
+ * Retrieves the UAEC2ProductCode at the specified index.
+**/
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index;
+
 @end

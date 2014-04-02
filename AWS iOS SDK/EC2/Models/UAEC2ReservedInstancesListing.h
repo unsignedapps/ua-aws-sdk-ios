@@ -24,4 +24,19 @@
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic, copy) NSString *clientToken;
 
+/**
+ * Retrieves the UAEC2InstanceCount at the specified index.
+**/
+- (UAEC2InstanceCount *)instanceCountAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2PriceSchedule at the specified index.
+**/
+- (UAEC2PriceSchedule *)priceScheduleAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

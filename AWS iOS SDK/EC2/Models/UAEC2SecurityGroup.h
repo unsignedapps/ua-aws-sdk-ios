@@ -22,4 +22,19 @@
 @property (nonatomic, copy) NSString *vpcID;
 @property (nonatomic, copy) NSArray *tags;
 
+/**
+ * Retrieves the UAEC2IPPermission at the specified index.
+**/
+- (UAEC2IPPermission *)ipPermissionAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2IPPermission at the specified index.
+**/
+- (UAEC2IPPermission *)ipPermissionEgressAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

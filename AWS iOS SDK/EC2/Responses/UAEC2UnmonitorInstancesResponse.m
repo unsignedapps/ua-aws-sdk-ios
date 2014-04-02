@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2InstanceMonitoring *)instanceMonitoringAtIndex:(NSUInteger)index
+{
+    if (self.instanceMonitorings == nil || index >= ([self.instanceMonitorings count]-1))
+        return nil;
+
+    return [self.instanceMonitorings objectAtIndex:index];
+}
+
 + (NSValueTransformer *)instanceMonitoringsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceMonitoring class]];

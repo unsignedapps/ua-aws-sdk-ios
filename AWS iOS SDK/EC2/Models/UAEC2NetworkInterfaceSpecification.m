@@ -61,6 +61,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)groupAtIndex:(NSUInteger)index
+{
+    if (self.groups == nil || index >= ([self.groups count]-1))
+        return nil;
+
+    return [self.groups objectAtIndex:index];
+}
+
+- (UAEC2PrivateIPAddressSpecification *)privateIPAddressAtIndex:(NSUInteger)index
+{
+    if (self.privateIPAddresses == nil || index >= ([self.privateIPAddresses count]-1))
+        return nil;
+
+    return [self.privateIPAddresses objectAtIndex:index];
+}
+
 - (void)setNetworkInterfaceID:(NSString *)networkInterfaceID
 {
 	_networkInterfaceID = networkInterfaceID;

@@ -38,6 +38,30 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Entry *)entryAtIndex:(NSUInteger)index
+{
+    if (self.entries == nil || index >= ([self.entries count]-1))
+        return nil;
+
+    return [self.entries objectAtIndex:index];
+}
+
+- (UAEC2NetworkACLAssociation *)associationAtIndex:(NSUInteger)index
+{
+    if (self.associations == nil || index >= ([self.associations count]-1))
+        return nil;
+
+    return [self.associations objectAtIndex:index];
+}
+
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 + (NSValueTransformer *)entriesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Entry class]];

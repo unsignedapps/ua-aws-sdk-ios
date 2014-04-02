@@ -18,4 +18,9 @@
 @property (nonatomic, copy) NSString *regionName;
 @property (nonatomic, copy) NSArray *messages;
 
+/**
+ * Retrieves the UAEC2AvailabilityZoneMessage at the specified index.
+**/
+- (UAEC2AvailabilityZoneMessage *)messageAtIndex:(NSUInteger)index;
+
 @end

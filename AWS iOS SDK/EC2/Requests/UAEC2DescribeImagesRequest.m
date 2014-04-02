@@ -55,6 +55,38 @@
     return [keyPaths copy];
 }
 
+- (NSString *)imageIDAtIndex:(NSUInteger)index
+{
+    if (self.imageIDs == nil || index >= ([self.imageIDs count]-1))
+        return nil;
+
+    return [self.imageIDs objectAtIndex:index];
+}
+
+- (NSString *)ownerAtIndex:(NSUInteger)index
+{
+    if (self.owners == nil || index >= ([self.owners count]-1))
+        return nil;
+
+    return [self.owners objectAtIndex:index];
+}
+
+- (NSString *)executableUserAtIndex:(NSUInteger)index
+{
+    if (self.executableUsers == nil || index >= ([self.executableUsers count]-1))
+        return nil;
+
+    return [self.executableUsers objectAtIndex:index];
+}
+
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
+{
+    if (self.filters == nil || index >= ([self.filters count]-1))
+        return nil;
+
+    return [self.filters objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

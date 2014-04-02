@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *notificationConfigurations;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAASNotificationConfiguration at the specified index.
+**/
+- (UAASNotificationConfiguration *)notificationConfigurationAtIndex:(NSUInteger)index;
+
 @end

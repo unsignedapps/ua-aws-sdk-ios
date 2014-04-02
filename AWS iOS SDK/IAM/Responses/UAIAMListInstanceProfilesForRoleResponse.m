@@ -33,6 +33,14 @@
     return [keyPaths copy];
 }
 
+- (UAIAMInstanceProfile *)instanceProfileAtIndex:(NSUInteger)index
+{
+    if (self.instanceProfiles == nil || index >= ([self.instanceProfiles count]-1))
+        return nil;
+
+    return [self.instanceProfiles objectAtIndex:index];
+}
+
 + (NSValueTransformer *)instanceProfilesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMInstanceProfile class]];

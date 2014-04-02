@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *cancelledSpotInstanceRequests;
 
+/**
+ * Retrieves the UAEC2CancelledSpotInstanceRequest at the specified index.
+**/
+- (UAEC2CancelledSpotInstanceRequest *)cancelledSpotInstanceRequestAtIndex:(NSUInteger)index;
+
 @end

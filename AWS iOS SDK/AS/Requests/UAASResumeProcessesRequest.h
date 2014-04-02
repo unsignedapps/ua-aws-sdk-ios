@@ -21,6 +21,11 @@ typedef BOOL(^UAASResumeProcessesRequestShouldContinueWaitingBlock)(UAASResumePr
 // @property (nonatomic, copy) UAASResumeProcessesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)scalingProcessAtIndex:(NSUInteger)index;
+
+/**
  * Adds a ScalingProcess to the scalingProcesses property.
  *
  * This will initialise scalingProcesses with an empty mutable array if necessary.

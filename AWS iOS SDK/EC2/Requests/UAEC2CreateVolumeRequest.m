@@ -121,33 +121,9 @@
 
 + (NSValueTransformer *)volumeTypeJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"standard"])
-		    return @(UAEC2VolumeTypeStandard);
-		if ([value isEqualToString:@"io1"])
-		    return @(UAEC2VolumeTypeIo1);
-
-		return @(UAEC2VolumeTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VolumeType castValue = (UAEC2VolumeType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VolumeTypeStandard:
-			    return @"standard";
-			case UAEC2VolumeTypeIo1:
-			    return @"io1";
-
-			case UAEC2VolumeTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
+                                               stringValues:@[ @"standard", @"io1" ]
+                                               unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
@@ -157,33 +133,9 @@
 
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"standard"])
-		    return @(UAEC2VolumeTypeStandard);
-		if ([value isEqualToString:@"io1"])
-		    return @(UAEC2VolumeTypeIo1);
-
-		return @(UAEC2VolumeTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VolumeType castValue = (UAEC2VolumeType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VolumeTypeStandard:
-			    return @"standard";
-			case UAEC2VolumeTypeIo1:
-			    return @"io1";
-
-			case UAEC2VolumeTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
+                                               stringValues:@[ @"standard", @"io1" ]
+                                               unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
 #pragma mark - Invocation

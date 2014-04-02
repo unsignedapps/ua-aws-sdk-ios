@@ -51,57 +51,9 @@
 
 + (NSValueTransformer *)statusCodeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"WaitingForSpotInstanceRequestId"])
-		    return @(UAASActivityStatusWaitingForSpotInstanceRequestID);
-		if ([value isEqualToString:@"WaitingForSpotInstanceId"])
-		    return @(UAASActivityStatusWaitingForSpotInstanceID);
-		if ([value isEqualToString:@"WaitingForInstanceId"])
-		    return @(UAASActivityStatusWaitingForInstanceID);
-		if ([value isEqualToString:@"PreInService"])
-		    return @(UAASActivityStatusPreInService);
-		if ([value isEqualToString:@"InProgress"])
-		    return @(UAASActivityStatusInProgress);
-		if ([value isEqualToString:@"Successful"])
-		    return @(UAASActivityStatusSuccessful);
-		if ([value isEqualToString:@"Failed"])
-		    return @(UAASActivityStatusFailed);
-		if ([value isEqualToString:@"Cancelled"])
-		    return @(UAASActivityStatusCancelled);
-
-		return @(UAASActivityStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASActivityStatus castValue = (UAASActivityStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASActivityStatusWaitingForSpotInstanceRequestID:
-			    return @"WaitingForSpotInstanceRequestId";
-			case UAASActivityStatusWaitingForSpotInstanceID:
-			    return @"WaitingForSpotInstanceId";
-			case UAASActivityStatusWaitingForInstanceID:
-			    return @"WaitingForInstanceId";
-			case UAASActivityStatusPreInService:
-			    return @"PreInService";
-			case UAASActivityStatusInProgress:
-			    return @"InProgress";
-			case UAASActivityStatusSuccessful:
-			    return @"Successful";
-			case UAASActivityStatusFailed:
-			    return @"Failed";
-			case UAASActivityStatusCancelled:
-			    return @"Cancelled";
-
-			case UAASActivityStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASActivityStatusWaitingForSpotInstanceRequestID), @(UAASActivityStatusWaitingForSpotInstanceID), @(UAASActivityStatusWaitingForInstanceID), @(UAASActivityStatusPreInService), @(UAASActivityStatusInProgress), @(UAASActivityStatusSuccessful), @(UAASActivityStatusFailed), @(UAASActivityStatusCancelled) ]
+                                               stringValues:@[ @"WaitingForSpotInstanceRequestId", @"WaitingForSpotInstanceId", @"WaitingForInstanceId", @"PreInService", @"InProgress", @"Successful", @"Failed", @"Cancelled" ]
+                                               unknownValue:@(UAASActivityStatusUnknown)];
 }
 
 + (NSValueTransformer *)startTimeXMLTransformer
@@ -116,61 +68,9 @@
 
 + (NSValueTransformer *)statusCodeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAASActivityStatusUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"WaitingForSpotInstanceRequestId"])
-		    return @(UAASActivityStatusWaitingForSpotInstanceRequestID);
-		if ([value isEqualToString:@"WaitingForSpotInstanceId"])
-		    return @(UAASActivityStatusWaitingForSpotInstanceID);
-		if ([value isEqualToString:@"WaitingForInstanceId"])
-		    return @(UAASActivityStatusWaitingForInstanceID);
-		if ([value isEqualToString:@"PreInService"])
-		    return @(UAASActivityStatusPreInService);
-		if ([value isEqualToString:@"InProgress"])
-		    return @(UAASActivityStatusInProgress);
-		if ([value isEqualToString:@"Successful"])
-		    return @(UAASActivityStatusSuccessful);
-		if ([value isEqualToString:@"Failed"])
-		    return @(UAASActivityStatusFailed);
-		if ([value isEqualToString:@"Cancelled"])
-		    return @(UAASActivityStatusCancelled);
-
-		return @(UAASActivityStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASActivityStatus castValue = (UAASActivityStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASActivityStatusWaitingForSpotInstanceRequestID:
-			    return @"WaitingForSpotInstanceRequestId";
-			case UAASActivityStatusWaitingForSpotInstanceID:
-			    return @"WaitingForSpotInstanceId";
-			case UAASActivityStatusWaitingForInstanceID:
-			    return @"WaitingForInstanceId";
-			case UAASActivityStatusPreInService:
-			    return @"PreInService";
-			case UAASActivityStatusInProgress:
-			    return @"InProgress";
-			case UAASActivityStatusSuccessful:
-			    return @"Successful";
-			case UAASActivityStatusFailed:
-			    return @"Failed";
-			case UAASActivityStatusCancelled:
-			    return @"Cancelled";
-
-			case UAASActivityStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASActivityStatusWaitingForSpotInstanceRequestID), @(UAASActivityStatusWaitingForSpotInstanceID), @(UAASActivityStatusWaitingForInstanceID), @(UAASActivityStatusPreInService), @(UAASActivityStatusInProgress), @(UAASActivityStatusSuccessful), @(UAASActivityStatusFailed), @(UAASActivityStatusCancelled) ]
+                                               stringValues:@[ @"WaitingForSpotInstanceRequestId", @"WaitingForSpotInstanceId", @"WaitingForInstanceId", @"PreInService", @"InProgress", @"Successful", @"Failed", @"Cancelled" ]
+                                               unknownValue:@(UAASActivityStatusUnknown)];
 }
 
 + (NSValueTransformer *)progressXMLTransformer

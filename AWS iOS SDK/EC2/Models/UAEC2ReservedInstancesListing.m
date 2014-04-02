@@ -42,6 +42,30 @@
     return [keyPaths copy];
 }
 
+- (UAEC2InstanceCount *)instanceCountAtIndex:(NSUInteger)index
+{
+    if (self.instanceCounts == nil || index >= ([self.instanceCounts count]-1))
+        return nil;
+
+    return [self.instanceCounts objectAtIndex:index];
+}
+
+- (UAEC2PriceSchedule *)priceScheduleAtIndex:(NSUInteger)index
+{
+    if (self.priceSchedules == nil || index >= ([self.priceSchedules count]-1))
+        return nil;
+
+    return [self.priceSchedules objectAtIndex:index];
+}
+
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 + (NSValueTransformer *)createDateQueryStringTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -54,41 +78,9 @@
 
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"active"])
-		    return @(UAEC2ReservedInstancesListingStateActive);
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2ReservedInstancesListingStatePending);
-		if ([value isEqualToString:@"cancelled"])
-		    return @(UAEC2ReservedInstancesListingStateCancelled);
-		if ([value isEqualToString:@"closed"])
-		    return @(UAEC2ReservedInstancesListingStateClosed);
-
-		return @(UAEC2ReservedInstancesListingStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ReservedInstancesListingState castValue = (UAEC2ReservedInstancesListingState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ReservedInstancesListingStateActive:
-			    return @"active";
-			case UAEC2ReservedInstancesListingStatePending:
-			    return @"pending";
-			case UAEC2ReservedInstancesListingStateCancelled:
-			    return @"cancelled";
-			case UAEC2ReservedInstancesListingStateClosed:
-			    return @"closed";
-
-			case UAEC2ReservedInstancesListingStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstancesListingStateActive), @(UAEC2ReservedInstancesListingStatePending), @(UAEC2ReservedInstancesListingStateCancelled), @(UAEC2ReservedInstancesListingStateClosed) ]
+                                               stringValues:@[ @"active", @"pending", @"cancelled", @"closed" ]
+                                               unknownValue:@(UAEC2ReservedInstancesListingStateUnknown)];
 }
 
 + (NSValueTransformer *)instanceCountsQueryStringTransformer
@@ -118,45 +110,9 @@
 
 + (NSValueTransformer *)statusXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2ReservedInstancesListingStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"active"])
-		    return @(UAEC2ReservedInstancesListingStateActive);
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2ReservedInstancesListingStatePending);
-		if ([value isEqualToString:@"cancelled"])
-		    return @(UAEC2ReservedInstancesListingStateCancelled);
-		if ([value isEqualToString:@"closed"])
-		    return @(UAEC2ReservedInstancesListingStateClosed);
-
-		return @(UAEC2ReservedInstancesListingStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ReservedInstancesListingState castValue = (UAEC2ReservedInstancesListingState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ReservedInstancesListingStateActive:
-			    return @"active";
-			case UAEC2ReservedInstancesListingStatePending:
-			    return @"pending";
-			case UAEC2ReservedInstancesListingStateCancelled:
-			    return @"cancelled";
-			case UAEC2ReservedInstancesListingStateClosed:
-			    return @"closed";
-
-			case UAEC2ReservedInstancesListingStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstancesListingStateActive), @(UAEC2ReservedInstancesListingStatePending), @(UAEC2ReservedInstancesListingStateCancelled), @(UAEC2ReservedInstancesListingStateClosed) ]
+                                               stringValues:@[ @"active", @"pending", @"cancelled", @"closed" ]
+                                               unknownValue:@(UAEC2ReservedInstancesListingStateUnknown)];
 }
 
 + (NSValueTransformer *)instanceCountsXMLTransformer

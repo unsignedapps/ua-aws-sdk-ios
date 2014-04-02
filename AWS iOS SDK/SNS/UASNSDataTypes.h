@@ -10,10 +10,10 @@
 // UASNSPlatformApplicationType
 typedef NS_ENUM(NSUInteger, UASNSPlatformApplicationType) {
 	UASNSPlatformApplicationTypeUnknown = 0,
-	UASNSPlatformApplicationTypeADM = 1,
-	UASNSPlatformApplicationTypeAPNS = 2,
-	UASNSPlatformApplicationTypeAPNS_SANDBOX = 3,
-	UASNSPlatformApplicationTypeGCM = 4
+	UASNSPlatformApplicationTypeAdm = 1,
+	UASNSPlatformApplicationTypeApns = 2,
+	UASNSPlatformApplicationTypeApnsSandbox = 3,
+	UASNSPlatformApplicationTypeGcm = 4
 };
 
 // UASNSSubscriptionAttribute

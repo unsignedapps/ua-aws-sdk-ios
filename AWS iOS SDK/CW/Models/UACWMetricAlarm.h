@@ -35,4 +35,24 @@
 @property (nonatomic, strong) NSNumber *threshold;
 @property (nonatomic) UACWMetricAlarmComparisonOperator comparisonOperator;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)oKActionAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)alarmActionAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)insufficientDataActionAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UACWDimension at the specified index.
+**/
+- (UACWDimension *)dimensionAtIndex:(NSUInteger)index;
+
 @end

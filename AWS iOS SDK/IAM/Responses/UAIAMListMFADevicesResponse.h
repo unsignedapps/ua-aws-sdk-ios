@@ -17,4 +17,9 @@
 @property (nonatomic) BOOL isTruncated;
 @property (nonatomic, copy) NSString *marker;
 
+/**
+ * Retrieves the UAIAMMFADevice at the specified index.
+**/
+- (UAIAMMFADevice *)mFADeviceAtIndex:(NSUInteger)index;
+
 @end

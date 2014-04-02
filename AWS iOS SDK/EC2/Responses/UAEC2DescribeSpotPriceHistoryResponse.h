@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *spotPriceHistory;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAEC2SpotPriceHistory at the specified index.
+**/
+- (UAEC2SpotPriceHistory *)spotPriceHistoryAtIndex:(NSUInteger)index;
+
 @end

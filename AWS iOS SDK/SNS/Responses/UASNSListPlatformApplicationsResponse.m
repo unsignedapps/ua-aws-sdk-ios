@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UASNSPlatformApplication *)platformApplicationAtIndex:(NSUInteger)index
+{
+    if (self.platformApplications == nil || index >= ([self.platformApplications count]-1))
+        return nil;
+
+    return [self.platformApplications objectAtIndex:index];
+}
+
 + (NSValueTransformer *)platformApplicationsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSPlatformApplication class]];

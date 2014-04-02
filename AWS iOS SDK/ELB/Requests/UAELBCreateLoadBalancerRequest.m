@@ -56,6 +56,38 @@
     return [keyPaths copy];
 }
 
+- (UAELBListener *)listenerAtIndex:(NSUInteger)index
+{
+    if (self.listeners == nil || index >= ([self.listeners count]-1))
+        return nil;
+
+    return [self.listeners objectAtIndex:index];
+}
+
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
+{
+    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
+        return nil;
+
+    return [self.availabilityZones objectAtIndex:index];
+}
+
+- (NSString *)subnetAtIndex:(NSUInteger)index
+{
+    if (self.subnets == nil || index >= ([self.subnets count]-1))
+        return nil;
+
+    return [self.subnets objectAtIndex:index];
+}
+
+- (NSString *)securityGroupAtIndex:(NSUInteger)index
+{
+    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
+        return nil;
+
+    return [self.securityGroups objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;
@@ -127,33 +159,9 @@
 
 + (NSValueTransformer *)schemeJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"internet-facing"])
-		    return @(UAELBSchemeInternetFacing);
-		if ([value isEqualToString:@"internal"])
-		    return @(UAELBSchemeInternal);
-
-		return @(UAELBSchemeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAELBScheme castValue = (UAELBScheme)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAELBSchemeInternetFacing:
-			    return @"internet-facing";
-			case UAELBSchemeInternal:
-			    return @"internal";
-
-			case UAELBSchemeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBSchemeInternetFacing), @(UAELBSchemeInternal) ]
+                                               stringValues:@[ @"internet-facing", @"internal" ]
+                                               unknownValue:@(UAELBSchemeUnknown)];
 }
 
 + (NSValueTransformer *)listenersQueryStringTransformer
@@ -163,33 +171,9 @@
 
 + (NSValueTransformer *)schemeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"internet-facing"])
-		    return @(UAELBSchemeInternetFacing);
-		if ([value isEqualToString:@"internal"])
-		    return @(UAELBSchemeInternal);
-
-		return @(UAELBSchemeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAELBScheme castValue = (UAELBScheme)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAELBSchemeInternetFacing:
-			    return @"internet-facing";
-			case UAELBSchemeInternal:
-			    return @"internal";
-
-			case UAELBSchemeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBSchemeInternetFacing), @(UAELBSchemeInternal) ]
+                                               stringValues:@[ @"internet-facing", @"internal" ]
+                                               unknownValue:@(UAELBSchemeUnknown)];
 }
 
 - (void)addListener:(UAELBListener *)listener

@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeKeyPairsRequestShouldContinueWaitingBlock)(UAEC2Descr
 // @property (nonatomic, copy) UAEC2DescribeKeyPairsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)keyNameAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a KeyName to the keyNames property.
  *
  * This will initialise keyNames with an empty mutable array if necessary.

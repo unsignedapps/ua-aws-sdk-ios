@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAEC2TagDescription at the specified index.
+**/
+- (UAEC2TagDescription *)tagAtIndex:(NSUInteger)index;
+
 @end

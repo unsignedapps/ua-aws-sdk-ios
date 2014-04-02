@@ -27,4 +27,14 @@
 @property (nonatomic) BOOL ebsOptimized;
 @property (nonatomic, copy) NSString *sriovNetSupport;
 
+/**
+ * Retrieves the UAEC2InstanceBlockDeviceMapping at the specified index.
+**/
+- (UAEC2InstanceBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2ProductCode at the specified index.
+**/
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index;
+
 @end

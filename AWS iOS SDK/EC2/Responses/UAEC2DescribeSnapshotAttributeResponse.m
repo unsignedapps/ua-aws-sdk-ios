@@ -34,6 +34,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2CreateVolumePermission *)createVolumePermissionAtIndex:(NSUInteger)index
+{
+    if (self.createVolumePermissions == nil || index >= ([self.createVolumePermissions count]-1))
+        return nil;
+
+    return [self.createVolumePermissions objectAtIndex:index];
+}
+
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
+{
+    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
+        return nil;
+
+    return [self.productCodes objectAtIndex:index];
+}
+
 + (NSValueTransformer *)createVolumePermissionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];

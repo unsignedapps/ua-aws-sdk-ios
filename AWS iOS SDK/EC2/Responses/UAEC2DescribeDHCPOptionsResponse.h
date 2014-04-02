@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *dhcpOptions;
 
+/**
+ * Retrieves the UAEC2DHCPOption at the specified index.
+**/
+- (UAEC2DHCPOption *)dhcpOptionAtIndex:(NSUInteger)index;
+
 @end

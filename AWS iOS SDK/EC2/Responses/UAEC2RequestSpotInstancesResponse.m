@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2SpotInstanceRequest *)spotInstanceRequestAtIndex:(NSUInteger)index
+{
+    if (self.spotInstanceRequests == nil || index >= ([self.spotInstanceRequests count]-1))
+        return nil;
+
+    return [self.spotInstanceRequests objectAtIndex:index];
+}
+
 + (NSValueTransformer *)spotInstanceRequestsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2SpotInstanceRequest class]];

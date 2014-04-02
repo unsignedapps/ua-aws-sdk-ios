@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *subnets;
 
+/**
+ * Retrieves the UAEC2Subnet at the specified index.
+**/
+- (UAEC2Subnet *)subnetAtIndex:(NSUInteger)index;
+
 @end

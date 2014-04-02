@@ -53,6 +53,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)regionNameAtIndex:(NSUInteger)index
+{
+    if (self.regionNames == nil || index >= ([self.regionNames count]-1))
+        return nil;
+
+    return [self.regionNames objectAtIndex:index];
+}
+
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
+{
+    if (self.filters == nil || index >= ([self.filters count]-1))
+        return nil;
+
+    return [self.filters objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

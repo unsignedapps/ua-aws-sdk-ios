@@ -33,6 +33,22 @@
     return [keyPaths copy];
 }
 
+- (UASQSDeleteMessageBatchResultEntry *)successfulAtIndex:(NSUInteger)index
+{
+    if (self.successful == nil || index >= ([self.successful count]-1))
+        return nil;
+
+    return [self.successful objectAtIndex:index];
+}
+
+- (UASQSBatchResultErrorEntry *)failedAtIndex:(NSUInteger)index
+{
+    if (self.failed == nil || index >= ([self.failed count]-1))
+        return nil;
+
+    return [self.failed objectAtIndex:index];
+}
+
 + (NSValueTransformer *)successfulXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASQSDeleteMessageBatchResultEntry class]];

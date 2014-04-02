@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *policyTypeDescriptions;
 
+/**
+ * Retrieves the UAELBPolicyTypeDescription at the specified index.
+**/
+- (UAELBPolicyTypeDescription *)policyTypeDescriptionAtIndex:(NSUInteger)index;
+
 @end

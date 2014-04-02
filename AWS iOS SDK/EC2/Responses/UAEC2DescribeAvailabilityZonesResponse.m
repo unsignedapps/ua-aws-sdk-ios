@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2AvailabilityZone *)availabilityZoneAtIndex:(NSUInteger)index
+{
+    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
+        return nil;
+
+    return [self.availabilityZones objectAtIndex:index];
+}
+
 + (NSValueTransformer *)availabilityZonesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2AvailabilityZone class]];

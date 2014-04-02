@@ -14,4 +14,9 @@
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, strong) NSMutableArray *values;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)valueAtIndex:(NSUInteger)index;
+
 @end

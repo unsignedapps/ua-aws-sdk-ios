@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAIAMAccountSummary *)summaryMapAtIndex:(NSUInteger)index
+{
+    if (self.summaryMap == nil || index >= ([self.summaryMap count]-1))
+        return nil;
+
+    return [self.summaryMap objectAtIndex:index];
+}
+
 + (NSValueTransformer *)summaryMapXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMAccountSummary class]];

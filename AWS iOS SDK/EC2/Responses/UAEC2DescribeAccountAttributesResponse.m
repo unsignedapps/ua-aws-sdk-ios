@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2AccountAttribute *)accountAttributeAtIndex:(NSUInteger)index
+{
+    if (self.accountAttributes == nil || index >= ([self.accountAttributes count]-1))
+        return nil;
+
+    return [self.accountAttributes objectAtIndex:index];
+}
+
 + (NSValueTransformer *)accountAttributesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2AccountAttribute class]];

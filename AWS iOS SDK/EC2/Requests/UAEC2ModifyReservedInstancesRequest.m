@@ -53,6 +53,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)reservedInstancesIDAtIndex:(NSUInteger)index
+{
+    if (self.reservedInstancesIDs == nil || index >= ([self.reservedInstancesIDs count]-1))
+        return nil;
+
+    return [self.reservedInstancesIDs objectAtIndex:index];
+}
+
+- (UAEC2ReservedInstancesConfiguration *)targetConfigurationAtIndex:(NSUInteger)index
+{
+    if (self.targetConfigurations == nil || index >= ([self.targetConfigurations count]-1))
+        return nil;
+
+    return [self.targetConfigurations objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

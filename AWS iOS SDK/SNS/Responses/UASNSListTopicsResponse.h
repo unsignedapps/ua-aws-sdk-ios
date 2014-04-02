@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *topics;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UASNSTopic at the specified index.
+**/
+- (UASNSTopic *)topicAtIndex:(NSUInteger)index;
+
 @end

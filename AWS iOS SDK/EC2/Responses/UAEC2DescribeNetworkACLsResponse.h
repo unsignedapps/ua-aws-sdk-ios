@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *networkACLs;
 
+/**
+ * Retrieves the UAEC2NetworkACL at the specified index.
+**/
+- (UAEC2NetworkACL *)networkACLAtIndex:(NSUInteger)index;
+
 @end

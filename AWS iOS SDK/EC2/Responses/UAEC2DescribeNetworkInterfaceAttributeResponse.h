@@ -19,4 +19,9 @@
 @property (nonatomic, copy) NSArray *groups;
 @property (nonatomic, copy) UAEC2NetworkInterfaceAttachment *attachment;
 
+/**
+ * Retrieves the UAEC2GroupIdentifier at the specified index.
+**/
+- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index;
+
 @end

@@ -14,4 +14,9 @@
 @property (nonatomic, copy) NSString *attributeName;
 @property (nonatomic, copy) NSArray *attributeValues;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)attributeValueAtIndex:(NSUInteger)index;
+
 @end

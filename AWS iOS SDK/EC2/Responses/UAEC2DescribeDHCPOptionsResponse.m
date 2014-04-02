@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2DHCPOption *)dhcpOptionAtIndex:(NSUInteger)index
+{
+    if (self.dhcpOptions == nil || index >= ([self.dhcpOptions count]-1))
+        return nil;
+
+    return [self.dhcpOptions objectAtIndex:index];
+}
+
 + (NSValueTransformer *)dhcpOptionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2DHCPOption class]];

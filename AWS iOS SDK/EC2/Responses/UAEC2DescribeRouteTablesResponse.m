@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2RouteTable *)routeTableAtIndex:(NSUInteger)index
+{
+    if (self.routeTables == nil || index >= ([self.routeTables count]-1))
+        return nil;
+
+    return [self.routeTables objectAtIndex:index];
+}
+
 + (NSValueTransformer *)routeTablesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2RouteTable class]];

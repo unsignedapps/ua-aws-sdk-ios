@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *loadBalancerDescriptions;
 @property (nonatomic, copy) NSString *nextMarker;
 
+/**
+ * Retrieves the UAELBLoadBalancerDescription at the specified index.
+**/
+- (UAELBLoadBalancerDescription *)loadBalancerDescriptionAtIndex:(NSUInteger)index;
+
 @end

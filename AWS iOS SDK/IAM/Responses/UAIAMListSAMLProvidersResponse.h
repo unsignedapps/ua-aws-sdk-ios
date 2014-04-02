@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *sAMLProviderList;
 
+/**
+ * Retrieves the UAIAMSAMLProviderList at the specified index.
+**/
+- (UAIAMSAMLProviderList *)sAMLProviderListAtIndex:(NSUInteger)index;
+
 @end

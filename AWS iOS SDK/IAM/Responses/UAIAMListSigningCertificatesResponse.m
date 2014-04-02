@@ -33,6 +33,14 @@
     return [keyPaths copy];
 }
 
+- (UAIAMCertificate *)certificateAtIndex:(NSUInteger)index
+{
+    if (self.certificates == nil || index >= ([self.certificates count]-1))
+        return nil;
+
+    return [self.certificates objectAtIndex:index];
+}
+
 + (NSValueTransformer *)certificatesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMCertificate class]];

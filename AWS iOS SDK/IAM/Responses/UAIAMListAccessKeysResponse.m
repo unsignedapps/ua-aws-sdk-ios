@@ -33,6 +33,14 @@
     return [keyPaths copy];
 }
 
+- (UAIAMAccessKeyMetadata *)accessKeyMetadataAtIndex:(NSUInteger)index
+{
+    if (self.accessKeyMetadata == nil || index >= ([self.accessKeyMetadata count]-1))
+        return nil;
+
+    return [self.accessKeyMetadata objectAtIndex:index];
+}
+
 + (NSValueTransformer *)accessKeyMetadataXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMAccessKeyMetadata class]];

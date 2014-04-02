@@ -55,6 +55,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)alarmNameAtIndex:(NSUInteger)index
+{
+    if (self.alarmNames == nil || index >= ([self.alarmNames count]-1))
+        return nil;
+
+    return [self.alarmNames objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;
@@ -121,72 +129,16 @@
 
 + (NSValueTransformer *)stateValueJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"OK"])
-		    return @(UACWAlarmStateOK);
-		if ([value isEqualToString:@"ALARM"])
-		    return @(UACWAlarmStateALARM);
-		if ([value isEqualToString:@"INSUFFICIENT_DATA"])
-		    return @(UACWAlarmStateINSUFFICIENT_DATA);
-
-		return @(UACWAlarmStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWAlarmState castValue = (UACWAlarmState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWAlarmStateOK:
-			    return @"OK";
-			case UACWAlarmStateALARM:
-			    return @"ALARM";
-			case UACWAlarmStateINSUFFICIENT_DATA:
-			    return @"INSUFFICIENT_DATA";
-
-			case UACWAlarmStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWAlarmStateOK), @(UACWAlarmStateAlarm), @(UACWAlarmStateInsufficientData) ]
+                                               stringValues:@[ @"OK", @"ALARM", @"INSUFFICIENT_DATA" ]
+                                               unknownValue:@(UACWAlarmStateUnknown)];
 }
 
 + (NSValueTransformer *)stateValueQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"OK"])
-		    return @(UACWAlarmStateOK);
-		if ([value isEqualToString:@"ALARM"])
-		    return @(UACWAlarmStateALARM);
-		if ([value isEqualToString:@"INSUFFICIENT_DATA"])
-		    return @(UACWAlarmStateINSUFFICIENT_DATA);
-
-		return @(UACWAlarmStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UACWAlarmState castValue = (UACWAlarmState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UACWAlarmStateOK:
-			    return @"OK";
-			case UACWAlarmStateALARM:
-			    return @"ALARM";
-			case UACWAlarmStateINSUFFICIENT_DATA:
-			    return @"INSUFFICIENT_DATA";
-
-			case UACWAlarmStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UACWAlarmStateOK), @(UACWAlarmStateAlarm), @(UACWAlarmStateInsufficientData) ]
+                                               stringValues:@[ @"OK", @"ALARM", @"INSUFFICIENT_DATA" ]
+                                               unknownValue:@(UACWAlarmStateUnknown)];
 }
 
 - (void)addAlarmName:(NSString *)alarmName

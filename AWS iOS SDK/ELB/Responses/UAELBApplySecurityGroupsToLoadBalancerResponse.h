@@ -13,4 +13,9 @@
 
 @property (nonatomic, copy) NSArray *securityGroups;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)securityGroupAtIndex:(NSUInteger)index;
+
 @end

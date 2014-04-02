@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *stoppingInstances;
 
+/**
+ * Retrieves the UAEC2InstanceStateChange at the specified index.
+**/
+- (UAEC2InstanceStateChange *)stoppingInstanceAtIndex:(NSUInteger)index;
+
 @end

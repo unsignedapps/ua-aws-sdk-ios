@@ -51,6 +51,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)scalingProcessAtIndex:(NSUInteger)index
+{
+    if (self.scalingProcesses == nil || index >= ([self.scalingProcesses count]-1))
+        return nil;
+
+    return [self.scalingProcesses objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

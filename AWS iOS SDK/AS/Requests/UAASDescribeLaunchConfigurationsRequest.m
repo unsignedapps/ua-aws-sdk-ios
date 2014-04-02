@@ -52,6 +52,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)launchConfigurationNameAtIndex:(NSUInteger)index
+{
+    if (self.launchConfigurationNames == nil || index >= ([self.launchConfigurationNames count]-1))
+        return nil;
+
+    return [self.launchConfigurationNames objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

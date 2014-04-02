@@ -55,6 +55,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)scheduledActionNameAtIndex:(NSUInteger)index
+{
+    if (self.scheduledActionNames == nil || index >= ([self.scheduledActionNames count]-1))
+        return nil;
+
+    return [self.scheduledActionNames objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

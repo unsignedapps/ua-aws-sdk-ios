@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAIAMSAMLProviderList *)sAMLProviderListAtIndex:(NSUInteger)index
+{
+    if (self.sAMLProviderList == nil || index >= ([self.sAMLProviderList count]-1))
+        return nil;
+
+    return [self.sAMLProviderList objectAtIndex:index];
+}
+
 + (NSValueTransformer *)sAMLProviderListXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMSAMLProviderList class]];

@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeVPCPeeringConnectionsRequestShouldContinueWaitingBloc
 // @property (nonatomic, copy) UAEC2DescribeVPCPeeringConnectionsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)vpcPeeringConnectionIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a VPCPeeringConnectionID to the vpcPeeringConnectionIDs property.
  *
  * This will initialise vpcPeeringConnectionIDs with an empty mutable array if necessary.

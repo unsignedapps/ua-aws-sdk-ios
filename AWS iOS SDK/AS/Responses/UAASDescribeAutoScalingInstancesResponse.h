@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *autoScalingInstances;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAASAutoScalingInstanceDetails at the specified index.
+**/
+- (UAASAutoScalingInstanceDetails *)autoScalingInstancesAtIndex:(NSUInteger)index;
+
 @end

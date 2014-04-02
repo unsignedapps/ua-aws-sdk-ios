@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *securityGroups;
 
+/**
+ * Retrieves the UAEC2SecurityGroup at the specified index.
+**/
+- (UAEC2SecurityGroup *)securityGroupAtIndex:(NSUInteger)index;
+
 @end

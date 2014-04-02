@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *internetGateways;
 
+/**
+ * Retrieves the UAEC2InternetGateway at the specified index.
+**/
+- (UAEC2InternetGateway *)internetGatewayAtIndex:(NSUInteger)index;
+
 @end

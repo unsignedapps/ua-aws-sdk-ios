@@ -28,6 +28,21 @@ typedef BOOL(^UAEC2DescribeSpotPriceHistoryRequestShouldContinueWaitingBlock)(UA
 // @property (nonatomic, copy) UAEC2DescribeSpotPriceHistoryRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)instanceTypeAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)productionDescriptionAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a InstanceType to the instanceTypes property.
  *
  * This will initialise instanceTypes with an empty mutable array if necessary.

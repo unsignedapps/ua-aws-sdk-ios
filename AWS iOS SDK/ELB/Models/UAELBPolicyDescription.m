@@ -33,6 +33,14 @@
     return [keyPaths copy];
 }
 
+- (UAELBPolicyAttributeDescription *)policyAttributeDescriptionAtIndex:(NSUInteger)index
+{
+    if (self.policyAttributeDescriptions == nil || index >= ([self.policyAttributeDescriptions count]-1))
+        return nil;
+
+    return [self.policyAttributeDescriptions objectAtIndex:index];
+}
+
 + (NSValueTransformer *)policyAttributeDescriptionsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBPolicyAttributeDescription class]];

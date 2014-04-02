@@ -20,4 +20,14 @@
 @property (nonatomic, copy) NSArray *vpcAttachments;
 @property (nonatomic, copy) NSArray *tags;
 
+/**
+ * Retrieves the UAEC2VPCAttachment at the specified index.
+**/
+- (UAEC2VPCAttachment *)vpcAttachmentAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

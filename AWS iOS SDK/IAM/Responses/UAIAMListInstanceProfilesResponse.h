@@ -17,4 +17,9 @@
 @property (nonatomic) BOOL isTruncated;
 @property (nonatomic, copy) NSString *marker;
 
+/**
+ * Retrieves the UAIAMInstanceProfile at the specified index.
+**/
+- (UAIAMInstanceProfile *)instanceProfileAtIndex:(NSUInteger)index;
+
 @end

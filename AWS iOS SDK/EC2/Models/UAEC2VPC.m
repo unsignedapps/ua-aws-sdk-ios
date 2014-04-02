@@ -37,35 +37,19 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2VPCStatePending);
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2VPCStateAvailable);
-
-		return @(UAEC2VPCStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VPCState castValue = (UAEC2VPCState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VPCStatePending:
-			    return @"pending";
-			case UAEC2VPCStateAvailable:
-			    return @"available";
-
-			case UAEC2VPCStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VPCStatePending), @(UAEC2VPCStateAvailable) ]
+                                               stringValues:@[ @"pending", @"available" ]
+                                               unknownValue:@(UAEC2VPCStateUnknown)];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
@@ -75,68 +59,16 @@
 
 + (NSValueTransformer *)instanceTenancyQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"default"])
-		    return @(UAEC2InstanceTenancyDefault);
-		if ([value isEqualToString:@"dedicated"])
-		    return @(UAEC2InstanceTenancyDedicated);
-
-		return @(UAEC2InstanceTenancyUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceTenancy castValue = (UAEC2InstanceTenancy)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceTenancyDefault:
-			    return @"default";
-			case UAEC2InstanceTenancyDedicated:
-			    return @"dedicated";
-
-			case UAEC2InstanceTenancyUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceTenancyDefault), @(UAEC2InstanceTenancyDedicated) ]
+                                               stringValues:@[ @"default", @"dedicated" ]
+                                               unknownValue:@(UAEC2InstanceTenancyUnknown)];
 }
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2VPCStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2VPCStatePending);
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2VPCStateAvailable);
-
-		return @(UAEC2VPCStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VPCState castValue = (UAEC2VPCState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VPCStatePending:
-			    return @"pending";
-			case UAEC2VPCStateAvailable:
-			    return @"available";
-
-			case UAEC2VPCStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VPCStatePending), @(UAEC2VPCStateAvailable) ]
+                                               stringValues:@[ @"pending", @"available" ]
+                                               unknownValue:@(UAEC2VPCStateUnknown)];
 }
 
 + (NSValueTransformer *)tagsXMLTransformer
@@ -146,37 +78,9 @@
 
 + (NSValueTransformer *)instanceTenancyXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceTenancyUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"default"])
-		    return @(UAEC2InstanceTenancyDefault);
-		if ([value isEqualToString:@"dedicated"])
-		    return @(UAEC2InstanceTenancyDedicated);
-
-		return @(UAEC2InstanceTenancyUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceTenancy castValue = (UAEC2InstanceTenancy)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceTenancyDefault:
-			    return @"default";
-			case UAEC2InstanceTenancyDedicated:
-			    return @"dedicated";
-
-			case UAEC2InstanceTenancyUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceTenancyDefault), @(UAEC2InstanceTenancyDedicated) ]
+                                               stringValues:@[ @"default", @"dedicated" ]
+                                               unknownValue:@(UAEC2InstanceTenancyUnknown)];
 }
 
 + (NSValueTransformer *)isDefaultXMLTransformer

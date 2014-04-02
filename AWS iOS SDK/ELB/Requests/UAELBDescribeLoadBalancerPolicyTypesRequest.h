@@ -22,6 +22,11 @@ typedef BOOL(^UAELBDescribeLoadBalancerPolicyTypesRequestShouldContinueWaitingBl
 - (id)initWithPolicyTypeNames:(NSArray *)policyTypeNames;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)policyTypeNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a PolicyTypeName to the policyTypeNames property.
  *
  * This will initialise policyTypeNames with an empty mutable array if necessary.

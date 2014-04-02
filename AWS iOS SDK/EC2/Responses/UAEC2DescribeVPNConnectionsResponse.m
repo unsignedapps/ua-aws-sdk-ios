@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2VPNConnection *)vpnConnectionAtIndex:(NSUInteger)index
+{
+    if (self.vpnConnections == nil || index >= ([self.vpnConnections count]-1))
+        return nil;
+
+    return [self.vpnConnections objectAtIndex:index];
+}
+
 + (NSValueTransformer *)vpnConnectionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VPNConnection class]];

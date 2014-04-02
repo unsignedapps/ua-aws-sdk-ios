@@ -27,6 +27,16 @@ typedef BOOL(^UACWGetMetricStatisticsRequestShouldContinueWaitingBlock)(UACWGetM
 // @property (nonatomic, copy) UACWGetMetricStatisticsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UACWDimension at the specified index.
+**/
+- (UACWDimension *)dimensionAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UACWStatistic at the specified index.
+**/
+- (UACWStatistic)statisticAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Dimension to the dimensions property.
  *
  * This will initialise dimensions with an empty mutable array if necessary.

@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *customerGateways;
 
+/**
+ * Retrieves the UAEC2CustomerGateway at the specified index.
+**/
+- (UAEC2CustomerGateway *)customerGatewayAtIndex:(NSUInteger)index;
+
 @end

@@ -23,6 +23,21 @@ typedef BOOL(^UAEC2DescribeAddressesRequestShouldContinueWaitingBlock)(UAEC2Desc
 // @property (nonatomic, copy) UAEC2DescribeAddressesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)publicIPAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)allocationIDAtIndex:(NSUInteger)index;
+
+/**
  * Adds a PublicIP to the publicIPs property.
  *
  * This will initialise publicIPs with an empty mutable array if necessary.

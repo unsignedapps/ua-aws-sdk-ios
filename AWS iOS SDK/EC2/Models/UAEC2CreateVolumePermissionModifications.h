@@ -16,4 +16,14 @@
 @property (nonatomic, strong) NSMutableArray *add;
 @property (nonatomic, strong) NSMutableArray *remove;
 
+/**
+ * Retrieves the UAEC2CreateVolumePermission at the specified index.
+**/
+- (UAEC2CreateVolumePermission *)addAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2CreateVolumePermission at the specified index.
+**/
+- (UAEC2CreateVolumePermission *)removeAtIndex:(NSUInteger)index;
+
 @end

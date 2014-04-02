@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *metrics;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UACWMetric at the specified index.
+**/
+- (UACWMetric *)metricAtIndex:(NSUInteger)index;
+
 @end

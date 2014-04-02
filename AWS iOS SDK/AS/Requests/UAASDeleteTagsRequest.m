@@ -60,6 +60,14 @@
     return [keyPaths copy];
 }
 
+- (UAASTag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

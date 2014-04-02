@@ -59,6 +59,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)exportTaskIDAtIndex:(NSUInteger)index
+{
+    if (self.exportTaskIDs == nil || index >= ([self.exportTaskIDs count]-1))
+        return nil;
+
+    return [self.exportTaskIDs objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

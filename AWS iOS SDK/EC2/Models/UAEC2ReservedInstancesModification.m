@@ -40,6 +40,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2ReservedInstancesID *)reservedInstancesIDAtIndex:(NSUInteger)index
+{
+    if (self.reservedInstancesIds == nil || index >= ([self.reservedInstancesIds count]-1))
+        return nil;
+
+    return [self.reservedInstancesIds objectAtIndex:index];
+}
+
+- (UAEC2ReservedInstancesModificationResponse *)modificationResultAtIndex:(NSUInteger)index
+{
+    if (self.modificationResults == nil || index >= ([self.modificationResults count]-1))
+        return nil;
+
+    return [self.modificationResults objectAtIndex:index];
+}
+
 + (NSValueTransformer *)reservedInstancesIdsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2ReservedInstancesID class]];

@@ -52,6 +52,14 @@
     return [keyPaths copy];
 }
 
+- (UACWMetricDatum *)metricDatumAtIndex:(NSUInteger)index
+{
+    if (self.metricData == nil || index >= ([self.metricData count]-1))
+        return nil;
+
+    return [self.metricData objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

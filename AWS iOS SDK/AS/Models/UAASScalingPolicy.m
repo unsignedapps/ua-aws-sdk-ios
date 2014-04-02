@@ -38,39 +38,19 @@
     return [keyPaths copy];
 }
 
+- (UAASAlarm *)alarmAtIndex:(NSUInteger)index
+{
+    if (self.alarms == nil || index >= ([self.alarms count]-1))
+        return nil;
+
+    return [self.alarms objectAtIndex:index];
+}
+
 + (NSValueTransformer *)adjustmentTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ChangeInCapacity"])
-		    return @(UAASScalingPolicyAdjustmentTypeChangeInCapacity);
-		if ([value isEqualToString:@"ExactCapacity"])
-		    return @(UAASScalingPolicyAdjustmentTypeExactCapacity);
-		if ([value isEqualToString:@"PercentChangeInCapacity"])
-		    return @(UAASScalingPolicyAdjustmentTypePercentChangeInCapacity);
-
-		return @(UAASScalingPolicyAdjustmentTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASScalingPolicyAdjustmentType castValue = (UAASScalingPolicyAdjustmentType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASScalingPolicyAdjustmentTypeChangeInCapacity:
-			    return @"ChangeInCapacity";
-			case UAASScalingPolicyAdjustmentTypeExactCapacity:
-			    return @"ExactCapacity";
-			case UAASScalingPolicyAdjustmentTypePercentChangeInCapacity:
-			    return @"PercentChangeInCapacity";
-
-			case UAASScalingPolicyAdjustmentTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASScalingPolicyAdjustmentTypeChangeInCapacity), @(UAASScalingPolicyAdjustmentTypeExactCapacity), @(UAASScalingPolicyAdjustmentTypePercentChangeInCapacity) ]
+                                               stringValues:@[ @"ChangeInCapacity", @"ExactCapacity", @"PercentChangeInCapacity" ]
+                                               unknownValue:@(UAASScalingPolicyAdjustmentTypeUnknown)];
 }
 
 + (NSValueTransformer *)alarmsQueryStringTransformer
@@ -85,41 +65,9 @@
 
 + (NSValueTransformer *)adjustmentTypeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAASScalingPolicyAdjustmentTypeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ChangeInCapacity"])
-		    return @(UAASScalingPolicyAdjustmentTypeChangeInCapacity);
-		if ([value isEqualToString:@"ExactCapacity"])
-		    return @(UAASScalingPolicyAdjustmentTypeExactCapacity);
-		if ([value isEqualToString:@"PercentChangeInCapacity"])
-		    return @(UAASScalingPolicyAdjustmentTypePercentChangeInCapacity);
-
-		return @(UAASScalingPolicyAdjustmentTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASScalingPolicyAdjustmentType castValue = (UAASScalingPolicyAdjustmentType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASScalingPolicyAdjustmentTypeChangeInCapacity:
-			    return @"ChangeInCapacity";
-			case UAASScalingPolicyAdjustmentTypeExactCapacity:
-			    return @"ExactCapacity";
-			case UAASScalingPolicyAdjustmentTypePercentChangeInCapacity:
-			    return @"PercentChangeInCapacity";
-
-			case UAASScalingPolicyAdjustmentTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASScalingPolicyAdjustmentTypeChangeInCapacity), @(UAASScalingPolicyAdjustmentTypeExactCapacity), @(UAASScalingPolicyAdjustmentTypePercentChangeInCapacity) ]
+                                               stringValues:@[ @"ChangeInCapacity", @"ExactCapacity", @"PercentChangeInCapacity" ]
+                                               unknownValue:@(UAASScalingPolicyAdjustmentTypeUnknown)];
 }
 
 + (NSValueTransformer *)cooldownXMLTransformer

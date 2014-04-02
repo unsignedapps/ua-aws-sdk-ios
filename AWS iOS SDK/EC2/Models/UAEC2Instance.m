@@ -76,51 +76,51 @@
     return [keyPaths copy];
 }
 
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
+{
+    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
+        return nil;
+
+    return [self.productCodes objectAtIndex:index];
+}
+
+- (UAEC2InstanceBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
+{
+    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
+        return nil;
+
+    return [self.blockDeviceMappings objectAtIndex:index];
+}
+
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
+- (UAEC2GroupIdentifier *)securityGroupAtIndex:(NSUInteger)index
+{
+    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
+        return nil;
+
+    return [self.securityGroups objectAtIndex:index];
+}
+
+- (UAEC2InstanceNetworkInterface *)networkInterfaceAtIndex:(NSUInteger)index
+{
+    if (self.networkInterfaces == nil || index >= ([self.networkInterfaces count]-1))
+        return nil;
+
+    return [self.networkInterfaces objectAtIndex:index];
+}
+
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2InstanceStatePending);
-		if ([value isEqualToString:@"running"])
-		    return @(UAEC2InstanceStateRunning);
-		if ([value isEqualToString:@"shutting-down"])
-		    return @(UAEC2InstanceStateShuttingDown);
-		if ([value isEqualToString:@"terminated"])
-		    return @(UAEC2InstanceStateTerminated);
-		if ([value isEqualToString:@"stopping"])
-		    return @(UAEC2InstanceStateStopping);
-		if ([value isEqualToString:@"stopped"])
-		    return @(UAEC2InstanceStateStopped);
-
-		return @(UAEC2InstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceState castValue = (UAEC2InstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatePending:
-			    return @"pending";
-			case UAEC2InstanceStateRunning:
-			    return @"running";
-			case UAEC2InstanceStateShuttingDown:
-			    return @"shutting-down";
-			case UAEC2InstanceStateTerminated:
-			    return @"terminated";
-			case UAEC2InstanceStateStopping:
-			    return @"stopping";
-			case UAEC2InstanceStateStopped:
-			    return @"stopped";
-
-			case UAEC2InstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatePending), @(UAEC2InstanceStateRunning), @(UAEC2InstanceStateShuttingDown), @(UAEC2InstanceStateTerminated), @(UAEC2InstanceStateStopping), @(UAEC2InstanceStateStopped) ]
+                                               stringValues:@[ @"pending", @"running", @"shutting-down", @"terminated", @"stopping", @"stopped" ]
+                                               unknownValue:@(UAEC2InstanceStateUnknown)];
 }
 
 + (NSValueTransformer *)productCodesQueryStringTransformer
@@ -140,37 +140,9 @@
 
 + (NSValueTransformer *)monitoringQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"disabled"])
-		    return @(UAEC2InstanceMonitoringStateDisabled);
-		if ([value isEqualToString:@"enabled"])
-		    return @(UAEC2InstanceMonitoringStateEnabled);
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2InstanceMonitoringStatePending);
-
-		return @(UAEC2InstanceMonitoringStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceMonitoringState castValue = (UAEC2InstanceMonitoringState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceMonitoringStateDisabled:
-			    return @"disabled";
-			case UAEC2InstanceMonitoringStateEnabled:
-			    return @"enabled";
-			case UAEC2InstanceMonitoringStatePending:
-			    return @"pending";
-
-			case UAEC2InstanceMonitoringStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceMonitoringStateDisabled), @(UAEC2InstanceMonitoringStateEnabled), @(UAEC2InstanceMonitoringStatePending) ]
+                                               stringValues:@[ @"disabled", @"enabled", @"pending" ]
+                                               unknownValue:@(UAEC2InstanceMonitoringStateUnknown)];
 }
 
 + (NSValueTransformer *)stateReasonQueryStringTransformer
@@ -180,64 +152,16 @@
 
 + (NSValueTransformer *)architectureQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"i386"])
-		    return @(UAEC2InstanceArchitectureI386);
-		if ([value isEqualToString:@"x86_64"])
-		    return @(UAEC2InstanceArchitectureX86_64);
-
-		return @(UAEC2InstanceArchitectureUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceArchitecture castValue = (UAEC2InstanceArchitecture)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceArchitectureI386:
-			    return @"i386";
-			case UAEC2InstanceArchitectureX86_64:
-			    return @"x86_64";
-
-			case UAEC2InstanceArchitectureUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceArchitectureI386), @(UAEC2InstanceArchitectureX86_64) ]
+                                               stringValues:@[ @"i386", @"x86_64" ]
+                                               unknownValue:@(UAEC2InstanceArchitectureUnknown)];
 }
 
 + (NSValueTransformer *)rootDeviceTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ebs"])
-		    return @(UAEC2InstanceRootDeviceTypeEBS);
-		if ([value isEqualToString:@"instance-store"])
-		    return @(UAEC2InstanceRootDeviceTypeInstanceStore);
-
-		return @(UAEC2InstanceRootDeviceTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceRootDeviceType castValue = (UAEC2InstanceRootDeviceType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceRootDeviceTypeEBS:
-			    return @"ebs";
-			case UAEC2InstanceRootDeviceTypeInstanceStore:
-			    return @"instance-store";
-
-			case UAEC2InstanceRootDeviceTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceRootDeviceTypeEBS), @(UAEC2InstanceRootDeviceTypeInstanceStore) ]
+                                               stringValues:@[ @"ebs", @"instance-store" ]
+                                               unknownValue:@(UAEC2InstanceRootDeviceTypeUnknown)];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
@@ -247,33 +171,9 @@
 
 + (NSValueTransformer *)virtualizationTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"paravirtual"])
-		    return @(UAEC2InstanceVirtualizationTypeParavirtual);
-		if ([value isEqualToString:@"hvm"])
-		    return @(UAEC2InstanceVirtualizationTypeHvm);
-
-		return @(UAEC2InstanceVirtualizationTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceVirtualizationType castValue = (UAEC2InstanceVirtualizationType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceVirtualizationTypeParavirtual:
-			    return @"paravirtual";
-			case UAEC2InstanceVirtualizationTypeHvm:
-			    return @"hvm";
-
-			case UAEC2InstanceVirtualizationTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceVirtualizationTypeParavirtual), @(UAEC2InstanceVirtualizationTypeHvm) ]
+                                               stringValues:@[ @"paravirtual", @"hvm" ]
+                                               unknownValue:@(UAEC2InstanceVirtualizationTypeUnknown)];
 }
 
 + (NSValueTransformer *)licenseQueryStringTransformer
@@ -303,53 +203,9 @@
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2InstanceStatePending);
-		if ([value isEqualToString:@"running"])
-		    return @(UAEC2InstanceStateRunning);
-		if ([value isEqualToString:@"shutting-down"])
-		    return @(UAEC2InstanceStateShuttingDown);
-		if ([value isEqualToString:@"terminated"])
-		    return @(UAEC2InstanceStateTerminated);
-		if ([value isEqualToString:@"stopping"])
-		    return @(UAEC2InstanceStateStopping);
-		if ([value isEqualToString:@"stopped"])
-		    return @(UAEC2InstanceStateStopped);
-
-		return @(UAEC2InstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceState castValue = (UAEC2InstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatePending:
-			    return @"pending";
-			case UAEC2InstanceStateRunning:
-			    return @"running";
-			case UAEC2InstanceStateShuttingDown:
-			    return @"shutting-down";
-			case UAEC2InstanceStateTerminated:
-			    return @"terminated";
-			case UAEC2InstanceStateStopping:
-			    return @"stopping";
-			case UAEC2InstanceStateStopped:
-			    return @"stopped";
-
-			case UAEC2InstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatePending), @(UAEC2InstanceStateRunning), @(UAEC2InstanceStateShuttingDown), @(UAEC2InstanceStateTerminated), @(UAEC2InstanceStateStopping), @(UAEC2InstanceStateStopped) ]
+                                               stringValues:@[ @"pending", @"running", @"shutting-down", @"terminated", @"stopping", @"stopped" ]
+                                               unknownValue:@(UAEC2InstanceStateUnknown)];
 }
 
 + (NSValueTransformer *)amiLaunchIndexXMLTransformer
@@ -374,41 +230,9 @@
 
 + (NSValueTransformer *)monitoringXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceMonitoringStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"disabled"])
-		    return @(UAEC2InstanceMonitoringStateDisabled);
-		if ([value isEqualToString:@"enabled"])
-		    return @(UAEC2InstanceMonitoringStateEnabled);
-		if ([value isEqualToString:@"pending"])
-		    return @(UAEC2InstanceMonitoringStatePending);
-
-		return @(UAEC2InstanceMonitoringStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceMonitoringState castValue = (UAEC2InstanceMonitoringState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceMonitoringStateDisabled:
-			    return @"disabled";
-			case UAEC2InstanceMonitoringStateEnabled:
-			    return @"enabled";
-			case UAEC2InstanceMonitoringStatePending:
-			    return @"pending";
-
-			case UAEC2InstanceMonitoringStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceMonitoringStateDisabled), @(UAEC2InstanceMonitoringStateEnabled), @(UAEC2InstanceMonitoringStatePending) ]
+                                               stringValues:@[ @"disabled", @"enabled", @"pending" ]
+                                               unknownValue:@(UAEC2InstanceMonitoringStateUnknown)];
 }
 
 + (NSValueTransformer *)stateReasonXMLTransformer
@@ -418,72 +242,16 @@
 
 + (NSValueTransformer *)architectureXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceArchitectureUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"i386"])
-		    return @(UAEC2InstanceArchitectureI386);
-		if ([value isEqualToString:@"x86_64"])
-		    return @(UAEC2InstanceArchitectureX86_64);
-
-		return @(UAEC2InstanceArchitectureUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceArchitecture castValue = (UAEC2InstanceArchitecture)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceArchitectureI386:
-			    return @"i386";
-			case UAEC2InstanceArchitectureX86_64:
-			    return @"x86_64";
-
-			case UAEC2InstanceArchitectureUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceArchitectureI386), @(UAEC2InstanceArchitectureX86_64) ]
+                                               stringValues:@[ @"i386", @"x86_64" ]
+                                               unknownValue:@(UAEC2InstanceArchitectureUnknown)];
 }
 
 + (NSValueTransformer *)rootDeviceTypeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceRootDeviceTypeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ebs"])
-		    return @(UAEC2InstanceRootDeviceTypeEBS);
-		if ([value isEqualToString:@"instance-store"])
-		    return @(UAEC2InstanceRootDeviceTypeInstanceStore);
-
-		return @(UAEC2InstanceRootDeviceTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceRootDeviceType castValue = (UAEC2InstanceRootDeviceType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceRootDeviceTypeEBS:
-			    return @"ebs";
-			case UAEC2InstanceRootDeviceTypeInstanceStore:
-			    return @"instance-store";
-
-			case UAEC2InstanceRootDeviceTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceRootDeviceTypeEBS), @(UAEC2InstanceRootDeviceTypeInstanceStore) ]
+                                               stringValues:@[ @"ebs", @"instance-store" ]
+                                               unknownValue:@(UAEC2InstanceRootDeviceTypeUnknown)];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsXMLTransformer
@@ -493,37 +261,9 @@
 
 + (NSValueTransformer *)virtualizationTypeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceVirtualizationTypeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"paravirtual"])
-		    return @(UAEC2InstanceVirtualizationTypeParavirtual);
-		if ([value isEqualToString:@"hvm"])
-		    return @(UAEC2InstanceVirtualizationTypeHvm);
-
-		return @(UAEC2InstanceVirtualizationTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceVirtualizationType castValue = (UAEC2InstanceVirtualizationType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceVirtualizationTypeParavirtual:
-			    return @"paravirtual";
-			case UAEC2InstanceVirtualizationTypeHvm:
-			    return @"hvm";
-
-			case UAEC2InstanceVirtualizationTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceVirtualizationTypeParavirtual), @(UAEC2InstanceVirtualizationTypeHvm) ]
+                                               stringValues:@[ @"paravirtual", @"hvm" ]
+                                               unknownValue:@(UAEC2InstanceVirtualizationTypeUnknown)];
 }
 
 + (NSValueTransformer *)licenseXMLTransformer

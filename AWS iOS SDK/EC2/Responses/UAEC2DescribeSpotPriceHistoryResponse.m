@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2SpotPriceHistory *)spotPriceHistoryAtIndex:(NSUInteger)index
+{
+    if (self.spotPriceHistory == nil || index >= ([self.spotPriceHistory count]-1))
+        return nil;
+
+    return [self.spotPriceHistory objectAtIndex:index];
+}
+
 + (NSValueTransformer *)spotPriceHistoryXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2SpotPriceHistory class]];

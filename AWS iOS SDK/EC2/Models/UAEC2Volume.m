@@ -41,51 +41,27 @@
     return [keyPaths copy];
 }
 
+- (UAEC2VolumeAttachment *)attachmentAtIndex:(NSUInteger)index
+{
+    if (self.attachments == nil || index >= ([self.attachments count]-1))
+        return nil;
+
+    return [self.attachments objectAtIndex:index];
+}
+
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"creating"])
-		    return @(UAEC2VolumeStateCreating);
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2VolumeStateAvailable);
-		if ([value isEqualToString:@"in-use"])
-		    return @(UAEC2VolumeStateInUse);
-		if ([value isEqualToString:@"deleting"])
-		    return @(UAEC2VolumeStateDeleting);
-		if ([value isEqualToString:@"deleted"])
-		    return @(UAEC2VolumeStateDeleted);
-		if ([value isEqualToString:@"error"])
-		    return @(UAEC2VolumeStateError);
-
-		return @(UAEC2VolumeStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VolumeState castValue = (UAEC2VolumeState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VolumeStateCreating:
-			    return @"creating";
-			case UAEC2VolumeStateAvailable:
-			    return @"available";
-			case UAEC2VolumeStateInUse:
-			    return @"in-use";
-			case UAEC2VolumeStateDeleting:
-			    return @"deleting";
-			case UAEC2VolumeStateDeleted:
-			    return @"deleted";
-			case UAEC2VolumeStateError:
-			    return @"error";
-
-			case UAEC2VolumeStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeStateCreating), @(UAEC2VolumeStateAvailable), @(UAEC2VolumeStateInUse), @(UAEC2VolumeStateDeleting), @(UAEC2VolumeStateDeleted), @(UAEC2VolumeStateError) ]
+                                               stringValues:@[ @"creating", @"available", @"in-use", @"deleting", @"deleted", @"error" ]
+                                               unknownValue:@(UAEC2VolumeStateUnknown)];
 }
 
 + (NSValueTransformer *)createTimeQueryStringTransformer
@@ -105,33 +81,9 @@
 
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"standard"])
-		    return @(UAEC2VolumeTypeStandard);
-		if ([value isEqualToString:@"io1"])
-		    return @(UAEC2VolumeTypeIo1);
-
-		return @(UAEC2VolumeTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VolumeType castValue = (UAEC2VolumeType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VolumeTypeStandard:
-			    return @"standard";
-			case UAEC2VolumeTypeIo1:
-			    return @"io1";
-
-			case UAEC2VolumeTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
+                                               stringValues:@[ @"standard", @"io1" ]
+                                               unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
 + (NSValueTransformer *)sizeXMLTransformer
@@ -141,53 +93,9 @@
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2VolumeStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"creating"])
-		    return @(UAEC2VolumeStateCreating);
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2VolumeStateAvailable);
-		if ([value isEqualToString:@"in-use"])
-		    return @(UAEC2VolumeStateInUse);
-		if ([value isEqualToString:@"deleting"])
-		    return @(UAEC2VolumeStateDeleting);
-		if ([value isEqualToString:@"deleted"])
-		    return @(UAEC2VolumeStateDeleted);
-		if ([value isEqualToString:@"error"])
-		    return @(UAEC2VolumeStateError);
-
-		return @(UAEC2VolumeStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VolumeState castValue = (UAEC2VolumeState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VolumeStateCreating:
-			    return @"creating";
-			case UAEC2VolumeStateAvailable:
-			    return @"available";
-			case UAEC2VolumeStateInUse:
-			    return @"in-use";
-			case UAEC2VolumeStateDeleting:
-			    return @"deleting";
-			case UAEC2VolumeStateDeleted:
-			    return @"deleted";
-			case UAEC2VolumeStateError:
-			    return @"error";
-
-			case UAEC2VolumeStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeStateCreating), @(UAEC2VolumeStateAvailable), @(UAEC2VolumeStateInUse), @(UAEC2VolumeStateDeleting), @(UAEC2VolumeStateDeleted), @(UAEC2VolumeStateError) ]
+                                               stringValues:@[ @"creating", @"available", @"in-use", @"deleting", @"deleted", @"error" ]
+                                               unknownValue:@(UAEC2VolumeStateUnknown)];
 }
 
 + (NSValueTransformer *)createTimeXMLTransformer
@@ -207,37 +115,9 @@
 
 + (NSValueTransformer *)volumeTypeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2VolumeTypeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"standard"])
-		    return @(UAEC2VolumeTypeStandard);
-		if ([value isEqualToString:@"io1"])
-		    return @(UAEC2VolumeTypeIo1);
-
-		return @(UAEC2VolumeTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2VolumeType castValue = (UAEC2VolumeType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2VolumeTypeStandard:
-			    return @"standard";
-			case UAEC2VolumeTypeIo1:
-			    return @"io1";
-
-			case UAEC2VolumeTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
+                                               stringValues:@[ @"standard", @"io1" ]
+                                               unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
 + (NSValueTransformer *)iopsXMLTransformer

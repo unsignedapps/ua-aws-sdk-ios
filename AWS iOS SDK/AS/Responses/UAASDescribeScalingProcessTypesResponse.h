@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *processes;
 
+/**
+ * Retrieves the UAASProcessType at the specified index.
+**/
+- (UAASProcessType *)processAtIndex:(NSUInteger)index;
+
 @end

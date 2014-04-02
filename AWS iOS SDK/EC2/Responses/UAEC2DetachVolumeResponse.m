@@ -36,45 +36,9 @@
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2AttachmentStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"attaching"])
-		    return @(UAEC2AttachmentStateAttaching);
-		if ([value isEqualToString:@"attached"])
-		    return @(UAEC2AttachmentStateAttached);
-		if ([value isEqualToString:@"detaching"])
-		    return @(UAEC2AttachmentStateDetaching);
-		if ([value isEqualToString:@"detached"])
-		    return @(UAEC2AttachmentStateDetached);
-
-		return @(UAEC2AttachmentStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2AttachmentState castValue = (UAEC2AttachmentState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2AttachmentStateAttaching:
-			    return @"attaching";
-			case UAEC2AttachmentStateAttached:
-			    return @"attached";
-			case UAEC2AttachmentStateDetaching:
-			    return @"detaching";
-			case UAEC2AttachmentStateDetached:
-			    return @"detached";
-
-			case UAEC2AttachmentStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2AttachmentStateAttaching), @(UAEC2AttachmentStateAttached), @(UAEC2AttachmentStateDetaching), @(UAEC2AttachmentStateDetached) ]
+                                               stringValues:@[ @"attaching", @"attached", @"detaching", @"detached" ]
+                                               unknownValue:@(UAEC2AttachmentStateUnknown)];
 }
 
 + (NSValueTransformer *)attachTimeXMLTransformer

@@ -60,6 +60,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2IPPermission *)ipPermissionAtIndex:(NSUInteger)index
+{
+    if (self.ipPermissions == nil || index >= ([self.ipPermissions count]-1))
+        return nil;
+
+    return [self.ipPermissions objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

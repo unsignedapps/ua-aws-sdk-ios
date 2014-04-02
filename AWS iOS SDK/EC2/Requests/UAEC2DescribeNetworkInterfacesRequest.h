@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeNetworkInterfacesRequestShouldContinueWaitingBlock)(U
 // @property (nonatomic, copy) UAEC2DescribeNetworkInterfacesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)networkInterfaceIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a NetworkInterfaceID to the networkInterfaceIDs property.
  *
  * This will initialise networkInterfaceIDs with an empty mutable array if necessary.

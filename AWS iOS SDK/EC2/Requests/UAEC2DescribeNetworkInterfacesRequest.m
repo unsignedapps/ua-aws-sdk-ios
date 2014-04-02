@@ -53,6 +53,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)networkInterfaceIDAtIndex:(NSUInteger)index
+{
+    if (self.networkInterfaceIDs == nil || index >= ([self.networkInterfaceIDs count]-1))
+        return nil;
+
+    return [self.networkInterfaceIDs objectAtIndex:index];
+}
+
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
+{
+    if (self.filters == nil || index >= ([self.filters count]-1))
+        return nil;
+
+    return [self.filters objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

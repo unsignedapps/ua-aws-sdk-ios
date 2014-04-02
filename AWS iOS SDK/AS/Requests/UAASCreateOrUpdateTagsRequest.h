@@ -22,6 +22,11 @@ typedef BOOL(^UAASCreateOrUpdateTagsRequestShouldContinueWaitingBlock)(UAASCreat
 - (id)initWithTags:(NSArray *)tags;
 
 /**
+ * Retrieves the UAASTag at the specified index.
+**/
+- (UAASTag *)tagAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Tag to the tags property.
  *
  * This will initialise tags with an empty mutable array if necessary.

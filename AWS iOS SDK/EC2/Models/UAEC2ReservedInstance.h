@@ -30,4 +30,14 @@
 @property (nonatomic, copy) NSString *offeringType;
 @property (nonatomic, copy) NSArray *recurringCharges;
 
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2RecurringCharge at the specified index.
+**/
+- (UAEC2RecurringCharge *)recurringChargeAtIndex:(NSUInteger)index;
+
 @end

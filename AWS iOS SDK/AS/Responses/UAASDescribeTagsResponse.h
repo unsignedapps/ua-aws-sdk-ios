@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAASTag at the specified index.
+**/
+- (UAASTag *)tagAtIndex:(NSUInteger)index;
+
 @end

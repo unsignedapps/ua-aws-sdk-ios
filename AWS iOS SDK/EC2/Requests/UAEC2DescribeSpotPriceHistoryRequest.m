@@ -59,6 +59,30 @@
     return [keyPaths copy];
 }
 
+- (NSString *)instanceTypeAtIndex:(NSUInteger)index
+{
+    if (self.instanceTypes == nil || index >= ([self.instanceTypes count]-1))
+        return nil;
+
+    return [self.instanceTypes objectAtIndex:index];
+}
+
+- (NSString *)productionDescriptionAtIndex:(NSUInteger)index
+{
+    if (self.productDescriptions == nil || index >= ([self.productDescriptions count]-1))
+        return nil;
+
+    return [self.productDescriptions objectAtIndex:index];
+}
+
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
+{
+    if (self.filters == nil || index >= ([self.filters count]-1))
+        return nil;
+
+    return [self.filters objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

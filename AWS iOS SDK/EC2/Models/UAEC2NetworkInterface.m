@@ -52,43 +52,35 @@
     return [keyPaths copy];
 }
 
+- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index
+{
+    if (self.groups == nil || index >= ([self.groups count]-1))
+        return nil;
+
+    return [self.groups objectAtIndex:index];
+}
+
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
+- (UAEC2PrivateIPAddress *)privateIPAddressAtIndex:(NSUInteger)index
+{
+    if (self.privateIPAddresses == nil || index >= ([self.privateIPAddresses count]-1))
+        return nil;
+
+    return [self.privateIPAddresses objectAtIndex:index];
+}
+
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2NetworkInterfaceStateAvailable);
-		if ([value isEqualToString:@"attaching"])
-		    return @(UAEC2NetworkInterfaceStateAttaching);
-		if ([value isEqualToString:@"in-use"])
-		    return @(UAEC2NetworkInterfaceStateInUse);
-		if ([value isEqualToString:@"detaching"])
-		    return @(UAEC2NetworkInterfaceStateDetaching);
-
-		return @(UAEC2NetworkInterfaceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2NetworkInterfaceState castValue = (UAEC2NetworkInterfaceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2NetworkInterfaceStateAvailable:
-			    return @"available";
-			case UAEC2NetworkInterfaceStateAttaching:
-			    return @"attaching";
-			case UAEC2NetworkInterfaceStateInUse:
-			    return @"in-use";
-			case UAEC2NetworkInterfaceStateDetaching:
-			    return @"detaching";
-
-			case UAEC2NetworkInterfaceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2NetworkInterfaceStateAvailable), @(UAEC2NetworkInterfaceStateAttaching), @(UAEC2NetworkInterfaceStateInUse), @(UAEC2NetworkInterfaceStateDetaching) ]
+                                               stringValues:@[ @"available", @"attaching", @"in-use", @"detaching" ]
+                                               unknownValue:@(UAEC2NetworkInterfaceStateUnknown)];
 }
 
 + (NSValueTransformer *)groupsQueryStringTransformer
@@ -123,45 +115,9 @@
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2NetworkInterfaceStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"available"])
-		    return @(UAEC2NetworkInterfaceStateAvailable);
-		if ([value isEqualToString:@"attaching"])
-		    return @(UAEC2NetworkInterfaceStateAttaching);
-		if ([value isEqualToString:@"in-use"])
-		    return @(UAEC2NetworkInterfaceStateInUse);
-		if ([value isEqualToString:@"detaching"])
-		    return @(UAEC2NetworkInterfaceStateDetaching);
-
-		return @(UAEC2NetworkInterfaceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2NetworkInterfaceState castValue = (UAEC2NetworkInterfaceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2NetworkInterfaceStateAvailable:
-			    return @"available";
-			case UAEC2NetworkInterfaceStateAttaching:
-			    return @"attaching";
-			case UAEC2NetworkInterfaceStateInUse:
-			    return @"in-use";
-			case UAEC2NetworkInterfaceStateDetaching:
-			    return @"detaching";
-
-			case UAEC2NetworkInterfaceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2NetworkInterfaceStateAvailable), @(UAEC2NetworkInterfaceStateAttaching), @(UAEC2NetworkInterfaceStateInUse), @(UAEC2NetworkInterfaceStateDetaching) ]
+                                               stringValues:@[ @"available", @"attaching", @"in-use", @"detaching" ]
+                                               unknownValue:@(UAEC2NetworkInterfaceStateUnknown)];
 }
 
 + (NSValueTransformer *)sourceDestCheckXMLTransformer

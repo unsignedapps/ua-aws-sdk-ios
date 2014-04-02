@@ -22,6 +22,11 @@ typedef BOOL(^UAASDescribeTagsRequestShouldContinueWaitingBlock)(UAASDescribeTag
 // @property (nonatomic, copy) UAASDescribeTagsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAASFilter at the specified index.
+**/
+- (UAASFilter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Filter to the filters property.
  *
  * This will initialise filters with an empty mutable array if necessary.

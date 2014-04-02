@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *autoScalingGroups;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAASAutoScalingGroup at the specified index.
+**/
+- (UAASAutoScalingGroup *)autoScalingGroupAtIndex:(NSUInteger)index;
+
 @end

@@ -51,6 +51,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
+{
+    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
+        return nil;
+
+    return [self.availabilityZones objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

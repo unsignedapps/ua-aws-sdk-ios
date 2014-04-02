@@ -53,6 +53,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)activityIDAtIndex:(NSUInteger)index
+{
+    if (self.activityIDs == nil || index >= ([self.activityIDs count]-1))
+        return nil;
+
+    return [self.activityIDs objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

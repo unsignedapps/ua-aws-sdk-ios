@@ -53,35 +53,67 @@
     return [keyPaths copy];
 }
 
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
+{
+    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
+        return nil;
+
+    return [self.availabilityZones objectAtIndex:index];
+}
+
+- (NSString *)loadBalancerNameAtIndex:(NSUInteger)index
+{
+    if (self.loadBalancerNames == nil || index >= ([self.loadBalancerNames count]-1))
+        return nil;
+
+    return [self.loadBalancerNames objectAtIndex:index];
+}
+
+- (UAASInstance *)instanceAtIndex:(NSUInteger)index
+{
+    if (self.instances == nil || index >= ([self.instances count]-1))
+        return nil;
+
+    return [self.instances objectAtIndex:index];
+}
+
+- (UAASSuspendedProcess *)suspendedProcessAtIndex:(NSUInteger)index
+{
+    if (self.suspendedProcesses == nil || index >= ([self.suspendedProcesses count]-1))
+        return nil;
+
+    return [self.suspendedProcesses objectAtIndex:index];
+}
+
+- (UAASEnabledMetric *)enabledMetricAtIndex:(NSUInteger)index
+{
+    if (self.enabledMetrics == nil || index >= ([self.enabledMetrics count]-1))
+        return nil;
+
+    return [self.enabledMetrics objectAtIndex:index];
+}
+
+- (UAASTag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
+- (NSString *)terminationPolicyAtIndex:(NSUInteger)index
+{
+    if (self.terminationPolicies == nil || index >= ([self.terminationPolicies count]-1))
+        return nil;
+
+    return [self.terminationPolicies objectAtIndex:index];
+}
+
 + (NSValueTransformer *)healthCheckTypeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"EC2"])
-		    return @(UAASHealthCheckTypeEC2);
-		if ([value isEqualToString:@"ELB"])
-		    return @(UAASHealthCheckTypeELB);
-
-		return @(UAASHealthCheckTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASHealthCheckType castValue = (UAASHealthCheckType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASHealthCheckTypeEC2:
-			    return @"EC2";
-			case UAASHealthCheckTypeELB:
-			    return @"ELB";
-
-			case UAASHealthCheckTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASHealthCheckTypeEC2), @(UAASHealthCheckTypeElb) ]
+                                               stringValues:@[ @"EC2", @"ELB" ]
+                                               unknownValue:@(UAASHealthCheckTypeUnknown)];
 }
 
 + (NSValueTransformer *)instancesQueryStringTransformer
@@ -141,37 +173,9 @@
 
 + (NSValueTransformer *)healthCheckTypeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAASHealthCheckTypeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"EC2"])
-		    return @(UAASHealthCheckTypeEC2);
-		if ([value isEqualToString:@"ELB"])
-		    return @(UAASHealthCheckTypeELB);
-
-		return @(UAASHealthCheckTypeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAASHealthCheckType castValue = (UAASHealthCheckType)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAASHealthCheckTypeEC2:
-			    return @"EC2";
-			case UAASHealthCheckTypeELB:
-			    return @"ELB";
-
-			case UAASHealthCheckTypeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASHealthCheckTypeEC2), @(UAASHealthCheckTypeElb) ]
+                                               stringValues:@[ @"EC2", @"ELB" ]
+                                               unknownValue:@(UAASHealthCheckTypeUnknown)];
 }
 
 + (NSValueTransformer *)healthCheckGracePeriodXMLTransformer

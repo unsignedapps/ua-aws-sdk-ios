@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAASActivity *)activityAtIndex:(NSUInteger)index
+{
+    if (self.activities == nil || index >= ([self.activities count]-1))
+        return nil;
+
+    return [self.activities objectAtIndex:index];
+}
+
 + (NSValueTransformer *)activitiesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASActivity class]];

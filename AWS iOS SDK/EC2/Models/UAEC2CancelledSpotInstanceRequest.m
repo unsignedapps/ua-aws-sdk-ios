@@ -33,92 +33,16 @@
 
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"active"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateActive);
-		if ([value isEqualToString:@"open"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateOpen);
-		if ([value isEqualToString:@"closed"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateClosed);
-		if ([value isEqualToString:@"cancelled"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateCancelled);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateFailed);
-
-		return @(UAEC2CancelledSpotInstanceRequestStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2CancelledSpotInstanceRequestState castValue = (UAEC2CancelledSpotInstanceRequestState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2CancelledSpotInstanceRequestStateActive:
-			    return @"active";
-			case UAEC2CancelledSpotInstanceRequestStateOpen:
-			    return @"open";
-			case UAEC2CancelledSpotInstanceRequestStateClosed:
-			    return @"closed";
-			case UAEC2CancelledSpotInstanceRequestStateCancelled:
-			    return @"cancelled";
-			case UAEC2CancelledSpotInstanceRequestStateFailed:
-			    return @"failed";
-
-			case UAEC2CancelledSpotInstanceRequestStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2CancelledSpotInstanceRequestStateActive), @(UAEC2CancelledSpotInstanceRequestStateOpen), @(UAEC2CancelledSpotInstanceRequestStateClosed), @(UAEC2CancelledSpotInstanceRequestStateCancelled), @(UAEC2CancelledSpotInstanceRequestStateFailed) ]
+                                               stringValues:@[ @"active", @"open", @"closed", @"cancelled", @"failed" ]
+                                               unknownValue:@(UAEC2CancelledSpotInstanceRequestStateUnknown)];
 }
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2CancelledSpotInstanceRequestStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"active"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateActive);
-		if ([value isEqualToString:@"open"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateOpen);
-		if ([value isEqualToString:@"closed"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateClosed);
-		if ([value isEqualToString:@"cancelled"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateCancelled);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2CancelledSpotInstanceRequestStateFailed);
-
-		return @(UAEC2CancelledSpotInstanceRequestStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2CancelledSpotInstanceRequestState castValue = (UAEC2CancelledSpotInstanceRequestState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2CancelledSpotInstanceRequestStateActive:
-			    return @"active";
-			case UAEC2CancelledSpotInstanceRequestStateOpen:
-			    return @"open";
-			case UAEC2CancelledSpotInstanceRequestStateClosed:
-			    return @"closed";
-			case UAEC2CancelledSpotInstanceRequestStateCancelled:
-			    return @"cancelled";
-			case UAEC2CancelledSpotInstanceRequestStateFailed:
-			    return @"failed";
-
-			case UAEC2CancelledSpotInstanceRequestStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2CancelledSpotInstanceRequestStateActive), @(UAEC2CancelledSpotInstanceRequestStateOpen), @(UAEC2CancelledSpotInstanceRequestStateClosed), @(UAEC2CancelledSpotInstanceRequestStateCancelled), @(UAEC2CancelledSpotInstanceRequestStateFailed) ]
+                                               stringValues:@[ @"active", @"open", @"closed", @"cancelled", @"failed" ]
+                                               unknownValue:@(UAEC2CancelledSpotInstanceRequestStateUnknown)];
 }
 
 @end

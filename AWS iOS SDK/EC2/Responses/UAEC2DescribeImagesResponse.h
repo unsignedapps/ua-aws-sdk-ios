@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *images;
 
+/**
+ * Retrieves the UAEC2Image at the specified index.
+**/
+- (UAEC2Image *)imageAtIndex:(NSUInteger)index;
+
 @end

@@ -47,6 +47,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
+- (UAEC2RecurringCharge *)recurringChargeAtIndex:(NSUInteger)index
+{
+    if (self.recurringCharges == nil || index >= ([self.recurringCharges count]-1))
+        return nil;
+
+    return [self.recurringCharges objectAtIndex:index];
+}
+
 + (NSValueTransformer *)startQueryStringTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -59,41 +75,9 @@
 
 + (NSValueTransformer *)stateQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"payment-pending"])
-		    return @(UAEC2ReservedInstanceStatePaymentPending);
-		if ([value isEqualToString:@"active"])
-		    return @(UAEC2ReservedInstanceStateActive);
-		if ([value isEqualToString:@"payment-failed"])
-		    return @(UAEC2ReservedInstanceStatePaymentFailed);
-		if ([value isEqualToString:@"retired"])
-		    return @(UAEC2ReservedInstanceStateRetired);
-
-		return @(UAEC2ReservedInstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ReservedInstanceState castValue = (UAEC2ReservedInstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ReservedInstanceStatePaymentPending:
-			    return @"payment-pending";
-			case UAEC2ReservedInstanceStateActive:
-			    return @"active";
-			case UAEC2ReservedInstanceStatePaymentFailed:
-			    return @"payment-failed";
-			case UAEC2ReservedInstanceStateRetired:
-			    return @"retired";
-
-			case UAEC2ReservedInstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceStatePaymentPending), @(UAEC2ReservedInstanceStateActive), @(UAEC2ReservedInstanceStatePaymentFailed), @(UAEC2ReservedInstanceStateRetired) ]
+                                               stringValues:@[ @"payment-pending", @"active", @"payment-failed", @"retired" ]
+                                               unknownValue:@(UAEC2ReservedInstanceStateUnknown)];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
@@ -138,45 +122,9 @@
 
 + (NSValueTransformer *)stateXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2ReservedInstanceStateUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"payment-pending"])
-		    return @(UAEC2ReservedInstanceStatePaymentPending);
-		if ([value isEqualToString:@"active"])
-		    return @(UAEC2ReservedInstanceStateActive);
-		if ([value isEqualToString:@"payment-failed"])
-		    return @(UAEC2ReservedInstanceStatePaymentFailed);
-		if ([value isEqualToString:@"retired"])
-		    return @(UAEC2ReservedInstanceStateRetired);
-
-		return @(UAEC2ReservedInstanceStateUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2ReservedInstanceState castValue = (UAEC2ReservedInstanceState)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2ReservedInstanceStatePaymentPending:
-			    return @"payment-pending";
-			case UAEC2ReservedInstanceStateActive:
-			    return @"active";
-			case UAEC2ReservedInstanceStatePaymentFailed:
-			    return @"payment-failed";
-			case UAEC2ReservedInstanceStateRetired:
-			    return @"retired";
-
-			case UAEC2ReservedInstanceStateUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceStatePaymentPending), @(UAEC2ReservedInstanceStateActive), @(UAEC2ReservedInstanceStatePaymentFailed), @(UAEC2ReservedInstanceStateRetired) ]
+                                               stringValues:@[ @"payment-pending", @"active", @"payment-failed", @"retired" ]
+                                               unknownValue:@(UAEC2ReservedInstanceStateUnknown)];
 }
 
 + (NSValueTransformer *)tagsXMLTransformer

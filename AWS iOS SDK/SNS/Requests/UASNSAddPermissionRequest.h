@@ -23,6 +23,16 @@ typedef BOOL(^UASNSAddPermissionRequestShouldContinueWaitingBlock)(UASNSAddPermi
 // @property (nonatomic, copy) UASNSAddPermissionRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)aWSAccountIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)actionNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a AWSAccountID to the aWSAccountID property.
  *
  * This will initialise aWSAccountID with an empty mutable array if necessary.

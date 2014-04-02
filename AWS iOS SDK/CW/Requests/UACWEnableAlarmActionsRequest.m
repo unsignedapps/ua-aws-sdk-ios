@@ -59,6 +59,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)alarmNameAtIndex:(NSUInteger)index
+{
+    if (self.alarmNames == nil || index >= ([self.alarmNames count]-1))
+        return nil;
+
+    return [self.alarmNames objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

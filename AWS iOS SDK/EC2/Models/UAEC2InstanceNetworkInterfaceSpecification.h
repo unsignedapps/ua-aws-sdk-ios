@@ -24,4 +24,14 @@
 @property (nonatomic, strong) NSNumber *secondaryPrivateIPAddressCount;
 @property (nonatomic) BOOL associatePublicIPAddress;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)groupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2PrivateIPAddressSpecifiction at the specified index.
+**/
+- (UAEC2PrivateIPAddressSpecifiction *)privateIPAddressAtIndex:(NSUInteger)index;
+
 @end

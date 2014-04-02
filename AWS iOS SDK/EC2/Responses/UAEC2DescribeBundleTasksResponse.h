@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *bundleTasks;
 
+/**
+ * Retrieves the UAEC2BundleTask at the specified index.
+**/
+- (UAEC2BundleTask *)bundleTaskAtIndex:(NSUInteger)index;
+
 @end

@@ -24,6 +24,26 @@ typedef BOOL(^UAEC2DescribeSnapshotsRequestShouldContinueWaitingBlock)(UAEC2Desc
 // @property (nonatomic, copy) UAEC2DescribeSnapshotsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)snapshotIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)ownerIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)restorableByUserIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a SnapshotID to the snapshotIDs property.
  *
  * This will initialise snapshotIDs with an empty mutable array if necessary.

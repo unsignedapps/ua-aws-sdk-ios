@@ -16,4 +16,9 @@
 @property (nonatomic) UAEC2InstanceStatusValue status;
 @property (nonatomic, copy) NSArray *details;
 
+/**
+ * Retrieves the UAEC2InstanceStatusDetails at the specified index.
+**/
+- (UAEC2InstanceStatusDetails *)detailAtIndex:(NSUInteger)index;
+
 @end

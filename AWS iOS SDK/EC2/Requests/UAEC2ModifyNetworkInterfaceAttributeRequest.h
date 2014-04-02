@@ -25,6 +25,11 @@ typedef BOOL(^UAEC2ModifyNetworkInterfaceAttributeRequestShouldContinueWaitingBl
 // @property (nonatomic, copy) UAEC2ModifyNetworkInterfaceAttributeRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)groupAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Group to the groups property.
  *
  * This will initialise groups with an empty mutable array if necessary.

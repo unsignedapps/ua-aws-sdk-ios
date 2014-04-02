@@ -56,6 +56,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2DiskImage *)diskImageAtIndex:(NSUInteger)index
+{
+    if (self.diskImages == nil || index >= ([self.diskImages count]-1))
+        return nil;
+
+    return [self.diskImages objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

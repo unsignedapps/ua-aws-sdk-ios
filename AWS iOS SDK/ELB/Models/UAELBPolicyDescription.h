@@ -17,4 +17,9 @@
 @property (nonatomic, copy) NSString *policyTypeName;
 @property (nonatomic, copy) NSArray *policyAttributeDescriptions;
 
+/**
+ * Retrieves the UAELBPolicyAttributeDescription at the specified index.
+**/
+- (UAELBPolicyAttributeDescription *)policyAttributeDescriptionAtIndex:(NSUInteger)index;
+
 @end

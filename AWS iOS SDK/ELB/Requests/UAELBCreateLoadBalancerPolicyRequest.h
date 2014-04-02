@@ -23,6 +23,11 @@ typedef BOOL(^UAELBCreateLoadBalancerPolicyRequestShouldContinueWaitingBlock)(UA
 // @property (nonatomic, copy) UAELBCreateLoadBalancerPolicyRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAELBPolicyAttribute at the specified index.
+**/
+- (UAELBPolicyAttribute *)policyAttributeAtIndex:(NSUInteger)index;
+
+/**
  * Adds a PolicyAttribute to the policyAttributes property.
  *
  * This will initialise policyAttributes with an empty mutable array if necessary.

@@ -28,4 +28,14 @@
 @property (nonatomic, copy) UAEC2InstanceNetworkInterfaceAssociation *association;
 @property (nonatomic, copy) NSArray *privateIPAddresses;
 
+/**
+ * Retrieves the UAEC2GroupIdentifier at the specified index.
+**/
+- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2InstancePrivateIPAddress at the specified index.
+**/
+- (UAEC2InstancePrivateIPAddress *)privateIPAddressAtIndex:(NSUInteger)index;
+
 @end

@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *subscriptions;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UASNSSubscription at the specified index.
+**/
+- (UASNSSubscription *)subscriptionAtIndex:(NSUInteger)index;
+
 @end

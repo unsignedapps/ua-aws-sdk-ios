@@ -25,6 +25,16 @@ typedef BOOL(^UAEC2DescribeInstanceStatusRequestShouldContinueWaitingBlock)(UAEC
 // @property (nonatomic, copy) UAEC2DescribeInstanceStatusRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)instanceIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a InstanceID to the instanceIDs property.
  *
  * This will initialise instanceIDs with an empty mutable array if necessary.

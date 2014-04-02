@@ -26,6 +26,16 @@ typedef BOOL(^UAEC2CreateNetworkInterfaceRequestShouldContinueWaitingBlock)(UAEC
 // @property (nonatomic, copy) UAEC2CreateNetworkInterfaceRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)groupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2PrivateIPAddressSpecification at the specified index.
+**/
+- (UAEC2PrivateIPAddressSpecification *)privateIPAddressAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Group to the groups property.
  *
  * This will initialise groups with an empty mutable array if necessary.

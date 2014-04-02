@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)policyNameAtIndex:(NSUInteger)index
+{
+    if (self.policyNames == nil || index >= ([self.policyNames count]-1))
+        return nil;
+
+    return [self.policyNames objectAtIndex:index];
+}
+
 + (NSValueTransformer *)instancePortXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

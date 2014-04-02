@@ -24,4 +24,9 @@
 @property (nonatomic, copy) NSString *ownerAlias;
 @property (nonatomic, copy) NSArray *tags;
 
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

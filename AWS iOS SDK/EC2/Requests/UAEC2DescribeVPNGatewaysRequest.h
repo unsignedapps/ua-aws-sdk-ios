@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeVPNGatewaysRequestShouldContinueWaitingBlock)(UAEC2De
 // @property (nonatomic, copy) UAEC2DescribeVPNGatewaysRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)vpnGatewayIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a VPNGatewayID to the vpnGatewayIDs property.
  *
  * This will initialise vpnGatewayIDs with an empty mutable array if necessary.

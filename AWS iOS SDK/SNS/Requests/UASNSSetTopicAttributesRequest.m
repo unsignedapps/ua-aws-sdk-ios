@@ -94,72 +94,16 @@
 
 + (NSValueTransformer *)attributeNameJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Policy"])
-		    return @(UASNSTopicAttributePolicy);
-		if ([value isEqualToString:@"DisplayName"])
-		    return @(UASNSTopicAttributeDisplayName);
-		if ([value isEqualToString:@"DeliveryPolicy"])
-		    return @(UASNSTopicAttributeDeliveryPolicy);
-
-		return @(UASNSTopicAttributeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UASNSTopicAttribute castValue = (UASNSTopicAttribute)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UASNSTopicAttributePolicy:
-			    return @"Policy";
-			case UASNSTopicAttributeDisplayName:
-			    return @"DisplayName";
-			case UASNSTopicAttributeDeliveryPolicy:
-			    return @"DeliveryPolicy";
-
-			case UASNSTopicAttributeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSTopicAttributePolicy), @(UASNSTopicAttributeDisplayName), @(UASNSTopicAttributeDeliveryPolicy) ]
+                                               stringValues:@[ @"Policy", @"DisplayName", @"DeliveryPolicy" ]
+                                               unknownValue:@(UASNSTopicAttributeUnknown)];
 }
 
 + (NSValueTransformer *)attributeNameQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Policy"])
-		    return @(UASNSTopicAttributePolicy);
-		if ([value isEqualToString:@"DisplayName"])
-		    return @(UASNSTopicAttributeDisplayName);
-		if ([value isEqualToString:@"DeliveryPolicy"])
-		    return @(UASNSTopicAttributeDeliveryPolicy);
-
-		return @(UASNSTopicAttributeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UASNSTopicAttribute castValue = (UASNSTopicAttribute)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UASNSTopicAttributePolicy:
-			    return @"Policy";
-			case UASNSTopicAttributeDisplayName:
-			    return @"DisplayName";
-			case UASNSTopicAttributeDeliveryPolicy:
-			    return @"DeliveryPolicy";
-
-			case UASNSTopicAttributeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSTopicAttributePolicy), @(UASNSTopicAttributeDisplayName), @(UASNSTopicAttributeDeliveryPolicy) ]
+                                               stringValues:@[ @"Policy", @"DisplayName", @"DeliveryPolicy" ]
+                                               unknownValue:@(UASNSTopicAttributeUnknown)];
 }
 
 #pragma mark - Invocation

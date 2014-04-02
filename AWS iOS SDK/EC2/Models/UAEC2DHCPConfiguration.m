@@ -44,6 +44,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)valueAtIndex:(NSUInteger)index
+{
+    if (self.values == nil || index >= ([self.values count]-1))
+        return nil;
+
+    return [self.values objectAtIndex:index];
+}
+
 - (void)setKey:(NSString *)key
 {
 	_key = key;

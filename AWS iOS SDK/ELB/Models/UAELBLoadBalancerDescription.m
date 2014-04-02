@@ -51,6 +51,54 @@
     return [keyPaths copy];
 }
 
+- (UAELBListenerDescription *)listenerDescriptionAtIndex:(NSUInteger)index
+{
+    if (self.listenerDescriptions == nil || index >= ([self.listenerDescriptions count]-1))
+        return nil;
+
+    return [self.listenerDescriptions objectAtIndex:index];
+}
+
+- (UAELBBackendServerDescription *)backendServerDescriptionAtIndex:(NSUInteger)index
+{
+    if (self.backendServerDescriptions == nil || index >= ([self.backendServerDescriptions count]-1))
+        return nil;
+
+    return [self.backendServerDescriptions objectAtIndex:index];
+}
+
+- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
+{
+    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
+        return nil;
+
+    return [self.availabilityZones objectAtIndex:index];
+}
+
+- (NSString *)subnetAtIndex:(NSUInteger)index
+{
+    if (self.subnets == nil || index >= ([self.subnets count]-1))
+        return nil;
+
+    return [self.subnets objectAtIndex:index];
+}
+
+- (UAELBInstance *)instanceAtIndex:(NSUInteger)index
+{
+    if (self.instances == nil || index >= ([self.instances count]-1))
+        return nil;
+
+    return [self.instances objectAtIndex:index];
+}
+
+- (NSString *)securityGroupAtIndex:(NSUInteger)index
+{
+    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
+        return nil;
+
+    return [self.securityGroups objectAtIndex:index];
+}
+
 + (NSValueTransformer *)listenerDescriptionsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBListenerDescription class]];
@@ -88,33 +136,9 @@
 
 + (NSValueTransformer *)schemeQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"internet-facing"])
-		    return @(UAELBSchemeInternetFacing);
-		if ([value isEqualToString:@"internal"])
-		    return @(UAELBSchemeInternal);
-
-		return @(UAELBSchemeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAELBScheme castValue = (UAELBScheme)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAELBSchemeInternetFacing:
-			    return @"internet-facing";
-			case UAELBSchemeInternal:
-			    return @"internal";
-
-			case UAELBSchemeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBSchemeInternetFacing), @(UAELBSchemeInternal) ]
+                                               stringValues:@[ @"internet-facing", @"internal" ]
+                                               unknownValue:@(UAELBSchemeUnknown)];
 }
 
 + (NSValueTransformer *)listenerDescriptionsXMLTransformer
@@ -169,37 +193,9 @@
 
 + (NSValueTransformer *)schemeXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAELBSchemeUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"internet-facing"])
-		    return @(UAELBSchemeInternetFacing);
-		if ([value isEqualToString:@"internal"])
-		    return @(UAELBSchemeInternal);
-
-		return @(UAELBSchemeUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAELBScheme castValue = (UAELBScheme)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAELBSchemeInternetFacing:
-			    return @"internet-facing";
-			case UAELBSchemeInternal:
-			    return @"internal";
-
-			case UAELBSchemeUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBSchemeInternetFacing), @(UAELBSchemeInternal) ]
+                                               stringValues:@[ @"internet-facing", @"internal" ]
+                                               unknownValue:@(UAELBSchemeUnknown)];
 }
 
 @end

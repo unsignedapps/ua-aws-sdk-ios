@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2ReservedInstancesOffering *)reservedInstancesOfferingAtIndex:(NSUInteger)index
+{
+    if (self.reservedInstancesOfferings == nil || index >= ([self.reservedInstancesOfferings count]-1))
+        return nil;
+
+    return [self.reservedInstancesOfferings objectAtIndex:index];
+}
+
 + (NSValueTransformer *)reservedInstancesOfferingsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ReservedInstancesOffering class]];

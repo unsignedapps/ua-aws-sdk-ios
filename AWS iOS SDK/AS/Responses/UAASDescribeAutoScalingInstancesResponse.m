@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAASAutoScalingInstanceDetails *)autoScalingInstancesAtIndex:(NSUInteger)index
+{
+    if (self.autoScalingInstances == nil || index >= ([self.autoScalingInstances count]-1))
+        return nil;
+
+    return [self.autoScalingInstances objectAtIndex:index];
+}
+
 + (NSValueTransformer *)autoScalingInstancesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASAutoScalingInstanceDetails class]];

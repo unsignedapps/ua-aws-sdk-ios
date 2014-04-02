@@ -21,6 +21,11 @@ typedef BOOL(^UASQSSendMessageBatchRequestShouldContinueWaitingBlock)(UASQSSendM
 // @property (nonatomic, copy) UASQSSendMessageBatchRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UASQSSendMessageBatchRequestEntry at the specified index.
+**/
+- (UASQSSendMessageBatchRequestEntry *)entryAtIndex:(NSUInteger)index;
+
+/**
  * Adds a Entry to the entries property.
  *
  * This will initialise entries with an empty mutable array if necessary.

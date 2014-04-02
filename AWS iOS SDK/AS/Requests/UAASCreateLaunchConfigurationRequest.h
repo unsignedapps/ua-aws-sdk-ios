@@ -34,6 +34,16 @@ typedef BOOL(^UAASCreateLaunchConfigurationRequestShouldContinueWaitingBlock)(UA
 // @property (nonatomic, copy) UAASCreateLaunchConfigurationRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)securityGroupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAASBlockDeviceMapping at the specified index.
+**/
+- (UAASBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
+/**
  * Adds a SecurityGroup to the securityGroups property.
  *
  * This will initialise securityGroups with an empty mutable array if necessary.

@@ -32,43 +32,19 @@
     return [keyPaths copy];
 }
 
+- (UAEC2InstanceStatusDetails *)detailAtIndex:(NSUInteger)index
+{
+    if (self.details == nil || index >= ([self.details count]-1))
+        return nil;
+
+    return [self.details objectAtIndex:index];
+}
+
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ok"])
-		    return @(UAEC2InstanceStatusValueOk);
-		if ([value isEqualToString:@"impaired"])
-		    return @(UAEC2InstanceStatusValueImpaired);
-		if ([value isEqualToString:@"insufficient-data"])
-		    return @(UAEC2InstanceStatusValueInsufficientData);
-		if ([value isEqualToString:@"not-applicable"])
-		    return @(UAEC2InstanceStatusValueNotApplicable);
-
-		return @(UAEC2InstanceStatusValueUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceStatusValue castValue = (UAEC2InstanceStatusValue)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatusValueOk:
-			    return @"ok";
-			case UAEC2InstanceStatusValueImpaired:
-			    return @"impaired";
-			case UAEC2InstanceStatusValueInsufficientData:
-			    return @"insufficient-data";
-			case UAEC2InstanceStatusValueNotApplicable:
-			    return @"not-applicable";
-
-			case UAEC2InstanceStatusValueUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatusValueOk), @(UAEC2InstanceStatusValueImpaired), @(UAEC2InstanceStatusValueInsufficientData), @(UAEC2InstanceStatusValueNotApplicable) ]
+                                               stringValues:@[ @"ok", @"impaired", @"insufficient-data", @"not-applicable" ]
+                                               unknownValue:@(UAEC2InstanceStatusValueUnknown)];
 }
 
 + (NSValueTransformer *)detailsQueryStringTransformer
@@ -78,45 +54,9 @@
 
 + (NSValueTransformer *)statusXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceStatusValueUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"ok"])
-		    return @(UAEC2InstanceStatusValueOk);
-		if ([value isEqualToString:@"impaired"])
-		    return @(UAEC2InstanceStatusValueImpaired);
-		if ([value isEqualToString:@"insufficient-data"])
-		    return @(UAEC2InstanceStatusValueInsufficientData);
-		if ([value isEqualToString:@"not-applicable"])
-		    return @(UAEC2InstanceStatusValueNotApplicable);
-
-		return @(UAEC2InstanceStatusValueUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceStatusValue castValue = (UAEC2InstanceStatusValue)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatusValueOk:
-			    return @"ok";
-			case UAEC2InstanceStatusValueImpaired:
-			    return @"impaired";
-			case UAEC2InstanceStatusValueInsufficientData:
-			    return @"insufficient-data";
-			case UAEC2InstanceStatusValueNotApplicable:
-			    return @"not-applicable";
-
-			case UAEC2InstanceStatusValueUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatusValueOk), @(UAEC2InstanceStatusValueImpaired), @(UAEC2InstanceStatusValueInsufficientData), @(UAEC2InstanceStatusValueNotApplicable) ]
+                                               stringValues:@[ @"ok", @"impaired", @"insufficient-data", @"not-applicable" ]
+                                               unknownValue:@(UAEC2InstanceStatusValueUnknown)];
 }
 
 + (NSValueTransformer *)detailsXMLTransformer

@@ -44,6 +44,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2RecurringCharge *)recurringChargeAtIndex:(NSUInteger)index
+{
+    if (self.recurringCharges == nil || index >= ([self.recurringCharges count]-1))
+        return nil;
+
+    return [self.recurringCharges objectAtIndex:index];
+}
+
+- (UAEC2PricingDetail *)pricingDetailAtIndex:(NSUInteger)index
+{
+    if (self.pricingDetails == nil || index >= ([self.pricingDetails count]-1))
+        return nil;
+
+    return [self.pricingDetails objectAtIndex:index];
+}
+
 + (NSValueTransformer *)recurringChargesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2RecurringCharge class]];

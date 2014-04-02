@@ -54,6 +54,30 @@
     return [keyPaths copy];
 }
 
+- (NSString *)publicIPAtIndex:(NSUInteger)index
+{
+    if (self.publicIPs == nil || index >= ([self.publicIPs count]-1))
+        return nil;
+
+    return [self.publicIPs objectAtIndex:index];
+}
+
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
+{
+    if (self.filters == nil || index >= ([self.filters count]-1))
+        return nil;
+
+    return [self.filters objectAtIndex:index];
+}
+
+- (NSString *)allocationIDAtIndex:(NSUInteger)index
+{
+    if (self.allocationIDs == nil || index >= ([self.allocationIDs count]-1))
+        return nil;
+
+    return [self.allocationIDs objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

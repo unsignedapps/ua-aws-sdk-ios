@@ -22,6 +22,11 @@ typedef BOOL(^UAASDescribeAutoScalingInstancesRequestShouldContinueWaitingBlock)
 // @property (nonatomic, copy) UAASDescribeAutoScalingInstancesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)instanceIDAtIndex:(NSUInteger)index;
+
+/**
  * Adds a InstanceID to the instanceIDs property.
  *
  * This will initialise instanceIDs with an empty mutable array if necessary.

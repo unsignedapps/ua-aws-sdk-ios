@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *exportTasks;
 
+/**
+ * Retrieves the UAEC2ExportTask at the specified index.
+**/
+- (UAEC2ExportTask *)exportTaskAtIndex:(NSUInteger)index;
+
 @end

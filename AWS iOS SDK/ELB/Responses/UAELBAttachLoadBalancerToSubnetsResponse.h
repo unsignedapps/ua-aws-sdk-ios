@@ -13,4 +13,9 @@
 
 @property (nonatomic, copy) NSArray *subnets;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)subnetAtIndex:(NSUInteger)index;
+
 @end

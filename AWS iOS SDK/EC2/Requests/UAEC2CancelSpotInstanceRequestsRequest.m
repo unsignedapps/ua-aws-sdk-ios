@@ -51,6 +51,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)spotInstanceRequestIDAtIndex:(NSUInteger)index
+{
+    if (self.spotInstanceRequestIDs == nil || index >= ([self.spotInstanceRequestIDs count]-1))
+        return nil;
+
+    return [self.spotInstanceRequestIDs objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

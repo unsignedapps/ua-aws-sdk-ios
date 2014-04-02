@@ -52,6 +52,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2UserIdGroupPair *)userIdGroupPairAtIndex:(NSUInteger)index
+{
+    if (self.userIdGroupPairs == nil || index >= ([self.userIdGroupPairs count]-1))
+        return nil;
+
+    return [self.userIdGroupPairs objectAtIndex:index];
+}
+
+- (UAEC2IPRange *)ipRangeAtIndex:(NSUInteger)index
+{
+    if (self.ipRanges == nil || index >= ([self.ipRanges count]-1))
+        return nil;
+
+    return [self.ipRanges objectAtIndex:index];
+}
+
 - (void)setIpProtocol:(NSString *)ipProtocol
 {
 	_ipProtocol = ipProtocol;

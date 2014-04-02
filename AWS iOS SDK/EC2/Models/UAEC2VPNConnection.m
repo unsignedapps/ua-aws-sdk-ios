@@ -43,6 +43,30 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
+{
+    if (self.tags == nil || index >= ([self.tags count]-1))
+        return nil;
+
+    return [self.tags objectAtIndex:index];
+}
+
+- (UAEC2VGWTelemetry *)vgwTelemetryAtIndex:(NSUInteger)index
+{
+    if (self.vgwTelemetry == nil || index >= ([self.vgwTelemetry count]-1))
+        return nil;
+
+    return [self.vgwTelemetry objectAtIndex:index];
+}
+
+- (UAEC2VPNStaticRoute *)routeAtIndex:(NSUInteger)index
+{
+    if (self.routes == nil || index >= ([self.routes count]-1))
+        return nil;
+
+    return [self.routes objectAtIndex:index];
+}
+
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];

@@ -20,4 +20,9 @@
 @property (nonatomic, copy) UAEC2InstanceStatusSummary *systemStatus;
 @property (nonatomic, copy) UAEC2InstanceStatusSummary *instanceStatus;
 
+/**
+ * Retrieves the UAEC2InstanceStatusEvent at the specified index.
+**/
+- (UAEC2InstanceStatusEvent *)eventAtIndex:(NSUInteger)index;
+
 @end

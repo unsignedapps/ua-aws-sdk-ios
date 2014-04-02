@@ -59,6 +59,20 @@
         [self setUserData:nil];
     else
 		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
+}- (UAEC2InstanceBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
+{
+    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
+        return nil;
+
+    return [self.blockDeviceMappings objectAtIndex:index];
+}
+
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
+{
+    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
+        return nil;
+
+    return [self.productCodes objectAtIndex:index];
 }
 
 + (NSValueTransformer *)disableApiTerminationXMLTransformer
@@ -68,37 +82,9 @@
 
 + (NSValueTransformer *)instanceInitiatedShutdownBehaviorXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"stop"])
-		    return @(UAEC2InstanceInitiatedShutdownBehaviorStop);
-		if ([value isEqualToString:@"terminate"])
-		    return @(UAEC2InstanceInitiatedShutdownBehaviorTerminate);
-
-		return @(UAEC2InstanceInitiatedShutdownBehaviorUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceInitiatedShutdownBehavior castValue = (UAEC2InstanceInitiatedShutdownBehavior)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceInitiatedShutdownBehaviorStop:
-			    return @"stop";
-			case UAEC2InstanceInitiatedShutdownBehaviorTerminate:
-			    return @"terminate";
-
-			case UAEC2InstanceInitiatedShutdownBehaviorUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceInitiatedShutdownBehaviorStop), @(UAEC2InstanceInitiatedShutdownBehaviorTerminate) ]
+                                               stringValues:@[ @"stop", @"terminate" ]
+                                               unknownValue:@(UAEC2InstanceInitiatedShutdownBehaviorUnknown)];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsXMLTransformer

@@ -20,4 +20,9 @@
 @property (nonatomic, copy) NSDate *createDate;
 @property (nonatomic, copy) NSArray *roles;
 
+/**
+ * Retrieves the UAIAMRole at the specified index.
+**/
+- (UAIAMRole *)roleAtIndex:(NSUInteger)index;
+
 @end

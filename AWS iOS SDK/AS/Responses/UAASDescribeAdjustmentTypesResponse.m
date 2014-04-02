@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAASAdjustmentType *)adjustmentTypeAtIndex:(NSUInteger)index
+{
+    if (self.adjustmentTypes == nil || index >= ([self.adjustmentTypes count]-1))
+        return nil;
+
+    return [self.adjustmentTypes objectAtIndex:index];
+}
+
 + (NSValueTransformer *)adjustmentTypesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASAdjustmentType class]];

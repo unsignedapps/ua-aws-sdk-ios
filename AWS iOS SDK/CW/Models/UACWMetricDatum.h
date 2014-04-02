@@ -20,4 +20,9 @@
 @property (nonatomic, copy) UACWStatisticSet *statisticValues;
 @property (nonatomic) UACWUnit unit;
 
+/**
+ * Retrieves the UACWDimension at the specified index.
+**/
+- (UACWDimension *)dimensionAtIndex:(NSUInteger)index;
+
 @end

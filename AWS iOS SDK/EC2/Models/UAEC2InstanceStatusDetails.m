@@ -34,64 +34,16 @@
 
 + (NSValueTransformer *)nameQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"reachability"])
-		    return @(UAEC2InstanceStatusDetailsNameReachability);
-
-		return @(UAEC2InstanceStatusDetailsNameUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceStatusDetailsName castValue = (UAEC2InstanceStatusDetailsName)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatusDetailsNameReachability:
-			    return @"reachability";
-
-			case UAEC2InstanceStatusDetailsNameUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatusDetailsNameReachability) ]
+                                               stringValues:@[ @"reachability" ]
+                                               unknownValue:@(UAEC2InstanceStatusDetailsNameUnknown)];
 }
 
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"passed"])
-		    return @(UAEC2InstanceStatusDetailsStatusPassed);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2InstanceStatusDetailsStatusFailed);
-		if ([value isEqualToString:@"insufficient-data"])
-		    return @(UAEC2InstanceStatusDetailsStatusInsufficientData);
-
-		return @(UAEC2InstanceStatusDetailsStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceStatusDetailsStatus castValue = (UAEC2InstanceStatusDetailsStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatusDetailsStatusPassed:
-			    return @"passed";
-			case UAEC2InstanceStatusDetailsStatusFailed:
-			    return @"failed";
-			case UAEC2InstanceStatusDetailsStatusInsufficientData:
-			    return @"insufficient-data";
-
-			case UAEC2InstanceStatusDetailsStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatusDetailsStatusPassed), @(UAEC2InstanceStatusDetailsStatusFailed), @(UAEC2InstanceStatusDetailsStatusInsufficientData) ]
+                                               stringValues:@[ @"passed", @"failed", @"insufficient-data" ]
+                                               unknownValue:@(UAEC2InstanceStatusDetailsStatusUnknown)];
 }
 
 + (NSValueTransformer *)impairedSinceQueryStringTransformer
@@ -101,72 +53,16 @@
 
 + (NSValueTransformer *)nameXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceStatusDetailsNameUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"reachability"])
-		    return @(UAEC2InstanceStatusDetailsNameReachability);
-
-		return @(UAEC2InstanceStatusDetailsNameUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceStatusDetailsName castValue = (UAEC2InstanceStatusDetailsName)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatusDetailsNameReachability:
-			    return @"reachability";
-
-			case UAEC2InstanceStatusDetailsNameUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatusDetailsNameReachability) ]
+                                               stringValues:@[ @"reachability" ]
+                                               unknownValue:@(UAEC2InstanceStatusDetailsNameUnknown)];
 }
 
 + (NSValueTransformer *)statusXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAEC2InstanceStatusDetailsStatusUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"passed"])
-		    return @(UAEC2InstanceStatusDetailsStatusPassed);
-		if ([value isEqualToString:@"failed"])
-		    return @(UAEC2InstanceStatusDetailsStatusFailed);
-		if ([value isEqualToString:@"insufficient-data"])
-		    return @(UAEC2InstanceStatusDetailsStatusInsufficientData);
-
-		return @(UAEC2InstanceStatusDetailsStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAEC2InstanceStatusDetailsStatus castValue = (UAEC2InstanceStatusDetailsStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAEC2InstanceStatusDetailsStatusPassed:
-			    return @"passed";
-			case UAEC2InstanceStatusDetailsStatusFailed:
-			    return @"failed";
-			case UAEC2InstanceStatusDetailsStatusInsufficientData:
-			    return @"insufficient-data";
-
-			case UAEC2InstanceStatusDetailsStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceStatusDetailsStatusPassed), @(UAEC2InstanceStatusDetailsStatusFailed), @(UAEC2InstanceStatusDetailsStatusInsufficientData) ]
+                                               stringValues:@[ @"passed", @"failed", @"insufficient-data" ]
+                                               unknownValue:@(UAEC2InstanceStatusDetailsStatusUnknown)];
 }
 
 + (NSValueTransformer *)impairedSinceXMLTransformer

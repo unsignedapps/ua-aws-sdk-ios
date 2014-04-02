@@ -23,6 +23,11 @@ typedef BOOL(^UAASDescribeScalingActivitiesRequestShouldContinueWaitingBlock)(UA
 // @property (nonatomic, copy) UAASDescribeScalingActivitiesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)activityIDAtIndex:(NSUInteger)index;
+
+/**
  * Adds a ActivityID to the activityIDs property.
  *
  * This will initialise activityIDs with an empty mutable array if necessary.

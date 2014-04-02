@@ -22,4 +22,19 @@
 @property (nonatomic, copy) UAEC2SriovNetSupport *sriovNetSupport;
 @property (nonatomic, copy) NSArray *blockDeviceMappings;
 
+/**
+ * Retrieves the UAEC2LaunchPermission at the specified index.
+**/
+- (UAEC2LaunchPermission *)launchPermissionAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2ProductCode at the specified index.
+**/
+- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2BlockDeviceMapping at the specified index.
+**/
+- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
 @end

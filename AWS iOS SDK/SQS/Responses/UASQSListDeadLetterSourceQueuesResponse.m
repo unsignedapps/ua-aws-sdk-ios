@@ -30,6 +30,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)queueURLAtIndex:(NSUInteger)index
+{
+    if (self.queueUrls == nil || index >= ([self.queueUrls count]-1))
+        return nil;
+
+    return [self.queueUrls objectAtIndex:index];
+}
+
 + (NSValueTransformer *)queueUrlsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];

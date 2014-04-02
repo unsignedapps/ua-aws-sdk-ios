@@ -25,4 +25,9 @@
 @property (nonatomic) UAEC2InstanceInitiatedShutdownBehavior instanceInitiatedShutdownBehavior;
 @property (nonatomic, copy) NSString *privateIPAddress;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)groupNameAtIndex:(NSUInteger)index;
+
 @end

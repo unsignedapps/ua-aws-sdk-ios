@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2InstanceStatus *)instanceStatusAtIndex:(NSUInteger)index
+{
+    if (self.instanceStatuses == nil || index >= ([self.instanceStatuses count]-1))
+        return nil;
+
+    return [self.instanceStatuses objectAtIndex:index];
+}
+
 + (NSValueTransformer *)instanceStatusesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceStatus class]];

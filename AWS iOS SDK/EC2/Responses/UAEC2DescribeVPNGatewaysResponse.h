@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *vpnGateways;
 
+/**
+ * Retrieves the UAEC2VPNGateway at the specified index.
+**/
+- (UAEC2VPNGateway *)vpnGatewayAtIndex:(NSUInteger)index;
+
 @end

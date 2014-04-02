@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeVPCsRequestShouldContinueWaitingBlock)(UAEC2DescribeV
 // @property (nonatomic, copy) UAEC2DescribeVPCsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)vpcIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a VPCID to the vpcIDs property.
  *
  * This will initialise vpcIDs with an empty mutable array if necessary.

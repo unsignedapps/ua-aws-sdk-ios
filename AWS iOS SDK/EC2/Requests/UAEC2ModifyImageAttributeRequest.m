@@ -60,6 +60,30 @@
     return [keyPaths copy];
 }
 
+- (NSString *)userIDAtIndex:(NSUInteger)index
+{
+    if (self.userIDs == nil || index >= ([self.userIDs count]-1))
+        return nil;
+
+    return [self.userIDs objectAtIndex:index];
+}
+
+- (NSString *)userGroupAtIndex:(NSUInteger)index
+{
+    if (self.userGroups == nil || index >= ([self.userGroups count]-1))
+        return nil;
+
+    return [self.userGroups objectAtIndex:index];
+}
+
+- (NSString *)productCodeAtIndex:(NSUInteger)index
+{
+    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
+        return nil;
+
+    return [self.productCodes objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

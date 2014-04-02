@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2Region *)regionAtIndex:(NSUInteger)index
+{
+    if (self.regions == nil || index >= ([self.regions count]-1))
+        return nil;
+
+    return [self.regions objectAtIndex:index];
+}
+
 + (NSValueTransformer *)regionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Region class]];

@@ -53,6 +53,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)aWSAccountIDAtIndex:(NSUInteger)index
+{
+    if (self.aWSAccountIDs == nil || index >= ([self.aWSAccountIDs count]-1))
+        return nil;
+
+    return [self.aWSAccountIDs objectAtIndex:index];
+}
+
+- (UASQSActionName)actionAtIndex:(NSUInteger)index
+{
+    if (self.actions == nil || index >= ([self.actions count]-1))
+        return UASQSActionNameUnknown;
+
+    return (UASQSActionName)[[self.actions objectAtIndex:index] unsignedIntegerValue];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;
@@ -103,136 +119,16 @@
 
 + (NSValueTransformer *)actionsQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *values)
-    {
-		NSNumber *(^stringToEnumBlock)(NSString *value) = ^NSNumber *(NSString *value)
-		{
-	        if ([value isKindOfClass:[NSNumber class]])
-	            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"*"])
-		    return @(UASQSActionNameAll);
-		if ([value isEqualToString:@"SendMessage"])
-		    return @(UASQSActionNameSendMessage);
-		if ([value isEqualToString:@"ReceiveMessage"])
-		    return @(UASQSActionNameReceiveMessage);
-		if ([value isEqualToString:@"DeleteMessage"])
-		    return @(UASQSActionNameDeleteMessage);
-		if ([value isEqualToString:@"ChangeMessageVisibility"])
-		    return @(UASQSActionNameChangeMessageVisibility);
-		if ([value isEqualToString:@"GetQueueAttributes"])
-		    return @(UASQSActionNameGetQueueAttributes);
-		if ([value isEqualToString:@"GetQueueUrl"])
-		    return @(UASQSActionNameGetQueueUrl);
-
-			return @(UASQSActionNameUnknown);
-		};
-
-		NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[values count]];
-		for (NSString *value in values)
-			[array addObject:stringToEnumBlock(value)];
-		return [array copy];
-
-    } reverseBlock:^NSArray *(NSArray *values)
-    {
-		NSString *(^enumToStringBlock)(NSNumber *value) = ^NSString *(NSNumber *value)
-		{
-	        UASQSActionName castValue = (UASQSActionName)[value unsignedIntegerValue];
-	        switch (castValue)
-	        {
-			case UASQSActionNameAll:
-			    return @"*";
-			case UASQSActionNameSendMessage:
-			    return @"SendMessage";
-			case UASQSActionNameReceiveMessage:
-			    return @"ReceiveMessage";
-			case UASQSActionNameDeleteMessage:
-			    return @"DeleteMessage";
-			case UASQSActionNameChangeMessageVisibility:
-			    return @"ChangeMessageVisibility";
-			case UASQSActionNameGetQueueAttributes:
-			    return @"GetQueueAttributes";
-			case UASQSActionNameGetQueueUrl:
-			    return @"GetQueueUrl";
-
-				case UASQSActionNameUnknown:
-				default:
-					return nil;
-	        }
-		};
-		
-		NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[values count]];
-		for (NSNumber *value in values)
-			[array addObject:enumToStringBlock(value)];
-		return [array copy];
-    }];
+    return [NSValueTransformer UA_ENUMArrayTransformerWithValues:@[ @(UASQSActionNameAll), @(UASQSActionNameSendMessage), @(UASQSActionNameReceiveMessage), @(UASQSActionNameDeleteMessage), @(UASQSActionNameChangeMessageVisibility), @(UASQSActionNameGetQueueAttributes), @(UASQSActionNameGetQueueUrl) ]
+                                                    stringValues:@[ @"*", @"SendMessage", @"ReceiveMessage", @"DeleteMessage", @"ChangeMessageVisibility", @"GetQueueAttributes", @"GetQueueUrl" ]
+                                                    unknownValue:@(UASQSActionNameUnknown)];
 }
 
 + (NSValueTransformer *)actionsJSONTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSArray *(NSArray *values)
-    {
-		NSNumber *(^stringToEnumBlock)(NSString *value) = ^NSNumber *(NSString *value)
-		{
-	        if ([value isKindOfClass:[NSNumber class]])
-	            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"*"])
-		    return @(UASQSActionNameAll);
-		if ([value isEqualToString:@"SendMessage"])
-		    return @(UASQSActionNameSendMessage);
-		if ([value isEqualToString:@"ReceiveMessage"])
-		    return @(UASQSActionNameReceiveMessage);
-		if ([value isEqualToString:@"DeleteMessage"])
-		    return @(UASQSActionNameDeleteMessage);
-		if ([value isEqualToString:@"ChangeMessageVisibility"])
-		    return @(UASQSActionNameChangeMessageVisibility);
-		if ([value isEqualToString:@"GetQueueAttributes"])
-		    return @(UASQSActionNameGetQueueAttributes);
-		if ([value isEqualToString:@"GetQueueUrl"])
-		    return @(UASQSActionNameGetQueueUrl);
-
-			return @(UASQSActionNameUnknown);
-		};
-
-		NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[values count]];
-		for (NSString *value in values)
-			[array addObject:stringToEnumBlock(value)];
-		return [array copy];
-
-    } reverseBlock:^NSArray *(NSArray *values)
-    {
-		NSString *(^enumToStringBlock)(NSNumber *value) = ^NSString *(NSNumber *value)
-		{
-	        UASQSActionName castValue = (UASQSActionName)[value unsignedIntegerValue];
-	        switch (castValue)
-	        {
-			case UASQSActionNameAll:
-			    return @"*";
-			case UASQSActionNameSendMessage:
-			    return @"SendMessage";
-			case UASQSActionNameReceiveMessage:
-			    return @"ReceiveMessage";
-			case UASQSActionNameDeleteMessage:
-			    return @"DeleteMessage";
-			case UASQSActionNameChangeMessageVisibility:
-			    return @"ChangeMessageVisibility";
-			case UASQSActionNameGetQueueAttributes:
-			    return @"GetQueueAttributes";
-			case UASQSActionNameGetQueueUrl:
-			    return @"GetQueueUrl";
-
-				case UASQSActionNameUnknown:
-				default:
-					return nil;
-	        }
-		};
-		
-		NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[values count]];
-		for (NSNumber *value in values)
-			[array addObject:enumToStringBlock(value)];
-		return [array copy];
-    }];
+    return [NSValueTransformer UA_ENUMArrayTransformerWithValues:@[ @(UASQSActionNameAll), @(UASQSActionNameSendMessage), @(UASQSActionNameReceiveMessage), @(UASQSActionNameDeleteMessage), @(UASQSActionNameChangeMessageVisibility), @(UASQSActionNameGetQueueAttributes), @(UASQSActionNameGetQueueUrl) ]
+                                                    stringValues:@[ @"*", @"SendMessage", @"ReceiveMessage", @"DeleteMessage", @"ChangeMessageVisibility", @"GetQueueAttributes", @"GetQueueUrl" ]
+                                                    unknownValue:@(UASQSActionNameUnknown)];
 }
 
 - (void)addAWSAccountID:(NSString *)aWSAccountID

@@ -54,6 +54,14 @@
     return [keyPaths copy];
 }
 
+- (UAEC2PriceScheduleSpecification *)priceScheduleAtIndex:(NSUInteger)index
+{
+    if (self.priceSchedules == nil || index >= ([self.priceSchedules count]-1))
+        return nil;
+
+    return [self.priceSchedules objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

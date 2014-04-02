@@ -35,33 +35,9 @@
 
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Active"])
-		    return @(UAIAMAccessKeyStatusActive);
-		if ([value isEqualToString:@"Inactive"])
-		    return @(UAIAMAccessKeyStatusInactive);
-
-		return @(UAIAMAccessKeyStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAIAMAccessKeyStatus castValue = (UAIAMAccessKeyStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAIAMAccessKeyStatusActive:
-			    return @"Active";
-			case UAIAMAccessKeyStatusInactive:
-			    return @"Inactive";
-
-			case UAIAMAccessKeyStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAIAMAccessKeyStatusActive), @(UAIAMAccessKeyStatusInactive) ]
+                                               stringValues:@[ @"Active", @"Inactive" ]
+                                               unknownValue:@(UAIAMAccessKeyStatusUnknown)];
 }
 
 + (NSValueTransformer *)createDateQueryStringTransformer
@@ -71,37 +47,9 @@
 
 + (NSValueTransformer *)statusXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAIAMAccessKeyStatusUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Active"])
-		    return @(UAIAMAccessKeyStatusActive);
-		if ([value isEqualToString:@"Inactive"])
-		    return @(UAIAMAccessKeyStatusInactive);
-
-		return @(UAIAMAccessKeyStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAIAMAccessKeyStatus castValue = (UAIAMAccessKeyStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAIAMAccessKeyStatusActive:
-			    return @"Active";
-			case UAIAMAccessKeyStatusInactive:
-			    return @"Inactive";
-
-			case UAIAMAccessKeyStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAIAMAccessKeyStatusActive), @(UAIAMAccessKeyStatusInactive) ]
+                                               stringValues:@[ @"Active", @"Inactive" ]
+                                               unknownValue:@(UAIAMAccessKeyStatusUnknown)];
 }
 
 + (NSValueTransformer *)createDateXMLTransformer

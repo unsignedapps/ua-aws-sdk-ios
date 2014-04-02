@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UAELBLoadBalancerDescription *)loadBalancerDescriptionAtIndex:(NSUInteger)index
+{
+    if (self.loadBalancerDescriptions == nil || index >= ([self.loadBalancerDescriptions count]-1))
+        return nil;
+
+    return [self.loadBalancerDescriptions objectAtIndex:index];
+}
+
 + (NSValueTransformer *)loadBalancerDescriptionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBLoadBalancerDescription class]];

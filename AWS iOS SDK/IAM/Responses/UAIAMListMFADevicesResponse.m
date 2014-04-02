@@ -33,6 +33,14 @@
     return [keyPaths copy];
 }
 
+- (UAIAMMFADevice *)mFADeviceAtIndex:(NSUInteger)index
+{
+    if (self.mFADevices == nil || index >= ([self.mFADevices count]-1))
+        return nil;
+
+    return [self.mFADevices objectAtIndex:index];
+}
+
 + (NSValueTransformer *)mFADevicesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMMFADevice class]];

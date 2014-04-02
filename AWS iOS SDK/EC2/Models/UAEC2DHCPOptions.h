@@ -17,4 +17,14 @@
 @property (nonatomic, copy) NSArray *dhcpConfigurations;
 @property (nonatomic, copy) NSArray *tags;
 
+/**
+ * Retrieves the UAEC2DHCPConfiguration at the specified index.
+**/
+- (UAEC2DHCPConfiguration *)dhcpConfigurationAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Tag at the specified index.
+**/
+- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
 @end

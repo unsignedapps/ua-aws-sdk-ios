@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *scheduledUpdateGroupActions;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UAASScheduledUpdateGroupAction at the specified index.
+**/
+- (UAASScheduledUpdateGroupAction *)scheduledUpdateGroupActionAtIndex:(NSUInteger)index;
+
 @end

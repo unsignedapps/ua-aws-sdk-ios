@@ -19,4 +19,14 @@
 @property (nonatomic, copy) NSArray *events;
 @property (nonatomic, copy) NSArray *actions;
 
+/**
+ * Retrieves the UAEC2VolumeStatusEvent at the specified index.
+**/
+- (UAEC2VolumeStatusEvent *)eventAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2VolumeStatusAction at the specified index.
+**/
+- (UAEC2VolumeStatusAction *)actionAtIndex:(NSUInteger)index;
+
 @end

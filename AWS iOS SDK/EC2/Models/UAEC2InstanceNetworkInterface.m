@@ -47,6 +47,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index
+{
+    if (self.groups == nil || index >= ([self.groups count]-1))
+        return nil;
+
+    return [self.groups objectAtIndex:index];
+}
+
+- (UAEC2InstancePrivateIPAddress *)privateIPAddressAtIndex:(NSUInteger)index
+{
+    if (self.privateIPAddresses == nil || index >= ([self.privateIPAddresses count]-1))
+        return nil;
+
+    return [self.privateIPAddresses objectAtIndex:index];
+}
+
 + (NSValueTransformer *)groupsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];

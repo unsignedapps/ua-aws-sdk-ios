@@ -36,33 +36,9 @@
 
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
-    {
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Active"])
-		    return @(UAIAMSigningCertificateStatusActive);
-		if ([value isEqualToString:@"Inactive"])
-		    return @(UAIAMSigningCertificateStatusInactive);
-
-		return @(UAIAMSigningCertificateStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAIAMSigningCertificateStatus castValue = (UAIAMSigningCertificateStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAIAMSigningCertificateStatusActive:
-			    return @"Active";
-			case UAIAMSigningCertificateStatusInactive:
-			    return @"Inactive";
-
-			case UAIAMSigningCertificateStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAIAMSigningCertificateStatusActive), @(UAIAMSigningCertificateStatusInactive) ]
+                                               stringValues:@[ @"Active", @"Inactive" ]
+                                               unknownValue:@(UAIAMSigningCertificateStatusUnknown)];
 }
 
 + (NSValueTransformer *)uploadDateQueryStringTransformer
@@ -72,37 +48,9 @@
 
 + (NSValueTransformer *)statusXMLTransformer
 {
-    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSArray *nodes)
-    {
-		if (nodes == nil || [nodes count] == 0)
-			return @(UAIAMSigningCertificateStatusUnknown);
-
-		NSString *value = [((UADDXMLElement *)nodes.firstObject) stringValue];
-        if ([value isKindOfClass:[NSNumber class]])
-            return (NSNumber *)value;
-        
-		if ([value isEqualToString:@"Active"])
-		    return @(UAIAMSigningCertificateStatusActive);
-		if ([value isEqualToString:@"Inactive"])
-		    return @(UAIAMSigningCertificateStatusInactive);
-
-		return @(UAIAMSigningCertificateStatusUnknown);
-
-    } reverseBlock:^NSString *(NSNumber *value)
-    {
-        UAIAMSigningCertificateStatus castValue = (UAIAMSigningCertificateStatus)[value unsignedIntegerValue];
-        switch (castValue)
-        {
-			case UAIAMSigningCertificateStatusActive:
-			    return @"Active";
-			case UAIAMSigningCertificateStatusInactive:
-			    return @"Inactive";
-
-			case UAIAMSigningCertificateStatusUnknown:
-			default:
-				return nil;
-        }
-    }];
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAIAMSigningCertificateStatusActive), @(UAIAMSigningCertificateStatusInactive) ]
+                                               stringValues:@[ @"Active", @"Inactive" ]
+                                               unknownValue:@(UAIAMSigningCertificateStatusUnknown)];
 }
 
 + (NSValueTransformer *)uploadDateXMLTransformer

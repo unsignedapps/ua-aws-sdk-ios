@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *metricAlarms;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UACWMetricAlarm at the specified index.
+**/
+- (UACWMetricAlarm *)metricAlarmAtIndex:(NSUInteger)index;
+
 @end

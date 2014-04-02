@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *vpnConnections;
 
+/**
+ * Retrieves the UAEC2VPNConnection at the specified index.
+**/
+- (UAEC2VPNConnection *)vpnConnectionAtIndex:(NSUInteger)index;
+
 @end

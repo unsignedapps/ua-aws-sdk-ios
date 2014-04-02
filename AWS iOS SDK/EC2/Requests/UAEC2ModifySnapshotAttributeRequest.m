@@ -57,6 +57,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)userIDAtIndex:(NSUInteger)index
+{
+    if (self.userIDs == nil || index >= ([self.userIDs count]-1))
+        return nil;
+
+    return [self.userIDs objectAtIndex:index];
+}
+
+- (NSString *)groupNameAtIndex:(NSUInteger)index
+{
+    if (self.groupNames == nil || index >= ([self.groupNames count]-1))
+        return nil;
+
+    return [self.groupNames objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *regions;
 
+/**
+ * Retrieves the UAEC2Region at the specified index.
+**/
+- (UAEC2Region *)regionAtIndex:(NSUInteger)index;
+
 @end

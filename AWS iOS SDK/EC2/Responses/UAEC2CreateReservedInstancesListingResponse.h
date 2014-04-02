@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *reservedInstancesListings;
 
+/**
+ * Retrieves the UAEC2ReservedInstancesListing at the specified index.
+**/
+- (UAEC2ReservedInstancesListing *)reservedInstancesListingAtIndex:(NSUInteger)index;
+
 @end

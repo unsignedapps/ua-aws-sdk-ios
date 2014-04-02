@@ -51,6 +51,14 @@
     return [keyPaths copy];
 }
 
+- (NSNumber *)loadBalancerPortAtIndex:(NSUInteger)index
+{
+    if (self.loadBalancerPorts == nil || index >= ([self.loadBalancerPorts count]-1))
+        return nil;
+
+    return [self.loadBalancerPorts objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

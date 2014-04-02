@@ -22,6 +22,16 @@ typedef BOOL(^UAEC2DescribeCustomerGatewaysRequestShouldContinueWaitingBlock)(UA
 // @property (nonatomic, copy) UAEC2DescribeCustomerGatewaysRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)customerGatewayIDAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAEC2Filter at the specified index.
+**/
+- (UAEC2Filter *)filterAtIndex:(NSUInteger)index;
+
+/**
  * Adds a CustomerGatewayID to the customerGatewayIDs property.
  *
  * This will initialise customerGatewayIDs with an empty mutable array if necessary.

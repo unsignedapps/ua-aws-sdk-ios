@@ -53,6 +53,22 @@
     return [keyPaths copy];
 }
 
+- (NSString *)aWSAccountIDAtIndex:(NSUInteger)index
+{
+    if (self.aWSAccountID == nil || index >= ([self.aWSAccountID count]-1))
+        return nil;
+
+    return [self.aWSAccountID objectAtIndex:index];
+}
+
+- (NSString *)actionNameAtIndex:(NSUInteger)index
+{
+    if (self.actionName == nil || index >= ([self.actionName count]-1))
+        return nil;
+
+    return [self.actionName objectAtIndex:index];
+}
+
 - (void)setAction:(NSString *)action
 {
 	_action = action;

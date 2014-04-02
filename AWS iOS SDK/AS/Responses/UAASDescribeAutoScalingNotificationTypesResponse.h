@@ -13,4 +13,9 @@
 
 @property (nonatomic, copy) NSArray *autoScalingNotificationTypes;
 
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)autoScalingNotificationTypeAtIndex:(NSUInteger)index;
+
 @end

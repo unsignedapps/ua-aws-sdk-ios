@@ -35,6 +35,16 @@ typedef BOOL(^UAEC2ModifyInstanceAttributeRequestShouldContinueWaitingBlock)(UAE
 // @property (nonatomic, copy) UAEC2ModifyInstanceAttributeRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
+ * Retrieves the UAEC2InstanceBlockDeviceMappingSpecification at the specified index.
+**/
+- (UAEC2InstanceBlockDeviceMappingSpecification *)blockDeviceMappingAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the NSString at the specified index.
+**/
+- (NSString *)groupAtIndex:(NSUInteger)index;
+
+/**
  * Adds a BlockDeviceMapping to the blockDeviceMappings property.
  *
  * This will initialise blockDeviceMappings with an empty mutable array if necessary.

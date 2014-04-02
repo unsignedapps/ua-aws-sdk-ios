@@ -30,6 +30,14 @@
     return [keyPaths copy];
 }
 
+- (NSString *)autoScalingNotificationTypeAtIndex:(NSUInteger)index
+{
+    if (self.autoScalingNotificationTypes == nil || index >= ([self.autoScalingNotificationTypes count]-1))
+        return nil;
+
+    return [self.autoScalingNotificationTypes objectAtIndex:index];
+}
+
 + (NSValueTransformer *)autoScalingNotificationTypesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];

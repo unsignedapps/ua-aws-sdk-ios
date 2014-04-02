@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UASNSSubscription *)subscriptionAtIndex:(NSUInteger)index
+{
+    if (self.subscriptions == nil || index >= ([self.subscriptions count]-1))
+        return nil;
+
+    return [self.subscriptions objectAtIndex:index];
+}
+
 + (NSValueTransformer *)subscriptionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSSubscription class]];

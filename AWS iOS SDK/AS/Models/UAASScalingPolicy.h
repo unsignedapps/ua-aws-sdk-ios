@@ -22,4 +22,9 @@
 @property (nonatomic, copy) NSArray *alarms;
 @property (nonatomic, strong) NSNumber *minAdjustmentStep;
 
+/**
+ * Retrieves the UAASAlarm at the specified index.
+**/
+- (UAASAlarm *)alarmAtIndex:(NSUInteger)index;
+
 @end

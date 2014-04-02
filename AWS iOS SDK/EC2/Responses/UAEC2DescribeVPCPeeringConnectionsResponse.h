@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *vpcPeeringConnections;
 
+/**
+ * Retrieves the UAEC2VPCPeeringConnection at the specified index.
+**/
+- (UAEC2VPCPeeringConnection *)vpcPeeringConnectionAtIndex:(NSUInteger)index;
+
 @end

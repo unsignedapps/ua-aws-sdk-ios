@@ -31,6 +31,14 @@
     return [keyPaths copy];
 }
 
+- (UAELBPolicyDescription *)policyDescriptionAtIndex:(NSUInteger)index
+{
+    if (self.policyDescriptions == nil || index >= ([self.policyDescriptions count]-1))
+        return nil;
+
+    return [self.policyDescriptions objectAtIndex:index];
+}
+
 + (NSValueTransformer *)policyDescriptionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBPolicyDescription class]];

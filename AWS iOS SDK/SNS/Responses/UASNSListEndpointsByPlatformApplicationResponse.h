@@ -16,4 +16,9 @@
 @property (nonatomic, copy) NSArray *endpoints;
 @property (nonatomic, copy) NSString *nextToken;
 
+/**
+ * Retrieves the UASNSEndpoint at the specified index.
+**/
+- (UASNSEndpoint *)endpointAtIndex:(NSUInteger)index;
+
 @end

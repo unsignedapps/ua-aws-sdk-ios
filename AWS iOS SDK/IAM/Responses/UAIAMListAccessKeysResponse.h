@@ -17,4 +17,9 @@
 @property (nonatomic) BOOL isTruncated;
 @property (nonatomic, copy) NSString *marker;
 
+/**
+ * Retrieves the UAIAMAccessKeyMetadata at the specified index.
+**/
+- (UAIAMAccessKeyMetadata *)accessKeyMetadataAtIndex:(NSUInteger)index;
+
 @end

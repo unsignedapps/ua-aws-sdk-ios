@@ -15,4 +15,9 @@
 
 @property (nonatomic, copy) NSArray *summaryMap;
 
+/**
+ * Retrieves the UAIAMAccountSummary at the specified index.
+**/
+- (UAIAMAccountSummary *)summaryMapAtIndex:(NSUInteger)index;
+
 @end

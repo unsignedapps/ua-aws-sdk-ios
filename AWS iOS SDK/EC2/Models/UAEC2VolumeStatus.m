@@ -37,6 +37,22 @@
     return [keyPaths copy];
 }
 
+- (UAEC2VolumeStatusEvent *)eventAtIndex:(NSUInteger)index
+{
+    if (self.events == nil || index >= ([self.events count]-1))
+        return nil;
+
+    return [self.events objectAtIndex:index];
+}
+
+- (UAEC2VolumeStatusAction *)actionAtIndex:(NSUInteger)index
+{
+    if (self.actions == nil || index >= ([self.actions count]-1))
+        return nil;
+
+    return [self.actions objectAtIndex:index];
+}
+
 + (NSValueTransformer *)volumeStatusQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2VolumeStatusInfo class]];

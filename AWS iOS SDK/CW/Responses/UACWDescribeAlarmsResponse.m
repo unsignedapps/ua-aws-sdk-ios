@@ -32,6 +32,14 @@
     return [keyPaths copy];
 }
 
+- (UACWMetricAlarm *)metricAlarmAtIndex:(NSUInteger)index
+{
+    if (self.metricAlarms == nil || index >= ([self.metricAlarms count]-1))
+        return nil;
+
+    return [self.metricAlarms objectAtIndex:index];
+}
+
 + (NSValueTransformer *)metricAlarmsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWMetricAlarm class]];
