@@ -192,4 +192,11 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
 **/
 - (BOOL)UA_isReadOnly;
 
+@optional
+
+/**
+ * Requests that use the newer JSON targets are required to specify the X-Amz-Target header.
+**/
+- (NSString *)xAmzTarget;
+
 @end

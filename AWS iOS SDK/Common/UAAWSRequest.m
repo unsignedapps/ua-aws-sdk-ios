@@ -307,6 +307,14 @@
     if (contentType != nil)
         [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     
+    // and the X-Amz-Target
+    if ([protocolSelf respondsToSelector:@selector(xAmzTarget)])
+    {
+        NSString *xAmzTarget = [protocolSelf xAmzTarget];
+        if (xAmzTarget != nil)
+            [request addValue:xAmzTarget forHTTPHeaderField:@"X-Amz-Target"];
+    }
+    
     // Set the body
     [request setHTTPBody:requestBody];
     
