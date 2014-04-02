@@ -207,7 +207,7 @@
 	[self.keyConditions setObject:keyCondition forKey:attributeName];
 }
 
-- (void)setExclusiveStartKeyValue:(NSDictionary *)exclusiveStartKey forAttributeName:(NSString *)attributeName
+- (void)setExclusiveStartKeyValue:(id)exclusiveStartKey forAttributeName:(NSString *)attributeName
 {
 	if (self.exclusiveStartKey == nil)
 		[self setExclusiveStartKey:[NSMutableDictionary dictionary]];

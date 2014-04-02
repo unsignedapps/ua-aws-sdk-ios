@@ -186,7 +186,7 @@
 	[self.attributeUpdates addObject:attributeUpdate];
 }
 
-- (void)setKeyValue:(NSDictionary *)key forAttributeName:(NSString *)attributeName
+- (void)setKeyValue:(id)key forAttributeName:(NSString *)attributeName
 {
 	if (self.key == nil)
 		[self setKey:[NSMutableDictionary dictionary]];

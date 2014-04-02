@@ -39,7 +39,7 @@ typedef BOOL(^UADDBPutItemRequestShouldContinueWaitingBlock)(UADDBPutItemRespons
  *
  * This will initialise item with an empty mutable dictionary if necessary.
 **/
-- (void)setItemValue:(NSDictionary *)item forAttributeName:(NSString *)attributeName;
+- (void)setItemValue:(id)item forAttributeName:(NSString *)attributeName;
 
 /**
  * Sets the value of AttributeName to Expected in the expected property.

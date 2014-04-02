@@ -39,7 +39,7 @@ typedef BOOL(^UADDBDeleteItemRequestShouldContinueWaitingBlock)(UADDBDeleteItemR
  *
  * This will initialise key with an empty mutable dictionary if necessary.
 **/
-- (void)setKeyValue:(NSDictionary *)key forAttributeName:(NSString *)attributeName;
+- (void)setKeyValue:(id)key forAttributeName:(NSString *)attributeName;
 
 /**
  * Sets the value of AttributeName to Expected in the expected property.

@@ -156,7 +156,7 @@
                                                unknownValue:@(UADDBReturnItemCollectionMetricsTypeUnknown)];
 }
 
-- (void)setItemValue:(NSDictionary *)item forAttributeName:(NSString *)attributeName
+- (void)setItemValue:(id)item forAttributeName:(NSString *)attributeName
 {
 	if (self.item == nil)
 		[self setItem:[NSMutableDictionary dictionary]];

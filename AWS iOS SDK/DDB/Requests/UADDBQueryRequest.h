@@ -62,7 +62,7 @@ typedef BOOL(^UADDBQueryRequestShouldContinueWaitingBlock)(UADDBQueryResponse *r
  *
  * This will initialise exclusiveStartKey with an empty mutable dictionary if necessary.
 **/
-- (void)setExclusiveStartKeyValue:(NSDictionary *)exclusiveStartKey forAttributeName:(NSString *)attributeName;
+- (void)setExclusiveStartKeyValue:(id)exclusiveStartKey forAttributeName:(NSString *)attributeName;
 
 #pragma mark - Invocation
 

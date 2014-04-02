@@ -45,7 +45,7 @@ typedef BOOL(^UADDBGetItemRequestShouldContinueWaitingBlock)(UADDBGetItemRespons
  *
  * This will initialise key with an empty mutable dictionary if necessary.
 **/
-- (void)setKeyValue:(NSDictionary *)key forAttributeName:(NSString *)attributeName;
+- (void)setKeyValue:(id)key forAttributeName:(NSString *)attributeName;
 
 #pragma mark - Invocation
 
