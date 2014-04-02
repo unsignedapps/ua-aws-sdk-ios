@@ -25,14 +25,21 @@ typedef BOOL(^UADDBDeleteItemRequestShouldContinueWaitingBlock)(UADDBDeleteItemR
 // @property (nonatomic, copy) UADDBDeleteItemRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
- * Retrieves the NSMutableDictionary for the specified AttributeName.
+ * Retrieves the DynamoDB dictionary in key for the specified Attribute Name.
 **/
-- (NSMutableDictionary *)keyForAttributeName:(NSString *)attributeName;
+- (NSMutableDictionary *)keyValueForAttributeName:(NSString *)attributeName;
 
 /**
  * Retrieves the UADDBExpectedItem for the specified AttributeName.
 **/
 - (UADDBExpectedItem *)expectedForAttributeName:(NSString *)attributeName;
+
+/**
+ * Sets the DynamoDB attribute value for the specified attribute name in key property.
+ *
+ * This will initialise key with an empty mutable dictionary if necessary.
+**/
+- (void)setKeyValue:(NSDictionary *)key forAttributeName:(NSString *)attributeName;
 
 /**
  * Sets the value of AttributeName to Expected in the expected property.

@@ -53,7 +53,7 @@
     return [keyPaths copy];
 }
 
-- (NSMutableDictionary *)itemForAttributeName:(NSString *)attributeName
+- (NSMutableDictionary *)itemValueForAttributeName:(NSString *)attributeName
 {
     if (self.item == nil)
         return nil;
@@ -154,6 +154,13 @@
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UADDBReturnItemCollectionMetricsTypeSize), @(UADDBReturnItemCollectionMetricsTypeNone) ]
                                                stringValues:@[ @"SIZE", @"NONE" ]
                                                unknownValue:@(UADDBReturnItemCollectionMetricsTypeUnknown)];
+}
+
+- (void)setItemValue:(NSDictionary *)item forAttributeName:(NSString *)attributeName
+{
+	if (self.item == nil)
+		[self setItem:[NSMutableDictionary dictionary]];
+	[self.item setObject:item forKey:attributeName];
 }
 
 - (void)setExpected:(UADDBExpectedItem *)expected forAttributeName:(NSString *)attributeName

@@ -55,7 +55,7 @@
     return [keyPaths copy];
 }
 
-- (NSMutableDictionary *)keyForAttributeName:(NSString *)attributeName
+- (NSMutableDictionary *)keyValueForAttributeName:(NSString *)attributeName
 {
     if (self.key == nil)
         return nil;
@@ -184,6 +184,13 @@
 	if (self.attributeUpdates == nil)
 		[self setAttributeUpdates:[NSMutableArray array]];
 	[self.attributeUpdates addObject:attributeUpdate];
+}
+
+- (void)setKeyValue:(NSDictionary *)key forAttributeName:(NSString *)attributeName
+{
+	if (self.key == nil)
+		[self setKey:[NSMutableDictionary dictionary]];
+	[self.key setObject:key forKey:attributeName];
 }
 
 - (void)setExpected:(UADDBExpectedItem *)expected forAttributeName:(NSString *)attributeName

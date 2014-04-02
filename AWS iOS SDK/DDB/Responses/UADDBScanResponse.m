@@ -38,7 +38,7 @@
     return [self.items objectAtIndex:index];
 }
 
-- (NSDictionary *)lastEvaluatedKeyForAttributeName:(NSString *)attributeName
+- (NSDictionary *)lastEvaluatedKeyValueForAttributeName:(NSString *)attributeName
 {
     if (self.lastEvaluatedKey == nil)
         return nil;

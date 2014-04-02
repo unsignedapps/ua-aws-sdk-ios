@@ -18,8 +18,8 @@
 @property (nonatomic, copy) UADDBItemCollectionMetrics *itemCollectionMetrics;
 
 /**
- * Retrieves the NSDictionary for the specified AttributeName.
+ * Retrieves the DynamoDB dictionary in attributes for the specified Attribute Name.
 **/
-- (NSDictionary *)attributeForAttributeName:(NSString *)attributeName;
+- (NSDictionary *)attributeValueForAttributeName:(NSString *)attributeName;
 
 @end

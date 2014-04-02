@@ -26,7 +26,7 @@
     return [keyPaths copy];
 }
 
-- (NSDictionary *)itemCollectionKeyForAttributeName:(NSString *)attributeName
+- (NSDictionary *)itemCollectionKeyValueForAttributeName:(NSString *)attributeName
 {
     if (self.itemCollectionKey == nil)
         return nil;

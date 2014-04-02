@@ -39,9 +39,9 @@ typedef BOOL(^UADDBQueryRequestShouldContinueWaitingBlock)(UADDBQueryResponse *r
 - (UADDBKeyCondition *)keyConditionForAttributeName:(NSString *)attributeName;
 
 /**
- * Retrieves the NSMutableDictionary for the specified AttributeName.
+ * Retrieves the DynamoDB dictionary in exclusiveStartKey for the specified Attribute Name.
 **/
-- (NSMutableDictionary *)exclusiveStartKeyForAttributeName:(NSString *)attributeName;
+- (NSMutableDictionary *)exclusiveStartKeyValueForAttributeName:(NSString *)attributeName;
 
 /**
  * Adds a AttributeToGet to the attributesToGet property.
@@ -56,6 +56,13 @@ typedef BOOL(^UADDBQueryRequestShouldContinueWaitingBlock)(UADDBQueryResponse *r
  * This will initialise keyConditions with an empty mutable dictionary if necessary.
 **/
 - (void)setKeyCondition:(UADDBKeyCondition *)keyCondition forAttributeName:(NSString *)attributeName;
+
+/**
+ * Sets the DynamoDB attribute value for the specified attribute name in exclusiveStartKey property.
+ *
+ * This will initialise exclusiveStartKey with an empty mutable dictionary if necessary.
+**/
+- (void)setExclusiveStartKeyValue:(NSDictionary *)exclusiveStartKey forAttributeName:(NSString *)attributeName;
 
 #pragma mark - Invocation
 

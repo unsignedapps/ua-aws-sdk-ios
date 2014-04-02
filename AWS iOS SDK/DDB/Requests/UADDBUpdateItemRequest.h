@@ -26,9 +26,9 @@ typedef BOOL(^UADDBUpdateItemRequestShouldContinueWaitingBlock)(UADDBUpdateItemR
 // @property (nonatomic, copy) UADDBUpdateItemRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
- * Retrieves the NSMutableDictionary for the specified AttributeName.
+ * Retrieves the DynamoDB dictionary in key for the specified Attribute Name.
 **/
-- (NSMutableDictionary *)keyForAttributeName:(NSString *)attributeName;
+- (NSMutableDictionary *)keyValueForAttributeName:(NSString *)attributeName;
 
 /**
  * Retrieves the UADDBAttributeUpdate at the specified index.
@@ -46,6 +46,13 @@ typedef BOOL(^UADDBUpdateItemRequestShouldContinueWaitingBlock)(UADDBUpdateItemR
  * This will initialise attributeUpdates with an empty mutable array if necessary.
 **/
 - (void)addAttributeUpdate:(UADDBAttributeUpdate *)attributeUpdate;
+
+/**
+ * Sets the DynamoDB attribute value for the specified attribute name in key property.
+ *
+ * This will initialise key with an empty mutable dictionary if necessary.
+**/
+- (void)setKeyValue:(NSDictionary *)key forAttributeName:(NSString *)attributeName;
 
 /**
  * Sets the value of AttributeName to Expected in the expected property.

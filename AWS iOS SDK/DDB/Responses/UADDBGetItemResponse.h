@@ -17,8 +17,8 @@
 @property (nonatomic, copy) UADDBConsumedCapacity *consumedCapacity;
 
 /**
- * Retrieves the NSDictionary for the specified AttributeName.
+ * Retrieves the DynamoDB dictionary in item for the specified Attribute Name.
 **/
-- (NSDictionary *)itemForAttributeName:(NSString *)attributeName;
+- (NSDictionary *)itemValueForAttributeName:(NSString *)attributeName;
 
 @end

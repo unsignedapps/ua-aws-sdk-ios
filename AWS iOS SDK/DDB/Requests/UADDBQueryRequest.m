@@ -73,7 +73,7 @@
     return [self.keyConditions objectForKey:attributeName];
 }
 
-- (NSMutableDictionary *)exclusiveStartKeyForAttributeName:(NSString *)attributeName
+- (NSMutableDictionary *)exclusiveStartKeyValueForAttributeName:(NSString *)attributeName
 {
     if (self.exclusiveStartKey == nil)
         return nil;
@@ -205,6 +205,13 @@
 	if (self.keyConditions == nil)
 		[self setKeyConditions:[NSMutableDictionary dictionary]];
 	[self.keyConditions setObject:keyCondition forKey:attributeName];
+}
+
+- (void)setExclusiveStartKeyValue:(NSDictionary *)exclusiveStartKey forAttributeName:(NSString *)attributeName
+{
+	if (self.exclusiveStartKey == nil)
+		[self setExclusiveStartKey:[NSMutableDictionary dictionary]];
+	[self.exclusiveStartKey setObject:exclusiveStartKey forKey:attributeName];
 }
 
 #pragma mark - Invocation

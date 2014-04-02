@@ -25,14 +25,21 @@ typedef BOOL(^UADDBPutItemRequestShouldContinueWaitingBlock)(UADDBPutItemRespons
 // @property (nonatomic, copy) UADDBPutItemRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
- * Retrieves the NSMutableDictionary for the specified AttributeName.
+ * Retrieves the DynamoDB dictionary in item for the specified Attribute Name.
 **/
-- (NSMutableDictionary *)itemForAttributeName:(NSString *)attributeName;
+- (NSMutableDictionary *)itemValueForAttributeName:(NSString *)attributeName;
 
 /**
  * Retrieves the UADDBExpectedItem for the specified AttributeName.
 **/
 - (UADDBExpectedItem *)expectedForAttributeName:(NSString *)attributeName;
+
+/**
+ * Sets the DynamoDB attribute value for the specified attribute name in item property.
+ *
+ * This will initialise item with an empty mutable dictionary if necessary.
+**/
+- (void)setItemValue:(NSDictionary *)item forAttributeName:(NSString *)attributeName;
 
 /**
  * Sets the value of AttributeName to Expected in the expected property.

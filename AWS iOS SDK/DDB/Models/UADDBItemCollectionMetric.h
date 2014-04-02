@@ -15,9 +15,9 @@
 @property (nonatomic, copy) NSArray *sizeEstimateRangeGB;
 
 /**
- * Retrieves the NSDictionary for the specified AttributeName.
+ * Retrieves the DynamoDB dictionary in itemCollectionKey for the specified Attribute Name.
 **/
-- (NSDictionary *)itemCollectionKeyForAttributeName:(NSString *)attributeName;
+- (NSDictionary *)itemCollectionKeyValueForAttributeName:(NSString *)attributeName;
 
 /**
  * Retrieves the NSNumber at the specified index.

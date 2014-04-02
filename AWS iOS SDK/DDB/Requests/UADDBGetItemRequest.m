@@ -51,7 +51,7 @@
     return [keyPaths copy];
 }
 
-- (NSMutableDictionary *)keyForAttributeName:(NSString *)attributeName
+- (NSMutableDictionary *)keyValueForAttributeName:(NSString *)attributeName
 {
     if (self.key == nil)
         return nil;
@@ -132,6 +132,13 @@
 	if (self.attributesToGet == nil)
 		[self setAttributesToGet:[NSMutableArray array]];
 	[self.attributesToGet addObject:attributeToGet];
+}
+
+- (void)setKeyValue:(NSDictionary *)key forAttributeName:(NSString *)attributeName
+{
+	if (self.key == nil)
+		[self setKey:[NSMutableDictionary dictionary]];
+	[self.key setObject:key forKey:attributeName];
 }
 
 #pragma mark - Invocation

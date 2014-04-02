@@ -72,7 +72,7 @@
     return [self.scanFilter objectForKey:attributeName];
 }
 
-- (NSMutableDictionary *)exclusiveStartKeyForAttributeName:(NSString *)attributeName
+- (NSMutableDictionary *)exclusiveStartKeyValueForAttributeName:(NSString *)attributeName
 {
     if (self.exclusiveStartKey == nil)
         return nil;
@@ -196,6 +196,13 @@
 	if (self.scanFilter == nil)
 		[self setScanFilter:[NSMutableDictionary dictionary]];
 	[self.scanFilter setObject:scanFilter forKey:attributeName];
+}
+
+- (void)setExclusiveStartKeyValue:(NSDictionary *)exclusiveStartKey forAttributeName:(NSString *)attributeName
+{
+	if (self.exclusiveStartKey == nil)
+		[self setExclusiveStartKey:[NSMutableDictionary dictionary]];
+	[self.exclusiveStartKey setObject:exclusiveStartKey forKey:attributeName];
 }
 
 #pragma mark - Invocation

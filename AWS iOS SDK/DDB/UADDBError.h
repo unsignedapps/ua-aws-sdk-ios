@@ -9,7 +9,7 @@
 #import "UAMantle.h"
 #import "UAAWSError.h"
 
-@interface UADDBError : UAMTLModel <UAMTLXMLSerializing, UAAWSError>
+@interface UADDBError : UAMTLModel <UAMTLJSONSerializing, UAAWSError>
 
 @property (nonatomic) NSUInteger HTTPStatusCode;
 @property (nonatomic, copy) NSString *code;

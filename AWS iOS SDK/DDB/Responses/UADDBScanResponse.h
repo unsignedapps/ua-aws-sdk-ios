@@ -25,8 +25,8 @@
 - (NSDictionary *)itemAtIndex:(NSUInteger)index;
 
 /**
- * Retrieves the NSDictionary for the specified AttributeName.
+ * Retrieves the DynamoDB dictionary in lastEvaluatedKey for the specified Attribute Name.
 **/
-- (NSDictionary *)lastEvaluatedKeyForAttributeName:(NSString *)attributeName;
+- (NSDictionary *)lastEvaluatedKeyValueForAttributeName:(NSString *)attributeName;
 
 @end

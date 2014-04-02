@@ -15,12 +15,7 @@
 
 #pragma mark - Mantle Serialisation
 
-+ (NSString *)XPathPrefix
-{
-    return @"./ErrorResponse/";
-}
-
-+ (NSDictionary *)XMLKeyPathsByPropertyKey
++ (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return
     @{
