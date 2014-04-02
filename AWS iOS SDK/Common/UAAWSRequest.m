@@ -301,6 +301,11 @@
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:targetURL];
     [request setHTTPMethod:[protocolSelf UA_RequestHTTPMethod]];
+
+    // set the content type as appropriate
+    NSString *contentType = [((Class<UAAWSPayloadSerialisation>)serialiser) contentType];
+    if (contentType != nil)
+        [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     
     // Set the body
     [request setHTTPBody:requestBody];

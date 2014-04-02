@@ -14,5 +14,6 @@
 
 + (NSData *)dataForRequest:(UAAWSRequest *)request error:(NSError **)error;
 + (UAAWSResponse *)responseForData:(NSData *)data responseClass:(Class)responseClass error:(NSError **)error;
++ (NSString *)contentType;
 
 @end

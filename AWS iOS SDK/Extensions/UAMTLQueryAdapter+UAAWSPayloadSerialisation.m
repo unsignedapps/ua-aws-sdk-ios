@@ -40,4 +40,9 @@
 //    return [self model]
 }
 
++ (NSString *)contentType
+{
+    return nil;
+}
+
 @end

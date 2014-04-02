@@ -38,4 +38,9 @@
     return [self modelOfClass:responseClass fromJSONDictionary:dictionary error:error];
 }
 
++ (NSString *)contentType
+{
+    return @"application/x-amz-json-1.0";
+}
+
 @end

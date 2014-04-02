@@ -908,6 +908,58 @@
 		A337826E18B195A300FECC45 /* UAIAMAccountSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = A337826B18B195A300FECC45 /* UAIAMAccountSummary.m */; };
 		A337826F18B195A300FECC45 /* UAIAMSigningCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = A337826D18B195A300FECC45 /* UAIAMSigningCertificate.m */; };
 		A337827518B1E13500FECC45 /* NSString+UAAWSRegions.m in Sources */ = {isa = PBXBuildFile; fileRef = A337827418B1E13500FECC45 /* NSString+UAAWSRegions.m */; };
+		A3623C6918EA67DA00989324 /* UADDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C5E18EA67DA00989324 /* UADDBModel.m */; };
+		A3623C6A18EA67DA00989324 /* UADDBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C6118EA67DA00989324 /* UADDBRequest.m */; };
+		A3623C6B18EA67DA00989324 /* UADDBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C6418EA67DA00989324 /* UADDBResponse.m */; };
+		A3623C6C18EA67DA00989324 /* UADDBError.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C6718EA67DA00989324 /* UADDBError.m */; };
+		A3623C9B18EB909300989324 /* UADDBAttributeDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C7218EB909300989324 /* UADDBAttributeDefinition.m */; };
+		A3623C9C18EB909300989324 /* UADDBAttributeUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C7418EB909300989324 /* UADDBAttributeUpdate.m */; };
+		A3623C9D18EB909300989324 /* UADDBCapacity.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C7618EB909300989324 /* UADDBCapacity.m */; };
+		A3623C9E18EB909300989324 /* UADDBConsumedCapacity.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C7818EB909300989324 /* UADDBConsumedCapacity.m */; };
+		A3623C9F18EB909300989324 /* UADDBExpectedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C7A18EB909300989324 /* UADDBExpectedItem.m */; };
+		A3623CA018EB909300989324 /* UADDBGlobalSecondaryIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C7C18EB909300989324 /* UADDBGlobalSecondaryIndex.m */; };
+		A3623CA118EB909300989324 /* UADDBGlobalSecondaryIndexDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C7E18EB909300989324 /* UADDBGlobalSecondaryIndexDescription.m */; };
+		A3623CA218EB909300989324 /* UADDBGlobalSecondaryIndexUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C8018EB909300989324 /* UADDBGlobalSecondaryIndexUpdate.m */; };
+		A3623CA318EB909300989324 /* UADDBItemCollectionMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C8218EB909300989324 /* UADDBItemCollectionMetric.m */; };
+		A3623CA418EB909300989324 /* UADDBItemCollectionMetrics.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C8418EB909300989324 /* UADDBItemCollectionMetrics.m */; };
+		A3623CA518EB909300989324 /* UADDBKeyCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C8618EB909300989324 /* UADDBKeyCondition.m */; };
+		A3623CA618EB909300989324 /* UADDBKeySchema.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C8818EB909300989324 /* UADDBKeySchema.m */; };
+		A3623CA718EB909300989324 /* UADDBLocalSecondaryIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C8A18EB909300989324 /* UADDBLocalSecondaryIndex.m */; };
+		A3623CA818EB909300989324 /* UADDBLocalSecondaryIndexDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C8C18EB909300989324 /* UADDBLocalSecondaryIndexDescription.m */; };
+		A3623CA918EB909300989324 /* UADDBProjection.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C8E18EB909300989324 /* UADDBProjection.m */; };
+		A3623CAA18EB909300989324 /* UADDBProvisionedThroughput.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C9018EB909300989324 /* UADDBProvisionedThroughput.m */; };
+		A3623CAB18EB909300989324 /* UADDBProvisionedThroughputDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C9218EB909300989324 /* UADDBProvisionedThroughputDescription.m */; };
+		A3623CAC18EB909300989324 /* UADDBScanFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C9418EB909300989324 /* UADDBScanFilter.m */; };
+		A3623CAD18EB909300989324 /* UADDBTableDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C9618EB909300989324 /* UADDBTableDescription.m */; };
+		A3623CAE18EB909300989324 /* UADDBUnprocessedKey.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C9818EB909300989324 /* UADDBUnprocessedKey.m */; };
+		A3623CAF18EB909300989324 /* UADDBUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623C9A18EB909300989324 /* UADDBUpdate.m */; };
+		A3623CCA18EB962200989324 /* UADDBBatchGetItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CB118EB962200989324 /* UADDBBatchGetItemRequest.m */; };
+		A3623CCB18EB962200989324 /* UADDBBatchWriteItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CB318EB962200989324 /* UADDBBatchWriteItemRequest.m */; };
+		A3623CCC18EB962200989324 /* UADDBCreateTableRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CB518EB962200989324 /* UADDBCreateTableRequest.m */; };
+		A3623CCD18EB962200989324 /* UADDBDeleteItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CB718EB962200989324 /* UADDBDeleteItemRequest.m */; };
+		A3623CCE18EB962200989324 /* UADDBDeleteTableRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CB918EB962200989324 /* UADDBDeleteTableRequest.m */; };
+		A3623CCF18EB962200989324 /* UADDBDescribeTableRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CBB18EB962200989324 /* UADDBDescribeTableRequest.m */; };
+		A3623CD018EB962200989324 /* UADDBGetItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CBD18EB962200989324 /* UADDBGetItemRequest.m */; };
+		A3623CD118EB962200989324 /* UADDBListTablesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CBF18EB962200989324 /* UADDBListTablesRequest.m */; };
+		A3623CD218EB962200989324 /* UADDBPutItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CC118EB962200989324 /* UADDBPutItemRequest.m */; };
+		A3623CD318EB962200989324 /* UADDBQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CC318EB962200989324 /* UADDBQueryRequest.m */; };
+		A3623CD418EB962200989324 /* UADDBScanRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CC518EB962200989324 /* UADDBScanRequest.m */; };
+		A3623CD518EB962200989324 /* UADDBUpdateItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CC718EB962200989324 /* UADDBUpdateItemRequest.m */; };
+		A3623CD618EB962200989324 /* UADDBUpdateTableRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CC918EB962200989324 /* UADDBUpdateTableRequest.m */; };
+		A3623CF118EB968B00989324 /* UADDBBatchGetItemResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CD818EB968B00989324 /* UADDBBatchGetItemResponse.m */; };
+		A3623CF218EB968B00989324 /* UADDBBatchWriteItemResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CDA18EB968B00989324 /* UADDBBatchWriteItemResponse.m */; };
+		A3623CF318EB968B00989324 /* UADDBCreateTableResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CDC18EB968B00989324 /* UADDBCreateTableResponse.m */; };
+		A3623CF418EB968B00989324 /* UADDBDeleteItemResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CDE18EB968B00989324 /* UADDBDeleteItemResponse.m */; };
+		A3623CF518EB968B00989324 /* UADDBDeleteTableResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CE018EB968B00989324 /* UADDBDeleteTableResponse.m */; };
+		A3623CF618EB968B00989324 /* UADDBDescribeTableResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CE218EB968B00989324 /* UADDBDescribeTableResponse.m */; };
+		A3623CF718EB968B00989324 /* UADDBGetItemResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CE418EB968B00989324 /* UADDBGetItemResponse.m */; };
+		A3623CF818EB968B00989324 /* UADDBListTablesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CE618EB968B00989324 /* UADDBListTablesResponse.m */; };
+		A3623CF918EB968B00989324 /* UADDBPutItemResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CE818EB968B00989324 /* UADDBPutItemResponse.m */; };
+		A3623CFA18EB968B00989324 /* UADDBQueryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CEA18EB968B00989324 /* UADDBQueryResponse.m */; };
+		A3623CFB18EB968B00989324 /* UADDBScanResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CEC18EB968B00989324 /* UADDBScanResponse.m */; };
+		A3623CFC18EB968B00989324 /* UADDBUpdateItemResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CEE18EB968B00989324 /* UADDBUpdateItemResponse.m */; };
+		A3623CFD18EB968B00989324 /* UADDBUpdateTableResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CF018EB968B00989324 /* UADDBUpdateTableResponse.m */; };
+		A3623D0018EB99A300989324 /* UADDBRequestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A3623CFF18EB99A300989324 /* UADDBRequestItem.m */; };
 		A3E01C2018AD93E900C3B7DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C1F18AD93E900C3B7DB /* Foundation.framework */; };
 		A3E01C2218AD93E900C3B7DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */; };
 		A3E01C2418AD93E900C3B7DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2318AD93E900C3B7DB /* UIKit.framework */; };
@@ -2838,6 +2890,112 @@
 		A337826D18B195A300FECC45 /* UAIAMSigningCertificate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAIAMSigningCertificate.m; sourceTree = "<group>"; };
 		A337827318B1E13500FECC45 /* NSString+UAAWSRegions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UAAWSRegions.h"; sourceTree = "<group>"; };
 		A337827418B1E13500FECC45 /* NSString+UAAWSRegions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UAAWSRegions.m"; sourceTree = "<group>"; };
+		A3623C5D18EA67DA00989324 /* UADDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBModel.h; sourceTree = "<group>"; };
+		A3623C5E18EA67DA00989324 /* UADDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBModel.m; sourceTree = "<group>"; };
+		A3623C6018EA67DA00989324 /* UADDBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBRequest.h; sourceTree = "<group>"; };
+		A3623C6118EA67DA00989324 /* UADDBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBRequest.m; sourceTree = "<group>"; };
+		A3623C6318EA67DA00989324 /* UADDBResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBResponse.h; sourceTree = "<group>"; };
+		A3623C6418EA67DA00989324 /* UADDBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBResponse.m; sourceTree = "<group>"; };
+		A3623C6518EA67DA00989324 /* UADDBDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBDataTypes.h; sourceTree = "<group>"; };
+		A3623C6618EA67DA00989324 /* UADDBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBError.h; sourceTree = "<group>"; };
+		A3623C6718EA67DA00989324 /* UADDBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBError.m; sourceTree = "<group>"; };
+		A3623C6818EA67DA00989324 /* UADynamoDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADynamoDB.h; sourceTree = "<group>"; };
+		A3623C7118EB909300989324 /* UADDBAttributeDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBAttributeDefinition.h; sourceTree = "<group>"; };
+		A3623C7218EB909300989324 /* UADDBAttributeDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBAttributeDefinition.m; sourceTree = "<group>"; };
+		A3623C7318EB909300989324 /* UADDBAttributeUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBAttributeUpdate.h; sourceTree = "<group>"; };
+		A3623C7418EB909300989324 /* UADDBAttributeUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBAttributeUpdate.m; sourceTree = "<group>"; };
+		A3623C7518EB909300989324 /* UADDBCapacity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBCapacity.h; sourceTree = "<group>"; };
+		A3623C7618EB909300989324 /* UADDBCapacity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBCapacity.m; sourceTree = "<group>"; };
+		A3623C7718EB909300989324 /* UADDBConsumedCapacity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBConsumedCapacity.h; sourceTree = "<group>"; };
+		A3623C7818EB909300989324 /* UADDBConsumedCapacity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBConsumedCapacity.m; sourceTree = "<group>"; };
+		A3623C7918EB909300989324 /* UADDBExpectedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBExpectedItem.h; sourceTree = "<group>"; };
+		A3623C7A18EB909300989324 /* UADDBExpectedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBExpectedItem.m; sourceTree = "<group>"; };
+		A3623C7B18EB909300989324 /* UADDBGlobalSecondaryIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBGlobalSecondaryIndex.h; sourceTree = "<group>"; };
+		A3623C7C18EB909300989324 /* UADDBGlobalSecondaryIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBGlobalSecondaryIndex.m; sourceTree = "<group>"; };
+		A3623C7D18EB909300989324 /* UADDBGlobalSecondaryIndexDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBGlobalSecondaryIndexDescription.h; sourceTree = "<group>"; };
+		A3623C7E18EB909300989324 /* UADDBGlobalSecondaryIndexDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBGlobalSecondaryIndexDescription.m; sourceTree = "<group>"; };
+		A3623C7F18EB909300989324 /* UADDBGlobalSecondaryIndexUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBGlobalSecondaryIndexUpdate.h; sourceTree = "<group>"; };
+		A3623C8018EB909300989324 /* UADDBGlobalSecondaryIndexUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBGlobalSecondaryIndexUpdate.m; sourceTree = "<group>"; };
+		A3623C8118EB909300989324 /* UADDBItemCollectionMetric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBItemCollectionMetric.h; sourceTree = "<group>"; };
+		A3623C8218EB909300989324 /* UADDBItemCollectionMetric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBItemCollectionMetric.m; sourceTree = "<group>"; };
+		A3623C8318EB909300989324 /* UADDBItemCollectionMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBItemCollectionMetrics.h; sourceTree = "<group>"; };
+		A3623C8418EB909300989324 /* UADDBItemCollectionMetrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBItemCollectionMetrics.m; sourceTree = "<group>"; };
+		A3623C8518EB909300989324 /* UADDBKeyCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBKeyCondition.h; sourceTree = "<group>"; };
+		A3623C8618EB909300989324 /* UADDBKeyCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBKeyCondition.m; sourceTree = "<group>"; };
+		A3623C8718EB909300989324 /* UADDBKeySchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBKeySchema.h; sourceTree = "<group>"; };
+		A3623C8818EB909300989324 /* UADDBKeySchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBKeySchema.m; sourceTree = "<group>"; };
+		A3623C8918EB909300989324 /* UADDBLocalSecondaryIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBLocalSecondaryIndex.h; sourceTree = "<group>"; };
+		A3623C8A18EB909300989324 /* UADDBLocalSecondaryIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBLocalSecondaryIndex.m; sourceTree = "<group>"; };
+		A3623C8B18EB909300989324 /* UADDBLocalSecondaryIndexDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBLocalSecondaryIndexDescription.h; sourceTree = "<group>"; };
+		A3623C8C18EB909300989324 /* UADDBLocalSecondaryIndexDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBLocalSecondaryIndexDescription.m; sourceTree = "<group>"; };
+		A3623C8D18EB909300989324 /* UADDBProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBProjection.h; sourceTree = "<group>"; };
+		A3623C8E18EB909300989324 /* UADDBProjection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBProjection.m; sourceTree = "<group>"; };
+		A3623C8F18EB909300989324 /* UADDBProvisionedThroughput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBProvisionedThroughput.h; sourceTree = "<group>"; };
+		A3623C9018EB909300989324 /* UADDBProvisionedThroughput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBProvisionedThroughput.m; sourceTree = "<group>"; };
+		A3623C9118EB909300989324 /* UADDBProvisionedThroughputDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBProvisionedThroughputDescription.h; sourceTree = "<group>"; };
+		A3623C9218EB909300989324 /* UADDBProvisionedThroughputDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBProvisionedThroughputDescription.m; sourceTree = "<group>"; };
+		A3623C9318EB909300989324 /* UADDBScanFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBScanFilter.h; sourceTree = "<group>"; };
+		A3623C9418EB909300989324 /* UADDBScanFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBScanFilter.m; sourceTree = "<group>"; };
+		A3623C9518EB909300989324 /* UADDBTableDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBTableDescription.h; sourceTree = "<group>"; };
+		A3623C9618EB909300989324 /* UADDBTableDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBTableDescription.m; sourceTree = "<group>"; };
+		A3623C9718EB909300989324 /* UADDBUnprocessedKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBUnprocessedKey.h; sourceTree = "<group>"; };
+		A3623C9818EB909300989324 /* UADDBUnprocessedKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBUnprocessedKey.m; sourceTree = "<group>"; };
+		A3623C9918EB909300989324 /* UADDBUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBUpdate.h; sourceTree = "<group>"; };
+		A3623C9A18EB909300989324 /* UADDBUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBUpdate.m; sourceTree = "<group>"; };
+		A3623CB018EB962200989324 /* UADDBBatchGetItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBBatchGetItemRequest.h; sourceTree = "<group>"; };
+		A3623CB118EB962200989324 /* UADDBBatchGetItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBBatchGetItemRequest.m; sourceTree = "<group>"; };
+		A3623CB218EB962200989324 /* UADDBBatchWriteItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBBatchWriteItemRequest.h; sourceTree = "<group>"; };
+		A3623CB318EB962200989324 /* UADDBBatchWriteItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBBatchWriteItemRequest.m; sourceTree = "<group>"; };
+		A3623CB418EB962200989324 /* UADDBCreateTableRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBCreateTableRequest.h; sourceTree = "<group>"; };
+		A3623CB518EB962200989324 /* UADDBCreateTableRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBCreateTableRequest.m; sourceTree = "<group>"; };
+		A3623CB618EB962200989324 /* UADDBDeleteItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBDeleteItemRequest.h; sourceTree = "<group>"; };
+		A3623CB718EB962200989324 /* UADDBDeleteItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBDeleteItemRequest.m; sourceTree = "<group>"; };
+		A3623CB818EB962200989324 /* UADDBDeleteTableRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBDeleteTableRequest.h; sourceTree = "<group>"; };
+		A3623CB918EB962200989324 /* UADDBDeleteTableRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBDeleteTableRequest.m; sourceTree = "<group>"; };
+		A3623CBA18EB962200989324 /* UADDBDescribeTableRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBDescribeTableRequest.h; sourceTree = "<group>"; };
+		A3623CBB18EB962200989324 /* UADDBDescribeTableRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBDescribeTableRequest.m; sourceTree = "<group>"; };
+		A3623CBC18EB962200989324 /* UADDBGetItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBGetItemRequest.h; sourceTree = "<group>"; };
+		A3623CBD18EB962200989324 /* UADDBGetItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBGetItemRequest.m; sourceTree = "<group>"; };
+		A3623CBE18EB962200989324 /* UADDBListTablesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBListTablesRequest.h; sourceTree = "<group>"; };
+		A3623CBF18EB962200989324 /* UADDBListTablesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBListTablesRequest.m; sourceTree = "<group>"; };
+		A3623CC018EB962200989324 /* UADDBPutItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBPutItemRequest.h; sourceTree = "<group>"; };
+		A3623CC118EB962200989324 /* UADDBPutItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBPutItemRequest.m; sourceTree = "<group>"; };
+		A3623CC218EB962200989324 /* UADDBQueryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBQueryRequest.h; sourceTree = "<group>"; };
+		A3623CC318EB962200989324 /* UADDBQueryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBQueryRequest.m; sourceTree = "<group>"; };
+		A3623CC418EB962200989324 /* UADDBScanRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBScanRequest.h; sourceTree = "<group>"; };
+		A3623CC518EB962200989324 /* UADDBScanRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBScanRequest.m; sourceTree = "<group>"; };
+		A3623CC618EB962200989324 /* UADDBUpdateItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBUpdateItemRequest.h; sourceTree = "<group>"; };
+		A3623CC718EB962200989324 /* UADDBUpdateItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBUpdateItemRequest.m; sourceTree = "<group>"; };
+		A3623CC818EB962200989324 /* UADDBUpdateTableRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBUpdateTableRequest.h; sourceTree = "<group>"; };
+		A3623CC918EB962200989324 /* UADDBUpdateTableRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBUpdateTableRequest.m; sourceTree = "<group>"; };
+		A3623CD718EB968B00989324 /* UADDBBatchGetItemResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBBatchGetItemResponse.h; sourceTree = "<group>"; };
+		A3623CD818EB968B00989324 /* UADDBBatchGetItemResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBBatchGetItemResponse.m; sourceTree = "<group>"; };
+		A3623CD918EB968B00989324 /* UADDBBatchWriteItemResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBBatchWriteItemResponse.h; sourceTree = "<group>"; };
+		A3623CDA18EB968B00989324 /* UADDBBatchWriteItemResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBBatchWriteItemResponse.m; sourceTree = "<group>"; };
+		A3623CDB18EB968B00989324 /* UADDBCreateTableResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBCreateTableResponse.h; sourceTree = "<group>"; };
+		A3623CDC18EB968B00989324 /* UADDBCreateTableResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBCreateTableResponse.m; sourceTree = "<group>"; };
+		A3623CDD18EB968B00989324 /* UADDBDeleteItemResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBDeleteItemResponse.h; sourceTree = "<group>"; };
+		A3623CDE18EB968B00989324 /* UADDBDeleteItemResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBDeleteItemResponse.m; sourceTree = "<group>"; };
+		A3623CDF18EB968B00989324 /* UADDBDeleteTableResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBDeleteTableResponse.h; sourceTree = "<group>"; };
+		A3623CE018EB968B00989324 /* UADDBDeleteTableResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBDeleteTableResponse.m; sourceTree = "<group>"; };
+		A3623CE118EB968B00989324 /* UADDBDescribeTableResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBDescribeTableResponse.h; sourceTree = "<group>"; };
+		A3623CE218EB968B00989324 /* UADDBDescribeTableResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBDescribeTableResponse.m; sourceTree = "<group>"; };
+		A3623CE318EB968B00989324 /* UADDBGetItemResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBGetItemResponse.h; sourceTree = "<group>"; };
+		A3623CE418EB968B00989324 /* UADDBGetItemResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBGetItemResponse.m; sourceTree = "<group>"; };
+		A3623CE518EB968B00989324 /* UADDBListTablesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBListTablesResponse.h; sourceTree = "<group>"; };
+		A3623CE618EB968B00989324 /* UADDBListTablesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBListTablesResponse.m; sourceTree = "<group>"; };
+		A3623CE718EB968B00989324 /* UADDBPutItemResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBPutItemResponse.h; sourceTree = "<group>"; };
+		A3623CE818EB968B00989324 /* UADDBPutItemResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBPutItemResponse.m; sourceTree = "<group>"; };
+		A3623CE918EB968B00989324 /* UADDBQueryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBQueryResponse.h; sourceTree = "<group>"; };
+		A3623CEA18EB968B00989324 /* UADDBQueryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBQueryResponse.m; sourceTree = "<group>"; };
+		A3623CEB18EB968B00989324 /* UADDBScanResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBScanResponse.h; sourceTree = "<group>"; };
+		A3623CEC18EB968B00989324 /* UADDBScanResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBScanResponse.m; sourceTree = "<group>"; };
+		A3623CED18EB968B00989324 /* UADDBUpdateItemResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBUpdateItemResponse.h; sourceTree = "<group>"; };
+		A3623CEE18EB968B00989324 /* UADDBUpdateItemResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBUpdateItemResponse.m; sourceTree = "<group>"; };
+		A3623CEF18EB968B00989324 /* UADDBUpdateTableResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBUpdateTableResponse.h; sourceTree = "<group>"; };
+		A3623CF018EB968B00989324 /* UADDBUpdateTableResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBUpdateTableResponse.m; sourceTree = "<group>"; };
+		A3623CFE18EB99A300989324 /* UADDBRequestItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBRequestItem.h; sourceTree = "<group>"; };
+		A3623CFF18EB99A300989324 /* UADDBRequestItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBRequestItem.m; sourceTree = "<group>"; };
 		A3E01C1C18AD93E900C3B7DB /* AWS iOS SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AWS iOS SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E01C1F18AD93E900C3B7DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -5306,6 +5464,174 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
+		A3623C5B18EA67DA00989324 /* DDB */ = {
+			isa = PBXGroup;
+			children = (
+				A3623C5C18EA67DA00989324 /* Models */,
+				A3623C5F18EA67DA00989324 /* Requests */,
+				A3623C6218EA67DA00989324 /* Responses */,
+				A3623C6518EA67DA00989324 /* UADDBDataTypes.h */,
+				A3623C6618EA67DA00989324 /* UADDBError.h */,
+				A3623C6718EA67DA00989324 /* UADDBError.m */,
+				A3623C6818EA67DA00989324 /* UADynamoDB.h */,
+			);
+			path = DDB;
+			sourceTree = "<group>";
+		};
+		A3623C5C18EA67DA00989324 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A3623CFE18EB99A300989324 /* UADDBRequestItem.h */,
+				A3623CFF18EB99A300989324 /* UADDBRequestItem.m */,
+				A3623C7118EB909300989324 /* UADDBAttributeDefinition.h */,
+				A3623C7218EB909300989324 /* UADDBAttributeDefinition.m */,
+				A3623C7318EB909300989324 /* UADDBAttributeUpdate.h */,
+				A3623C7418EB909300989324 /* UADDBAttributeUpdate.m */,
+				A3623C7518EB909300989324 /* UADDBCapacity.h */,
+				A3623C7618EB909300989324 /* UADDBCapacity.m */,
+				A3623C7718EB909300989324 /* UADDBConsumedCapacity.h */,
+				A3623C7818EB909300989324 /* UADDBConsumedCapacity.m */,
+				A3623C7918EB909300989324 /* UADDBExpectedItem.h */,
+				A3623C7A18EB909300989324 /* UADDBExpectedItem.m */,
+				A3623C7B18EB909300989324 /* UADDBGlobalSecondaryIndex.h */,
+				A3623C7C18EB909300989324 /* UADDBGlobalSecondaryIndex.m */,
+				A3623C7D18EB909300989324 /* UADDBGlobalSecondaryIndexDescription.h */,
+				A3623C7E18EB909300989324 /* UADDBGlobalSecondaryIndexDescription.m */,
+				A3623C7F18EB909300989324 /* UADDBGlobalSecondaryIndexUpdate.h */,
+				A3623C8018EB909300989324 /* UADDBGlobalSecondaryIndexUpdate.m */,
+				A3623C8118EB909300989324 /* UADDBItemCollectionMetric.h */,
+				A3623C8218EB909300989324 /* UADDBItemCollectionMetric.m */,
+				A3623C8318EB909300989324 /* UADDBItemCollectionMetrics.h */,
+				A3623C8418EB909300989324 /* UADDBItemCollectionMetrics.m */,
+				A3623C8518EB909300989324 /* UADDBKeyCondition.h */,
+				A3623C8618EB909300989324 /* UADDBKeyCondition.m */,
+				A3623C8718EB909300989324 /* UADDBKeySchema.h */,
+				A3623C8818EB909300989324 /* UADDBKeySchema.m */,
+				A3623C8918EB909300989324 /* UADDBLocalSecondaryIndex.h */,
+				A3623C8A18EB909300989324 /* UADDBLocalSecondaryIndex.m */,
+				A3623C8B18EB909300989324 /* UADDBLocalSecondaryIndexDescription.h */,
+				A3623C8C18EB909300989324 /* UADDBLocalSecondaryIndexDescription.m */,
+				A3623C8D18EB909300989324 /* UADDBProjection.h */,
+				A3623C8E18EB909300989324 /* UADDBProjection.m */,
+				A3623C8F18EB909300989324 /* UADDBProvisionedThroughput.h */,
+				A3623C9018EB909300989324 /* UADDBProvisionedThroughput.m */,
+				A3623C9118EB909300989324 /* UADDBProvisionedThroughputDescription.h */,
+				A3623C9218EB909300989324 /* UADDBProvisionedThroughputDescription.m */,
+				A3623C9318EB909300989324 /* UADDBScanFilter.h */,
+				A3623C9418EB909300989324 /* UADDBScanFilter.m */,
+				A3623C9518EB909300989324 /* UADDBTableDescription.h */,
+				A3623C9618EB909300989324 /* UADDBTableDescription.m */,
+				A3623C9718EB909300989324 /* UADDBUnprocessedKey.h */,
+				A3623C9818EB909300989324 /* UADDBUnprocessedKey.m */,
+				A3623C9918EB909300989324 /* UADDBUpdate.h */,
+				A3623C9A18EB909300989324 /* UADDBUpdate.m */,
+				A3623C5D18EA67DA00989324 /* UADDBModel.h */,
+				A3623C5E18EA67DA00989324 /* UADDBModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3623C5F18EA67DA00989324 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A3623CB018EB962200989324 /* UADDBBatchGetItemRequest.h */,
+				A3623CB118EB962200989324 /* UADDBBatchGetItemRequest.m */,
+				A3623CB218EB962200989324 /* UADDBBatchWriteItemRequest.h */,
+				A3623CB318EB962200989324 /* UADDBBatchWriteItemRequest.m */,
+				A3623CB418EB962200989324 /* UADDBCreateTableRequest.h */,
+				A3623CB518EB962200989324 /* UADDBCreateTableRequest.m */,
+				A3623CB618EB962200989324 /* UADDBDeleteItemRequest.h */,
+				A3623CB718EB962200989324 /* UADDBDeleteItemRequest.m */,
+				A3623CB818EB962200989324 /* UADDBDeleteTableRequest.h */,
+				A3623CB918EB962200989324 /* UADDBDeleteTableRequest.m */,
+				A3623CBA18EB962200989324 /* UADDBDescribeTableRequest.h */,
+				A3623CBB18EB962200989324 /* UADDBDescribeTableRequest.m */,
+				A3623CBC18EB962200989324 /* UADDBGetItemRequest.h */,
+				A3623CBD18EB962200989324 /* UADDBGetItemRequest.m */,
+				A3623CBE18EB962200989324 /* UADDBListTablesRequest.h */,
+				A3623CBF18EB962200989324 /* UADDBListTablesRequest.m */,
+				A3623CC018EB962200989324 /* UADDBPutItemRequest.h */,
+				A3623CC118EB962200989324 /* UADDBPutItemRequest.m */,
+				A3623CC218EB962200989324 /* UADDBQueryRequest.h */,
+				A3623CC318EB962200989324 /* UADDBQueryRequest.m */,
+				A3623CC418EB962200989324 /* UADDBScanRequest.h */,
+				A3623CC518EB962200989324 /* UADDBScanRequest.m */,
+				A3623CC618EB962200989324 /* UADDBUpdateItemRequest.h */,
+				A3623CC718EB962200989324 /* UADDBUpdateItemRequest.m */,
+				A3623CC818EB962200989324 /* UADDBUpdateTableRequest.h */,
+				A3623CC918EB962200989324 /* UADDBUpdateTableRequest.m */,
+				A3623C6018EA67DA00989324 /* UADDBRequest.h */,
+				A3623C6118EA67DA00989324 /* UADDBRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		A3623C6218EA67DA00989324 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A3623CD718EB968B00989324 /* UADDBBatchGetItemResponse.h */,
+				A3623CD818EB968B00989324 /* UADDBBatchGetItemResponse.m */,
+				A3623CD918EB968B00989324 /* UADDBBatchWriteItemResponse.h */,
+				A3623CDA18EB968B00989324 /* UADDBBatchWriteItemResponse.m */,
+				A3623CDB18EB968B00989324 /* UADDBCreateTableResponse.h */,
+				A3623CDC18EB968B00989324 /* UADDBCreateTableResponse.m */,
+				A3623CDD18EB968B00989324 /* UADDBDeleteItemResponse.h */,
+				A3623CDE18EB968B00989324 /* UADDBDeleteItemResponse.m */,
+				A3623CDF18EB968B00989324 /* UADDBDeleteTableResponse.h */,
+				A3623CE018EB968B00989324 /* UADDBDeleteTableResponse.m */,
+				A3623CE118EB968B00989324 /* UADDBDescribeTableResponse.h */,
+				A3623CE218EB968B00989324 /* UADDBDescribeTableResponse.m */,
+				A3623CE318EB968B00989324 /* UADDBGetItemResponse.h */,
+				A3623CE418EB968B00989324 /* UADDBGetItemResponse.m */,
+				A3623CE518EB968B00989324 /* UADDBListTablesResponse.h */,
+				A3623CE618EB968B00989324 /* UADDBListTablesResponse.m */,
+				A3623CE718EB968B00989324 /* UADDBPutItemResponse.h */,
+				A3623CE818EB968B00989324 /* UADDBPutItemResponse.m */,
+				A3623CE918EB968B00989324 /* UADDBQueryResponse.h */,
+				A3623CEA18EB968B00989324 /* UADDBQueryResponse.m */,
+				A3623CEB18EB968B00989324 /* UADDBScanResponse.h */,
+				A3623CEC18EB968B00989324 /* UADDBScanResponse.m */,
+				A3623CED18EB968B00989324 /* UADDBUpdateItemResponse.h */,
+				A3623CEE18EB968B00989324 /* UADDBUpdateItemResponse.m */,
+				A3623CEF18EB968B00989324 /* UADDBUpdateTableResponse.h */,
+				A3623CF018EB968B00989324 /* UADDBUpdateTableResponse.m */,
+				A3623C6318EA67DA00989324 /* UADDBResponse.h */,
+				A3623C6418EA67DA00989324 /* UADDBResponse.m */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		A3623C6D18EA67E800989324 /* DDB */ = {
+			isa = PBXGroup;
+			children = (
+				A3623C6E18EA67E800989324 /* Models */,
+				A3623C6F18EA67E800989324 /* Requests */,
+				A3623C7018EA67E800989324 /* Responses */,
+			);
+			path = DDB;
+			sourceTree = "<group>";
+		};
+		A3623C6E18EA67E800989324 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3623C6F18EA67E800989324 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		A3623C7018EA67E800989324 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		A3E01C1318AD93E900C3B7DB = {
 			isa = PBXGroup;
 			children = (
@@ -5350,6 +5676,7 @@
 				A30FD1AC18AD96D000CA52F7 /* AWSServiceHealth */,
 				A30FD1C218AD96D000CA52F7 /* Common */,
 				A30FD1D218AD96D000CA52F7 /* CW */,
+				A3623C5B18EA67DA00989324 /* DDB */,
 				A33772A418ADA0F900FECC45 /* EC2 */,
 				A30FD1E118AD96D000CA52F7 /* ELB */,
 				A337806C18B18D2700FECC45 /* IAM */,
@@ -5382,6 +5709,7 @@
 				A337806218ADA50300FECC45 /* MTLQueryAdapterTests.m */,
 				A3377ADE18ADA3C500FECC45 /* AS */,
 				A3377B3D18ADA3C500FECC45 /* CW */,
+				A3623C6D18EA67E800989324 /* DDB */,
 				A3377B5E18ADA3C500FECC45 /* EC2 */,
 				A3377D2518ADA3C600FECC45 /* ELB */,
 				A3377D6C18ADA3C600FECC45 /* SNS */,
@@ -5800,6 +6128,7 @@
 				A3377A1818ADA32F00FECC45 /* UAELBAttachLoadBalancerToSubnetsResponse.m in Sources */,
 				A337775918ADA30C00FECC45 /* UAEC2DescribeImagesRequest.m in Sources */,
 				A33775C818ADA30100FECC45 /* UAEC2SriovNetSupport.m in Sources */,
+				A3623CD118EB962200989324 /* UADDBListTablesRequest.m in Sources */,
 				A33775A418ADA30100FECC45 /* UAEC2Placement.m in Sources */,
 				A3377AD318ADA34A00FECC45 /* UASNSListSubscriptionsByTopicResponse.m in Sources */,
 				A3377A8D18ADA34200FECC45 /* UASNSSetEndpointAttributesRequest.m in Sources */,
@@ -5842,6 +6171,7 @@
 				A33775C418ADA30100FECC45 /* UAEC2SpotInstanceStateFault.m in Sources */,
 				A33778E018ADA31500FECC45 /* UAEC2CancelReservedInstancesListingResponse.m in Sources */,
 				A337795018ADA31500FECC45 /* UAEC2PurchaseReservedInstancesOfferingResponse.m in Sources */,
+				A3623CF318EB968B00989324 /* UADDBCreateTableResponse.m in Sources */,
 				A337792918ADA31500FECC45 /* UAEC2DescribeReservedInstancesOfferingsResponse.m in Sources */,
 				A337756718ADA30100FECC45 /* UAEC2EBSInstanceBlockDevice.m in Sources */,
 				A3F813A618D807E400767D9F /* UASQSSendMessageBatchRequestEntry.m in Sources */,
@@ -5851,8 +6181,10 @@
 				A337792518ADA31500FECC45 /* UAEC2DescribePlacementGroupsResponse.m in Sources */,
 				A337758518ADA30100FECC45 /* UAEC2InstanceNetworkInterface.m in Sources */,
 				A33773F518ADA2EF00FECC45 /* UACWDescribeAlarmsRequest.m in Sources */,
+				A3623C6B18EA67DA00989324 /* UADDBResponse.m in Sources */,
 				E85464EE18CF0F0D00CC2E3C /* UAEXTRuntimeExtensions.m in Sources */,
 				A337816418B1912800FECC45 /* UAIAMGetLoginProfileRequest.m in Sources */,
+				A3623C6A18EA67DA00989324 /* UADDBRequest.m in Sources */,
 				A337773D18ADA30B00FECC45 /* UAEC2DeleteInternetGatewayRequest.m in Sources */,
 				A337795118ADA31500FECC45 /* UAEC2RebootInstancesResponse.m in Sources */,
 				A3F813CC18D807F100767D9F /* UASQSDeleteMessageBatchRequest.m in Sources */,
@@ -5907,6 +6239,7 @@
 				A337772518ADA30B00FECC45 /* UAEC2CreateImageRequest.m in Sources */,
 				A337798C18ADA32000FECC45 /* UAELBInstance.m in Sources */,
 				A337790118ADA31500FECC45 /* UAEC2DeleteNetworkACLEntryResponse.m in Sources */,
+				A3623CD018EB962200989324 /* UADDBGetItemRequest.m in Sources */,
 				A337778D18ADA30C00FECC45 /* UAEC2ModifyVPCAttributeRequest.m in Sources */,
 				A3F8140518D80DDB00767D9F /* UASQSDeleteMessageResponse.m in Sources */,
 				A33772B418ADA0F900FECC45 /* UAEC2Request.m in Sources */,
@@ -5933,11 +6266,13 @@
 				A33773DB18ADA2E700FECC45 /* UACWStatisticSet.m in Sources */,
 				A3F813C818D807F100767D9F /* UASQSAddPermissionRequest.m in Sources */,
 				A337791818ADA31500FECC45 /* UAEC2DescribeDHCPOptionsResponse.m in Sources */,
+				A3623C9B18EB909300989324 /* UADDBAttributeDefinition.m in Sources */,
 				A337815C18B1912800FECC45 /* UAIAMDeleteUserRequest.m in Sources */,
 				A33778D218ADA31500FECC45 /* UAEC2AllocateAddressResponse.m in Sources */,
 				A337779F18ADA30C00FECC45 /* UAEC2RunInstancesRequest.m in Sources */,
 				A33773BB18ADA2D200FECC45 /* UAASDisableMetricsCollectionResponse.m in Sources */,
 				A337793018ADA31500FECC45 /* UAEC2DescribeSpotInstanceRequestsResponse.m in Sources */,
+				A3623CFD18EB968B00989324 /* UADDBUpdateTableResponse.m in Sources */,
 				A33773BC18ADA2D200FECC45 /* UAASEnableMetricsCollectionResponse.m in Sources */,
 				A337823218B1913600FECC45 /* UAIAMDeleteInstanceProfileResponse.m in Sources */,
 				A337759B18ADA30100FECC45 /* UAEC2Monitoring.m in Sources */,
@@ -5957,6 +6292,7 @@
 				A33778DE18ADA31500FECC45 /* UAEC2CancelConversionTaskResponse.m in Sources */,
 				A337758718ADA30100FECC45 /* UAEC2InstanceNetworkInterfaceAttachment.m in Sources */,
 				A33775DC18ADA30100FECC45 /* UAEC2VPCAttachment.m in Sources */,
+				A3623CA718EB909300989324 /* UADDBLocalSecondaryIndex.m in Sources */,
 				A33775AB18ADA30100FECC45 /* UAEC2PrivateIPAddressSpecification.m in Sources */,
 				A337795318ADA31500FECC45 /* UAEC2ReleaseAddressResponse.m in Sources */,
 				A33775C018ADA30100FECC45 /* UAEC2Snapshot.m in Sources */,
@@ -5975,6 +6311,7 @@
 				A337798F18ADA32000FECC45 /* UAELBListener.m in Sources */,
 				A3377A7E18ADA34200FECC45 /* UASNSCreateTopicRequest.m in Sources */,
 				A337814618B1912800FECC45 /* UAIAMCreateAccountAliasRequest.m in Sources */,
+				A3623CAF18EB909300989324 /* UADDBUpdate.m in Sources */,
 				A337825B18B1913600FECC45 /* UAIAMPutUserPolicyResponse.m in Sources */,
 				A33778EC18ADA31500FECC45 /* UAEC2CreateNetworkACLResponse.m in Sources */,
 				A3377A2618ADA32F00FECC45 /* UAELBDescribeLoadBalancerPolicyTypesResponse.m in Sources */,
@@ -5985,6 +6322,7 @@
 				A3F8142918E27E4A00767D9F /* UAEC2RejectVPCPeeringConnectionRequest.m in Sources */,
 				A33779DF18ADA32800FECC45 /* UAELBEnableAvailabilityZonesForLoadBalancerRequest.m in Sources */,
 				A337817518B1912800FECC45 /* UAIAMListSAMLProvidersRequest.m in Sources */,
+				A3623CA518EB909300989324 /* UADDBKeyCondition.m in Sources */,
 				A33779DD18ADA32800FECC45 /* UAELBDetachLoadBalancerFromSubnetsRequest.m in Sources */,
 				A33775D118ADA30100FECC45 /* UAEC2UserIdGroupPair.m in Sources */,
 				A337790B18ADA31500FECC45 /* UAEC2DeleteTagsResponse.m in Sources */,
@@ -5999,6 +6337,7 @@
 				A337759D18ADA30100FECC45 /* UAEC2NetworkACLAssociation.m in Sources */,
 				A337779718ADA30C00FECC45 /* UAEC2ReportInstanceStatusRequest.m in Sources */,
 				A337814818B1912800FECC45 /* UAIAMCreateInstanceProfileRequest.m in Sources */,
+				A3623C9D18EB909300989324 /* UADDBCapacity.m in Sources */,
 				A337775618ADA30C00FECC45 /* UAEC2DescribeDHCPOptionsRequest.m in Sources */,
 				A3377A9018ADA34200FECC45 /* UASNSSetTopicAttributesRequest.m in Sources */,
 				A337756A18ADA30100FECC45 /* UAEC2EnableDNSHostnames.m in Sources */,
@@ -6074,9 +6413,11 @@
 				A3377A8818ADA34200FECC45 /* UASNSListSubscriptionsByTopicRequest.m in Sources */,
 				A33780A918B1909F00FECC45 /* UAIAMServerCertificateMetadata.m in Sources */,
 				A33780A118B1909F00FECC45 /* UAIAMGroup.m in Sources */,
+				A3623CD318EB962200989324 /* UADDBQueryRequest.m in Sources */,
 				A33775B818ADA30100FECC45 /* UAEC2ReservedInstancesListing.m in Sources */,
 				A337773C18ADA30B00FECC45 /* UAEC2DeleteDHCPOptionsRequest.m in Sources */,
 				A337775C18ADA30C00FECC45 /* UAEC2DescribeInstanceStatusRequest.m in Sources */,
+				A3623CA618EB909300989324 /* UADDBKeySchema.m in Sources */,
 				A33775DB18ADA30100FECC45 /* UAEC2VPC.m in Sources */,
 				A337791318ADA31500FECC45 /* UAEC2DescribeAddressesResponse.m in Sources */,
 				A337776F18ADA30C00FECC45 /* UAEC2DescribeSpotPriceHistoryRequest.m in Sources */,
@@ -6093,6 +6434,7 @@
 				A337822518B1913600FECC45 /* UAIAMCreateGroupResponse.m in Sources */,
 				A337817218B1912800FECC45 /* UAIAMListMFADevicesRequest.m in Sources */,
 				A337826118B1913600FECC45 /* UAIAMUpdateAssumeRolePolicyResponse.m in Sources */,
+				A3623CA218EB909300989324 /* UADDBGlobalSecondaryIndexUpdate.m in Sources */,
 				A3377A1C18ADA32F00FECC45 /* UAELBCreateLoadBalancerListenersResponse.m in Sources */,
 				A337772E18ADA30B00FECC45 /* UAEC2CreateRouteRequest.m in Sources */,
 				A337755918ADA30100FECC45 /* UAEC2CreateVolumePermissionModifications.m in Sources */,
@@ -6102,6 +6444,7 @@
 				A337775D18ADA30C00FECC45 /* UAEC2DescribeInternetGatewaysRequest.m in Sources */,
 				A337754F18ADA30100FECC45 /* UAEC2AvailabilityZone.m in Sources */,
 				A3F813F018D807FA00767D9F /* UASQSAddPermissionResponse.m in Sources */,
+				A3623CCE18EB962200989324 /* UADDBDeleteTableRequest.m in Sources */,
 				A3377A2418ADA32F00FECC45 /* UAELBDescribeLoadBalancerAttributesResponse.m in Sources */,
 				A337791218ADA31500FECC45 /* UAEC2DescribeAccountAttributesResponse.m in Sources */,
 				A337825418B1913600FECC45 /* UAIAMListServerCertificatesResponse.m in Sources */,
@@ -6112,6 +6455,7 @@
 				A337818418B1912800FECC45 /* UAIAMUpdateGroupRequest.m in Sources */,
 				A337758E18ADA30100FECC45 /* UAEC2InstanceStatusSummary.m in Sources */,
 				A33775BF18ADA30100FECC45 /* UAEC2SecurityGroup.m in Sources */,
+				A3623CAD18EB909300989324 /* UADDBTableDescription.m in Sources */,
 				A33775BE18ADA30100FECC45 /* UAEC2S3Storage.m in Sources */,
 				A33773D918ADA2E700FECC45 /* UACWMetricAlarm.m in Sources */,
 				A3377A1B18ADA32F00FECC45 /* UAELBCreateLBCookieStickinessPolicyResponse.m in Sources */,
@@ -6147,6 +6491,7 @@
 				A30FD21C18AD96D000CA52F7 /* UAAWSResponse.m in Sources */,
 				A33778DD18ADA31500FECC45 /* UAEC2CancelBundleTaskResponse.m in Sources */,
 				A337814718B1912800FECC45 /* UAIAMCreateGroupRequest.m in Sources */,
+				A3623CFC18EB968B00989324 /* UADDBUpdateItemResponse.m in Sources */,
 				A337756918ADA30100FECC45 /* UAEC2EBSOptimized.m in Sources */,
 				E85464ED18CF0F0D00CC2E3C /* UADDXMLNode.m in Sources */,
 				A30FD20C18AD96D000CA52F7 /* UAASError.m in Sources */,
@@ -6155,6 +6500,7 @@
 				A3377A1D18ADA32F00FECC45 /* UAELBCreateLoadBalancerPolicyResponse.m in Sources */,
 				A33778D418ADA31500FECC45 /* UAEC2AssociateDHCPOptionsResponse.m in Sources */,
 				A337771E18ADA30B00FECC45 /* UAEC2CancelReservedInstancesListingRequest.m in Sources */,
+				A3623CCD18EB962200989324 /* UADDBDeleteItemRequest.m in Sources */,
 				A337775318ADA30B00FECC45 /* UAEC2DescribeBundleTasksRequest.m in Sources */,
 				A337807A18B18D2700FECC45 /* UAIAMModel.m in Sources */,
 				A337793E18ADA31500FECC45 /* UAEC2DetachVPNGatewayResponse.m in Sources */,
@@ -6179,6 +6525,7 @@
 				A337772418ADA30B00FECC45 /* UAEC2CreateDHCPOptionsRequest.m in Sources */,
 				A337825E18B1913600FECC45 /* UAIAMResyncMFADeviceResponse.m in Sources */,
 				A337790E18ADA31500FECC45 /* UAEC2DeleteVPNConnectionResponse.m in Sources */,
+				A3623CFB18EB968B00989324 /* UADDBScanResponse.m in Sources */,
 				A337822C18B1913600FECC45 /* UAIAMDeactivateMFADeviceResponse.m in Sources */,
 				A337776E18ADA30C00FECC45 /* UAEC2DescribeSpotInstanceRequestsRequest.m in Sources */,
 				A337793B18ADA31500FECC45 /* UAEC2DetachInternetGatewayResponse.m in Sources */,
@@ -6194,8 +6541,10 @@
 				A33775D718ADA30100FECC45 /* UAEC2VolumeStatusAction.m in Sources */,
 				A337776018ADA30C00FECC45 /* UAEC2DescribeNetworkACLsRequest.m in Sources */,
 				A337777F18ADA30C00FECC45 /* UAEC2DisassociateRouteTableRequest.m in Sources */,
+				A3623CD218EB962200989324 /* UADDBPutItemRequest.m in Sources */,
 				A33773BE18ADA2D200FECC45 /* UAASPutNotificationConfigurationResponse.m in Sources */,
 				A337794D18ADA31500FECC45 /* UAEC2ModifyVolumeAttributeResponse.m in Sources */,
+				A3623CD518EB962200989324 /* UADDBUpdateItemRequest.m in Sources */,
 				A33778F218ADA31500FECC45 /* UAEC2CreateSecurityGroupResponse.m in Sources */,
 				A337809F18B1909F00FECC45 /* UAIAMAccessKeyMetadata.m in Sources */,
 				A337817718B1912800FECC45 /* UAIAMListSigningCertificatesRequest.m in Sources */,
@@ -6209,6 +6558,7 @@
 				A337757E18ADA30100FECC45 /* UAEC2InstanceBlockDeviceMappingSpecification.m in Sources */,
 				A337792218ADA31500FECC45 /* UAEC2DescribeNetworkACLsResponse.m in Sources */,
 				A33780AC18B1909F00FECC45 /* UAIAMUser.m in Sources */,
+				A3623CF818EB968B00989324 /* UADDBListTablesResponse.m in Sources */,
 				A337772B18ADA30B00FECC45 /* UAEC2CreateNetworkInterfaceRequest.m in Sources */,
 				A3377A7B18ADA34200FECC45 /* UASNSConfirmSubscriptionRequest.m in Sources */,
 				A337796418ADA31500FECC45 /* UAEC2TerminateInstancesResponse.m in Sources */,
@@ -6231,6 +6581,7 @@
 				A33775A318ADA30100FECC45 /* UAEC2Options.m in Sources */,
 				A33773D718ADA2E700FECC45 /* UACWDimension.m in Sources */,
 				A3377A4318ADA33A00FECC45 /* UASNSPlatformApplicationAttributes.m in Sources */,
+				A3623CF218EB968B00989324 /* UADDBBatchWriteItemResponse.m in Sources */,
 				A337815918B1912800FECC45 /* UAIAMDeleteServerCertificateRequest.m in Sources */,
 				A337776318ADA30C00FECC45 /* UAEC2DescribePlacementGroupsRequest.m in Sources */,
 				A3377A8E18ADA34200FECC45 /* UASNSSetPlatformApplicationAttributesRequest.m in Sources */,
@@ -6246,6 +6597,8 @@
 				A337795A18ADA31500FECC45 /* UAEC2ReservedInstancesModificationResponse.m in Sources */,
 				A33773AF18ADA2D200FECC45 /* UAASDescribeAutoScalingGroupsResponse.m in Sources */,
 				A337825D18B1913600FECC45 /* UAIAMRemoveUserFromGroupResponse.m in Sources */,
+				A3623CF118EB968B00989324 /* UADDBBatchGetItemResponse.m in Sources */,
+				A3623CF718EB968B00989324 /* UADDBGetItemResponse.m in Sources */,
 				A337793218ADA31500FECC45 /* UAEC2DescribeSubnetsResponse.m in Sources */,
 				E85464FE18CF0F0D00CC2E3C /* UAMTLReflection.m in Sources */,
 				A337824718B1913600FECC45 /* UAIAMGetUserPolicyResponse.m in Sources */,
@@ -6268,6 +6621,7 @@
 				A337771B18ADA30B00FECC45 /* UAEC2CancelBundleTaskRequest.m in Sources */,
 				A337773818ADA30B00FECC45 /* UAEC2CreateVPNConnectionRouteRequest.m in Sources */,
 				A337790818ADA31500FECC45 /* UAEC2DeleteSnapshotResponse.m in Sources */,
+				A3623CAA18EB909300989324 /* UADDBProvisionedThroughput.m in Sources */,
 				A337775E18ADA30C00FECC45 /* UAEC2DescribeKeyPairsRequest.m in Sources */,
 				A337795218ADA31500FECC45 /* UAEC2RegisterImageResponse.m in Sources */,
 				A337758218ADA30100FECC45 /* UAEC2InstanceLicense.m in Sources */,
@@ -6288,6 +6642,7 @@
 				A30FD20D18AD96D000CA52F7 /* UAASModel.m in Sources */,
 				A337814F18B1912800FECC45 /* UAIAMDeleteAccessKeyRequest.m in Sources */,
 				A337817D18B1912800FECC45 /* UAIAMPutUserPolicyRequest.m in Sources */,
+				A3623CA018EB909300989324 /* UADDBGlobalSecondaryIndex.m in Sources */,
 				A337758D18ADA30100FECC45 /* UAEC2InstanceStatusEvent.m in Sources */,
 				A337759518ADA30100FECC45 /* UAEC2KeyPair.m in Sources */,
 				A337757818ADA30100FECC45 /* UAEC2ImportInstanceLaunchSpecification.m in Sources */,
@@ -6320,8 +6675,10 @@
 				A3377A4618ADA33A00FECC45 /* UASNSTopic.m in Sources */,
 				A337796318ADA31500FECC45 /* UAEC2StopInstancesResponse.m in Sources */,
 				A33773C518ADA2D200FECC45 /* UAASTerminateInstanceInAutoScalingGroupResponse.m in Sources */,
+				A3623C6C18EA67DA00989324 /* UADDBError.m in Sources */,
 				A3377AC718ADA34A00FECC45 /* UASNSCreateEndpointResponse.m in Sources */,
 				A3377A8018ADA34200FECC45 /* UASNSDeletePlatformApplicationRequest.m in Sources */,
+				A3623C9F18EB909300989324 /* UADDBExpectedItem.m in Sources */,
 				A337792318ADA31500FECC45 /* UAEC2DescribeNetworkInterfaceAttributeResponse.m in Sources */,
 				A337778F18ADA30C00FECC45 /* UAEC2PurchaseReservedInstancesOfferingRequest.m in Sources */,
 				A337773018ADA30B00FECC45 /* UAEC2CreateSecurityGroupRequest.m in Sources */,
@@ -6348,6 +6705,7 @@
 				A33779D918ADA32800FECC45 /* UAELBDescribeLoadBalancerAttributesRequest.m in Sources */,
 				A337777518ADA30C00FECC45 /* UAEC2DescribeVPCAttributeRequest.m in Sources */,
 				A337793518ADA31500FECC45 /* UAEC2DescribeVolumesResponse.m in Sources */,
+				A3623CA118EB909300989324 /* UADDBGlobalSecondaryIndexDescription.m in Sources */,
 				A337773418ADA30B00FECC45 /* UAEC2CreateTagsRequest.m in Sources */,
 				A3F8142618E27E4A00767D9F /* UAEC2CreateVPCPeeringConnectionRequest.m in Sources */,
 				A30FD22118AD96D000CA52F7 /* UAELBError.m in Sources */,
@@ -6407,6 +6765,7 @@
 				A337741818ADA2F700FECC45 /* UACWEnableAlarmActionsResponse.m in Sources */,
 				A33773AA18ADA2D200FECC45 /* UAASDeletePolicyResponse.m in Sources */,
 				A337734418ADA2C500FECC45 /* UAASDescribeAutoScalingInstancesRequest.m in Sources */,
+				A3623CCC18EB962200989324 /* UADDBCreateTableRequest.m in Sources */,
 				A33778E918ADA31500FECC45 /* UAEC2CreateInternetGatewayResponse.m in Sources */,
 				A3F813F218D807FA00767D9F /* UASQSChangeMessageVisibilityResponse.m in Sources */,
 				A3377A9218ADA34200FECC45 /* UASNSUnsubscribeRequest.m in Sources */,
@@ -6421,6 +6780,7 @@
 				A337824018B1913600FECC45 /* UAIAMGetGroupResponse.m in Sources */,
 				A3377AD918ADA34A00FECC45 /* UASNSSetPlatformApplicationAttributesResponse.m in Sources */,
 				A337771518ADA30B00FECC45 /* UAEC2AttachNetworkInterfaceRequest.m in Sources */,
+				A3623CCA18EB962200989324 /* UADDBBatchGetItemRequest.m in Sources */,
 				A33773B318ADA2D200FECC45 /* UAASDescribeMetricCollectionTypesResponse.m in Sources */,
 				A337792018ADA31500FECC45 /* UAEC2DescribeKeyPairsResponse.m in Sources */,
 				A337775B18ADA30C00FECC45 /* UAEC2DescribeInstancesRequest.m in Sources */,
@@ -6443,10 +6803,12 @@
 				A337772618ADA30B00FECC45 /* UAEC2CreateInstanceExportTaskRequest.m in Sources */,
 				A337793418ADA31500FECC45 /* UAEC2DescribeVolumeAttributeResponse.m in Sources */,
 				A33779DE18ADA32800FECC45 /* UAELBDisableAvailabilityZonesForLoadBalancerRequest.m in Sources */,
+				A3623CAE18EB909300989324 /* UADDBUnprocessedKey.m in Sources */,
 				A337776118ADA30C00FECC45 /* UAEC2DescribeNetworkInterfaceAttributeRequest.m in Sources */,
 				A337792718ADA31500FECC45 /* UAEC2DescribeReservedInstancesListingsResponse.m in Sources */,
 				A337755118ADA30100FECC45 /* UAEC2BlockDeviceMapping.m in Sources */,
 				A3377A2E18ADA32F00FECC45 /* UAELBSetLoadBalancerPoliciesForBackendServerResponse.m in Sources */,
+				A3623CAC18EB909300989324 /* UADDBScanFilter.m in Sources */,
 				A337779118ADA30C00FECC45 /* UAEC2RegisterImageRequest.m in Sources */,
 				A337815F18B1912800FECC45 /* UAIAMGetAccountPasswordPolicyRequest.m in Sources */,
 				A337771D18ADA30B00FECC45 /* UAEC2CancelExportTaskRequest.m in Sources */,
@@ -6464,7 +6826,9 @@
 				A3F813D218D807F100767D9F /* UASQSListQueuesRequest.m in Sources */,
 				E85464F018CF0F0D00CC2E3C /* NSArray+UAMTLManipulationAdditions.m in Sources */,
 				A33773D618ADA2E700FECC45 /* UACWDatapoint.m in Sources */,
+				A3623CCB18EB962200989324 /* UADDBBatchWriteItemRequest.m in Sources */,
 				A337775718ADA30C00FECC45 /* UAEC2DescribeExportTasksRequest.m in Sources */,
+				A3623CFA18EB968B00989324 /* UADDBQueryResponse.m in Sources */,
 				A33775D418ADA30100FECC45 /* UAEC2VolumeAttachment.m in Sources */,
 				A337774118ADA30B00FECC45 /* UAEC2DeleteNetworkInterfaceRequest.m in Sources */,
 				A337741718ADA2F700FECC45 /* UACWDisableAlarmActionsResponse.m in Sources */,
@@ -6498,6 +6862,7 @@
 				A33775D818ADA30100FECC45 /* UAEC2VolumeStatusDetail.m in Sources */,
 				A337815218B1912800FECC45 /* UAIAMDeleteGroupPolicyRequest.m in Sources */,
 				A337773518ADA30B00FECC45 /* UAEC2CreateVolumeRequest.m in Sources */,
+				A3623CF918EB968B00989324 /* UADDBPutItemResponse.m in Sources */,
 				A3377A2818ADA32F00FECC45 /* UAELBDetachLoadBalancerFromSubnetsResponse.m in Sources */,
 				A33778FB18ADA31500FECC45 /* UAEC2CreateVPNGatewayResponse.m in Sources */,
 				A33778EA18ADA31500FECC45 /* UAEC2CreateKeyPairResponse.m in Sources */,
@@ -6505,6 +6870,7 @@
 				A337822E18B1913600FECC45 /* UAIAMDeleteAccountAliasResponse.m in Sources */,
 				A337822118B1913600FECC45 /* UAIAMAddUserToGroupResponse.m in Sources */,
 				A337792E18ADA31500FECC45 /* UAEC2DescribeSnapshotsResponse.m in Sources */,
+				A3623D0018EB99A300989324 /* UADDBRequestItem.m in Sources */,
 				A337795518ADA31500FECC45 /* UAEC2ReplaceNetworkACLEntryResponse.m in Sources */,
 				A33772DD18ADA2B800FECC45 /* UAASAdjustmentType.m in Sources */,
 				A33775A018ADA30100FECC45 /* UAEC2NetworkInterfaceAttachment.m in Sources */,
@@ -6521,6 +6887,7 @@
 				A33772DC18ADA2B800FECC45 /* UAASActivity.m in Sources */,
 				A33778FA18ADA31500FECC45 /* UAEC2CreateVPNConnectionRouteResponse.m in Sources */,
 				A3377A2D18ADA32F00FECC45 /* UAELBSetLoadBalancerListenerSSLCertificateResponse.m in Sources */,
+				A3623CAB18EB909300989324 /* UADDBProvisionedThroughputDescription.m in Sources */,
 				A33780A618B1909F00FECC45 /* UAIAMRole.m in Sources */,
 				A337733F18ADA2C500FECC45 /* UAASDeleteScheduledActionRequest.m in Sources */,
 				A3F813A118D807E400767D9F /* UASQSDeleteMessageBatchResultEntry.m in Sources */,
@@ -6550,8 +6917,10 @@
 				A337741918ADA2F700FECC45 /* UACWGetMetricStatisticsResponse.m in Sources */,
 				A337776C18ADA30C00FECC45 /* UAEC2DescribeSnapshotsRequest.m in Sources */,
 				A337818018B1912800FECC45 /* UAIAMResyncMFADeviceRequest.m in Sources */,
+				A3623CA818EB909300989324 /* UADDBLocalSecondaryIndexDescription.m in Sources */,
 				A33775B118ADA30100FECC45 /* UAEC2RecurringCharge.m in Sources */,
 				A30FD22E18AD96D000CA52F7 /* UASNSRequest.m in Sources */,
+				A3623CF618EB968B00989324 /* UADDBDescribeTableResponse.m in Sources */,
 				A337815A18B1912800FECC45 /* UAIAMDeleteSigningCertificateRequest.m in Sources */,
 				A337794E18ADA31500FECC45 /* UAEC2ModifyVPCAttributeResponse.m in Sources */,
 				A337741318ADA2F700FECC45 /* UACWDeleteAlarmsResponse.m in Sources */,
@@ -6566,18 +6935,22 @@
 				A337793618ADA31500FECC45 /* UAEC2DescribeVolumeStatusResponse.m in Sources */,
 				A337774D18ADA30B00FECC45 /* UAEC2DeleteVPNConnectionRouteRequest.m in Sources */,
 				A337758618ADA30100FECC45 /* UAEC2InstanceNetworkInterfaceAssociation.m in Sources */,
+				A3623CF418EB968B00989324 /* UADDBDeleteItemResponse.m in Sources */,
 				A33775DF18ADA30100FECC45 /* UAEC2VPNStaticRoute.m in Sources */,
 				A3F8142518E27E4A00767D9F /* UAEC2AcceptVPCPeeringConnectionRequest.m in Sources */,
 				A337772718ADA30B00FECC45 /* UAEC2CreateInternetGatewayRequest.m in Sources */,
 				A337794F18ADA31500FECC45 /* UAEC2MonitorInstancesResponse.m in Sources */,
+				A3623C6918EA67DA00989324 /* UADDBModel.m in Sources */,
 				A337775518ADA30C00FECC45 /* UAEC2DescribeCustomerGatewaysRequest.m in Sources */,
 				A33775B418ADA30100FECC45 /* UAEC2ReservedInstance.m in Sources */,
 				A33779DA18ADA32800FECC45 /* UAELBDescribeLoadBalancerPoliciesRequest.m in Sources */,
 				A337822018B1913600FECC45 /* UAIAMAddRoleToInstanceProfileResponse.m in Sources */,
 				A337794818ADA31500FECC45 /* UAEC2ModifyImageAttributeResponse.m in Sources */,
+				A3623CA318EB909300989324 /* UADDBItemCollectionMetric.m in Sources */,
 				A3377A4518ADA33A00FECC45 /* UASNSSubscriptionAttributes.m in Sources */,
 				A337759718ADA30100FECC45 /* UAEC2LaunchPermissionModifications.m in Sources */,
 				A337824518B1913600FECC45 /* UAIAMGetSAMLProviderResponse.m in Sources */,
+				A3623CD618EB962200989324 /* UADDBUpdateTableRequest.m in Sources */,
 				A337825718B1913600FECC45 /* UAIAMListUsersResponse.m in Sources */,
 				A30FD21E18AD96D000CA52F7 /* UACWModel.m in Sources */,
 				A3F8139E18D807E400767D9F /* UASQSChangeMessageVisibilityBatchResultEntry.m in Sources */,
@@ -6604,10 +6977,12 @@
 				A3F813D318D807F100767D9F /* UASQSReceiveMessageRequest.m in Sources */,
 				A337734C18ADA2C500FECC45 /* UAASDescribeScheduledActionsRequest.m in Sources */,
 				A33773B218ADA2D200FECC45 /* UAASDescribeLaunchConfigurationsResponse.m in Sources */,
+				A3623C9C18EB909300989324 /* UADDBAttributeUpdate.m in Sources */,
 				A337757B18ADA30100FECC45 /* UAEC2ImportVolumeTaskDetails.m in Sources */,
 				A337817318B1912800FECC45 /* UAIAMListRolePoliciesRequest.m in Sources */,
 				A3F8141818E27DEF00767D9F /* UAEC2RequesterVPCInfo.m in Sources */,
 				A337790A18ADA31500FECC45 /* UAEC2DeleteSubnetResponse.m in Sources */,
+				A3623CF518EB968B00989324 /* UADDBDeleteTableResponse.m in Sources */,
 				A337795E18ADA31500FECC45 /* UAEC2ResetSnapshotAttributeResponse.m in Sources */,
 				A33775CA18ADA30100FECC45 /* UAEC2Status.m in Sources */,
 				A337775118ADA30B00FECC45 /* UAEC2DescribeAddressesRequest.m in Sources */,
@@ -6624,6 +6999,7 @@
 				A3377ACC18ADA34A00FECC45 /* UASNSDeleteTopicResponse.m in Sources */,
 				A30FD21818AD96D000CA52F7 /* UAAWSCredentials.m in Sources */,
 				A33773DA18ADA2E700FECC45 /* UACWMetricDatum.m in Sources */,
+				A3623CA418EB909300989324 /* UADDBItemCollectionMetrics.m in Sources */,
 				A337759918ADA30100FECC45 /* UAEC2License.m in Sources */,
 				A337757618ADA30100FECC45 /* UAEC2IcmpTypeCode.m in Sources */,
 				A33775A518ADA30100FECC45 /* UAEC2PlacementGroup.m in Sources */,
@@ -6646,6 +7022,7 @@
 				A33772E918ADA2B800FECC45 /* UAASNotificationConfiguration.m in Sources */,
 				A337778E18ADA30C00FECC45 /* UAEC2MonitorInstancesRequest.m in Sources */,
 				A337798D18ADA32000FECC45 /* UAELBInstanceStateDetails.m in Sources */,
+				A3623CA918EB909300989324 /* UADDBProjection.m in Sources */,
 				A3377A2518ADA32F00FECC45 /* UAELBDescribeLoadBalancerPoliciesResponse.m in Sources */,
 				A33778EE18ADA31500FECC45 /* UAEC2CreatePlacementGroupResponse.m in Sources */,
 				A33779D318ADA32800FECC45 /* UAELBCreateLoadBalancerRequest.m in Sources */,
@@ -6699,6 +7076,7 @@
 				A337757218ADA30100FECC45 /* UAEC2Filter.m in Sources */,
 				A30FD20F18AD96D000CA52F7 /* UAASResponse.m in Sources */,
 				E85464F718CF0F0D00CC2E3C /* NSValueTransformer+UAMTLQueryStringTransformerAdditions.m in Sources */,
+				A3623CD418EB962200989324 /* UADDBScanRequest.m in Sources */,
 				A337735718ADA2C500FECC45 /* UAASSetInstanceHealthRequest.m in Sources */,
 				A3F813A718D807E400767D9F /* UASQSSendMessageBatchResultEntry.m in Sources */,
 				A337776A18ADA30C00FECC45 /* UAEC2DescribeSecurityGroupsRequest.m in Sources */,
@@ -6716,6 +7094,7 @@
 				A337823518B1913600FECC45 /* UAIAMDeleteRoleResponse.m in Sources */,
 				A3F8137E18D8046E00767D9F /* UASQSRequest.m in Sources */,
 				A33773F218ADA2EF00FECC45 /* UACWDeleteAlarmsRequest.m in Sources */,
+				A3623C9E18EB909300989324 /* UADDBConsumedCapacity.m in Sources */,
 				A33779D518ADA32800FECC45 /* UAELBDeleteLoadBalancerPolicyRequest.m in Sources */,
 				A3377A1E18ADA32F00FECC45 /* UAELBCreateLoadBalancerResponse.m in Sources */,
 				A337816718B1912800FECC45 /* UAIAMGetSAMLProviderRequest.m in Sources */,
@@ -6725,6 +7104,7 @@
 				A337822918B1913600FECC45 /* UAIAMCreateSAMLProviderResponse.m in Sources */,
 				A337733B18ADA2C500FECC45 /* UAASDeleteAutoScalingGroupRequest.m in Sources */,
 				A337772318ADA30B00FECC45 /* UAEC2CreateCustomerGatewayRequest.m in Sources */,
+				A3623CCF18EB962200989324 /* UADDBDescribeTableRequest.m in Sources */,
 				A337770F18ADA30B00FECC45 /* UAEC2AllocateAddressRequest.m in Sources */,
 				A33773AB18ADA2D200FECC45 /* UAASDeleteScheduledActionResponse.m in Sources */,
 				A3F8137D18D8046E00767D9F /* UASQSModel.m in Sources */,

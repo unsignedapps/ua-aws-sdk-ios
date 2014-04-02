@@ -45,4 +45,9 @@
     return [self modelOfClass:responseClass fromXMLNode:document error:error];
 }
 
++ (NSString *)contentType
+{
+    return nil;
+}
+
 @end
