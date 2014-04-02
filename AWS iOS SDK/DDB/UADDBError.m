@@ -19,10 +19,22 @@
 {
     return
     @{
-        @"code":        @"Error/Code",
-        @"message":     @"Error/Message",
-        @"requestID":   @"RequestID"
+        @"code":        @"__type",
+        @"message":     @"message"
     };
+}
+
+#pragma mark - Transformers
+
++ (NSValueTransformer *)codeJSONTransformer
+{
+    return [UAMTLValueTransformer transformerWithBlock:^id(NSString *input)
+    {
+        NSRange range = [input rangeOfString:@"#"];
+        if (range.location != NSNotFound)
+            return [input substringFromIndex:range.location+1];
+        return input;
+    }];
 }
 
 #pragma mark - Error Generation

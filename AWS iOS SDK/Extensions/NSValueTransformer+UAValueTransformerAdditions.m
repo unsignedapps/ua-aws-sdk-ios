@@ -479,11 +479,11 @@ NSString * const UADDBParseErrorInputKey = @"Input";
             }
             
             // all the same? great, lets add some strings
-            if (itemClass == [NSString class])
+            if ([itemClass isSubclassOfClass:[NSString class]])
                 return @{ @"SS": arrayValues };
             
             // numbers? we'd best string 'em
-            else if (itemClass == [NSNumber class])
+            else if ([itemClass isSubclassOfClass:[NSNumber class]])
             {
                 NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[arrayValues count]];
                 for (NSNumber *v in arrayValues)
@@ -491,7 +491,7 @@ NSString * const UADDBParseErrorInputKey = @"Input";
                 return @{ @"NS": [values copy] };
                 
             // binary data
-            } else if (itemClass == [NSData class])
+            } else if ([itemClass isSubclassOfClass:[NSData class]])
             {
                 NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[arrayValues count]];
                 for (NSData *v in arrayValues)
