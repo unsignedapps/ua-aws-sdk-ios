@@ -12,6 +12,7 @@
 #import "UAAWSServiceHealth.h"
 #import "UAAutoScaling.h"
 #import "UACloudWatch.h"
+#import "UADynamoDB.h"
 #import "UAEC2.h"
 #import "UAELB.h"
 #import "UAIAM.h"
