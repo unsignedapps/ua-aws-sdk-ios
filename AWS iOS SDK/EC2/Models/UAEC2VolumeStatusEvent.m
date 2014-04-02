@@ -34,4 +34,24 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)notBeforeQueryStringTransformer
+{
+    return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
++ (NSValueTransformer *)notAfterQueryStringTransformer
+{
+    return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
++ (NSValueTransformer *)notBeforeXMLTransformer
+{
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
++ (NSValueTransformer *)notAfterXMLTransformer
+{
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
 @end
