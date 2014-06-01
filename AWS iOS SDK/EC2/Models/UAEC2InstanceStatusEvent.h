@@ -13,7 +13,7 @@
 
 @property (nonatomic, copy) NSString *code;
 @property (nonatomic, copy) NSString *descriptionValue;
-@property (nonatomic, copy) NSString *notBefore;
-@property (nonatomic, copy) NSString *notAfter;
+@property (nonatomic, strong) NSDate *notBefore;
+@property (nonatomic, strong) NSDate *notAfter;
 
 @end

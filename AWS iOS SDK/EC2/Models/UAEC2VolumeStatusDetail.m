@@ -40,8 +40,8 @@
 
 + (NSValueTransformer *)statusQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeStatusDetailStatusPassed), @(UAEC2VolumeStatusDetailStatusFailed), @(UAEC2VolumeStatusDetailStatusNormal), @(UAEC2VolumeStatusDetailStatusDegraded), @(UAEC2VolumeStatusDetailStatusSeverelyDegraded), @(UAEC2VolumeStatusDetailStatusStalled) ]
-                                               stringValues:@[ @"passed", @"failed", @"normal", @"degraded", @"severely-degraded", @"stalled" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeStatusDetailStatusPassed), @(UAEC2VolumeStatusDetailStatusFailed), @(UAEC2VolumeStatusDetailStatusNormal), @(UAEC2VolumeStatusDetailStatusDegraded), @(UAEC2VolumeStatusDetailStatusSeverelyDegraded), @(UAEC2VolumeStatusDetailStatusStalled), @(UAEC2VolumeStatusDetailStatusNotApplicable) ]
+                                               stringValues:@[ @"passed", @"failed", @"normal", @"degraded", @"severely-degraded", @"stalled", @"not-applicable" ]
                                                unknownValue:@(UAEC2VolumeStatusDetailStatusUnknown)];
 }
 
@@ -54,8 +54,8 @@
 
 + (NSValueTransformer *)statusXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeStatusDetailStatusPassed), @(UAEC2VolumeStatusDetailStatusFailed), @(UAEC2VolumeStatusDetailStatusNormal), @(UAEC2VolumeStatusDetailStatusDegraded), @(UAEC2VolumeStatusDetailStatusSeverelyDegraded), @(UAEC2VolumeStatusDetailStatusStalled) ]
-                                               stringValues:@[ @"passed", @"failed", @"normal", @"degraded", @"severely-degraded", @"stalled" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeStatusDetailStatusPassed), @(UAEC2VolumeStatusDetailStatusFailed), @(UAEC2VolumeStatusDetailStatusNormal), @(UAEC2VolumeStatusDetailStatusDegraded), @(UAEC2VolumeStatusDetailStatusSeverelyDegraded), @(UAEC2VolumeStatusDetailStatusStalled), @(UAEC2VolumeStatusDetailStatusNotApplicable) ]
+                                               stringValues:@[ @"passed", @"failed", @"normal", @"degraded", @"severely-degraded", @"stalled", @"not-applicable" ]
                                                unknownValue:@(UAEC2VolumeStatusDetailStatusUnknown)];
 }
 
