@@ -60,38 +60,6 @@
     return [self.instances objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setLoadBalancerName:(NSString *)loadBalancerName
-{
-	_loadBalancerName = loadBalancerName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"loadBalancerName"])
-		[self.UA_dirtyProperties addObject:@"loadBalancerName"];
-}
-
-- (void)setInstances:(NSMutableArray *)instances
-{
-	_instances = instances;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instances"])
-		[self.UA_dirtyProperties addObject:@"instances"];
-}
-
 + (NSValueTransformer *)instancesJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBInstance class]];

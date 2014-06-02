@@ -13,7 +13,7 @@
 #import "UAASBlockDeviceMapping.h"
 #import "UAASLaunchConfiguration.h"
 
-#import <KissXML/DDXML.h>
+#import "UADDXML.h"
 #import "UAMantle.h"
 
 SPEC_BEGIN(UAASDescribeLaunchConfigurationsResponseSpec)
@@ -42,7 +42,7 @@ describe(@"UAASDescribeLaunchConfigurationsResponse", ^
         UAASLaunchConfiguration *config = describeLaunchConfigurationsResponse.launchConfigurations.firstObject;
         [[theValue(config.associatePublicIPAddress) should] equal:theValue(YES)];
         [[config.securityGroups should] beNil];
-        [[config.createdTime should] equal:[NSDate dateWithTimeIntervalSince1970:1358809482]];
+        [[config.createdTime should] equal:[NSDate dateWithTimeIntervalSince1970:1358769882]];
         [[config.kernelID should] equal:@""];
         [[config.launchConfigurationName should] equal:@"my-test-lc"];
         [[config.userData should] equal:@""];

@@ -52,46 +52,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setAssociationID:(NSString *)associationID
-{
-	_associationID = associationID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"associationID"])
-		[self.UA_dirtyProperties addObject:@"associationID"];
-}
-
-- (void)setNetworkACLID:(NSString *)networkACLID
-{
-	_networkACLID = networkACLID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"networkACLID"])
-		[self.UA_dirtyProperties addObject:@"networkACLID"];
-}
-
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];

@@ -87,62 +87,6 @@
     return [self.filters objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setImageIDs:(NSMutableArray *)imageIDs
-{
-	_imageIDs = imageIDs;
-	
-	if (![self.UA_dirtyProperties containsObject:@"imageIDs"])
-		[self.UA_dirtyProperties addObject:@"imageIDs"];
-}
-
-- (void)setOwners:(NSMutableArray *)owners
-{
-	_owners = owners;
-	
-	if (![self.UA_dirtyProperties containsObject:@"owners"])
-		[self.UA_dirtyProperties addObject:@"owners"];
-}
-
-- (void)setExecutableUsers:(NSMutableArray *)executableUsers
-{
-	_executableUsers = executableUsers;
-	
-	if (![self.UA_dirtyProperties containsObject:@"executableUsers"])
-		[self.UA_dirtyProperties addObject:@"executableUsers"];
-}
-
-- (void)setFilters:(NSMutableArray *)filters
-{
-	_filters = filters;
-	
-	if (![self.UA_dirtyProperties containsObject:@"filters"])
-		[self.UA_dirtyProperties addObject:@"filters"];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];

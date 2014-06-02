@@ -62,54 +62,6 @@
     return [self.filters objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setFilters:(NSMutableArray *)filters
-{
-	_filters = filters;
-	
-	if (![self.UA_dirtyProperties containsObject:@"filters"])
-		[self.UA_dirtyProperties addObject:@"filters"];
-}
-
-- (void)setMaxResults:(NSNumber *)maxResults
-{
-	_maxResults = maxResults;
-	
-	if (![self.UA_dirtyProperties containsObject:@"maxResults"])
-		[self.UA_dirtyProperties addObject:@"maxResults"];
-}
-
-- (void)setNextToken:(NSString *)nextToken
-{
-	_nextToken = nextToken;
-	
-	if (![self.UA_dirtyProperties containsObject:@"nextToken"])
-		[self.UA_dirtyProperties addObject:@"nextToken"];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];

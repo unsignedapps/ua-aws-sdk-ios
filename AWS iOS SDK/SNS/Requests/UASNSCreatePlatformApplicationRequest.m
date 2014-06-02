@@ -52,46 +52,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setName:(NSString *)name
-{
-	_name = name;
-	
-	if (![self.UA_dirtyProperties containsObject:@"name"])
-		[self.UA_dirtyProperties addObject:@"name"];
-}
-
-- (void)setPlatform:(UASNSPlatformApplicationType)platform
-{
-	_platform = platform;
-	
-	if (![self.UA_dirtyProperties containsObject:@"platform"])
-		[self.UA_dirtyProperties addObject:@"platform"];
-}
-
-- (void)setAttributes:(NSMutableDictionary *)attributes
-{
-	_attributes = attributes;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributes"])
-		[self.UA_dirtyProperties addObject:@"attributes"];
-}
-
 + (NSValueTransformer *)platformJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSPlatformApplicationTypeAdm), @(UASNSPlatformApplicationTypeApns), @(UASNSPlatformApplicationTypeApnsSandbox), @(UASNSPlatformApplicationTypeGcm) ]

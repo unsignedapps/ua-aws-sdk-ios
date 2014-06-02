@@ -51,38 +51,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setPlatformApplicationARN:(NSString *)platformApplicationARN
-{
-	_platformApplicationARN = platformApplicationARN;
-	
-	if (![self.UA_dirtyProperties containsObject:@"platformApplicationARN"])
-		[self.UA_dirtyProperties addObject:@"platformApplicationARN"];
-}
-
-- (void)setAttributes:(NSMutableDictionary *)attributes
-{
-	_attributes = attributes;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributes"])
-		[self.UA_dirtyProperties addObject:@"attributes"];
-}
-
 + (NSValueTransformer *)attributesJSONTransformer
 {
     return [NSValueTransformer UA_JSONKeyValueTransformerWithKeyName:@"key" valueName:@"value"];

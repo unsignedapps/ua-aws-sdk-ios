@@ -12,7 +12,7 @@
 #import "UAASAlarm.h"
 #import "UAASScalingPolicy.h"
 
-#import <KissXML/DDXML.h>
+#import "UADDXML.h"
 #import "UAMantle.h"
 
 SPEC_BEGIN(UAASDescribePoliciesResponseSpec)

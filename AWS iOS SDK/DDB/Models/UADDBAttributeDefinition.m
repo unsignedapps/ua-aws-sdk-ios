@@ -26,22 +26,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAttributeName:(NSString *)attributeName
-{
-	_attributeName = attributeName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributeName"])
-		[self.UA_dirtyProperties addObject:@"attributeName"];
-}
-
-- (void)setAttributeType:(UADDBAttributeType)attributeType
-{
-	_attributeType = attributeType;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributeType"])
-		[self.UA_dirtyProperties addObject:@"attributeType"];
-}
-
 + (NSValueTransformer *)attributeTypeJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UADDBAttributeTypeString), @(UADDBAttributeTypeNumber), @(UADDBAttributeTypeBinary) ]

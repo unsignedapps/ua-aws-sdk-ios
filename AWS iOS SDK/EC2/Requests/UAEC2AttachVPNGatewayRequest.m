@@ -52,46 +52,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setVpnGatewayID:(NSString *)vpnGatewayID
-{
-	_vpnGatewayID = vpnGatewayID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"vpnGatewayID"])
-		[self.UA_dirtyProperties addObject:@"vpnGatewayID"];
-}
-
-- (void)setVpcID:(NSString *)vpcID
-{
-	_vpcID = vpcID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"vpcID"])
-		[self.UA_dirtyProperties addObject:@"vpcID"];
-}
-
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];

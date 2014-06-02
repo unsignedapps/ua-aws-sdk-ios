@@ -46,28 +46,4 @@
     return [keyPaths copy];
 }
 
-- (void)setUserID:(NSString *)userID
-{
-	_userID = userID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"userID"])
-		[self.UA_dirtyProperties addObject:@"userID"];
-}
-
-- (void)setGroupName:(NSString *)groupName
-{
-	_groupName = groupName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"groupName"])
-		[self.UA_dirtyProperties addObject:@"groupName"];
-}
-
-- (void)setGroupID:(NSString *)groupID
-{
-	_groupID = groupID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"groupID"])
-		[self.UA_dirtyProperties addObject:@"groupID"];
-}
-
 @end

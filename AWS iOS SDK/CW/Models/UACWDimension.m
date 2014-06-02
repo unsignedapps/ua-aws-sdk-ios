@@ -44,20 +44,4 @@
     return [keyPaths copy];
 }
 
-- (void)setName:(NSString *)name
-{
-	_name = name;
-	
-	if (![self.UA_dirtyProperties containsObject:@"name"])
-		[self.UA_dirtyProperties addObject:@"name"];
-}
-
-- (void)setValue:(NSString *)value
-{
-	_value = value;
-	
-	if (![self.UA_dirtyProperties containsObject:@"value"])
-		[self.UA_dirtyProperties addObject:@"value"];
-}
-
 @end

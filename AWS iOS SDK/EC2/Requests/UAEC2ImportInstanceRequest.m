@@ -64,62 +64,6 @@
     return [self.diskImages objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setDescriptionValue:(NSString *)descriptionValue
-{
-	_descriptionValue = descriptionValue;
-	
-	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
-		[self.UA_dirtyProperties addObject:@"descriptionValue"];
-}
-
-- (void)setLaunchSpecification:(UAEC2ImportInstanceLaunchSpecification *)launchSpecification
-{
-	_launchSpecification = launchSpecification;
-	
-	if (![self.UA_dirtyProperties containsObject:@"launchSpecification"])
-		[self.UA_dirtyProperties addObject:@"launchSpecification"];
-}
-
-- (void)setDiskImages:(NSMutableArray *)diskImages
-{
-	_diskImages = diskImages;
-	
-	if (![self.UA_dirtyProperties containsObject:@"diskImages"])
-		[self.UA_dirtyProperties addObject:@"diskImages"];
-}
-
-- (void)setPlatform:(NSString *)platform
-{
-	_platform = platform;
-	
-	if (![self.UA_dirtyProperties containsObject:@"platform"])
-		[self.UA_dirtyProperties addObject:@"platform"];
-}
-
 + (NSValueTransformer *)launchSpecificationJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2ImportInstanceLaunchSpecification class]];

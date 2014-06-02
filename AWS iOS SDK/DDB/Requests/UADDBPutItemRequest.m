@@ -69,62 +69,6 @@
     return [self.expected objectForKey:attributeName];
 }
 
-- (void)setXAmzTarget:(NSString *)xAmzTarget
-{
-	_xAmzTarget = xAmzTarget;
-	
-	if (![self.UA_dirtyProperties containsObject:@"xAmzTarget"])
-		[self.UA_dirtyProperties addObject:@"xAmzTarget"];
-}
-
-- (void)setTableName:(NSString *)tableName
-{
-	_tableName = tableName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"tableName"])
-		[self.UA_dirtyProperties addObject:@"tableName"];
-}
-
-- (void)setItem:(NSMutableDictionary *)item
-{
-	_item = item;
-	
-	if (![self.UA_dirtyProperties containsObject:@"item"])
-		[self.UA_dirtyProperties addObject:@"item"];
-}
-
-- (void)setExpected:(NSMutableDictionary *)expected
-{
-	_expected = expected;
-	
-	if (![self.UA_dirtyProperties containsObject:@"expected"])
-		[self.UA_dirtyProperties addObject:@"expected"];
-}
-
-- (void)setReturnValues:(UADDBReturnValueType)returnValues
-{
-	_returnValues = returnValues;
-	
-	if (![self.UA_dirtyProperties containsObject:@"returnValues"])
-		[self.UA_dirtyProperties addObject:@"returnValues"];
-}
-
-- (void)setReturnConsumedCapacity:(UADDBReturnConsumedCapacityType)returnConsumedCapacity
-{
-	_returnConsumedCapacity = returnConsumedCapacity;
-	
-	if (![self.UA_dirtyProperties containsObject:@"returnConsumedCapacity"])
-		[self.UA_dirtyProperties addObject:@"returnConsumedCapacity"];
-}
-
-- (void)setReturnItemCollectionMetrics:(UADDBReturnItemCollectionMetricsType)returnItemCollectionMetrics
-{
-	_returnItemCollectionMetrics = returnItemCollectionMetrics;
-	
-	if (![self.UA_dirtyProperties containsObject:@"returnItemCollectionMetrics"])
-		[self.UA_dirtyProperties addObject:@"returnItemCollectionMetrics"];
-}
-
 + (NSValueTransformer *)itemJSONTransformer
 {
     return [NSValueTransformer UA_JSONDynamoDBDictionaryTransformer];

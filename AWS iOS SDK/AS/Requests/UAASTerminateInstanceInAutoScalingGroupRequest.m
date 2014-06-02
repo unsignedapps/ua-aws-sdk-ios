@@ -51,38 +51,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setInstanceID:(NSString *)instanceID
-{
-	_instanceID = instanceID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instanceID"])
-		[self.UA_dirtyProperties addObject:@"instanceID"];
-}
-
-- (void)setShouldDecrementDesiredCapacity:(BOOL)shouldDecrementDesiredCapacity
-{
-	_shouldDecrementDesiredCapacity = shouldDecrementDesiredCapacity;
-	
-	if (![self.UA_dirtyProperties containsObject:@"shouldDecrementDesiredCapacity"])
-		[self.UA_dirtyProperties addObject:@"shouldDecrementDesiredCapacity"];
-}
-
 + (NSValueTransformer *)shouldDecrementDesiredCapacityQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];

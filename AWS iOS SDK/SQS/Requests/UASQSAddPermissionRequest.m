@@ -69,54 +69,6 @@
     return (UASQSActionName)[[self.actions objectAtIndex:index] unsignedIntegerValue];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setQueueUrl:(NSString *)queueUrl
-{
-	_queueUrl = queueUrl;
-	
-	if (![self.UA_dirtyProperties containsObject:@"queueUrl"])
-		[self.UA_dirtyProperties addObject:@"queueUrl"];
-}
-
-- (void)setLabel:(NSString *)label
-{
-	_label = label;
-	
-	if (![self.UA_dirtyProperties containsObject:@"label"])
-		[self.UA_dirtyProperties addObject:@"label"];
-}
-
-- (void)setAWSAccountIDs:(NSMutableArray *)aWSAccountIDs
-{
-	_aWSAccountIDs = aWSAccountIDs;
-	
-	if (![self.UA_dirtyProperties containsObject:@"aWSAccountIDs"])
-		[self.UA_dirtyProperties addObject:@"aWSAccountIDs"];
-}
-
-- (void)setActions:(NSMutableArray *)actions
-{
-	_actions = actions;
-	
-	if (![self.UA_dirtyProperties containsObject:@"actions"])
-		[self.UA_dirtyProperties addObject:@"actions"];
-}
-
 + (NSValueTransformer *)actionsQueryStringTransformer
 {
     return [NSValueTransformer UA_ENUMArrayTransformerWithValues:@[ @(UASQSActionNameAll), @(UASQSActionNameSendMessage), @(UASQSActionNameReceiveMessage), @(UASQSActionNameDeleteMessage), @(UASQSActionNameChangeMessageVisibility), @(UASQSActionNameGetQueueAttributes), @(UASQSActionNameGetQueueUrl) ]

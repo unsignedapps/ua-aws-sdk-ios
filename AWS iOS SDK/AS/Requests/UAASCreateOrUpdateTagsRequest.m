@@ -68,30 +68,6 @@
     return [self.tags objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setTags:(NSMutableArray *)tags
-{
-	_tags = tags;
-	
-	if (![self.UA_dirtyProperties containsObject:@"tags"])
-		[self.UA_dirtyProperties addObject:@"tags"];
-}
-
 + (NSValueTransformer *)tagsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAASTag class]];

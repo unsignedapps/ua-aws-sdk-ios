@@ -56,22 +56,6 @@
     return [keyPaths copy];
 }
 
-- (void)setXAmzTarget:(NSString *)xAmzTarget
-{
-	_xAmzTarget = xAmzTarget;
-	
-	if (![self.UA_dirtyProperties containsObject:@"xAmzTarget"])
-		[self.UA_dirtyProperties addObject:@"xAmzTarget"];
-}
-
-- (void)setTableName:(NSString *)tableName
-{
-	_tableName = tableName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"tableName"])
-		[self.UA_dirtyProperties addObject:@"tableName"];
-}
-
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBDescribeTableRequestCompletionBlock)completionBlock

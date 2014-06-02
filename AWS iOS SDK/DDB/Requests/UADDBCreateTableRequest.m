@@ -89,62 +89,6 @@
     return [self.globalSecondaryIndexes objectAtIndex:index];
 }
 
-- (void)setXAmzTarget:(NSString *)xAmzTarget
-{
-	_xAmzTarget = xAmzTarget;
-	
-	if (![self.UA_dirtyProperties containsObject:@"xAmzTarget"])
-		[self.UA_dirtyProperties addObject:@"xAmzTarget"];
-}
-
-- (void)setAttributeDefinitions:(NSMutableArray *)attributeDefinitions
-{
-	_attributeDefinitions = attributeDefinitions;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributeDefinitions"])
-		[self.UA_dirtyProperties addObject:@"attributeDefinitions"];
-}
-
-- (void)setTableName:(NSString *)tableName
-{
-	_tableName = tableName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"tableName"])
-		[self.UA_dirtyProperties addObject:@"tableName"];
-}
-
-- (void)setKeySchema:(NSMutableArray *)keySchema
-{
-	_keySchema = keySchema;
-	
-	if (![self.UA_dirtyProperties containsObject:@"keySchema"])
-		[self.UA_dirtyProperties addObject:@"keySchema"];
-}
-
-- (void)setLocalSecondaryIndexes:(NSMutableArray *)localSecondaryIndexes
-{
-	_localSecondaryIndexes = localSecondaryIndexes;
-	
-	if (![self.UA_dirtyProperties containsObject:@"localSecondaryIndexes"])
-		[self.UA_dirtyProperties addObject:@"localSecondaryIndexes"];
-}
-
-- (void)setGlobalSecondaryIndexes:(NSMutableArray *)globalSecondaryIndexes
-{
-	_globalSecondaryIndexes = globalSecondaryIndexes;
-	
-	if (![self.UA_dirtyProperties containsObject:@"globalSecondaryIndexes"])
-		[self.UA_dirtyProperties addObject:@"globalSecondaryIndexes"];
-}
-
-- (void)setProvisionedThroughput:(UADDBProvisionedThroughput *)provisionedThroughput
-{
-	_provisionedThroughput = provisionedThroughput;
-	
-	if (![self.UA_dirtyProperties containsObject:@"provisionedThroughput"])
-		[self.UA_dirtyProperties addObject:@"provisionedThroughput"];
-}
-
 + (NSValueTransformer *)attributeDefinitionsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UADDBAttributeDefinition class]];

@@ -69,46 +69,6 @@
     return [self.targetConfigurations objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setClientToken:(NSString *)clientToken
-{
-	_clientToken = clientToken;
-	
-	if (![self.UA_dirtyProperties containsObject:@"clientToken"])
-		[self.UA_dirtyProperties addObject:@"clientToken"];
-}
-
-- (void)setReservedInstancesIDs:(NSMutableArray *)reservedInstancesIDs
-{
-	_reservedInstancesIDs = reservedInstancesIDs;
-	
-	if (![self.UA_dirtyProperties containsObject:@"reservedInstancesIDs"])
-		[self.UA_dirtyProperties addObject:@"reservedInstancesIDs"];
-}
-
-- (void)setTargetConfigurations:(NSMutableArray *)targetConfigurations
-{
-	_targetConfigurations = targetConfigurations;
-	
-	if (![self.UA_dirtyProperties containsObject:@"targetConfigurations"])
-		[self.UA_dirtyProperties addObject:@"targetConfigurations"];
-}
-
 + (NSValueTransformer *)targetConfigurationsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2ReservedInstancesConfiguration class]];

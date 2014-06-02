@@ -60,38 +60,6 @@
     return [self.entries objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setQueueUrl:(NSString *)queueUrl
-{
-	_queueUrl = queueUrl;
-	
-	if (![self.UA_dirtyProperties containsObject:@"queueUrl"])
-		[self.UA_dirtyProperties addObject:@"queueUrl"];
-}
-
-- (void)setEntries:(NSMutableArray *)entries
-{
-	_entries = entries;
-	
-	if (![self.UA_dirtyProperties containsObject:@"entries"])
-		[self.UA_dirtyProperties addObject:@"entries"];
-}
-
 + (NSValueTransformer *)entriesJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UASQSDeleteMessageBatchRequestEntry class]];

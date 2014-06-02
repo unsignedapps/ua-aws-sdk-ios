@@ -48,38 +48,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAvailabilityZone:(NSString *)availabilityZone
-{
-	_availabilityZone = availabilityZone;
-	
-	if (![self.UA_dirtyProperties containsObject:@"availabilityZone"])
-		[self.UA_dirtyProperties addObject:@"availabilityZone"];
-}
-
-- (void)setPlatform:(NSString *)platform
-{
-	_platform = platform;
-	
-	if (![self.UA_dirtyProperties containsObject:@"platform"])
-		[self.UA_dirtyProperties addObject:@"platform"];
-}
-
-- (void)setInstanceCount:(NSNumber *)instanceCount
-{
-	_instanceCount = instanceCount;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instanceCount"])
-		[self.UA_dirtyProperties addObject:@"instanceCount"];
-}
-
-- (void)setInstanceType:(NSString *)instanceType
-{
-	_instanceType = instanceType;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instanceType"])
-		[self.UA_dirtyProperties addObject:@"instanceType"];
-}
-
 + (NSValueTransformer *)instanceCountXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

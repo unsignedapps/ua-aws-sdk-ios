@@ -51,14 +51,6 @@
     return [keyPaths copy];
 }
 
-- (void)setSize:(NSNumber *)size
-{
-	_size = size;
-	
-	if (![self.UA_dirtyProperties containsObject:@"size"])
-		[self.UA_dirtyProperties addObject:@"size"];
-}
-
 + (NSValueTransformer *)sizeXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

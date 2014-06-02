@@ -48,36 +48,4 @@
     return [keyPaths copy];
 }
 
-- (void)setDiskImageFormat:(NSString *)diskImageFormat
-{
-	_diskImageFormat = diskImageFormat;
-	
-	if (![self.UA_dirtyProperties containsObject:@"diskImageFormat"])
-		[self.UA_dirtyProperties addObject:@"diskImageFormat"];
-}
-
-- (void)setContainerFormat:(NSString *)containerFormat
-{
-	_containerFormat = containerFormat;
-	
-	if (![self.UA_dirtyProperties containsObject:@"containerFormat"])
-		[self.UA_dirtyProperties addObject:@"containerFormat"];
-}
-
-- (void)setS3Bucket:(NSString *)s3Bucket
-{
-	_s3Bucket = s3Bucket;
-	
-	if (![self.UA_dirtyProperties containsObject:@"s3Bucket"])
-		[self.UA_dirtyProperties addObject:@"s3Bucket"];
-}
-
-- (void)setS3Key:(NSString *)s3Key
-{
-	_s3Key = s3Key;
-	
-	if (![self.UA_dirtyProperties containsObject:@"s3Key"])
-		[self.UA_dirtyProperties addObject:@"s3Key"];
-}
-
 @end

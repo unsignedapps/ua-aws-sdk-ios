@@ -67,30 +67,6 @@
     return [self.alarmNames objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setAlarmNames:(NSMutableArray *)alarmNames
-{
-	_alarmNames = alarmNames;
-	
-	if (![self.UA_dirtyProperties containsObject:@"alarmNames"])
-		[self.UA_dirtyProperties addObject:@"alarmNames"];
-}
-
 - (void)addAlarmName:(NSString *)alarmName
 {
 	if (self.alarmNames == nil)

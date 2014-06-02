@@ -50,44 +50,4 @@
     return [keyPaths copy];
 }
 
-- (void)setBucket:(NSString *)bucket
-{
-	_bucket = bucket;
-	
-	if (![self.UA_dirtyProperties containsObject:@"bucket"])
-		[self.UA_dirtyProperties addObject:@"bucket"];
-}
-
-- (void)setPrefix:(NSString *)prefix
-{
-	_prefix = prefix;
-	
-	if (![self.UA_dirtyProperties containsObject:@"prefix"])
-		[self.UA_dirtyProperties addObject:@"prefix"];
-}
-
-- (void)setAWSAccessKeyID:(NSString *)aWSAccessKeyID
-{
-	_aWSAccessKeyID = aWSAccessKeyID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"aWSAccessKeyID"])
-		[self.UA_dirtyProperties addObject:@"aWSAccessKeyID"];
-}
-
-- (void)setUploadPolicy:(NSString *)uploadPolicy
-{
-	_uploadPolicy = uploadPolicy;
-	
-	if (![self.UA_dirtyProperties containsObject:@"uploadPolicy"])
-		[self.UA_dirtyProperties addObject:@"uploadPolicy"];
-}
-
-- (void)setUploadPolicySignature:(NSString *)uploadPolicySignature
-{
-	_uploadPolicySignature = uploadPolicySignature;
-	
-	if (![self.UA_dirtyProperties containsObject:@"uploadPolicySignature"])
-		[self.UA_dirtyProperties addObject:@"uploadPolicySignature"];
-}
-
 @end

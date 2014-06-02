@@ -59,38 +59,6 @@
     return [self.scalingProcesses objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setAutoScalingGroupName:(NSString *)autoScalingGroupName
-{
-	_autoScalingGroupName = autoScalingGroupName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"autoScalingGroupName"])
-		[self.UA_dirtyProperties addObject:@"autoScalingGroupName"];
-}
-
-- (void)setScalingProcesses:(NSMutableArray *)scalingProcesses
-{
-	_scalingProcesses = scalingProcesses;
-	
-	if (![self.UA_dirtyProperties containsObject:@"scalingProcesses"])
-		[self.UA_dirtyProperties addObject:@"scalingProcesses"];
-}
-
 - (void)addScalingProcess:(NSString *)scalingProcess
 {
 	if (self.scalingProcesses == nil)

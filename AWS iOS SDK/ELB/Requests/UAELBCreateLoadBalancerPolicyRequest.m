@@ -62,54 +62,6 @@
     return [self.policyAttributes objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setLoadBalancerName:(NSString *)loadBalancerName
-{
-	_loadBalancerName = loadBalancerName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"loadBalancerName"])
-		[self.UA_dirtyProperties addObject:@"loadBalancerName"];
-}
-
-- (void)setPolicyName:(NSString *)policyName
-{
-	_policyName = policyName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"policyName"])
-		[self.UA_dirtyProperties addObject:@"policyName"];
-}
-
-- (void)setPolicyTypeName:(NSString *)policyTypeName
-{
-	_policyTypeName = policyTypeName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"policyTypeName"])
-		[self.UA_dirtyProperties addObject:@"policyTypeName"];
-}
-
-- (void)setPolicyAttributes:(NSMutableArray *)policyAttributes
-{
-	_policyAttributes = policyAttributes;
-	
-	if (![self.UA_dirtyProperties containsObject:@"policyAttributes"])
-		[self.UA_dirtyProperties addObject:@"policyAttributes"];
-}
-
 + (NSValueTransformer *)policyAttributesJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBPolicyAttribute class]];

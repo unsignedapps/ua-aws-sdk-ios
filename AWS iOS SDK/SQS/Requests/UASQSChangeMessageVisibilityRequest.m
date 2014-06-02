@@ -52,46 +52,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setQueueUrl:(NSString *)queueUrl
-{
-	_queueUrl = queueUrl;
-	
-	if (![self.UA_dirtyProperties containsObject:@"queueUrl"])
-		[self.UA_dirtyProperties addObject:@"queueUrl"];
-}
-
-- (void)setReceiptHandle:(NSString *)receiptHandle
-{
-	_receiptHandle = receiptHandle;
-	
-	if (![self.UA_dirtyProperties containsObject:@"receiptHandle"])
-		[self.UA_dirtyProperties addObject:@"receiptHandle"];
-}
-
-- (void)setVisibilityTimeout:(NSNumber *)visibilityTimeout
-{
-	_visibilityTimeout = visibilityTimeout;
-	
-	if (![self.UA_dirtyProperties containsObject:@"visibilityTimeout"])
-		[self.UA_dirtyProperties addObject:@"visibilityTimeout"];
-}
-
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASQSChangeMessageVisibilityRequestCompletionBlock)completionBlock

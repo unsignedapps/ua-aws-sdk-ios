@@ -61,46 +61,6 @@
     return [self.filters objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setReservedInstancesID:(NSString *)reservedInstancesID
-{
-	_reservedInstancesID = reservedInstancesID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"reservedInstancesID"])
-		[self.UA_dirtyProperties addObject:@"reservedInstancesID"];
-}
-
-- (void)setReservedInstancesListingID:(NSString *)reservedInstancesListingID
-{
-	_reservedInstancesListingID = reservedInstancesListingID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"reservedInstancesListingID"])
-		[self.UA_dirtyProperties addObject:@"reservedInstancesListingID"];
-}
-
-- (void)setFilters:(NSMutableArray *)filters
-{
-	_filters = filters;
-	
-	if (![self.UA_dirtyProperties containsObject:@"filters"])
-		[self.UA_dirtyProperties addObject:@"filters"];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];

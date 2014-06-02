@@ -54,54 +54,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDescriptionValue:(NSString *)descriptionValue
-{
-	_descriptionValue = descriptionValue;
-	
-	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
-		[self.UA_dirtyProperties addObject:@"descriptionValue"];
-}
-
-- (void)setInstanceID:(NSString *)instanceID
-{
-	_instanceID = instanceID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instanceID"])
-		[self.UA_dirtyProperties addObject:@"instanceID"];
-}
-
-- (void)setTargetEnvironment:(NSString *)targetEnvironment
-{
-	_targetEnvironment = targetEnvironment;
-	
-	if (![self.UA_dirtyProperties containsObject:@"targetEnvironment"])
-		[self.UA_dirtyProperties addObject:@"targetEnvironment"];
-}
-
-- (void)setExportToS3Task:(UAEC2ExportToS3Task *)exportToS3Task
-{
-	_exportToS3Task = exportToS3Task;
-	
-	if (![self.UA_dirtyProperties containsObject:@"exportToS3Task"])
-		[self.UA_dirtyProperties addObject:@"exportToS3Task"];
-}
-
 + (NSValueTransformer *)exportToS3TaskJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2ExportToS3Task class]];

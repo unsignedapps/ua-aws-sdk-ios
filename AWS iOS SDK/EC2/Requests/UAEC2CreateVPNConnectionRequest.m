@@ -55,62 +55,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setType:(NSString *)type
-{
-	_type = type;
-	
-	if (![self.UA_dirtyProperties containsObject:@"type"])
-		[self.UA_dirtyProperties addObject:@"type"];
-}
-
-- (void)setCustomerGatewayID:(NSString *)customerGatewayID
-{
-	_customerGatewayID = customerGatewayID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"customerGatewayID"])
-		[self.UA_dirtyProperties addObject:@"customerGatewayID"];
-}
-
-- (void)setVpnGatewayID:(NSString *)vpnGatewayID
-{
-	_vpnGatewayID = vpnGatewayID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"vpnGatewayID"])
-		[self.UA_dirtyProperties addObject:@"vpnGatewayID"];
-}
-
-- (void)setOptions:(UAEC2Options *)options
-{
-	_options = options;
-	
-	if (![self.UA_dirtyProperties containsObject:@"options"])
-		[self.UA_dirtyProperties addObject:@"options"];
-}
-
 + (NSValueTransformer *)optionsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2Options class]];

@@ -56,62 +56,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setAvailabilityZone:(NSString *)availabilityZone
-{
-	_availabilityZone = availabilityZone;
-	
-	if (![self.UA_dirtyProperties containsObject:@"availabilityZone"])
-		[self.UA_dirtyProperties addObject:@"availabilityZone"];
-}
-
-- (void)setImage:(UAEC2DiskImageDetail *)image
-{
-	_image = image;
-	
-	if (![self.UA_dirtyProperties containsObject:@"image"])
-		[self.UA_dirtyProperties addObject:@"image"];
-}
-
-- (void)setDescriptionValue:(NSString *)descriptionValue
-{
-	_descriptionValue = descriptionValue;
-	
-	if (![self.UA_dirtyProperties containsObject:@"descriptionValue"])
-		[self.UA_dirtyProperties addObject:@"descriptionValue"];
-}
-
-- (void)setVolume:(UAEC2VolumeDetail *)volume
-{
-	_volume = volume;
-	
-	if (![self.UA_dirtyProperties containsObject:@"volume"])
-		[self.UA_dirtyProperties addObject:@"volume"];
-}
-
 + (NSValueTransformer *)imageJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2DiskImageDetail class]];

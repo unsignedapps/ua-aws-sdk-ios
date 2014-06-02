@@ -59,38 +59,6 @@
     return [self.instanceIDs objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setInstanceIDs:(NSMutableArray *)instanceIDs
-{
-	_instanceIDs = instanceIDs;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instanceIDs"])
-		[self.UA_dirtyProperties addObject:@"instanceIDs"];
-}
-
-- (void)setAutoScalingGroupName:(NSString *)autoScalingGroupName
-{
-	_autoScalingGroupName = autoScalingGroupName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"autoScalingGroupName"])
-		[self.UA_dirtyProperties addObject:@"autoScalingGroupName"];
-}
-
 - (void)addInstanceID:(NSString *)instanceID
 {
 	if (self.instanceIDs == nil)

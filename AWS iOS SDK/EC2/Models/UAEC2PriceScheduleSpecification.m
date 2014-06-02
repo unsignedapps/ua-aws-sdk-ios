@@ -46,30 +46,6 @@
     return [keyPaths copy];
 }
 
-- (void)setTerm:(NSNumber *)term
-{
-	_term = term;
-	
-	if (![self.UA_dirtyProperties containsObject:@"term"])
-		[self.UA_dirtyProperties addObject:@"term"];
-}
-
-- (void)setPrice:(NSNumber *)price
-{
-	_price = price;
-	
-	if (![self.UA_dirtyProperties containsObject:@"price"])
-		[self.UA_dirtyProperties addObject:@"price"];
-}
-
-- (void)setCurrencyCode:(NSString *)currencyCode
-{
-	_currencyCode = currencyCode;
-	
-	if (![self.UA_dirtyProperties containsObject:@"currencyCode"])
-		[self.UA_dirtyProperties addObject:@"currencyCode"];
-}
-
 + (NSValueTransformer *)termXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

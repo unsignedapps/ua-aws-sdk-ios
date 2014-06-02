@@ -34,22 +34,6 @@
     return [self.nonKeyAttributes objectAtIndex:index];
 }
 
-- (void)setProjectionType:(UADDBProjectionType)projectionType
-{
-	_projectionType = projectionType;
-	
-	if (![self.UA_dirtyProperties containsObject:@"projectionType"])
-		[self.UA_dirtyProperties addObject:@"projectionType"];
-}
-
-- (void)setNonKeyAttributes:(NSMutableArray *)nonKeyAttributes
-{
-	_nonKeyAttributes = nonKeyAttributes;
-	
-	if (![self.UA_dirtyProperties containsObject:@"nonKeyAttributes"])
-		[self.UA_dirtyProperties addObject:@"nonKeyAttributes"];
-}
-
 + (NSValueTransformer *)projectionTypeJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UADDBProjectionTypeKeysOnly), @(UADDBProjectionTypeInclude), @(UADDBProjectionTypeAll) ]

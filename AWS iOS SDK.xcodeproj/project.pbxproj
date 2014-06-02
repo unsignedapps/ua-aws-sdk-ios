@@ -1057,6 +1057,12 @@
 		E85464FE18CF0F0D00CC2E3C /* UAMTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E418CF0F0D00CC2E3C /* UAMTLReflection.m */; };
 		E85464FF18CF0F0D00CC2E3C /* UAMTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E618CF0F0D00CC2E3C /* UAMTLValueTransformer.m */; };
 		E854650018CF0F0D00CC2E3C /* UAMTLXMLAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E818CF0F0D00CC2E3C /* UAMTLXMLAdapter.m */; };
+		E894BDA5193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = E894BDA4193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m */; };
+		E894BDA6193C89F10068ED17 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140D18D80ED200767D9F /* libxml2.dylib */; };
+		E894BDA7193C8A860068ED17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */; };
+		E894BDA8193C8AFC0068ED17 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */; };
+		E894BDA9193C8AFC0068ED17 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */; };
+		E894BDB0193C91F50068ED17 /* UADirtyPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E894BDAF193C91F50068ED17 /* UADirtyPropertyTests.m */; };
 		E898A5E418B21532004DC298 /* NSString+UAStringEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */; };
 		E898A5E718B2162E004DC298 /* NSURL+UAAWSServiceName.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E618B2162E004DC298 /* NSURL+UAAWSServiceName.m */; };
 		E898A5E918B219FC004DC298 /* UAAWSRequestSigningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E818B219FC004DC298 /* UAAWSRequestSigningTests.m */; };
@@ -3192,6 +3198,9 @@
 		E85464E618CF0F0D00CC2E3C /* UAMTLValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLValueTransformer.m; sourceTree = "<group>"; };
 		E85464E718CF0F0D00CC2E3C /* UAMTLXMLAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLXMLAdapter.h; sourceTree = "<group>"; };
 		E85464E818CF0F0D00CC2E3C /* UAMTLXMLAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLXMLAdapter.m; sourceTree = "<group>"; };
+		E894BDA3193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UAAWSRequest+AdditionalPropertyAccessors.h"; sourceTree = "<group>"; };
+		E894BDA4193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UAAWSRequest+AdditionalPropertyAccessors.m"; sourceTree = "<group>"; };
+		E894BDAF193C91F50068ED17 /* UADirtyPropertyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADirtyPropertyTests.m; sourceTree = "<group>"; };
 		E898A5E218B21532004DC298 /* NSString+UAStringEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UAStringEncoding.h"; sourceTree = "<group>"; };
 		E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UAStringEncoding.m"; sourceTree = "<group>"; };
 		E898A5E518B2162E004DC298 /* NSURL+UAAWSServiceName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+UAAWSServiceName.h"; sourceTree = "<group>"; };
@@ -3209,6 +3218,7 @@
 			files = (
 				A3F8140E18D80ED200767D9F /* libxml2.dylib in Frameworks */,
 				A3E01C2218AD93E900C3B7DB /* CoreGraphics.framework in Frameworks */,
+				E894BDA9193C8AFC0068ED17 /* libxml2.2.dylib in Frameworks */,
 				A3E01C2418AD93E900C3B7DB /* UIKit.framework in Frameworks */,
 				A3E01C2018AD93E900C3B7DB /* Foundation.framework in Frameworks */,
 			);
@@ -3218,8 +3228,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E894BDA6193C89F10068ED17 /* libxml2.dylib in Frameworks */,
 				A3E01C3F18AD93E900C3B7DB /* XCTest.framework in Frameworks */,
+				E894BDA7193C8A860068ED17 /* CoreGraphics.framework in Frameworks */,
 				A3E01C4118AD93E900C3B7DB /* UIKit.framework in Frameworks */,
+				E894BDA8193C8AFC0068ED17 /* libxml2.2.dylib in Frameworks */,
 				A3E01C4018AD93E900C3B7DB /* Foundation.framework in Frameworks */,
 				1F8EA98AD1B048ECA67CE2A7 /* libPods-AWS iOS SDKTests.a in Frameworks */,
 			);
@@ -3524,6 +3537,8 @@
 				E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */,
 				E8FAEC0F18CC2DAD0018BB0E /* UAAWSModel.h */,
 				E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */,
+				E894BDA3193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.h */,
+				E894BDA4193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -5715,6 +5730,7 @@
 				A3377D6C18ADA3C600FECC45 /* SNS */,
 				A3E01C4518AD93E900C3B7DB /* Supporting Files */,
 				E898A5E818B219FC004DC298 /* UAAWSRequestSigningTests.m */,
+				E894BDAF193C91F50068ED17 /* UADirtyPropertyTests.m */,
 			);
 			path = "AWS iOS SDKTests";
 			sourceTree = "<group>";
@@ -6316,6 +6332,7 @@
 				A33778EC18ADA31500FECC45 /* UAEC2CreateNetworkACLResponse.m in Sources */,
 				A3377A2618ADA32F00FECC45 /* UAELBDescribeLoadBalancerPolicyTypesResponse.m in Sources */,
 				A337816F18B1912800FECC45 /* UAIAMListGroupsRequest.m in Sources */,
+				E894BDA5193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m in Sources */,
 				A337734F18ADA2C500FECC45 /* UAASDisableMetricsCollectionRequest.m in Sources */,
 				A337814B18B1912800FECC45 /* UAIAMCreateSAMLProviderRequest.m in Sources */,
 				A3F8141918E27DEF00767D9F /* UAEC2VPCPeeringConnection.m in Sources */,
@@ -7136,6 +7153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E894BDB0193C91F50068ED17 /* UADirtyPropertyTests.m in Sources */,
 				A337806318ADA50300FECC45 /* MTLQueryAdapterTests.m in Sources */,
 				A3377DF018ADA3C600FECC45 /* UAASDescribeLaunchConfigurationsResponseTests.m in Sources */,
 				A3377DED18ADA3C600FECC45 /* UAASDescribeAutoScalingGroupsResponseTests.m in Sources */,
@@ -7306,6 +7324,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "AWS iOS SDKTests/AWS iOS SDKTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					XCTest,
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -7325,6 +7349,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AWS iOS SDK/AWS iOS SDK-Prefix.pch";
 				INFOPLIST_FILE = "AWS iOS SDKTests/AWS iOS SDKTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					XCTest,
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

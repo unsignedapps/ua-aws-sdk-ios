@@ -51,38 +51,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setDomain:(UAEC2Domain)domain
-{
-	_domain = domain;
-	
-	if (![self.UA_dirtyProperties containsObject:@"domain"])
-		[self.UA_dirtyProperties addObject:@"domain"];
-}
-
 + (NSValueTransformer *)domainJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2DomainStandard), @(UAEC2DomainVPC) ]

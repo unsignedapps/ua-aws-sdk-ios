@@ -57,38 +57,6 @@
     return [self.requestItems objectForKey:tableName];
 }
 
-- (void)setXAmzTarget:(NSString *)xAmzTarget
-{
-	_xAmzTarget = xAmzTarget;
-	
-	if (![self.UA_dirtyProperties containsObject:@"xAmzTarget"])
-		[self.UA_dirtyProperties addObject:@"xAmzTarget"];
-}
-
-- (void)setRequestItems:(NSMutableDictionary *)requestItems
-{
-	_requestItems = requestItems;
-	
-	if (![self.UA_dirtyProperties containsObject:@"requestItems"])
-		[self.UA_dirtyProperties addObject:@"requestItems"];
-}
-
-- (void)setReturnConsumedCapacity:(UADDBReturnConsumedCapacityType)returnConsumedCapacity
-{
-	_returnConsumedCapacity = returnConsumedCapacity;
-	
-	if (![self.UA_dirtyProperties containsObject:@"returnConsumedCapacity"])
-		[self.UA_dirtyProperties addObject:@"returnConsumedCapacity"];
-}
-
-- (void)setReturnItemCollectionMetrics:(UADDBReturnItemCollectionMetricsType)returnItemCollectionMetrics
-{
-	_returnItemCollectionMetrics = returnItemCollectionMetrics;
-	
-	if (![self.UA_dirtyProperties containsObject:@"returnItemCollectionMetrics"])
-		[self.UA_dirtyProperties addObject:@"returnItemCollectionMetrics"];
-}
-
 + (NSValueTransformer *)requestItemsJSONTransformer
 {
     return [UAMTLValueTransformer UA_JSONDictionaryTransformerWithItemTransformer:nil];

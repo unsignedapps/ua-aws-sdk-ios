@@ -26,20 +26,4 @@
     return [keyPaths copy];
 }
 
-- (void)setReadCapacityUnits:(NSNumber *)readCapacityUnits
-{
-	_readCapacityUnits = readCapacityUnits;
-	
-	if (![self.UA_dirtyProperties containsObject:@"readCapacityUnits"])
-		[self.UA_dirtyProperties addObject:@"readCapacityUnits"];
-}
-
-- (void)setWriteCapacityUnits:(NSNumber *)writeCapacityUnits
-{
-	_writeCapacityUnits = writeCapacityUnits;
-	
-	if (![self.UA_dirtyProperties containsObject:@"writeCapacityUnits"])
-		[self.UA_dirtyProperties addObject:@"writeCapacityUnits"];
-}
-
 @end

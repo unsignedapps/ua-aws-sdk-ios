@@ -59,38 +59,6 @@
     return [self.globalSecondaryIndexUpdates objectAtIndex:index];
 }
 
-- (void)setXAmzTarget:(NSString *)xAmzTarget
-{
-	_xAmzTarget = xAmzTarget;
-	
-	if (![self.UA_dirtyProperties containsObject:@"xAmzTarget"])
-		[self.UA_dirtyProperties addObject:@"xAmzTarget"];
-}
-
-- (void)setTableName:(NSString *)tableName
-{
-	_tableName = tableName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"tableName"])
-		[self.UA_dirtyProperties addObject:@"tableName"];
-}
-
-- (void)setProvisionedThroughput:(UADDBProvisionedThroughput *)provisionedThroughput
-{
-	_provisionedThroughput = provisionedThroughput;
-	
-	if (![self.UA_dirtyProperties containsObject:@"provisionedThroughput"])
-		[self.UA_dirtyProperties addObject:@"provisionedThroughput"];
-}
-
-- (void)setGlobalSecondaryIndexUpdates:(NSMutableArray *)globalSecondaryIndexUpdates
-{
-	_globalSecondaryIndexUpdates = globalSecondaryIndexUpdates;
-	
-	if (![self.UA_dirtyProperties containsObject:@"globalSecondaryIndexUpdates"])
-		[self.UA_dirtyProperties addObject:@"globalSecondaryIndexUpdates"];
-}
-
 + (NSValueTransformer *)provisionedThroughputJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UADDBProvisionedThroughput class]];

@@ -52,46 +52,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setUserName:(NSString *)userName
-{
-	_userName = userName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"userName"])
-		[self.UA_dirtyProperties addObject:@"userName"];
-}
-
-- (void)setAccessKeyID:(NSString *)accessKeyID
-{
-	_accessKeyID = accessKeyID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"accessKeyID"])
-		[self.UA_dirtyProperties addObject:@"accessKeyID"];
-}
-
-- (void)setStatus:(UAIAMAccessKeyStatus)status
-{
-	_status = status;
-	
-	if (![self.UA_dirtyProperties containsObject:@"status"])
-		[self.UA_dirtyProperties addObject:@"status"];
-}
-
 + (NSValueTransformer *)statusJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAIAMAccessKeyStatusActive), @(UAIAMAccessKeyStatusInactive) ]

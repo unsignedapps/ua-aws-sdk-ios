@@ -59,30 +59,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setRoleName:(NSString *)roleName
-{
-	_roleName = roleName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"roleName"])
-		[self.UA_dirtyProperties addObject:@"roleName"];
-}
-
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMGetRoleRequestCompletionBlock)completionBlock

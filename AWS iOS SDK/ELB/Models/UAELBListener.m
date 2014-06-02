@@ -50,46 +50,6 @@
     return [keyPaths copy];
 }
 
-- (void)setProtocol:(NSString *)protocol
-{
-	_protocol = protocol;
-	
-	if (![self.UA_dirtyProperties containsObject:@"protocol"])
-		[self.UA_dirtyProperties addObject:@"protocol"];
-}
-
-- (void)setLoadBalancerPort:(NSNumber *)loadBalancerPort
-{
-	_loadBalancerPort = loadBalancerPort;
-	
-	if (![self.UA_dirtyProperties containsObject:@"loadBalancerPort"])
-		[self.UA_dirtyProperties addObject:@"loadBalancerPort"];
-}
-
-- (void)setInstanceProtocol:(NSString *)instanceProtocol
-{
-	_instanceProtocol = instanceProtocol;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instanceProtocol"])
-		[self.UA_dirtyProperties addObject:@"instanceProtocol"];
-}
-
-- (void)setInstancePort:(NSNumber *)instancePort
-{
-	_instancePort = instancePort;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instancePort"])
-		[self.UA_dirtyProperties addObject:@"instancePort"];
-}
-
-- (void)setSSLCertificateID:(NSString *)sSLCertificateID
-{
-	_sSLCertificateID = sSLCertificateID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"sSLCertificateID"])
-		[self.UA_dirtyProperties addObject:@"sSLCertificateID"];
-}
-
 + (NSValueTransformer *)loadBalancerPortXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

@@ -51,12 +51,4 @@
     return [keyPaths copy];
 }
 
-- (void)setInstanceID:(NSString *)instanceID
-{
-	_instanceID = instanceID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instanceID"])
-		[self.UA_dirtyProperties addObject:@"instanceID"];
-}
-
 @end

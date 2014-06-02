@@ -59,38 +59,6 @@
     return [self.attributeNames objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setQueueUrl:(NSString *)queueUrl
-{
-	_queueUrl = queueUrl;
-	
-	if (![self.UA_dirtyProperties containsObject:@"queueUrl"])
-		[self.UA_dirtyProperties addObject:@"queueUrl"];
-}
-
-- (void)setAttributeNames:(NSMutableArray *)attributeNames
-{
-	_attributeNames = attributeNames;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributeNames"])
-		[self.UA_dirtyProperties addObject:@"attributeNames"];
-}
-
 - (void)addAttributeName:(NSString *)attributeName
 {
 	if (self.attributeNames == nil)

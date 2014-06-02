@@ -53,54 +53,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setNetworkInterfaceID:(NSString *)networkInterfaceID
-{
-	_networkInterfaceID = networkInterfaceID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"networkInterfaceID"])
-		[self.UA_dirtyProperties addObject:@"networkInterfaceID"];
-}
-
-- (void)setInstanceID:(NSString *)instanceID
-{
-	_instanceID = instanceID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"instanceID"])
-		[self.UA_dirtyProperties addObject:@"instanceID"];
-}
-
-- (void)setDeviceIndex:(NSNumber *)deviceIndex
-{
-	_deviceIndex = deviceIndex;
-	
-	if (![self.UA_dirtyProperties containsObject:@"deviceIndex"])
-		[self.UA_dirtyProperties addObject:@"deviceIndex"];
-}
-
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];

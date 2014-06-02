@@ -53,54 +53,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setType:(NSString *)type
-{
-	_type = type;
-	
-	if (![self.UA_dirtyProperties containsObject:@"type"])
-		[self.UA_dirtyProperties addObject:@"type"];
-}
-
-- (void)setPublicIP:(NSString *)publicIP
-{
-	_publicIP = publicIP;
-	
-	if (![self.UA_dirtyProperties containsObject:@"publicIP"])
-		[self.UA_dirtyProperties addObject:@"publicIP"];
-}
-
-- (void)setBgpASN:(NSNumber *)bgpASN
-{
-	_bgpASN = bgpASN;
-	
-	if (![self.UA_dirtyProperties containsObject:@"bgpASN"])
-		[self.UA_dirtyProperties addObject:@"bgpASN"];
-}
-
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];

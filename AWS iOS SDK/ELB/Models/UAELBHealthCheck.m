@@ -50,46 +50,6 @@
     return [keyPaths copy];
 }
 
-- (void)setTarget:(NSString *)target
-{
-	_target = target;
-	
-	if (![self.UA_dirtyProperties containsObject:@"target"])
-		[self.UA_dirtyProperties addObject:@"target"];
-}
-
-- (void)setInterval:(NSNumber *)interval
-{
-	_interval = interval;
-	
-	if (![self.UA_dirtyProperties containsObject:@"interval"])
-		[self.UA_dirtyProperties addObject:@"interval"];
-}
-
-- (void)setTimeout:(NSNumber *)timeout
-{
-	_timeout = timeout;
-	
-	if (![self.UA_dirtyProperties containsObject:@"timeout"])
-		[self.UA_dirtyProperties addObject:@"timeout"];
-}
-
-- (void)setUnhealthyThreshold:(NSNumber *)unhealthyThreshold
-{
-	_unhealthyThreshold = unhealthyThreshold;
-	
-	if (![self.UA_dirtyProperties containsObject:@"unhealthyThreshold"])
-		[self.UA_dirtyProperties addObject:@"unhealthyThreshold"];
-}
-
-- (void)setHealthyThreshold:(NSNumber *)healthyThreshold
-{
-	_healthyThreshold = healthyThreshold;
-	
-	if (![self.UA_dirtyProperties containsObject:@"healthyThreshold"])
-		[self.UA_dirtyProperties addObject:@"healthyThreshold"];
-}
-
 + (NSValueTransformer *)intervalXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

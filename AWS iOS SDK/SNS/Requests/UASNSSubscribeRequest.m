@@ -52,46 +52,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setTopicARN:(NSString *)topicARN
-{
-	_topicARN = topicARN;
-	
-	if (![self.UA_dirtyProperties containsObject:@"topicARN"])
-		[self.UA_dirtyProperties addObject:@"topicARN"];
-}
-
-- (void)setProtocol:(NSString *)protocol
-{
-	_protocol = protocol;
-	
-	if (![self.UA_dirtyProperties containsObject:@"protocol"])
-		[self.UA_dirtyProperties addObject:@"protocol"];
-}
-
-- (void)setEndpoint:(NSString *)endpoint
-{
-	_endpoint = endpoint;
-	
-	if (![self.UA_dirtyProperties containsObject:@"endpoint"])
-		[self.UA_dirtyProperties addObject:@"endpoint"];
-}
-
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASNSSubscribeRequestCompletionBlock)completionBlock

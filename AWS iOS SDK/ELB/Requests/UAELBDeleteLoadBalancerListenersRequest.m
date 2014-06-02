@@ -59,38 +59,6 @@
     return [self.loadBalancerPorts objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setLoadBalancerName:(NSString *)loadBalancerName
-{
-	_loadBalancerName = loadBalancerName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"loadBalancerName"])
-		[self.UA_dirtyProperties addObject:@"loadBalancerName"];
-}
-
-- (void)setLoadBalancerPorts:(NSMutableArray *)loadBalancerPorts
-{
-	_loadBalancerPorts = loadBalancerPorts;
-	
-	if (![self.UA_dirtyProperties containsObject:@"loadBalancerPorts"])
-		[self.UA_dirtyProperties addObject:@"loadBalancerPorts"];
-}
-
 - (void)addLoadBalancerPort:(NSNumber *)loadBalancerPort
 {
 	if (self.loadBalancerPorts == nil)

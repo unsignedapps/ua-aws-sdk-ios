@@ -46,28 +46,4 @@
     return [keyPaths copy];
 }
 
-- (void)setAvailabilityZone:(NSString *)availabilityZone
-{
-	_availabilityZone = availabilityZone;
-	
-	if (![self.UA_dirtyProperties containsObject:@"availabilityZone"])
-		[self.UA_dirtyProperties addObject:@"availabilityZone"];
-}
-
-- (void)setGroupName:(NSString *)groupName
-{
-	_groupName = groupName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"groupName"])
-		[self.UA_dirtyProperties addObject:@"groupName"];
-}
-
-- (void)setTenancy:(NSString *)tenancy
-{
-	_tenancy = tenancy;
-	
-	if (![self.UA_dirtyProperties containsObject:@"tenancy"])
-		[self.UA_dirtyProperties addObject:@"tenancy"];
-}
-
 @end

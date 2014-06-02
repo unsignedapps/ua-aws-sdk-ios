@@ -11,7 +11,7 @@
 #import "UAASDescribeScalingActivitiesResponse.h"
 #import "UAASActivity.h"
 
-#import <KissXML/DDXML.h>
+#import "UADDXML.h"
 #import "UAMantle.h"
 
 SPEC_BEGIN(UAASDescribeScalingActivitiesResponseSpec)
@@ -40,12 +40,12 @@ describe(@"UAASDescribeScalingActivitiesResponse", ^
         [[theValue(activity.statusCode) should] equal:theValue(UAASActivityStatusFailed)];
         [[activity.progress should] equal:@0];
         [[activity.activityID should] equal:@"063308ae-aa22-4a9b-94f4-9faeEXAMPLE"];
-        [[activity.startTime should] equal:[NSDate dateWithTimeIntervalSince1970:1334251927]];
+        [[activity.startTime should] equal:[NSDate dateWithTimeIntervalSince1970:1334215927]];
         [[activity.autoScalingGroupName should] equal:@"my-test-asg"];
         [[activity.cause should] equal:@"At 2012-04-12T17:31:30Z a user request created an AutoScalingGroup changing the desired capacity from 0 to 1.  At 2012-04-12T17:32:07Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 0 to 1."];
         [[activity.details should] equal:@"{}"];
         [[activity.descriptionValue should] equal:@"Launching a new EC2 instance.  Status Reason: The image id 'ami-4edb0327' does not exist. Launching EC2 instance failed."];
-        [[activity.endTime should] equal:[NSDate dateWithTimeIntervalSince1970:1334251928]];
+        [[activity.endTime should] equal:[NSDate dateWithTimeIntervalSince1970:1334215928]];
         [[activity.statusMessage should] equal:@"The image id 'ami-4edb0327' does not exist. Launching EC2 instance failed."];
 	});
 });

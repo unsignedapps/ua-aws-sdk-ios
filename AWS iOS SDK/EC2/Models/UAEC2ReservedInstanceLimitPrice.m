@@ -44,22 +44,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAmount:(NSNumber *)amount
-{
-	_amount = amount;
-	
-	if (![self.UA_dirtyProperties containsObject:@"amount"])
-		[self.UA_dirtyProperties addObject:@"amount"];
-}
-
-- (void)setCurrencyCode:(NSString *)currencyCode
-{
-	_currencyCode = currencyCode;
-	
-	if (![self.UA_dirtyProperties containsObject:@"currencyCode"])
-		[self.UA_dirtyProperties addObject:@"currencyCode"];
-}
-
 + (NSValueTransformer *)amountXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

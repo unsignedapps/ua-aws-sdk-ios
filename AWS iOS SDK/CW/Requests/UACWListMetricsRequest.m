@@ -62,54 +62,6 @@
     return [self.dimensions objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setNamespace:(NSString *)namespace
-{
-	_namespace = namespace;
-	
-	if (![self.UA_dirtyProperties containsObject:@"namespace"])
-		[self.UA_dirtyProperties addObject:@"namespace"];
-}
-
-- (void)setMetricName:(NSString *)metricName
-{
-	_metricName = metricName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"metricName"])
-		[self.UA_dirtyProperties addObject:@"metricName"];
-}
-
-- (void)setDimensions:(NSMutableArray *)dimensions
-{
-	_dimensions = dimensions;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dimensions"])
-		[self.UA_dirtyProperties addObject:@"dimensions"];
-}
-
-- (void)setNextToken:(NSString *)nextToken
-{
-	_nextToken = nextToken;
-	
-	if (![self.UA_dirtyProperties containsObject:@"nextToken"])
-		[self.UA_dirtyProperties addObject:@"nextToken"];
-}
-
 + (NSValueTransformer *)dimensionsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UACWDimension class]];

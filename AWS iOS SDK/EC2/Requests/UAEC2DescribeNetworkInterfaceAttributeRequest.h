@@ -17,10 +17,7 @@ typedef BOOL(^UAEC2DescribeNetworkInterfaceAttributeRequestShouldContinueWaiting
 
 @property (nonatomic) BOOL dryRun;
 @property (nonatomic, copy) NSString *networkInterfaceID;
-@property (nonatomic, copy) NSString *descriptionValue;
-@property (nonatomic, copy) NSString *sourceDestCheck;
-@property (nonatomic, copy) NSString *groups;
-@property (nonatomic, copy) NSString *attachment;
+@property (nonatomic, copy) NSString *attribute;
 // @property (nonatomic, copy) UAEC2DescribeNetworkInterfaceAttributeRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2DescribeNetworkInterfaceAttributeRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

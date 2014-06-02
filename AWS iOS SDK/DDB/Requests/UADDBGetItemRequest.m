@@ -67,54 +67,6 @@
     return [self.attributesToGet objectAtIndex:index];
 }
 
-- (void)setXAmzTarget:(NSString *)xAmzTarget
-{
-	_xAmzTarget = xAmzTarget;
-	
-	if (![self.UA_dirtyProperties containsObject:@"xAmzTarget"])
-		[self.UA_dirtyProperties addObject:@"xAmzTarget"];
-}
-
-- (void)setTableName:(NSString *)tableName
-{
-	_tableName = tableName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"tableName"])
-		[self.UA_dirtyProperties addObject:@"tableName"];
-}
-
-- (void)setKey:(NSMutableDictionary *)key
-{
-	_key = key;
-	
-	if (![self.UA_dirtyProperties containsObject:@"key"])
-		[self.UA_dirtyProperties addObject:@"key"];
-}
-
-- (void)setAttributesToGet:(NSMutableArray *)attributesToGet
-{
-	_attributesToGet = attributesToGet;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributesToGet"])
-		[self.UA_dirtyProperties addObject:@"attributesToGet"];
-}
-
-- (void)setConsistentRead:(BOOL)consistentRead
-{
-	_consistentRead = consistentRead;
-	
-	if (![self.UA_dirtyProperties containsObject:@"consistentRead"])
-		[self.UA_dirtyProperties addObject:@"consistentRead"];
-}
-
-- (void)setReturnConsumedCapacity:(UADDBReturnConsumedCapacityType)returnConsumedCapacity
-{
-	_returnConsumedCapacity = returnConsumedCapacity;
-	
-	if (![self.UA_dirtyProperties containsObject:@"returnConsumedCapacity"])
-		[self.UA_dirtyProperties addObject:@"returnConsumedCapacity"];
-}
-
 + (NSValueTransformer *)keyJSONTransformer
 {
     return [NSValueTransformer UA_JSONDynamoDBDictionaryTransformer];

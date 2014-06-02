@@ -60,46 +60,6 @@
     return [self.notificationTypes objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setAutoScalingGroupName:(NSString *)autoScalingGroupName
-{
-	_autoScalingGroupName = autoScalingGroupName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"autoScalingGroupName"])
-		[self.UA_dirtyProperties addObject:@"autoScalingGroupName"];
-}
-
-- (void)setTopicARN:(NSString *)topicARN
-{
-	_topicARN = topicARN;
-	
-	if (![self.UA_dirtyProperties containsObject:@"topicARN"])
-		[self.UA_dirtyProperties addObject:@"topicARN"];
-}
-
-- (void)setNotificationTypes:(NSMutableArray *)notificationTypes
-{
-	_notificationTypes = notificationTypes;
-	
-	if (![self.UA_dirtyProperties containsObject:@"notificationTypes"])
-		[self.UA_dirtyProperties addObject:@"notificationTypes"];
-}
-
 - (void)addNotificationType:(NSString *)notificationType
 {
 	if (self.notificationTypes == nil)

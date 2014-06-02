@@ -51,12 +51,4 @@
     return [keyPaths copy];
 }
 
-- (void)setValue:(NSString *)value
-{
-	_value = value;
-	
-	if (![self.UA_dirtyProperties containsObject:@"value"])
-		[self.UA_dirtyProperties addObject:@"value"];
-}
-
 @end

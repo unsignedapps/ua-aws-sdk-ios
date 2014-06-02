@@ -62,54 +62,6 @@
     return [self.dimensions objectAtIndex:index];
 }
 
-- (void)setMetricName:(NSString *)metricName
-{
-	_metricName = metricName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"metricName"])
-		[self.UA_dirtyProperties addObject:@"metricName"];
-}
-
-- (void)setDimensions:(NSMutableArray *)dimensions
-{
-	_dimensions = dimensions;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dimensions"])
-		[self.UA_dirtyProperties addObject:@"dimensions"];
-}
-
-- (void)setTimestamp:(NSDate *)timestamp
-{
-	_timestamp = timestamp;
-	
-	if (![self.UA_dirtyProperties containsObject:@"timestamp"])
-		[self.UA_dirtyProperties addObject:@"timestamp"];
-}
-
-- (void)setValue:(NSNumber *)value
-{
-	_value = value;
-	
-	if (![self.UA_dirtyProperties containsObject:@"value"])
-		[self.UA_dirtyProperties addObject:@"value"];
-}
-
-- (void)setStatisticValues:(UACWStatisticSet *)statisticValues
-{
-	_statisticValues = statisticValues;
-	
-	if (![self.UA_dirtyProperties containsObject:@"statisticValues"])
-		[self.UA_dirtyProperties addObject:@"statisticValues"];
-}
-
-- (void)setUnit:(UACWUnit)unit
-{
-	_unit = unit;
-	
-	if (![self.UA_dirtyProperties containsObject:@"unit"])
-		[self.UA_dirtyProperties addObject:@"unit"];
-}
-
 + (NSValueTransformer *)dimensionsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];

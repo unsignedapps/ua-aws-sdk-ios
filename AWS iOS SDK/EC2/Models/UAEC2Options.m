@@ -51,14 +51,6 @@
     return [keyPaths copy];
 }
 
-- (void)setStaticRoutesOnly:(BOOL)staticRoutesOnly
-{
-	_staticRoutesOnly = staticRoutesOnly;
-	
-	if (![self.UA_dirtyProperties containsObject:@"staticRoutesOnly"])
-		[self.UA_dirtyProperties addObject:@"staticRoutesOnly"];
-}
-
 + (NSValueTransformer *)staticRoutesOnlyQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];

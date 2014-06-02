@@ -26,22 +26,6 @@
     return [keyPaths copy];
 }
 
-- (void)setValue:(id)value
-{
-	_value = value;
-
-	if (![self.UA_dirtyProperties containsObject:@"value"])
-		[self.UA_dirtyProperties addObject:@"value"];
-}
-
-- (void)setAction:(UADDBAttributeUpdateActionType)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
 + (NSValueTransformer *)valueJSONTransformer
 {
     return [NSValueTransformer UA_JSONDynamoDBValueTransformer];

@@ -61,54 +61,6 @@
     return [self.privateIPAddresses objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setNetworkInterfaceID:(NSString *)networkInterfaceID
-{
-	_networkInterfaceID = networkInterfaceID;
-	
-	if (![self.UA_dirtyProperties containsObject:@"networkInterfaceID"])
-		[self.UA_dirtyProperties addObject:@"networkInterfaceID"];
-}
-
-- (void)setPrivateIPAddresses:(NSMutableArray *)privateIPAddresses
-{
-	_privateIPAddresses = privateIPAddresses;
-	
-	if (![self.UA_dirtyProperties containsObject:@"privateIPAddresses"])
-		[self.UA_dirtyProperties addObject:@"privateIPAddresses"];
-}
-
-- (void)setSecondaryPrivateIPAddressCount:(NSNumber *)secondaryPrivateIPAddressCount
-{
-	_secondaryPrivateIPAddressCount = secondaryPrivateIPAddressCount;
-	
-	if (![self.UA_dirtyProperties containsObject:@"secondaryPrivateIPAddressCount"])
-		[self.UA_dirtyProperties addObject:@"secondaryPrivateIPAddressCount"];
-}
-
-- (void)setAllowReassignment:(BOOL)allowReassignment
-{
-	_allowReassignment = allowReassignment;
-	
-	if (![self.UA_dirtyProperties containsObject:@"allowReassignment"])
-		[self.UA_dirtyProperties addObject:@"allowReassignment"];
-}
-
 + (NSValueTransformer *)allowReassignmentQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];

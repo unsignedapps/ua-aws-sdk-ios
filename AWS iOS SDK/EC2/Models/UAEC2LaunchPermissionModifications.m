@@ -61,22 +61,6 @@
     return [self.remove objectAtIndex:index];
 }
 
-- (void)setAdd:(NSMutableArray *)add
-{
-	_add = add;
-	
-	if (![self.UA_dirtyProperties containsObject:@"add"])
-		[self.UA_dirtyProperties addObject:@"add"];
-}
-
-- (void)setRemove:(NSMutableArray *)remove
-{
-	_remove = remove;
-	
-	if (![self.UA_dirtyProperties containsObject:@"remove"])
-		[self.UA_dirtyProperties addObject:@"remove"];
-}
-
 + (NSValueTransformer *)addQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2LaunchPermission class]];

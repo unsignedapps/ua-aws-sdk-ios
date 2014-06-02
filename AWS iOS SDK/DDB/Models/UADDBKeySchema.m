@@ -26,22 +26,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAttributeName:(NSString *)attributeName
-{
-	_attributeName = attributeName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributeName"])
-		[self.UA_dirtyProperties addObject:@"attributeName"];
-}
-
-- (void)setKeyType:(UADDBKeyType)keyType
-{
-	_keyType = keyType;
-	
-	if (![self.UA_dirtyProperties containsObject:@"keyType"])
-		[self.UA_dirtyProperties addObject:@"keyType"];
-}
-
 + (NSValueTransformer *)keyTypeJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UADDBKeyTypeHash), @(UADDBKeyTypeRange) ]

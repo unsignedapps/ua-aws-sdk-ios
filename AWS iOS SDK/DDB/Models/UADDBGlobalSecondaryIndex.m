@@ -39,38 +39,6 @@
     return [self.keySchema objectAtIndex:index];
 }
 
-- (void)setIndexName:(NSString *)indexName
-{
-	_indexName = indexName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"indexName"])
-		[self.UA_dirtyProperties addObject:@"indexName"];
-}
-
-- (void)setKeySchema:(NSMutableArray *)keySchema
-{
-	_keySchema = keySchema;
-	
-	if (![self.UA_dirtyProperties containsObject:@"keySchema"])
-		[self.UA_dirtyProperties addObject:@"keySchema"];
-}
-
-- (void)setProjection:(UADDBProjection *)projection
-{
-	_projection = projection;
-	
-	if (![self.UA_dirtyProperties containsObject:@"projection"])
-		[self.UA_dirtyProperties addObject:@"projection"];
-}
-
-- (void)setProvisionedThroughput:(UADDBProvisionedThroughput *)provisionedThroughput
-{
-	_provisionedThroughput = provisionedThroughput;
-	
-	if (![self.UA_dirtyProperties containsObject:@"provisionedThroughput"])
-		[self.UA_dirtyProperties addObject:@"provisionedThroughput"];
-}
-
 + (NSValueTransformer *)keySchemaJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UADDBKeySchema class]];

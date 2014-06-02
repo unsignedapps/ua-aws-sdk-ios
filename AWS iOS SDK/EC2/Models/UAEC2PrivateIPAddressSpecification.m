@@ -44,22 +44,6 @@
     return [keyPaths copy];
 }
 
-- (void)setPrivateIPAddress:(NSString *)privateIPAddress
-{
-	_privateIPAddress = privateIPAddress;
-	
-	if (![self.UA_dirtyProperties containsObject:@"privateIPAddress"])
-		[self.UA_dirtyProperties addObject:@"privateIPAddress"];
-}
-
-- (void)setPrimary:(BOOL)primary
-{
-	_primary = primary;
-	
-	if (![self.UA_dirtyProperties containsObject:@"primary"])
-		[self.UA_dirtyProperties addObject:@"primary"];
-}
-
 + (NSValueTransformer *)primaryXMLTransformer
 {
     return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];

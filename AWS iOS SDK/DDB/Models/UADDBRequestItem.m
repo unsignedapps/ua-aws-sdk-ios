@@ -43,28 +43,4 @@
     return [self.attributesToGet objectAtIndex:index];
 }
 
-- (void)setKeys:(NSMutableArray *)keys
-{
-	_keys = keys;
-	
-	if (![self.UA_dirtyProperties containsObject:@"keys"])
-		[self.UA_dirtyProperties addObject:@"keys"];
-}
-
-- (void)setAttributesToGet:(NSMutableArray *)attributesToGet
-{
-	_attributesToGet = attributesToGet;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributesToGet"])
-		[self.UA_dirtyProperties addObject:@"attributesToGet"];
-}
-
-- (void)setConsistentRead:(BOOL)consistentRead
-{
-	_consistentRead = consistentRead;
-	
-	if (![self.UA_dirtyProperties containsObject:@"consistentRead"])
-		[self.UA_dirtyProperties addObject:@"consistentRead"];
-}
-
 @end

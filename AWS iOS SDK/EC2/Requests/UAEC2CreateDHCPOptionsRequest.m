@@ -60,38 +60,6 @@
     return [self.dhcpConfigurations objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setDhcpConfigurations:(NSMutableArray *)dhcpConfigurations
-{
-	_dhcpConfigurations = dhcpConfigurations;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dhcpConfigurations"])
-		[self.UA_dirtyProperties addObject:@"dhcpConfigurations"];
-}
-
 + (NSValueTransformer *)dhcpConfigurationsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2DHCPConfiguration class]];

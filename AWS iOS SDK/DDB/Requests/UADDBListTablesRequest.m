@@ -48,30 +48,6 @@
     return [keyPaths copy];
 }
 
-- (void)setXAmzTarget:(NSString *)xAmzTarget
-{
-	_xAmzTarget = xAmzTarget;
-	
-	if (![self.UA_dirtyProperties containsObject:@"xAmzTarget"])
-		[self.UA_dirtyProperties addObject:@"xAmzTarget"];
-}
-
-- (void)setExclusiveStartTableName:(NSString *)exclusiveStartTableName
-{
-	_exclusiveStartTableName = exclusiveStartTableName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"exclusiveStartTableName"])
-		[self.UA_dirtyProperties addObject:@"exclusiveStartTableName"];
-}
-
-- (void)setLimit:(NSNumber *)limit
-{
-	_limit = limit;
-	
-	if (![self.UA_dirtyProperties containsObject:@"limit"])
-		[self.UA_dirtyProperties addObject:@"limit"];
-}
-
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBListTablesRequestCompletionBlock)completionBlock

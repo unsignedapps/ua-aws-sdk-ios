@@ -45,22 +45,6 @@
     return [keyPaths copy];
 }
 
-- (void)setCrossZoneLoadBalancing:(BOOL)crossZoneLoadBalancing
-{
-	_crossZoneLoadBalancing = crossZoneLoadBalancing;
-	
-	if (![self.UA_dirtyProperties containsObject:@"crossZoneLoadBalancing"])
-		[self.UA_dirtyProperties addObject:@"crossZoneLoadBalancing"];
-}
-
-- (void)setAccessLog:(UAELBAccessLog *)accessLog
-{
-	_accessLog = accessLog;
-	
-	if (![self.UA_dirtyProperties containsObject:@"accessLog"])
-		[self.UA_dirtyProperties addObject:@"accessLog"];
-}
-
 + (NSValueTransformer *)accessLogQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBAccessLog class]];

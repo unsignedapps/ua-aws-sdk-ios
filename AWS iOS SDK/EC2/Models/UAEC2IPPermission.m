@@ -68,46 +68,6 @@
     return [self.ipRanges objectAtIndex:index];
 }
 
-- (void)setIpProtocol:(NSString *)ipProtocol
-{
-	_ipProtocol = ipProtocol;
-	
-	if (![self.UA_dirtyProperties containsObject:@"ipProtocol"])
-		[self.UA_dirtyProperties addObject:@"ipProtocol"];
-}
-
-- (void)setFromPort:(NSNumber *)fromPort
-{
-	_fromPort = fromPort;
-	
-	if (![self.UA_dirtyProperties containsObject:@"fromPort"])
-		[self.UA_dirtyProperties addObject:@"fromPort"];
-}
-
-- (void)setToPort:(NSNumber *)toPort
-{
-	_toPort = toPort;
-	
-	if (![self.UA_dirtyProperties containsObject:@"toPort"])
-		[self.UA_dirtyProperties addObject:@"toPort"];
-}
-
-- (void)setUserIdGroupPairs:(NSMutableArray *)userIdGroupPairs
-{
-	_userIdGroupPairs = userIdGroupPairs;
-	
-	if (![self.UA_dirtyProperties containsObject:@"userIdGroupPairs"])
-		[self.UA_dirtyProperties addObject:@"userIdGroupPairs"];
-}
-
-- (void)setIpRanges:(NSMutableArray *)ipRanges
-{
-	_ipRanges = ipRanges;
-	
-	if (![self.UA_dirtyProperties containsObject:@"ipRanges"])
-		[self.UA_dirtyProperties addObject:@"ipRanges"];
-}
-
 + (NSValueTransformer *)userIdGroupPairsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2UserIdGroupPair class]];

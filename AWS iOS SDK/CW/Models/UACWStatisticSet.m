@@ -48,38 +48,6 @@
     return [keyPaths copy];
 }
 
-- (void)setSampleCount:(NSNumber *)sampleCount
-{
-	_sampleCount = sampleCount;
-	
-	if (![self.UA_dirtyProperties containsObject:@"sampleCount"])
-		[self.UA_dirtyProperties addObject:@"sampleCount"];
-}
-
-- (void)setSum:(NSNumber *)sum
-{
-	_sum = sum;
-	
-	if (![self.UA_dirtyProperties containsObject:@"sum"])
-		[self.UA_dirtyProperties addObject:@"sum"];
-}
-
-- (void)setMinimum:(NSNumber *)minimum
-{
-	_minimum = minimum;
-	
-	if (![self.UA_dirtyProperties containsObject:@"minimum"])
-		[self.UA_dirtyProperties addObject:@"minimum"];
-}
-
-- (void)setMaximum:(NSNumber *)maximum
-{
-	_maximum = maximum;
-	
-	if (![self.UA_dirtyProperties containsObject:@"maximum"])
-		[self.UA_dirtyProperties addObject:@"maximum"];
-}
-
 + (NSValueTransformer *)sampleCountXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

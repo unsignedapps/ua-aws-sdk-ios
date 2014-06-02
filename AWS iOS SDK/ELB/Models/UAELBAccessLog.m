@@ -48,38 +48,6 @@
     return [keyPaths copy];
 }
 
-- (void)setEnabled:(BOOL)enabled
-{
-	_enabled = enabled;
-	
-	if (![self.UA_dirtyProperties containsObject:@"enabled"])
-		[self.UA_dirtyProperties addObject:@"enabled"];
-}
-
-- (void)setS3BucketName:(NSString *)s3BucketName
-{
-	_s3BucketName = s3BucketName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"s3BucketName"])
-		[self.UA_dirtyProperties addObject:@"s3BucketName"];
-}
-
-- (void)setEmitInterval:(NSNumber *)emitInterval
-{
-	_emitInterval = emitInterval;
-	
-	if (![self.UA_dirtyProperties containsObject:@"emitInterval"])
-		[self.UA_dirtyProperties addObject:@"emitInterval"];
-}
-
-- (void)setS3BucketPrefix:(NSString *)s3BucketPrefix
-{
-	_s3BucketPrefix = s3BucketPrefix;
-	
-	if (![self.UA_dirtyProperties containsObject:@"s3BucketPrefix"])
-		[self.UA_dirtyProperties addObject:@"s3BucketPrefix"];
-}
-
 + (NSValueTransformer *)enabledQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];

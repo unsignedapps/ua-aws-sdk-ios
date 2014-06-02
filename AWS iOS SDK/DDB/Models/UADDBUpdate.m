@@ -27,22 +27,6 @@
     return [keyPaths copy];
 }
 
-- (void)setIndexName:(NSString *)indexName
-{
-	_indexName = indexName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"indexName"])
-		[self.UA_dirtyProperties addObject:@"indexName"];
-}
-
-- (void)setProvisionedThroughput:(UADDBProvisionedThroughput *)provisionedThroughput
-{
-	_provisionedThroughput = provisionedThroughput;
-	
-	if (![self.UA_dirtyProperties containsObject:@"provisionedThroughput"])
-		[self.UA_dirtyProperties addObject:@"provisionedThroughput"];
-}
-
 + (NSValueTransformer *)provisionedThroughputJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UADDBProvisionedThroughput class]];

@@ -34,22 +34,6 @@
     return [self.attributeValueList objectAtIndex:index];
 }
 
-- (void)setAttributeValueList:(NSMutableArray *)attributeValueList
-{
-	_attributeValueList = attributeValueList;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributeValueList"])
-		[self.UA_dirtyProperties addObject:@"attributeValueList"];
-}
-
-- (void)setComparisonOperator:(UADDBComparisonOperator)comparisonOperator
-{
-	_comparisonOperator = comparisonOperator;
-	
-	if (![self.UA_dirtyProperties containsObject:@"comparisonOperator"])
-		[self.UA_dirtyProperties addObject:@"comparisonOperator"];
-}
-
 + (NSValueTransformer *)comparisonOperatorJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UADDBComparisonOperatorEQ), @(UADDBComparisonOperatorLE), @(UADDBComparisonOperatorLT), @(UADDBComparisonOperatorGE), @(UADDBComparisonOperatorGT), @(UADDBComparisonOperatorBeginsWith), @(UADDBComparisonOperatorBetween) ]

@@ -46,30 +46,6 @@
     return [keyPaths copy];
 }
 
-- (void)setIdentifier:(NSString *)identifier
-{
-	_identifier = identifier;
-	
-	if (![self.UA_dirtyProperties containsObject:@"identifier"])
-		[self.UA_dirtyProperties addObject:@"identifier"];
-}
-
-- (void)setMessageBody:(NSString *)messageBody
-{
-	_messageBody = messageBody;
-	
-	if (![self.UA_dirtyProperties containsObject:@"messageBody"])
-		[self.UA_dirtyProperties addObject:@"messageBody"];
-}
-
-- (void)setDelaySeconds:(NSNumber *)delaySeconds
-{
-	_delaySeconds = delaySeconds;
-	
-	if (![self.UA_dirtyProperties containsObject:@"delaySeconds"])
-		[self.UA_dirtyProperties addObject:@"delaySeconds"];
-}
-
 + (NSValueTransformer *)delaySecondsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

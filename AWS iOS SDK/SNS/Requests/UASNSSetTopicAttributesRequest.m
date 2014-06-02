@@ -52,46 +52,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setTopicARN:(NSString *)topicARN
-{
-	_topicARN = topicARN;
-	
-	if (![self.UA_dirtyProperties containsObject:@"topicARN"])
-		[self.UA_dirtyProperties addObject:@"topicARN"];
-}
-
-- (void)setAttributeName:(UASNSTopicAttribute)attributeName
-{
-	_attributeName = attributeName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributeName"])
-		[self.UA_dirtyProperties addObject:@"attributeName"];
-}
-
-- (void)setAttributeValue:(NSString *)attributeValue
-{
-	_attributeValue = attributeValue;
-	
-	if (![self.UA_dirtyProperties containsObject:@"attributeValue"])
-		[self.UA_dirtyProperties addObject:@"attributeValue"];
-}
-
 + (NSValueTransformer *)attributeNameJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSTopicAttributePolicy), @(UASNSTopicAttributeDisplayName), @(UASNSTopicAttributeDeliveryPolicy) ]

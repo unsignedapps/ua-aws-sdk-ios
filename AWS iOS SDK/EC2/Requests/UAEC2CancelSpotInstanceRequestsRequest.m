@@ -59,38 +59,6 @@
     return [self.spotInstanceRequestIDs objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setDryRun:(BOOL)dryRun
-{
-	_dryRun = dryRun;
-	
-	if (![self.UA_dirtyProperties containsObject:@"dryRun"])
-		[self.UA_dirtyProperties addObject:@"dryRun"];
-}
-
-- (void)setSpotInstanceRequestIDs:(NSMutableArray *)spotInstanceRequestIDs
-{
-	_spotInstanceRequestIDs = spotInstanceRequestIDs;
-	
-	if (![self.UA_dirtyProperties containsObject:@"spotInstanceRequestIDs"])
-		[self.UA_dirtyProperties addObject:@"spotInstanceRequestIDs"];
-}
-
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];

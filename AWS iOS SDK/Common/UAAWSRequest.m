@@ -43,6 +43,9 @@
 - (UAAWSResponse *)UA_ResponseObjectForResponseData:(NSData *)data;
 - (void)UA_SchedulePoll;
 
+- (void)startDirtyPropertyObserving;
+- (void)stopDirtyPropertyObserving;
+
 @end
 
 @interface UAAWSOperationQueue (Authentication)
@@ -65,6 +68,7 @@
         [self setFinished:NO];
         [self setUA_dirtyProperties:[[NSMutableArray alloc] initWithCapacity:0]];
         [self setQueuePriority:NSOperationQueuePriorityLow];
+        [self startDirtyPropertyObserving];
     }
     return self;
 }
@@ -99,6 +103,10 @@
     }
 }
 
+- (void)dealloc
+{
+    [self stopDirtyPropertyObserving];
+}
 
 - (void)invoke
 {
@@ -108,6 +116,34 @@
     [self setFinished:NO];
     
     [[UAAWSOperationQueue sharedInstance] addRequest:self];
+}
+
+#pragma mark - Dirty Properties
+
+- (void)startDirtyPropertyObserving
+{
+    NSSet *keys = [[self class] propertyKeys];
+    if (keys != nil && [keys count] > 0)
+    {
+        for (NSString *key in keys)
+            [self addObserver:self forKeyPath:key options:NSKeyValueObservingOptionNew context:nil];
+    }
+}
+
+- (void)stopDirtyPropertyObserving
+{
+    NSSet *keys = [[self class] propertyKeys];
+    if (keys != nil && [keys count] > 0)
+    {
+        for (NSString *key in keys)
+            [self removeObserver:self forKeyPath:key];
+    }
+}
+
+- (void)didChangeValueForKey:(NSString *)key
+{
+	if (![self.UA_dirtyProperties containsObject:key])
+		[self.UA_dirtyProperties addObject:key];
 }
 
 #pragma mark - NSOperation Bits and Bobs

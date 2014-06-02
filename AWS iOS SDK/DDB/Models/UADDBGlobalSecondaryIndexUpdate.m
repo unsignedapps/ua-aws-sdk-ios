@@ -35,14 +35,6 @@
     return [keyPaths copy];
 }
 
-- (void)setUpdate:(UADDBUpdate *)update
-{
-	_update = update;
-	
-	if (![self.UA_dirtyProperties containsObject:@"update"])
-		[self.UA_dirtyProperties addObject:@"update"];
-}
-
 + (NSValueTransformer *)updateJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UADDBUpdate class]];

@@ -51,38 +51,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setPath:(NSString *)path
-{
-	_path = path;
-	
-	if (![self.UA_dirtyProperties containsObject:@"path"])
-		[self.UA_dirtyProperties addObject:@"path"];
-}
-
-- (void)setVirtualMFADeviceName:(NSString *)virtualMFADeviceName
-{
-	_virtualMFADeviceName = virtualMFADeviceName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"virtualMFADeviceName"])
-		[self.UA_dirtyProperties addObject:@"virtualMFADeviceName"];
-}
-
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMCreateVirtualMFADeviceRequestCompletionBlock)completionBlock

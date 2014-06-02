@@ -44,20 +44,4 @@
     return [keyPaths copy];
 }
 
-- (void)setIdentifier:(NSString *)identifier
-{
-	_identifier = identifier;
-	
-	if (![self.UA_dirtyProperties containsObject:@"identifier"])
-		[self.UA_dirtyProperties addObject:@"identifier"];
-}
-
-- (void)setReceiptHandle:(NSString *)receiptHandle
-{
-	_receiptHandle = receiptHandle;
-	
-	if (![self.UA_dirtyProperties containsObject:@"receiptHandle"])
-		[self.UA_dirtyProperties addObject:@"receiptHandle"];
-}
-
 @end

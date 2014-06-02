@@ -51,12 +51,4 @@
     return [keyPaths copy];
 }
 
-- (void)setCidrIP:(NSString *)cidrIP
-{
-	_cidrIP = cidrIP;
-	
-	if (![self.UA_dirtyProperties containsObject:@"cidrIP"])
-		[self.UA_dirtyProperties addObject:@"cidrIP"];
-}
-
 @end

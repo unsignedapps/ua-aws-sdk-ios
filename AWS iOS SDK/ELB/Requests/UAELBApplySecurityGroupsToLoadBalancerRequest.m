@@ -59,38 +59,6 @@
     return [self.securityGroups objectAtIndex:index];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setLoadBalancerName:(NSString *)loadBalancerName
-{
-	_loadBalancerName = loadBalancerName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"loadBalancerName"])
-		[self.UA_dirtyProperties addObject:@"loadBalancerName"];
-}
-
-- (void)setSecurityGroups:(NSMutableArray *)securityGroups
-{
-	_securityGroups = securityGroups;
-	
-	if (![self.UA_dirtyProperties containsObject:@"securityGroups"])
-		[self.UA_dirtyProperties addObject:@"securityGroups"];
-}
-
 - (void)addSecurityGroup:(NSString *)securityGroup
 {
 	if (self.securityGroups == nil)

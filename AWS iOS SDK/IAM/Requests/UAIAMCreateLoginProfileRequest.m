@@ -51,38 +51,6 @@
     return [keyPaths copy];
 }
 
-- (void)setAction:(NSString *)action
-{
-	_action = action;
-	
-	if (![self.UA_dirtyProperties containsObject:@"action"])
-		[self.UA_dirtyProperties addObject:@"action"];
-}
-
-- (void)setVersion:(NSString *)version
-{
-	_version = version;
-	
-	if (![self.UA_dirtyProperties containsObject:@"version"])
-		[self.UA_dirtyProperties addObject:@"version"];
-}
-
-- (void)setUserName:(NSString *)userName
-{
-	_userName = userName;
-	
-	if (![self.UA_dirtyProperties containsObject:@"userName"])
-		[self.UA_dirtyProperties addObject:@"userName"];
-}
-
-- (void)setPassword:(NSString *)password
-{
-	_password = password;
-	
-	if (![self.UA_dirtyProperties containsObject:@"password"])
-		[self.UA_dirtyProperties addObject:@"password"];
-}
-
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMCreateLoginProfileRequestCompletionBlock)completionBlock

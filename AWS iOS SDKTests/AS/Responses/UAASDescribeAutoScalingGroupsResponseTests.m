@@ -15,7 +15,7 @@
 #import "UAASTag.h"
 #import "UAASAutoScalingGroup.h"
 
-#import <KissXML/DDXML.h>
+#import "UADDXML.h"
 #import "UAMantle.h"
 
 SPEC_BEGIN(UAASDescribeAutoScalingGroupsResponseSpec)
@@ -44,8 +44,8 @@ describe(@"UAASDescribeAutoScalingGroupsResponse", ^
         [[group.tags should] beNil];
         [[group.suspendedProcesses should] beNil];
         [[group.autoScalingGroupName should] equal:@"my-test-asg-lbs"];
-        [[theValue(group.healthCheckType) should] equal:theValue(UAASHealthCheckTypeELB)];
-        [[group.createdTime should] equal:[NSDate dateWithTimeIntervalSince1970:1367862435]];
+        [[theValue(group.healthCheckType) should] equal:theValue(UAASHealthCheckTypeElb)];
+        [[group.createdTime should] equal:[NSDate dateWithTimeIntervalSince1970:1367826435]];
         [[group.enabledMetrics should] beNil];
         [[group.launchConfigurationName should] equal:@"my-test-lc"];
         [[group.instances should] beNil];
