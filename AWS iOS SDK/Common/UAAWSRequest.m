@@ -481,4 +481,12 @@
     _executing = executing;
     [self didChangeValueForKey:@"isExecuting"];
 }
+
+#pragma mark - Additional Accessors
+
++ (NSDictionary *)UA_additionalAccessors
+{
+    return nil;
+}
+
 @end

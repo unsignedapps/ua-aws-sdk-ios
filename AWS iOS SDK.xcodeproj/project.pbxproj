@@ -1033,6 +1033,7 @@
 		A3F8143618E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8142F18E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.m */; };
 		A3F8143718E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8143118E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.m */; };
 		A3F8143818E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8143318E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m */; };
+		E8421830193C9B100046B9E8 /* UAAdditionalPropertyAccessorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E842182F193C9B100046B9E8 /* UAAdditionalPropertyAccessorsTests.m */; };
 		E85464E918CF0F0D00CC2E3C /* UADDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B018CF0F0D00CC2E3C /* UADDXMLElementAdditions.m */; };
 		E85464EA18CF0F0D00CC2E3C /* NSString+UADDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B318CF0F0D00CC2E3C /* NSString+UADDXML.m */; };
 		E85464EB18CF0F0D00CC2E3C /* UADDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B818CF0F0D00CC2E3C /* UADDXMLDocument.m */; };
@@ -3144,6 +3145,7 @@
 		A3F8143318E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2RejectVPCPeeringConnectionResponse.m; sourceTree = "<group>"; };
 		AE8AD1DDD4B44EA6B687ABB0 /* Pods-AWS iOS SDKTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWS iOS SDKTests.xcconfig"; path = "Pods/Pods-AWS iOS SDKTests.xcconfig"; sourceTree = "<group>"; };
 		D7E3239524A74BCA8C929A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E842182F193C9B100046B9E8 /* UAAdditionalPropertyAccessorsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAAdditionalPropertyAccessorsTests.m; sourceTree = "<group>"; };
 		E85464AF18CF0F0D00CC2E3C /* UADDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXMLElementAdditions.h; sourceTree = "<group>"; };
 		E85464B018CF0F0D00CC2E3C /* UADDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDXMLElementAdditions.m; sourceTree = "<group>"; };
 		E85464B218CF0F0D00CC2E3C /* NSString+UADDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UADDXML.h"; sourceTree = "<group>"; };
@@ -3198,7 +3200,6 @@
 		E85464E618CF0F0D00CC2E3C /* UAMTLValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLValueTransformer.m; sourceTree = "<group>"; };
 		E85464E718CF0F0D00CC2E3C /* UAMTLXMLAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLXMLAdapter.h; sourceTree = "<group>"; };
 		E85464E818CF0F0D00CC2E3C /* UAMTLXMLAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLXMLAdapter.m; sourceTree = "<group>"; };
-		E894BDA3193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UAAWSRequest+AdditionalPropertyAccessors.h"; sourceTree = "<group>"; };
 		E894BDA4193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UAAWSRequest+AdditionalPropertyAccessors.m"; sourceTree = "<group>"; };
 		E894BDAF193C91F50068ED17 /* UADirtyPropertyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADirtyPropertyTests.m; sourceTree = "<group>"; };
 		E898A5E218B21532004DC298 /* NSString+UAStringEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UAStringEncoding.h"; sourceTree = "<group>"; };
@@ -3537,7 +3538,6 @@
 				E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */,
 				E8FAEC0F18CC2DAD0018BB0E /* UAAWSModel.h */,
 				E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */,
-				E894BDA3193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.h */,
 				E894BDA4193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m */,
 			);
 			path = Common;
@@ -5731,6 +5731,7 @@
 				A3E01C4518AD93E900C3B7DB /* Supporting Files */,
 				E898A5E818B219FC004DC298 /* UAAWSRequestSigningTests.m */,
 				E894BDAF193C91F50068ED17 /* UADirtyPropertyTests.m */,
+				E842182F193C9B100046B9E8 /* UAAdditionalPropertyAccessorsTests.m */,
 			);
 			path = "AWS iOS SDKTests";
 			sourceTree = "<group>";
@@ -7157,6 +7158,7 @@
 				A337806318ADA50300FECC45 /* MTLQueryAdapterTests.m in Sources */,
 				A3377DF018ADA3C600FECC45 /* UAASDescribeLaunchConfigurationsResponseTests.m in Sources */,
 				A3377DED18ADA3C600FECC45 /* UAASDescribeAutoScalingGroupsResponseTests.m in Sources */,
+				E8421830193C9B100046B9E8 /* UAAdditionalPropertyAccessorsTests.m in Sources */,
 				E898A5E918B219FC004DC298 /* UAAWSRequestSigningTests.m in Sources */,
 				A3377DF418ADA3C600FECC45 /* UAASDescribeScalingActivitiesResponseTests.m in Sources */,
 				A3377DF318ADA3C600FECC45 /* UAASDescribePoliciesResponseTests.m in Sources */,

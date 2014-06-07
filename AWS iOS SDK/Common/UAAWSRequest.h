@@ -115,6 +115,15 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
 // An array of all properties that have been modified (are "dirty").
 @property (nonatomic, strong) NSMutableArray *UA_dirtyProperties;
 
+/**
+ * Returns a NSDictionary of accessor selector strings to property names.
+ *
+ * eg. alarmNameAtIndex: => alarmNames
+ *
+ * This will get called a lot, don't create the NSDictionary each time.
+ **/
++ (NSDictionary *)UA_additionalAccessors;
+
 @end
 
 @protocol UAAWSRequest <NSObject>

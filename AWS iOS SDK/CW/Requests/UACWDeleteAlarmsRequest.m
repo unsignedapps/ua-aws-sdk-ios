@@ -59,21 +59,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)alarmNameAtIndex:(NSUInteger)index
-{
-    if (self.alarmNames == nil || index >= ([self.alarmNames count]-1))
-        return nil;
-
-    return [self.alarmNames objectAtIndex:index];
-}
-
-- (void)addAlarmName:(NSString *)alarmName
-{
-	if (self.alarmNames == nil)
-		[self setAlarmNames:[NSMutableArray array]];
-	[self.alarmNames addObject:alarmName];
-}
-
 #pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UACWDeleteAlarmsRequestCompletionBlock)completionBlock
