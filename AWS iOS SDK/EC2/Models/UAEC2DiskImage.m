@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2DiskImage.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DiskImageDetail.h"
 #import "UAEC2VolumeDetail.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DiskImage
 
@@ -69,3 +73,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

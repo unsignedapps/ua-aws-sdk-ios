@@ -8,8 +8,12 @@
 //
 
 #import "UADDBPutItemResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBConsumedCapacity.h"
 #import "UADDBItemCollectionMetrics.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBPutItemResponse
 
@@ -29,14 +33,6 @@
     return [keyPaths copy];
 }
 
-- (NSDictionary *)attributeValueForAttributeName:(NSString *)attributeName
-{
-    if (self.attributes == nil)
-        return nil;
-
-    return [self.attributes objectForKey:attributeName];
-}
-
 + (NSValueTransformer *)attributesJSONTransformer
 {
     return [NSValueTransformer UA_JSONDynamoDBDictionaryTransformer];
@@ -53,3 +49,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

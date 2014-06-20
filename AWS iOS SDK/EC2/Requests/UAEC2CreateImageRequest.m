@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2CreateImageRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CreateImageResponse.h"
 #import "UAEC2BlockDeviceMapping.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateImageRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"CreateImage"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addBlockDeviceMapping:) propertyName:@"blockDeviceMappings"];
 	}
 	return self;
 }
@@ -56,14 +63,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
-}
-
 + (NSValueTransformer *)blockDeviceMappingsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
@@ -84,14 +83,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
 }
 
-- (void)addBlockDeviceMapping:(UAEC2BlockDeviceMapping *)blockDeviceMapping
-{
-	if (self.blockDeviceMappings == nil)
-		[self setBlockDeviceMappings:[NSMutableArray array]];
-	[self.blockDeviceMappings addObject:blockDeviceMapping];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2CreateImageRequestCompletionBlock)completionBlock
 {
@@ -115,5 +107,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

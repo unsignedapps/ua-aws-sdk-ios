@@ -8,6 +8,7 @@
 //
 
 #import "UAELBAttachLoadBalancerToSubnetsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBAttachLoadBalancerToSubnetsResponse.h"
 
 @interface UAELBAttachLoadBalancerToSubnetsRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBAttachLoadBalancerToSubnetsRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"AttachLoadBalancerToSubnets"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(subnetAtIndex:) propertyName:@"subnets"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSubnet:) propertyName:@"subnets"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)subnetAtIndex:(NSUInteger)index
-{
-    if (self.subnets == nil || index >= ([self.subnets count]-1))
-        return nil;
-
-    return [self.subnets objectAtIndex:index];
-}
-
-- (void)addSubnet:(NSString *)subnet
-{
-	if (self.subnets == nil)
-		[self setSubnets:[NSMutableArray array]];
-	[self.subnets addObject:subnet];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBAttachLoadBalancerToSubnetsRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,10 +8,14 @@
 //
 
 #import "UAEC2VPNConnection.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Tag.h"
 #import "UAEC2VGWTelemetry.h"
 #import "UAEC2Options.h"
 #import "UAEC2VPNStaticRoute.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2VPNConnection
 
@@ -41,30 +45,6 @@
         @"routes": @"ec2:routes/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
-- (UAEC2VGWTelemetry *)vgwTelemetryAtIndex:(NSUInteger)index
-{
-    if (self.vgwTelemetry == nil || index >= ([self.vgwTelemetry count]-1))
-        return nil;
-
-    return [self.vgwTelemetry objectAtIndex:index];
-}
-
-- (UAEC2VPNStaticRoute *)routeAtIndex:(NSUInteger)index
-{
-    if (self.routes == nil || index >= ([self.routes count]-1))
-        return nil;
-
-    return [self.routes objectAtIndex:index];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer
@@ -108,3 +88,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

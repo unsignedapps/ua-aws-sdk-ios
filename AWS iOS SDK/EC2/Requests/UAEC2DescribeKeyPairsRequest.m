@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeKeyPairsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeKeyPairsResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeKeyPairsRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DescribeKeyPairs"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(keyNameAtIndex:) propertyName:@"keyNames"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addKeyName:) propertyName:@"keyNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -53,22 +62,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)keyNameAtIndex:(NSUInteger)index
-{
-    if (self.keyNames == nil || index >= ([self.keyNames count]-1))
-        return nil;
-
-    return [self.keyNames objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -84,21 +77,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addKeyName:(NSString *)keyName
-{
-	if (self.keyNames == nil)
-		[self setKeyNames:[NSMutableArray array]];
-	[self.keyNames addObject:keyName];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeKeyPairsRequestCompletionBlock)completionBlock
 {
@@ -122,5 +101,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

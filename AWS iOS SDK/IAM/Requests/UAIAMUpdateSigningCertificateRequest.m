@@ -8,6 +8,7 @@
 //
 
 #import "UAIAMUpdateSigningCertificateRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMUpdateSigningCertificateResponse.h"
 
 @interface UAIAMUpdateSigningCertificateRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMUpdateSigningCertificateRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"UpdateSigningCertificate"];
 		[self setVersion:@"2010-05-08"];
+		
+		
 	}
 	return self;
 }
@@ -66,7 +72,7 @@
                                                unknownValue:@(UAIAMSigningCertificateStatusUnknown)];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMUpdateSigningCertificateRequestCompletionBlock)completionBlock
 {
@@ -90,5 +96,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

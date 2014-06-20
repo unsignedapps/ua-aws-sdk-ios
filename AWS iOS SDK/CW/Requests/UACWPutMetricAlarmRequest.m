@@ -8,6 +8,7 @@
 //
 
 #import "UACWPutMetricAlarmRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWPutMetricAlarmResponse.h"
 #import "UACWDimension.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWPutMetricAlarmRequest
 
@@ -28,6 +32,15 @@
 	{
 		[self setAction:@"PutMetricAlarm"];
 		[self setVersion:@"2010-08-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(oKActionAtIndex:) propertyName:@"oKActions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(alarmActionAtIndex:) propertyName:@"alarmActions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(insufficientDataActionAtIndex:) propertyName:@"insufficientDataActions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dimensionAtIndex:) propertyName:@"dimensions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addOKAction:) propertyName:@"oKActions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAlarmAction:) propertyName:@"alarmActions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInsufficientDataAction:) propertyName:@"insufficientDataActions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDimension:) propertyName:@"dimensions"];
 	}
 	return self;
 }
@@ -63,38 +76,6 @@
         @"comparisonOperator": @"ComparisonOperator"
     }];
     return [keyPaths copy];
-}
-
-- (NSString *)oKActionAtIndex:(NSUInteger)index
-{
-    if (self.oKActions == nil || index >= ([self.oKActions count]-1))
-        return nil;
-
-    return [self.oKActions objectAtIndex:index];
-}
-
-- (NSString *)alarmActionAtIndex:(NSUInteger)index
-{
-    if (self.alarmActions == nil || index >= ([self.alarmActions count]-1))
-        return nil;
-
-    return [self.alarmActions objectAtIndex:index];
-}
-
-- (NSString *)insufficientDataActionAtIndex:(NSUInteger)index
-{
-    if (self.insufficientDataActions == nil || index >= ([self.insufficientDataActions count]-1))
-        return nil;
-
-    return [self.insufficientDataActions objectAtIndex:index];
-}
-
-- (UACWDimension *)dimensionAtIndex:(NSUInteger)index
-{
-    if (self.dimensions == nil || index >= ([self.dimensions count]-1))
-        return nil;
-
-    return [self.dimensions objectAtIndex:index];
 }
 
 + (NSValueTransformer *)statisticJSONTransformer
@@ -154,35 +135,7 @@
                                                unknownValue:@(UACWMetricAlarmComparisonOperatorUnknown)];
 }
 
-- (void)addOKAction:(NSString *)oKAction
-{
-	if (self.oKActions == nil)
-		[self setOKActions:[NSMutableArray array]];
-	[self.oKActions addObject:oKAction];
-}
-
-- (void)addAlarmAction:(NSString *)alarmAction
-{
-	if (self.alarmActions == nil)
-		[self setAlarmActions:[NSMutableArray array]];
-	[self.alarmActions addObject:alarmAction];
-}
-
-- (void)addInsufficientDataAction:(NSString *)insufficientDataAction
-{
-	if (self.insufficientDataActions == nil)
-		[self setInsufficientDataActions:[NSMutableArray array]];
-	[self.insufficientDataActions addObject:insufficientDataAction];
-}
-
-- (void)addDimension:(UACWDimension *)dimension
-{
-	if (self.dimensions == nil)
-		[self setDimensions:[NSMutableArray array]];
-	[self.dimensions addObject:dimension];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UACWPutMetricAlarmRequestCompletionBlock)completionBlock
 {
@@ -206,5 +159,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

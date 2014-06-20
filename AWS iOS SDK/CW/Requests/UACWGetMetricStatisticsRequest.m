@@ -8,6 +8,7 @@
 //
 
 #import "UACWGetMetricStatisticsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWGetMetricStatisticsResponse.h"
 #import "UACWDimension.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWGetMetricStatisticsRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"GetMetricStatistics"];
 		[self setVersion:@"2010-08-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dimensionAtIndex:) propertyName:@"dimensions"];
+		[self UA_addAtIndexEnumAdditionalAccessorForSelector:@selector(statisticAtIndex:) propertyName:@"statistics"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDimension:) propertyName:@"dimensions"];
+		[self UA_addAddEnumAdditionalAccessorForSelector:@selector(addStatistic:) propertyName:@"statistics"];
 	}
 	return self;
 }
@@ -56,22 +65,6 @@
         @"unit": @"Unit"
     }];
     return [keyPaths copy];
-}
-
-- (UACWDimension *)dimensionAtIndex:(NSUInteger)index
-{
-    if (self.dimensions == nil || index >= ([self.dimensions count]-1))
-        return nil;
-
-    return [self.dimensions objectAtIndex:index];
-}
-
-- (UACWStatistic)statisticAtIndex:(NSUInteger)index
-{
-    if (self.statistics == nil || index >= ([self.statistics count]-1))
-        return UACWStatisticUnknown;
-
-    return (UACWStatistic)[[self.statistics objectAtIndex:index] unsignedIntegerValue];
 }
 
 + (NSValueTransformer *)dimensionsJSONTransformer
@@ -132,21 +125,7 @@
                                                unknownValue:@(UACWUnitUnknown)];
 }
 
-- (void)addDimension:(UACWDimension *)dimension
-{
-	if (self.dimensions == nil)
-		[self setDimensions:[NSMutableArray array]];
-	[self.dimensions addObject:dimension];
-}
-
-- (void)addStatistic:(UACWStatistic)statistic
-{
-	if (self.statistics == nil)
-		[self setStatistics:[NSMutableArray array]];
-	[self.statistics addObject:@(statistic)];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UACWGetMetricStatisticsRequestCompletionBlock)completionBlock
 {
@@ -170,5 +149,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAELBDeregisterInstancesFromLoadBalancerResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBInstance.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDeregisterInstancesFromLoadBalancerResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAELBInstance *)instanceAtIndex:(NSUInteger)index
-{
-    if (self.instances == nil || index >= ([self.instances count]-1))
-        return nil;
-
-    return [self.instances objectAtIndex:index];
-}
-
 + (NSValueTransformer *)instancesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBInstance class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

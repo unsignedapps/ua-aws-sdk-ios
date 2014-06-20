@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeReservedInstancesOfferingsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeReservedInstancesOfferingsResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeReservedInstancesOfferingsRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DescribeReservedInstancesOfferings"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesOfferingIDAtIndex:) propertyName:@"reservedInstancesOfferingIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReservedInstancesOfferingID:) propertyName:@"reservedInstancesOfferingIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -64,22 +73,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)reservedInstancesOfferingIDAtIndex:(NSUInteger)index
-{
-    if (self.reservedInstancesOfferingIDs == nil || index >= ([self.reservedInstancesOfferingIDs count]-1))
-        return nil;
-
-    return [self.reservedInstancesOfferingIDs objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -100,21 +93,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-- (void)addReservedInstancesOfferingID:(NSString *)reservedInstancesOfferingID
-{
-	if (self.reservedInstancesOfferingIDs == nil)
-		[self setReservedInstancesOfferingIDs:[NSMutableArray array]];
-	[self.reservedInstancesOfferingIDs addObject:reservedInstancesOfferingID];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeReservedInstancesOfferingsRequestCompletionBlock)completionBlock
 {
@@ -138,5 +117,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

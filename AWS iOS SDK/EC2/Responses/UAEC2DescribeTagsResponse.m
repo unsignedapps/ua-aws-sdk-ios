@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeTagsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2TagDescription.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeTagsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2TagDescription *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
 + (NSValueTransformer *)tagsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2TagDescription class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

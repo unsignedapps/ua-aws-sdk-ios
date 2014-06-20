@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2AllocateAddressRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2AllocateAddressResponse.h"
 
 @interface UAEC2AllocateAddressRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2AllocateAddressRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"AllocateAddress"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -70,7 +76,7 @@
                                                unknownValue:@(UAEC2DomainUnknown)];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2AllocateAddressRequestCompletionBlock)completionBlock
 {
@@ -94,5 +100,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

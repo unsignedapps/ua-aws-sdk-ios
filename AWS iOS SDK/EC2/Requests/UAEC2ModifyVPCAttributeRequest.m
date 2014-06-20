@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ModifyVPCAttributeRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ModifyVPCAttributeResponse.h"
 #import "UAEC2EnableDNSSupport.h"
 #import "UAEC2EnableDNSHostnames.h"
@@ -19,6 +20,9 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UAEC2ModifyVPCAttributeRequest
 
 @synthesize action=_action, version=_version, vpcID=_vpcID, enableDNSSupport=_enableDNSSupport, enableDNSHostnames=_enableDNSHostnames;
@@ -29,6 +33,8 @@
 	{
 		[self setAction:@"ModifyVpcAttribute"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -74,7 +80,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2EnableDNSHostnames class]];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ModifyVPCAttributeRequestCompletionBlock)completionBlock
 {
@@ -98,5 +104,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAELBDescribeLoadBalancerAttributesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBLoadBalancerAttributes.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDescribeLoadBalancerAttributesResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

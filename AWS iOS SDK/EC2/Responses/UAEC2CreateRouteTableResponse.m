@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateRouteTableResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2RouteTable.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateRouteTableResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

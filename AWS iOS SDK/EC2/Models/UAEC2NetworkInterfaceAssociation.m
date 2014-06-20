@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2NetworkInterfaceAssociation.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2NetworkInterfaceAssociation
 
@@ -34,3 +38,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

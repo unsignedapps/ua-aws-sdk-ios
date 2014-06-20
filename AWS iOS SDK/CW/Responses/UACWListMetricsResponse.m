@@ -8,7 +8,11 @@
 //
 
 #import "UACWListMetricsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWMetric.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWListMetricsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UACWMetric *)metricAtIndex:(NSUInteger)index
-{
-    if (self.metrics == nil || index >= ([self.metrics count]-1))
-        return nil;
-
-    return [self.metrics objectAtIndex:index];
-}
-
 + (NSValueTransformer *)metricsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWMetric class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

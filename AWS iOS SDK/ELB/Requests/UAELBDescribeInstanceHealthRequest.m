@@ -8,6 +8,7 @@
 //
 
 #import "UAELBDescribeInstanceHealthRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBDescribeInstanceHealthResponse.h"
 #import "UAELBInstance.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDescribeInstanceHealthRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"DescribeInstanceHealth"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceAtIndex:) propertyName:@"instances"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstance:) propertyName:@"instances"];
 	}
 	return self;
 }
@@ -52,14 +59,6 @@
     return [keyPaths copy];
 }
 
-- (UAELBInstance *)instanceAtIndex:(NSUInteger)index
-{
-    if (self.instances == nil || index >= ([self.instances count]-1))
-        return nil;
-
-    return [self.instances objectAtIndex:index];
-}
-
 + (NSValueTransformer *)instancesJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBInstance class]];
@@ -70,14 +69,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBInstance class]];
 }
 
-- (void)addInstance:(UAELBInstance *)instance
-{
-	if (self.instances == nil)
-		[self setInstances:[NSMutableArray array]];
-	[self.instances addObject:instance];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBDescribeInstanceHealthRequestCompletionBlock)completionBlock
 {
@@ -101,5 +93,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

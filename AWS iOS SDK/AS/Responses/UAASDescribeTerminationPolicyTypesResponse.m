@@ -8,6 +8,10 @@
 //
 
 #import "UAASDescribeTerminationPolicyTypesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeTerminationPolicyTypesResponse
 
@@ -30,17 +34,11 @@
     return [keyPaths copy];
 }
 
-- (NSString *)terminationPolicyTypeAtIndex:(NSUInteger)index
-{
-    if (self.terminationPolicyTypes == nil || index >= ([self.terminationPolicyTypes count]-1))
-        return nil;
-
-    return [self.terminationPolicyTypes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)terminationPolicyTypesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }
 
 @end
+
+#pragma clang diagnostic pop

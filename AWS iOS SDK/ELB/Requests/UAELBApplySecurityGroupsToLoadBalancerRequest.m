@@ -8,6 +8,7 @@
 //
 
 #import "UAELBApplySecurityGroupsToLoadBalancerRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBApplySecurityGroupsToLoadBalancerResponse.h"
 
 @interface UAELBApplySecurityGroupsToLoadBalancerRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBApplySecurityGroupsToLoadBalancerRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"ApplySecurityGroupsToLoadBalancer"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSecurityGroup:) propertyName:@"securityGroups"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
-}
-
-- (void)addSecurityGroup:(NSString *)securityGroup
-{
-	if (self.securityGroups == nil)
-		[self setSecurityGroups:[NSMutableArray array]];
-	[self.securityGroups addObject:securityGroup];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBApplySecurityGroupsToLoadBalancerRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

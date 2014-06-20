@@ -8,6 +8,7 @@
 //
 
 #import "UAASDeleteLaunchConfigurationRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDeleteLaunchConfigurationResponse.h"
 
 @interface UAASDeleteLaunchConfigurationRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDeleteLaunchConfigurationRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"DeleteLaunchConfiguration"];
 		[self setVersion:@"2011-01-01"];
+		
+		
 	}
 	return self;
 }
@@ -59,7 +65,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDeleteLaunchConfigurationRequestCompletionBlock)completionBlock
 {
@@ -83,5 +89,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

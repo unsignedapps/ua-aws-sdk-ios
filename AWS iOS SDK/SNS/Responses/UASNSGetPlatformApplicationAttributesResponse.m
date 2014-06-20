@@ -8,7 +8,11 @@
 //
 
 #import "UASNSGetPlatformApplicationAttributesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASNSPlatformApplicationAttributes.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSGetPlatformApplicationAttributesResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UASQSReceiveMessageResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASQSMessage.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASQSReceiveMessageResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UASQSMessage *)messageAtIndex:(NSUInteger)index
-{
-    if (self.messages == nil || index >= ([self.messages count]-1))
-        return nil;
-
-    return [self.messages objectAtIndex:index];
-}
-
 + (NSValueTransformer *)messagesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASQSMessage class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

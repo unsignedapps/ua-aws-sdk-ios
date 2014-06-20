@@ -8,6 +8,7 @@
 //
 
 #import "UADDBUpdateTableRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBUpdateTableResponse.h"
 #import "UADDBProvisionedThroughput.h"
 #import "UADDBGlobalSecondaryIndexUpdate.h"
@@ -18,6 +19,9 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UADDBUpdateTableRequest
 
 @synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, provisionedThroughput=_provisionedThroughput, globalSecondaryIndexUpdates=_globalSecondaryIndexUpdates;
@@ -27,6 +31,9 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.UpdateTable"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(globalSecondaryIndexUpdateAtIndex:) propertyName:@"globalSecondaryIndexUpdates"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGlobalSecondaryIndexUpdate:) propertyName:@"globalSecondaryIndexUpdates"];
 	}
 	return self;
 }
@@ -51,14 +58,6 @@
     return [keyPaths copy];
 }
 
-- (UADDBGlobalSecondaryIndexUpdate *)globalSecondaryIndexUpdateAtIndex:(NSUInteger)index
-{
-    if (self.globalSecondaryIndexUpdates == nil || index >= ([self.globalSecondaryIndexUpdates count]-1))
-        return nil;
-
-    return [self.globalSecondaryIndexUpdates objectAtIndex:index];
-}
-
 + (NSValueTransformer *)provisionedThroughputJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UADDBProvisionedThroughput class]];
@@ -69,14 +68,7 @@
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UADDBGlobalSecondaryIndexUpdate class]];
 }
 
-- (void)addGlobalSecondaryIndexUpdate:(UADDBGlobalSecondaryIndexUpdate *)globalSecondaryIndexUpdate
-{
-	if (self.globalSecondaryIndexUpdates == nil)
-		[self setGlobalSecondaryIndexUpdates:[NSMutableArray array]];
-	[self.globalSecondaryIndexUpdates addObject:globalSecondaryIndexUpdate];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBUpdateTableRequestCompletionBlock)completionBlock
 {
@@ -100,5 +92,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

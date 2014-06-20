@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2BundleInstanceResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2BundleTask.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2BundleInstanceResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

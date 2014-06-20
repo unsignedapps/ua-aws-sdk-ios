@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMGetUserResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMUser.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMGetUserResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

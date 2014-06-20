@@ -8,6 +8,7 @@
 //
 
 #import "UACWEnableAlarmActionsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWEnableAlarmActionsResponse.h"
 
 @interface UACWEnableAlarmActionsRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWEnableAlarmActionsRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"EnableAlarmActions"];
 		[self setVersion:@"2010-08-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(alarmNameAtIndex:) propertyName:@"alarmNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAlarmName:) propertyName:@"alarmNames"];
 	}
 	return self;
 }
@@ -59,22 +66,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)alarmNameAtIndex:(NSUInteger)index
-{
-    if (self.alarmNames == nil || index >= ([self.alarmNames count]-1))
-        return nil;
-
-    return [self.alarmNames objectAtIndex:index];
-}
-
-- (void)addAlarmName:(NSString *)alarmName
-{
-	if (self.alarmNames == nil)
-		[self setAlarmNames:[NSMutableArray array]];
-	[self.alarmNames addObject:alarmName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UACWEnableAlarmActionsRequestCompletionBlock)completionBlock
 {
@@ -98,5 +90,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

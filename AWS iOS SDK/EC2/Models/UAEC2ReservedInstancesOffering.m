@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2ReservedInstancesOffering.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2RecurringCharge.h"
 #import "UAEC2PricingDetail.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ReservedInstancesOffering
 
@@ -42,22 +46,6 @@
         @"pricingDetails": @"ec2:pricingDetailsSet/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2RecurringCharge *)recurringChargeAtIndex:(NSUInteger)index
-{
-    if (self.recurringCharges == nil || index >= ([self.recurringCharges count]-1))
-        return nil;
-
-    return [self.recurringCharges objectAtIndex:index];
-}
-
-- (UAEC2PricingDetail *)pricingDetailAtIndex:(NSUInteger)index
-{
-    if (self.pricingDetails == nil || index >= ([self.pricingDetails count]-1))
-        return nil;
-
-    return [self.pricingDetails objectAtIndex:index];
 }
 
 + (NSValueTransformer *)recurringChargesQueryStringTransformer
@@ -101,3 +89,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,8 +8,12 @@
 //
 
 #import "UAELBPolicies.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBAppCookieStickinessPolicy.h"
 #import "UAELBLBCookieStickinessPolicy.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBPolicies
 
@@ -32,30 +36,6 @@
         @"otherPolicies": @"ElasticLoadBalancing:OtherPolicies/ElasticLoadBalancing:member"
     }];
     return [keyPaths copy];
-}
-
-- (UAELBAppCookieStickinessPolicy *)appCookieStickinessPolicyAtIndex:(NSUInteger)index
-{
-    if (self.appCookieStickinessPolicies == nil || index >= ([self.appCookieStickinessPolicies count]-1))
-        return nil;
-
-    return [self.appCookieStickinessPolicies objectAtIndex:index];
-}
-
-- (UAELBLBCookieStickinessPolicy *)lBCookieStickinessPolicyAtIndex:(NSUInteger)index
-{
-    if (self.lBCookieStickinessPolicies == nil || index >= ([self.lBCookieStickinessPolicies count]-1))
-        return nil;
-
-    return [self.lBCookieStickinessPolicies objectAtIndex:index];
-}
-
-- (NSString *)otherPolicyAtIndex:(NSUInteger)index
-{
-    if (self.otherPolicies == nil || index >= ([self.otherPolicies count]-1))
-        return nil;
-
-    return [self.otherPolicies objectAtIndex:index];
 }
 
 + (NSValueTransformer *)appCookieStickinessPoliciesQueryStringTransformer
@@ -84,3 +64,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

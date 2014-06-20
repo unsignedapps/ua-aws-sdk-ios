@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2InstanceStatus.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InstanceStatusEvent.h"
 #import "UAEC2InstanceStatusSummary.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2InstanceStatus
 
@@ -35,14 +39,6 @@
         @"instanceStatus": @"ec2:instanceStatus"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2InstanceStatusEvent *)eventAtIndex:(NSUInteger)index
-{
-    if (self.events == nil || index >= ([self.events count]-1))
-        return nil;
-
-    return [self.events objectAtIndex:index];
 }
 
 + (NSValueTransformer *)eventsQueryStringTransformer
@@ -90,3 +86,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

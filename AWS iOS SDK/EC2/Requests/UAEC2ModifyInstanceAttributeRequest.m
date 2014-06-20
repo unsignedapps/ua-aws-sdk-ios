@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ModifyInstanceAttributeRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ModifyInstanceAttributeResponse.h"
 #import "UAEC2InstanceBlockDeviceMappingSpecification.h"
 #import "UAEC2SourceDestCheck.h"
@@ -23,9 +24,14 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UAEC2ModifyInstanceAttributeRequest
 
 @synthesize action=_action, version=_version, dryRun=_dryRun, instanceID=_instanceID, attribute=_attribute, value=_value, blockDeviceMappings=_blockDeviceMappings, sourceDestCheck=_sourceDestCheck, disableApiTermination=_disableApiTermination, instanceType=_instanceType, kernel=_kernel, ramdisk=_ramdisk, userData=_userData, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, groups=_groups, ebsOptimized=_ebsOptimized, sriovNetSupport=_sriovNetSupport;
+
+@dynamic decodedUserData;
 
 - (id)init
 {
@@ -33,6 +39,13 @@
 	{
 		[self setAction:@"ModifyInstanceAttribute"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
+		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupAtIndex:) propertyName:@"groups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addBlockDeviceMapping:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGroup:) propertyName:@"groups"];
 	}
 	return self;
 }
@@ -69,37 +82,6 @@
         @"sriovNetSupport": @"SriovNetSupport"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2InstanceBlockDeviceMappingSpecification *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
-}
-
-- (NSString *)decodedUserData
-{
-    if (self.userData == nil)
-        return nil;
-    
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (void)setDecodedUserData:(NSString *)decodedUserData
-{
-    if (decodedUserData == nil)
-        [self setUserData:nil];
-    else
-		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
-}- (NSString *)groupAtIndex:(NSUInteger)index
-{
-    if (self.groups == nil || index >= ([self.groups count]-1))
-        return nil;
-
-    return [self.groups objectAtIndex:index];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsJSONTransformer
@@ -186,21 +168,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2SriovNetSupport class]];
 }
 
-- (void)addBlockDeviceMapping:(UAEC2InstanceBlockDeviceMappingSpecification *)blockDeviceMapping
-{
-	if (self.blockDeviceMappings == nil)
-		[self setBlockDeviceMappings:[NSMutableArray array]];
-	[self.blockDeviceMappings addObject:blockDeviceMapping];
-}
-
-- (void)addGroup:(NSString *)group
-{
-	if (self.groups == nil)
-		[self setGroups:[NSMutableArray array]];
-	[self.groups addObject:group];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ModifyInstanceAttributeRequestCompletionBlock)completionBlock
 {
@@ -224,5 +192,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

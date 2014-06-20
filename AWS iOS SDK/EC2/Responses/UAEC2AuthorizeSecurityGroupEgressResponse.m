@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2AuthorizeSecurityGroupEgressResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2AuthorizeSecurityGroupEgressResponse
 
@@ -17,3 +21,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

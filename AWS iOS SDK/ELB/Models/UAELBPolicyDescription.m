@@ -8,7 +8,11 @@
 //
 
 #import "UAELBPolicyDescription.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBPolicyAttributeDescription.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBPolicyDescription
 
@@ -33,14 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UAELBPolicyAttributeDescription *)policyAttributeDescriptionAtIndex:(NSUInteger)index
-{
-    if (self.policyAttributeDescriptions == nil || index >= ([self.policyAttributeDescriptions count]-1))
-        return nil;
-
-    return [self.policyAttributeDescriptions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)policyAttributeDescriptionsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBPolicyAttributeDescription class]];
@@ -52,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateNetworkInterfaceResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2NetworkInterface.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateNetworkInterfaceResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

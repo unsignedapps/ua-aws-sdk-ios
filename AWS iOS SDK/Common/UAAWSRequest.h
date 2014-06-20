@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UAAWSRegion.h"
+#import "UAAWSAdditionalAccessorsProtocol.h"
 
 typedef NS_ENUM(NSInteger, UAAWSSignatureVersion)
 {
@@ -37,7 +38,7 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
 
 @class UAAWSOperationQueue, UAAWSCredentials;
 
-@interface UAAWSRequest : NSOperation
+@interface UAAWSRequest : NSOperation <UAAWSAdditionalAccessors>
 
 
 /**
@@ -88,41 +89,30 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
 **/
 @property (nonatomic) BOOL UA_CheckImmediately;
 
+/**
+ * Returns a should continue waiting block until the value at the specified keypath is in the specified array.
+**/
++ (UAAWSOperationShouldContinueWaitingBlock)UA_ShouldContinueWaitingBlockUntilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)values;
 
 /** @name Execution Management **/
 
 /**
  * Whether the operation is currently executing.
 **/
-@property (nonatomic, getter=isExecuting) BOOL executing;
+@property (atomic, getter=isExecuting) BOOL executing;
 
 /**
  * Whether the operation is finished.
 **/
-@property (nonatomic, getter=isFinished) BOOL finished;
+@property (atomic, getter=isFinished) BOOL finished;
 
 /**
  * Executes the request on the default queue.
 **/
 - (void)invoke;
 
-/**
- * Returns a should continue waiting block until the value at the specified keypath is in the specified array.
-**/
-+ (UAAWSOperationShouldContinueWaitingBlock)UA_ShouldContinueWaitingBlockUntilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)values;
-
-
 // An array of all properties that have been modified (are "dirty").
 @property (nonatomic, strong) NSMutableArray *UA_dirtyProperties;
-
-/**
- * Returns a NSDictionary of accessor selector strings to property names.
- *
- * eg. alarmNameAtIndex: => alarmNames
- *
- * This will get called a lot, don't create the NSDictionary each time.
- **/
-+ (NSDictionary *)UA_additionalAccessors;
 
 @end
 

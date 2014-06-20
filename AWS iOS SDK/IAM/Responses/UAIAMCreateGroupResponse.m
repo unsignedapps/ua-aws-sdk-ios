@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMCreateGroupResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMGroup.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMCreateGroupResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

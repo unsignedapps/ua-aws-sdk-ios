@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2InstanceStatusSummary.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InstanceStatusDetails.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2InstanceStatusSummary
 
@@ -30,14 +34,6 @@
         @"details": @"ec2:details/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2InstanceStatusDetails *)detailAtIndex:(NSUInteger)index
-{
-    if (self.details == nil || index >= ([self.details count]-1))
-        return nil;
-
-    return [self.details objectAtIndex:index];
 }
 
 + (NSValueTransformer *)statusQueryStringTransformer
@@ -65,3 +61,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

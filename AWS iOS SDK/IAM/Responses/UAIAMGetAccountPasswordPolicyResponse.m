@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMGetAccountPasswordPolicyResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMPasswordPolicy.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMGetAccountPasswordPolicyResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

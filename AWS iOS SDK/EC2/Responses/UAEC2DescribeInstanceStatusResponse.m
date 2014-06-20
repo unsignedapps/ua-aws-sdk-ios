@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeInstanceStatusResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InstanceStatus.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeInstanceStatusResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2InstanceStatus *)instanceStatusAtIndex:(NSUInteger)index
-{
-    if (self.instanceStatuses == nil || index >= ([self.instanceStatuses count]-1))
-        return nil;
-
-    return [self.instanceStatuses objectAtIndex:index];
-}
-
 + (NSValueTransformer *)instanceStatusesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceStatus class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

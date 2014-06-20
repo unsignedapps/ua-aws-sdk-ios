@@ -8,6 +8,10 @@
 //
 
 #import "UAIAMCertificate.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMCertificate
 
@@ -45,3 +49,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

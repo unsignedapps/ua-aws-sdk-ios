@@ -8,6 +8,7 @@
 //
 
 #import "UAELBConfigureHealthCheckRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBConfigureHealthCheckResponse.h"
 #import "UAELBHealthCheck.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBConfigureHealthCheckRequest
 
@@ -28,6 +32,8 @@
 	{
 		[self setAction:@"ConfigureHealthCheck"];
 		[self setVersion:@"2012-06-01"];
+		
+		
 	}
 	return self;
 }
@@ -62,7 +68,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBHealthCheck class]];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBConfigureHealthCheckRequestCompletionBlock)completionBlock
 {
@@ -86,5 +92,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

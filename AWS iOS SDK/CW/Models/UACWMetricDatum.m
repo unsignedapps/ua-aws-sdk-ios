@@ -8,8 +8,12 @@
 //
 
 #import "UACWMetricDatum.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWDimension.h"
 #import "UACWStatisticSet.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWMetricDatum
 
@@ -52,14 +56,6 @@
         @"unit": @"cloudwatch:Unit"
     }];
     return [keyPaths copy];
-}
-
-- (UACWDimension *)dimensionAtIndex:(NSUInteger)index
-{
-    if (self.dimensions == nil || index >= ([self.dimensions count]-1))
-        return nil;
-
-    return [self.dimensions objectAtIndex:index];
 }
 
 + (NSValueTransformer *)dimensionsQueryStringTransformer
@@ -112,3 +108,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

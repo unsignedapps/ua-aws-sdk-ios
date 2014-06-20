@@ -8,6 +8,10 @@
 //
 
 #import "UAASSuspendProcessesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASSuspendProcessesResponse
 
@@ -17,3 +21,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2RequestSpotInstancesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2RequestSpotInstancesResponse.h"
 #import "UAEC2LaunchSpecification.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2RequestSpotInstancesRequest
 
@@ -28,6 +32,8 @@
 	{
 		[self setAction:@"RequestSpotInstances"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -94,7 +100,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchSpecification class]];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2RequestSpotInstancesRequestCompletionBlock)completionBlock
 {
@@ -118,5 +124,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

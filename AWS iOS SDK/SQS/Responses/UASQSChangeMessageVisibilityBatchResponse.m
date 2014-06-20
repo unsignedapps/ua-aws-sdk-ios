@@ -8,8 +8,12 @@
 //
 
 #import "UASQSChangeMessageVisibilityBatchResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASQSChangeMessageVisibilityBatchResultEntry.h"
 #import "UASQSBatchResultError.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASQSChangeMessageVisibilityBatchResponse
 
@@ -33,22 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UASQSChangeMessageVisibilityBatchResultEntry *)successfulAtIndex:(NSUInteger)index
-{
-    if (self.successful == nil || index >= ([self.successful count]-1))
-        return nil;
-
-    return [self.successful objectAtIndex:index];
-}
-
-- (UASQSBatchResultError *)failedAtIndex:(NSUInteger)index
-{
-    if (self.failed == nil || index >= ([self.failed count]-1))
-        return nil;
-
-    return [self.failed objectAtIndex:index];
-}
-
 + (NSValueTransformer *)successfulXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASQSChangeMessageVisibilityBatchResultEntry class]];
@@ -60,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

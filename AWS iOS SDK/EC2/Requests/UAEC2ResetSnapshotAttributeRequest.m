@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ResetSnapshotAttributeRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ResetSnapshotAttributeResponse.h"
 
 @interface UAEC2ResetSnapshotAttributeRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ResetSnapshotAttributeRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"ResetSnapshotAttribute"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -57,7 +63,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ResetSnapshotAttributeRequestCompletionBlock)completionBlock
 {
@@ -81,5 +87,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

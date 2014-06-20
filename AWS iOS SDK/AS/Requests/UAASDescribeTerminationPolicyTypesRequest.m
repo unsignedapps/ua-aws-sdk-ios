@@ -8,6 +8,7 @@
 //
 
 #import "UAASDescribeTerminationPolicyTypesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDescribeTerminationPolicyTypesResponse.h"
 
 @interface UAASDescribeTerminationPolicyTypesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeTerminationPolicyTypesRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"DescribeTerminationPolicyTypes"];
 		[self setVersion:@"2011-01-01"];
+		
+		
 	}
 	return self;
 }
@@ -49,7 +55,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDescribeTerminationPolicyTypesRequestCompletionBlock)completionBlock
 {
@@ -73,5 +79,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

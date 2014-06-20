@@ -8,6 +8,7 @@
 //
 
 #import "UAELBDescribeLoadBalancersRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBDescribeLoadBalancersResponse.h"
 
 @interface UAELBDescribeLoadBalancersRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDescribeLoadBalancersRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DescribeLoadBalancers"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(loadBalancerNameAtIndex:) propertyName:@"loadBalancerNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLoadBalancerName:) propertyName:@"loadBalancerNames"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)loadBalancerNameAtIndex:(NSUInteger)index
-{
-    if (self.loadBalancerNames == nil || index >= ([self.loadBalancerNames count]-1))
-        return nil;
-
-    return [self.loadBalancerNames objectAtIndex:index];
-}
-
-- (void)addLoadBalancerName:(NSString *)loadBalancerName
-{
-	if (self.loadBalancerNames == nil)
-		[self setLoadBalancerNames:[NSMutableArray array]];
-	[self.loadBalancerNames addObject:loadBalancerName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

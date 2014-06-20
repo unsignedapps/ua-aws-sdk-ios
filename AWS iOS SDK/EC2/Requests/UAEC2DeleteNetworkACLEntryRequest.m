@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DeleteNetworkACLEntryRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DeleteNetworkACLEntryResponse.h"
 
 @interface UAEC2DeleteNetworkACLEntryRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DeleteNetworkACLEntryRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"DeleteNetworkAclEntry"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -63,7 +69,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DeleteNetworkACLEntryRequestCompletionBlock)completionBlock
 {
@@ -87,5 +93,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

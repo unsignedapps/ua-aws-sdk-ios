@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeReservedInstancesOfferingsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ReservedInstancesOffering.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeReservedInstancesOfferingsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2ReservedInstancesOffering *)reservedInstancesOfferingAtIndex:(NSUInteger)index
-{
-    if (self.reservedInstancesOfferings == nil || index >= ([self.reservedInstancesOfferings count]-1))
-        return nil;
-
-    return [self.reservedInstancesOfferings objectAtIndex:index];
-}
-
 + (NSValueTransformer *)reservedInstancesOfferingsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ReservedInstancesOffering class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

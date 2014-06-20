@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeAccountAttributesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2AccountAttribute.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeAccountAttributesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2AccountAttribute *)accountAttributeAtIndex:(NSUInteger)index
-{
-    if (self.accountAttributes == nil || index >= ([self.accountAttributes count]-1))
-        return nil;
-
-    return [self.accountAttributes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)accountAttributesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2AccountAttribute class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

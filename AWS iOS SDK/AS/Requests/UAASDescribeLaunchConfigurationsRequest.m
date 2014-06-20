@@ -8,6 +8,7 @@
 //
 
 #import "UAASDescribeLaunchConfigurationsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDescribeLaunchConfigurationsResponse.h"
 
 @interface UAASDescribeLaunchConfigurationsRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeLaunchConfigurationsRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DescribeLaunchConfigurations"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(launchConfigurationNameAtIndex:) propertyName:@"launchConfigurationNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLaunchConfigurationName:) propertyName:@"launchConfigurationNames"];
 	}
 	return self;
 }
@@ -52,22 +59,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)launchConfigurationNameAtIndex:(NSUInteger)index
-{
-    if (self.launchConfigurationNames == nil || index >= ([self.launchConfigurationNames count]-1))
-        return nil;
-
-    return [self.launchConfigurationNames objectAtIndex:index];
-}
-
-- (void)addLaunchConfigurationName:(NSString *)launchConfigurationName
-{
-	if (self.launchConfigurationNames == nil)
-		[self setLaunchConfigurationNames:[NSMutableArray array]];
-	[self.launchConfigurationNames addObject:launchConfigurationName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDescribeLaunchConfigurationsRequestCompletionBlock)completionBlock
 {
@@ -91,5 +83,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

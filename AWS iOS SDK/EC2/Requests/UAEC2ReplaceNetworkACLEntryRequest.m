@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ReplaceNetworkACLEntryRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ReplaceNetworkACLEntryResponse.h"
 #import "UAEC2IcmpTypeCode.h"
 #import "UAEC2PortRange.h"
@@ -19,6 +20,9 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UAEC2ReplaceNetworkACLEntryRequest
 
 @synthesize action=_action, version=_version, dryRun=_dryRun, networkACLID=_networkACLID, ruleNumber=_ruleNumber, protocol=_protocol, ruleAction=_ruleAction, egress=_egress, cidrBlock=_cidrBlock, icmpTypeCode=_icmpTypeCode, portRange=_portRange;
@@ -29,6 +33,8 @@
 	{
 		[self setAction:@"ReplaceNetworkAclEntry"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -90,7 +96,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2PortRange class]];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ReplaceNetworkACLEntryRequestCompletionBlock)completionBlock
 {
@@ -114,5 +120,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

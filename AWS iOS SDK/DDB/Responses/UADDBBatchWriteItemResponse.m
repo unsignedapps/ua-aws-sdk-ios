@@ -8,7 +8,11 @@
 //
 
 #import "UADDBBatchWriteItemResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBConsumedCapacity.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBBatchWriteItemResponse
 
@@ -28,30 +32,6 @@
     return [keyPaths copy];
 }
 
-- (NSArray *)unprocessedItemForTableName:(NSString *)tableName
-{
-    if (self.unprocessedItems == nil)
-        return nil;
-
-    return [self.unprocessedItems objectForKey:tableName];
-}
-
-- (NSArray *)itemCollectionMetricForTableName:(NSString *)tableName
-{
-    if (self.itemCollectionMetrics == nil)
-        return nil;
-
-    return [self.itemCollectionMetrics objectForKey:tableName];
-}
-
-- (UADDBConsumedCapacity *)consumedCapacityAtIndex:(NSUInteger)index
-{
-    if (self.consumedCapacity == nil || index >= ([self.consumedCapacity count]-1))
-        return nil;
-
-    return [self.consumedCapacity objectAtIndex:index];
-}
-
 + (NSValueTransformer *)unprocessedItemsJSONTransformer
 {
     return [UAMTLValueTransformer UA_JSONDictionaryTransformerWithItemTransformer:nil];
@@ -68,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

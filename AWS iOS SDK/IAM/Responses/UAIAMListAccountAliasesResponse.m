@@ -8,6 +8,10 @@
 //
 
 #import "UAIAMListAccountAliasesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListAccountAliasesResponse
 
@@ -32,14 +36,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)accountAliasAtIndex:(NSUInteger)index
-{
-    if (self.accountAliases == nil || index >= ([self.accountAliases count]-1))
-        return nil;
-
-    return [self.accountAliases objectAtIndex:index];
-}
-
 + (NSValueTransformer *)accountAliasesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
@@ -51,3 +47,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

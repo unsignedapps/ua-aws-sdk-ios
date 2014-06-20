@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMCreateVirtualMFADeviceResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMVirtualMFADevice.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMCreateVirtualMFADeviceResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

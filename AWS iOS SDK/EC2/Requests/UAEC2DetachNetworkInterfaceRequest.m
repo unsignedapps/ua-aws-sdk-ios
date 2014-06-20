@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DetachNetworkInterfaceRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DetachNetworkInterfaceResponse.h"
 
 @interface UAEC2DetachNetworkInterfaceRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DetachNetworkInterfaceRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"DetachNetworkInterface"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -62,7 +68,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DetachNetworkInterfaceRequestCompletionBlock)completionBlock
 {
@@ -86,5 +92,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,10 @@
 //
 
 #import "UAIAMListUserPoliciesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListUserPoliciesResponse
 
@@ -32,14 +36,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)policyNameAtIndex:(NSUInteger)index
-{
-    if (self.policyNames == nil || index >= ([self.policyNames count]-1))
-        return nil;
-
-    return [self.policyNames objectAtIndex:index];
-}
-
 + (NSValueTransformer *)policyNamesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
@@ -51,3 +47,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

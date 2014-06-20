@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeBundleTasksResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2BundleTask.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeBundleTasksResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2BundleTask *)bundleTaskAtIndex:(NSUInteger)index
-{
-    if (self.bundleTasks == nil || index >= ([self.bundleTasks count]-1))
-        return nil;
-
-    return [self.bundleTasks objectAtIndex:index];
-}
-
 + (NSValueTransformer *)bundleTasksXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2BundleTask class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

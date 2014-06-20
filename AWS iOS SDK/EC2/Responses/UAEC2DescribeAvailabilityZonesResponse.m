@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeAvailabilityZonesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2AvailabilityZone.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeAvailabilityZonesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2AvailabilityZone *)availabilityZoneAtIndex:(NSUInteger)index
-{
-    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
-        return nil;
-
-    return [self.availabilityZones objectAtIndex:index];
-}
-
 + (NSValueTransformer *)availabilityZonesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2AvailabilityZone class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

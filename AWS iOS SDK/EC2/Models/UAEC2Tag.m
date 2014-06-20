@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2Tag.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2Tag
 
@@ -45,3 +49,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -57,7 +57,7 @@
 
 @implementation UAAWSRequest
 
-@synthesize UA_CheckImmediately=_UA_CheckImmediately, UA_Error=_UA_Error, UA_Owner=_UA_Owner, UA_PollingAttempts=_UA_PollingAttempts, UA_Queue=_UA_Queue, UA_RequestCompletionBlock=_UA_RequestCompletionBlock, UA_Response=_UA_Response, UA_ShouldContinueWaiting=_UA_ShouldContinueWaiting, UA_DataTask=_UA_DataTask, UA_Credentials=_UA_Credentials, UA_Region=_UA_Region, UA_dirtyProperties=_UA_dirtyProperties;
+@synthesize UA_CheckImmediately=_UA_CheckImmediately, UA_Error=_UA_Error, UA_Owner=_UA_Owner, UA_PollingAttempts=_UA_PollingAttempts, UA_Queue=_UA_Queue, UA_RequestCompletionBlock=_UA_RequestCompletionBlock, UA_Response=_UA_Response, UA_ShouldContinueWaiting=_UA_ShouldContinueWaiting, UA_DataTask=_UA_DataTask, UA_Credentials=_UA_Credentials, UA_Region=_UA_Region, UA_dirtyProperties=_UA_dirtyProperties, finished=_finished, executing=_executing;
 
 - (id)init
 {
@@ -140,10 +140,10 @@
     }
 }
 
-- (void)didChangeValueForKey:(NSString *)key
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-	if (![self.UA_dirtyProperties containsObject:key])
-		[self.UA_dirtyProperties addObject:key];
+	if ([object isEqual:self] && ![self.UA_dirtyProperties containsObject:keyPath])
+		[self.UA_dirtyProperties addObject:keyPath];
 }
 
 #pragma mark - NSOperation Bits and Bobs
@@ -303,7 +303,7 @@
     // We need to have credentials, at least
     NSAssert(credentials != nil, @"Credentials must be supplied via -setUA_Credentials: or the UAAWSOperationQueue delegate.");
 
-    id<UAAWSRequest> protocolSelf = (id<UAAWSRequest>)self;
+    UAAWSRequest<UAAWSRequest> *protocolSelf = (UAAWSRequest<UAAWSRequest> *)self;
 
     // if the service is region-free/global, lock it down to US-East-1
     if ([protocolSelf UA_isRegionFree])
@@ -364,7 +364,7 @@
 
 - (NSError *)UA_ErrorForHTTPResponse:(NSHTTPURLResponse *)response withResponseData:(NSData *)data
 {
-    id<UAAWSRequest> protocolSelf = (id<UAAWSRequest>)self;
+    UAAWSRequest<UAAWSRequest> *protocolSelf = (UAAWSRequest<UAAWSRequest> *)self;
     Class serialiser = [protocolSelf UA_ResponseSerialisationClass];
     NSAssert(serialiser != Nil, @"Response serialisation class cannot be Nil.");
     NSAssert([serialiser conformsToProtocol:@protocol(UAAWSPayloadSerialisation)], @"Request serialisation class %@ does not conform to protocol UAAWSPayloadSerialisation.", NSStringFromClass(serialiser));
@@ -393,7 +393,7 @@
 
 - (UAAWSResponse *)UA_ResponseObjectForResponseData:(NSData *)data
 {
-    id<UAAWSRequest> protocolSelf = (id<UAAWSRequest>)self;
+    UAAWSRequest<UAAWSRequest> *protocolSelf = (UAAWSRequest<UAAWSRequest> *)self;
     Class serialiser = [protocolSelf UA_ResponseSerialisationClass];
     NSAssert(serialiser != Nil, @"Response serialisation class cannot be Nil.");
     NSAssert([serialiser conformsToProtocol:@protocol(UAAWSPayloadSerialisation)], @"Response serialisation class %@ does not conform to protocol UAAWSPayloadSerialisation.", NSStringFromClass(serialiser));
@@ -466,13 +466,60 @@
     return shouldContinueWaiting;
 }
 
-#pragma mark - Execution Stuff
+#pragma mark - Invocation
+
+- (void)invokeWithOwner:(id)owner completionBlock:(UAAWSOperationCompletionBlock)completionBlock
+{
+    [self setUA_Owner:owner];
+    [self setUA_RequestCompletionBlock:completionBlock];
+    [self invoke];
+}
+
+- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UAAWSOperationShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UAAWSOperationCompletionBlock)completionBlock
+{
+    [self setUA_Owner:owner];
+    [self setUA_ShouldContinueWaiting:shouldContinueWaitingBlock];
+    [self setUA_RequestCompletionBlock:completionBlock];
+    [self invoke];
+}
+
+- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UAAWSOperationCompletionBlock)completionBlock
+{
+    [self setUA_Owner:self];
+    [self setUA_ShouldContinueWaiting:[UAAWSRequest UA_ShouldContinueWaitingBlockUntilValueAtKeyPath:keyPath isInArray:array]];
+    [self setUA_RequestCompletionBlock:completionBlock];
+    [self invoke];
+}
+
+#pragma mark - Additional Accessors
+
++ (NSDictionary *)UA_additionalAccessors
+{
+    return nil;
+}
+
++ (NSDictionary *)UA_additionalAccessorDataTypes
+{
+    return nil;
+}
+
+#pragma mark - Execution Control
+
+- (BOOL)isFinished
+{
+    return _finished;
+}
 
 - (void)setFinished:(BOOL)finished
 {
     [self willChangeValueForKey:@"isFinished"];
     _finished = finished;
     [self didChangeValueForKey:@"isFinished"];
+}
+
+- (BOOL)isExecuting
+{
+    return _executing;
 }
 
 - (void)setExecuting:(BOOL)executing
@@ -482,11 +529,6 @@
     [self didChangeValueForKey:@"isExecuting"];
 }
 
-#pragma mark - Additional Accessors
 
-+ (NSDictionary *)UA_additionalAccessors
-{
-    return nil;
-}
 
 @end

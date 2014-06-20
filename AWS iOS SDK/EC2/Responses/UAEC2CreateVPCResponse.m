@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateVPCResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VPC.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateVPCResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

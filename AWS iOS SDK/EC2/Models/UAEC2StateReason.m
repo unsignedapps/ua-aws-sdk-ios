@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2StateReason.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2StateReason
 
@@ -32,3 +36,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

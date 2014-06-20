@@ -8,6 +8,7 @@
 //
 
 #import "UAIAMUploadServerCertificateRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMUploadServerCertificateResponse.h"
 
 @interface UAIAMUploadServerCertificateRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMUploadServerCertificateRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"UploadServerCertificate"];
 		[self setVersion:@"2010-05-08"];
+		
+		
 	}
 	return self;
 }
@@ -54,7 +60,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMUploadServerCertificateRequestCompletionBlock)completionBlock
 {
@@ -78,5 +84,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

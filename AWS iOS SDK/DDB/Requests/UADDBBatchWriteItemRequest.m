@@ -8,6 +8,7 @@
 //
 
 #import "UADDBBatchWriteItemRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBBatchWriteItemResponse.h"
 
 @interface UADDBBatchWriteItemRequest ()
@@ -15,6 +16,9 @@
 @property (nonatomic, copy) NSString *xAmzTarget;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBBatchWriteItemRequest
 
@@ -25,6 +29,9 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.BatchWriteItem"];
+		
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(requestItemForTableName:) propertyName:@"requestItems"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setRequestItem:forTableName:) propertyName:@"requestItems"];
 	}
 	return self;
 }
@@ -49,14 +56,6 @@
     return [keyPaths copy];
 }
 
-- (NSMutableArray *)requestItemForTableName:(NSString *)tableName
-{
-    if (self.requestItems == nil)
-        return nil;
-
-    return [self.requestItems objectForKey:tableName];
-}
-
 + (NSValueTransformer *)requestItemsJSONTransformer
 {
     return [UAMTLValueTransformer UA_JSONDictionaryTransformerWithItemTransformer:nil];
@@ -76,14 +75,7 @@
                                                unknownValue:@(UADDBReturnItemCollectionMetricsTypeUnknown)];
 }
 
-- (void)setRequestItem:(NSArray *)requestItem forTableName:(NSString *)tableName
-{
-	if (self.requestItems == nil)
-		[self setRequestItems:[NSMutableDictionary dictionary]];
-	[self.requestItems setObject:requestItem forKey:tableName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBBatchWriteItemRequestCompletionBlock)completionBlock
 {
@@ -107,5 +99,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

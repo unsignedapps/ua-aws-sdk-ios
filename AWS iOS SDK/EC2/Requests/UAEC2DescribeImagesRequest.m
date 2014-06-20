@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeImagesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeImagesResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeImagesRequest
 
@@ -28,6 +32,15 @@
 	{
 		[self setAction:@"DescribeImages"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(imageIDAtIndex:) propertyName:@"imageIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ownerAtIndex:) propertyName:@"owners"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(executableUserAtIndex:) propertyName:@"executableUsers"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addImageID:) propertyName:@"imageIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addOwner:) propertyName:@"owners"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addExecutableUser:) propertyName:@"executableUsers"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -55,38 +68,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)imageIDAtIndex:(NSUInteger)index
-{
-    if (self.imageIDs == nil || index >= ([self.imageIDs count]-1))
-        return nil;
-
-    return [self.imageIDs objectAtIndex:index];
-}
-
-- (NSString *)ownerAtIndex:(NSUInteger)index
-{
-    if (self.owners == nil || index >= ([self.owners count]-1))
-        return nil;
-
-    return [self.owners objectAtIndex:index];
-}
-
-- (NSString *)executableUserAtIndex:(NSUInteger)index
-{
-    if (self.executableUsers == nil || index >= ([self.executableUsers count]-1))
-        return nil;
-
-    return [self.executableUsers objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -102,35 +83,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addImageID:(NSString *)imageID
-{
-	if (self.imageIDs == nil)
-		[self setImageIDs:[NSMutableArray array]];
-	[self.imageIDs addObject:imageID];
-}
-
-- (void)addOwner:(NSString *)owner
-{
-	if (self.owners == nil)
-		[self setOwners:[NSMutableArray array]];
-	[self.owners addObject:owner];
-}
-
-- (void)addExecutableUser:(NSString *)executableUser
-{
-	if (self.executableUsers == nil)
-		[self setExecutableUsers:[NSMutableArray array]];
-	[self.executableUsers addObject:executableUser];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeImagesRequestCompletionBlock)completionBlock
 {
@@ -154,5 +107,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

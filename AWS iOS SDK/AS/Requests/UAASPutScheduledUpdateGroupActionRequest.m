@@ -8,6 +8,7 @@
 //
 
 #import "UAASPutScheduledUpdateGroupActionRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASPutScheduledUpdateGroupActionResponse.h"
 
 @interface UAASPutScheduledUpdateGroupActionRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASPutScheduledUpdateGroupActionRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"PutScheduledUpdateGroupAction"];
 		[self setVersion:@"2011-01-01"];
+		
+		
 	}
 	return self;
 }
@@ -88,7 +94,7 @@
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASPutScheduledUpdateGroupActionRequestCompletionBlock)completionBlock
 {
@@ -112,5 +118,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

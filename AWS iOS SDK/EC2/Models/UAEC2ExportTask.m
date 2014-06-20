@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2ExportTask.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InstanceExportDetails.h"
 #import "UAEC2ExportToS3Task.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ExportTask
 
@@ -58,3 +62,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

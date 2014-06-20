@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateVPNConnectionResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VPNConnection.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateVPNConnectionResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

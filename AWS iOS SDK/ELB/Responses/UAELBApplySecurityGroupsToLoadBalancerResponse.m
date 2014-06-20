@@ -8,6 +8,10 @@
 //
 
 #import "UAELBApplySecurityGroupsToLoadBalancerResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBApplySecurityGroupsToLoadBalancerResponse
 
@@ -30,17 +34,11 @@
     return [keyPaths copy];
 }
 
-- (NSString *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
-}
-
 + (NSValueTransformer *)securityGroupsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }
 
 @end
+
+#pragma clang diagnostic pop

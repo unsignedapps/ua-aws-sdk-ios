@@ -8,10 +8,14 @@
 //
 
 #import "UAEC2RouteTable.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Route.h"
 #import "UAEC2RouteTableAssociation.h"
 #import "UAEC2Tag.h"
 #import "UAEC2PropagatingVGW.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2RouteTable
 
@@ -37,38 +41,6 @@
         @"propagatingVGWs": @"ec2:propagatingVgwSet/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2Route *)routeAtIndex:(NSUInteger)index
-{
-    if (self.routes == nil || index >= ([self.routes count]-1))
-        return nil;
-
-    return [self.routes objectAtIndex:index];
-}
-
-- (UAEC2RouteTableAssociation *)associationAtIndex:(NSUInteger)index
-{
-    if (self.associations == nil || index >= ([self.associations count]-1))
-        return nil;
-
-    return [self.associations objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
-- (UAEC2PropagatingVGW *)propagatingVGWAtIndex:(NSUInteger)index
-{
-    if (self.propagatingVGWs == nil || index >= ([self.propagatingVGWs count]-1))
-        return nil;
-
-    return [self.propagatingVGWs objectAtIndex:index];
 }
 
 + (NSValueTransformer *)routesQueryStringTransformer
@@ -112,3 +84,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

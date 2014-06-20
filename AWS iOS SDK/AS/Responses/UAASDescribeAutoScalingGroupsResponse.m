@@ -8,7 +8,11 @@
 //
 
 #import "UAASDescribeAutoScalingGroupsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASAutoScalingGroup.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeAutoScalingGroupsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAASAutoScalingGroup *)autoScalingGroupAtIndex:(NSUInteger)index
-{
-    if (self.autoScalingGroups == nil || index >= ([self.autoScalingGroups count]-1))
-        return nil;
-
-    return [self.autoScalingGroups objectAtIndex:index];
-}
-
 + (NSValueTransformer *)autoScalingGroupsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASAutoScalingGroup class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

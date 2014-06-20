@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeAddressesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeAddressesResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeAddressesRequest
 
@@ -28,6 +32,13 @@
 	{
 		[self setAction:@"DescribeAddresses"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(publicIPAtIndex:) propertyName:@"publicIPs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(allocationIDAtIndex:) propertyName:@"allocationIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPublicIP:) propertyName:@"publicIPs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAllocationID:) propertyName:@"allocationIDs"];
 	}
 	return self;
 }
@@ -54,30 +65,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)publicIPAtIndex:(NSUInteger)index
-{
-    if (self.publicIPs == nil || index >= ([self.publicIPs count]-1))
-        return nil;
-
-    return [self.publicIPs objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
-- (NSString *)allocationIDAtIndex:(NSUInteger)index
-{
-    if (self.allocationIDs == nil || index >= ([self.allocationIDs count]-1))
-        return nil;
-
-    return [self.allocationIDs objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -93,28 +80,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addPublicIP:(NSString *)publicIP
-{
-	if (self.publicIPs == nil)
-		[self setPublicIPs:[NSMutableArray array]];
-	[self.publicIPs addObject:publicIP];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-- (void)addAllocationID:(NSString *)allocationID
-{
-	if (self.allocationIDs == nil)
-		[self setAllocationIDs:[NSMutableArray array]];
-	[self.allocationIDs addObject:allocationID];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeAddressesRequestCompletionBlock)completionBlock
 {
@@ -138,5 +104,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

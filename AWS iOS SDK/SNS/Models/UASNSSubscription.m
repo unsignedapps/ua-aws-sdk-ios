@@ -8,6 +8,10 @@
 //
 
 #import "UASNSSubscription.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSSubscription
 
@@ -35,3 +39,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

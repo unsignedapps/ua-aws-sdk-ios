@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2CancelSpotInstanceRequestsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CancelSpotInstanceRequestsResponse.h"
 
 @interface UAEC2CancelSpotInstanceRequestsRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CancelSpotInstanceRequestsRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"CancelSpotInstanceRequests"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(spotInstanceRequestIDAtIndex:) propertyName:@"spotInstanceRequestIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSpotInstanceRequestID:) propertyName:@"spotInstanceRequestIDs"];
 	}
 	return self;
 }
@@ -51,27 +58,12 @@
     return [keyPaths copy];
 }
 
-- (NSString *)spotInstanceRequestIDAtIndex:(NSUInteger)index
-{
-    if (self.spotInstanceRequestIDs == nil || index >= ([self.spotInstanceRequestIDs count]-1))
-        return nil;
-
-    return [self.spotInstanceRequestIDs objectAtIndex:index];
-}
-
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-- (void)addSpotInstanceRequestID:(NSString *)spotInstanceRequestID
-{
-	if (self.spotInstanceRequestIDs == nil)
-		[self setSpotInstanceRequestIDs:[NSMutableArray array]];
-	[self.spotInstanceRequestIDs addObject:spotInstanceRequestID];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2CancelSpotInstanceRequestsRequestCompletionBlock)completionBlock
 {
@@ -95,5 +87,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UADDBQueryRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBQueryResponse.h"
 #import "UADDBKeyCondition.h"
 
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *xAmzTarget;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBQueryRequest
 
@@ -26,6 +30,13 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.Query"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeToGetAtIndex:) propertyName:@"attributesToGet"];
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(keyConditionForAttributeName:) propertyName:@"keyConditions"];
+		[self UA_addDDBKeyValueAdditionalAccessorForSelector:@selector(exclusiveStartKeyValueForAttributeName:) propertyName:@"exclusiveStartKey"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeToGet:) propertyName:@"attributesToGet"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setKeyCondition:forAttributeName:) propertyName:@"keyConditions"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setExclusiveStartKeyValue:forAttributeName:) propertyName:@"exclusiveStartKey"];
 	}
 	return self;
 }
@@ -57,30 +68,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)attributeToGetAtIndex:(NSUInteger)index
-{
-    if (self.attributesToGet == nil || index >= ([self.attributesToGet count]-1))
-        return nil;
-
-    return [self.attributesToGet objectAtIndex:index];
-}
-
-- (UADDBKeyCondition *)keyConditionForAttributeName:(NSString *)attributeName
-{
-    if (self.keyConditions == nil)
-        return nil;
-
-    return [self.keyConditions objectForKey:attributeName];
-}
-
-- (NSMutableDictionary *)exclusiveStartKeyValueForAttributeName:(NSString *)attributeName
-{
-    if (self.exclusiveStartKey == nil)
-        return nil;
-
-    return [self.exclusiveStartKey objectForKey:attributeName];
-}
-
 + (NSValueTransformer *)selectJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UADDBSelectTypeAllAttributes), @(UADDBSelectTypeAllProjectedAttributes), @(UADDBSelectTypeSpecificAttributes), @(UADDBSelectTypeCount) ]
@@ -105,28 +92,7 @@
                                                unknownValue:@(UADDBReturnConsumedCapacityTypeUnknown)];
 }
 
-- (void)addAttributeToGet:(NSString *)attributeToGet
-{
-	if (self.attributesToGet == nil)
-		[self setAttributesToGet:[NSMutableArray array]];
-	[self.attributesToGet addObject:attributeToGet];
-}
-
-- (void)setKeyCondition:(UADDBKeyCondition *)keyCondition forAttributeName:(NSString *)attributeName
-{
-	if (self.keyConditions == nil)
-		[self setKeyConditions:[NSMutableDictionary dictionary]];
-	[self.keyConditions setObject:keyCondition forKey:attributeName];
-}
-
-- (void)setExclusiveStartKeyValue:(id)exclusiveStartKey forAttributeName:(NSString *)attributeName
-{
-	if (self.exclusiveStartKey == nil)
-		[self setExclusiveStartKey:[NSMutableDictionary dictionary]];
-	[self.exclusiveStartKey setObject:exclusiveStartKey forKey:attributeName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBQueryRequestCompletionBlock)completionBlock
 {
@@ -150,5 +116,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

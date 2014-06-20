@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMListInstanceProfilesForRoleResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMInstanceProfile.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListInstanceProfilesForRoleResponse
 
@@ -33,14 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UAIAMInstanceProfile *)instanceProfileAtIndex:(NSUInteger)index
-{
-    if (self.instanceProfiles == nil || index >= ([self.instanceProfiles count]-1))
-        return nil;
-
-    return [self.instanceProfiles objectAtIndex:index];
-}
-
 + (NSValueTransformer *)instanceProfilesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMInstanceProfile class]];
@@ -52,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

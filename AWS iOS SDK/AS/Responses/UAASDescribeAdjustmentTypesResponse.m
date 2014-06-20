@@ -8,7 +8,11 @@
 //
 
 #import "UAASDescribeAdjustmentTypesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASAdjustmentType.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeAdjustmentTypesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAASAdjustmentType *)adjustmentTypeAtIndex:(NSUInteger)index
-{
-    if (self.adjustmentTypes == nil || index >= ([self.adjustmentTypes count]-1))
-        return nil;
-
-    return [self.adjustmentTypes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)adjustmentTypesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASAdjustmentType class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

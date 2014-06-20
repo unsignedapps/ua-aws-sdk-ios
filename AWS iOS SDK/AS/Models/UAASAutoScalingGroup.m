@@ -8,10 +8,14 @@
 //
 
 #import "UAASAutoScalingGroup.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASInstance.h"
 #import "UAASSuspendedProcess.h"
 #import "UAASEnabledMetric.h"
 #import "UAASTag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASAutoScalingGroup
 
@@ -51,62 +55,6 @@
         @"terminationPolicies": @"AutoScaling:TerminationPolicies/AutoScaling:member"
     }];
     return [keyPaths copy];
-}
-
-- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
-{
-    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
-        return nil;
-
-    return [self.availabilityZones objectAtIndex:index];
-}
-
-- (NSString *)loadBalancerNameAtIndex:(NSUInteger)index
-{
-    if (self.loadBalancerNames == nil || index >= ([self.loadBalancerNames count]-1))
-        return nil;
-
-    return [self.loadBalancerNames objectAtIndex:index];
-}
-
-- (UAASInstance *)instanceAtIndex:(NSUInteger)index
-{
-    if (self.instances == nil || index >= ([self.instances count]-1))
-        return nil;
-
-    return [self.instances objectAtIndex:index];
-}
-
-- (UAASSuspendedProcess *)suspendedProcessAtIndex:(NSUInteger)index
-{
-    if (self.suspendedProcesses == nil || index >= ([self.suspendedProcesses count]-1))
-        return nil;
-
-    return [self.suspendedProcesses objectAtIndex:index];
-}
-
-- (UAASEnabledMetric *)enabledMetricAtIndex:(NSUInteger)index
-{
-    if (self.enabledMetrics == nil || index >= ([self.enabledMetrics count]-1))
-        return nil;
-
-    return [self.enabledMetrics objectAtIndex:index];
-}
-
-- (UAASTag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
-- (NSString *)terminationPolicyAtIndex:(NSUInteger)index
-{
-    if (self.terminationPolicies == nil || index >= ([self.terminationPolicies count]-1))
-        return nil;
-
-    return [self.terminationPolicies objectAtIndex:index];
 }
 
 + (NSValueTransformer *)healthCheckTypeQueryStringTransformer
@@ -214,3 +162,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeRegionsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Region.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeRegionsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2Region *)regionAtIndex:(NSUInteger)index
-{
-    if (self.regions == nil || index >= ([self.regions count]-1))
-        return nil;
-
-    return [self.regions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)regionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Region class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

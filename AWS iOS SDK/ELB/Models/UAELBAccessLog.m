@@ -8,6 +8,10 @@
 //
 
 #import "UAELBAccessLog.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBAccessLog
 
@@ -64,3 +68,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

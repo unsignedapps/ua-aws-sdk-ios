@@ -8,6 +8,7 @@
 //
 
 #import "UACWDescribeAlarmHistoryRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWDescribeAlarmHistoryResponse.h"
 
 @interface UACWDescribeAlarmHistoryRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWDescribeAlarmHistoryRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"DescribeAlarmHistory"];
 		[self setVersion:@"2010-08-01"];
+		
+		
 	}
 	return self;
 }
@@ -89,7 +95,7 @@
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UACWDescribeAlarmHistoryRequestCompletionBlock)completionBlock
 {
@@ -113,5 +119,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

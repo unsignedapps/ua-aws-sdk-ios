@@ -8,12 +8,16 @@
 //
 
 #import "UAELBLoadBalancerDescription.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBListenerDescription.h"
 #import "UAELBPolicies.h"
 #import "UAELBBackendServerDescription.h"
 #import "UAELBInstance.h"
 #import "UAELBHealthCheck.h"
 #import "UAELBSourceSecurityGroup.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBLoadBalancerDescription
 
@@ -49,54 +53,6 @@
         @"scheme": @"ElasticLoadBalancing:Scheme"
     }];
     return [keyPaths copy];
-}
-
-- (UAELBListenerDescription *)listenerDescriptionAtIndex:(NSUInteger)index
-{
-    if (self.listenerDescriptions == nil || index >= ([self.listenerDescriptions count]-1))
-        return nil;
-
-    return [self.listenerDescriptions objectAtIndex:index];
-}
-
-- (UAELBBackendServerDescription *)backendServerDescriptionAtIndex:(NSUInteger)index
-{
-    if (self.backendServerDescriptions == nil || index >= ([self.backendServerDescriptions count]-1))
-        return nil;
-
-    return [self.backendServerDescriptions objectAtIndex:index];
-}
-
-- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
-{
-    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
-        return nil;
-
-    return [self.availabilityZones objectAtIndex:index];
-}
-
-- (NSString *)subnetAtIndex:(NSUInteger)index
-{
-    if (self.subnets == nil || index >= ([self.subnets count]-1))
-        return nil;
-
-    return [self.subnets objectAtIndex:index];
-}
-
-- (UAELBInstance *)instanceAtIndex:(NSUInteger)index
-{
-    if (self.instances == nil || index >= ([self.instances count]-1))
-        return nil;
-
-    return [self.instances objectAtIndex:index];
-}
-
-- (NSString *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
 }
 
 + (NSValueTransformer *)listenerDescriptionsQueryStringTransformer
@@ -199,3 +155,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2VPNGateway.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VPCAttachment.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2VPNGateway
 
@@ -37,22 +41,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2VPCAttachment *)vpcAttachmentAtIndex:(NSUInteger)index
-{
-    if (self.vpcAttachments == nil || index >= ([self.vpcAttachments count]-1))
-        return nil;
-
-    return [self.vpcAttachments objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
 + (NSValueTransformer *)vpcAttachmentsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2VPCAttachment class]];
@@ -74,3 +62,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

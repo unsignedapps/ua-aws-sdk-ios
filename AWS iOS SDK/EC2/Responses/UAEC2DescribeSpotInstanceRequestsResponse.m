@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeSpotInstanceRequestsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2SpotInstanceRequest.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeSpotInstanceRequestsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2SpotInstanceRequest *)spotInstanceRequestAtIndex:(NSUInteger)index
-{
-    if (self.spotInstanceRequests == nil || index >= ([self.spotInstanceRequests count]-1))
-        return nil;
-
-    return [self.spotInstanceRequests objectAtIndex:index];
-}
-
 + (NSValueTransformer *)spotInstanceRequestsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2SpotInstanceRequest class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

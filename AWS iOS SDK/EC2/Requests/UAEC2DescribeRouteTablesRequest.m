@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeRouteTablesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeRouteTablesResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeRouteTablesRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DescribeRouteTables"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(routeTableIDAtIndex:) propertyName:@"routeTableIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addRouteTableID:) propertyName:@"routeTableIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -53,22 +62,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)routeTableIDAtIndex:(NSUInteger)index
-{
-    if (self.routeTableIDs == nil || index >= ([self.routeTableIDs count]-1))
-        return nil;
-
-    return [self.routeTableIDs objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -84,21 +77,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addRouteTableID:(NSString *)routeTableID
-{
-	if (self.routeTableIDs == nil)
-		[self setRouteTableIDs:[NSMutableArray array]];
-	[self.routeTableIDs addObject:routeTableID];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeRouteTablesRequestCompletionBlock)completionBlock
 {
@@ -122,5 +101,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

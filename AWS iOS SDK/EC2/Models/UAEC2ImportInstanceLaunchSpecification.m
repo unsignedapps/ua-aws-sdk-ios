@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2ImportInstanceLaunchSpecification.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Placement.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ImportInstanceLaunchSpecification
 
@@ -63,31 +67,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)groupNameAtIndex:(NSUInteger)index
-{
-    if (self.groupNames == nil || index >= ([self.groupNames count]-1))
-        return nil;
-
-    return [self.groupNames objectAtIndex:index];
-}
-
-- (NSString *)decodedUserData
-{
-    if (self.userData == nil)
-        return nil;
-    
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (void)setDecodedUserData:(NSString *)decodedUserData
-{
-    if (decodedUserData == nil)
-        [self setUserData:nil];
-    else
-		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
-}
-
 + (NSValueTransformer *)placementQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2Placement class]];
@@ -128,3 +107,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

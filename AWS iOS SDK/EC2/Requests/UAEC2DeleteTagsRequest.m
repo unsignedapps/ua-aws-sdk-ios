@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DeleteTagsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DeleteTagsResponse.h"
 #import "UAEC2Tag.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DeleteTagsRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DeleteTags"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(resourceAtIndex:) propertyName:@"resources"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addResource:) propertyName:@"resources"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
 	}
 	return self;
 }
@@ -53,22 +62,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)resourceAtIndex:(NSUInteger)index
-{
-    if (self.resources == nil || index >= ([self.resources count]-1))
-        return nil;
-
-    return [self.resources objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
 + (NSValueTransformer *)tagsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Tag class]];
@@ -84,21 +77,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
 }
 
-- (void)addResource:(NSString *)resource
-{
-	if (self.resources == nil)
-		[self setResources:[NSMutableArray array]];
-	[self.resources addObject:resource];
-}
-
-- (void)addTag:(UAEC2Tag *)tag
-{
-	if (self.tags == nil)
-		[self setTags:[NSMutableArray array]];
-	[self.tags addObject:tag];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DeleteTagsRequestCompletionBlock)completionBlock
 {
@@ -122,5 +101,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

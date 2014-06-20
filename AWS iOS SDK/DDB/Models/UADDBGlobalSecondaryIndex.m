@@ -8,9 +8,13 @@
 //
 
 #import "UADDBGlobalSecondaryIndex.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBKeySchema.h"
 #import "UADDBProjection.h"
 #import "UADDBProvisionedThroughput.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBGlobalSecondaryIndex
 
@@ -31,14 +35,6 @@
     return [keyPaths copy];
 }
 
-- (UADDBKeySchema *)keySchemaAtIndex:(NSUInteger)index
-{
-    if (self.keySchema == nil || index >= ([self.keySchema count]-1))
-        return nil;
-
-    return [self.keySchema objectAtIndex:index];
-}
-
 + (NSValueTransformer *)keySchemaJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UADDBKeySchema class]];
@@ -55,3 +51,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

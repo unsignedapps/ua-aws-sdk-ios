@@ -8,6 +8,10 @@
 //
 
 #import "UAELBDisableAvailabilityZonesForLoadBalancerResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDisableAvailabilityZonesForLoadBalancerResponse
 
@@ -30,17 +34,11 @@
     return [keyPaths copy];
 }
 
-- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
-{
-    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
-        return nil;
-
-    return [self.availabilityZones objectAtIndex:index];
-}
-
 + (NSValueTransformer *)availabilityZonesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }
 
 @end
+
+#pragma clang diagnostic pop

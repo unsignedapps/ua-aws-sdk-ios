@@ -8,6 +8,7 @@
 //
 
 #import "UAASDescribeScalingActivitiesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDescribeScalingActivitiesResponse.h"
 
 @interface UAASDescribeScalingActivitiesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeScalingActivitiesRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DescribeScalingActivities"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(activityIDAtIndex:) propertyName:@"activityIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addActivityID:) propertyName:@"activityIDs"];
 	}
 	return self;
 }
@@ -53,22 +60,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)activityIDAtIndex:(NSUInteger)index
-{
-    if (self.activityIDs == nil || index >= ([self.activityIDs count]-1))
-        return nil;
-
-    return [self.activityIDs objectAtIndex:index];
-}
-
-- (void)addActivityID:(NSString *)activityID
-{
-	if (self.activityIDs == nil)
-		[self setActivityIDs:[NSMutableArray array]];
-	[self.activityIDs addObject:activityID];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDescribeScalingActivitiesRequestCompletionBlock)completionBlock
 {
@@ -92,5 +84,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

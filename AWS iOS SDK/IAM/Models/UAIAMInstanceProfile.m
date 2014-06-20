@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMInstanceProfile.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMRole.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMInstanceProfile
 
@@ -36,14 +40,6 @@
     return [keyPaths copy];
 }
 
-- (UAIAMRole *)roleAtIndex:(NSUInteger)index
-{
-    if (self.roles == nil || index >= ([self.roles count]-1))
-        return nil;
-
-    return [self.roles objectAtIndex:index];
-}
-
 + (NSValueTransformer *)createDateQueryStringTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -65,3 +61,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

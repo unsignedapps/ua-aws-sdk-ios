@@ -8,9 +8,13 @@
 //
 
 #import "UAEC2ReservedInstancesListing.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InstanceCount.h"
 #import "UAEC2PriceSchedule.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ReservedInstancesListing
 
@@ -40,30 +44,6 @@
         @"clientToken": @"ec2:clientToken"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2InstanceCount *)instanceCountAtIndex:(NSUInteger)index
-{
-    if (self.instanceCounts == nil || index >= ([self.instanceCounts count]-1))
-        return nil;
-
-    return [self.instanceCounts objectAtIndex:index];
-}
-
-- (UAEC2PriceSchedule *)priceScheduleAtIndex:(NSUInteger)index
-{
-    if (self.priceSchedules == nil || index >= ([self.priceSchedules count]-1))
-        return nil;
-
-    return [self.priceSchedules objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
 }
 
 + (NSValueTransformer *)createDateQueryStringTransformer
@@ -131,3 +111,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

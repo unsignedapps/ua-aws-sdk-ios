@@ -8,6 +8,7 @@
 //
 
 #import "UADDBDeleteTableRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBDeleteTableResponse.h"
 
 @interface UADDBDeleteTableRequest ()
@@ -15,6 +16,9 @@
 @property (nonatomic, copy) NSString *xAmzTarget;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBDeleteTableRequest
 
@@ -25,6 +29,8 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.DeleteTable"];
+		
+		
 	}
 	return self;
 }
@@ -56,7 +62,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBDeleteTableRequestCompletionBlock)completionBlock
 {
@@ -80,5 +86,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

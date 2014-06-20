@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DeleteVPNConnectionRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DeleteVPNConnectionResponse.h"
 
 @interface UAEC2DeleteVPNConnectionRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DeleteVPNConnectionRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"DeleteVpnConnection"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -56,7 +62,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DeleteVPNConnectionRequestCompletionBlock)completionBlock
 {
@@ -80,5 +86,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

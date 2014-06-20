@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeVPNGatewaysResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VPNGateway.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeVPNGatewaysResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2VPNGateway *)vpnGatewayAtIndex:(NSUInteger)index
-{
-    if (self.vpnGateways == nil || index >= ([self.vpnGateways count]-1))
-        return nil;
-
-    return [self.vpnGateways objectAtIndex:index];
-}
-
 + (NSValueTransformer *)vpnGatewaysXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VPNGateway class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

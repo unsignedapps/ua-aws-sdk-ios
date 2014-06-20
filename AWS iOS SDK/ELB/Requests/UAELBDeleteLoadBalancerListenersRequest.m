@@ -8,6 +8,7 @@
 //
 
 #import "UAELBDeleteLoadBalancerListenersRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBDeleteLoadBalancerListenersResponse.h"
 
 @interface UAELBDeleteLoadBalancerListenersRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDeleteLoadBalancerListenersRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DeleteLoadBalancerListeners"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(loadBalancerPortAtIndex:) propertyName:@"loadBalancerPorts"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLoadBalancerPort:) propertyName:@"loadBalancerPorts"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSNumber *)loadBalancerPortAtIndex:(NSUInteger)index
-{
-    if (self.loadBalancerPorts == nil || index >= ([self.loadBalancerPorts count]-1))
-        return nil;
-
-    return [self.loadBalancerPorts objectAtIndex:index];
-}
-
-- (void)addLoadBalancerPort:(NSNumber *)loadBalancerPort
-{
-	if (self.loadBalancerPorts == nil)
-		[self setLoadBalancerPorts:[NSMutableArray array]];
-	[self.loadBalancerPorts addObject:loadBalancerPort];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBDeleteLoadBalancerListenersRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

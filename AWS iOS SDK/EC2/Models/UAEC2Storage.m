@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2Storage.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2S3Storage.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2Storage
 
@@ -63,3 +67,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

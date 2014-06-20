@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2CreateReservedInstancesListingRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CreateReservedInstancesListingResponse.h"
 #import "UAEC2PriceScheduleSpecification.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateReservedInstancesListingRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"CreateReservedInstancesListing"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(priceScheduleAtIndex:) propertyName:@"priceSchedules"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPriceSchedule:) propertyName:@"priceSchedules"];
 	}
 	return self;
 }
@@ -54,14 +61,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2PriceScheduleSpecification *)priceScheduleAtIndex:(NSUInteger)index
-{
-    if (self.priceSchedules == nil || index >= ([self.priceSchedules count]-1))
-        return nil;
-
-    return [self.priceSchedules objectAtIndex:index];
-}
-
 + (NSValueTransformer *)priceSchedulesJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2PriceScheduleSpecification class]];
@@ -72,14 +71,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2PriceScheduleSpecification class]];
 }
 
-- (void)addPriceSchedule:(UAEC2PriceScheduleSpecification *)priceSchedule
-{
-	if (self.priceSchedules == nil)
-		[self setPriceSchedules:[NSMutableArray array]];
-	[self.priceSchedules addObject:priceSchedule];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2CreateReservedInstancesListingRequestCompletionBlock)completionBlock
 {
@@ -103,5 +95,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

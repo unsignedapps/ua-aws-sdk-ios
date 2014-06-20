@@ -8,7 +8,11 @@
 //
 
 #import "UAASDescribeScheduledActionsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASScheduledUpdateGroupAction.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeScheduledActionsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAASScheduledUpdateGroupAction *)scheduledUpdateGroupActionAtIndex:(NSUInteger)index
-{
-    if (self.scheduledUpdateGroupActions == nil || index >= ([self.scheduledUpdateGroupActions count]-1))
-        return nil;
-
-    return [self.scheduledUpdateGroupActions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)scheduledUpdateGroupActionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASScheduledUpdateGroupAction class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeInternetGatewaysResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InternetGateway.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeInternetGatewaysResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2InternetGateway *)internetGatewayAtIndex:(NSUInteger)index
-{
-    if (self.internetGateways == nil || index >= ([self.internetGateways count]-1))
-        return nil;
-
-    return [self.internetGateways objectAtIndex:index];
-}
-
 + (NSValueTransformer *)internetGatewaysXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InternetGateway class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

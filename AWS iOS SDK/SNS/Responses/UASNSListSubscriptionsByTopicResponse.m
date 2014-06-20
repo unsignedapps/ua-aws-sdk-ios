@@ -8,7 +8,11 @@
 //
 
 #import "UASNSListSubscriptionsByTopicResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASNSSubscription.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSListSubscriptionsByTopicResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UASNSSubscription *)subscriptionAtIndex:(NSUInteger)index
-{
-    if (self.subscriptions == nil || index >= ([self.subscriptions count]-1))
-        return nil;
-
-    return [self.subscriptions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)subscriptionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSSubscription class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

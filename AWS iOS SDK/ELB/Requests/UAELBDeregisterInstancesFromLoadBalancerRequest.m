@@ -8,6 +8,7 @@
 //
 
 #import "UAELBDeregisterInstancesFromLoadBalancerRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBDeregisterInstancesFromLoadBalancerResponse.h"
 
 @interface UAELBDeregisterInstancesFromLoadBalancerRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDeregisterInstancesFromLoadBalancerRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DeregisterInstancesFromLoadBalancer"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceIDAtIndex:) propertyName:@"instanceIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstanceID:) propertyName:@"instanceIDs"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)instanceIDAtIndex:(NSUInteger)index
-{
-    if (self.instanceIDs == nil || index >= ([self.instanceIDs count]-1))
-        return nil;
-
-    return [self.instanceIDs objectAtIndex:index];
-}
-
-- (void)addInstanceID:(NSString *)instanceID
-{
-	if (self.instanceIDs == nil)
-		[self setInstanceIDs:[NSMutableArray array]];
-	[self.instanceIDs addObject:instanceID];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBDeregisterInstancesFromLoadBalancerRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

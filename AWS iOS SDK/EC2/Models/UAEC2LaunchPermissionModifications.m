@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2LaunchPermissionModifications.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2LaunchPermission.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2LaunchPermissionModifications
 
@@ -45,22 +49,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2LaunchPermission *)addAtIndex:(NSUInteger)index
-{
-    if (self.add == nil || index >= ([self.add count]-1))
-        return nil;
-
-    return [self.add objectAtIndex:index];
-}
-
-- (UAEC2LaunchPermission *)removeAtIndex:(NSUInteger)index
-{
-    if (self.remove == nil || index >= ([self.remove count]-1))
-        return nil;
-
-    return [self.remove objectAtIndex:index];
-}
-
 + (NSValueTransformer *)addQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2LaunchPermission class]];
@@ -82,3 +70,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

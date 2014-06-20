@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2CreateDHCPOptionsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CreateDHCPOptionsResponse.h"
 #import "UAEC2DHCPConfiguration.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateDHCPOptionsRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"CreateDhcpOptions"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dhcpConfigurationAtIndex:) propertyName:@"dhcpConfigurations"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDHCPConfiguration:) propertyName:@"dhcpConfigurations"];
 	}
 	return self;
 }
@@ -52,14 +59,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2DHCPConfiguration *)dhcpConfigurationAtIndex:(NSUInteger)index
-{
-    if (self.dhcpConfigurations == nil || index >= ([self.dhcpConfigurations count]-1))
-        return nil;
-
-    return [self.dhcpConfigurations objectAtIndex:index];
-}
-
 + (NSValueTransformer *)dhcpConfigurationsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2DHCPConfiguration class]];
@@ -75,14 +74,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2DHCPConfiguration class]];
 }
 
-- (void)addDHCPConfiguration:(UAEC2DHCPConfiguration *)dHCPConfiguration
-{
-	if (self.dhcpConfigurations == nil)
-		[self setDhcpConfigurations:[NSMutableArray array]];
-	[self.dhcpConfigurations addObject:dHCPConfiguration];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2CreateDHCPOptionsRequestCompletionBlock)completionBlock
 {
@@ -106,5 +98,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

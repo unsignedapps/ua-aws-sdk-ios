@@ -8,10 +8,14 @@
 //
 
 #import "UAEC2VPCPeeringConnection.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2AccepterVPCInfo.h"
 #import "UAEC2RequesterVPCInfo.h"
 #import "UAEC2VPCPeeringConnectionStatus.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2VPCPeeringConnection
 
@@ -37,14 +41,6 @@
         @"vpcPeeringConnectionID": @"ec2:vpcPeeringConnectionId"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
 }
 
 + (NSValueTransformer *)accepterVPCInfoQueryStringTransformer
@@ -98,3 +94,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

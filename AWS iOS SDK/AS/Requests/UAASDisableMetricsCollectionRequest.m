@@ -8,6 +8,7 @@
 //
 
 #import "UAASDisableMetricsCollectionRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDisableMetricsCollectionResponse.h"
 
 @interface UAASDisableMetricsCollectionRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDisableMetricsCollectionRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DisableMetricsCollection"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(metricAtIndex:) propertyName:@"metrics"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addMetric:) propertyName:@"metrics"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)metricAtIndex:(NSUInteger)index
-{
-    if (self.metrics == nil || index >= ([self.metrics count]-1))
-        return nil;
-
-    return [self.metrics objectAtIndex:index];
-}
-
-- (void)addMetric:(NSString *)metric
-{
-	if (self.metrics == nil)
-		[self setMetrics:[NSMutableArray array]];
-	[self.metrics addObject:metric];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDisableMetricsCollectionRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

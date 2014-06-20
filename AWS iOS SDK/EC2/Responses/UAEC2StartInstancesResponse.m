@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2StartInstancesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InstanceStateChange.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2StartInstancesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2InstanceStateChange *)startingInstanceAtIndex:(NSUInteger)index
-{
-    if (self.startingInstances == nil || index >= ([self.startingInstances count]-1))
-        return nil;
-
-    return [self.startingInstances objectAtIndex:index];
-}
-
 + (NSValueTransformer *)startingInstancesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceStateChange class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

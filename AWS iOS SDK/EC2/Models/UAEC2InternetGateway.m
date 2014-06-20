@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2InternetGateway.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Attachment.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2InternetGateway
 
@@ -34,22 +38,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2Attachment *)attachmentAtIndex:(NSUInteger)index
-{
-    if (self.attachments == nil || index >= ([self.attachments count]-1))
-        return nil;
-
-    return [self.attachments objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
 + (NSValueTransformer *)attachmentsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Attachment class]];
@@ -71,3 +59,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateSubnetResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Subnet.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateSubnetResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

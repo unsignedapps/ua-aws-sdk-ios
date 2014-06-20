@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeVolumeAttributeResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ProductCode.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeVolumeAttributeResponse
 
@@ -33,14 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
-{
-    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
-        return nil;
-
-    return [self.productCodes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)autoEnableIOXMLTransformer
 {
     return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
@@ -52,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

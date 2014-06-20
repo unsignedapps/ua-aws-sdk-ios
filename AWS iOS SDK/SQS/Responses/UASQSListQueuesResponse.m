@@ -8,6 +8,10 @@
 //
 
 #import "UASQSListQueuesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASQSListQueuesResponse
 
@@ -30,17 +34,11 @@
     return [keyPaths copy];
 }
 
-- (NSString *)queueURLAtIndex:(NSUInteger)index
-{
-    if (self.queueUrls == nil || index >= ([self.queueUrls count]-1))
-        return nil;
-
-    return [self.queueUrls objectAtIndex:index];
-}
-
 + (NSValueTransformer *)queueUrlsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }
 
 @end
+
+#pragma clang diagnostic pop

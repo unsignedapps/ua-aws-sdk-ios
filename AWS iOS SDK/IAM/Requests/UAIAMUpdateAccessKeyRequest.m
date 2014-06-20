@@ -8,6 +8,7 @@
 //
 
 #import "UAIAMUpdateAccessKeyRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMUpdateAccessKeyResponse.h"
 
 @interface UAIAMUpdateAccessKeyRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMUpdateAccessKeyRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"UpdateAccessKey"];
 		[self setVersion:@"2010-05-08"];
+		
+		
 	}
 	return self;
 }
@@ -66,7 +72,7 @@
                                                unknownValue:@(UAIAMAccessKeyStatusUnknown)];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMUpdateAccessKeyRequestCompletionBlock)completionBlock
 {
@@ -90,5 +96,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

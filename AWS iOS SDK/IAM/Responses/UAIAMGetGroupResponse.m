@@ -8,8 +8,12 @@
 //
 
 #import "UAIAMGetGroupResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMGroup.h"
 #import "UAIAMUser.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMGetGroupResponse
 
@@ -35,14 +39,6 @@
     return [keyPaths copy];
 }
 
-- (UAIAMUser *)userAtIndex:(NSUInteger)index
-{
-    if (self.users == nil || index >= ([self.users count]-1))
-        return nil;
-
-    return [self.users objectAtIndex:index];
-}
-
 + (NSValueTransformer *)groupXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAIAMGroup class]];
@@ -59,3 +55,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAASUpdateAutoScalingGroupRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASUpdateAutoScalingGroupResponse.h"
 
 @interface UAASUpdateAutoScalingGroupRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASUpdateAutoScalingGroupRequest
 
@@ -27,6 +31,11 @@
 	{
 		[self setAction:@"UpdateAutoScalingGroup"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(availabilityZoneAtIndex:) propertyName:@"availabilityZones"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(terminationPolicyAtIndex:) propertyName:@"terminationPolicies"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAvailabilityZone:) propertyName:@"availabilityZones"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTerminationPolicy:) propertyName:@"terminationPolicies"];
 	}
 	return self;
 }
@@ -61,37 +70,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
-{
-    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
-        return nil;
-
-    return [self.availabilityZones objectAtIndex:index];
-}
-
-- (NSString *)terminationPolicyAtIndex:(NSUInteger)index
-{
-    if (self.terminationPolicies == nil || index >= ([self.terminationPolicies count]-1))
-        return nil;
-
-    return [self.terminationPolicies objectAtIndex:index];
-}
-
-- (void)addAvailabilityZone:(NSString *)availabilityZone
-{
-	if (self.availabilityZones == nil)
-		[self setAvailabilityZones:[NSMutableArray array]];
-	[self.availabilityZones addObject:availabilityZone];
-}
-
-- (void)addTerminationPolicy:(NSString *)terminationPolicy
-{
-	if (self.terminationPolicies == nil)
-		[self setTerminationPolicies:[NSMutableArray array]];
-	[self.terminationPolicies addObject:terminationPolicy];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASUpdateAutoScalingGroupRequestCompletionBlock)completionBlock
 {
@@ -115,5 +94,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

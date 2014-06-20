@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2InstanceStatusEvent.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2InstanceStatusEvent
 
@@ -54,3 +58,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

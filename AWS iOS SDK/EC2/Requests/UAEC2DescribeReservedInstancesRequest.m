@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeReservedInstancesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeReservedInstancesResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeReservedInstancesRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DescribeReservedInstances"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesIDAtIndex:) propertyName:@"reservedInstancesIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReservedInstancesID:) propertyName:@"reservedInstancesIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -54,22 +63,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)reservedInstancesIDAtIndex:(NSUInteger)index
-{
-    if (self.reservedInstancesIDs == nil || index >= ([self.reservedInstancesIDs count]-1))
-        return nil;
-
-    return [self.reservedInstancesIDs objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -85,21 +78,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addReservedInstancesID:(NSString *)reservedInstancesID
-{
-	if (self.reservedInstancesIDs == nil)
-		[self setReservedInstancesIDs:[NSMutableArray array]];
-	[self.reservedInstancesIDs addObject:reservedInstancesID];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeReservedInstancesRequestCompletionBlock)completionBlock
 {
@@ -123,5 +102,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

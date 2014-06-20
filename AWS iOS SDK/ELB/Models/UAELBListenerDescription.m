@@ -8,7 +8,11 @@
 //
 
 #import "UAELBListenerDescription.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBListener.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBListenerDescription
 
@@ -32,14 +36,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)policyNameAtIndex:(NSUInteger)index
-{
-    if (self.policyNames == nil || index >= ([self.policyNames count]-1))
-        return nil;
-
-    return [self.policyNames objectAtIndex:index];
-}
-
 + (NSValueTransformer *)listenerQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBListener class]];
@@ -56,3 +52,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

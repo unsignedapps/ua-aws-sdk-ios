@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeSpotPriceHistoryRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeSpotPriceHistoryResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeSpotPriceHistoryRequest
 
@@ -28,6 +32,13 @@
 	{
 		[self setAction:@"DescribeSpotPriceHistory"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceTypeAtIndex:) propertyName:@"instanceTypes"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productionDescriptionAtIndex:) propertyName:@"productDescriptions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstanceType:) propertyName:@"instanceTypes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addProductionDescription:) propertyName:@"productDescriptions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -57,30 +68,6 @@
         @"nextToken": @"NextToken"
     }];
     return [keyPaths copy];
-}
-
-- (NSString *)instanceTypeAtIndex:(NSUInteger)index
-{
-    if (self.instanceTypes == nil || index >= ([self.instanceTypes count]-1))
-        return nil;
-
-    return [self.instanceTypes objectAtIndex:index];
-}
-
-- (NSString *)productionDescriptionAtIndex:(NSUInteger)index
-{
-    if (self.productDescriptions == nil || index >= ([self.productDescriptions count]-1))
-        return nil;
-
-    return [self.productDescriptions objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
 }
 
 + (NSValueTransformer *)startTimeJSONTransformer
@@ -118,28 +105,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addInstanceType:(NSString *)instanceType
-{
-	if (self.instanceTypes == nil)
-		[self setInstanceTypes:[NSMutableArray array]];
-	[self.instanceTypes addObject:instanceType];
-}
-
-- (void)addProductionDescription:(NSString *)productionDescription
-{
-	if (self.productDescriptions == nil)
-		[self setProductDescriptions:[NSMutableArray array]];
-	[self.productDescriptions addObject:productionDescription];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeSpotPriceHistoryRequestCompletionBlock)completionBlock
 {
@@ -163,5 +129,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeNetworkInterfacesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2NetworkInterface.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeNetworkInterfacesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2NetworkInterface *)networkInterfaceAtIndex:(NSUInteger)index
-{
-    if (self.networkInterfaces == nil || index >= ([self.networkInterfaces count]-1))
-        return nil;
-
-    return [self.networkInterfaces objectAtIndex:index];
-}
-
 + (NSValueTransformer *)networkInterfacesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2NetworkInterface class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

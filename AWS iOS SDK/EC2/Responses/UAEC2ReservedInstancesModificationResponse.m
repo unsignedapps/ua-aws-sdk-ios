@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2ReservedInstancesModificationResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2TargetConfiguration.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ReservedInstancesModificationResponse
 
@@ -38,3 +42,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

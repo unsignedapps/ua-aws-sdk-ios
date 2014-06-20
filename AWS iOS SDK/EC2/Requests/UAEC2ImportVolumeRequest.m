@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ImportVolumeRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ImportVolumeResponse.h"
 #import "UAEC2DiskImageDetail.h"
 #import "UAEC2VolumeDetail.h"
@@ -19,6 +20,9 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UAEC2ImportVolumeRequest
 
 @synthesize action=_action, version=_version, dryRun=_dryRun, availabilityZone=_availabilityZone, image=_image, descriptionValue=_descriptionValue, volume=_volume;
@@ -29,6 +33,8 @@
 	{
 		[self setAction:@"ImportVolume"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -81,7 +87,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2VolumeDetail class]];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ImportVolumeRequestCompletionBlock)completionBlock
 {
@@ -105,5 +111,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeSecurityGroupsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeSecurityGroupsResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeSecurityGroupsRequest
 
@@ -28,6 +32,13 @@
 	{
 		[self setAction:@"DescribeSecurityGroups"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupNameAtIndex:) propertyName:@"groupNames"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupIDAtIndex:) propertyName:@"groupIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGroupName:) propertyName:@"groupNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGroupID:) propertyName:@"groupIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -54,30 +65,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)groupNameAtIndex:(NSUInteger)index
-{
-    if (self.groupNames == nil || index >= ([self.groupNames count]-1))
-        return nil;
-
-    return [self.groupNames objectAtIndex:index];
-}
-
-- (NSString *)groupIDAtIndex:(NSUInteger)index
-{
-    if (self.groupIDs == nil || index >= ([self.groupIDs count]-1))
-        return nil;
-
-    return [self.groupIDs objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -93,28 +80,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addGroupName:(NSString *)groupName
-{
-	if (self.groupNames == nil)
-		[self setGroupNames:[NSMutableArray array]];
-	[self.groupNames addObject:groupName];
-}
-
-- (void)addGroupID:(NSString *)groupID
-{
-	if (self.groupIDs == nil)
-		[self setGroupIDs:[NSMutableArray array]];
-	[self.groupIDs addObject:groupID];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeSecurityGroupsRequestCompletionBlock)completionBlock
 {
@@ -138,5 +104,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

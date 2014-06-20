@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2IPPermission.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2UserIdGroupPair.h"
 #import "UAEC2IPRange.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2IPPermission
 
@@ -52,22 +56,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2UserIdGroupPair *)userIdGroupPairAtIndex:(NSUInteger)index
-{
-    if (self.userIdGroupPairs == nil || index >= ([self.userIdGroupPairs count]-1))
-        return nil;
-
-    return [self.userIdGroupPairs objectAtIndex:index];
-}
-
-- (UAEC2IPRange *)ipRangeAtIndex:(NSUInteger)index
-{
-    if (self.ipRanges == nil || index >= ([self.ipRanges count]-1))
-        return nil;
-
-    return [self.ipRanges objectAtIndex:index];
-}
-
 + (NSValueTransformer *)userIdGroupPairsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2UserIdGroupPair class]];
@@ -99,3 +87,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

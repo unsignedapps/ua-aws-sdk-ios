@@ -8,7 +8,11 @@
 //
 
 #import "UAELBDescribeLoadBalancersResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBLoadBalancerDescription.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDescribeLoadBalancersResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAELBLoadBalancerDescription *)loadBalancerDescriptionAtIndex:(NSUInteger)index
-{
-    if (self.loadBalancerDescriptions == nil || index >= ([self.loadBalancerDescriptions count]-1))
-        return nil;
-
-    return [self.loadBalancerDescriptions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)loadBalancerDescriptionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBLoadBalancerDescription class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

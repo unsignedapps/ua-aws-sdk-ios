@@ -8,6 +8,7 @@
 //
 
 #import "UAELBSetLoadBalancerListenerSSLCertificateRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBSetLoadBalancerListenerSSLCertificateResponse.h"
 
 @interface UAELBSetLoadBalancerListenerSSLCertificateRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBSetLoadBalancerListenerSSLCertificateRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"SetLoadBalancerListenerSSLCertificate"];
 		[self setVersion:@"2012-06-01"];
+		
+		
 	}
 	return self;
 }
@@ -52,7 +58,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBSetLoadBalancerListenerSSLCertificateRequestCompletionBlock)completionBlock
 {
@@ -76,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

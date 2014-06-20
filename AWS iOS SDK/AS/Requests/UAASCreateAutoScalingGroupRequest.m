@@ -8,6 +8,7 @@
 //
 
 #import "UAASCreateAutoScalingGroupRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASCreateAutoScalingGroupResponse.h"
 #import "UAASTag.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASCreateAutoScalingGroupRequest
 
@@ -28,6 +32,15 @@
 	{
 		[self setAction:@"CreateAutoScalingGroup"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(availabilityZoneAtIndex:) propertyName:@"availabilityZones"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(loadBalancerNameAtIndex:) propertyName:@"loadBalancerNames"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(terminationPolicyAtIndex:) propertyName:@"terminationPolicies"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAvailabilityZone:) propertyName:@"availabilityZones"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLoadBalancerName:) propertyName:@"loadBalancerNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTerminationPolicy:) propertyName:@"terminationPolicies"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
 	}
 	return self;
 }
@@ -65,38 +78,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
-{
-    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
-        return nil;
-
-    return [self.availabilityZones objectAtIndex:index];
-}
-
-- (NSString *)loadBalancerNameAtIndex:(NSUInteger)index
-{
-    if (self.loadBalancerNames == nil || index >= ([self.loadBalancerNames count]-1))
-        return nil;
-
-    return [self.loadBalancerNames objectAtIndex:index];
-}
-
-- (NSString *)terminationPolicyAtIndex:(NSUInteger)index
-{
-    if (self.terminationPolicies == nil || index >= ([self.terminationPolicies count]-1))
-        return nil;
-
-    return [self.terminationPolicies objectAtIndex:index];
-}
-
-- (UAASTag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
 + (NSValueTransformer *)tagsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAASTag class]];
@@ -107,35 +88,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAASTag class]];
 }
 
-- (void)addAvailabilityZone:(NSString *)availabilityZone
-{
-	if (self.availabilityZones == nil)
-		[self setAvailabilityZones:[NSMutableArray array]];
-	[self.availabilityZones addObject:availabilityZone];
-}
-
-- (void)addLoadBalancerName:(NSString *)loadBalancerName
-{
-	if (self.loadBalancerNames == nil)
-		[self setLoadBalancerNames:[NSMutableArray array]];
-	[self.loadBalancerNames addObject:loadBalancerName];
-}
-
-- (void)addTerminationPolicy:(NSString *)terminationPolicy
-{
-	if (self.terminationPolicies == nil)
-		[self setTerminationPolicies:[NSMutableArray array]];
-	[self.terminationPolicies addObject:terminationPolicy];
-}
-
-- (void)addTag:(UAASTag *)tag
-{
-	if (self.tags == nil)
-		[self setTags:[NSMutableArray array]];
-	[self.tags addObject:tag];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASCreateAutoScalingGroupRequestCompletionBlock)completionBlock
 {
@@ -159,5 +112,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAELBCreateLoadBalancerRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBCreateLoadBalancerResponse.h"
 #import "UAELBListener.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBCreateLoadBalancerRequest
 
@@ -28,6 +32,15 @@
 	{
 		[self setAction:@"CreateLoadBalancer"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(listenerAtIndex:) propertyName:@"listeners"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(availabilityZoneAtIndex:) propertyName:@"availabilityZones"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(subnetAtIndex:) propertyName:@"subnets"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addListener:) propertyName:@"listeners"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAvailabilityZone:) propertyName:@"availabilityZones"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSubnet:) propertyName:@"subnets"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSecurityGroup:) propertyName:@"securityGroups"];
 	}
 	return self;
 }
@@ -56,38 +69,6 @@
     return [keyPaths copy];
 }
 
-- (UAELBListener *)listenerAtIndex:(NSUInteger)index
-{
-    if (self.listeners == nil || index >= ([self.listeners count]-1))
-        return nil;
-
-    return [self.listeners objectAtIndex:index];
-}
-
-- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
-{
-    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
-        return nil;
-
-    return [self.availabilityZones objectAtIndex:index];
-}
-
-- (NSString *)subnetAtIndex:(NSUInteger)index
-{
-    if (self.subnets == nil || index >= ([self.subnets count]-1))
-        return nil;
-
-    return [self.subnets objectAtIndex:index];
-}
-
-- (NSString *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
-}
-
 + (NSValueTransformer *)listenersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBListener class]];
@@ -112,35 +93,7 @@
                                                unknownValue:@(UAELBSchemeUnknown)];
 }
 
-- (void)addListener:(UAELBListener *)listener
-{
-	if (self.listeners == nil)
-		[self setListeners:[NSMutableArray array]];
-	[self.listeners addObject:listener];
-}
-
-- (void)addAvailabilityZone:(NSString *)availabilityZone
-{
-	if (self.availabilityZones == nil)
-		[self setAvailabilityZones:[NSMutableArray array]];
-	[self.availabilityZones addObject:availabilityZone];
-}
-
-- (void)addSubnet:(NSString *)subnet
-{
-	if (self.subnets == nil)
-		[self setSubnets:[NSMutableArray array]];
-	[self.subnets addObject:subnet];
-}
-
-- (void)addSecurityGroup:(NSString *)securityGroup
-{
-	if (self.securityGroups == nil)
-		[self setSecurityGroups:[NSMutableArray array]];
-	[self.securityGroups addObject:securityGroup];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBCreateLoadBalancerRequestCompletionBlock)completionBlock
 {
@@ -164,5 +117,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

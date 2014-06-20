@@ -8,6 +8,7 @@
 //
 
 #import "UADDBGetItemRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBGetItemResponse.h"
 
 @interface UADDBGetItemRequest ()
@@ -15,6 +16,9 @@
 @property (nonatomic, copy) NSString *xAmzTarget;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBGetItemRequest
 
@@ -25,6 +29,11 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.GetItem"];
+		
+		[self UA_addDDBKeyValueAdditionalAccessorForSelector:@selector(keyValueForAttributeName:) propertyName:@"key"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeToGetAtIndex:) propertyName:@"attributesToGet"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeToGet:) propertyName:@"attributesToGet"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setKeyValue:forAttributeName:) propertyName:@"key"];
 	}
 	return self;
 }
@@ -51,22 +60,6 @@
     return [keyPaths copy];
 }
 
-- (NSMutableDictionary *)keyValueForAttributeName:(NSString *)attributeName
-{
-    if (self.key == nil)
-        return nil;
-
-    return [self.key objectForKey:attributeName];
-}
-
-- (NSString *)attributeToGetAtIndex:(NSUInteger)index
-{
-    if (self.attributesToGet == nil || index >= ([self.attributesToGet count]-1))
-        return nil;
-
-    return [self.attributesToGet objectAtIndex:index];
-}
-
 + (NSValueTransformer *)keyJSONTransformer
 {
     return [NSValueTransformer UA_JSONDynamoDBDictionaryTransformer];
@@ -79,21 +72,7 @@
                                                unknownValue:@(UADDBReturnConsumedCapacityTypeUnknown)];
 }
 
-- (void)addAttributeToGet:(NSString *)attributeToGet
-{
-	if (self.attributesToGet == nil)
-		[self setAttributesToGet:[NSMutableArray array]];
-	[self.attributesToGet addObject:attributeToGet];
-}
-
-- (void)setKeyValue:(id)key forAttributeName:(NSString *)attributeName
-{
-	if (self.key == nil)
-		[self setKey:[NSMutableDictionary dictionary]];
-	[self.key setObject:key forKey:attributeName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBGetItemRequestCompletionBlock)completionBlock
 {
@@ -117,5 +96,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

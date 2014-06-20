@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeVPNGatewaysRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeVPNGatewaysResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeVPNGatewaysRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DescribeVpnGateways"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpnGatewayIDAtIndex:) propertyName:@"vpnGatewayIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVPNGatewayID:) propertyName:@"vpnGatewayIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -53,22 +62,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)vpnGatewayIDAtIndex:(NSUInteger)index
-{
-    if (self.vpnGatewayIDs == nil || index >= ([self.vpnGatewayIDs count]-1))
-        return nil;
-
-    return [self.vpnGatewayIDs objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -84,21 +77,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addVPNGatewayID:(NSString *)vPNGatewayID
-{
-	if (self.vpnGatewayIDs == nil)
-		[self setVpnGatewayIDs:[NSMutableArray array]];
-	[self.vpnGatewayIDs addObject:vPNGatewayID];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeVPNGatewaysRequestCompletionBlock)completionBlock
 {
@@ -122,5 +101,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

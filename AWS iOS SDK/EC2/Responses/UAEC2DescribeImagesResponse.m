@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeImagesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Image.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeImagesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2Image *)imageAtIndex:(NSUInteger)index
-{
-    if (self.images == nil || index >= ([self.images count]-1))
-        return nil;
-
-    return [self.images objectAtIndex:index];
-}
-
 + (NSValueTransformer *)imagesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Image class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

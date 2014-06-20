@@ -103,20 +103,6 @@
     return [klass rangeOfString:@"UACWDescribe"].location == 0 || [klass rangeOfString:@"UACWGet"].location == 0 || [klass rangeOfString:@"UACWList"].location == 0;
 }
 
-#pragma mark - Additional Accessors
-
-+ (NSDictionary *)UA_additionalAccessors
-{
-    return
-    @{
-        @"alarmNameAtIndex:":   @"alarmNames",
-        @"addAlarmName:":       @"alarmNames",
-        @"dimensionAtIndex:":   @"dimensions",
-        @"addDimension":        @"dimensions"
-    };
-}
-
-
 #pragma mark - Serializing defaults
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey

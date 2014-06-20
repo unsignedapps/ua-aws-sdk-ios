@@ -8,6 +8,7 @@
 //
 
 #import "UAASPutScalingPolicyRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASPutScalingPolicyResponse.h"
 
 @interface UAASPutScalingPolicyRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASPutScalingPolicyRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"PutScalingPolicy"];
 		[self setVersion:@"2011-01-01"];
+		
+		
 	}
 	return self;
 }
@@ -69,7 +75,7 @@
                                                unknownValue:@(UAASScalingPolicyAdjustmentTypeUnknown)];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASPutScalingPolicyRequestCompletionBlock)completionBlock
 {
@@ -93,5 +99,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

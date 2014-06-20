@@ -8,6 +8,7 @@
 //
 
 #import "UASQSGetQueueAttributesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASQSGetQueueAttributesResponse.h"
 
 @interface UASQSGetQueueAttributesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASQSGetQueueAttributesRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"GetQueueAttributes"];
 		[self setVersion:@"2012-11-05"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeNameAtIndex:) propertyName:@"attributeNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeName:) propertyName:@"attributeNames"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)attributeNameAtIndex:(NSUInteger)index
-{
-    if (self.attributeNames == nil || index >= ([self.attributeNames count]-1))
-        return nil;
-
-    return [self.attributeNames objectAtIndex:index];
-}
-
-- (void)addAttributeName:(NSString *)attributeName
-{
-	if (self.attributeNames == nil)
-		[self setAttributeNames:[NSMutableArray array]];
-	[self.attributeNames addObject:attributeName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASQSGetQueueAttributesRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

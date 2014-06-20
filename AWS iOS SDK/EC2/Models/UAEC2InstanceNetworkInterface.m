@@ -8,10 +8,14 @@
 //
 
 #import "UAEC2InstanceNetworkInterface.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2GroupIdentifier.h"
 #import "UAEC2InstanceNetworkInterfaceAttachment.h"
 #import "UAEC2InstanceNetworkInterfaceAssociation.h"
 #import "UAEC2InstancePrivateIPAddress.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2InstanceNetworkInterface
 
@@ -45,22 +49,6 @@
         @"privateIPAddresses": @"ec2:privateIpAddressesSet/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index
-{
-    if (self.groups == nil || index >= ([self.groups count]-1))
-        return nil;
-
-    return [self.groups objectAtIndex:index];
-}
-
-- (UAEC2InstancePrivateIPAddress *)privateIPAddressAtIndex:(NSUInteger)index
-{
-    if (self.privateIPAddresses == nil || index >= ([self.privateIPAddresses count]-1))
-        return nil;
-
-    return [self.privateIPAddresses objectAtIndex:index];
 }
 
 + (NSValueTransformer *)groupsQueryStringTransformer
@@ -109,3 +97,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2CreateVolumeRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CreateVolumeResponse.h"
 
 @interface UAEC2CreateVolumeRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateVolumeRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"CreateVolume"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -74,7 +80,7 @@
                                                unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2CreateVolumeRequestCompletionBlock)completionBlock
 {
@@ -98,5 +104,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

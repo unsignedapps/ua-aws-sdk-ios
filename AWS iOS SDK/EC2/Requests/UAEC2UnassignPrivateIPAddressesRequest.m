@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2UnassignPrivateIPAddressesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2UnassignPrivateIPAddressesResponse.h"
 
 @interface UAEC2UnassignPrivateIPAddressesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2UnassignPrivateIPAddressesRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"UnassignPrivateIpAddresses"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(privateIPAddressAtIndex:) propertyName:@"privateIPAddresses"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPrivateIPAddress:) propertyName:@"privateIPAddresses"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)privateIPAddressAtIndex:(NSUInteger)index
-{
-    if (self.privateIPAddresses == nil || index >= ([self.privateIPAddresses count]-1))
-        return nil;
-
-    return [self.privateIPAddresses objectAtIndex:index];
-}
-
-- (void)addPrivateIPAddress:(NSString *)privateIPAddress
-{
-	if (self.privateIPAddresses == nil)
-		[self setPrivateIPAddresses:[NSMutableArray array]];
-	[self.privateIPAddresses addObject:privateIPAddress];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2UnassignPrivateIPAddressesRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,10 @@
 //
 
 #import "UAELBAttachLoadBalancerToSubnetsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBAttachLoadBalancerToSubnetsResponse
 
@@ -30,17 +34,11 @@
     return [keyPaths copy];
 }
 
-- (NSString *)subnetAtIndex:(NSUInteger)index
-{
-    if (self.subnets == nil || index >= ([self.subnets count]-1))
-        return nil;
-
-    return [self.subnets objectAtIndex:index];
-}
-
 + (NSValueTransformer *)subnetsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }
 
 @end
+
+#pragma clang diagnostic pop

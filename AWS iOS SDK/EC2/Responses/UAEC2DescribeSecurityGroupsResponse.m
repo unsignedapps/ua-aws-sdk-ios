@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeSecurityGroupsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2SecurityGroup.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeSecurityGroupsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2SecurityGroup *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
-}
-
 + (NSValueTransformer *)securityGroupsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2SecurityGroup class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

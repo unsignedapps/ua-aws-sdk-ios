@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2RunInstancesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2GroupIdentifier.h"
 #import "UAEC2Instance.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2RunInstancesResponse
 
@@ -36,22 +40,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2GroupIdentifier *)groupAtIndex:(NSUInteger)index
-{
-    if (self.groups == nil || index >= ([self.groups count]-1))
-        return nil;
-
-    return [self.groups objectAtIndex:index];
-}
-
-- (UAEC2Instance *)instanceAtIndex:(NSUInteger)index
-{
-    if (self.instances == nil || index >= ([self.instances count]-1))
-        return nil;
-
-    return [self.instances objectAtIndex:index];
-}
-
 + (NSValueTransformer *)groupsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
@@ -63,3 +51,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

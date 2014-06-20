@@ -8,7 +8,11 @@
 //
 
 #import "UACWMetric.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWDimension.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWMetric
 
@@ -33,14 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UACWDimension *)dimensionAtIndex:(NSUInteger)index
-{
-    if (self.dimensions == nil || index >= ([self.dimensions count]-1))
-        return nil;
-
-    return [self.dimensions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)dimensionsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
@@ -52,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

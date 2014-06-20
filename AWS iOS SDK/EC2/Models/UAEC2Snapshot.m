@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2Snapshot.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2Snapshot
 
@@ -38,14 +42,6 @@
         @"tags": @"ec2:tagSet/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
 }
 
 + (NSValueTransformer *)stateQueryStringTransformer
@@ -88,3 +84,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

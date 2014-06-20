@@ -8,6 +8,7 @@
 //
 
 #import "UACWDescribeAlarmsForMetricRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWDescribeAlarmsForMetricResponse.h"
 #import "UACWDimension.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWDescribeAlarmsForMetricRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"DescribeAlarmsForMetric"];
 		[self setVersion:@"2010-08-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dimensionAtIndex:) propertyName:@"dimensions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDimension:) propertyName:@"dimensions"];
 	}
 	return self;
 }
@@ -94,7 +101,7 @@
                                                unknownValue:@(UACWUnitUnknown)];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UACWDescribeAlarmsForMetricRequestCompletionBlock)completionBlock
 {
@@ -118,5 +125,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

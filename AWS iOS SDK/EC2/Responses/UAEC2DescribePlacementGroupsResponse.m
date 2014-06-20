@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribePlacementGroupsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2PlacementGroup.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribePlacementGroupsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2PlacementGroup *)placementGroupAtIndex:(NSUInteger)index
-{
-    if (self.placementGroups == nil || index >= ([self.placementGroups count]-1))
-        return nil;
-
-    return [self.placementGroups objectAtIndex:index];
-}
-
 + (NSValueTransformer *)placementGroupsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2PlacementGroup class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

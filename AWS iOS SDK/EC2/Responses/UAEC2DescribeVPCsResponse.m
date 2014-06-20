@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeVPCsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VPC.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeVPCsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2VPC *)vpcAtIndex:(NSUInteger)index
-{
-    if (self.vpcs == nil || index >= ([self.vpcs count]-1))
-        return nil;
-
-    return [self.vpcs objectAtIndex:index];
-}
-
 + (NSValueTransformer *)vpcsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VPC class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

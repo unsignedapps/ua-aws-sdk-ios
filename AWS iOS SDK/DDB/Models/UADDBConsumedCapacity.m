@@ -8,7 +8,11 @@
 //
 
 #import "UADDBConsumedCapacity.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBCapacity.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBConsumedCapacity
 
@@ -30,22 +34,6 @@
     return [keyPaths copy];
 }
 
-- (UADDBCapacity *)localSecondaryIndexForIndexName:(NSString *)indexName
-{
-    if (self.localSecondaryIndexes == nil)
-        return nil;
-
-    return [self.localSecondaryIndexes objectForKey:indexName];
-}
-
-- (UADDBCapacity *)globalSecondaryIndexForIndexName:(NSString *)indexName
-{
-    if (self.globalSecondaryIndexes == nil)
-        return nil;
-
-    return [self.globalSecondaryIndexes objectForKey:indexName];
-}
-
 + (NSValueTransformer *)tableJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UADDBCapacity class]];
@@ -62,3 +50,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

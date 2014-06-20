@@ -8,7 +8,11 @@
 //
 
 #import "UAASScalingPolicy.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASAlarm.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASScalingPolicy
 
@@ -36,14 +40,6 @@
         @"minAdjustmentStep": @"AutoScaling:MinAdjustmentStep"
     }];
     return [keyPaths copy];
-}
-
-- (UAASAlarm *)alarmAtIndex:(NSUInteger)index
-{
-    if (self.alarms == nil || index >= ([self.alarms count]-1))
-        return nil;
-
-    return [self.alarms objectAtIndex:index];
 }
 
 + (NSValueTransformer *)adjustmentTypeQueryStringTransformer
@@ -86,3 +82,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

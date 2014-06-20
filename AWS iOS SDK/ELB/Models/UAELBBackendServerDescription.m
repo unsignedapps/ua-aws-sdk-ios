@@ -8,6 +8,10 @@
 //
 
 #import "UAELBBackendServerDescription.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBBackendServerDescription
 
@@ -31,14 +35,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)policyNameAtIndex:(NSUInteger)index
-{
-    if (self.policyNames == nil || index >= ([self.policyNames count]-1))
-        return nil;
-
-    return [self.policyNames objectAtIndex:index];
-}
-
 + (NSValueTransformer *)instancePortXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];
@@ -50,3 +46,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

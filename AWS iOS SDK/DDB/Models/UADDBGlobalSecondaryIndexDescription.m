@@ -8,9 +8,13 @@
 //
 
 #import "UADDBGlobalSecondaryIndexDescription.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBKeySchema.h"
 #import "UADDBProjection.h"
 #import "UADDBProvisionedThroughputDescription.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBGlobalSecondaryIndexDescription
 
@@ -32,14 +36,6 @@
         @"itemCount": @"ItemCount"
     }];
     return [keyPaths copy];
-}
-
-- (UADDBKeySchema *)keySchemaAtIndex:(NSUInteger)index
-{
-    if (self.keySchema == nil || index >= ([self.keySchema count]-1))
-        return nil;
-
-    return [self.keySchema objectAtIndex:index];
 }
 
 + (NSValueTransformer *)keySchemaJSONTransformer
@@ -65,3 +61,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

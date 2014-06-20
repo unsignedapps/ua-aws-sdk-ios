@@ -8,11 +8,15 @@
 //
 
 #import "UAEC2LaunchSpecification.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2GroupIdentifier.h"
 #import "UAEC2SpotPlacement.h"
 #import "UAEC2BlockDeviceMapping.h"
 #import "UAEC2InstanceNetworkInterfaceSpecification.h"
 #import "UAEC2IAMInstanceProfileSpecification.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2LaunchSpecification
 
@@ -77,45 +81,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2GroupIdentifier *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
-}
-
-- (NSString *)decodedUserData
-{
-    if (self.userData == nil)
-        return nil;
-    
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (void)setDecodedUserData:(NSString *)decodedUserData
-{
-    if (decodedUserData == nil)
-        [self setUserData:nil];
-    else
-		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
-}- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
-}
-
-- (UAEC2InstanceNetworkInterfaceSpecification *)networkInterfaceAtIndex:(NSUInteger)index
-{
-    if (self.networkInterfaces == nil || index >= ([self.networkInterfaces count]-1))
-        return nil;
-
-    return [self.networkInterfaces objectAtIndex:index];
-}
-
 + (NSValueTransformer *)securityGroupsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
@@ -177,3 +142,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2PriceSchedule.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2PriceSchedule
 
@@ -49,3 +53,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

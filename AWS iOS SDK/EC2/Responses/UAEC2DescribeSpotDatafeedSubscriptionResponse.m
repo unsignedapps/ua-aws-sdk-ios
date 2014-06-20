@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeSpotDatafeedSubscriptionResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2SpotDatafeedSubscription.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeSpotDatafeedSubscriptionResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

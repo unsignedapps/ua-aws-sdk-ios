@@ -8,6 +8,7 @@
 //
 
 #import "UAIAMListMFADevicesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMListMFADevicesResponse.h"
 
 @interface UAIAMListMFADevicesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListMFADevicesRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"ListMFADevices"];
 		[self setVersion:@"2010-05-08"];
+		
+		
 	}
 	return self;
 }
@@ -52,7 +58,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMListMFADevicesRequestCompletionBlock)completionBlock
 {
@@ -76,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

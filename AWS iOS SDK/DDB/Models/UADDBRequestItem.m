@@ -8,6 +8,10 @@
 //
 
 #import "UADDBRequestItem.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBRequestItem
 
@@ -27,20 +31,6 @@
     return [keyPaths copy];
 }
 
-- (NSMutableDictionary *)keyAtIndex:(NSUInteger)index
-{
-    if (self.keys == nil || index >= ([self.keys count]-1))
-        return nil;
-
-    return [self.keys objectAtIndex:index];
-}
-
-- (NSString *)attributeToGetAtIndex:(NSUInteger)index
-{
-    if (self.attributesToGet == nil || index >= ([self.attributesToGet count]-1))
-        return nil;
-
-    return [self.attributesToGet objectAtIndex:index];
-}
-
 @end
+
+#pragma clang diagnostic pop

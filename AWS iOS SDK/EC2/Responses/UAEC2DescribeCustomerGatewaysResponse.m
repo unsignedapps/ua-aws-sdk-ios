@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeCustomerGatewaysResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CustomerGateway.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeCustomerGatewaysResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2CustomerGateway *)customerGatewayAtIndex:(NSUInteger)index
-{
-    if (self.customerGateways == nil || index >= ([self.customerGateways count]-1))
-        return nil;
-
-    return [self.customerGateways objectAtIndex:index];
-}
-
 + (NSValueTransformer *)customerGatewaysXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2CustomerGateway class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

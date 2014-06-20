@@ -8,7 +8,11 @@
 //
 
 #import "UASNSListPlatformApplicationsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASNSPlatformApplication.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSListPlatformApplicationsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UASNSPlatformApplication *)platformApplicationAtIndex:(NSUInteger)index
-{
-    if (self.platformApplications == nil || index >= ([self.platformApplications count]-1))
-        return nil;
-
-    return [self.platformApplications objectAtIndex:index];
-}
-
 + (NSValueTransformer *)platformApplicationsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSPlatformApplication class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

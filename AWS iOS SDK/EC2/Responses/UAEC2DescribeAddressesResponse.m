@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeAddressesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Address.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeAddressesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2Address *)addressAtIndex:(NSUInteger)index
-{
-    if (self.addresses == nil || index >= ([self.addresses count]-1))
-        return nil;
-
-    return [self.addresses objectAtIndex:index];
-}
-
 + (NSValueTransformer *)addressesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Address class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAASLaunchConfiguration.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASBlockDeviceMapping.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASLaunchConfiguration
 
@@ -45,37 +49,6 @@
         @"associatePublicIPAddress": @"AutoScaling:AssociatePublicIpAddress"
     }];
     return [keyPaths copy];
-}
-
-- (NSString *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
-}
-
-- (NSString *)decodedUserData
-{
-    if (self.userData == nil)
-        return nil;
-    
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (void)setDecodedUserData:(NSString *)decodedUserData
-{
-    if (decodedUserData == nil)
-        [self setUserData:nil];
-    else
-		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
-}- (UAASBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
 }
 
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
@@ -119,3 +92,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

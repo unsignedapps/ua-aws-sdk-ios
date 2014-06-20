@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMListSAMLProvidersResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMSAMLProviderList.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListSAMLProvidersResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAIAMSAMLProviderList *)sAMLProviderListAtIndex:(NSUInteger)index
-{
-    if (self.sAMLProviderList == nil || index >= ([self.sAMLProviderList count]-1))
-        return nil;
-
-    return [self.sAMLProviderList objectAtIndex:index];
-}
-
 + (NSValueTransformer *)sAMLProviderListXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMSAMLProviderList class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

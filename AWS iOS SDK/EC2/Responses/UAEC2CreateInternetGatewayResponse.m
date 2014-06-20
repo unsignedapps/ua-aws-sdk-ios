@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateInternetGatewayResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InternetGateway.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateInternetGatewayResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

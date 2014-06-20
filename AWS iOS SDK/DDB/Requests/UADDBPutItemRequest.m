@@ -8,6 +8,7 @@
 //
 
 #import "UADDBPutItemRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBPutItemResponse.h"
 #import "UADDBExpectedItem.h"
 
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *xAmzTarget;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBPutItemRequest
 
@@ -26,6 +30,11 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.PutItem"];
+		
+		[self UA_addDDBKeyValueAdditionalAccessorForSelector:@selector(itemValueForAttributeName:) propertyName:@"item"];
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(expectedForAttributeName:) propertyName:@"expected"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setItemValue:forAttributeName:) propertyName:@"item"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setExpected:forAttributeName:) propertyName:@"expected"];
 	}
 	return self;
 }
@@ -51,22 +60,6 @@
         @"returnItemCollectionMetrics": @"ReturnItemCollectionMetrics"
     }];
     return [keyPaths copy];
-}
-
-- (NSMutableDictionary *)itemValueForAttributeName:(NSString *)attributeName
-{
-    if (self.item == nil)
-        return nil;
-
-    return [self.item objectForKey:attributeName];
-}
-
-- (UADDBExpectedItem *)expectedForAttributeName:(NSString *)attributeName
-{
-    if (self.expected == nil)
-        return nil;
-
-    return [self.expected objectForKey:attributeName];
 }
 
 + (NSValueTransformer *)itemJSONTransformer
@@ -100,21 +93,7 @@
                                                unknownValue:@(UADDBReturnItemCollectionMetricsTypeUnknown)];
 }
 
-- (void)setItemValue:(id)item forAttributeName:(NSString *)attributeName
-{
-	if (self.item == nil)
-		[self setItem:[NSMutableDictionary dictionary]];
-	[self.item setObject:item forKey:attributeName];
-}
-
-- (void)setExpected:(UADDBExpectedItem *)expected forAttributeName:(NSString *)attributeName
-{
-	if (self.expected == nil)
-		[self setExpected:[NSMutableDictionary dictionary]];
-	[self.expected setObject:expected forKey:attributeName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBPutItemRequestCompletionBlock)completionBlock
 {
@@ -138,5 +117,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

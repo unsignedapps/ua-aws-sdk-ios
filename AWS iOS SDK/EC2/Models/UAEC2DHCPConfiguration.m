@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2DHCPConfiguration.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DHCPConfiguration
 
@@ -44,17 +48,11 @@
     return [keyPaths copy];
 }
 
-- (NSString *)valueAtIndex:(NSUInteger)index
-{
-    if (self.values == nil || index >= ([self.values count]-1))
-        return nil;
-
-    return [self.values objectAtIndex:index];
-}
-
 + (NSValueTransformer *)valuesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }
 
 @end
+
+#pragma clang diagnostic pop

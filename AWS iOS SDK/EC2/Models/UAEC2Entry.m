@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2Entry.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2IcmpTypeCode.h"
 #import "UAEC2PortRange.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2Entry
 
@@ -69,3 +73,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

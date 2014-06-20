@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeKeyPairsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2KeyPair.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeKeyPairsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2KeyPair *)keyPairAtIndex:(NSUInteger)index
-{
-    if (self.keyPairs == nil || index >= ([self.keyPairs count]-1))
-        return nil;
-
-    return [self.keyPairs objectAtIndex:index];
-}
-
 + (NSValueTransformer *)keyPairsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2KeyPair class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

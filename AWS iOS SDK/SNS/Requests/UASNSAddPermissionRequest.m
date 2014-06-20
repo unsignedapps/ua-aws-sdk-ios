@@ -8,6 +8,7 @@
 //
 
 #import "UASNSAddPermissionRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASNSAddPermissionResponse.h"
 
 @interface UASNSAddPermissionRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSAddPermissionRequest
 
@@ -27,6 +31,11 @@
 	{
 		[self setAction:@"AddPermission"];
 		[self setVersion:@"2010-03-31"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(aWSAccountIDAtIndex:) propertyName:@"aWSAccountID"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(actionNameAtIndex:) propertyName:@"actionName"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAWSAccountID:) propertyName:@"aWSAccountID"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addActionName:) propertyName:@"actionName"];
 	}
 	return self;
 }
@@ -53,37 +62,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)aWSAccountIDAtIndex:(NSUInteger)index
-{
-    if (self.aWSAccountID == nil || index >= ([self.aWSAccountID count]-1))
-        return nil;
-
-    return [self.aWSAccountID objectAtIndex:index];
-}
-
-- (NSString *)actionNameAtIndex:(NSUInteger)index
-{
-    if (self.actionName == nil || index >= ([self.actionName count]-1))
-        return nil;
-
-    return [self.actionName objectAtIndex:index];
-}
-
-- (void)addAWSAccountID:(NSString *)aWSAccountID
-{
-	if (self.aWSAccountID == nil)
-		[self setAWSAccountID:[NSMutableArray array]];
-	[self.aWSAccountID addObject:aWSAccountID];
-}
-
-- (void)addActionName:(NSString *)actionName
-{
-	if (self.actionName == nil)
-		[self setActionName:[NSMutableArray array]];
-	[self.actionName addObject:actionName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASNSAddPermissionRequestCompletionBlock)completionBlock
 {
@@ -107,5 +86,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

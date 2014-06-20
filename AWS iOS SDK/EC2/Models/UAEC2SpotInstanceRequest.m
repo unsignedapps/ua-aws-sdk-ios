@@ -8,10 +8,14 @@
 //
 
 #import "UAEC2SpotInstanceRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2SpotInstanceStateFault.h"
 #import "UAEC2SpotInstanceStatus.h"
 #import "UAEC2LaunchSpecification.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2SpotInstanceRequest
 
@@ -47,14 +51,6 @@
         @"launchedAvailabilityZone": @"ec2:launchedAvailabilityZone"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
 }
 
 + (NSValueTransformer *)typeQueryStringTransformer
@@ -161,3 +157,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

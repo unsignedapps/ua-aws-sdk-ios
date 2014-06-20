@@ -8,6 +8,7 @@
 //
 
 #import "UACWPutMetricDataRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWPutMetricDataResponse.h"
 #import "UACWMetricDatum.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWPutMetricDataRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"PutMetricData"];
 		[self setVersion:@"2010-08-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(metricDatumAtIndex:) propertyName:@"metricData"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addMetricDatum:) propertyName:@"metricData"];
 	}
 	return self;
 }
@@ -52,14 +59,6 @@
     return [keyPaths copy];
 }
 
-- (UACWMetricDatum *)metricDatumAtIndex:(NSUInteger)index
-{
-    if (self.metricData == nil || index >= ([self.metricData count]-1))
-        return nil;
-
-    return [self.metricData objectAtIndex:index];
-}
-
 + (NSValueTransformer *)metricDataJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UACWMetricDatum class]];
@@ -70,14 +69,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UACWMetricDatum class]];
 }
 
-- (void)addMetricDatum:(UACWMetricDatum *)metricDatum
-{
-	if (self.metricData == nil)
-		[self setMetricData:[NSMutableArray array]];
-	[self.metricData addObject:metricDatum];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UACWPutMetricDataRequestCompletionBlock)completionBlock
 {
@@ -101,5 +93,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

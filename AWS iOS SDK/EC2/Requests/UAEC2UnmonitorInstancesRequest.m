@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2UnmonitorInstancesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2UnmonitorInstancesResponse.h"
 
 @interface UAEC2UnmonitorInstancesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2UnmonitorInstancesRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"UnmonitorInstances"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceIDAtIndex:) propertyName:@"instanceIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstanceID:) propertyName:@"instanceIDs"];
 	}
 	return self;
 }
@@ -51,27 +58,12 @@
     return [keyPaths copy];
 }
 
-- (NSString *)instanceIDAtIndex:(NSUInteger)index
-{
-    if (self.instanceIDs == nil || index >= ([self.instanceIDs count]-1))
-        return nil;
-
-    return [self.instanceIDs objectAtIndex:index];
-}
-
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-- (void)addInstanceID:(NSString *)instanceID
-{
-	if (self.instanceIDs == nil)
-		[self setInstanceIDs:[NSMutableArray array]];
-	[self.instanceIDs addObject:instanceID];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2UnmonitorInstancesRequestCompletionBlock)completionBlock
 {
@@ -95,5 +87,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

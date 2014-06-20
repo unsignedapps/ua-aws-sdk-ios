@@ -8,6 +8,10 @@
 //
 
 #import "UADDBExpectedItem.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBExpectedItem
 
@@ -32,3 +36,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

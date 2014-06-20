@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2IPRange.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2IPRange
 
@@ -52,3 +56,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

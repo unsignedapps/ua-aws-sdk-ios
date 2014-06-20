@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2RunInstancesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2RunInstancesResponse.h"
 #import "UAEC2Placement.h"
 #import "UAEC2BlockDeviceMapping.h"
@@ -21,9 +22,14 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UAEC2RunInstancesRequest
 
 @synthesize action=_action, version=_version, dryRun=_dryRun, imageID=_imageID, minCount=_minCount, maxCount=_maxCount, keyName=_keyName, securityGroups=_securityGroups, securityGroupIDs=_securityGroupIDs, userData=_userData, instanceType=_instanceType, placement=_placement, kernelID=_kernelID, ramdiskID=_ramdiskID, blockDeviceMappings=_blockDeviceMappings, monitoringEnabled=_monitoringEnabled, subnetID=_subnetID, disableApiTermination=_disableApiTermination, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, privateIPAddress=_privateIPAddress, clientToken=_clientToken, additionalInfo=_additionalInfo, networkInterfaces=_networkInterfaces, iamInstanceProfile=_iamInstanceProfile, ebsOptimized=_ebsOptimized;
+
+@dynamic decodedUserData;
 
 - (id)init
 {
@@ -31,6 +37,17 @@
 	{
 		[self setAction:@"RunInstances"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
+		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupIDAtIndex:) propertyName:@"securityGroupIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(networkInterfaceAtIndex:) propertyName:@"networkInterfaces"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSecurityGroup:) propertyName:@"securityGroups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSecurityGroupID:) propertyName:@"securityGroupIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addBlockDeviceMapping:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addNetworkInterface:) propertyName:@"networkInterfaces"];
 	}
 	return self;
 }
@@ -75,53 +92,6 @@
         @"ebsOptimized": @"EbsOptimized"
     }];
     return [keyPaths copy];
-}
-
-- (NSString *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
-}
-
-- (NSString *)securityGroupIDAtIndex:(NSUInteger)index
-{
-    if (self.securityGroupIDs == nil || index >= ([self.securityGroupIDs count]-1))
-        return nil;
-
-    return [self.securityGroupIDs objectAtIndex:index];
-}
-
-- (NSString *)decodedUserData
-{
-    if (self.userData == nil)
-        return nil;
-    
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (void)setDecodedUserData:(NSString *)decodedUserData
-{
-    if (decodedUserData == nil)
-        [self setUserData:nil];
-    else
-		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
-}- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
-}
-
-- (UAEC2InstanceNetworkInterfaceSpecification *)networkInterfaceAtIndex:(NSUInteger)index
-{
-    if (self.networkInterfaces == nil || index >= ([self.networkInterfaces count]-1))
-        return nil;
-
-    return [self.networkInterfaces objectAtIndex:index];
 }
 
 + (NSValueTransformer *)placementJSONTransformer
@@ -198,35 +168,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-- (void)addSecurityGroup:(NSString *)securityGroup
-{
-	if (self.securityGroups == nil)
-		[self setSecurityGroups:[NSMutableArray array]];
-	[self.securityGroups addObject:securityGroup];
-}
-
-- (void)addSecurityGroupID:(NSString *)securityGroupID
-{
-	if (self.securityGroupIDs == nil)
-		[self setSecurityGroupIDs:[NSMutableArray array]];
-	[self.securityGroupIDs addObject:securityGroupID];
-}
-
-- (void)addBlockDeviceMapping:(UAEC2BlockDeviceMapping *)blockDeviceMapping
-{
-	if (self.blockDeviceMappings == nil)
-		[self setBlockDeviceMappings:[NSMutableArray array]];
-	[self.blockDeviceMappings addObject:blockDeviceMapping];
-}
-
-- (void)addNetworkInterface:(UAEC2InstanceNetworkInterfaceSpecification *)networkInterface
-{
-	if (self.networkInterfaces == nil)
-		[self setNetworkInterfaces:[NSMutableArray array]];
-	[self.networkInterfaces addObject:networkInterface];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2RunInstancesRequestCompletionBlock)completionBlock
 {
@@ -250,5 +192,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

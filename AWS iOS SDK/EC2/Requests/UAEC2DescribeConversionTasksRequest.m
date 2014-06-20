@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeConversionTasksRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeConversionTasksResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeConversionTasksRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DescribeConversionTasks"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(conversionTaskIDAtIndex:) propertyName:@"conversionTaskIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addConversionTaskID:) propertyName:@"conversionTaskIDs"];
 	}
 	return self;
 }
@@ -53,22 +62,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
-- (NSString *)conversionTaskIDAtIndex:(NSUInteger)index
-{
-    if (self.conversionTaskIDs == nil || index >= ([self.conversionTaskIDs count]-1))
-        return nil;
-
-    return [self.conversionTaskIDs objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -84,21 +77,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-- (void)addConversionTaskID:(NSString *)conversionTaskID
-{
-	if (self.conversionTaskIDs == nil)
-		[self setConversionTaskIDs:[NSMutableArray array]];
-	[self.conversionTaskIDs addObject:conversionTaskID];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeConversionTasksRequestCompletionBlock)completionBlock
 {
@@ -122,5 +101,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

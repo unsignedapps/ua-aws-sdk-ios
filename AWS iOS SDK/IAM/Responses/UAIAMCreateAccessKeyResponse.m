@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMCreateAccessKeyResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMAccessKey.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMCreateAccessKeyResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

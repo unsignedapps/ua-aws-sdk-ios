@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMCreateInstanceProfileResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMInstanceProfile.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMCreateInstanceProfileResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

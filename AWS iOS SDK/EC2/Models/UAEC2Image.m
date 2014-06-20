@@ -8,10 +8,14 @@
 //
 
 #import "UAEC2Image.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ProductCode.h"
 #import "UAEC2StateReason.h"
 #import "UAEC2BlockDeviceMapping.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2Image
 
@@ -53,30 +57,6 @@
         @"hypervisor": @"ec2:hypervisor"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
-{
-    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
-        return nil;
-
-    return [self.productCodes objectAtIndex:index];
-}
-
-- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
 }
 
 + (NSValueTransformer *)stateQueryStringTransformer
@@ -223,3 +203,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

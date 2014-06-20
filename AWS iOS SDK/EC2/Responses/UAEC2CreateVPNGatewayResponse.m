@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateVPNGatewayResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VPNGateway.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateVPNGatewayResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

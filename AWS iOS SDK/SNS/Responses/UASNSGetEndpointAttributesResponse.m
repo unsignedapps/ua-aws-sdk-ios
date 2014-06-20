@@ -8,7 +8,11 @@
 //
 
 #import "UASNSGetEndpointAttributesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASNSEndpointAttributes.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSGetEndpointAttributesResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UADDBListTablesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBListTablesResponse.h"
 
 @interface UADDBListTablesRequest ()
@@ -15,6 +16,9 @@
 @property (nonatomic, copy) NSString *xAmzTarget;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBListTablesRequest
 
@@ -25,6 +29,8 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.ListTables"];
+		
+		
 	}
 	return self;
 }
@@ -48,7 +54,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBListTablesRequestCompletionBlock)completionBlock
 {
@@ -72,5 +78,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

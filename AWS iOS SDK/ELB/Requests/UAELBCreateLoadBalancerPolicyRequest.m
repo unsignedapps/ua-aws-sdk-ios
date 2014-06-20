@@ -8,6 +8,7 @@
 //
 
 #import "UAELBCreateLoadBalancerPolicyRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBCreateLoadBalancerPolicyResponse.h"
 #import "UAELBPolicyAttribute.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBCreateLoadBalancerPolicyRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"CreateLoadBalancerPolicy"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(policyAttributeAtIndex:) propertyName:@"policyAttributes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPolicyAttribute:) propertyName:@"policyAttributes"];
 	}
 	return self;
 }
@@ -54,14 +61,6 @@
     return [keyPaths copy];
 }
 
-- (UAELBPolicyAttribute *)policyAttributeAtIndex:(NSUInteger)index
-{
-    if (self.policyAttributes == nil || index >= ([self.policyAttributes count]-1))
-        return nil;
-
-    return [self.policyAttributes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)policyAttributesJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBPolicyAttribute class]];
@@ -72,14 +71,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBPolicyAttribute class]];
 }
 
-- (void)addPolicyAttribute:(UAELBPolicyAttribute *)policyAttribute
-{
-	if (self.policyAttributes == nil)
-		[self setPolicyAttributes:[NSMutableArray array]];
-	[self.policyAttributes addObject:policyAttribute];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBCreateLoadBalancerPolicyRequestCompletionBlock)completionBlock
 {
@@ -103,5 +95,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

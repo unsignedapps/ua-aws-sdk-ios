@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateDHCPOptionsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DHCPOptions.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateDHCPOptionsResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

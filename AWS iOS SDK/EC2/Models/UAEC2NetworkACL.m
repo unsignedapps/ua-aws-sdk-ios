@@ -8,9 +8,13 @@
 //
 
 #import "UAEC2NetworkACL.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Entry.h"
 #import "UAEC2NetworkACLAssociation.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2NetworkACL
 
@@ -36,30 +40,6 @@
         @"tags": @"ec2:tagSet/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2Entry *)entryAtIndex:(NSUInteger)index
-{
-    if (self.entries == nil || index >= ([self.entries count]-1))
-        return nil;
-
-    return [self.entries objectAtIndex:index];
-}
-
-- (UAEC2NetworkACLAssociation *)associationAtIndex:(NSUInteger)index
-{
-    if (self.associations == nil || index >= ([self.associations count]-1))
-        return nil;
-
-    return [self.associations objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
 }
 
 + (NSValueTransformer *)entriesQueryStringTransformer
@@ -98,3 +78,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

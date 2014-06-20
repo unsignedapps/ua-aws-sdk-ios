@@ -8,7 +8,11 @@
 //
 
 #import "UACWDescribeAlarmsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWMetricAlarm.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWDescribeAlarmsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UACWMetricAlarm *)metricAlarmAtIndex:(NSUInteger)index
-{
-    if (self.metricAlarms == nil || index >= ([self.metricAlarms count]-1))
-        return nil;
-
-    return [self.metricAlarms objectAtIndex:index];
-}
-
 + (NSValueTransformer *)metricAlarmsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWMetricAlarm class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

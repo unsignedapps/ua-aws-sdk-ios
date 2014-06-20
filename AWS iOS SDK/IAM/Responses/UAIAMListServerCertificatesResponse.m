@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMListServerCertificatesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMServerCertificateMetadataList.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListServerCertificatesResponse
 
@@ -33,14 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UAIAMServerCertificateMetadataList *)serverCertificateMetadataListAtIndex:(NSUInteger)index
-{
-    if (self.serverCertificateMetadataList == nil || index >= ([self.serverCertificateMetadataList count]-1))
-        return nil;
-
-    return [self.serverCertificateMetadataList objectAtIndex:index];
-}
-
 + (NSValueTransformer *)serverCertificateMetadataListXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMServerCertificateMetadataList class]];
@@ -52,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

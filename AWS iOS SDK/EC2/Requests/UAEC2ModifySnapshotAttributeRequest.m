@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ModifySnapshotAttributeRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ModifySnapshotAttributeResponse.h"
 #import "UAEC2CreateVolumePermissionModifications.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ModifySnapshotAttributeRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"ModifySnapshotAttribute"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(userIDAtIndex:) propertyName:@"userIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupNameAtIndex:) propertyName:@"groupNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addUserID:) propertyName:@"userIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGroupName:) propertyName:@"groupNames"];
 	}
 	return self;
 }
@@ -57,22 +66,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)userIDAtIndex:(NSUInteger)index
-{
-    if (self.userIDs == nil || index >= ([self.userIDs count]-1))
-        return nil;
-
-    return [self.userIDs objectAtIndex:index];
-}
-
-- (NSString *)groupNameAtIndex:(NSUInteger)index
-{
-    if (self.groupNames == nil || index >= ([self.groupNames count]-1))
-        return nil;
-
-    return [self.groupNames objectAtIndex:index];
-}
-
 + (NSValueTransformer *)createVolumePermissionJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2CreateVolumePermissionModifications class]];
@@ -88,21 +81,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2CreateVolumePermissionModifications class]];
 }
 
-- (void)addUserID:(NSString *)userID
-{
-	if (self.userIDs == nil)
-		[self setUserIDs:[NSMutableArray array]];
-	[self.userIDs addObject:userID];
-}
-
-- (void)addGroupName:(NSString *)groupName
-{
-	if (self.groupNames == nil)
-		[self setGroupNames:[NSMutableArray array]];
-	[self.groupNames addObject:groupName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ModifySnapshotAttributeRequestCompletionBlock)completionBlock
 {
@@ -126,5 +105,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

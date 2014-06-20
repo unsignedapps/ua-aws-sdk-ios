@@ -8,8 +8,12 @@
 //
 
 #import "UADDBBatchGetItemResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBUnprocessedKey.h"
 #import "UADDBConsumedCapacity.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBBatchGetItemResponse
 
@@ -29,30 +33,6 @@
     return [keyPaths copy];
 }
 
-- (NSDictionary *)responseForTableName:(NSString *)tableName
-{
-    if (self.responses == nil)
-        return nil;
-
-    return [self.responses objectForKey:tableName];
-}
-
-- (UADDBUnprocessedKey *)unprocessedKeyForTableName:(NSString *)tableName
-{
-    if (self.unprocessedKeys == nil)
-        return nil;
-
-    return [self.unprocessedKeys objectForKey:tableName];
-}
-
-- (UADDBConsumedCapacity *)consumedCapacityAtIndex:(NSUInteger)index
-{
-    if (self.consumedCapacity == nil || index >= ([self.consumedCapacity count]-1))
-        return nil;
-
-    return [self.consumedCapacity objectAtIndex:index];
-}
-
 + (NSValueTransformer *)responsesJSONTransformer
 {
     return [UAMTLValueTransformer UA_JSONDictionaryTransformerWithItemTransformer:[NSValueTransformer UA_JSONDynamoDBDictionaryTransformer]];
@@ -69,3 +49,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

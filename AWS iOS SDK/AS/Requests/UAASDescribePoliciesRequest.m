@@ -8,6 +8,7 @@
 //
 
 #import "UAASDescribePoliciesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDescribePoliciesResponse.h"
 
 @interface UAASDescribePoliciesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribePoliciesRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DescribePolicies"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(policyNameAtIndex:) propertyName:@"policyNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPolicyName:) propertyName:@"policyNames"];
 	}
 	return self;
 }
@@ -53,22 +60,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)policyNameAtIndex:(NSUInteger)index
-{
-    if (self.policyNames == nil || index >= ([self.policyNames count]-1))
-        return nil;
-
-    return [self.policyNames objectAtIndex:index];
-}
-
-- (void)addPolicyName:(NSString *)policyName
-{
-	if (self.policyNames == nil)
-		[self setPolicyNames:[NSMutableArray array]];
-	[self.policyNames addObject:policyName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDescribePoliciesRequestCompletionBlock)completionBlock
 {
@@ -92,5 +84,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

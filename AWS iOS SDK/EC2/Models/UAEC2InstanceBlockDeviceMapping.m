@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2InstanceBlockDeviceMapping.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2EBSInstanceBlockDevice.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2InstanceBlockDeviceMapping
 
@@ -43,3 +47,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

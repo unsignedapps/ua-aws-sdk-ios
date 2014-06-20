@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2LaunchPermission.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2LaunchPermission
 
@@ -45,3 +49,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

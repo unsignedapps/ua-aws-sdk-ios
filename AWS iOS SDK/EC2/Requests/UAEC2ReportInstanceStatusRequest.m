@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ReportInstanceStatusRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ReportInstanceStatusResponse.h"
 
 @interface UAEC2ReportInstanceStatusRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ReportInstanceStatusRequest
 
@@ -27,6 +31,11 @@
 	{
 		[self setAction:@"ReportInstanceStatus"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceAtIndex:) propertyName:@"instances"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reasonCodeAtIndex:) propertyName:@"reasonCodes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstance:) propertyName:@"instances"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReasonCode:) propertyName:@"reasonCodes"];
 	}
 	return self;
 }
@@ -56,22 +65,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)instanceAtIndex:(NSUInteger)index
-{
-    if (self.instances == nil || index >= ([self.instances count]-1))
-        return nil;
-
-    return [self.instances objectAtIndex:index];
-}
-
-- (NSString *)reasonCodeAtIndex:(NSUInteger)index
-{
-    if (self.reasonCodes == nil || index >= ([self.reasonCodes count]-1))
-        return nil;
-
-    return [self.reasonCodes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)startTimeJSONTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -97,21 +90,7 @@
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
-- (void)addInstance:(NSString *)instance
-{
-	if (self.instances == nil)
-		[self setInstances:[NSMutableArray array]];
-	[self.instances addObject:instance];
-}
-
-- (void)addReasonCode:(NSString *)reasonCode
-{
-	if (self.reasonCodes == nil)
-		[self setReasonCodes:[NSMutableArray array]];
-	[self.reasonCodes addObject:reasonCode];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ReportInstanceStatusRequestCompletionBlock)completionBlock
 {
@@ -135,5 +114,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

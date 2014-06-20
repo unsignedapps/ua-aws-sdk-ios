@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2PurchaseReservedInstancesOfferingRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2PurchaseReservedInstancesOfferingResponse.h"
 #import "UAEC2ReservedInstanceLimitPrice.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2PurchaseReservedInstancesOfferingRequest
 
@@ -28,6 +32,8 @@
 	{
 		[self setAction:@"PurchaseReservedInstancesOffering"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -69,7 +75,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2ReservedInstanceLimitPrice class]];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2PurchaseReservedInstancesOfferingRequestCompletionBlock)completionBlock
 {
@@ -93,5 +99,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

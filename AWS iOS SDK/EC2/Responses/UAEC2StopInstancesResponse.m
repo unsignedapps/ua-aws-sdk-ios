@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2StopInstancesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InstanceStateChange.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2StopInstancesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2InstanceStateChange *)stoppingInstanceAtIndex:(NSUInteger)index
-{
-    if (self.stoppingInstances == nil || index >= ([self.stoppingInstances count]-1))
-        return nil;
-
-    return [self.stoppingInstances objectAtIndex:index];
-}
-
 + (NSValueTransformer *)stoppingInstancesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceStateChange class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

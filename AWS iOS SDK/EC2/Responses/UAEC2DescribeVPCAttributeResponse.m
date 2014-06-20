@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2DescribeVPCAttributeResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2EnableDNSSupport.h"
 #import "UAEC2EnableDNSHostnames.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeVPCAttributeResponse
 
@@ -45,3 +49,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UADDBCreateTableRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBCreateTableResponse.h"
 #import "UADDBAttributeDefinition.h"
 #import "UADDBKeySchema.h"
@@ -21,6 +22,9 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UADDBCreateTableRequest
 
 @synthesize xAmzTarget=_xAmzTarget, attributeDefinitions=_attributeDefinitions, tableName=_tableName, keySchema=_keySchema, localSecondaryIndexes=_localSecondaryIndexes, globalSecondaryIndexes=_globalSecondaryIndexes, provisionedThroughput=_provisionedThroughput;
@@ -30,6 +34,15 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.CreateTable"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeDefinitionAtIndex:) propertyName:@"attributeDefinitions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(keySchemaAtIndex:) propertyName:@"keySchema"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(localSecondaryIndexAtIndex:) propertyName:@"localSecondaryIndexes"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(globalSecondaryIndexAtIndex:) propertyName:@"globalSecondaryIndexes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeDefinition:) propertyName:@"attributeDefinitions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addKeySchema:) propertyName:@"keySchema"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLocalSecondaryIndex:) propertyName:@"localSecondaryIndexes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGlobalSecondaryIndex:) propertyName:@"globalSecondaryIndexes"];
 	}
 	return self;
 }
@@ -57,38 +70,6 @@
     return [keyPaths copy];
 }
 
-- (UADDBAttributeDefinition *)attributeDefinitionAtIndex:(NSUInteger)index
-{
-    if (self.attributeDefinitions == nil || index >= ([self.attributeDefinitions count]-1))
-        return nil;
-
-    return [self.attributeDefinitions objectAtIndex:index];
-}
-
-- (UADDBKeySchema *)keySchemaAtIndex:(NSUInteger)index
-{
-    if (self.keySchema == nil || index >= ([self.keySchema count]-1))
-        return nil;
-
-    return [self.keySchema objectAtIndex:index];
-}
-
-- (UADDBLocalSecondaryIndex *)localSecondaryIndexAtIndex:(NSUInteger)index
-{
-    if (self.localSecondaryIndexes == nil || index >= ([self.localSecondaryIndexes count]-1))
-        return nil;
-
-    return [self.localSecondaryIndexes objectAtIndex:index];
-}
-
-- (UADDBGlobalSecondaryIndex *)globalSecondaryIndexAtIndex:(NSUInteger)index
-{
-    if (self.globalSecondaryIndexes == nil || index >= ([self.globalSecondaryIndexes count]-1))
-        return nil;
-
-    return [self.globalSecondaryIndexes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)attributeDefinitionsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UADDBAttributeDefinition class]];
@@ -114,35 +95,7 @@
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UADDBProvisionedThroughput class]];
 }
 
-- (void)addAttributeDefinition:(UADDBAttributeDefinition *)attributeDefinition
-{
-	if (self.attributeDefinitions == nil)
-		[self setAttributeDefinitions:[NSMutableArray array]];
-	[self.attributeDefinitions addObject:attributeDefinition];
-}
-
-- (void)addKeySchema:(UADDBKeySchema *)keySchema
-{
-	if (self.keySchema == nil)
-		[self setKeySchema:[NSMutableArray array]];
-	[self.keySchema addObject:keySchema];
-}
-
-- (void)addLocalSecondaryIndex:(UADDBLocalSecondaryIndex *)localSecondaryIndex
-{
-	if (self.localSecondaryIndexes == nil)
-		[self setLocalSecondaryIndexes:[NSMutableArray array]];
-	[self.localSecondaryIndexes addObject:localSecondaryIndex];
-}
-
-- (void)addGlobalSecondaryIndex:(UADDBGlobalSecondaryIndex *)globalSecondaryIndex
-{
-	if (self.globalSecondaryIndexes == nil)
-		[self setGlobalSecondaryIndexes:[NSMutableArray array]];
-	[self.globalSecondaryIndexes addObject:globalSecondaryIndex];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBCreateTableRequestCompletionBlock)completionBlock
 {
@@ -166,5 +119,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

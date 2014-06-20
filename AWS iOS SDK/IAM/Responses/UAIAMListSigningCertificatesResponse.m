@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMListSigningCertificatesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMCertificate.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListSigningCertificatesResponse
 
@@ -33,14 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UAIAMCertificate *)certificateAtIndex:(NSUInteger)index
-{
-    if (self.certificates == nil || index >= ([self.certificates count]-1))
-        return nil;
-
-    return [self.certificates objectAtIndex:index];
-}
-
 + (NSValueTransformer *)certificatesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMCertificate class]];
@@ -52,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

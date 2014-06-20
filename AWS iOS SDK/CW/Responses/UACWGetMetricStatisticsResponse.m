@@ -8,7 +8,11 @@
 //
 
 #import "UACWGetMetricStatisticsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWDatapoint.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWGetMetricStatisticsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UACWDatapoint *)datapointAtIndex:(NSUInteger)index
-{
-    if (self.datapoints == nil || index >= ([self.datapoints count]-1))
-        return nil;
-
-    return [self.datapoints objectAtIndex:index];
-}
-
 + (NSValueTransformer *)datapointsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UACWDatapoint class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2TargetConfiguration.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2TargetConfiguration
 
@@ -39,3 +43,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

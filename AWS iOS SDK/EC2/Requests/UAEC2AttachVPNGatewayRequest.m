@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2AttachVPNGatewayRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2AttachVPNGatewayResponse.h"
 
 @interface UAEC2AttachVPNGatewayRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2AttachVPNGatewayRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"AttachVpnGateway"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -57,7 +63,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2AttachVPNGatewayRequestCompletionBlock)completionBlock
 {
@@ -81,5 +87,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

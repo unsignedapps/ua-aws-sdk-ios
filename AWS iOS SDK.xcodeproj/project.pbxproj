@@ -1058,7 +1058,6 @@
 		E85464FE18CF0F0D00CC2E3C /* UAMTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E418CF0F0D00CC2E3C /* UAMTLReflection.m */; };
 		E85464FF18CF0F0D00CC2E3C /* UAMTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E618CF0F0D00CC2E3C /* UAMTLValueTransformer.m */; };
 		E854650018CF0F0D00CC2E3C /* UAMTLXMLAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E818CF0F0D00CC2E3C /* UAMTLXMLAdapter.m */; };
-		E894BDA5193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = E894BDA4193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m */; };
 		E894BDA6193C89F10068ED17 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140D18D80ED200767D9F /* libxml2.dylib */; };
 		E894BDA7193C8A860068ED17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */; };
 		E894BDA8193C8AFC0068ED17 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */; };
@@ -1067,6 +1066,7 @@
 		E898A5E418B21532004DC298 /* NSString+UAStringEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */; };
 		E898A5E718B2162E004DC298 /* NSURL+UAAWSServiceName.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E618B2162E004DC298 /* NSURL+UAAWSServiceName.m */; };
 		E898A5E918B219FC004DC298 /* UAAWSRequestSigningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E818B219FC004DC298 /* UAAWSRequestSigningTests.m */; };
+		E8BFBEC9194866CA004D00BE /* UAAWSAdditionalAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = E894BDA4193C837F0068ED17 /* UAAWSAdditionalAccessors.m */; };
 		E8FAEC1118CC2DAD0018BB0E /* UAAWSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */; };
 /* End PBXBuildFile section */
 
@@ -3200,13 +3200,15 @@
 		E85464E618CF0F0D00CC2E3C /* UAMTLValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLValueTransformer.m; sourceTree = "<group>"; };
 		E85464E718CF0F0D00CC2E3C /* UAMTLXMLAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMTLXMLAdapter.h; sourceTree = "<group>"; };
 		E85464E818CF0F0D00CC2E3C /* UAMTLXMLAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMTLXMLAdapter.m; sourceTree = "<group>"; };
-		E894BDA4193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UAAWSRequest+AdditionalPropertyAccessors.m"; sourceTree = "<group>"; };
+		E894BDA4193C837F0068ED17 /* UAAWSAdditionalAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAAWSAdditionalAccessors.m; sourceTree = "<group>"; };
 		E894BDAF193C91F50068ED17 /* UADirtyPropertyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADirtyPropertyTests.m; sourceTree = "<group>"; };
 		E898A5E218B21532004DC298 /* NSString+UAStringEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UAStringEncoding.h"; sourceTree = "<group>"; };
 		E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UAStringEncoding.m"; sourceTree = "<group>"; };
 		E898A5E518B2162E004DC298 /* NSURL+UAAWSServiceName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+UAAWSServiceName.h"; sourceTree = "<group>"; };
 		E898A5E618B2162E004DC298 /* NSURL+UAAWSServiceName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UAAWSServiceName.m"; sourceTree = "<group>"; };
 		E898A5E818B219FC004DC298 /* UAAWSRequestSigningTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAAWSRequestSigningTests.m; sourceTree = "<group>"; };
+		E8BADE3E194F04AC008893D7 /* UAAWSAdditionalAccessors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAAWSAdditionalAccessors.h; sourceTree = "<group>"; };
+		E8EE539919485E6C00D73D9C /* UAAWSAdditionalAccessorsProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAAWSAdditionalAccessorsProtocol.h; sourceTree = "<group>"; };
 		E8FAEC0F18CC2DAD0018BB0E /* UAAWSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAAWSModel.h; sourceTree = "<group>"; };
 		E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAAWSModel.m; sourceTree = "<group>"; };
 		F112DDBF60D64931937F789A /* libPods-AWS iOS SDKTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AWS iOS SDKTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3538,7 +3540,9 @@
 				E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */,
 				E8FAEC0F18CC2DAD0018BB0E /* UAAWSModel.h */,
 				E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */,
-				E894BDA4193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m */,
+				E8EE539919485E6C00D73D9C /* UAAWSAdditionalAccessorsProtocol.h */,
+				E8BADE3E194F04AC008893D7 /* UAAWSAdditionalAccessors.h */,
+				E894BDA4193C837F0068ED17 /* UAAWSAdditionalAccessors.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -3749,14 +3753,14 @@
 				A33779C318ADA32800FECC45 /* UAELBModifyLoadBalancerAttributesRequest.m */,
 				A33779C418ADA32800FECC45 /* UAELBRegisterInstancesWithLoadBalancerRequest.h */,
 				A33779C518ADA32800FECC45 /* UAELBRegisterInstancesWithLoadBalancerRequest.m */,
+				A30FD1EA18AD96D000CA52F7 /* UAELBRequest.h */,
+				A30FD1EB18AD96D000CA52F7 /* UAELBRequest.m */,
 				A33779C618ADA32800FECC45 /* UAELBSetLoadBalancerListenerSSLCertificateRequest.h */,
 				A33779C718ADA32800FECC45 /* UAELBSetLoadBalancerListenerSSLCertificateRequest.m */,
 				A33779C818ADA32800FECC45 /* UAELBSetLoadBalancerPoliciesForBackendServerRequest.h */,
 				A33779C918ADA32800FECC45 /* UAELBSetLoadBalancerPoliciesForBackendServerRequest.m */,
 				A33779CA18ADA32800FECC45 /* UAELBSetLoadBalancerPoliciesOfListenerRequest.h */,
 				A33779CB18ADA32800FECC45 /* UAELBSetLoadBalancerPoliciesOfListenerRequest.m */,
-				A30FD1EA18AD96D000CA52F7 /* UAELBRequest.h */,
-				A30FD1EB18AD96D000CA52F7 /* UAELBRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -3808,14 +3812,14 @@
 				A3377A0E18ADA32F00FECC45 /* UAELBModifyLoadBalancerAttributesResponse.m */,
 				A3377A0F18ADA32F00FECC45 /* UAELBRegisterInstancesWithLoadBalancerResponse.h */,
 				A3377A1018ADA32F00FECC45 /* UAELBRegisterInstancesWithLoadBalancerResponse.m */,
+				A30FD1ED18AD96D000CA52F7 /* UAELBResponse.h */,
+				A30FD1EE18AD96D000CA52F7 /* UAELBResponse.m */,
 				A3377A1118ADA32F00FECC45 /* UAELBSetLoadBalancerListenerSSLCertificateResponse.h */,
 				A3377A1218ADA32F00FECC45 /* UAELBSetLoadBalancerListenerSSLCertificateResponse.m */,
 				A3377A1318ADA32F00FECC45 /* UAELBSetLoadBalancerPoliciesForBackendServerResponse.h */,
 				A3377A1418ADA32F00FECC45 /* UAELBSetLoadBalancerPoliciesForBackendServerResponse.m */,
 				A3377A1518ADA32F00FECC45 /* UAELBSetLoadBalancerPoliciesOfListenerResponse.h */,
 				A3377A1618ADA32F00FECC45 /* UAELBSetLoadBalancerPoliciesOfListenerResponse.m */,
-				A30FD1ED18AD96D000CA52F7 /* UAELBResponse.h */,
-				A30FD1EE18AD96D000CA52F7 /* UAELBResponse.m */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -3864,6 +3868,8 @@
 				A3377A3118ADA33A00FECC45 /* UASNSEndpoint.m */,
 				A3377A3218ADA33A00FECC45 /* UASNSEndpointAttributes.h */,
 				A3377A3318ADA33A00FECC45 /* UASNSEndpointAttributes.m */,
+				A30FD20418AD96D000CA52F7 /* UASNSModel.h */,
+				A30FD20518AD96D000CA52F7 /* UASNSModel.m */,
 				A3377A3418ADA33A00FECC45 /* UASNSPlatformApplication.h */,
 				A3377A3518ADA33A00FECC45 /* UASNSPlatformApplication.m */,
 				A3377A3618ADA33A00FECC45 /* UASNSPlatformApplicationAttributes.h */,
@@ -3876,8 +3882,6 @@
 				A3377A3D18ADA33A00FECC45 /* UASNSTopic.m */,
 				A3377A3E18ADA33A00FECC45 /* UASNSTopicAttributes.h */,
 				A3377A3F18ADA33A00FECC45 /* UASNSTopicAttributes.m */,
-				A30FD20418AD96D000CA52F7 /* UASNSModel.h */,
-				A30FD20518AD96D000CA52F7 /* UASNSModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -3923,6 +3927,8 @@
 				A3377A6B18ADA34200FECC45 /* UASNSPublishRequest.m */,
 				A3377A6C18ADA34200FECC45 /* UASNSRemovePermissionRequest.h */,
 				A3377A6D18ADA34200FECC45 /* UASNSRemovePermissionRequest.m */,
+				A30FD20718AD96D000CA52F7 /* UASNSRequest.h */,
+				A30FD20818AD96D000CA52F7 /* UASNSRequest.m */,
 				A3377A6E18ADA34200FECC45 /* UASNSSetEndpointAttributesRequest.h */,
 				A3377A6F18ADA34200FECC45 /* UASNSSetEndpointAttributesRequest.m */,
 				A3377A7018ADA34200FECC45 /* UASNSSetPlatformApplicationAttributesRequest.h */,
@@ -3935,8 +3941,6 @@
 				A3377A7718ADA34200FECC45 /* UASNSSubscribeRequest.m */,
 				A3377A7818ADA34200FECC45 /* UASNSUnsubscribeRequest.h */,
 				A3377A7918ADA34200FECC45 /* UASNSUnsubscribeRequest.m */,
-				A30FD20718AD96D000CA52F7 /* UASNSRequest.h */,
-				A30FD20818AD96D000CA52F7 /* UASNSRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -5125,14 +5129,12 @@
 		A337806D18B18D2700FECC45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A337826A18B195A300FECC45 /* UAIAMAccountSummary.h */,
-				A337826B18B195A300FECC45 /* UAIAMAccountSummary.m */,
-				A337826C18B195A300FECC45 /* UAIAMSigningCertificate.h */,
-				A337826D18B195A300FECC45 /* UAIAMSigningCertificate.m */,
 				A337807E18B1909F00FECC45 /* UAIAMAccessKey.h */,
 				A337807F18B1909F00FECC45 /* UAIAMAccessKey.m */,
 				A337808018B1909F00FECC45 /* UAIAMAccessKeyMetadata.h */,
 				A337808118B1909F00FECC45 /* UAIAMAccessKeyMetadata.m */,
+				A337826A18B195A300FECC45 /* UAIAMAccountSummary.h */,
+				A337826B18B195A300FECC45 /* UAIAMAccountSummary.m */,
 				A337808218B1909F00FECC45 /* UAIAMCertificate.h */,
 				A337808318B1909F00FECC45 /* UAIAMCertificate.m */,
 				A337808418B1909F00FECC45 /* UAIAMGroup.h */,
@@ -5143,6 +5145,8 @@
 				A337808918B1909F00FECC45 /* UAIAMLoginProfile.m */,
 				A337808A18B1909F00FECC45 /* UAIAMMFADevice.h */,
 				A337808B18B1909F00FECC45 /* UAIAMMFADevice.m */,
+				A337806E18B18D2700FECC45 /* UAIAMModel.h */,
+				A337806F18B18D2700FECC45 /* UAIAMModel.m */,
 				A337808C18B1909F00FECC45 /* UAIAMPasswordPolicy.h */,
 				A337808D18B1909F00FECC45 /* UAIAMPasswordPolicy.m */,
 				A337808E18B1909F00FECC45 /* UAIAMRole.h */,
@@ -5155,12 +5159,12 @@
 				A337809518B1909F00FECC45 /* UAIAMServerCertificateMetadata.m */,
 				A337809618B1909F00FECC45 /* UAIAMServerCertificateMetadataList.h */,
 				A337809718B1909F00FECC45 /* UAIAMServerCertificateMetadataList.m */,
+				A337826C18B195A300FECC45 /* UAIAMSigningCertificate.h */,
+				A337826D18B195A300FECC45 /* UAIAMSigningCertificate.m */,
 				A337809A18B1909F00FECC45 /* UAIAMUser.h */,
 				A337809B18B1909F00FECC45 /* UAIAMUser.m */,
 				A337809C18B1909F00FECC45 /* UAIAMVirtualMFADevice.h */,
 				A337809D18B1909F00FECC45 /* UAIAMVirtualMFADevice.m */,
-				A337806E18B18D2700FECC45 /* UAIAMModel.h */,
-				A337806F18B18D2700FECC45 /* UAIAMModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -5292,6 +5296,8 @@
 				A337812718B1912800FECC45 /* UAIAMRemoveRoleFromInstanceProfileRequest.m */,
 				A337812818B1912800FECC45 /* UAIAMRemoveUserFromGroupRequest.h */,
 				A337812918B1912800FECC45 /* UAIAMRemoveUserFromGroupRequest.m */,
+				A337807118B18D2700FECC45 /* UAIAMRequest.h */,
+				A337807218B18D2700FECC45 /* UAIAMRequest.m */,
 				A337812A18B1912800FECC45 /* UAIAMResyncMFADeviceRequest.h */,
 				A337812B18B1912800FECC45 /* UAIAMResyncMFADeviceRequest.m */,
 				A337812C18B1912800FECC45 /* UAIAMUpdateAccessKeyRequest.h */,
@@ -5316,8 +5322,6 @@
 				A337813F18B1912800FECC45 /* UAIAMUploadServerCertificateRequest.m */,
 				A337814018B1912800FECC45 /* UAIAMUploadSigningCertificateRequest.h */,
 				A337814118B1912800FECC45 /* UAIAMUploadSigningCertificateRequest.m */,
-				A337807118B18D2700FECC45 /* UAIAMRequest.h */,
-				A337807218B18D2700FECC45 /* UAIAMRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -5449,6 +5453,8 @@
 				A337820518B1913500FECC45 /* UAIAMRemoveRoleFromInstanceProfileResponse.m */,
 				A337820618B1913500FECC45 /* UAIAMRemoveUserFromGroupResponse.h */,
 				A337820718B1913500FECC45 /* UAIAMRemoveUserFromGroupResponse.m */,
+				A337807418B18D2700FECC45 /* UAIAMResponse.h */,
+				A337807518B18D2700FECC45 /* UAIAMResponse.m */,
 				A337820818B1913500FECC45 /* UAIAMResyncMFADeviceResponse.h */,
 				A337820918B1913500FECC45 /* UAIAMResyncMFADeviceResponse.m */,
 				A337820A18B1913500FECC45 /* UAIAMUpdateAccessKeyResponse.h */,
@@ -5473,8 +5479,6 @@
 				A337821D18B1913500FECC45 /* UAIAMUploadServerCertificateResponse.m */,
 				A337821E18B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.h */,
 				A337821F18B1913600FECC45 /* UAIAMUploadSigningCertificateResponse.m */,
-				A337807418B18D2700FECC45 /* UAIAMResponse.h */,
-				A337807518B18D2700FECC45 /* UAIAMResponse.m */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -6027,6 +6031,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Unsigned Apps";
 				TargetAttributes = {
+					A3E01C1B18AD93E900C3B7DB = {
+						DevelopmentTeam = NCL8DB2UF3;
+					};
 					A3E01C3C18AD93E900C3B7DB = {
 						TestTargetID = A3E01C1B18AD93E900C3B7DB;
 					};
@@ -6333,7 +6340,6 @@
 				A33778EC18ADA31500FECC45 /* UAEC2CreateNetworkACLResponse.m in Sources */,
 				A3377A2618ADA32F00FECC45 /* UAELBDescribeLoadBalancerPolicyTypesResponse.m in Sources */,
 				A337816F18B1912800FECC45 /* UAIAMListGroupsRequest.m in Sources */,
-				E894BDA5193C837F0068ED17 /* UAAWSRequest+AdditionalPropertyAccessors.m in Sources */,
 				A337734F18ADA2C500FECC45 /* UAASDisableMetricsCollectionRequest.m in Sources */,
 				A337814B18B1912800FECC45 /* UAIAMCreateSAMLProviderRequest.m in Sources */,
 				A3F8141918E27DEF00767D9F /* UAEC2VPCPeeringConnection.m in Sources */,
@@ -6594,6 +6600,7 @@
 				A337757718ADA30100FECC45 /* UAEC2Image.m in Sources */,
 				A337777318ADA30C00FECC45 /* UAEC2DescribeVolumesRequest.m in Sources */,
 				A337823A18B1913600FECC45 /* UAIAMDeleteUserResponse.m in Sources */,
+				E8BFBEC9194866CA004D00BE /* UAAWSAdditionalAccessors.m in Sources */,
 				A30FD21D18AD96D000CA52F7 /* UACWError.m in Sources */,
 				A337815418B1912800FECC45 /* UAIAMDeleteInstanceProfileRequest.m in Sources */,
 				A33775A318ADA30100FECC45 /* UAEC2Options.m in Sources */,
@@ -7288,10 +7295,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AWS iOS SDK/AWS iOS SDK-Prefix.pch";
 				INFOPLIST_FILE = "AWS iOS SDK/AWS iOS SDK-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -7301,10 +7311,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AWS iOS SDK/AWS iOS SDK-Prefix.pch";
 				INFOPLIST_FILE = "AWS iOS SDK/AWS iOS SDK-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

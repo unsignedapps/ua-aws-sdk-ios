@@ -8,6 +8,7 @@
 //
 
 #import "UAASDeleteAutoScalingGroupRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDeleteAutoScalingGroupResponse.h"
 
 @interface UAASDeleteAutoScalingGroupRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDeleteAutoScalingGroupRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"DeleteAutoScalingGroup"];
 		[self setVersion:@"2011-01-01"];
+		
+		
 	}
 	return self;
 }
@@ -56,7 +62,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDeleteAutoScalingGroupRequestCompletionBlock)completionBlock
 {
@@ -80,5 +86,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

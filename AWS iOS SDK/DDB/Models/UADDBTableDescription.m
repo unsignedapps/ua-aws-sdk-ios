@@ -8,11 +8,15 @@
 //
 
 #import "UADDBTableDescription.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBAttributeDefinition.h"
 #import "UADDBKeySchema.h"
 #import "UADDBProvisionedThroughputDescription.h"
 #import "UADDBLocalSecondaryIndexDescription.h"
 #import "UADDBGlobalSecondaryIndexDescription.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBTableDescription
 
@@ -37,38 +41,6 @@
         @"globalSecondaryIndexes": @"GlobalSecondaryIndexes/GlobalSecondaryIndexes"
     }];
     return [keyPaths copy];
-}
-
-- (UADDBAttributeDefinition *)attributeDefinitionAtIndex:(NSUInteger)index
-{
-    if (self.attributeDefinitions == nil || index >= ([self.attributeDefinitions count]-1))
-        return nil;
-
-    return [self.attributeDefinitions objectAtIndex:index];
-}
-
-- (UADDBKeySchema *)keySchemaAtIndex:(NSUInteger)index
-{
-    if (self.keySchema == nil || index >= ([self.keySchema count]-1))
-        return nil;
-
-    return [self.keySchema objectAtIndex:index];
-}
-
-- (UADDBLocalSecondaryIndexDescription *)localSecondaryIndexAtIndex:(NSUInteger)index
-{
-    if (self.localSecondaryIndexes == nil || index >= ([self.localSecondaryIndexes count]-1))
-        return nil;
-
-    return [self.localSecondaryIndexes objectAtIndex:index];
-}
-
-- (UADDBGlobalSecondaryIndexDescription *)globalSecondaryIndexAtIndex:(NSUInteger)index
-{
-    if (self.globalSecondaryIndexes == nil || index >= ([self.globalSecondaryIndexes count]-1))
-        return nil;
-
-    return [self.globalSecondaryIndexes objectAtIndex:index];
 }
 
 + (NSValueTransformer *)attributeDefinitionsJSONTransformer
@@ -109,3 +81,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

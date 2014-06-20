@@ -8,7 +8,11 @@
 //
 
 #import "UASNSGetTopicAttributesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASNSTopicAttributes.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSGetTopicAttributesResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2CreateNetworkInterfaceRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CreateNetworkInterfaceResponse.h"
 #import "UAEC2PrivateIPAddressSpecification.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateNetworkInterfaceRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"CreateNetworkInterface"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupAtIndex:) propertyName:@"groups"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(privateIPAddressAtIndex:) propertyName:@"privateIPAddresses"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGroup:) propertyName:@"groups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPrivateIPAddress:) propertyName:@"privateIPAddresses"];
 	}
 	return self;
 }
@@ -57,22 +66,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)groupAtIndex:(NSUInteger)index
-{
-    if (self.groups == nil || index >= ([self.groups count]-1))
-        return nil;
-
-    return [self.groups objectAtIndex:index];
-}
-
-- (UAEC2PrivateIPAddressSpecification *)privateIPAddressAtIndex:(NSUInteger)index
-{
-    if (self.privateIPAddresses == nil || index >= ([self.privateIPAddresses count]-1))
-        return nil;
-
-    return [self.privateIPAddresses objectAtIndex:index];
-}
-
 + (NSValueTransformer *)privateIPAddressesJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecification class]];
@@ -88,21 +81,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-- (void)addGroup:(NSString *)group
-{
-	if (self.groups == nil)
-		[self setGroups:[NSMutableArray array]];
-	[self.groups addObject:group];
-}
-
-- (void)addPrivateIPAddress:(UAEC2PrivateIPAddressSpecification *)privateIPAddress
-{
-	if (self.privateIPAddresses == nil)
-		[self setPrivateIPAddresses:[NSMutableArray array]];
-	[self.privateIPAddresses addObject:privateIPAddress];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2CreateNetworkInterfaceRequestCompletionBlock)completionBlock
 {
@@ -126,5 +105,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

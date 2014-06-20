@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2InstanceMonitoring.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Monitoring.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2InstanceMonitoring
 
@@ -43,3 +47,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UASNSSetTopicAttributesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASNSSetTopicAttributesResponse.h"
 
 @interface UASNSSetTopicAttributesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSSetTopicAttributesRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"SetTopicAttributes"];
 		[self setVersion:@"2010-03-31"];
+		
+		
 	}
 	return self;
 }
@@ -66,7 +72,7 @@
                                                unknownValue:@(UASNSTopicAttributeUnknown)];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASNSSetTopicAttributesRequestCompletionBlock)completionBlock
 {
@@ -90,5 +96,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

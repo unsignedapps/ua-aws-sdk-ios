@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2AvailabilityZone.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2AvailabilityZoneMessage.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2AvailabilityZone
 
@@ -32,14 +36,6 @@
         @"messages": @"ec2:messageSet/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2AvailabilityZoneMessage *)messageAtIndex:(NSUInteger)index
-{
-    if (self.messages == nil || index >= ([self.messages count]-1))
-        return nil;
-
-    return [self.messages objectAtIndex:index];
 }
 
 + (NSValueTransformer *)stateQueryStringTransformer
@@ -67,3 +63,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2CancelledSpotInstanceRequest.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CancelledSpotInstanceRequest
 
@@ -46,3 +50,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

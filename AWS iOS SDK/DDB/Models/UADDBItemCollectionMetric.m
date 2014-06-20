@@ -8,6 +8,10 @@
 //
 
 #import "UADDBItemCollectionMetric.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBItemCollectionMetric
 
@@ -26,25 +30,11 @@
     return [keyPaths copy];
 }
 
-- (NSDictionary *)itemCollectionKeyValueForAttributeName:(NSString *)attributeName
-{
-    if (self.itemCollectionKey == nil)
-        return nil;
-
-    return [self.itemCollectionKey objectForKey:attributeName];
-}
-
-- (NSNumber *)sizeEstimateRangeGBAtIndex:(NSUInteger)index
-{
-    if (self.sizeEstimateRangeGB == nil || index >= ([self.sizeEstimateRangeGB count]-1))
-        return nil;
-
-    return [self.sizeEstimateRangeGB objectAtIndex:index];
-}
-
 + (NSValueTransformer *)itemCollectionKeyJSONTransformer
 {
     return [NSValueTransformer UA_JSONDynamoDBDictionaryTransformer];
 }
 
 @end
+
+#pragma clang diagnostic pop

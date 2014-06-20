@@ -8,7 +8,11 @@
 //
 
 #import "UAASDescribeTagsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASTag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeTagsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAASTag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
 + (NSValueTransformer *)tagsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASTag class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

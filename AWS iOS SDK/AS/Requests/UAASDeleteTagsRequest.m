@@ -8,6 +8,7 @@
 //
 
 #import "UAASDeleteTagsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDeleteTagsResponse.h"
 #import "UAASTag.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDeleteTagsRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"DeleteTags"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
 	}
 	return self;
 }
@@ -60,14 +67,6 @@
     return [keyPaths copy];
 }
 
-- (UAASTag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
 + (NSValueTransformer *)tagsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAASTag class]];
@@ -78,14 +77,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAASTag class]];
 }
 
-- (void)addTag:(UAASTag *)tag
-{
-	if (self.tags == nil)
-		[self setTags:[NSMutableArray array]];
-	[self.tags addObject:tag];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDeleteTagsRequestCompletionBlock)completionBlock
 {
@@ -109,5 +101,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

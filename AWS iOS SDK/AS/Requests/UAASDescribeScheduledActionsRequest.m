@@ -8,6 +8,7 @@
 //
 
 #import "UAASDescribeScheduledActionsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDescribeScheduledActionsResponse.h"
 
 @interface UAASDescribeScheduledActionsRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeScheduledActionsRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DescribeScheduledActions"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(scheduledActionNameAtIndex:) propertyName:@"scheduledActionNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addScheduledActionName:) propertyName:@"scheduledActionNames"];
 	}
 	return self;
 }
@@ -55,14 +62,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)scheduledActionNameAtIndex:(NSUInteger)index
-{
-    if (self.scheduledActionNames == nil || index >= ([self.scheduledActionNames count]-1))
-        return nil;
-
-    return [self.scheduledActionNames objectAtIndex:index];
-}
-
 + (NSValueTransformer *)startTimeJSONTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -83,14 +82,7 @@
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
-- (void)addScheduledActionName:(NSString *)scheduledActionName
-{
-	if (self.scheduledActionNames == nil)
-		[self setScheduledActionNames:[NSMutableArray array]];
-	[self.scheduledActionNames addObject:scheduledActionName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDescribeScheduledActionsRequestCompletionBlock)completionBlock
 {
@@ -114,5 +106,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

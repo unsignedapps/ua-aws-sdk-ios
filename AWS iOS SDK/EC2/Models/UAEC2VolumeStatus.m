@@ -8,9 +8,13 @@
 //
 
 #import "UAEC2VolumeStatus.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VolumeStatusInfo.h"
 #import "UAEC2VolumeStatusEvent.h"
 #import "UAEC2VolumeStatusAction.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2VolumeStatus
 
@@ -35,22 +39,6 @@
         @"actions": @"ec2:actionsSet/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2VolumeStatusEvent *)eventAtIndex:(NSUInteger)index
-{
-    if (self.events == nil || index >= ([self.events count]-1))
-        return nil;
-
-    return [self.events objectAtIndex:index];
-}
-
-- (UAEC2VolumeStatusAction *)actionAtIndex:(NSUInteger)index
-{
-    if (self.actions == nil || index >= ([self.actions count]-1))
-        return nil;
-
-    return [self.actions objectAtIndex:index];
 }
 
 + (NSValueTransformer *)volumeStatusQueryStringTransformer
@@ -84,3 +72,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

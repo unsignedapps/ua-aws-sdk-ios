@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeVPNConnectionsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeVPNConnectionsResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeVPNConnectionsRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DescribeVpnConnections"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpnConnectionIDAtIndex:) propertyName:@"vpnConnectionIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVPNConnectionID:) propertyName:@"vpnConnectionIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -53,22 +62,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)vpnConnectionIDAtIndex:(NSUInteger)index
-{
-    if (self.vpnConnectionIDs == nil || index >= ([self.vpnConnectionIDs count]-1))
-        return nil;
-
-    return [self.vpnConnectionIDs objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -84,21 +77,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addVPNConnectionID:(NSString *)vPNConnectionID
-{
-	if (self.vpnConnectionIDs == nil)
-		[self setVpnConnectionIDs:[NSMutableArray array]];
-	[self.vpnConnectionIDs addObject:vPNConnectionID];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeVPNConnectionsRequestCompletionBlock)completionBlock
 {
@@ -122,5 +101,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

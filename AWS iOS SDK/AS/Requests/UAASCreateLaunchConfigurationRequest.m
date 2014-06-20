@@ -8,6 +8,7 @@
 //
 
 #import "UAASCreateLaunchConfigurationRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASCreateLaunchConfigurationResponse.h"
 #import "UAASBlockDeviceMapping.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASCreateLaunchConfigurationRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"CreateLaunchConfiguration"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSecurityGroup:) propertyName:@"securityGroups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addBlockDeviceMapping:) propertyName:@"blockDeviceMappings"];
 	}
 	return self;
 }
@@ -65,22 +74,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
-}
-
-- (UAASBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
-}
-
 + (NSValueTransformer *)blockDeviceMappingsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAASBlockDeviceMapping class]];
@@ -106,21 +99,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-- (void)addSecurityGroup:(NSString *)securityGroup
-{
-	if (self.securityGroups == nil)
-		[self setSecurityGroups:[NSMutableArray array]];
-	[self.securityGroups addObject:securityGroup];
-}
-
-- (void)addBlockDeviceMapping:(UAASBlockDeviceMapping *)blockDeviceMapping
-{
-	if (self.blockDeviceMappings == nil)
-		[self setBlockDeviceMappings:[NSMutableArray array]];
-	[self.blockDeviceMappings addObject:blockDeviceMapping];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASCreateLaunchConfigurationRequestCompletionBlock)completionBlock
 {
@@ -144,5 +123,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

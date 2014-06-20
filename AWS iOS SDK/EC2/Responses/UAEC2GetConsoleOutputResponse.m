@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2GetConsoleOutputResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2GetConsoleOutputResponse
 
@@ -33,21 +37,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)decodedOutput
-{
-    if (self.output == nil)
-        return nil;
-    
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.output options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (void)setDecodedOutput:(NSString *)decodedOutput
-{
-    if (decodedOutput == nil)
-        [self setOutput:nil];
-    else
-		[self setOutput:[[decodedOutput dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
-}
-
 @end
+
+#pragma clang diagnostic pop

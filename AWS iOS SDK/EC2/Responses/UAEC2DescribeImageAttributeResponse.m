@@ -8,12 +8,16 @@
 //
 
 #import "UAEC2DescribeImageAttributeResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2LaunchPermission.h"
 #import "UAEC2ProductCode.h"
 #import "UAEC2KernelID.h"
 #import "UAEC2RamdiskID.h"
 #import "UAEC2SriovNetSupport.h"
 #import "UAEC2BlockDeviceMapping.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeImageAttributeResponse
 
@@ -41,30 +45,6 @@
         @"blockDeviceMappings": @"ec2:blockDeviceMapping/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2LaunchPermission *)launchPermissionAtIndex:(NSUInteger)index
-{
-    if (self.launchPermissions == nil || index >= ([self.launchPermissions count]-1))
-        return nil;
-
-    return [self.launchPermissions objectAtIndex:index];
-}
-
-- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
-{
-    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
-        return nil;
-
-    return [self.productCodes objectAtIndex:index];
-}
-
-- (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
 }
 
 + (NSValueTransformer *)launchPermissionsXMLTransformer
@@ -98,3 +78,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2CreateInstanceExportTaskRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CreateInstanceExportTaskResponse.h"
 #import "UAEC2ExportToS3Task.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateInstanceExportTaskRequest
 
@@ -28,6 +32,8 @@
 	{
 		[self setAction:@"CreateInstanceExportTask"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -64,7 +70,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2ExportToS3Task class]];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2CreateInstanceExportTaskRequestCompletionBlock)completionBlock
 {
@@ -88,5 +94,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

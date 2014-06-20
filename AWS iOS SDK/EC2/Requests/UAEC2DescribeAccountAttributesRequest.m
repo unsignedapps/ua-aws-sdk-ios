@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeAccountAttributesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeAccountAttributesResponse.h"
 
 @interface UAEC2DescribeAccountAttributesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeAccountAttributesRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DescribeAccountAttributes"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeNameAtIndex:) propertyName:@"attributeNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeName:) propertyName:@"attributeNames"];
 	}
 	return self;
 }
@@ -51,27 +58,12 @@
     return [keyPaths copy];
 }
 
-- (NSString *)attributeNameAtIndex:(NSUInteger)index
-{
-    if (self.attributeNames == nil || index >= ([self.attributeNames count]-1))
-        return nil;
-
-    return [self.attributeNames objectAtIndex:index];
-}
-
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-- (void)addAttributeName:(NSString *)attributeName
-{
-	if (self.attributeNames == nil)
-		[self setAttributeNames:[NSMutableArray array]];
-	[self.attributeNames addObject:attributeName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeAccountAttributesRequestCompletionBlock)completionBlock
 {
@@ -95,5 +87,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

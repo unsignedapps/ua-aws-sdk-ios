@@ -8,8 +8,12 @@
 //
 
 #import "UAASDescribeMetricCollectionTypesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASMetricCollectionType.h"
 #import "UAASMetricGranularityType.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeMetricCollectionTypesResponse
 
@@ -33,22 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UAASMetricCollectionType *)metricAtIndex:(NSUInteger)index
-{
-    if (self.metrics == nil || index >= ([self.metrics count]-1))
-        return nil;
-
-    return [self.metrics objectAtIndex:index];
-}
-
-- (UAASMetricGranularityType *)granularityAtIndex:(NSUInteger)index
-{
-    if (self.granularities == nil || index >= ([self.granularities count]-1))
-        return nil;
-
-    return [self.granularities objectAtIndex:index];
-}
-
 + (NSValueTransformer *)metricsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASMetricCollectionType class]];
@@ -60,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

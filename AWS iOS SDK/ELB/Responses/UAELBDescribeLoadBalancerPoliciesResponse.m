@@ -8,7 +8,11 @@
 //
 
 #import "UAELBDescribeLoadBalancerPoliciesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBPolicyDescription.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDescribeLoadBalancerPoliciesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAELBPolicyDescription *)policyDescriptionAtIndex:(NSUInteger)index
-{
-    if (self.policyDescriptions == nil || index >= ([self.policyDescriptions count]-1))
-        return nil;
-
-    return [self.policyDescriptions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)policyDescriptionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBPolicyDescription class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

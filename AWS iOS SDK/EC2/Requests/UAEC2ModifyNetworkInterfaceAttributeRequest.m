@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ModifyNetworkInterfaceAttributeRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ModifyNetworkInterfaceAttributeResponse.h"
 #import "UAEC2SourceDestCheck.h"
 #import "UAEC2NetworkInterfaceAttachmentSpecification.h"
@@ -19,6 +20,9 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UAEC2ModifyNetworkInterfaceAttributeRequest
 
 @synthesize action=_action, version=_version, dryRun=_dryRun, networkInterfaceID=_networkInterfaceID, descriptionValue=_descriptionValue, sourceDestCheck=_sourceDestCheck, groups=_groups, attachment=_attachment;
@@ -29,6 +33,9 @@
 	{
 		[self setAction:@"ModifyNetworkInterfaceAttribute"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupAtIndex:) propertyName:@"groups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGroup:) propertyName:@"groups"];
 	}
 	return self;
 }
@@ -57,14 +64,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)groupAtIndex:(NSUInteger)index
-{
-    if (self.groups == nil || index >= ([self.groups count]-1))
-        return nil;
-
-    return [self.groups objectAtIndex:index];
-}
-
 + (NSValueTransformer *)sourceDestCheckJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
@@ -90,14 +89,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2NetworkInterfaceAttachmentSpecification class]];
 }
 
-- (void)addGroup:(NSString *)group
-{
-	if (self.groups == nil)
-		[self setGroups:[NSMutableArray array]];
-	[self.groups addObject:group];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ModifyNetworkInterfaceAttributeRequestCompletionBlock)completionBlock
 {
@@ -121,5 +113,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeVolumeStatusRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeVolumeStatusResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeVolumeStatusRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DescribeVolumeStatus"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(volumeIDAtIndex:) propertyName:@"volumeIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVolumeID:) propertyName:@"volumeIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -55,22 +64,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)volumeIDAtIndex:(NSUInteger)index
-{
-    if (self.volumeIDs == nil || index >= ([self.volumeIDs count]-1))
-        return nil;
-
-    return [self.volumeIDs objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -86,21 +79,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
-- (void)addVolumeID:(NSString *)volumeID
-{
-	if (self.volumeIDs == nil)
-		[self setVolumeIDs:[NSMutableArray array]];
-	[self.volumeIDs addObject:volumeID];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeVolumeStatusRequestCompletionBlock)completionBlock
 {
@@ -124,5 +103,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ModifyImageAttributeRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ModifyImageAttributeResponse.h"
 #import "UAEC2LaunchPermissionModifications.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ModifyImageAttributeRequest
 
@@ -28,6 +32,13 @@
 	{
 		[self setAction:@"ModifyImageAttribute"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(userIDAtIndex:) propertyName:@"userIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(userGroupAtIndex:) propertyName:@"userGroups"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productCodeAtIndex:) propertyName:@"productCodes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addUserID:) propertyName:@"userIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addUserGroup:) propertyName:@"userGroups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addProductCode:) propertyName:@"productCodes"];
 	}
 	return self;
 }
@@ -60,30 +71,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)userIDAtIndex:(NSUInteger)index
-{
-    if (self.userIDs == nil || index >= ([self.userIDs count]-1))
-        return nil;
-
-    return [self.userIDs objectAtIndex:index];
-}
-
-- (NSString *)userGroupAtIndex:(NSUInteger)index
-{
-    if (self.userGroups == nil || index >= ([self.userGroups count]-1))
-        return nil;
-
-    return [self.userGroups objectAtIndex:index];
-}
-
-- (NSString *)productCodeAtIndex:(NSUInteger)index
-{
-    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
-        return nil;
-
-    return [self.productCodes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)launchPermissionJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
@@ -99,28 +86,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchPermissionModifications class]];
 }
 
-- (void)addUserID:(NSString *)userID
-{
-	if (self.userIDs == nil)
-		[self setUserIDs:[NSMutableArray array]];
-	[self.userIDs addObject:userID];
-}
-
-- (void)addUserGroup:(NSString *)userGroup
-{
-	if (self.userGroups == nil)
-		[self setUserGroups:[NSMutableArray array]];
-	[self.userGroups addObject:userGroup];
-}
-
-- (void)addProductCode:(NSString *)productCode
-{
-	if (self.productCodes == nil)
-		[self setProductCodes:[NSMutableArray array]];
-	[self.productCodes addObject:productCode];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ModifyImageAttributeRequestCompletionBlock)completionBlock
 {
@@ -144,5 +110,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

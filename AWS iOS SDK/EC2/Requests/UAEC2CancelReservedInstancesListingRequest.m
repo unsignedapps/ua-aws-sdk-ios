@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2CancelReservedInstancesListingRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CancelReservedInstancesListingResponse.h"
 
 @interface UAEC2CancelReservedInstancesListingRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CancelReservedInstancesListingRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"CancelReservedInstancesListing"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -59,7 +65,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2CancelReservedInstancesListingRequestCompletionBlock)completionBlock
 {
@@ -83,5 +89,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

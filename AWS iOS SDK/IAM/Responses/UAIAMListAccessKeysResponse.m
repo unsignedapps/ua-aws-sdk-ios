@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMListAccessKeysResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMAccessKeyMetadata.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListAccessKeysResponse
 
@@ -33,14 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UAIAMAccessKeyMetadata *)accessKeyMetadataAtIndex:(NSUInteger)index
-{
-    if (self.accessKeyMetadata == nil || index >= ([self.accessKeyMetadata count]-1))
-        return nil;
-
-    return [self.accessKeyMetadata objectAtIndex:index];
-}
-
 + (NSValueTransformer *)accessKeyMetadataXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMAccessKeyMetadata class]];
@@ -52,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

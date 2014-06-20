@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2CreateImageResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateImageResponse
 
@@ -31,3 +35,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

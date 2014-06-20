@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2DescribeInstanceAttributeResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InstanceBlockDeviceMapping.h"
 #import "UAEC2ProductCode.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeInstanceAttributeResponse
 
@@ -44,37 +48,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)decodedUserData
-{
-    if (self.userData == nil)
-        return nil;
-    
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.userData options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (void)setDecodedUserData:(NSString *)decodedUserData
-{
-    if (decodedUserData == nil)
-        [self setUserData:nil];
-    else
-		[self setUserData:[[decodedUserData dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:kNilOptions]];
-}- (UAEC2InstanceBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
-}
-
-- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
-{
-    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
-        return nil;
-
-    return [self.productCodes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)disableApiTerminationXMLTransformer
 {
     return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
@@ -103,3 +76,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

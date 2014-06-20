@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2UnassignPrivateIPAddressesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2UnassignPrivateIPAddressesResponse
 
@@ -17,3 +21,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

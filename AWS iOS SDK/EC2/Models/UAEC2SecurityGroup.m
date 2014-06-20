@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2SecurityGroup.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2IPPermission.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2SecurityGroup
 
@@ -37,30 +41,6 @@
         @"tags": @"ec2:tagSet/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2IPPermission *)ipPermissionAtIndex:(NSUInteger)index
-{
-    if (self.ipPermissions == nil || index >= ([self.ipPermissions count]-1))
-        return nil;
-
-    return [self.ipPermissions objectAtIndex:index];
-}
-
-- (UAEC2IPPermission *)ipPermissionEgressAtIndex:(NSUInteger)index
-{
-    if (self.ipPermissionsEgress == nil || index >= ([self.ipPermissionsEgress count]-1))
-        return nil;
-
-    return [self.ipPermissionsEgress objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
 }
 
 + (NSValueTransformer *)ipPermissionsQueryStringTransformer
@@ -94,3 +74,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

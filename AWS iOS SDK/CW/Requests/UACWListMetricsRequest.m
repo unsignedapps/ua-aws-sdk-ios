@@ -8,6 +8,7 @@
 //
 
 #import "UACWListMetricsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWListMetricsResponse.h"
 #import "UACWDimension.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWListMetricsRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"ListMetrics"];
 		[self setVersion:@"2010-08-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dimensionAtIndex:) propertyName:@"dimensions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDimension:) propertyName:@"dimensions"];
 	}
 	return self;
 }
@@ -54,14 +61,6 @@
     return [keyPaths copy];
 }
 
-- (UACWDimension *)dimensionAtIndex:(NSUInteger)index
-{
-    if (self.dimensions == nil || index >= ([self.dimensions count]-1))
-        return nil;
-
-    return [self.dimensions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)dimensionsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UACWDimension class]];
@@ -72,14 +71,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UACWDimension class]];
 }
 
-- (void)addDimension:(UACWDimension *)dimension
-{
-	if (self.dimensions == nil)
-		[self setDimensions:[NSMutableArray array]];
-	[self.dimensions addObject:dimension];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UACWListMetricsRequestCompletionBlock)completionBlock
 {
@@ -103,5 +95,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

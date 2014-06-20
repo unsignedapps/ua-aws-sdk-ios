@@ -8,7 +8,11 @@
 //
 
 #import "UAASDescribeLaunchConfigurationsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASLaunchConfiguration.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeLaunchConfigurationsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAASLaunchConfiguration *)launchConfigurationAtIndex:(NSUInteger)index
-{
-    if (self.launchConfigurations == nil || index >= ([self.launchConfigurations count]-1))
-        return nil;
-
-    return [self.launchConfigurations objectAtIndex:index];
-}
-
 + (NSValueTransformer *)launchConfigurationsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASLaunchConfiguration class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

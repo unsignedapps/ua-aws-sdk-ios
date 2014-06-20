@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2ImportInstanceTaskDetails.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ImportInstanceVolumeDetailItem.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ImportInstanceTaskDetails
 
@@ -34,14 +38,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2ImportInstanceVolumeDetailItem *)volumeAtIndex:(NSUInteger)index
-{
-    if (self.volumes == nil || index >= ([self.volumes count]-1))
-        return nil;
-
-    return [self.volumes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)volumesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2ImportInstanceVolumeDetailItem class]];
@@ -53,3 +49,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

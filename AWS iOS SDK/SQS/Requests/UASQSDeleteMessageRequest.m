@@ -8,6 +8,7 @@
 //
 
 #import "UASQSDeleteMessageRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASQSDeleteMessageResponse.h"
 
 @interface UASQSDeleteMessageRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASQSDeleteMessageRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"DeleteMessage"];
 		[self setVersion:@"2012-11-05"];
+		
+		
 	}
 	return self;
 }
@@ -51,7 +57,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASQSDeleteMessageRequestCompletionBlock)completionBlock
 {
@@ -75,5 +81,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

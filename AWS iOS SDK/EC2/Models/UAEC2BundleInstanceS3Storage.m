@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2BundleInstanceS3Storage.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2BundleInstanceS3Storage
 
@@ -35,3 +39,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

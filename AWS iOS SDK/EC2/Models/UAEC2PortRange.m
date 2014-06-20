@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2PortRange.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2PortRange
 
@@ -55,3 +59,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

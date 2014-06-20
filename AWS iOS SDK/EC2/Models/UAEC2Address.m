@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2Address.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2Address
 
@@ -52,3 +56,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

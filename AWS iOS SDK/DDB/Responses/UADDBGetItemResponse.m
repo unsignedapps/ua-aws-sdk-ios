@@ -8,7 +8,11 @@
 //
 
 #import "UADDBGetItemResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBConsumedCapacity.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBGetItemResponse
 
@@ -27,14 +31,6 @@
     return [keyPaths copy];
 }
 
-- (NSDictionary *)itemValueForAttributeName:(NSString *)attributeName
-{
-    if (self.item == nil)
-        return nil;
-
-    return [self.item objectForKey:attributeName];
-}
-
 + (NSValueTransformer *)itemJSONTransformer
 {
     return [NSValueTransformer UA_JSONDynamoDBDictionaryTransformer];
@@ -46,3 +42,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

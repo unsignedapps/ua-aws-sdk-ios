@@ -8,6 +8,7 @@
 //
 
 #import "UASQSAddPermissionRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASQSAddPermissionResponse.h"
 
 @interface UASQSAddPermissionRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASQSAddPermissionRequest
 
@@ -27,6 +31,11 @@
 	{
 		[self setAction:@"AddPermission"];
 		[self setVersion:@"2012-11-05"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(aWSAccountIDAtIndex:) propertyName:@"aWSAccountIDs"];
+		[self UA_addAtIndexEnumAdditionalAccessorForSelector:@selector(actionAtIndex:) propertyName:@"actions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAWSAccountID:) propertyName:@"aWSAccountIDs"];
+		[self UA_addAddEnumAdditionalAccessorForSelector:@selector(addAction:) propertyName:@"actions"];
 	}
 	return self;
 }
@@ -53,22 +62,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)aWSAccountIDAtIndex:(NSUInteger)index
-{
-    if (self.aWSAccountIDs == nil || index >= ([self.aWSAccountIDs count]-1))
-        return nil;
-
-    return [self.aWSAccountIDs objectAtIndex:index];
-}
-
-- (UASQSActionName)actionAtIndex:(NSUInteger)index
-{
-    if (self.actions == nil || index >= ([self.actions count]-1))
-        return UASQSActionNameUnknown;
-
-    return (UASQSActionName)[[self.actions objectAtIndex:index] unsignedIntegerValue];
-}
-
 + (NSValueTransformer *)actionsQueryStringTransformer
 {
     return [NSValueTransformer UA_ENUMArrayTransformerWithValues:@[ @(UASQSActionNameAll), @(UASQSActionNameSendMessage), @(UASQSActionNameReceiveMessage), @(UASQSActionNameDeleteMessage), @(UASQSActionNameChangeMessageVisibility), @(UASQSActionNameGetQueueAttributes), @(UASQSActionNameGetQueueUrl) ]
@@ -83,21 +76,7 @@
                                                     unknownValue:@(UASQSActionNameUnknown)];
 }
 
-- (void)addAWSAccountID:(NSString *)aWSAccountID
-{
-	if (self.aWSAccountIDs == nil)
-		[self setAWSAccountIDs:[NSMutableArray array]];
-	[self.aWSAccountIDs addObject:aWSAccountID];
-}
-
-- (void)addAction:(UASQSActionName)action
-{
-	if (self.actions == nil)
-		[self setActions:[NSMutableArray array]];
-	[self.actions addObject:@(action)];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASQSAddPermissionRequestCompletionBlock)completionBlock
 {
@@ -121,5 +100,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

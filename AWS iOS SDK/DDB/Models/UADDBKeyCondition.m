@@ -8,6 +8,10 @@
 //
 
 #import "UADDBKeyCondition.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBKeyCondition
 
@@ -26,14 +30,6 @@
     return [keyPaths copy];
 }
 
-- (NSMutableDictionary *)attributeValueListAtIndex:(NSUInteger)index
-{
-    if (self.attributeValueList == nil || index >= ([self.attributeValueList count]-1))
-        return nil;
-
-    return [self.attributeValueList objectAtIndex:index];
-}
-
 + (NSValueTransformer *)comparisonOperatorJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UADDBComparisonOperatorEQ), @(UADDBComparisonOperatorLE), @(UADDBComparisonOperatorLT), @(UADDBComparisonOperatorGE), @(UADDBComparisonOperatorGT), @(UADDBComparisonOperatorBeginsWith), @(UADDBComparisonOperatorBetween) ]
@@ -42,3 +38,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

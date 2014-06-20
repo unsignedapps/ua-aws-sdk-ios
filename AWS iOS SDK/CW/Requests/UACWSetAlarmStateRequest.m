@@ -8,6 +8,7 @@
 //
 
 #import "UACWSetAlarmStateRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UACWSetAlarmStateResponse.h"
 
 @interface UACWSetAlarmStateRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UACWSetAlarmStateRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"SetAlarmState"];
 		[self setVersion:@"2010-08-01"];
+		
+		
 	}
 	return self;
 }
@@ -67,7 +73,7 @@
                                                unknownValue:@(UACWAlarmStateUnknown)];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UACWSetAlarmStateRequestCompletionBlock)completionBlock
 {
@@ -91,5 +97,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

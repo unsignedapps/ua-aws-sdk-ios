@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMCreateRoleResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMRole.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMCreateRoleResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

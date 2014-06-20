@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2PrivateIPAddress.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2NetworkInterfaceAssociation.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2PrivateIPAddress
 
@@ -50,3 +54,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

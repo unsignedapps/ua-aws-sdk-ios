@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeRouteTablesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2RouteTable.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeRouteTablesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2RouteTable *)routeTableAtIndex:(NSUInteger)index
-{
-    if (self.routeTables == nil || index >= ([self.routeTables count]-1))
-        return nil;
-
-    return [self.routeTables objectAtIndex:index];
-}
-
 + (NSValueTransformer *)routeTablesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2RouteTable class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

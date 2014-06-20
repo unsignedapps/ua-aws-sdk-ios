@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ModifyReservedInstancesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ModifyReservedInstancesResponse.h"
 #import "UAEC2ReservedInstancesConfiguration.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ModifyReservedInstancesRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"ModifyReservedInstances"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesIDAtIndex:) propertyName:@"reservedInstancesIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(targetConfigurationAtIndex:) propertyName:@"targetConfigurations"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReservedInstancesID:) propertyName:@"reservedInstancesIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTargetConfiguration:) propertyName:@"targetConfigurations"];
 	}
 	return self;
 }
@@ -53,22 +62,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)reservedInstancesIDAtIndex:(NSUInteger)index
-{
-    if (self.reservedInstancesIDs == nil || index >= ([self.reservedInstancesIDs count]-1))
-        return nil;
-
-    return [self.reservedInstancesIDs objectAtIndex:index];
-}
-
-- (UAEC2ReservedInstancesConfiguration *)targetConfigurationAtIndex:(NSUInteger)index
-{
-    if (self.targetConfigurations == nil || index >= ([self.targetConfigurations count]-1))
-        return nil;
-
-    return [self.targetConfigurations objectAtIndex:index];
-}
-
 + (NSValueTransformer *)targetConfigurationsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2ReservedInstancesConfiguration class]];
@@ -79,21 +72,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2ReservedInstancesConfiguration class]];
 }
 
-- (void)addReservedInstancesID:(NSString *)reservedInstancesID
-{
-	if (self.reservedInstancesIDs == nil)
-		[self setReservedInstancesIDs:[NSMutableArray array]];
-	[self.reservedInstancesIDs addObject:reservedInstancesID];
-}
-
-- (void)addTargetConfiguration:(UAEC2ReservedInstancesConfiguration *)targetConfiguration
-{
-	if (self.targetConfigurations == nil)
-		[self setTargetConfigurations:[NSMutableArray array]];
-	[self.targetConfigurations addObject:targetConfiguration];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ModifyReservedInstancesRequestCompletionBlock)completionBlock
 {
@@ -117,5 +96,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

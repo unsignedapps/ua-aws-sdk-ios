@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeDHCPOptionsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DHCPOption.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeDHCPOptionsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2DHCPOption *)dhcpOptionAtIndex:(NSUInteger)index
-{
-    if (self.dhcpOptions == nil || index >= ([self.dhcpOptions count]-1))
-        return nil;
-
-    return [self.dhcpOptions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)dhcpOptionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2DHCPOption class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

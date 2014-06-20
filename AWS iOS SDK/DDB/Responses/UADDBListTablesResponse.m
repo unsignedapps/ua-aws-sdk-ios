@@ -8,6 +8,10 @@
 //
 
 #import "UADDBListTablesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBListTablesResponse
 
@@ -26,12 +30,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)tableNameAtIndex:(NSUInteger)index
-{
-    if (self.tableNames == nil || index >= ([self.tableNames count]-1))
-        return nil;
-
-    return [self.tableNames objectAtIndex:index];
-}
-
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2VPNStaticRoute.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2VPNStaticRoute
 
@@ -33,3 +37,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

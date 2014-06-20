@@ -8,6 +8,10 @@
 //
 
 #import "UAASEnabledMetric.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASEnabledMetric
 
@@ -32,3 +36,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2UnmonitorInstancesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2InstanceMonitoring.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2UnmonitorInstancesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2InstanceMonitoring *)instanceMonitoringAtIndex:(NSUInteger)index
-{
-    if (self.instanceMonitorings == nil || index >= ([self.instanceMonitorings count]-1))
-        return nil;
-
-    return [self.instanceMonitorings objectAtIndex:index];
-}
-
 + (NSValueTransformer *)instanceMonitoringsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2InstanceMonitoring class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

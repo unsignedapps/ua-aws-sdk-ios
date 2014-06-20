@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2VolumeStatusInfo.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VolumeStatusDetail.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2VolumeStatusInfo
 
@@ -30,14 +34,6 @@
         @"details": @"ec2:details/ec2:item"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2VolumeStatusDetail *)detailAtIndex:(NSUInteger)index
-{
-    if (self.details == nil || index >= ([self.details count]-1))
-        return nil;
-
-    return [self.details objectAtIndex:index];
 }
 
 + (NSValueTransformer *)statusQueryStringTransformer
@@ -65,3 +61,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

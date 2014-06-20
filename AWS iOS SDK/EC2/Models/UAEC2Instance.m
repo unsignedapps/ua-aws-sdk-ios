@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2Instance.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ProductCode.h"
 #import "UAEC2Placement.h"
 #import "UAEC2StateReason.h"
@@ -17,6 +18,9 @@
 #import "UAEC2GroupIdentifier.h"
 #import "UAEC2InstanceNetworkInterface.h"
 #import "UAEC2IAMInstanceProfile.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2Instance
 
@@ -74,46 +78,6 @@
         @"sriovNetSupport": @"ec2:sriovNetSupport"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index
-{
-    if (self.productCodes == nil || index >= ([self.productCodes count]-1))
-        return nil;
-
-    return [self.productCodes objectAtIndex:index];
-}
-
-- (UAEC2InstanceBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index
-{
-    if (self.blockDeviceMappings == nil || index >= ([self.blockDeviceMappings count]-1))
-        return nil;
-
-    return [self.blockDeviceMappings objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
-- (UAEC2GroupIdentifier *)securityGroupAtIndex:(NSUInteger)index
-{
-    if (self.securityGroups == nil || index >= ([self.securityGroups count]-1))
-        return nil;
-
-    return [self.securityGroups objectAtIndex:index];
-}
-
-- (UAEC2InstanceNetworkInterface *)networkInterfaceAtIndex:(NSUInteger)index
-{
-    if (self.networkInterfaces == nil || index >= ([self.networkInterfaces count]-1))
-        return nil;
-
-    return [self.networkInterfaces objectAtIndex:index];
 }
 
 + (NSValueTransformer *)stateQueryStringTransformer
@@ -302,3 +266,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

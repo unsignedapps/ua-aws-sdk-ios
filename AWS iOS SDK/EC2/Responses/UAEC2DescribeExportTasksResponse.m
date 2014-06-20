@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeExportTasksResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ExportTask.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeExportTasksResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2ExportTask *)exportTaskAtIndex:(NSUInteger)index
-{
-    if (self.exportTasks == nil || index >= ([self.exportTasks count]-1))
-        return nil;
-
-    return [self.exportTasks objectAtIndex:index];
-}
-
 + (NSValueTransformer *)exportTasksXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ExportTask class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

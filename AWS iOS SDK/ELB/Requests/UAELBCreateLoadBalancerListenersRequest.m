@@ -8,6 +8,7 @@
 //
 
 #import "UAELBCreateLoadBalancerListenersRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBCreateLoadBalancerListenersResponse.h"
 #import "UAELBListener.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBCreateLoadBalancerListenersRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"CreateLoadBalancerListeners"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(listenerAtIndex:) propertyName:@"listeners"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addListener:) propertyName:@"listeners"];
 	}
 	return self;
 }
@@ -52,14 +59,6 @@
     return [keyPaths copy];
 }
 
-- (UAELBListener *)listenerAtIndex:(NSUInteger)index
-{
-    if (self.listeners == nil || index >= ([self.listeners count]-1))
-        return nil;
-
-    return [self.listeners objectAtIndex:index];
-}
-
 + (NSValueTransformer *)listenersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBListener class]];
@@ -70,14 +69,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBListener class]];
 }
 
-- (void)addListener:(UAELBListener *)listener
-{
-	if (self.listeners == nil)
-		[self setListeners:[NSMutableArray array]];
-	[self.listeners addObject:listener];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBCreateLoadBalancerListenersRequestCompletionBlock)completionBlock
 {
@@ -101,5 +93,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

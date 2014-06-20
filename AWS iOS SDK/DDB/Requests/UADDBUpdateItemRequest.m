@@ -8,6 +8,7 @@
 //
 
 #import "UADDBUpdateItemRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBUpdateItemResponse.h"
 #import "UADDBAttributeUpdate.h"
 #import "UADDBExpectedItem.h"
@@ -18,6 +19,9 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UADDBUpdateItemRequest
 
 @synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, key=_key, attributeUpdates=_attributeUpdates, expected=_expected, returnValues=_returnValues, returnConsumedCapacity=_returnConsumedCapacity, returnItemCollectionMetrics=_returnItemCollectionMetrics;
@@ -27,6 +31,13 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.UpdateItem"];
+		
+		[self UA_addDDBKeyValueAdditionalAccessorForSelector:@selector(keyValueForAttributeName:) propertyName:@"key"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeUpdateAtIndex:) propertyName:@"attributeUpdates"];
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(expectedForAttributeName:) propertyName:@"expected"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeUpdate:) propertyName:@"attributeUpdates"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setKeyValue:forAttributeName:) propertyName:@"key"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setExpected:forAttributeName:) propertyName:@"expected"];
 	}
 	return self;
 }
@@ -53,30 +64,6 @@
         @"returnItemCollectionMetrics": @"ReturnItemCollectionMetrics"
     }];
     return [keyPaths copy];
-}
-
-- (NSMutableDictionary *)keyValueForAttributeName:(NSString *)attributeName
-{
-    if (self.key == nil)
-        return nil;
-
-    return [self.key objectForKey:attributeName];
-}
-
-- (UADDBAttributeUpdate *)attributeUpdateAtIndex:(NSUInteger)index
-{
-    if (self.attributeUpdates == nil || index >= ([self.attributeUpdates count]-1))
-        return nil;
-
-    return [self.attributeUpdates objectAtIndex:index];
-}
-
-- (UADDBExpectedItem *)expectedForAttributeName:(NSString *)attributeName
-{
-    if (self.expected == nil)
-        return nil;
-
-    return [self.expected objectForKey:attributeName];
 }
 
 + (NSValueTransformer *)keyJSONTransformer
@@ -115,28 +102,7 @@
                                                unknownValue:@(UADDBReturnItemCollectionMetricsTypeUnknown)];
 }
 
-- (void)addAttributeUpdate:(UADDBAttributeUpdate *)attributeUpdate
-{
-	if (self.attributeUpdates == nil)
-		[self setAttributeUpdates:[NSMutableArray array]];
-	[self.attributeUpdates addObject:attributeUpdate];
-}
-
-- (void)setKeyValue:(id)key forAttributeName:(NSString *)attributeName
-{
-	if (self.key == nil)
-		[self setKey:[NSMutableDictionary dictionary]];
-	[self.key setObject:key forKey:attributeName];
-}
-
-- (void)setExpected:(UADDBExpectedItem *)expected forAttributeName:(NSString *)attributeName
-{
-	if (self.expected == nil)
-		[self setExpected:[NSMutableDictionary dictionary]];
-	[self.expected setObject:expected forKey:attributeName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBUpdateItemRequestCompletionBlock)completionBlock
 {
@@ -160,5 +126,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

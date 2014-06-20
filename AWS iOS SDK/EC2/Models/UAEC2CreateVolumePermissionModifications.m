@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateVolumePermissionModifications.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CreateVolumePermission.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateVolumePermissionModifications
 
@@ -45,22 +49,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2CreateVolumePermission *)addAtIndex:(NSUInteger)index
-{
-    if (self.add == nil || index >= ([self.add count]-1))
-        return nil;
-
-    return [self.add objectAtIndex:index];
-}
-
-- (UAEC2CreateVolumePermission *)removeAtIndex:(NSUInteger)index
-{
-    if (self.remove == nil || index >= ([self.remove count]-1))
-        return nil;
-
-    return [self.remove objectAtIndex:index];
-}
-
 + (NSValueTransformer *)addQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2CreateVolumePermission class]];
@@ -82,3 +70,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

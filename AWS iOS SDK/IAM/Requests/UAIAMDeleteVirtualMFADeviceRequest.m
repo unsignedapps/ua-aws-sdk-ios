@@ -8,6 +8,7 @@
 //
 
 #import "UAIAMDeleteVirtualMFADeviceRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMDeleteVirtualMFADeviceResponse.h"
 
 @interface UAIAMDeleteVirtualMFADeviceRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMDeleteVirtualMFADeviceRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"DeleteVirtualMFADevice"];
 		[self setVersion:@"2010-05-08"];
+		
+		
 	}
 	return self;
 }
@@ -59,7 +65,7 @@
     return [keyPaths copy];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAIAMDeleteVirtualMFADeviceRequestCompletionBlock)completionBlock
 {
@@ -83,5 +89,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

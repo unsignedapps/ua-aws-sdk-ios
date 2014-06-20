@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeVolumeStatusResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VolumeStatus.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeVolumeStatusResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2VolumeStatus *)volumeStatusAtIndex:(NSUInteger)index
-{
-    if (self.volumeStatuses == nil || index >= ([self.volumeStatuses count]-1))
-        return nil;
-
-    return [self.volumeStatuses objectAtIndex:index];
-}
-
 + (NSValueTransformer *)volumeStatusesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VolumeStatus class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

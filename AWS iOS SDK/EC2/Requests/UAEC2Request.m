@@ -102,7 +102,6 @@
     return [NSStringFromClass([self class]) rangeOfString:@"UAEC2Describe"].location == 0;
 }
 
-
 #pragma mark - Serializing defaults
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey

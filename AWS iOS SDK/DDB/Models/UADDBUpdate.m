@@ -8,7 +8,11 @@
 //
 
 #import "UADDBUpdate.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBProvisionedThroughput.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBUpdate
 
@@ -33,3 +37,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

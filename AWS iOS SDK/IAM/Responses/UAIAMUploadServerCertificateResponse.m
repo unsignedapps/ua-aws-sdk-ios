@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMUploadServerCertificateResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMServerCertificateMetadata.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMUploadServerCertificateResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

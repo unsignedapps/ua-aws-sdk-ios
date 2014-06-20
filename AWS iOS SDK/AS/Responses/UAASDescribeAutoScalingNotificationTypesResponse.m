@@ -8,6 +8,10 @@
 //
 
 #import "UAASDescribeAutoScalingNotificationTypesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeAutoScalingNotificationTypesResponse
 
@@ -30,17 +34,11 @@
     return [keyPaths copy];
 }
 
-- (NSString *)autoScalingNotificationTypeAtIndex:(NSUInteger)index
-{
-    if (self.autoScalingNotificationTypes == nil || index >= ([self.autoScalingNotificationTypes count]-1))
-        return nil;
-
-    return [self.autoScalingNotificationTypes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)autoScalingNotificationTypesXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }
 
 @end
+
+#pragma clang diagnostic pop

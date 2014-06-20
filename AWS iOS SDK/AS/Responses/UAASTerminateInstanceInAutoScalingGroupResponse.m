@@ -8,7 +8,11 @@
 //
 
 #import "UAASTerminateInstanceInAutoScalingGroupResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASActivity.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASTerminateInstanceInAutoScalingGroupResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

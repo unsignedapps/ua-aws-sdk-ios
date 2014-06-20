@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2VolumeAttachment.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2VolumeAttachment
 
@@ -65,3 +69,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

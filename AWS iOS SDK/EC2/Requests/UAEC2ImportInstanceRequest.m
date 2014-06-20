@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2ImportInstanceRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ImportInstanceResponse.h"
 #import "UAEC2ImportInstanceLaunchSpecification.h"
 #import "UAEC2DiskImage.h"
@@ -19,6 +20,9 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UAEC2ImportInstanceRequest
 
 @synthesize action=_action, version=_version, dryRun=_dryRun, descriptionValue=_descriptionValue, launchSpecification=_launchSpecification, diskImages=_diskImages, platform=_platform;
@@ -29,6 +33,9 @@
 	{
 		[self setAction:@"ImportInstance"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(diskImageAtIndex:) propertyName:@"diskImages"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDiskImage:) propertyName:@"diskImages"];
 	}
 	return self;
 }
@@ -56,14 +63,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2DiskImage *)diskImageAtIndex:(NSUInteger)index
-{
-    if (self.diskImages == nil || index >= ([self.diskImages count]-1))
-        return nil;
-
-    return [self.diskImages objectAtIndex:index];
-}
-
 + (NSValueTransformer *)launchSpecificationJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2ImportInstanceLaunchSpecification class]];
@@ -89,14 +88,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2DiskImage class]];
 }
 
-- (void)addDiskImage:(UAEC2DiskImage *)diskImage
-{
-	if (self.diskImages == nil)
-		[self setDiskImages:[NSMutableArray array]];
-	[self.diskImages addObject:diskImage];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2ImportInstanceRequestCompletionBlock)completionBlock
 {
@@ -120,5 +112,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UADDBScanRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBScanResponse.h"
 #import "UADDBScanFilter.h"
 
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *xAmzTarget;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBScanRequest
 
@@ -26,6 +30,13 @@
 	if (self = [super init])
 	{
 		[self setXAmzTarget:@"DynamoDB_20120810.Scan"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeToGetAtIndex:) propertyName:@"attributesToGet"];
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(scanFilterForAttributeName:) propertyName:@"scanFilter"];
+		[self UA_addDDBKeyValueAdditionalAccessorForSelector:@selector(exclusiveStartKeyValueForAttributeName:) propertyName:@"exclusiveStartKey"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeToGet:) propertyName:@"attributesToGet"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setScanFilter:forAttributeName:) propertyName:@"scanFilter"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setExclusiveStartKeyValue:forAttributeName:) propertyName:@"exclusiveStartKey"];
 	}
 	return self;
 }
@@ -56,30 +67,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)attributeToGetAtIndex:(NSUInteger)index
-{
-    if (self.attributesToGet == nil || index >= ([self.attributesToGet count]-1))
-        return nil;
-
-    return [self.attributesToGet objectAtIndex:index];
-}
-
-- (UADDBScanFilter *)scanFilterForAttributeName:(NSString *)attributeName
-{
-    if (self.scanFilter == nil)
-        return nil;
-
-    return [self.scanFilter objectForKey:attributeName];
-}
-
-- (NSMutableDictionary *)exclusiveStartKeyValueForAttributeName:(NSString *)attributeName
-{
-    if (self.exclusiveStartKey == nil)
-        return nil;
-
-    return [self.exclusiveStartKey objectForKey:attributeName];
-}
-
 + (NSValueTransformer *)selectJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UADDBSelectTypeAllAttributes), @(UADDBSelectTypeAllProjectedAttributes), @(UADDBSelectTypeSpecificAttributes), @(UADDBSelectTypeCount) ]
@@ -104,28 +91,7 @@
                                                unknownValue:@(UADDBReturnConsumedCapacityTypeUnknown)];
 }
 
-- (void)addAttributeToGet:(NSString *)attributeToGet
-{
-	if (self.attributesToGet == nil)
-		[self setAttributesToGet:[NSMutableArray array]];
-	[self.attributesToGet addObject:attributeToGet];
-}
-
-- (void)setScanFilter:(UADDBScanFilter *)scanFilter forAttributeName:(NSString *)attributeName
-{
-	if (self.scanFilter == nil)
-		[self setScanFilter:[NSMutableDictionary dictionary]];
-	[self.scanFilter setObject:scanFilter forKey:attributeName];
-}
-
-- (void)setExclusiveStartKeyValue:(id)exclusiveStartKey forAttributeName:(NSString *)attributeName
-{
-	if (self.exclusiveStartKey == nil)
-		[self setExclusiveStartKey:[NSMutableDictionary dictionary]];
-	[self.exclusiveStartKey setObject:exclusiveStartKey forKey:attributeName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UADDBScanRequestCompletionBlock)completionBlock
 {
@@ -149,5 +115,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

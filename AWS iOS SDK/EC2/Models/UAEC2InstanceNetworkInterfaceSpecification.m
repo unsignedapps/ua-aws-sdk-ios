@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2InstanceNetworkInterfaceSpecification.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2PrivateIPAddressSpecifiction.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2InstanceNetworkInterfaceSpecification
 
@@ -61,22 +65,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)groupAtIndex:(NSUInteger)index
-{
-    if (self.groups == nil || index >= ([self.groups count]-1))
-        return nil;
-
-    return [self.groups objectAtIndex:index];
-}
-
-- (UAEC2PrivateIPAddressSpecifiction *)privateIPAddressAtIndex:(NSUInteger)index
-{
-    if (self.privateIPAddresses == nil || index >= ([self.privateIPAddresses count]-1))
-        return nil;
-
-    return [self.privateIPAddresses objectAtIndex:index];
-}
-
 + (NSValueTransformer *)privateIPAddressesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2PrivateIPAddressSpecifiction class]];
@@ -113,3 +101,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

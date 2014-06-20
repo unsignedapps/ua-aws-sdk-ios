@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2DHCPOption.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DHCPConfiguration.h"
 #import "UAEC2Tag.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DHCPOption
 
@@ -34,22 +38,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2DHCPConfiguration *)dhcpConfigurationAtIndex:(NSUInteger)index
-{
-    if (self.dhcpConfigurations == nil || index >= ([self.dhcpConfigurations count]-1))
-        return nil;
-
-    return [self.dhcpConfigurations objectAtIndex:index];
-}
-
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index
-{
-    if (self.tags == nil || index >= ([self.tags count]-1))
-        return nil;
-
-    return [self.tags objectAtIndex:index];
-}
-
 + (NSValueTransformer *)dhcpConfigurationsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2DHCPConfiguration class]];
@@ -71,3 +59,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

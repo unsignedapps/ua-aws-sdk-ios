@@ -8,8 +8,12 @@
 //
 
 #import "UAEC2ReservedInstancesModification.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ReservedInstancesID.h"
 #import "UAEC2ReservedInstancesModificationResponse.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ReservedInstancesModification
 
@@ -38,22 +42,6 @@
         @"clientToken": @"ec2:clientToken"
     }];
     return [keyPaths copy];
-}
-
-- (UAEC2ReservedInstancesID *)reservedInstancesIDAtIndex:(NSUInteger)index
-{
-    if (self.reservedInstancesIds == nil || index >= ([self.reservedInstancesIds count]-1))
-        return nil;
-
-    return [self.reservedInstancesIds objectAtIndex:index];
-}
-
-- (UAEC2ReservedInstancesModificationResponse *)modificationResultAtIndex:(NSUInteger)index
-{
-    if (self.modificationResults == nil || index >= ([self.modificationResults count]-1))
-        return nil;
-
-    return [self.modificationResults objectAtIndex:index];
 }
 
 + (NSValueTransformer *)reservedInstancesIdsQueryStringTransformer
@@ -107,3 +95,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

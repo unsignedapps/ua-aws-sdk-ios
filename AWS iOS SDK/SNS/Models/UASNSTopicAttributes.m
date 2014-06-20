@@ -8,6 +8,10 @@
 //
 
 #import "UASNSTopicAttributes.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSTopicAttributes
 
@@ -54,3 +58,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

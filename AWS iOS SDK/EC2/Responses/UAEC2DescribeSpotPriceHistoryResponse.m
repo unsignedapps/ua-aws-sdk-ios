@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeSpotPriceHistoryResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2SpotPriceHistory.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeSpotPriceHistoryResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2SpotPriceHistory *)spotPriceHistoryAtIndex:(NSUInteger)index
-{
-    if (self.spotPriceHistory == nil || index >= ([self.spotPriceHistory count]-1))
-        return nil;
-
-    return [self.spotPriceHistory objectAtIndex:index];
-}
-
 + (NSValueTransformer *)spotPriceHistoryXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2SpotPriceHistory class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

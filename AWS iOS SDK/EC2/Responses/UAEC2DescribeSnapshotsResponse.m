@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeSnapshotsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Snapshot.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeSnapshotsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2Snapshot *)snapshotAtIndex:(NSUInteger)index
-{
-    if (self.snapshots == nil || index >= ([self.snapshots count]-1))
-        return nil;
-
-    return [self.snapshots objectAtIndex:index];
-}
-
 + (NSValueTransformer *)snapshotsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Snapshot class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

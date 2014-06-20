@@ -8,6 +8,10 @@
 //
 
 #import "UAEC2ReplaceNetworkACLAssociationResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2ReplaceNetworkACLAssociationResponse
 
@@ -31,3 +35,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CreateCustomerGatewayResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CustomerGateway.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateCustomerGatewayResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

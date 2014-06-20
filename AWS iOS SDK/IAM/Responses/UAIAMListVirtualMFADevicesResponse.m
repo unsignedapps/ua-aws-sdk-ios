@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMListVirtualMFADevicesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMVirtualMFADevice.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListVirtualMFADevicesResponse
 
@@ -33,14 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UAIAMVirtualMFADevice *)virtualMFADeviceAtIndex:(NSUInteger)index
-{
-    if (self.virtualMFADevices == nil || index >= ([self.virtualMFADevices count]-1))
-        return nil;
-
-    return [self.virtualMFADevices objectAtIndex:index];
-}
-
 + (NSValueTransformer *)virtualMFADevicesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMVirtualMFADevice class]];
@@ -52,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

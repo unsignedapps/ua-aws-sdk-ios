@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2CreateSecurityGroupRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CreateSecurityGroupResponse.h"
 
 @interface UAEC2CreateSecurityGroupRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateSecurityGroupRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"CreateSecurityGroup"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -58,7 +64,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2CreateSecurityGroupRequestCompletionBlock)completionBlock
 {
@@ -82,5 +88,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

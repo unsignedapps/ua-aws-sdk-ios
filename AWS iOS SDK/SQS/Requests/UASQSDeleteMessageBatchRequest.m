@@ -8,6 +8,7 @@
 //
 
 #import "UASQSDeleteMessageBatchRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASQSDeleteMessageBatchResponse.h"
 #import "UASQSDeleteMessageBatchRequestEntry.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASQSDeleteMessageBatchRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"DeleteMessageBatch"];
 		[self setVersion:@"2012-11-05"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(entryAtIndex:) propertyName:@"entries"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addEntry:) propertyName:@"entries"];
 	}
 	return self;
 }
@@ -52,14 +59,6 @@
     return [keyPaths copy];
 }
 
-- (UASQSDeleteMessageBatchRequestEntry *)entryAtIndex:(NSUInteger)index
-{
-    if (self.entries == nil || index >= ([self.entries count]-1))
-        return nil;
-
-    return [self.entries objectAtIndex:index];
-}
-
 + (NSValueTransformer *)entriesJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UASQSDeleteMessageBatchRequestEntry class]];
@@ -70,14 +69,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UASQSDeleteMessageBatchRequestEntry class]];
 }
 
-- (void)addEntry:(UASQSDeleteMessageBatchRequestEntry *)entry
-{
-	if (self.entries == nil)
-		[self setEntries:[NSMutableArray array]];
-	[self.entries addObject:entry];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASQSDeleteMessageBatchRequestCompletionBlock)completionBlock
 {
@@ -101,5 +93,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeVPCPeeringConnectionsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VPCPeeringConnection.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeVPCPeeringConnectionsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2VPCPeeringConnection *)vpcPeeringConnectionAtIndex:(NSUInteger)index
-{
-    if (self.vpcPeeringConnections == nil || index >= ([self.vpcPeeringConnections count]-1))
-        return nil;
-
-    return [self.vpcPeeringConnections objectAtIndex:index];
-}
-
 + (NSValueTransformer *)vpcPeeringConnectionsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2VPCPeeringConnection class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

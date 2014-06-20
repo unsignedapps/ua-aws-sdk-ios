@@ -8,7 +8,11 @@
 //
 
 #import "UAASDescribeScalingProcessTypesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASProcessType.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeScalingProcessTypesResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAASProcessType *)processAtIndex:(NSUInteger)index
-{
-    if (self.processes == nil || index >= ([self.processes count]-1))
-        return nil;
-
-    return [self.processes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)processesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASProcessType class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

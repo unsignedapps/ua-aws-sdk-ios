@@ -8,6 +8,10 @@
 //
 
 #import "UAELBDeleteLoadBalancerPolicyResponse.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDeleteLoadBalancerPolicyResponse
 
@@ -17,3 +21,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,7 +8,11 @@
 //
 
 #import "UAASDescribeNotificationConfigurationsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASNotificationConfiguration.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeNotificationConfigurationsResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UAASNotificationConfiguration *)notificationConfigurationAtIndex:(NSUInteger)index
-{
-    if (self.notificationConfigurations == nil || index >= ([self.notificationConfigurations count]-1))
-        return nil;
-
-    return [self.notificationConfigurations objectAtIndex:index];
-}
-
 + (NSValueTransformer *)notificationConfigurationsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAASNotificationConfiguration class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeInstanceStatusRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeInstanceStatusResponse.h"
 #import "UAEC2Filter.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeInstanceStatusRequest
 
@@ -28,6 +32,11 @@
 	{
 		[self setAction:@"DescribeInstanceStatus"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceIDAtIndex:) propertyName:@"instanceIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstanceID:) propertyName:@"instanceIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFilter:) propertyName:@"filters"];
 	}
 	return self;
 }
@@ -56,22 +65,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)instanceIDAtIndex:(NSUInteger)index
-{
-    if (self.instanceIDs == nil || index >= ([self.instanceIDs count]-1))
-        return nil;
-
-    return [self.instanceIDs objectAtIndex:index];
-}
-
-- (UAEC2Filter *)filterAtIndex:(NSUInteger)index
-{
-    if (self.filters == nil || index >= ([self.filters count]-1))
-        return nil;
-
-    return [self.filters objectAtIndex:index];
-}
-
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
@@ -92,21 +85,7 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
-- (void)addInstanceID:(NSString *)instanceID
-{
-	if (self.instanceIDs == nil)
-		[self setInstanceIDs:[NSMutableArray array]];
-	[self.instanceIDs addObject:instanceID];
-}
-
-- (void)addFilter:(UAEC2Filter *)filter
-{
-	if (self.filters == nil)
-		[self setFilters:[NSMutableArray array]];
-	[self.filters addObject:filter];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeInstanceStatusRequestCompletionBlock)completionBlock
 {
@@ -130,5 +109,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

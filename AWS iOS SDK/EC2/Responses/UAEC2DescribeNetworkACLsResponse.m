@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeNetworkACLsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2NetworkACL.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeNetworkACLsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2NetworkACL *)networkACLAtIndex:(NSUInteger)index
-{
-    if (self.networkACLs == nil || index >= ([self.networkACLs count]-1))
-        return nil;
-
-    return [self.networkACLs objectAtIndex:index];
-}
-
 + (NSValueTransformer *)networkACLsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2NetworkACL class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

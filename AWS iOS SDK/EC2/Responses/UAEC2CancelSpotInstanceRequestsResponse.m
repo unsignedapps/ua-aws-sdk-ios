@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2CancelSpotInstanceRequestsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2CancelledSpotInstanceRequest.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CancelSpotInstanceRequestsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2CancelledSpotInstanceRequest *)cancelledSpotInstanceRequestAtIndex:(NSUInteger)index
-{
-    if (self.cancelledSpotInstanceRequests == nil || index >= ([self.cancelledSpotInstanceRequests count]-1))
-        return nil;
-
-    return [self.cancelledSpotInstanceRequests objectAtIndex:index];
-}
-
 + (NSValueTransformer *)cancelledSpotInstanceRequestsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2CancelledSpotInstanceRequest class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

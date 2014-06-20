@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2AcceptVPCPeeringConnectionResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2VPCPeeringConnection.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2AcceptVPCPeeringConnectionResponse
 
@@ -37,3 +41,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

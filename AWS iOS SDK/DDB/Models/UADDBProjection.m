@@ -8,6 +8,10 @@
 //
 
 #import "UADDBProjection.h"
+#import "UAAWSAdditionalAccessors.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBProjection
 
@@ -26,14 +30,6 @@
     return [keyPaths copy];
 }
 
-- (NSString *)nonKeyAttributeAtIndex:(NSUInteger)index
-{
-    if (self.nonKeyAttributes == nil || index >= ([self.nonKeyAttributes count]-1))
-        return nil;
-
-    return [self.nonKeyAttributes objectAtIndex:index];
-}
-
 + (NSValueTransformer *)projectionTypeJSONTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UADDBProjectionTypeKeysOnly), @(UADDBProjectionTypeInclude), @(UADDBProjectionTypeAll) ]
@@ -42,3 +38,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

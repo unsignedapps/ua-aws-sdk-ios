@@ -8,6 +8,7 @@
 //
 
 #import "UAELBDescribeLoadBalancerPoliciesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBDescribeLoadBalancerPoliciesResponse.h"
 
 @interface UAELBDescribeLoadBalancerPoliciesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDescribeLoadBalancerPoliciesRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DescribeLoadBalancerPolicies"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(policyNameAtIndex:) propertyName:@"policyNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPolicyName:) propertyName:@"policyNames"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)policyNameAtIndex:(NSUInteger)index
-{
-    if (self.policyNames == nil || index >= ([self.policyNames count]-1))
-        return nil;
-
-    return [self.policyNames objectAtIndex:index];
-}
-
-- (void)addPolicyName:(NSString *)policyName
-{
-	if (self.policyNames == nil)
-		[self setPolicyNames:[NSMutableArray array]];
-	[self.policyNames addObject:policyName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBDescribeLoadBalancerPoliciesRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

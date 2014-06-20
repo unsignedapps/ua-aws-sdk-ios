@@ -8,7 +8,11 @@
 //
 
 #import "UAIAMListRolesResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAIAMRole.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListRolesResponse
 
@@ -33,14 +37,6 @@
     return [keyPaths copy];
 }
 
-- (UAIAMRole *)roleAtIndex:(NSUInteger)index
-{
-    if (self.roles == nil || index >= ([self.roles count]-1))
-        return nil;
-
-    return [self.roles objectAtIndex:index];
-}
-
 + (NSValueTransformer *)rolesXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMRole class]];
@@ -52,3 +48,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

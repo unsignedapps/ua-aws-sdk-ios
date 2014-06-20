@@ -8,6 +8,7 @@
 //
 
 #import "UAELBDisableAvailabilityZonesForLoadBalancerRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAELBDisableAvailabilityZonesForLoadBalancerResponse.h"
 
 @interface UAELBDisableAvailabilityZonesForLoadBalancerRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBDisableAvailabilityZonesForLoadBalancerRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DisableAvailabilityZonesForLoadBalancer"];
 		[self setVersion:@"2012-06-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(availabilityZoneAtIndex:) propertyName:@"availabilityZones"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAvailabilityZone:) propertyName:@"availabilityZones"];
 	}
 	return self;
 }
@@ -51,22 +58,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)availabilityZoneAtIndex:(NSUInteger)index
-{
-    if (self.availabilityZones == nil || index >= ([self.availabilityZones count]-1))
-        return nil;
-
-    return [self.availabilityZones objectAtIndex:index];
-}
-
-- (void)addAvailabilityZone:(NSString *)availabilityZone
-{
-	if (self.availabilityZones == nil)
-		[self setAvailabilityZones:[NSMutableArray array]];
-	[self.availabilityZones addObject:availabilityZone];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAELBDisableAvailabilityZonesForLoadBalancerRequestCompletionBlock)completionBlock
 {
@@ -90,5 +82,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

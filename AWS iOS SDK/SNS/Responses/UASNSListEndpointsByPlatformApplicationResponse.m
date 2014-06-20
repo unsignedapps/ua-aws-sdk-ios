@@ -8,7 +8,11 @@
 //
 
 #import "UASNSListEndpointsByPlatformApplicationResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASNSEndpoint.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSListEndpointsByPlatformApplicationResponse
 
@@ -32,17 +36,11 @@
     return [keyPaths copy];
 }
 
-- (UASNSEndpoint *)endpointAtIndex:(NSUInteger)index
-{
-    if (self.endpoints == nil || index >= ([self.endpoints count]-1))
-        return nil;
-
-    return [self.endpoints objectAtIndex:index];
-}
-
 + (NSValueTransformer *)endpointsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UASNSEndpoint class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

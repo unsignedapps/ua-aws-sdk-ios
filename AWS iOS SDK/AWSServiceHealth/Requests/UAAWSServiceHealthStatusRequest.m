@@ -14,6 +14,9 @@
 
 @end
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation UAAWSServiceHealthStatusRequest
 
 - (Class)UA_ResponseClass
@@ -26,7 +29,7 @@
     return @"/data.json";
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAAWSServiceHealthStatusRequestCompletionBlock)completionBlock
 {
@@ -49,6 +52,9 @@
     [self setUA_ShouldContinueWaiting:[UAAWSRequest UA_ShouldContinueWaitingBlockUntilValueAtKeyPath:keyPath isInArray:array]];
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
-}
+} */
 
 @end
+
+#pragma clang diagnostic pop#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"

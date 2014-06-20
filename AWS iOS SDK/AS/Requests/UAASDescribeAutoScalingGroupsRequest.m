@@ -8,6 +8,7 @@
 //
 
 #import "UAASDescribeAutoScalingGroupsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAASDescribeAutoScalingGroupsResponse.h"
 
 @interface UAASDescribeAutoScalingGroupsRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAASDescribeAutoScalingGroupsRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DescribeAutoScalingGroups"];
 		[self setVersion:@"2011-01-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(autoScalingGroupNameAtIndex:) propertyName:@"autoScalingGroupNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAutoScalingGroupName:) propertyName:@"autoScalingGroupNames"];
 	}
 	return self;
 }
@@ -52,22 +59,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)autoScalingGroupNameAtIndex:(NSUInteger)index
-{
-    if (self.autoScalingGroupNames == nil || index >= ([self.autoScalingGroupNames count]-1))
-        return nil;
-
-    return [self.autoScalingGroupNames objectAtIndex:index];
-}
-
-- (void)addAutoScalingGroupName:(NSString *)autoScalingGroupName
-{
-	if (self.autoScalingGroupNames == nil)
-		[self setAutoScalingGroupNames:[NSMutableArray array]];
-	[self.autoScalingGroupNames addObject:autoScalingGroupName];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAASDescribeAutoScalingGroupsRequestCompletionBlock)completionBlock
 {
@@ -91,5 +83,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

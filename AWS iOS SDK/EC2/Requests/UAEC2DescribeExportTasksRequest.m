@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2DescribeExportTasksRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2DescribeExportTasksResponse.h"
 
 @interface UAEC2DescribeExportTasksRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeExportTasksRequest
 
@@ -27,6 +31,9 @@
 	{
 		[self setAction:@"DescribeExportTasks"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(exportTaskIDAtIndex:) propertyName:@"exportTaskIDs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addExportTaskID:) propertyName:@"exportTaskIDs"];
 	}
 	return self;
 }
@@ -59,22 +66,7 @@
     return [keyPaths copy];
 }
 
-- (NSString *)exportTaskIDAtIndex:(NSUInteger)index
-{
-    if (self.exportTaskIDs == nil || index >= ([self.exportTaskIDs count]-1))
-        return nil;
-
-    return [self.exportTaskIDs objectAtIndex:index];
-}
-
-- (void)addExportTaskID:(NSString *)exportTaskID
-{
-	if (self.exportTaskIDs == nil)
-		[self setExportTaskIDs:[NSMutableArray array]];
-	[self.exportTaskIDs addObject:exportTaskID];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2DescribeExportTasksRequestCompletionBlock)completionBlock
 {
@@ -98,5 +90,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

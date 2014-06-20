@@ -8,7 +8,11 @@
 //
 
 #import "UADDBGlobalSecondaryIndexUpdate.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBUpdate.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBGlobalSecondaryIndexUpdate
 
@@ -41,3 +45,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

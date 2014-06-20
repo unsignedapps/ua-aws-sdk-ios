@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2AuthorizeSecurityGroupEgressRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2AuthorizeSecurityGroupEgressResponse.h"
 #import "UAEC2IPPermission.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2AuthorizeSecurityGroupEgressRequest
 
@@ -28,6 +32,9 @@
 	{
 		[self setAction:@"AuthorizeSecurityGroupEgress"];
 		[self setVersion:@"2014-02-01"];
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ipPermissionAtIndex:) propertyName:@"ipPermissions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addIPPermission:) propertyName:@"ipPermissions"];
 	}
 	return self;
 }
@@ -59,14 +66,6 @@
     return [keyPaths copy];
 }
 
-- (UAEC2IPPermission *)ipPermissionAtIndex:(NSUInteger)index
-{
-    if (self.ipPermissions == nil || index >= ([self.ipPermissions count]-1))
-        return nil;
-
-    return [self.ipPermissions objectAtIndex:index];
-}
-
 + (NSValueTransformer *)ipPermissionsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2IPPermission class]];
@@ -82,14 +81,7 @@
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2IPPermission class]];
 }
 
-- (void)addIPPermission:(UAEC2IPPermission *)iPPermission
-{
-	if (self.ipPermissions == nil)
-		[self setIpPermissions:[NSMutableArray array]];
-	[self.ipPermissions addObject:iPPermission];
-}
-
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2AuthorizeSecurityGroupEgressRequestCompletionBlock)completionBlock
 {
@@ -113,5 +105,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

@@ -8,6 +8,7 @@
 //
 
 #import "UAEC2BundleInstanceRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2BundleInstanceResponse.h"
 #import "UAEC2Storage.h"
 
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2BundleInstanceRequest
 
@@ -28,6 +32,8 @@
 	{
 		[self setAction:@"BundleInstance"];
 		[self setVersion:@"2014-02-01"];
+		
+		
 	}
 	return self;
 }
@@ -68,7 +74,7 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2Storage class]];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UAEC2BundleInstanceRequestCompletionBlock)completionBlock
 {
@@ -92,5 +98,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

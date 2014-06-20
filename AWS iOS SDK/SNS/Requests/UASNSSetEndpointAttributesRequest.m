@@ -8,6 +8,7 @@
 //
 
 #import "UASNSSetEndpointAttributesRequest.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UASNSSetEndpointAttributesResponse.h"
 
 @interface UASNSSetEndpointAttributesRequest ()
@@ -16,6 +17,9 @@
 @property (nonatomic, copy) NSString *version;
 
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UASNSSetEndpointAttributesRequest
 
@@ -27,6 +31,8 @@
 	{
 		[self setAction:@"SetEndpointAttributes"];
 		[self setVersion:@"2010-03-31"];
+		
+		
 	}
 	return self;
 }
@@ -61,7 +67,7 @@
     return [NSValueTransformer UA_JSONKeyValueTransformerWithKeyName:@"key" valueName:@"value"];
 }
 
-#pragma mark - Invocation
+/*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASNSSetEndpointAttributesRequestCompletionBlock)completionBlock
 {
@@ -85,5 +91,7 @@
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
-
+*/
 @end
+
+#pragma clang diagnostic pop

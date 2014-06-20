@@ -8,7 +8,11 @@
 //
 
 #import "UAEC2DescribeSubnetsResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAEC2Subnet.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2DescribeSubnetsResponse
 
@@ -31,17 +35,11 @@
     return [keyPaths copy];
 }
 
-- (UAEC2Subnet *)subnetAtIndex:(NSUInteger)index
-{
-    if (self.subnets == nil || index >= ([self.subnets count]-1))
-        return nil;
-
-    return [self.subnets objectAtIndex:index];
-}
-
 + (NSValueTransformer *)subnetsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Subnet class]];
 }
 
 @end
+
+#pragma clang diagnostic pop

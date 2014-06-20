@@ -8,7 +8,11 @@
 //
 
 #import "UADDBScanResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBConsumedCapacity.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBScanResponse
 
@@ -30,22 +34,6 @@
     return [keyPaths copy];
 }
 
-- (NSDictionary *)itemAtIndex:(NSUInteger)index
-{
-    if (self.items == nil || index >= ([self.items count]-1))
-        return nil;
-
-    return [self.items objectAtIndex:index];
-}
-
-- (NSDictionary *)lastEvaluatedKeyValueForAttributeName:(NSString *)attributeName
-{
-    if (self.lastEvaluatedKey == nil)
-        return nil;
-
-    return [self.lastEvaluatedKey objectForKey:attributeName];
-}
-
 + (NSValueTransformer *)lastEvaluatedKeyJSONTransformer
 {
     return [NSValueTransformer UA_JSONDynamoDBDictionaryTransformer];
@@ -57,3 +45,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

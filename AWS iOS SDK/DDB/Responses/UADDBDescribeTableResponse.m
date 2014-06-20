@@ -8,7 +8,11 @@
 //
 
 #import "UADDBDescribeTableResponse.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UADDBTableDescription.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UADDBDescribeTableResponse
 
@@ -32,3 +36,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop
