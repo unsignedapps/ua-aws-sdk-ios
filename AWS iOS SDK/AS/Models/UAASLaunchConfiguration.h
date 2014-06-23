@@ -30,6 +30,7 @@
 @property (nonatomic, copy) NSDate *createdTime;
 @property (nonatomic) BOOL ebsOptimized;
 @property (nonatomic) BOOL associatePublicIPAddress;
+@property (nonatomic, copy) NSString *placementTenancy;
 
 /**
  * Retrieves the NSString at the specified index.

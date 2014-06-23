@@ -16,7 +16,7 @@
 
 @implementation UAASLaunchConfiguration
 
-@synthesize launchConfigurationName=_launchConfigurationName, launchConfigurationARN=_launchConfigurationARN, imageID=_imageID, keyName=_keyName, securityGroups=_securityGroups, userData=_userData, instanceType=_instanceType, kernelID=_kernelID, ramdiskID=_ramdiskID, blockDeviceMappings=_blockDeviceMappings, instanceMonitoring=_instanceMonitoring, spotPrice=_spotPrice, iamInstanceProfile=_iamInstanceProfile, createdTime=_createdTime, ebsOptimized=_ebsOptimized, associatePublicIPAddress=_associatePublicIPAddress;
+@synthesize launchConfigurationName=_launchConfigurationName, launchConfigurationARN=_launchConfigurationARN, imageID=_imageID, keyName=_keyName, securityGroups=_securityGroups, userData=_userData, instanceType=_instanceType, kernelID=_kernelID, ramdiskID=_ramdiskID, blockDeviceMappings=_blockDeviceMappings, instanceMonitoring=_instanceMonitoring, spotPrice=_spotPrice, iamInstanceProfile=_iamInstanceProfile, createdTime=_createdTime, ebsOptimized=_ebsOptimized, associatePublicIPAddress=_associatePublicIPAddress, placementTenancy=_placementTenancy;
 
 + (NSString *)XPathPrefix
 {
@@ -46,7 +46,8 @@
         @"iamInstanceProfile": @"AutoScaling:IamInstanceProfile",
         @"createdTime": @"AutoScaling:CreatedTime",
         @"ebsOptimized": @"AutoScaling:EbsOptimized",
-        @"associatePublicIPAddress": @"AutoScaling:AssociatePublicIpAddress"
+        @"associatePublicIPAddress": @"AutoScaling:AssociatePublicIpAddress",
+        @"placementTenancy": @"AutoScaling:PlacementTenancy"
     }];
     return [keyPaths copy];
 }

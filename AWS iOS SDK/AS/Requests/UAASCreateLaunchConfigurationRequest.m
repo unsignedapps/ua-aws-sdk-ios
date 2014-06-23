@@ -24,7 +24,7 @@
 
 @implementation UAASCreateLaunchConfigurationRequest
 
-@synthesize action=_action, version=_version, launchConfigurationName=_launchConfigurationName, imageID=_imageID, keyName=_keyName, securityGroups=_securityGroups, userData=_userData, instanceID=_instanceID, instanceType=_instanceType, kernelID=_kernelID, ramdiskID=_ramdiskID, blockDeviceMappings=_blockDeviceMappings, instanceMonitoringEnabled=_instanceMonitoringEnabled, spotPrice=_spotPrice, iamInstanceProfile=_iamInstanceProfile, ebsOptimized=_ebsOptimized, associatePublicIPAddress=_associatePublicIPAddress;
+@synthesize action=_action, version=_version, launchConfigurationName=_launchConfigurationName, imageID=_imageID, keyName=_keyName, securityGroups=_securityGroups, userData=_userData, instanceID=_instanceID, instanceType=_instanceType, kernelID=_kernelID, ramdiskID=_ramdiskID, blockDeviceMappings=_blockDeviceMappings, instanceMonitoringEnabled=_instanceMonitoringEnabled, spotPrice=_spotPrice, iamInstanceProfile=_iamInstanceProfile, ebsOptimized=_ebsOptimized, associatePublicIPAddress=_associatePublicIPAddress, placementTenancy=_placementTenancy;
 
 - (id)init
 {
@@ -69,7 +69,8 @@
         @"spotPrice": @"SpotPrice",
         @"iamInstanceProfile": @"IamInstanceProfile",
         @"ebsOptimized": @"EbsOptimized",
-        @"associatePublicIPAddress": @"AssociatePublicIpAddress"
+        @"associatePublicIPAddress": @"AssociatePublicIpAddress",
+        @"placementTenancy": @"PlacementTenancy"
     }];
     return [keyPaths copy];
 }

@@ -30,6 +30,7 @@ typedef BOOL(^UAASCreateLaunchConfigurationRequestShouldContinueWaitingBlock)(UA
 @property (nonatomic, copy) NSString *iamInstanceProfile;
 @property (nonatomic) BOOL ebsOptimized;
 @property (nonatomic) BOOL associatePublicIPAddress;
+@property (nonatomic, copy) NSString *placementTenancy;
 // @property (nonatomic, copy) UAASCreateLaunchConfigurationRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAASCreateLaunchConfigurationRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

@@ -56,7 +56,7 @@
 
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIo1) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIO1) ]
                                                stringValues:@[ @"standard", @"io1" ]
                                                unknownValue:@(UAASEBSBlockDeviceVolumeTypeUnknown)];
 }
@@ -68,7 +68,7 @@
 
 + (NSValueTransformer *)volumeTypeXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIo1) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIO1) ]
                                                stringValues:@[ @"standard", @"io1" ]
                                                unknownValue:@(UAASEBSBlockDeviceVolumeTypeUnknown)];
 }

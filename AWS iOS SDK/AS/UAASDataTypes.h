@@ -36,7 +36,7 @@ typedef NS_ENUM(NSUInteger, UAASHealthCheckType) {
 typedef NS_ENUM(NSUInteger, UAASEBSBlockDeviceVolumeType) {
 	UAASEBSBlockDeviceVolumeTypeUnknown = 0,
 	UAASEBSBlockDeviceVolumeTypeStandard = 1,
-	UAASEBSBlockDeviceVolumeTypeIo1 = 2
+	UAASEBSBlockDeviceVolumeTypeIO1 = 2
 };
 
 // UAASActivityStatus
