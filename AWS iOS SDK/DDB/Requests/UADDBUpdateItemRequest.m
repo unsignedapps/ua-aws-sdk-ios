@@ -24,7 +24,7 @@
 
 @implementation UADDBUpdateItemRequest
 
-@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, key=_key, attributeUpdates=_attributeUpdates, expected=_expected, returnValues=_returnValues, returnConsumedCapacity=_returnConsumedCapacity, returnItemCollectionMetrics=_returnItemCollectionMetrics;
+@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, key=_key, attributeUpdates=_attributeUpdates, expected=_expected, conditionalOperator=_conditionalOperator, returnValues=_returnValues, returnConsumedCapacity=_returnConsumedCapacity, returnItemCollectionMetrics=_returnItemCollectionMetrics;
 
 - (id)init
 {
@@ -59,6 +59,7 @@
         @"key": @"Key",
         @"attributeUpdates": @"AttributeUpdates/AttributeUpdates",
         @"expected": @"Expected",
+        @"conditionalOperator": @"ConditionalOperator",
         @"returnValues": @"ReturnValues",
         @"returnConsumedCapacity": @"ReturnConsumedCapacity",
         @"returnItemCollectionMetrics": @"ReturnItemCollectionMetrics"

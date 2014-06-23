@@ -18,6 +18,7 @@ typedef BOOL(^UADDBDeleteItemRequestShouldContinueWaitingBlock)(UADDBDeleteItemR
 @property (nonatomic, copy) NSString *tableName;
 @property (nonatomic, strong) NSMutableDictionary *key;
 @property (nonatomic, strong) NSMutableDictionary *expected;
+@property (nonatomic, copy) NSString *conditionalOperator;
 @property (nonatomic) UADDBReturnValueType returnValues;
 @property (nonatomic) UADDBReturnConsumedCapacityType returnConsumedCapacity;
 @property (nonatomic) UADDBReturnItemCollectionMetricsType returnItemCollectionMetrics;

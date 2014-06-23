@@ -23,7 +23,7 @@
 
 @implementation UADDBDeleteItemRequest
 
-@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, key=_key, expected=_expected, returnValues=_returnValues, returnConsumedCapacity=_returnConsumedCapacity, returnItemCollectionMetrics=_returnItemCollectionMetrics;
+@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, key=_key, expected=_expected, conditionalOperator=_conditionalOperator, returnValues=_returnValues, returnConsumedCapacity=_returnConsumedCapacity, returnItemCollectionMetrics=_returnItemCollectionMetrics;
 
 - (id)init
 {
@@ -55,6 +55,7 @@
         @"tableName": @"TableName",
         @"key": @"Key",
         @"expected": @"Expected",
+        @"conditionalOperator": @"ConditionalOperator",
         @"returnValues": @"ReturnValues",
         @"returnConsumedCapacity": @"ReturnConsumedCapacity",
         @"returnItemCollectionMetrics": @"ReturnItemCollectionMetrics"

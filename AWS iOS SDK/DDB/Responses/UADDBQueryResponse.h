@@ -15,6 +15,7 @@
 
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, strong) NSNumber *count;
+@property (nonatomic, strong) NSNumber *scannedCount;
 @property (nonatomic, copy) NSDictionary *lastEvaluatedKey;
 @property (nonatomic, copy) UADDBConsumedCapacity *consumedCapacity;
 

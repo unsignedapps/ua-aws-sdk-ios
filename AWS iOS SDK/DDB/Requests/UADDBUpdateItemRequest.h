@@ -19,6 +19,7 @@ typedef BOOL(^UADDBUpdateItemRequestShouldContinueWaitingBlock)(UADDBUpdateItemR
 @property (nonatomic, strong) NSMutableDictionary *key;
 @property (nonatomic, strong) NSMutableArray *attributeUpdates;
 @property (nonatomic, strong) NSMutableDictionary *expected;
+@property (nonatomic, copy) NSString *conditionalOperator;
 @property (nonatomic) UADDBReturnValueType returnValues;
 @property (nonatomic) UADDBReturnConsumedCapacityType returnConsumedCapacity;
 @property (nonatomic) UADDBReturnItemCollectionMetricsType returnItemCollectionMetrics;

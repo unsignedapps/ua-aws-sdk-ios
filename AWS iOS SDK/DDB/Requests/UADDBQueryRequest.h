@@ -8,7 +8,7 @@
 
 #import "UADDBRequest.h"
 
-@class UADDBKeyCondition, UADDBQueryResponse;
+@class UADDBKeyCondition, UADDBQueryFilter, UADDBQueryResponse;
 
 typedef void(^UADDBQueryRequestCompletionBlock)(UADDBQueryResponse *response, NSError *error);
 typedef BOOL(^UADDBQueryRequestShouldContinueWaitingBlock)(UADDBQueryResponse *response, NSError *error);
@@ -22,6 +22,8 @@ typedef BOOL(^UADDBQueryRequestShouldContinueWaitingBlock)(UADDBQueryResponse *r
 @property (nonatomic, strong) NSNumber *limit;
 @property (nonatomic) BOOL consistentRead;
 @property (nonatomic, strong) NSMutableDictionary *keyConditions;
+@property (nonatomic, copy) UADDBQueryFilter *queryFilter;
+@property (nonatomic, copy) NSString *conditionalOperator;
 @property (nonatomic) BOOL scanIndexForward;
 @property (nonatomic, strong) NSMutableDictionary *exclusiveStartKey;
 @property (nonatomic) UADDBReturnConsumedCapacityType returnConsumedCapacity;

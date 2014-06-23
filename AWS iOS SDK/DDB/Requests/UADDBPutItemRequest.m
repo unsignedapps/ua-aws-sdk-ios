@@ -23,7 +23,7 @@
 
 @implementation UADDBPutItemRequest
 
-@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, item=_item, expected=_expected, returnValues=_returnValues, returnConsumedCapacity=_returnConsumedCapacity, returnItemCollectionMetrics=_returnItemCollectionMetrics;
+@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, item=_item, expected=_expected, returnValues=_returnValues, returnConsumedCapacity=_returnConsumedCapacity, returnItemCollectionMetrics=_returnItemCollectionMetrics, conditionalOperator=_conditionalOperator;
 
 - (id)init
 {
@@ -57,7 +57,8 @@
         @"expected": @"Expected",
         @"returnValues": @"ReturnValues",
         @"returnConsumedCapacity": @"ReturnConsumedCapacity",
-        @"returnItemCollectionMetrics": @"ReturnItemCollectionMetrics"
+        @"returnItemCollectionMetrics": @"ReturnItemCollectionMetrics",
+        @"conditionalOperator": @"ConditionalOperator"
     }];
     return [keyPaths copy];
 }

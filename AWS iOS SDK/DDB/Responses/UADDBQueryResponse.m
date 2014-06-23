@@ -16,7 +16,7 @@
 
 @implementation UADDBQueryResponse
 
-@synthesize items=_items, count=_count, lastEvaluatedKey=_lastEvaluatedKey, consumedCapacity=_consumedCapacity;
+@synthesize items=_items, count=_count, scannedCount=_scannedCount, lastEvaluatedKey=_lastEvaluatedKey, consumedCapacity=_consumedCapacity;
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
@@ -27,6 +27,7 @@
     @{
         @"items": @"Items/Items",
         @"count": @"Count",
+        @"scannedCount": @"ScannedCount",
         @"lastEvaluatedKey": @"LastEvaluatedKey",
         @"consumedCapacity": @"ConsumedCapacity"
     }];

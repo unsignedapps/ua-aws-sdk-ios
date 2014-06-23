@@ -23,7 +23,7 @@
 
 @implementation UADDBScanRequest
 
-@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, attributesToGet=_attributesToGet, limit=_limit, select=_select, scanFilter=_scanFilter, exclusiveStartKey=_exclusiveStartKey, returnConsumedCapacity=_returnConsumedCapacity, totalSegments=_totalSegments, segment=_segment;
+@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, attributesToGet=_attributesToGet, limit=_limit, select=_select, scanFilter=_scanFilter, conditionalOperator=_conditionalOperator, exclusiveStartKey=_exclusiveStartKey, returnConsumedCapacity=_returnConsumedCapacity, totalSegments=_totalSegments, segment=_segment;
 
 - (id)init
 {
@@ -59,6 +59,7 @@
         @"limit": @"Limit",
         @"select": @"Select",
         @"scanFilter": @"ScanFilter",
+        @"conditionalOperator": @"ConditionalOperator",
         @"exclusiveStartKey": @"ExclusiveStartKey",
         @"returnConsumedCapacity": @"ReturnConsumedCapacity",
         @"totalSegments": @"TotalSegments",

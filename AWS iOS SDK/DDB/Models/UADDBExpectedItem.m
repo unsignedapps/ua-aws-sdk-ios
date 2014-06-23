@@ -15,7 +15,7 @@
 
 @implementation UADDBExpectedItem
 
-@synthesize value=_value, exists=_exists;
+@synthesize value=_value, exists=_exists, comparisonOperator=_comparisonOperator, attributeValueList=_attributeValueList;
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
@@ -25,7 +25,9 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"value": @"Value",
-        @"exists": @"Exists"
+        @"exists": @"Exists",
+        @"comparisonOperator": @"ComparisonOperator",
+        @"attributeValueList": @"AttributeValueList/AttributeValue"
     }];
     return [keyPaths copy];
 }

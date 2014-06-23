@@ -16,5 +16,12 @@
 **/
 @property (nonatomic, strong) id value;
 @property (nonatomic) BOOL exists;
+@property (nonatomic, copy) NSString *comparisonOperator;
+@property (nonatomic, strong) NSMutableArray *attributeValueList;
+
+/**
+ * Retrieves the NSMutableDictionary at the specified index.
+**/
+- (NSMutableDictionary *)attributeValueListAtIndex:(NSUInteger)index;
 
 @end

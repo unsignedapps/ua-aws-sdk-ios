@@ -11,6 +11,7 @@
 #import "UAAWSAdditionalAccessors.h"
 #import "UADDBQueryResponse.h"
 #import "UADDBKeyCondition.h"
+#import "UADDBQueryFilter.h"
 
 @interface UADDBQueryRequest ()
 
@@ -23,7 +24,7 @@
 
 @implementation UADDBQueryRequest
 
-@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, indexName=_indexName, select=_select, attributesToGet=_attributesToGet, limit=_limit, consistentRead=_consistentRead, keyConditions=_keyConditions, scanIndexForward=_scanIndexForward, exclusiveStartKey=_exclusiveStartKey, returnConsumedCapacity=_returnConsumedCapacity;
+@synthesize xAmzTarget=_xAmzTarget, tableName=_tableName, indexName=_indexName, select=_select, attributesToGet=_attributesToGet, limit=_limit, consistentRead=_consistentRead, keyConditions=_keyConditions, queryFilter=_queryFilter, conditionalOperator=_conditionalOperator, scanIndexForward=_scanIndexForward, exclusiveStartKey=_exclusiveStartKey, returnConsumedCapacity=_returnConsumedCapacity;
 
 - (id)init
 {
@@ -61,6 +62,8 @@
         @"limit": @"Limit",
         @"consistentRead": @"ConsistentRead",
         @"keyConditions": @"KeyConditions",
+        @"queryFilter": @"QueryFilter",
+        @"conditionalOperator": @"ConditionalOperator",
         @"scanIndexForward": @"ScanIndexForward",
         @"exclusiveStartKey": @"ExclusiveStartKey",
         @"returnConsumedCapacity": @"ReturnConsumedCapacity"
@@ -78,6 +81,11 @@
 + (NSValueTransformer *)keyConditionsJSONTransformer
 {
     return [UAMTLValueTransformer UA_JSONDictionaryTransformerWithItemTransformer:nil];
+}
+
++ (NSValueTransformer *)queryFilterJSONTransformer
+{
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UADDBQueryFilter class]];
 }
 
 + (NSValueTransformer *)exclusiveStartKeyJSONTransformer

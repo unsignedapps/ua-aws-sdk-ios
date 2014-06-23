@@ -20,6 +20,7 @@ typedef BOOL(^UADDBScanRequestShouldContinueWaitingBlock)(UADDBScanResponse *res
 @property (nonatomic, strong) NSNumber *limit;
 @property (nonatomic) UADDBSelectType select;
 @property (nonatomic, strong) NSMutableDictionary *scanFilter;
+@property (nonatomic, copy) NSString *conditionalOperator;
 @property (nonatomic, strong) NSMutableDictionary *exclusiveStartKey;
 @property (nonatomic) UADDBReturnConsumedCapacityType returnConsumedCapacity;
 @property (nonatomic, strong) NSNumber *totalSegments;

@@ -21,6 +21,7 @@ typedef BOOL(^UADDBPutItemRequestShouldContinueWaitingBlock)(UADDBPutItemRespons
 @property (nonatomic) UADDBReturnValueType returnValues;
 @property (nonatomic) UADDBReturnConsumedCapacityType returnConsumedCapacity;
 @property (nonatomic) UADDBReturnItemCollectionMetricsType returnItemCollectionMetrics;
+@property (nonatomic, copy) NSString *conditionalOperator;
 // @property (nonatomic, copy) UADDBPutItemRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UADDBPutItemRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
