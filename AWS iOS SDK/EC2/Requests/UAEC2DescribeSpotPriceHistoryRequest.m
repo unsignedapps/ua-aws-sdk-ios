@@ -31,7 +31,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"DescribeSpotPriceHistory"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceTypeAtIndex:) propertyName:@"instanceTypes"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productionDescriptionAtIndex:) propertyName:@"productDescriptions"];

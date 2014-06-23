@@ -23,14 +23,14 @@
 
 @implementation UAEC2CopySnapshotRequest
 
-@synthesize action=_action, version=_version, dryRun=_dryRun, sourceRegion=_sourceRegion, sourceSnapshotID=_sourceSnapshotID, descriptionValue=_descriptionValue;
+@synthesize action=_action, version=_version, dryRun=_dryRun, sourceRegion=_sourceRegion, sourceSnapshotID=_sourceSnapshotID, descriptionValue=_descriptionValue, destinationRegion=_destinationRegion, presignedUrl=_presignedUrl;
 
 - (id)init
 {
 	if (self = [super init])
 	{
 		[self setAction:@"CopySnapshot"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		
 	}
@@ -54,7 +54,9 @@
         @"dryRun": @"DryRun",
         @"sourceRegion": @"SourceRegion",
         @"sourceSnapshotID": @"SourceSnapshotId",
-        @"descriptionValue": @"Description"
+        @"descriptionValue": @"Description",
+        @"destinationRegion": @"DestinationRegion",
+        @"presignedUrl": @"PresignedUrl"
     }];
     return [keyPaths copy];
 }

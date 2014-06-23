@@ -36,7 +36,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"RunInstances"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
 		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];

@@ -32,7 +32,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"ModifyVpcAttribute"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		
 	}

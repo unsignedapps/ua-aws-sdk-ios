@@ -30,7 +30,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"CancelSpotInstanceRequests"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(spotInstanceRequestIDAtIndex:) propertyName:@"spotInstanceRequestIDs"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSpotInstanceRequestID:) propertyName:@"spotInstanceRequestIDs"];

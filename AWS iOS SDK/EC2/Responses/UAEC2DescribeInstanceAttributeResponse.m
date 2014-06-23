@@ -17,7 +17,7 @@
 
 @implementation UAEC2DescribeInstanceAttributeResponse
 
-@synthesize instanceID=_instanceID, instanceType=_instanceType, kernelID=_kernelID, ramdiskID=_ramdiskID, userData=_userData, disableApiTermination=_disableApiTermination, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, rootDeviceName=_rootDeviceName, blockDeviceMappings=_blockDeviceMappings, productCodes=_productCodes, ebsOptimized=_ebsOptimized, sriovNetSupport=_sriovNetSupport;
+@synthesize instanceID=_instanceID, instanceType=_instanceType, kernelID=_kernelID, ramdiskID=_ramdiskID, userData=_userData, disableApiTermination=_disableApiTermination, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, rootDeviceName=_rootDeviceName, blockDeviceMappings=_blockDeviceMappings, productCodes=_productCodes, ebsOptimized=_ebsOptimized, sriovNetSupport=_sriovNetSupport, sourceDestCheck=_sourceDestCheck;
 
 + (NSString *)XPathPrefix
 {
@@ -43,7 +43,8 @@
         @"blockDeviceMappings": @"ec2:blockDeviceMapping/ec2:item",
         @"productCodes": @"ec2:productCodes/ec2:item",
         @"ebsOptimized": @"ec2:ebsOptimized/ec2:value",
-        @"sriovNetSupport": @"ec2:sriovNetSupport/ec2:value"
+        @"sriovNetSupport": @"ec2:sriovNetSupport/ec2:value",
+        @"sourceDestCheck": @"ec2:sourceDestCheck.value"
     }];
     return [keyPaths copy];
 }
@@ -71,6 +72,11 @@
 }
 
 + (NSValueTransformer *)ebsOptimizedXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
+}
+
++ (NSValueTransformer *)sourceDestCheckXMLTransformer
 {
     return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }

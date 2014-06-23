@@ -17,7 +17,7 @@
 
 @implementation UAEC2Volume
 
-@synthesize volumeID=_volumeID, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, state=_state, createTime=_createTime, attachments=_attachments, tags=_tags, volumeType=_volumeType, iops=_iops;
+@synthesize volumeID=_volumeID, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, state=_state, createTime=_createTime, attachments=_attachments, tags=_tags, volumeType=_volumeType, iops=_iops, encrypted=_encrypted;
 
 + (NSString *)XPathPrefix
 {
@@ -40,7 +40,8 @@
         @"attachments": @"ec2:attachmentSet/ec2:item",
         @"tags": @"ec2:tagSet/ec2:item",
         @"volumeType": @"ec2:volumeType",
-        @"iops": @"ec2:iops"
+        @"iops": @"ec2:iops",
+        @"encrypted": @"ec2:encrypted"
     }];
     return [keyPaths copy];
 }
@@ -69,8 +70,8 @@
 
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
-                                               stringValues:@[ @"standard", @"io1" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeGP2), @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIO1) ]
+                                               stringValues:@[ @"gp2", @"standard", @"io1" ]
                                                unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
@@ -103,14 +104,19 @@
 
 + (NSValueTransformer *)volumeTypeXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
-                                               stringValues:@[ @"standard", @"io1" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeGP2), @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIO1) ]
+                                               stringValues:@[ @"gp2", @"standard", @"io1" ]
                                                unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
 + (NSValueTransformer *)iopsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];
+}
+
++ (NSValueTransformer *)encryptedXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

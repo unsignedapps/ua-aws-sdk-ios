@@ -31,7 +31,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"DescribeImages"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(imageIDAtIndex:) propertyName:@"imageIDs"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ownerAtIndex:) propertyName:@"owners"];

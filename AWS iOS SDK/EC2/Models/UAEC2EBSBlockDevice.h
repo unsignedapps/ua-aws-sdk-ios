@@ -16,5 +16,6 @@
 @property (nonatomic) BOOL deleteOnTermination;
 @property (nonatomic) UAEC2VolumeType volumeType;
 @property (nonatomic, strong) NSNumber *iops;
+@property (nonatomic) BOOL encrypted;
 
 @end

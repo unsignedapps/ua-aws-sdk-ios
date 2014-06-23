@@ -31,7 +31,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"CreateTags"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(resourceAtIndex:) propertyName:@"resources"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];

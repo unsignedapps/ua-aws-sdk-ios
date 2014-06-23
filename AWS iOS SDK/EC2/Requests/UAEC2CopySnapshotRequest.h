@@ -19,6 +19,8 @@ typedef BOOL(^UAEC2CopySnapshotRequestShouldContinueWaitingBlock)(UAEC2CopySnaps
 @property (nonatomic, copy) NSString *sourceRegion;
 @property (nonatomic, copy) NSString *sourceSnapshotID;
 @property (nonatomic, copy) NSString *descriptionValue;
+@property (nonatomic, copy) NSString *destinationRegion;
+@property (nonatomic, copy) NSString *presignedUrl;
 // @property (nonatomic, copy) UAEC2CopySnapshotRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2CopySnapshotRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

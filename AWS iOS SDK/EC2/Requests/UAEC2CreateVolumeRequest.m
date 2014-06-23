@@ -23,14 +23,14 @@
 
 @implementation UAEC2CreateVolumeRequest
 
-@synthesize action=_action, version=_version, dryRun=_dryRun, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, volumeType=_volumeType, iops=_iops;
+@synthesize action=_action, version=_version, dryRun=_dryRun, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, volumeType=_volumeType, iops=_iops, encrypted=_encrypted;
 
 - (id)init
 {
 	if (self = [super init])
 	{
 		[self setAction:@"CreateVolume"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		
 	}
@@ -56,15 +56,16 @@
         @"snapshotID": @"SnapshotId",
         @"availabilityZone": @"AvailabilityZone",
         @"volumeType": @"VolumeType",
-        @"iops": @"Iops"
+        @"iops": @"Iops",
+        @"encrypted": @"Encrypted"
     }];
     return [keyPaths copy];
 }
 
 + (NSValueTransformer *)volumeTypeJSONTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
-                                               stringValues:@[ @"standard", @"io1" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeGP2), @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIO1) ]
+                                               stringValues:@[ @"gp2", @"standard", @"io1" ]
                                                unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
@@ -75,8 +76,8 @@
 
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
-                                               stringValues:@[ @"standard", @"io1" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeGP2), @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIO1) ]
+                                               stringValues:@[ @"gp2", @"standard", @"io1" ]
                                                unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 

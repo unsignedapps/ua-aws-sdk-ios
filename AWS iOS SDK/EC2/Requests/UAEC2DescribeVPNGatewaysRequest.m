@@ -31,7 +31,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"DescribeVpnGateways"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpnGatewayIDAtIndex:) propertyName:@"vpnGatewayIDs"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];

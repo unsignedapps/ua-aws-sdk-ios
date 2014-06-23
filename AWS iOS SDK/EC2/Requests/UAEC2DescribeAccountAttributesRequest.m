@@ -30,7 +30,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"DescribeAccountAttributes"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeNameAtIndex:) propertyName:@"attributeNames"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeName:) propertyName:@"attributeNames"];

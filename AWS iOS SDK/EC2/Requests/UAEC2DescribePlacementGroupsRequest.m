@@ -31,7 +31,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"DescribePlacementGroups"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupNameAtIndex:) propertyName:@"groupNames"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(filterAtIndex:) propertyName:@"filters"];

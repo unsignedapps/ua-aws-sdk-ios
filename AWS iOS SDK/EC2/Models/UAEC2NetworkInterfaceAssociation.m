@@ -15,7 +15,7 @@
 
 @implementation UAEC2NetworkInterfaceAssociation
 
-@synthesize publicIP=_publicIP, ipOwnerID=_ipOwnerID, allocationID=_allocationID, associationID=_associationID;
+@synthesize publicIP=_publicIP, publicDNSName=_publicDNSName, ipOwnerID=_ipOwnerID, allocationID=_allocationID, associationID=_associationID;
 
 + (NSString *)XPathPrefix
 {
@@ -30,6 +30,7 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"publicIP": @"ec2:publicIp",
+        @"publicDNSName": @"ec2:publicDnsName",
         @"ipOwnerID": @"ec2:ipOwnerId",
         @"allocationID": @"ec2:allocationId",
         @"associationID": @"ec2:associationId"

@@ -12,6 +12,7 @@
 @interface UAEC2NetworkInterfaceAssociation : UAEC2Model
 
 @property (nonatomic, copy) NSString *publicIP;
+@property (nonatomic, copy) NSString *publicDNSName;
 @property (nonatomic, copy) NSString *ipOwnerID;
 @property (nonatomic, copy) NSString *allocationID;
 @property (nonatomic, copy) NSString *associationID;

@@ -19,5 +19,6 @@
 @property (nonatomic, copy) NSDate *createTime;
 @property (nonatomic, copy) NSString *volumeType;
 @property (nonatomic, strong) NSNumber *iops;
+@property (nonatomic) BOOL encrypted;
 
 @end

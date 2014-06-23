@@ -31,7 +31,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"DescribeSnapshots"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(snapshotIDAtIndex:) propertyName:@"snapshotIDs"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ownerIDAtIndex:) propertyName:@"ownerIDs"];

@@ -15,7 +15,7 @@
 
 @implementation UAEC2EBSBlockDevice
 
-@synthesize snapshotID=_snapshotID, volumeSize=_volumeSize, deleteOnTermination=_deleteOnTermination, volumeType=_volumeType, iops=_iops;
+@synthesize snapshotID=_snapshotID, volumeSize=_volumeSize, deleteOnTermination=_deleteOnTermination, volumeType=_volumeType, iops=_iops, encrypted=_encrypted;
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {
@@ -28,7 +28,8 @@
         @"volumeSize": @"VolumeSize",
         @"deleteOnTermination": @"DeleteOnTermination",
         @"volumeType": @"VolumeType",
-        @"iops": @"Iops"
+        @"iops": @"Iops",
+        @"encrypted": @"Encrypted"
     }];
     return [keyPaths copy];
 }
@@ -49,15 +50,16 @@
         @"volumeSize": @"ec2:volumeSize",
         @"deleteOnTermination": @"ec2:deleteOnTermination",
         @"volumeType": @"ec2:volumeType",
-        @"iops": @"ec2:iops"
+        @"iops": @"ec2:iops",
+        @"encrypted": @"ec2:encrypted"
     }];
     return [keyPaths copy];
 }
 
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
-                                               stringValues:@[ @"standard", @"io1" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeGP2), @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIO1) ]
+                                               stringValues:@[ @"gp2", @"standard", @"io1" ]
                                                unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
@@ -73,14 +75,19 @@
 
 + (NSValueTransformer *)volumeTypeXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIo1) ]
-                                               stringValues:@[ @"standard", @"io1" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VolumeTypeGP2), @(UAEC2VolumeTypeStandard), @(UAEC2VolumeTypeIO1) ]
+                                               stringValues:@[ @"gp2", @"standard", @"io1" ]
                                                unknownValue:@(UAEC2VolumeTypeUnknown)];
 }
 
 + (NSValueTransformer *)iopsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];
+}
+
++ (NSValueTransformer *)encryptedXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

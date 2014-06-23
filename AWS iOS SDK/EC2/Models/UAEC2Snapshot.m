@@ -16,7 +16,7 @@
 
 @implementation UAEC2Snapshot
 
-@synthesize snapshotID=_snapshotID, volumeID=_volumeID, state=_state, startTime=_startTime, progress=_progress, ownerID=_ownerID, descriptionValue=_descriptionValue, volumeSize=_volumeSize, ownerAlias=_ownerAlias, tags=_tags;
+@synthesize snapshotID=_snapshotID, volumeID=_volumeID, state=_state, startTime=_startTime, progress=_progress, ownerID=_ownerID, descriptionValue=_descriptionValue, volumeSize=_volumeSize, ownerAlias=_ownerAlias, tags=_tags, encrypted=_encrypted;
 
 + (NSString *)XPathPrefix
 {
@@ -39,7 +39,8 @@
         @"descriptionValue": @"ec2:description",
         @"volumeSize": @"ec2:volumeSize",
         @"ownerAlias": @"ec2:ownerAlias",
-        @"tags": @"ec2:tagSet/ec2:item"
+        @"tags": @"ec2:tagSet/ec2:item",
+        @"encrypted": @"ec2:encrypted"
     }];
     return [keyPaths copy];
 }
@@ -81,6 +82,11 @@
 + (NSValueTransformer *)tagsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
+}
+
++ (NSValueTransformer *)encryptedXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

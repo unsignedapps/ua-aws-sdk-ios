@@ -30,7 +30,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"ConfirmProductInstance"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		
 	}

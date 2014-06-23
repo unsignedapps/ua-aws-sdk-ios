@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSNumber *volumeSize;
 @property (nonatomic, copy) NSString *ownerAlias;
 @property (nonatomic, copy) NSArray *tags;
+@property (nonatomic) BOOL encrypted;
 
 /**
  * Retrieves the UAEC2Tag at the specified index.

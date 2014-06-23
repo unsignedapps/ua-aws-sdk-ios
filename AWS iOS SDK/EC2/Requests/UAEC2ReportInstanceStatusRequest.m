@@ -30,7 +30,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"ReportInstanceStatus"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceAtIndex:) propertyName:@"instances"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reasonCodeAtIndex:) propertyName:@"reasonCodes"];

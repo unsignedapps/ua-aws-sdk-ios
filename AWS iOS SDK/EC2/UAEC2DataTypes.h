@@ -128,8 +128,9 @@ typedef NS_ENUM(NSUInteger, UAEC2AvailabilityZoneState) {
 // UAEC2VolumeType
 typedef NS_ENUM(NSUInteger, UAEC2VolumeType) {
 	UAEC2VolumeTypeUnknown = 0,
-	UAEC2VolumeTypeStandard = 1,
-	UAEC2VolumeTypeIo1 = 2
+	UAEC2VolumeTypeGP2 = 1,
+	UAEC2VolumeTypeStandard = 2,
+	UAEC2VolumeTypeIO1 = 3
 };
 
 // UAEC2ImageState

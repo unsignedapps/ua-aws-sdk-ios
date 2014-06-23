@@ -9,14 +9,13 @@
 
 #import "UAEC2CreateSnapshotResponse.h"
 #import "UAAWSAdditionalAccessors.h"
-#import "UAEC2Tag.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAEC2CreateSnapshotResponse
 
-@synthesize snapshotID=_snapshotID, volumeID=_volumeID, state=_state, startTime=_startTime, progress=_progress, ownerID=_ownerID, descriptionValue=_descriptionValue, volumeSize=_volumeSize, ownerAlias=_ownerAlias, tags=_tags;
+@synthesize snapshotID=_snapshotID, volumeID=_volumeID, state=_state, startTime=_startTime, progress=_progress, ownerID=_ownerID, descriptionValue=_descriptionValue, volumeSize=_volumeSize, ownerAlias=_ownerAlias, encrypted=_encrypted;
 
 + (NSString *)XPathPrefix
 {
@@ -39,7 +38,7 @@
         @"descriptionValue": @"ec2:description",
         @"volumeSize": @"ec2:volumeSize",
         @"ownerAlias": @"ec2:ownerAlias",
-        @"tags": @"ec2:tagSet/ec2:item"
+        @"encrypted": @"ec2:encrypted"
     }];
     return [keyPaths copy];
 }
@@ -54,9 +53,9 @@
   return [NSValueTransformer UA_XMLTransformerForDouble];
 }
 
-+ (NSValueTransformer *)tagsXMLTransformer
++ (NSValueTransformer *)encryptedXMLTransformer
 {
-  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

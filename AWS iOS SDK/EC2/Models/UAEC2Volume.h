@@ -23,6 +23,7 @@
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic) UAEC2VolumeType volumeType;
 @property (nonatomic, strong) NSNumber *iops;
+@property (nonatomic) BOOL encrypted;
 
 /**
  * Retrieves the UAEC2VolumeAttachment at the specified index.

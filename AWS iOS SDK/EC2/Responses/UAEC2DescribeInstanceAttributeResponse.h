@@ -26,6 +26,7 @@
 @property (nonatomic, copy) NSArray *productCodes;
 @property (nonatomic) BOOL ebsOptimized;
 @property (nonatomic, copy) NSString *sriovNetSupport;
+@property (nonatomic) BOOL sourceDestCheck;
 
 /**
  * Retrieves the UAEC2InstanceBlockDeviceMapping at the specified index.

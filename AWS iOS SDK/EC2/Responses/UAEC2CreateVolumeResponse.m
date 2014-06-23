@@ -15,7 +15,7 @@
 
 @implementation UAEC2CreateVolumeResponse
 
-@synthesize volumeID=_volumeID, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, state=_state, createTime=_createTime, volumeType=_volumeType, iops=_iops;
+@synthesize volumeID=_volumeID, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, state=_state, createTime=_createTime, volumeType=_volumeType, iops=_iops, encrypted=_encrypted;
 
 + (NSString *)XPathPrefix
 {
@@ -36,7 +36,8 @@
         @"state": @"ec2:status",
         @"createTime": @"ec2:createTime",
         @"volumeType": @"ec2:volumeType",
-        @"iops": @"ec2:iops"
+        @"iops": @"ec2:iops",
+        @"encrypted": @"ec2:encrypted"
     }];
     return [keyPaths copy];
 }
@@ -61,6 +62,11 @@
 + (NSValueTransformer *)iopsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];
+}
+
++ (NSValueTransformer *)encryptedXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

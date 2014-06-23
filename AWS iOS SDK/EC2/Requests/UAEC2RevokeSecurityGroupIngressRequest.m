@@ -31,7 +31,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"RevokeSecurityGroupIngress"];
-		[self setVersion:@"2014-02-01"];
+		[self setVersion:@"2014-05-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ipPermissionAtIndex:) propertyName:@"ipPermissions"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addIPPermission:) propertyName:@"ipPermissions"];

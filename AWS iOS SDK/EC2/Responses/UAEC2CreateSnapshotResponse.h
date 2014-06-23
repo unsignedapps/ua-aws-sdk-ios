@@ -9,8 +9,6 @@
 
 #import "UAEC2Response.h"
 
-@class UAEC2Tag;
-
 @interface UAEC2CreateSnapshotResponse : UAEC2Response
 
 @property (nonatomic, copy) NSString *snapshotID;
@@ -22,11 +20,6 @@
 @property (nonatomic, copy) NSString *descriptionValue;
 @property (nonatomic, strong) NSNumber *volumeSize;
 @property (nonatomic, copy) NSString *ownerAlias;
-@property (nonatomic, copy) NSArray *tags;
-
-/**
- * Retrieves the UAEC2Tag at the specified index.
-**/
-- (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+@property (nonatomic) BOOL encrypted;
 
 @end
