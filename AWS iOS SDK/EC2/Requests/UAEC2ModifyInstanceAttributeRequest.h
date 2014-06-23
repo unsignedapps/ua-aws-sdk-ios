@@ -8,7 +8,7 @@
 
 #import "UAEC2Request.h"
 
-@class UAEC2InstanceBlockDeviceMappingSpecification, UAEC2SourceDestCheck, UAEC2Kernel, UAEC2Ramdisk, UAEC2EBSOptimized, UAEC2SriovNetSupport, UAEC2ModifyInstanceAttributeResponse;
+@class UAEC2InstanceBlockDeviceMappingSpecification, UAEC2Kernel, UAEC2Ramdisk, UAEC2EBSOptimized, UAEC2SriovNetSupport, UAEC2ModifyInstanceAttributeResponse;
 
 typedef void(^UAEC2ModifyInstanceAttributeRequestCompletionBlock)(UAEC2ModifyInstanceAttributeResponse *response, NSError *error);
 typedef BOOL(^UAEC2ModifyInstanceAttributeRequestShouldContinueWaitingBlock)(UAEC2ModifyInstanceAttributeResponse *response, NSError *error);
@@ -20,7 +20,7 @@ typedef BOOL(^UAEC2ModifyInstanceAttributeRequestShouldContinueWaitingBlock)(UAE
 @property (nonatomic, copy) NSString *attribute;
 @property (nonatomic, copy) NSString *value;
 @property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
-@property (nonatomic, copy) UAEC2SourceDestCheck *sourceDestCheck;
+@property (nonatomic) BOOL sourceDestCheck;
 @property (nonatomic) BOOL disableApiTermination;
 @property (nonatomic, copy) NSString *instanceType;
 @property (nonatomic, copy) UAEC2Kernel *kernel;
