@@ -1067,6 +1067,7 @@
 		E898A5E718B2162E004DC298 /* NSURL+UAAWSServiceName.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E618B2162E004DC298 /* NSURL+UAAWSServiceName.m */; };
 		E898A5E918B219FC004DC298 /* UAAWSRequestSigningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E818B219FC004DC298 /* UAAWSRequestSigningTests.m */; };
 		E8BFBEC9194866CA004D00BE /* UAAWSAdditionalAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = E894BDA4193C837F0068ED17 /* UAAWSAdditionalAccessors.m */; };
+		E8CDC2641958571800421E72 /* UADDBQueryFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CDC2631958571800421E72 /* UADDBQueryFilter.m */; };
 		E8FAEC1118CC2DAD0018BB0E /* UAAWSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */; };
 /* End PBXBuildFile section */
 
@@ -3208,6 +3209,8 @@
 		E898A5E618B2162E004DC298 /* NSURL+UAAWSServiceName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UAAWSServiceName.m"; sourceTree = "<group>"; };
 		E898A5E818B219FC004DC298 /* UAAWSRequestSigningTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAAWSRequestSigningTests.m; sourceTree = "<group>"; };
 		E8BADE3E194F04AC008893D7 /* UAAWSAdditionalAccessors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAAWSAdditionalAccessors.h; sourceTree = "<group>"; };
+		E8CDC2621958571800421E72 /* UADDBQueryFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBQueryFilter.h; sourceTree = "<group>"; };
+		E8CDC2631958571800421E72 /* UADDBQueryFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBQueryFilter.m; sourceTree = "<group>"; };
 		E8EE539919485E6C00D73D9C /* UAAWSAdditionalAccessorsProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAAWSAdditionalAccessorsProtocol.h; sourceTree = "<group>"; };
 		E8FAEC0F18CC2DAD0018BB0E /* UAAWSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAAWSModel.h; sourceTree = "<group>"; };
 		E8FAEC1018CC2DAD0018BB0E /* UAAWSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAAWSModel.m; sourceTree = "<group>"; };
@@ -5500,8 +5503,6 @@
 		A3623C5C18EA67DA00989324 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A3623CFE18EB99A300989324 /* UADDBRequestItem.h */,
-				A3623CFF18EB99A300989324 /* UADDBRequestItem.m */,
 				A3623C7118EB909300989324 /* UADDBAttributeDefinition.h */,
 				A3623C7218EB909300989324 /* UADDBAttributeDefinition.m */,
 				A3623C7318EB909300989324 /* UADDBAttributeUpdate.h */,
@@ -5530,12 +5531,18 @@
 				A3623C8A18EB909300989324 /* UADDBLocalSecondaryIndex.m */,
 				A3623C8B18EB909300989324 /* UADDBLocalSecondaryIndexDescription.h */,
 				A3623C8C18EB909300989324 /* UADDBLocalSecondaryIndexDescription.m */,
+				A3623C5D18EA67DA00989324 /* UADDBModel.h */,
+				A3623C5E18EA67DA00989324 /* UADDBModel.m */,
 				A3623C8D18EB909300989324 /* UADDBProjection.h */,
 				A3623C8E18EB909300989324 /* UADDBProjection.m */,
 				A3623C8F18EB909300989324 /* UADDBProvisionedThroughput.h */,
 				A3623C9018EB909300989324 /* UADDBProvisionedThroughput.m */,
 				A3623C9118EB909300989324 /* UADDBProvisionedThroughputDescription.h */,
 				A3623C9218EB909300989324 /* UADDBProvisionedThroughputDescription.m */,
+				E8CDC2621958571800421E72 /* UADDBQueryFilter.h */,
+				E8CDC2631958571800421E72 /* UADDBQueryFilter.m */,
+				A3623CFE18EB99A300989324 /* UADDBRequestItem.h */,
+				A3623CFF18EB99A300989324 /* UADDBRequestItem.m */,
 				A3623C9318EB909300989324 /* UADDBScanFilter.h */,
 				A3623C9418EB909300989324 /* UADDBScanFilter.m */,
 				A3623C9518EB909300989324 /* UADDBTableDescription.h */,
@@ -5544,8 +5551,6 @@
 				A3623C9818EB909300989324 /* UADDBUnprocessedKey.m */,
 				A3623C9918EB909300989324 /* UADDBUpdate.h */,
 				A3623C9A18EB909300989324 /* UADDBUpdate.m */,
-				A3623C5D18EA67DA00989324 /* UADDBModel.h */,
-				A3623C5E18EA67DA00989324 /* UADDBModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -6946,6 +6951,7 @@
 				A33775B118ADA30100FECC45 /* UAEC2RecurringCharge.m in Sources */,
 				A30FD22E18AD96D000CA52F7 /* UASNSRequest.m in Sources */,
 				A3623CF618EB968B00989324 /* UADDBDescribeTableResponse.m in Sources */,
+				E8CDC2641958571800421E72 /* UADDBQueryFilter.m in Sources */,
 				A337815A18B1912800FECC45 /* UAIAMDeleteSigningCertificateRequest.m in Sources */,
 				A337794E18ADA31500FECC45 /* UAEC2ModifyVPCAttributeResponse.m in Sources */,
 				A337741318ADA2F700FECC45 /* UACWDeleteAlarmsResponse.m in Sources */,
