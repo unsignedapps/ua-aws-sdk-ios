@@ -12,7 +12,7 @@
 @interface UAEC2EBSInstanceBlockDevice : UAEC2Model
 
 @property (nonatomic, copy) NSString *volumeID;
-@property (nonatomic, copy) NSString *status;
+@property (nonatomic) UAEC2AttachmentState status;
 @property (nonatomic, copy) NSDate *attachTime;
 @property (nonatomic) BOOL deleteOnTermination;
 

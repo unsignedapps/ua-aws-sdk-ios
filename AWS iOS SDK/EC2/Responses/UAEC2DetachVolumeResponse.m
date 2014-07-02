@@ -32,7 +32,7 @@
         @"volumeID": @"ec2:volumeId",
         @"instanceID": @"ec2:instanceId",
         @"device": @"ec2:device",
-        @"state": @"ec2:volumeId",
+        @"state": @"ec2:status",
         @"attachTime": @"ec2:atachTime"
     }];
     return [keyPaths copy];

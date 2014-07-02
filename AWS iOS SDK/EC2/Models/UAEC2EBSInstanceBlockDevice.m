@@ -37,9 +37,23 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)statusQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2AttachmentStateAttaching), @(UAEC2AttachmentStateAttached), @(UAEC2AttachmentStateDetaching), @(UAEC2AttachmentStateDetached) ]
+                                               stringValues:@[ @"attaching", @"attached", @"detaching", @"detached" ]
+                                               unknownValue:@(UAEC2AttachmentStateUnknown)];
+}
+
 + (NSValueTransformer *)attachTimeQueryStringTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
++ (NSValueTransformer *)statusXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2AttachmentStateAttaching), @(UAEC2AttachmentStateAttached), @(UAEC2AttachmentStateDetaching), @(UAEC2AttachmentStateDetached) ]
+                                               stringValues:@[ @"attaching", @"attached", @"detaching", @"detached" ]
+                                               unknownValue:@(UAEC2AttachmentStateUnknown)];
 }
 
 + (NSValueTransformer *)attachTimeXMLTransformer
