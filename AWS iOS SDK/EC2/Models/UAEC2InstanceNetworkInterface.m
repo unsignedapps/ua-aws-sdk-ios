@@ -51,6 +51,13 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)statusQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2NetworkInterfaceAttachmentStatusAttaching), @(UAEC2NetworkInterfaceAttachmentStatusAttached), @(UAEC2NetworkInterfaceAttachmentStatusDetaching), @(UAEC2NetworkInterfaceAttachmentStatusDetached) ]
+                                               stringValues:@[ @"attaching", @"attached", @"detaching", @"detached" ]
+                                               unknownValue:@(UAEC2NetworkInterfaceAttachmentStatusUnknown)];
+}
+
 + (NSValueTransformer *)groupsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2GroupIdentifier class]];
@@ -69,6 +76,13 @@
 + (NSValueTransformer *)privateIPAddressesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2InstancePrivateIPAddress class]];
+}
+
++ (NSValueTransformer *)statusXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2NetworkInterfaceAttachmentStatusAttaching), @(UAEC2NetworkInterfaceAttachmentStatusAttached), @(UAEC2NetworkInterfaceAttachmentStatusDetaching), @(UAEC2NetworkInterfaceAttachmentStatusDetached) ]
+                                               stringValues:@[ @"attaching", @"attached", @"detaching", @"detached" ]
+                                               unknownValue:@(UAEC2NetworkInterfaceAttachmentStatusUnknown)];
 }
 
 + (NSValueTransformer *)sourceDestCheckXMLTransformer

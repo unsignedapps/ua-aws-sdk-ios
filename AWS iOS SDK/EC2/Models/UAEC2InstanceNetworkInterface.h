@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString *descriptionValue;
 @property (nonatomic, copy) NSString *macAddress;
 @property (nonatomic, copy) NSString *ownerID;
-@property (nonatomic, copy) NSString *status;
+@property (nonatomic) UAEC2NetworkInterfaceAttachmentStatus status;
 @property (nonatomic, copy) NSString *privateIPAddress;
 @property (nonatomic, copy) NSString *privateDNSName;
 @property (nonatomic) BOOL sourceDestCheck;
