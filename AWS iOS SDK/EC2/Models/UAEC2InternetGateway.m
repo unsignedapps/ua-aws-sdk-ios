@@ -19,6 +19,18 @@
 
 @synthesize internetGatewayID=_internetGatewayID, attachments=_attachments, tags=_tags;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attachmentAtIndex:) propertyName:@"attachments"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

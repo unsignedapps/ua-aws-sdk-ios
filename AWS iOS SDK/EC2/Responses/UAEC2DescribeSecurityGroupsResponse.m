@@ -18,6 +18,17 @@
 
 @synthesize securityGroups=_securityGroups;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeSecurityGroupsResponse/";

@@ -18,6 +18,17 @@
 
 @synthesize subnets=_subnets;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(subnetAtIndex:) propertyName:@"subnets"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeSubnetsResponse/";

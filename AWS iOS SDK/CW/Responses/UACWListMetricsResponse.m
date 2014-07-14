@@ -18,6 +18,17 @@
 
 @synthesize metrics=_metrics, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(metricAtIndex:) propertyName:@"metrics"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./cloudwatch:ListMetricsResponse/cloudwatch:ListMetricsResult/";

@@ -18,6 +18,17 @@
 
 @synthesize subnetID=_subnetID, state=_state, vpcID=_vpcID, cidrBlock=_cidrBlock, availableIPAddressCount=_availableIPAddressCount, availabilityZone=_availabilityZone, defaultForAz=_defaultForAz, mapPublicIPOnLaunch=_mapPublicIPOnLaunch, tags=_tags;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

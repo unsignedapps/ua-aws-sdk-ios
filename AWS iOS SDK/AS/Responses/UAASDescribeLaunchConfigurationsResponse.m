@@ -18,6 +18,17 @@
 
 @synthesize launchConfigurations=_launchConfigurations, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(launchConfigurationAtIndex:) propertyName:@"launchConfigurations"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeLaunchConfigurationsResponse/AutoScaling:DescribeLaunchConfigurationsResult/";

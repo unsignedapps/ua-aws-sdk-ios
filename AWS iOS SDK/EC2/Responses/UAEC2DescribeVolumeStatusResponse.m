@@ -18,6 +18,17 @@
 
 @synthesize volumeStatuses=_volumeStatuses, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(volumeStatusAtIndex:) propertyName:@"volumeStatuses"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeVolumeStatusResponse/";

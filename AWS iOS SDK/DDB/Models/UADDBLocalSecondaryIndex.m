@@ -19,6 +19,17 @@
 
 @synthesize indexName=_indexName, keySchema=_keySchema, projection=_projection;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(keySchemaAtIndex:) propertyName:@"keySchema"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

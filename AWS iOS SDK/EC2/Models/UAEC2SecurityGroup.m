@@ -19,6 +19,19 @@
 
 @synthesize ownerID=_ownerID, groupName=_groupName, groupID=_groupID, descriptionValue=_descriptionValue, ipPermissions=_ipPermissions, ipPermissionsEgress=_ipPermissionsEgress, vpcID=_vpcID, tags=_tags;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ipPermissionAtIndex:) propertyName:@"ipPermissions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ipPermissionEgressAtIndex:) propertyName:@"ipPermissionsEgress"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

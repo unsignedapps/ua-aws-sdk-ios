@@ -146,6 +146,7 @@
 		[self.UA_dirtyProperties addObject:keyPath];
 }
 
+
 #pragma mark - NSOperation Bits and Bobs
 
 - (BOOL)isConcurrent
@@ -157,6 +158,11 @@
 {
     if ([self isFinished])
         return;
+    
+    // cancel the data task also
+    if (self.UA_DataTask != nil)
+        [self.UA_DataTask cancel];
+
     NSLog(@"[%@] Cancelling request.", NSStringFromClass([self class]));
     [super cancel];
 }
@@ -239,7 +245,7 @@
     [self setUA_DataTask:[queue.session dataTaskWithRequest:[self UA_Payload] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         // before we continue, check again for the cancellation
-        if ([blockSelf isCancelled])
+        if ([blockSelf isCancelled] || (error != nil && error.code == NSURLErrorCancelled))
         {
             NSLog(@"-[%@] Ignoring response because cancelled.", NSStringFromClass([self class]));
             [blockSelf setExecuting:NO];

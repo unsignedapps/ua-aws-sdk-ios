@@ -18,6 +18,17 @@
 
 @synthesize zoneName=_zoneName, state=_state, regionName=_regionName, messages=_messages;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(messageAtIndex:) propertyName:@"messages"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

@@ -18,6 +18,17 @@
 
 @synthesize virtualMFADevices=_virtualMFADevices, isTruncated=_isTruncated, marker=_marker;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(virtualMFADeviceAtIndex:) propertyName:@"virtualMFADevices"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./iam:ListVirtualMFADevicesResponse/iam:ListVirtualMFADevicesResult/";

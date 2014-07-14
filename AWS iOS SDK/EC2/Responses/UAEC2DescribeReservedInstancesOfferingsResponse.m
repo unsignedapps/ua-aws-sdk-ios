@@ -18,6 +18,17 @@
 
 @synthesize reservedInstancesOfferings=_reservedInstancesOfferings, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesOfferingAtIndex:) propertyName:@"reservedInstancesOfferings"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeReservedInstancesOfferingsResponse/";

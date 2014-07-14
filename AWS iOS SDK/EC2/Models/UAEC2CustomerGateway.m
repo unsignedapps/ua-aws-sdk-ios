@@ -18,6 +18,17 @@
 
 @synthesize customerGatewayID=_customerGatewayID, state=_state, type=_type, ipAddress=_ipAddress, bgpASN=_bgpASN, tags=_tags;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

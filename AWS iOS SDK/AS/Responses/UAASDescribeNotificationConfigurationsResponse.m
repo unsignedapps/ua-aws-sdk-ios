@@ -18,6 +18,17 @@
 
 @synthesize notificationConfigurations=_notificationConfigurations, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(notificationConfigurationAtIndex:) propertyName:@"notificationConfigurations"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeNotificationConfigurationsResponse/AutoScaling:DescribeNotificationConfigurationsResult/";

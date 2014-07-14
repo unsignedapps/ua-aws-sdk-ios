@@ -26,6 +26,21 @@
 
 @synthesize instanceID=_instanceID, imageID=_imageID, state=_state, privateDNSName=_privateDNSName, publicDNSName=_publicDNSName, stateTransitionReason=_stateTransitionReason, keyName=_keyName, amiLaunchIndex=_amiLaunchIndex, productCodes=_productCodes, instanceType=_instanceType, launchTime=_launchTime, placement=_placement, kernelID=_kernelID, ramdiskID=_ramdiskID, platform=_platform, monitoring=_monitoring, subnetID=_subnetID, vpcID=_vpcID, privateIPAddress=_privateIPAddress, publicIPAddress=_publicIPAddress, stateReason=_stateReason, architecture=_architecture, rootDeviceType=_rootDeviceType, rootDeviceName=_rootDeviceName, blockDeviceMappings=_blockDeviceMappings, virtualizationType=_virtualizationType, instanceLifecycle=_instanceLifecycle, spotInstanceRequestID=_spotInstanceRequestID, license=_license, clientToken=_clientToken, tags=_tags, securityGroups=_securityGroups, sourceDestCheck=_sourceDestCheck, hypervisor=_hypervisor, networkInterfaces=_networkInterfaces, iamInstanceProfile=_iamInstanceProfile, ebsOptimized=_ebsOptimized, sriovNetSupport=_sriovNetSupport;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productCodeAtIndex:) propertyName:@"productCodes"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(networkInterfaceAtIndex:) propertyName:@"networkInterfaces"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

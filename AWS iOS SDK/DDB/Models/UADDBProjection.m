@@ -17,6 +17,17 @@
 
 @synthesize projectionType=_projectionType, nonKeyAttributes=_nonKeyAttributes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(nonKeyAttributeAtIndex:) propertyName:@"nonKeyAttributes"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

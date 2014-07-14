@@ -18,6 +18,17 @@
 
 @synthesize accessKeyMetadata=_accessKeyMetadata, isTruncated=_isTruncated, marker=_marker;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(accessKeyMetadataAtIndex:) propertyName:@"accessKeyMetadata"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./iam:ListAccessKeysResponse/iam:ListAccessKeysResult/";

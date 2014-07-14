@@ -18,6 +18,17 @@
 
 @synthesize customerGateways=_customerGateways;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(customerGatewayAtIndex:) propertyName:@"customerGateways"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeCustomerGatewaysResponse/";

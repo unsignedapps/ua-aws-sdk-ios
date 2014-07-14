@@ -20,6 +20,17 @@
 
 @synthesize conversionTaskID=_conversionTaskID, expirationTime=_expirationTime, importInstance=_importInstance, importVolume=_importVolume, state=_state, statusMessage=_statusMessage, tags=_tags;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

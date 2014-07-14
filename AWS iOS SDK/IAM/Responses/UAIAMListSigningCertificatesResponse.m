@@ -18,6 +18,17 @@
 
 @synthesize certificates=_certificates, isTruncated=_isTruncated, marker=_marker;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(certificateAtIndex:) propertyName:@"certificates"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./iam:ListSigningCertificatesResponse/iam:ListSigningCertificatesResult/";

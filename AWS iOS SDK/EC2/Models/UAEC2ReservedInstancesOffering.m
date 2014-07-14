@@ -19,6 +19,18 @@
 
 @synthesize reservedInstancesOfferingID=_reservedInstancesOfferingID, instanceType=_instanceType, availabilityZone=_availabilityZone, duration=_duration, usagePrice=_usagePrice, fixedPrice=_fixedPrice, productDescription=_productDescription, instanceTenancy=_instanceTenancy, currencyCode=_currencyCode, offeringType=_offeringType, recurringCharges=_recurringCharges, marketplace=_marketplace, pricingDetails=_pricingDetails;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(recurringChargeAtIndex:) propertyName:@"recurringCharges"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(pricingDetailAtIndex:) propertyName:@"pricingDetails"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

@@ -18,6 +18,17 @@
 
 @synthesize loadBalancerDescriptions=_loadBalancerDescriptions, nextMarker=_nextMarker;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(loadBalancerDescriptionAtIndex:) propertyName:@"loadBalancerDescriptions"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ElasticLoadBalancing:DescribeLoadBalancersResponse/ElasticLoadBalancing:DescribeLoadBalancersResult/";

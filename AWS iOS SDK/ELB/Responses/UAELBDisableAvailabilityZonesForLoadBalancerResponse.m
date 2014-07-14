@@ -17,6 +17,17 @@
 
 @synthesize availabilityZones=_availabilityZones;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(availabilityZoneAtIndex:) propertyName:@"availabilityZones"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ElasticLoadBalancing:DisableAvailabilityZonesForLoadBalancerResponse/ElasticLoadBalancing:DisableAvailabilityZonesForLoadBalancerResult/";

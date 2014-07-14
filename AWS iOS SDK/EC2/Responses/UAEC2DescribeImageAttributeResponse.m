@@ -23,6 +23,19 @@
 
 @synthesize imageID=_imageID, launchPermissions=_launchPermissions, productCodes=_productCodes, kernelID=_kernelID, ramdiskID=_ramdiskID, descriptionValue=_descriptionValue, sriovNetSupport=_sriovNetSupport, blockDeviceMappings=_blockDeviceMappings;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(launchPermissionAtIndex:) propertyName:@"launchPermissions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productCodeAtIndex:) propertyName:@"productCodes"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeImageAttributeResponse/";

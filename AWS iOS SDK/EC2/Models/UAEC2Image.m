@@ -21,6 +21,19 @@
 
 @synthesize imageID=_imageID, imageLocation=_imageLocation, state=_state, ownerID=_ownerID, isPublic=_isPublic, productCodes=_productCodes, architecture=_architecture, imageType=_imageType, kernelID=_kernelID, ramdiskID=_ramdiskID, platform=_platform, sriovNetSupport=_sriovNetSupport, stateReason=_stateReason, imageOwnerAlias=_imageOwnerAlias, name=_name, descriptionValue=_descriptionValue, rootDeviceType=_rootDeviceType, rootDeviceName=_rootDeviceName, blockDeviceMappings=_blockDeviceMappings, virtualizationType=_virtualizationType, tags=_tags, hypervisor=_hypervisor;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productCodeAtIndex:) propertyName:@"productCodes"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

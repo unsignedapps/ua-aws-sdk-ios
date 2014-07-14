@@ -18,6 +18,17 @@
 
 @synthesize terminatingInstances=_terminatingInstances;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(terminatingInstanceAtIndex:) propertyName:@"terminatingInstances"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:TerminateInstancesResponse/";

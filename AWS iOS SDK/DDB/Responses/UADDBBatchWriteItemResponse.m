@@ -18,6 +18,19 @@
 
 @synthesize unprocessedItems=_unprocessedItems, itemCollectionMetrics=_itemCollectionMetrics, consumedCapacity=_consumedCapacity;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(unprocessedItemForTableName:) propertyName:@"unprocessedItems"];
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(itemCollectionMetricForTableName:) propertyName:@"itemCollectionMetrics"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(consumedCapacityAtIndex:) propertyName:@"consumedCapacity"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

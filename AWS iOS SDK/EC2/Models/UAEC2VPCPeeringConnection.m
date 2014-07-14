@@ -21,6 +21,17 @@
 
 @synthesize accepterVPCInfo=_accepterVPCInfo, expirationTime=_expirationTime, requesterVPCInfo=_requesterVPCInfo, status=_status, tags=_tags, vpcPeeringConnectionID=_vpcPeeringConnectionID;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

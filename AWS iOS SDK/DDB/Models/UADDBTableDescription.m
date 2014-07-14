@@ -22,6 +22,20 @@
 
 @synthesize attributeDefinitions=_attributeDefinitions, tableName=_tableName, keySchema=_keySchema, tableStatus=_tableStatus, creationDateTime=_creationDateTime, provisionedThroughput=_provisionedThroughput, tableSizeBytes=_tableSizeBytes, itemCount=_itemCount, localSecondaryIndexes=_localSecondaryIndexes, globalSecondaryIndexes=_globalSecondaryIndexes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeDefinitionAtIndex:) propertyName:@"attributeDefinitions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(keySchemaAtIndex:) propertyName:@"keySchema"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(localSecondaryIndexAtIndex:) propertyName:@"localSecondaryIndexes"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(globalSecondaryIndexAtIndex:) propertyName:@"globalSecondaryIndexes"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

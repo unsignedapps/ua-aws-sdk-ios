@@ -18,6 +18,17 @@
 
 @synthesize spotPriceHistory=_spotPriceHistory, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(spotPriceHistoryAtIndex:) propertyName:@"spotPriceHistory"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeSpotPriceHistoryResponse/";

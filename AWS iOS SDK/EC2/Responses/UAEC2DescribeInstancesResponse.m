@@ -18,6 +18,17 @@
 
 @synthesize reservations=_reservations, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservationAtIndex:) propertyName:@"reservations"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeInstancesResponse/";

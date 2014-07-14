@@ -21,6 +21,20 @@
 
 @synthesize routeTableID=_routeTableID, vpcID=_vpcID, routes=_routes, associations=_associations, tags=_tags, propagatingVGWs=_propagatingVGWs;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(routeAtIndex:) propertyName:@"routes"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(associationAtIndex:) propertyName:@"associations"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(propagatingVGWAtIndex:) propertyName:@"propagatingVGWs"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

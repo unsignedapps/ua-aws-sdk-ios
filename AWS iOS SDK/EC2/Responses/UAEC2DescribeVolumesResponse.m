@@ -18,6 +18,17 @@
 
 @synthesize volumes=_volumes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(volumeAtIndex:) propertyName:@"volumes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeVolumesResponse/";

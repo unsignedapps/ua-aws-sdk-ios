@@ -17,6 +17,17 @@
 
 @synthesize autoScalingNotificationTypes=_autoScalingNotificationTypes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(autoScalingNotificationTypeAtIndex:) propertyName:@"autoScalingNotificationTypes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeAutoScalingNotificationTypesResponse/AutoScaling:DescribeAutoScalingNotificationTypesResult/";

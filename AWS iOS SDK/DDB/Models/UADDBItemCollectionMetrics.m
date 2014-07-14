@@ -17,6 +17,18 @@
 
 @synthesize itemCollectionKey=_itemCollectionKey, sizeEstimateRangeGB=_sizeEstimateRangeGB;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDDBKeyValueAdditionalAccessorForSelector:@selector(itemCollectionKeyValueForAttributeName:) propertyName:@"itemCollectionKey"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(sizeEstimateRangeGBAtIndex:) propertyName:@"sizeEstimateRangeGB"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

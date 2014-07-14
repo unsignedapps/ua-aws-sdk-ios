@@ -18,6 +18,17 @@
 
 @synthesize vpcPeeringConnections=_vpcPeeringConnections;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpcPeeringConnectionAtIndex:) propertyName:@"vpcPeeringConnections"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeVpcPeeringConnectionsResponse/";

@@ -18,6 +18,17 @@
 
 @synthesize snapshots=_snapshots;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(snapshotAtIndex:) propertyName:@"snapshots"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeSnapshotsResponse/";

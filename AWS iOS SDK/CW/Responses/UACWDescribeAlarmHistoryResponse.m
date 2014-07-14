@@ -18,6 +18,17 @@
 
 @synthesize alarmHistoryItems=_alarmHistoryItems, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(alarmHistoryItemAtIndex:) propertyName:@"alarmHistoryItems"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./cloudwatch:DescribeAlarmHistoryResponse/cloudwatch:DescribeAlarmHistoryResult/";

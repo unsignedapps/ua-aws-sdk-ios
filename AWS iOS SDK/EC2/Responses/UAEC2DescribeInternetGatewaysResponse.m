@@ -18,6 +18,17 @@
 
 @synthesize internetGateways=_internetGateways;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(internetGatewayAtIndex:) propertyName:@"internetGateways"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeInternetGatewaysResponse/";

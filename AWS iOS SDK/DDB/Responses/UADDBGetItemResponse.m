@@ -18,6 +18,17 @@
 
 @synthesize item=_item, consumedCapacity=_consumedCapacity;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDDBKeyValueAdditionalAccessorForSelector:@selector(itemValueForAttributeName:) propertyName:@"item"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

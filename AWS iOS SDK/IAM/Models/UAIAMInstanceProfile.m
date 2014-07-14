@@ -18,6 +18,17 @@
 
 @synthesize path=_path, instanceProfileName=_instanceProfileName, instanceProfileID=_instanceProfileID, arn=_arn, createDate=_createDate, roles=_roles;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(roleAtIndex:) propertyName:@"roles"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

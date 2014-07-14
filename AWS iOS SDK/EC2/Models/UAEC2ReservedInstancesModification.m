@@ -19,6 +19,18 @@
 
 @synthesize reservedInstancesModificationID=_reservedInstancesModificationID, reservedInstancesIds=_reservedInstancesIds, modificationResults=_modificationResults, createDate=_createDate, updateDate=_updateDate, effectiveDate=_effectiveDate, status=_status, statusMessage=_statusMessage, clientToken=_clientToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesIDAtIndex:) propertyName:@"reservedInstancesIds"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(modificationResultAtIndex:) propertyName:@"modificationResults"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

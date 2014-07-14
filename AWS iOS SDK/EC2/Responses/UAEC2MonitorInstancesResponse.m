@@ -18,6 +18,17 @@
 
 @synthesize instanceMonitorings=_instanceMonitorings;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceMonitoringAtIndex:) propertyName:@"instanceMonitorings"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:MonitorInstancesResponse/";

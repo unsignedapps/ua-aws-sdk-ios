@@ -18,6 +18,17 @@
 
 @synthesize users=_users, isTruncated=_isTruncated, marker=_marker;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(userAtIndex:) propertyName:@"users"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./iam:ListUsersResponse/iam:ListUsersResult/";

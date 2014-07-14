@@ -19,6 +19,20 @@
 
 @synthesize instanceID=_instanceID, instanceType=_instanceType, kernelID=_kernelID, ramdiskID=_ramdiskID, userData=_userData, disableApiTermination=_disableApiTermination, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, rootDeviceName=_rootDeviceName, blockDeviceMappings=_blockDeviceMappings, productCodes=_productCodes, ebsOptimized=_ebsOptimized, sriovNetSupport=_sriovNetSupport, sourceDestCheck=_sourceDestCheck;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
+		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productCodeAtIndex:) propertyName:@"productCodes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeInstanceAttributeResponse/";

@@ -18,6 +18,19 @@
 
 @synthesize architecture=_architecture, groupNames=_groupNames, additionalInfo=_additionalInfo, userData=_userData, instanceType=_instanceType, placement=_placement, monitoring=_monitoring, subnetID=_subnetID, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, privateIPAddress=_privateIPAddress;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
+		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupNameAtIndex:) propertyName:@"groupNames"];
+	}
+	return self;
+}
+
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

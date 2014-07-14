@@ -18,6 +18,17 @@
 
 @synthesize vpnGateways=_vpnGateways;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpnGatewayAtIndex:) propertyName:@"vpnGateways"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeVpnGatewaysResponse/";

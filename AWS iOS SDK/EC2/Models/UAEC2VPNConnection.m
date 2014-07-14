@@ -21,6 +21,19 @@
 
 @synthesize vpnConnectionID=_vpnConnectionID, state=_state, customerGatewayConfiguration=_customerGatewayConfiguration, type=_type, customerGatewayID=_customerGatewayID, vpnGatewayID=_vpnGatewayID, tags=_tags, vgwTelemetry=_vgwTelemetry, options=_options, routes=_routes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vgwTelemetryAtIndex:) propertyName:@"vgwTelemetry"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(routeAtIndex:) propertyName:@"routes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

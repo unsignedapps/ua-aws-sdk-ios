@@ -18,6 +18,17 @@
 
 @synthesize sAMLProviderList=_sAMLProviderList;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(sAMLProviderListAtIndex:) propertyName:@"sAMLProviderList"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./iam:ListSAMLProvidersResponse/iam:ListSAMLProvidersResult/";

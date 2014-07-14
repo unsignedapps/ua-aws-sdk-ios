@@ -21,6 +21,18 @@
 
 @synthesize networkInterfaceID=_networkInterfaceID, subnetID=_subnetID, vpcID=_vpcID, descriptionValue=_descriptionValue, macAddress=_macAddress, ownerID=_ownerID, status=_status, privateIPAddress=_privateIPAddress, privateDNSName=_privateDNSName, sourceDestCheck=_sourceDestCheck, groups=_groups, attachment=_attachment, association=_association, privateIPAddresses=_privateIPAddresses;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupAtIndex:) propertyName:@"groups"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(privateIPAddressAtIndex:) propertyName:@"privateIPAddresses"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

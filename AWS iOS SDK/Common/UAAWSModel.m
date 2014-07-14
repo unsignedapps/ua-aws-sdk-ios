@@ -31,6 +31,10 @@
 
 - (BOOL)canSerializePropertyKey:(NSString *)key
 {
+    // no serializing the dirty properties dictionary!
+    if ([key isEqualToString:@"UA_dirtyProperties"])
+        return NO;
+    
     // if there is no dirty properties list, or its empty, or it has our property in it.
     return self.UA_dirtyProperties == nil || [self.UA_dirtyProperties count] == 0 || [self.UA_dirtyProperties containsObject:key];
 }

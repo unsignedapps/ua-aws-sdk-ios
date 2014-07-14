@@ -18,6 +18,18 @@
 
 @synthesize add=_add, remove=_remove;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(addAtIndex:) propertyName:@"add"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(removeAtIndex:) propertyName:@"remove"];
+	}
+	return self;
+}
+
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

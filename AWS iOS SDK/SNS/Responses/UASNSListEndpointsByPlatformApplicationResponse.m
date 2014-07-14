@@ -18,6 +18,17 @@
 
 @synthesize endpoints=_endpoints, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(endpointAtIndex:) propertyName:@"endpoints"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./Sns:ListEndpointsByPlatformApplicationResponse/Sns:ListEndpointsByPlatformApplicationResult/";

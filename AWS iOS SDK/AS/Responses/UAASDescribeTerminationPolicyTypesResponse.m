@@ -17,6 +17,17 @@
 
 @synthesize terminationPolicyTypes=_terminationPolicyTypes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(terminationPolicyTypeAtIndex:) propertyName:@"terminationPolicyTypes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeTerminationPolicyTypesResponse/AutoScaling:DescribeTerminationPolicyTypesResult/";

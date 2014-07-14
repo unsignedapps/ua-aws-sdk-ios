@@ -18,6 +18,17 @@
 
 @synthesize spotInstanceRequests=_spotInstanceRequests;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(spotInstanceRequestAtIndex:) propertyName:@"spotInstanceRequests"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:RequestSpotInstancesResponse/";

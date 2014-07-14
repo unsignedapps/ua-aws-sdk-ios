@@ -19,6 +19,18 @@
 
 @synthesize metrics=_metrics, granularities=_granularities;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(metricAtIndex:) propertyName:@"metrics"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(granularityAtIndex:) propertyName:@"granularities"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeMetricCollectionTypesResponse/AutoScaling:DescribeMetricCollectionTypesResult/";

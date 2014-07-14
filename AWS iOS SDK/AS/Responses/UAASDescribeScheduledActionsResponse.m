@@ -18,6 +18,17 @@
 
 @synthesize scheduledUpdateGroupActions=_scheduledUpdateGroupActions, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(scheduledUpdateGroupActionAtIndex:) propertyName:@"scheduledUpdateGroupActions"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeScheduledActionsResponse/AutoScaling:DescribeScheduledActionsResult/";

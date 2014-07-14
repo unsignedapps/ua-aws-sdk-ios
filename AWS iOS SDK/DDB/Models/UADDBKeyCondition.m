@@ -17,6 +17,17 @@
 
 @synthesize attributeValueList=_attributeValueList, comparisonOperator=_comparisonOperator;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeValueListAtIndex:) propertyName:@"attributeValueList"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

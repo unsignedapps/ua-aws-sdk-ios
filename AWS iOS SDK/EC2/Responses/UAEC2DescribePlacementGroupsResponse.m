@@ -18,6 +18,17 @@
 
 @synthesize placementGroups=_placementGroups;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(placementGroupAtIndex:) propertyName:@"placementGroups"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribePlacementGroupsResponse/";

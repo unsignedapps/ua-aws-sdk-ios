@@ -18,6 +18,17 @@
 
 @synthesize instanceStates=_instanceStates;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceStateAtIndex:) propertyName:@"instanceStates"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ElasticLoadBalancing:DescribeInstanceHealthResponse/ElasticLoadBalancing:DescribeInstanceHealthResult/";

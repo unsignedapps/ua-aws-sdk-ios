@@ -18,6 +18,20 @@
 
 @synthesize alarmName=_alarmName, alarmARN=_alarmARN, alarmDescription=_alarmDescription, alarmConfigurationUpdatedTimestamp=_alarmConfigurationUpdatedTimestamp, actionsEnabled=_actionsEnabled, oKActions=_oKActions, alarmActions=_alarmActions, insufficientDataActions=_insufficientDataActions, stateValue=_stateValue, stateReason=_stateReason, stateReasonData=_stateReasonData, stateUpdatedTimestamp=_stateUpdatedTimestamp, metricName=_metricName, namespace=_namespace, statistic=_statistic, dimensions=_dimensions, period=_period, unit=_unit, evaluationPeriods=_evaluationPeriods, threshold=_threshold, comparisonOperator=_comparisonOperator;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(oKActionAtIndex:) propertyName:@"oKActions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(alarmActionAtIndex:) propertyName:@"alarmActions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(insufficientDataActionAtIndex:) propertyName:@"insufficientDataActions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dimensionAtIndex:) propertyName:@"dimensions"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

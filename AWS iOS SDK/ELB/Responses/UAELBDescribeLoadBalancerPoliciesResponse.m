@@ -18,6 +18,17 @@
 
 @synthesize policyDescriptions=_policyDescriptions;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(policyDescriptionAtIndex:) propertyName:@"policyDescriptions"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ElasticLoadBalancing:DescribeLoadBalancerPoliciesResponse/ElasticLoadBalancing:DescribeLoadBalancerPoliciesResult/";

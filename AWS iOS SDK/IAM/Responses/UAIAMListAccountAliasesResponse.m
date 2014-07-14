@@ -17,6 +17,17 @@
 
 @synthesize accountAliases=_accountAliases, isTruncated=_isTruncated, marker=_marker;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(accountAliasAtIndex:) propertyName:@"accountAliases"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./iam:ListAccountAliasesResponse/iam:ListAccountAliasesResult/";

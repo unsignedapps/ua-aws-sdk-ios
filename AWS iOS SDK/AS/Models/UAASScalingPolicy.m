@@ -18,6 +18,17 @@
 
 @synthesize autoScalingGroupName=_autoScalingGroupName, policyName=_policyName, scalingAdjustment=_scalingAdjustment, adjustmentType=_adjustmentType, cooldown=_cooldown, policyARN=_policyARN, alarms=_alarms, minAdjustmentStep=_minAdjustmentStep;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(alarmAtIndex:) propertyName:@"alarms"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

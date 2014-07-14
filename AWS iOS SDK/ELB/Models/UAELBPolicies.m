@@ -19,6 +19,19 @@
 
 @synthesize appCookieStickinessPolicies=_appCookieStickinessPolicies, lBCookieStickinessPolicies=_lBCookieStickinessPolicies, otherPolicies=_otherPolicies;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(appCookieStickinessPolicyAtIndex:) propertyName:@"appCookieStickinessPolicies"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(lBCookieStickinessPolicyAtIndex:) propertyName:@"lBCookieStickinessPolicies"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(otherPolicyAtIndex:) propertyName:@"otherPolicies"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

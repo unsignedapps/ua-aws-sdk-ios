@@ -19,6 +19,17 @@
 
 @synthesize instanceID=_instanceID, availabilityZone=_availabilityZone, events=_events, instanceState=_instanceState, systemStatus=_systemStatus, instanceStatus=_instanceStatus;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(eventAtIndex:) propertyName:@"events"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

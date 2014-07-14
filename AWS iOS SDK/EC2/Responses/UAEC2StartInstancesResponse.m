@@ -18,6 +18,17 @@
 
 @synthesize startingInstances=_startingInstances;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(startingInstanceAtIndex:) propertyName:@"startingInstances"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:StartInstancesResponse/";

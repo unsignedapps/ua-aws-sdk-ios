@@ -19,6 +19,17 @@
 
 @synthesize metricName=_metricName, dimensions=_dimensions, timestamp=_timestamp, value=_value, statisticValues=_statisticValues, unit=_unit;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dimensionAtIndex:) propertyName:@"dimensions"];
+	}
+	return self;
+}
+
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

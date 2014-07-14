@@ -18,6 +18,17 @@
 
 @synthesize reservedInstancesModifications=_reservedInstancesModifications, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesModificationAtIndex:) propertyName:@"reservedInstancesModifications"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeReservedInstancesModificationsResponse/";

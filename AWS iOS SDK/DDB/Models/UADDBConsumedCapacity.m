@@ -18,6 +18,18 @@
 
 @synthesize tableName=_tableName, capacityUnits=_capacityUnits, table=_table, localSecondaryIndexes=_localSecondaryIndexes, globalSecondaryIndexes=_globalSecondaryIndexes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(localSecondaryIndexForIndexName:) propertyName:@"localSecondaryIndexes"];
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(globalSecondaryIndexForIndexName:) propertyName:@"globalSecondaryIndexes"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

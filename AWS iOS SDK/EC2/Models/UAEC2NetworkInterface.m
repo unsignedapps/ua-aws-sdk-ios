@@ -22,6 +22,19 @@
 
 @synthesize networkInterfaceID=_networkInterfaceID, subnetID=_subnetID, vpcID=_vpcID, availabilityZone=_availabilityZone, descriptionValue=_descriptionValue, ownerID=_ownerID, requesterID=_requesterID, requesterManaged=_requesterManaged, state=_state, macAddress=_macAddress, privateIPAddress=_privateIPAddress, privateDNSName=_privateDNSName, sourceDestCheck=_sourceDestCheck, groups=_groups, attachment=_attachment, association=_association, tags=_tags, privateIPAddresses=_privateIPAddresses;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupAtIndex:) propertyName:@"groups"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(privateIPAddressAtIndex:) propertyName:@"privateIPAddresses"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

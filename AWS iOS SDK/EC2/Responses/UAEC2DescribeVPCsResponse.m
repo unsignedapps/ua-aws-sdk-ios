@@ -18,6 +18,17 @@
 
 @synthesize vpcs=_vpcs;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpcAtIndex:) propertyName:@"vpcs"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeVpcsResponse/";

@@ -37,6 +37,13 @@
 	return self;
 }
 
+- (void)setName:(NSString *)name
+{
+    [self willChangeValueForKey:@"name"];
+    _name = name;
+    [self didChangeValueForKey:@"name"];
+}
+
 - (Class)UA_ResponseClass
 {
 	return [UASNSCreatePlatformApplicationResponse class];

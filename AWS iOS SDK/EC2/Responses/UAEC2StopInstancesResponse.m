@@ -18,6 +18,17 @@
 
 @synthesize stoppingInstances=_stoppingInstances;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(stoppingInstanceAtIndex:) propertyName:@"stoppingInstances"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:StopInstancesResponse/";

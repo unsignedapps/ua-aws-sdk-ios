@@ -19,6 +19,18 @@
 
 @synthesize successful=_successful, failed=_failed;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(successfulAtIndex:) propertyName:@"successful"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(failedAtIndex:) propertyName:@"failed"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./sqs:ChangeMessageVisibilityBatchResponse/";

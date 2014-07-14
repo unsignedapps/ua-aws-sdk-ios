@@ -18,6 +18,17 @@
 
 @synthesize reservedInstancesListings=_reservedInstancesListings;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesListingAtIndex:) propertyName:@"reservedInstancesListings"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:CancelReservedInstancesListingResponse/";

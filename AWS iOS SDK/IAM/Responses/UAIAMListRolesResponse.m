@@ -18,6 +18,17 @@
 
 @synthesize roles=_roles, isTruncated=_isTruncated, marker=_marker;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(roleAtIndex:) propertyName:@"roles"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./iam:ListRolesResponse/iam:ListRolesResult/";

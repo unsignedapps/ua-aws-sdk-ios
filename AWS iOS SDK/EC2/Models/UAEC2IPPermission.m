@@ -19,6 +19,18 @@
 
 @synthesize ipProtocol=_ipProtocol, fromPort=_fromPort, toPort=_toPort, userIdGroupPairs=_userIdGroupPairs, ipRanges=_ipRanges;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(userIdGroupPairAtIndex:) propertyName:@"userIdGroupPairs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ipRangeAtIndex:) propertyName:@"ipRanges"];
+	}
+	return self;
+}
+
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

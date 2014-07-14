@@ -18,6 +18,17 @@
 
 @synthesize topics=_topics, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(topicAtIndex:) propertyName:@"topics"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./Sns:ListTopicsResponse/Sns:ListTopicsResult/";

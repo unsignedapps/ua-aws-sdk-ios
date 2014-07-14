@@ -19,6 +19,18 @@
 
 @synthesize vpnGatewayID=_vpnGatewayID, state=_state, type=_type, availabilityZone=_availabilityZone, vpcAttachments=_vpcAttachments, tags=_tags;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpcAttachmentAtIndex:) propertyName:@"vpcAttachments"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

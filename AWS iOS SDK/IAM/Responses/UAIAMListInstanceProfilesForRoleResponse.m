@@ -18,6 +18,17 @@
 
 @synthesize instanceProfiles=_instanceProfiles, isTruncated=_isTruncated, marker=_marker;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceProfileAtIndex:) propertyName:@"instanceProfiles"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./iam:ListInstanceProfilesForRoleResponse/iam:ListInstanceProfilesForRoleResult/";

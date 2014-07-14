@@ -17,6 +17,18 @@
 
 @synthesize keys=_keys, attributesToGet=_attributesToGet, consistentRead=_consistentRead;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(keyAtIndex:) propertyName:@"keys"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeToGetAtIndex:) propertyName:@"attributesToGet"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

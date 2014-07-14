@@ -18,6 +18,17 @@
 
 @synthesize accountAttributes=_accountAttributes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(accountAttributeAtIndex:) propertyName:@"accountAttributes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeAccountAttributesResponse/";

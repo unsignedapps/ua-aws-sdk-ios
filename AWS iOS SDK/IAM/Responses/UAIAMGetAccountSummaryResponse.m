@@ -18,6 +18,17 @@
 
 @synthesize summaryMap=_summaryMap;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(summaryMapAtIndex:) propertyName:@"summaryMap"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./iam:GetAccountSummaryResponse/iam:GetAccountSummaryResult/";

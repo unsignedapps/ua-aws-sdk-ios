@@ -18,6 +18,17 @@
 
 @synthesize vpnConnections=_vpnConnections;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpnConnectionAtIndex:) propertyName:@"vpnConnections"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeVpnConnectionsResponse/";

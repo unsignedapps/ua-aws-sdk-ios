@@ -20,6 +20,19 @@
 
 @synthesize networkACLID=_networkACLID, vpcID=_vpcID, isDefault=_isDefault, entries=_entries, associations=_associations, tags=_tags;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(entryAtIndex:) propertyName:@"entries"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(associationAtIndex:) propertyName:@"associations"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

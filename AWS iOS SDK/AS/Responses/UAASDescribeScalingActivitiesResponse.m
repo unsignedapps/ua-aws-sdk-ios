@@ -18,6 +18,17 @@
 
 @synthesize activities=_activities, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(activityAtIndex:) propertyName:@"activities"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeScalingActivitiesResponse/AutoScaling:DescribeScalingActivitiesResult/";

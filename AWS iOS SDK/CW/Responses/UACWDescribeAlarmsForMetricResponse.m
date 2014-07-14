@@ -18,6 +18,17 @@
 
 @synthesize metricAlarms=_metricAlarms;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(metricAlarmAtIndex:) propertyName:@"metricAlarms"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./cloudwatch:DescribeAlarmsForMetricResponse/cloudwatch:DescribeAlarmsForMetricResult/";

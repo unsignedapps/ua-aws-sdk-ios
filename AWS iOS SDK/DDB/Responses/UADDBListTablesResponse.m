@@ -17,6 +17,17 @@
 
 @synthesize tableNames=_tableNames, lastEvaluatedTableName=_lastEvaluatedTableName;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tableNameAtIndex:) propertyName:@"tableNames"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

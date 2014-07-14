@@ -18,6 +18,17 @@
 
 @synthesize adjustmentTypes=_adjustmentTypes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(adjustmentTypeAtIndex:) propertyName:@"adjustmentTypes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeAdjustmentTypesResponse/AutoScaling:DescribeAdjustmentTypesResult/";

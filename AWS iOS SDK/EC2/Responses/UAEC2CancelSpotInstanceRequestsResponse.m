@@ -18,6 +18,17 @@
 
 @synthesize cancelledSpotInstanceRequests=_cancelledSpotInstanceRequests;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(cancelledSpotInstanceRequestAtIndex:) propertyName:@"cancelledSpotInstanceRequests"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:CancelSpotInstanceRequestsResponse/";

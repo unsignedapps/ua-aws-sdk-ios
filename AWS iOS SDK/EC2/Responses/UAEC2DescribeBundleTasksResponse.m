@@ -18,6 +18,17 @@
 
 @synthesize bundleTasks=_bundleTasks;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(bundleTaskAtIndex:) propertyName:@"bundleTasks"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeBundleTasksResponse/";

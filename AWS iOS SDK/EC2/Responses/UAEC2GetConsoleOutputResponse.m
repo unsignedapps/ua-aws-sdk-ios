@@ -17,6 +17,18 @@
 
 @synthesize instanceID=_instanceID, timestamp=_timestamp, output=_output;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedOutput) propertyName:@"output"];
+		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedOutput:) propertyName:@"output"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:GetConsoleOutputResponse/";

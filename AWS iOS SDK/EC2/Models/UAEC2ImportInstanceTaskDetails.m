@@ -18,6 +18,17 @@
 
 @synthesize volumes=_volumes, instanceID=_instanceID, platform=_platform, descriptionValue=_descriptionValue;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(volumeAtIndex:) propertyName:@"volumes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

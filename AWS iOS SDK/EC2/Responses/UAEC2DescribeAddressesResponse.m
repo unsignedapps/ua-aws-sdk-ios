@@ -18,6 +18,17 @@
 
 @synthesize addresses=_addresses;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(addressAtIndex:) propertyName:@"addresses"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeAddressesResponse/";

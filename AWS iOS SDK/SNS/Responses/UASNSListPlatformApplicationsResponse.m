@@ -18,6 +18,17 @@
 
 @synthesize platformApplications=_platformApplications, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(platformApplicationAtIndex:) propertyName:@"platformApplications"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./Sns:ListPlatformApplicationsResponse/Sns:ListPlatformApplicationsResult/";

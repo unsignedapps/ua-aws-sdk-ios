@@ -19,6 +19,18 @@
 
 @synthesize snapshotID=_snapshotID, createVolumePermissions=_createVolumePermissions, productCodes=_productCodes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(createVolumePermissionAtIndex:) propertyName:@"createVolumePermissions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productCodeAtIndex:) propertyName:@"productCodes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeSnapshotAttributeResponse/";

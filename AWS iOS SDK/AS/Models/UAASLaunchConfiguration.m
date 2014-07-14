@@ -18,6 +18,20 @@
 
 @synthesize launchConfigurationName=_launchConfigurationName, launchConfigurationARN=_launchConfigurationARN, imageID=_imageID, keyName=_keyName, securityGroups=_securityGroups, userData=_userData, instanceType=_instanceType, kernelID=_kernelID, ramdiskID=_ramdiskID, blockDeviceMappings=_blockDeviceMappings, instanceMonitoring=_instanceMonitoring, spotPrice=_spotPrice, iamInstanceProfile=_iamInstanceProfile, createdTime=_createdTime, ebsOptimized=_ebsOptimized, associatePublicIPAddress=_associatePublicIPAddress, placementTenancy=_placementTenancy;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
+		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

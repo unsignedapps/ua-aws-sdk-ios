@@ -18,6 +18,17 @@
 
 @synthesize policyName=_policyName, policyTypeName=_policyTypeName, policyAttributeDescriptions=_policyAttributeDescriptions;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(policyAttributeDescriptionAtIndex:) propertyName:@"policyAttributeDescriptions"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

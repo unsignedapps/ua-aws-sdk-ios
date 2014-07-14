@@ -18,6 +18,17 @@
 
 @synthesize scalingPolicies=_scalingPolicies, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(scalingPolicyAtIndex:) propertyName:@"scalingPolicies"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribePoliciesResponse/AutoScaling:DescribePoliciesResult/";

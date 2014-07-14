@@ -23,6 +23,22 @@
 
 @synthesize loadBalancerName=_loadBalancerName, dNSName=_dNSName, canonicalHostedZoneName=_canonicalHostedZoneName, canonicalHostedZoneNameID=_canonicalHostedZoneNameID, listenerDescriptions=_listenerDescriptions, policies=_policies, backendServerDescriptions=_backendServerDescriptions, availabilityZones=_availabilityZones, subnets=_subnets, vPCID=_vPCID, instances=_instances, healthCheck=_healthCheck, sourceSecurityGroup=_sourceSecurityGroup, securityGroups=_securityGroups, createdTime=_createdTime, scheme=_scheme;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(listenerDescriptionAtIndex:) propertyName:@"listenerDescriptions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(backendServerDescriptionAtIndex:) propertyName:@"backendServerDescriptions"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(availabilityZoneAtIndex:) propertyName:@"availabilityZones"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(subnetAtIndex:) propertyName:@"subnets"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceAtIndex:) propertyName:@"instances"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

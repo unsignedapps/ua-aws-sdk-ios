@@ -18,6 +18,17 @@
 
 @synthesize messages=_messages;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(messageAtIndex:) propertyName:@"messages"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./sqs:ReceiveMessageResponse/";

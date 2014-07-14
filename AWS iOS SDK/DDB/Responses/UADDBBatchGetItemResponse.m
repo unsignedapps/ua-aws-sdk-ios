@@ -19,6 +19,19 @@
 
 @synthesize responses=_responses, unprocessedKeys=_unprocessedKeys, consumedCapacity=_consumedCapacity;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(responseForTableName:) propertyName:@"responses"];
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(unprocessedKeyForTableName:) propertyName:@"unprocessedKeys"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(consumedCapacityAtIndex:) propertyName:@"consumedCapacity"];
+	}
+	return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)

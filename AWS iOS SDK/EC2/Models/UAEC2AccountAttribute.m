@@ -17,6 +17,17 @@
 
 @synthesize attributeName=_attributeName, attributeValues=_attributeValues;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeValueAtIndex:) propertyName:@"attributeValues"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

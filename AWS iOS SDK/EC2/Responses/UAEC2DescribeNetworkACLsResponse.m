@@ -18,6 +18,17 @@
 
 @synthesize networkACLs=_networkACLs;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(networkACLAtIndex:) propertyName:@"networkACLs"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeNetworkAclsResponse/";

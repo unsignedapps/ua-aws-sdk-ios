@@ -18,6 +18,17 @@
 
 @synthesize exportTasks=_exportTasks;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(exportTaskAtIndex:) propertyName:@"exportTasks"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeExportTasksResponse/";

@@ -18,6 +18,17 @@
 
 @synthesize dhcpOptions=_dhcpOptions;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dhcpOptionAtIndex:) propertyName:@"dhcpOptions"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeDhcpOptionsResponse/";

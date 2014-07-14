@@ -17,6 +17,17 @@
 
 @synthesize queueUrls=_queueUrls;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(queueURLAtIndex:) propertyName:@"queueUrls"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./sqs:ListDeadLetterSourceQueuesResponse/";

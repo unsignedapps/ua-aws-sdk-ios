@@ -17,6 +17,17 @@
 
 @synthesize instancePort=_instancePort, policyNames=_policyNames;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(policyNameAtIndex:) propertyName:@"policyNames"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

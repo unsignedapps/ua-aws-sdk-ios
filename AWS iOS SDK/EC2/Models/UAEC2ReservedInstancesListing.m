@@ -20,6 +20,19 @@
 
 @synthesize reservedInstancesListingID=_reservedInstancesListingID, reservedInstancesID=_reservedInstancesID, createDate=_createDate, updateDate=_updateDate, status=_status, statusMessage=_statusMessage, instanceCounts=_instanceCounts, priceSchedules=_priceSchedules, tags=_tags, clientToken=_clientToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceCountAtIndex:) propertyName:@"instanceCounts"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(priceScheduleAtIndex:) propertyName:@"priceSchedules"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

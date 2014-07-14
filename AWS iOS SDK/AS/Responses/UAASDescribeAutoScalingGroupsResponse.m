@@ -18,6 +18,17 @@
 
 @synthesize autoScalingGroups=_autoScalingGroups, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(autoScalingGroupAtIndex:) propertyName:@"autoScalingGroups"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeAutoScalingGroupsResponse/AutoScaling:DescribeAutoScalingGroupsResult/";

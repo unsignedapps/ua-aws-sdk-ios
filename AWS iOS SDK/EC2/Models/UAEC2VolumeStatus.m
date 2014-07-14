@@ -20,6 +20,18 @@
 
 @synthesize volumeID=_volumeID, availabilityZone=_availabilityZone, volumeStatus=_volumeStatus, events=_events, actions=_actions;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(eventAtIndex:) propertyName:@"events"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(actionAtIndex:) propertyName:@"actions"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

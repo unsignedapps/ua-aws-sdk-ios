@@ -21,6 +21,23 @@
 
 @synthesize autoScalingGroupName=_autoScalingGroupName, autoScalingGroupARN=_autoScalingGroupARN, launchConfigurationName=_launchConfigurationName, minSize=_minSize, maxSize=_maxSize, desiredCapacity=_desiredCapacity, defaultCooldown=_defaultCooldown, availabilityZones=_availabilityZones, loadBalancerNames=_loadBalancerNames, healthCheckType=_healthCheckType, healthCheckGracePeriod=_healthCheckGracePeriod, instances=_instances, createdTime=_createdTime, suspendedProcesses=_suspendedProcesses, placementGroup=_placementGroup, vPCZoneIdentifier=_vPCZoneIdentifier, enabledMetrics=_enabledMetrics, status=_status, tags=_tags, terminationPolicies=_terminationPolicies;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(availabilityZoneAtIndex:) propertyName:@"availabilityZones"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(loadBalancerNameAtIndex:) propertyName:@"loadBalancerNames"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceAtIndex:) propertyName:@"instances"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(suspendedProcessAtIndex:) propertyName:@"suspendedProcesses"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(enabledMetricAtIndex:) propertyName:@"enabledMetrics"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(terminationPolicyAtIndex:) propertyName:@"terminationPolicies"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

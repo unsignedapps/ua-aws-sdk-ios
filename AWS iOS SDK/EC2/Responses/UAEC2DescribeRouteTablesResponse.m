@@ -18,6 +18,17 @@
 
 @synthesize routeTables=_routeTables;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(routeTableAtIndex:) propertyName:@"routeTables"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeRouteTablesResponse/";

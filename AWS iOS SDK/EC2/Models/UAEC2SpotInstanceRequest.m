@@ -21,6 +21,17 @@
 
 @synthesize spotInstanceRequestID=_spotInstanceRequestID, spotPrice=_spotPrice, type=_type, state=_state, fault=_fault, status=_status, validFrom=_validFrom, validUntil=_validUntil, launchGroup=_launchGroup, availabilityZoneGroup=_availabilityZoneGroup, launchSpecification=_launchSpecification, instanceID=_instanceID, createTime=_createTime, productDescription=_productDescription, tags=_tags, launchedAvailabilityZone=_launchedAvailabilityZone;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

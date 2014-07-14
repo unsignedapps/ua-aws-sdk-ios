@@ -18,6 +18,17 @@
 
 @synthesize processes=_processes;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(processAtIndex:) propertyName:@"processes"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeScalingProcessTypesResponse/AutoScaling:DescribeScalingProcessTypesResult/";

@@ -18,6 +18,17 @@
 
 @synthesize label=_label, datapoints=_datapoints;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(datapointAtIndex:) propertyName:@"datapoints"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./cloudwatch:GetMetricStatisticsResponse/cloudwatch:GetMetricStatisticsResult/";

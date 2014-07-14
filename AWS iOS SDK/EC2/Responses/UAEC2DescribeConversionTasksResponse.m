@@ -18,6 +18,17 @@
 
 @synthesize conversionTasks=_conversionTasks;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(conversionTaskAtIndex:) propertyName:@"conversionTasks"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeConversionTasksResponse/";

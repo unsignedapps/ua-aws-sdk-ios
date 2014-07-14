@@ -18,6 +18,17 @@
 
 @synthesize vpcID=_vpcID, state=_state, cidrBlock=_cidrBlock, dhcpOptionsID=_dhcpOptionsID, tags=_tags, instanceTenancy=_instanceTenancy, isDefault=_isDefault;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

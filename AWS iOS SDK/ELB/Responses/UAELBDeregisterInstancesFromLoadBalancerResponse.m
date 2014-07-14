@@ -18,6 +18,17 @@
 
 @synthesize instances=_instances;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceAtIndex:) propertyName:@"instances"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ElasticLoadBalancing:DeregisterInstancesFromLoadBalancerResponse/ElasticLoadBalancing:DeregisterInstancesFromLoadBalancerResult/";

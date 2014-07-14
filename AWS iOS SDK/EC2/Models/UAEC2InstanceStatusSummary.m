@@ -18,6 +18,17 @@
 
 @synthesize status=_status, details=_details;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(detailAtIndex:) propertyName:@"details"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

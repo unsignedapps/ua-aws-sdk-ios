@@ -18,6 +18,17 @@
 
 @synthesize instanceStatuses=_instanceStatuses, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceStatusAtIndex:) propertyName:@"instanceStatuses"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeInstanceStatusResponse/";

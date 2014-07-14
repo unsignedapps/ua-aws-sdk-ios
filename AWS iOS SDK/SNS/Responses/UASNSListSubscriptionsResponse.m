@@ -18,6 +18,17 @@
 
 @synthesize subscriptions=_subscriptions, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(subscriptionAtIndex:) propertyName:@"subscriptions"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./Sns:ListSubscriptionsResponse/Sns:ListSubscriptionsResult/";

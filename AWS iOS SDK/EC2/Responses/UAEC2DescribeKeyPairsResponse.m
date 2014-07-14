@@ -18,6 +18,17 @@
 
 @synthesize keyPairs=_keyPairs;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(keyPairAtIndex:) propertyName:@"keyPairs"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./ec2:DescribeKeyPairsResponse/";

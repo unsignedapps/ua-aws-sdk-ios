@@ -18,6 +18,17 @@
 
 @synthesize autoScalingInstances=_autoScalingInstances, nextToken=_nextToken;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(autoScalingInstancesAtIndex:) propertyName:@"autoScalingInstances"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./AutoScaling:DescribeAutoScalingInstancesResponse/AutoScaling:DescribeAutoScalingInstancesResult/";

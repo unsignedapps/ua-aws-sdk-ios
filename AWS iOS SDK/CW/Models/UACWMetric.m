@@ -18,6 +18,17 @@
 
 @synthesize namespace=_namespace, metricName=_metricName, dimensions=_dimensions;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dimensionAtIndex:) propertyName:@"dimensions"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";

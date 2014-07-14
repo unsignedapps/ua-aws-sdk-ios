@@ -19,6 +19,18 @@
 
 @synthesize dhcpOptionsID=_dhcpOptionsID, dhcpConfigurations=_dhcpConfigurations, tags=_tags;
 
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dhcpConfigurationAtIndex:) propertyName:@"dhcpConfigurations"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+	}
+	return self;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./";
