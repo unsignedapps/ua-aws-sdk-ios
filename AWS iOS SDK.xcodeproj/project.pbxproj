@@ -6032,9 +6032,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Unsigned Apps";
 				TargetAttributes = {
-					A3E01C1B18AD93E900C3B7DB = {
-						DevelopmentTeam = NCL8DB2UF3;
-					};
 					A3E01C3C18AD93E900C3B7DB = {
 						TestTargetID = A3E01C1B18AD93E900C3B7DB;
 					};
