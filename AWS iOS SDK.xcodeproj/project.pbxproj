@@ -170,7 +170,6 @@
 		A337741D18ADA2F700FECC45 /* UACWSetAlarmStateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A337741218ADA2F700FECC45 /* UACWSetAlarmStateResponse.m */; };
 		A337754A18ADA30100FECC45 /* UAEC2AccountAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = A337741F18ADA30000FECC45 /* UAEC2AccountAttribute.m */; };
 		A337754B18ADA30100FECC45 /* UAEC2Address.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742118ADA30000FECC45 /* UAEC2Address.m */; };
-		A337754C18ADA30100FECC45 /* UAEC2AssignPrivateIPAddresses.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742318ADA30000FECC45 /* UAEC2AssignPrivateIPAddresses.m */; };
 		A337754D18ADA30100FECC45 /* UAEC2Attachment.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742518ADA30000FECC45 /* UAEC2Attachment.m */; };
 		A337754F18ADA30100FECC45 /* UAEC2AvailabilityZone.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742918ADA30000FECC45 /* UAEC2AvailabilityZone.m */; };
 		A337755018ADA30100FECC45 /* UAEC2AvailabilityZoneMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A337742B18ADA30000FECC45 /* UAEC2AvailabilityZoneMessage.m */; };
@@ -1018,7 +1017,6 @@
 		A3F8140618D80DDB00767D9F /* UASQSDeleteQueueResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8140218D80DDB00767D9F /* UASQSDeleteQueueResponse.m */; };
 		A3F8140718D80DDB00767D9F /* UASQSRemovePermissionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8140418D80DDB00767D9F /* UASQSRemovePermissionResponse.m */; };
 		A3F8140A18D80E2300767D9F /* UAELBAccessLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8140918D80E2300767D9F /* UAELBAccessLog.m */; };
-		A3F8140E18D80ED200767D9F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140D18D80ED200767D9F /* libxml2.dylib */; };
 		A3F8141718E27DEF00767D9F /* UAEC2AccepterVPCInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8141018E27DEF00767D9F /* UAEC2AccepterVPCInfo.m */; };
 		A3F8141818E27DEF00767D9F /* UAEC2RequesterVPCInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8141218E27DEF00767D9F /* UAEC2RequesterVPCInfo.m */; };
 		A3F8141918E27DEF00767D9F /* UAEC2VPCPeeringConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8141418E27DEF00767D9F /* UAEC2VPCPeeringConnection.m */; };
@@ -1033,6 +1031,9 @@
 		A3F8143618E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8142F18E27ECD00767D9F /* UAEC2DeleteVPCPeeringConnectionResponse.m */; };
 		A3F8143718E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8143118E27ECD00767D9F /* UAEC2DescribeVPCPeeringConnectionsResponse.m */; };
 		A3F8143818E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F8143318E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m */; };
+		E81842CB19809ACF00D848C2 /* UAEC2AssignPrivateIPAddressesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E81842CA19809ACF00D848C2 /* UAEC2AssignPrivateIPAddressesResponse.m */; };
+		E81842CD19809ED200D848C2 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E81842CC19809ED200D848C2 /* libxml2.dylib */; };
+		E81842CF19809F5800D848C2 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E81842CE19809F5800D848C2 /* libxml2.2.dylib */; };
 		E8421830193C9B100046B9E8 /* UAAdditionalPropertyAccessorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E842182F193C9B100046B9E8 /* UAAdditionalPropertyAccessorsTests.m */; };
 		E85464E918CF0F0D00CC2E3C /* UADDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B018CF0F0D00CC2E3C /* UADDXMLElementAdditions.m */; };
 		E85464EA18CF0F0D00CC2E3C /* NSString+UADDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464B318CF0F0D00CC2E3C /* NSString+UADDXML.m */; };
@@ -1058,10 +1059,7 @@
 		E85464FE18CF0F0D00CC2E3C /* UAMTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E418CF0F0D00CC2E3C /* UAMTLReflection.m */; };
 		E85464FF18CF0F0D00CC2E3C /* UAMTLValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E618CF0F0D00CC2E3C /* UAMTLValueTransformer.m */; };
 		E854650018CF0F0D00CC2E3C /* UAMTLXMLAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E85464E818CF0F0D00CC2E3C /* UAMTLXMLAdapter.m */; };
-		E894BDA6193C89F10068ED17 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140D18D80ED200767D9F /* libxml2.dylib */; };
 		E894BDA7193C8A860068ED17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */; };
-		E894BDA8193C8AFC0068ED17 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */; };
-		E894BDA9193C8AFC0068ED17 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */; };
 		E894BDB0193C91F50068ED17 /* UADirtyPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E894BDAF193C91F50068ED17 /* UADirtyPropertyTests.m */; };
 		E898A5E418B21532004DC298 /* NSString+UAStringEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E318B21532004DC298 /* NSString+UAStringEncoding.m */; };
 		E898A5E718B2162E004DC298 /* NSURL+UAAWSServiceName.m in Sources */ = {isa = PBXBuildFile; fileRef = E898A5E618B2162E004DC298 /* NSURL+UAAWSServiceName.m */; };
@@ -1424,8 +1422,6 @@
 		A337741F18ADA30000FECC45 /* UAEC2AccountAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AccountAttribute.m; sourceTree = "<group>"; };
 		A337742018ADA30000FECC45 /* UAEC2Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2Address.h; sourceTree = "<group>"; };
 		A337742118ADA30000FECC45 /* UAEC2Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2Address.m; sourceTree = "<group>"; };
-		A337742218ADA30000FECC45 /* UAEC2AssignPrivateIPAddresses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AssignPrivateIPAddresses.h; sourceTree = "<group>"; };
-		A337742318ADA30000FECC45 /* UAEC2AssignPrivateIPAddresses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AssignPrivateIPAddresses.m; sourceTree = "<group>"; };
 		A337742418ADA30000FECC45 /* UAEC2Attachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2Attachment.h; sourceTree = "<group>"; };
 		A337742518ADA30000FECC45 /* UAEC2Attachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2Attachment.m; sourceTree = "<group>"; };
 		A337742818ADA30000FECC45 /* UAEC2AvailabilityZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AvailabilityZone.h; sourceTree = "<group>"; };
@@ -3114,8 +3110,6 @@
 		A3F8140418D80DDB00767D9F /* UASQSRemovePermissionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UASQSRemovePermissionResponse.m; sourceTree = "<group>"; };
 		A3F8140818D80E2300767D9F /* UAELBAccessLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAELBAccessLog.h; sourceTree = "<group>"; };
 		A3F8140918D80E2300767D9F /* UAELBAccessLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAELBAccessLog.m; sourceTree = "<group>"; };
-		A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		A3F8140D18D80ED200767D9F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		A3F8140F18E27DEF00767D9F /* UAEC2AccepterVPCInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AccepterVPCInfo.h; sourceTree = "<group>"; };
 		A3F8141018E27DEF00767D9F /* UAEC2AccepterVPCInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AccepterVPCInfo.m; sourceTree = "<group>"; };
 		A3F8141118E27DEF00767D9F /* UAEC2RequesterVPCInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2RequesterVPCInfo.h; sourceTree = "<group>"; };
@@ -3146,6 +3140,10 @@
 		A3F8143318E27ECD00767D9F /* UAEC2RejectVPCPeeringConnectionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2RejectVPCPeeringConnectionResponse.m; sourceTree = "<group>"; };
 		AE8AD1DDD4B44EA6B687ABB0 /* Pods-AWS iOS SDKTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWS iOS SDKTests.xcconfig"; path = "Pods/Pods-AWS iOS SDKTests.xcconfig"; sourceTree = "<group>"; };
 		D7E3239524A74BCA8C929A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E81842C919809ACF00D848C2 /* UAEC2AssignPrivateIPAddressesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAEC2AssignPrivateIPAddressesResponse.h; sourceTree = "<group>"; };
+		E81842CA19809ACF00D848C2 /* UAEC2AssignPrivateIPAddressesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAEC2AssignPrivateIPAddressesResponse.m; sourceTree = "<group>"; };
+		E81842CC19809ED200D848C2 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		E81842CE19809F5800D848C2 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		E842182F193C9B100046B9E8 /* UAAdditionalPropertyAccessorsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAAdditionalPropertyAccessorsTests.m; sourceTree = "<group>"; };
 		E85464AF18CF0F0D00CC2E3C /* UADDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDXMLElementAdditions.h; sourceTree = "<group>"; };
 		E85464B018CF0F0D00CC2E3C /* UADDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDXMLElementAdditions.m; sourceTree = "<group>"; };
@@ -3222,9 +3220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3F8140E18D80ED200767D9F /* libxml2.dylib in Frameworks */,
 				A3E01C2218AD93E900C3B7DB /* CoreGraphics.framework in Frameworks */,
-				E894BDA9193C8AFC0068ED17 /* libxml2.2.dylib in Frameworks */,
 				A3E01C2418AD93E900C3B7DB /* UIKit.framework in Frameworks */,
 				A3E01C2018AD93E900C3B7DB /* Foundation.framework in Frameworks */,
 			);
@@ -3234,11 +3230,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E894BDA6193C89F10068ED17 /* libxml2.dylib in Frameworks */,
+				E81842CF19809F5800D848C2 /* libxml2.2.dylib in Frameworks */,
+				E81842CD19809ED200D848C2 /* libxml2.dylib in Frameworks */,
 				A3E01C3F18AD93E900C3B7DB /* XCTest.framework in Frameworks */,
 				E894BDA7193C8A860068ED17 /* CoreGraphics.framework in Frameworks */,
 				A3E01C4118AD93E900C3B7DB /* UIKit.framework in Frameworks */,
-				E894BDA8193C8AFC0068ED17 /* libxml2.2.dylib in Frameworks */,
 				A3E01C4018AD93E900C3B7DB /* Foundation.framework in Frameworks */,
 				1F8EA98AD1B048ECA67CE2A7 /* libPods-AWS iOS SDKTests.a in Frameworks */,
 			);
@@ -4030,8 +4026,6 @@
 				A337741F18ADA30000FECC45 /* UAEC2AccountAttribute.m */,
 				A337742018ADA30000FECC45 /* UAEC2Address.h */,
 				A337742118ADA30000FECC45 /* UAEC2Address.m */,
-				A337742218ADA30000FECC45 /* UAEC2AssignPrivateIPAddresses.h */,
-				A337742318ADA30000FECC45 /* UAEC2AssignPrivateIPAddresses.m */,
 				A337742418ADA30000FECC45 /* UAEC2Attachment.h */,
 				A337742518ADA30000FECC45 /* UAEC2Attachment.m */,
 				A337742818ADA30000FECC45 /* UAEC2AvailabilityZone.h */,
@@ -4650,6 +4644,8 @@
 				A3F8142B18E27ECD00767D9F /* UAEC2AcceptVPCPeeringConnectionResponse.m */,
 				A33777A718ADA31300FECC45 /* UAEC2AllocateAddressResponse.h */,
 				A33777A818ADA31300FECC45 /* UAEC2AllocateAddressResponse.m */,
+				E81842C919809ACF00D848C2 /* UAEC2AssignPrivateIPAddressesResponse.h */,
+				E81842CA19809ACF00D848C2 /* UAEC2AssignPrivateIPAddressesResponse.m */,
 				A33777A918ADA31300FECC45 /* UAEC2AssociateAddressResponse.h */,
 				A33777AA18ADA31300FECC45 /* UAEC2AssociateAddressResponse.m */,
 				A33777AB18ADA31300FECC45 /* UAEC2AssociateDHCPOptionsResponse.h */,
@@ -5680,8 +5676,8 @@
 		A3E01C1E18AD93E900C3B7DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A3F8140D18D80ED200767D9F /* libxml2.dylib */,
-				A3F8140B18D80ECB00767D9F /* libxml2.2.dylib */,
+				E81842CE19809F5800D848C2 /* libxml2.2.dylib */,
+				E81842CC19809ED200D848C2 /* libxml2.dylib */,
 				A3E01C1F18AD93E900C3B7DB /* Foundation.framework */,
 				A3E01C2118AD93E900C3B7DB /* CoreGraphics.framework */,
 				A3E01C2318AD93E900C3B7DB /* UIKit.framework */,
@@ -6290,7 +6286,6 @@
 				A337756818ADA30100FECC45 /* UAEC2EBSInstanceBlockDeviceSpecification.m in Sources */,
 				A33779D818ADA32800FECC45 /* UAELBDescribeInstanceHealthRequest.m in Sources */,
 				A337779918ADA30C00FECC45 /* UAEC2ResetImageAttributeRequest.m in Sources */,
-				A337754C18ADA30100FECC45 /* UAEC2AssignPrivateIPAddresses.m in Sources */,
 				A3377AC918ADA34A00FECC45 /* UASNSCreateTopicResponse.m in Sources */,
 				A33773DB18ADA2E700FECC45 /* UACWStatisticSet.m in Sources */,
 				A3F813C818D807F100767D9F /* UASQSAddPermissionRequest.m in Sources */,
@@ -6343,6 +6338,7 @@
 				A3623CAF18EB909300989324 /* UADDBUpdate.m in Sources */,
 				A337825B18B1913600FECC45 /* UAIAMPutUserPolicyResponse.m in Sources */,
 				A33778EC18ADA31500FECC45 /* UAEC2CreateNetworkACLResponse.m in Sources */,
+				E81842CB19809ACF00D848C2 /* UAEC2AssignPrivateIPAddressesResponse.m in Sources */,
 				A3377A2618ADA32F00FECC45 /* UAELBDescribeLoadBalancerPolicyTypesResponse.m in Sources */,
 				A337816F18B1912800FECC45 /* UAIAMListGroupsRequest.m in Sources */,
 				A337734F18ADA2C500FECC45 /* UAASDisableMetricsCollectionRequest.m in Sources */,
@@ -7255,6 +7251,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -7291,6 +7288,7 @@
 					"$(SDKROOT)/usr/include/libxml2",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -7344,6 +7342,11 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "AWS iOS SDKTests/AWS iOS SDKTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -7369,6 +7372,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AWS iOS SDK/AWS iOS SDK-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "AWS iOS SDKTests/AWS iOS SDKTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",

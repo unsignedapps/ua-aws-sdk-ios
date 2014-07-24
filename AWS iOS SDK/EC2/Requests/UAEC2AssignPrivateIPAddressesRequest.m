@@ -9,7 +9,7 @@
 
 #import "UAEC2AssignPrivateIPAddressesRequest.h"
 #import "UAAWSAdditionalAccessors.h"
-#import "UAEC2AssignPrivateIPAddresses.h"
+#import "UAEC2AssignPrivateIPAddressesResponse.h"
 
 @interface UAEC2AssignPrivateIPAddressesRequest ()
 
@@ -40,7 +40,7 @@
 
 - (Class)UA_ResponseClass
 {
-	return [UAEC2AssignPrivateIPAddresses class];
+	return [UAEC2AssignPrivateIPAddressesResponse class];
 }
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
