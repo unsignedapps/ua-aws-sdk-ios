@@ -1,5 +1,5 @@
 //
-//  UAEC2AssignPrivateIPAddresses.m
+//  UAEC2AssignPrivateIPAddressesResponse.m
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -7,25 +7,25 @@
 //
 //
 
-#import "UAEC2AssignPrivateIPAddresses.h"
+#import "UAEC2AssignPrivateIPAddressesResponse.h"
 #import "UAAWSAdditionalAccessors.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation UAEC2AssignPrivateIPAddresses
+@implementation UAEC2AssignPrivateIPAddressesResponse
 
 @synthesize requestID=_requestID;
 
 + (NSString *)XPathPrefix
 {
-    return @"./ec2:AssignPrivateIpAddresses/";
+    return @"./ec2:AssignPrivateIpAddressesResponse/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
 {
     // Start with super's key paths (if there are any)
-    NSMutableDictionary *keyPaths = [[UAEC2Model XMLKeyPathsByPropertyKey] mutableCopy];
+    NSMutableDictionary *keyPaths = [[UAEC2Response XMLKeyPathsByPropertyKey] mutableCopy];
 
     [keyPaths addEntriesFromDictionary:
     @{

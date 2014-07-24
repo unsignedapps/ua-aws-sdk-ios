@@ -1,5 +1,5 @@
 //
-//  UAEC2AssignPrivateIPAddresses.h
+//  UAEC2AssignPrivateIPAddressesResponse.h
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -7,9 +7,9 @@
 //
 //
 
-#import "UAEC2Model.h"
+#import "UAEC2Response.h"
 
-@interface UAEC2AssignPrivateIPAddresses : UAEC2Model
+@interface UAEC2AssignPrivateIPAddressesResponse : UAEC2Response
 
 @property (nonatomic, copy) NSString *requestID;
 
