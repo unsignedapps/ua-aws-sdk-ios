@@ -75,9 +75,23 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)architectureJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX86_64) ]
+                                               stringValues:@[ @"i386", @"x86_64" ]
+                                               unknownValue:@(UAEC2ArchitectureUnknown)];
+}
+
 + (NSValueTransformer *)blockDeviceMappingsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
+}
+
++ (NSValueTransformer *)virtualizationTypeJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VirtualizationTypeParavirtual), @(UAEC2VirtualizationTypeHvm) ]
+                                               stringValues:@[ @"paravirtual", @"hvm" ]
+                                               unknownValue:@(UAEC2VirtualizationTypeUnknown)];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
@@ -85,9 +99,23 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
++ (NSValueTransformer *)architectureQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX86_64) ]
+                                               stringValues:@[ @"i386", @"x86_64" ]
+                                               unknownValue:@(UAEC2ArchitectureUnknown)];
+}
+
 + (NSValueTransformer *)blockDeviceMappingsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2BlockDeviceMapping class]];
+}
+
++ (NSValueTransformer *)virtualizationTypeQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2VirtualizationTypeParavirtual), @(UAEC2VirtualizationTypeHvm) ]
+                                               stringValues:@[ @"paravirtual", @"hvm" ]
+                                               unknownValue:@(UAEC2VirtualizationTypeUnknown)];
 }
 
 /*#pragma mark - Invocation

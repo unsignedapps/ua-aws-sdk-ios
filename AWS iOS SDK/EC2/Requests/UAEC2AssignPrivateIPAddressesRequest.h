@@ -8,10 +8,10 @@
 
 #import "UAEC2Request.h"
 
-@class UAEC2AssignPrivateIPAddresses;
+@class UAEC2AssignPrivateIPAddressesResponse;
 
-typedef void(^UAEC2AssignPrivateIPAddressesRequestCompletionBlock)(UAEC2AssignPrivateIPAddresses *response, NSError *error);
-typedef BOOL(^UAEC2AssignPrivateIPAddressesRequestShouldContinueWaitingBlock)(UAEC2AssignPrivateIPAddresses *response, NSError *error);
+typedef void(^UAEC2AssignPrivateIPAddressesRequestCompletionBlock)(UAEC2AssignPrivateIPAddressesResponse *response, NSError *error);
+typedef BOOL(^UAEC2AssignPrivateIPAddressesRequestShouldContinueWaitingBlock)(UAEC2AssignPrivateIPAddressesResponse *response, NSError *error);
 
 @interface UAEC2AssignPrivateIPAddressesRequest : UAEC2Request
 

@@ -11,6 +11,4 @@
 
 @interface UAEC2AssignPrivateIPAddressesResponse : UAEC2Response
 
-@property (nonatomic, copy) NSString *requestID;
-
 @end

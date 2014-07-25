@@ -167,7 +167,6 @@
 #import "UAEC2AccepterVPCInfo.h"
 #import "UAEC2AccountAttribute.h"
 #import "UAEC2Address.h"
-#import "UAEC2AssignPrivateIPAddresses.h"
 #import "UAEC2Attachment.h"
 #import "UAEC2AvailabilityZone.h"
 #import "UAEC2AvailabilityZoneMessage.h"
@@ -319,6 +318,7 @@
 // Responses
 #import "UAEC2AcceptVPCPeeringConnectionResponse.h"
 #import "UAEC2AllocateAddressResponse.h"
+#import "UAEC2AssignPrivateIPAddressesResponse.h"
 #import "UAEC2AssociateAddressResponse.h"
 #import "UAEC2AssociateDHCPOptionsResponse.h"
 #import "UAEC2AssociateRouteTableResponse.h"

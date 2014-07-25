@@ -28,7 +28,8 @@ static NSString * const UAAWSErrorMessage = @"UAAWSErrorReason";
 typedef NS_ENUM(NSInteger, UAAWSErrorCode)
 {
     UAAWSErrorCodeClient = 0,
-    UAAWSErrorCodeServer = 1
+    UAAWSErrorCodeServer = 1,
+    UAAWSErrorCodeNilData = 2
 };
 
 static NSString * const UAAWSResponseExceptionParseError = @"UAAWSResponseExceptionParseError";

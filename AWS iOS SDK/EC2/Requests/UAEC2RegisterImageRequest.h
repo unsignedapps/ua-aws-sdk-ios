@@ -19,12 +19,12 @@ typedef BOOL(^UAEC2RegisterImageRequestShouldContinueWaitingBlock)(UAEC2Register
 @property (nonatomic, copy) NSString *imageLocation;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *descriptionValue;
-@property (nonatomic, copy) NSString *architecture;
+@property (nonatomic) UAEC2Architecture architecture;
 @property (nonatomic, copy) NSString *kernelID;
 @property (nonatomic, copy) NSString *ramdiskID;
 @property (nonatomic, copy) NSString *rootDeviceName;
 @property (nonatomic, strong) NSMutableArray *blockDeviceMappings;
-@property (nonatomic, copy) NSString *virtualizationType;
+@property (nonatomic) UAEC2VirtualizationType virtualizationType;
 @property (nonatomic, copy) NSString *sriovNetSupport;
 // @property (nonatomic, copy) UAEC2RegisterImageRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2RegisterImageRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;

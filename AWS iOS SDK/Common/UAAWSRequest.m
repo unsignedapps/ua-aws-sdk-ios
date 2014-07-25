@@ -379,6 +379,10 @@
     NSAssert(errorClass != Nil, @"Error class cannot be Nil.");
     NSAssert([errorClass conformsToProtocol:@protocol(UAAWSError)], @"Request serialisation class %@ does not conform to protocol UAAWSError.", NSStringFromClass(serialiser));
     
+    // did we end up with no data?
+    if (data.length == 0)
+        return [NSError errorWithDomain:UAAWSErrorDomain code:UAAWSErrorCodeNilData userInfo:@{ NSLocalizedDescriptionKey: @"The AWS API returned an empty response." }];
+    
     NSError *parseError = nil;
     id<UAAWSError> error = (id<UAAWSError>)[((Class<UAAWSPayloadSerialisation>)serialiser) responseForData:data responseClass:errorClass error:&parseError];
 
@@ -408,6 +412,9 @@
     NSAssert(responseClass != Nil, @"Response class cannot be Nil.");
     NSAssert([responseClass isSubclassOfClass:[UAAWSResponse class]], @"Response class %@ must be a subclass of UAAWSResponse.", NSStringFromClass(responseClass));
     
+    // nil data is an error, but not an exception
+    if (data.length == 0)
+        return nil;
     
     // parse it
     NSError *error = nil;
