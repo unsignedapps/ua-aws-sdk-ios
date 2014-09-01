@@ -20,4 +20,11 @@
 **/
 - (UAEC2InstanceStateChange *)stoppingInstanceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a StoppingInstance to the stoppingInstances property.
+ *
+ * This will initialise stoppingInstances with an empty mutable array if necessary.
+**/
+- (void)addStoppingInstance:(UAEC2InstanceStateChange *)stoppingInstance;
+
 @end

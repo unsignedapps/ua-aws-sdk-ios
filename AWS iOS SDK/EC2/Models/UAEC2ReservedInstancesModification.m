@@ -27,6 +27,8 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesIDAtIndex:) propertyName:@"reservedInstancesIds"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(modificationResultAtIndex:) propertyName:@"modificationResults"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReservedInstancesId:) propertyName:@"reservedInstancesIds"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addModificationResult:) propertyName:@"modificationResults"];
 	}
 	return self;
 }

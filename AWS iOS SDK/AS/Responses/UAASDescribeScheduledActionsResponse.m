@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(scheduledUpdateGroupActionAtIndex:) propertyName:@"scheduledUpdateGroupActions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addScheduledUpdateGroupAction:) propertyName:@"scheduledUpdateGroupActions"];
 	}
 	return self;
 }

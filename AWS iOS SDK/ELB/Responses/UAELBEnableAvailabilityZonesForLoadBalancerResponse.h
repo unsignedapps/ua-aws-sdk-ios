@@ -18,4 +18,11 @@
 **/
 - (NSString *)availabilityZoneAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AvailabilityZone to the availabilityZones property.
+ *
+ * This will initialise availabilityZones with an empty mutable array if necessary.
+**/
+- (void)addAvailabilityZone:(NSString *)availabilityZone;
+
 @end

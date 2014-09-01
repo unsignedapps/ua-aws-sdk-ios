@@ -20,4 +20,11 @@
 **/
 - (UAEC2CancelledSpotInstanceRequest *)cancelledSpotInstanceRequestAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a CancelledSpotInstanceRequest to the cancelledSpotInstanceRequests property.
+ *
+ * This will initialise cancelledSpotInstanceRequests with an empty mutable array if necessary.
+**/
+- (void)addCancelledSpotInstanceRequest:(UAEC2CancelledSpotInstanceRequest *)cancelledSpotInstanceRequest;
+
 @end

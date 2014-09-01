@@ -28,6 +28,9 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ipPermissionAtIndex:) propertyName:@"ipPermissions"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ipPermissionEgressAtIndex:) propertyName:@"ipPermissionsEgress"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addIPPermission:) propertyName:@"ipPermissions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addIPPermissionEgress:) propertyName:@"ipPermissionsEgress"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
 	}
 	return self;
 }

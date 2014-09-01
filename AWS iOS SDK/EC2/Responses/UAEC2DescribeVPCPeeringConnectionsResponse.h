@@ -20,4 +20,11 @@
 **/
 - (UAEC2VPCPeeringConnection *)vpcPeeringConnectionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a VPCPeeringConnection to the vpcPeeringConnections property.
+ *
+ * This will initialise vpcPeeringConnections with an empty mutable array if necessary.
+**/
+- (void)addVPCPeeringConnection:(UAEC2VPCPeeringConnection *)vPCPeeringConnection;
+
 @end

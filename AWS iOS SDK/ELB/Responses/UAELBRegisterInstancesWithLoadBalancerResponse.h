@@ -20,4 +20,11 @@
 **/
 - (UAELBInstance *)instanceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Instance to the instances property.
+ *
+ * This will initialise instances with an empty mutable array if necessary.
+**/
+- (void)addInstance:(UAELBInstance *)instance;
+
 @end

@@ -12,7 +12,7 @@
 @interface UAEC2ReservedInstancesConfiguration : UAEC2Model
 
 @property (nonatomic, copy) NSString *availabilityZone;
-@property (nonatomic, copy) NSString *platform;
+@property (nonatomic) UAEC2Platform platform;
 @property (nonatomic, strong) NSNumber *instanceCount;
 @property (nonatomic, copy) NSString *instanceType;
 

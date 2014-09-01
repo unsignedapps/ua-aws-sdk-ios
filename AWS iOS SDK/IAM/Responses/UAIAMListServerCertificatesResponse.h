@@ -22,4 +22,11 @@
 **/
 - (UAIAMServerCertificateMetadataList *)serverCertificateMetadataListAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ServerCertificateMetadataList to the serverCertificateMetadataList property.
+ *
+ * This will initialise serverCertificateMetadataList with an empty mutable array if necessary.
+**/
+- (void)addServerCertificateMetadataList:(UAIAMServerCertificateMetadataList *)serverCertificateMetadataList;
+
 @end

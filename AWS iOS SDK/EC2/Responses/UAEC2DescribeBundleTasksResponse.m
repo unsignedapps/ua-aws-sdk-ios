@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(bundleTaskAtIndex:) propertyName:@"bundleTasks"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addBundleTask:) propertyName:@"bundleTasks"];
 	}
 	return self;
 }

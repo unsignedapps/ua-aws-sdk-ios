@@ -27,6 +27,7 @@
 		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
 		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupNameAtIndex:) propertyName:@"groupNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGroupName:) propertyName:@"groupNames"];
 	}
 	return self;
 }

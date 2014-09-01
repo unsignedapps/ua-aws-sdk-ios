@@ -21,4 +21,11 @@
 **/
 - (UAASLaunchConfiguration *)launchConfigurationAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a LaunchConfiguration to the launchConfigurations property.
+ *
+ * This will initialise launchConfigurations with an empty mutable array if necessary.
+**/
+- (void)addLaunchConfiguration:(UAASLaunchConfiguration *)launchConfiguration;
+
 @end

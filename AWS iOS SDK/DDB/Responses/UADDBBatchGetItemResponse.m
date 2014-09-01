@@ -28,6 +28,7 @@
 		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(responseForTableName:) propertyName:@"responses"];
 		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(unprocessedKeyForTableName:) propertyName:@"unprocessedKeys"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(consumedCapacityAtIndex:) propertyName:@"consumedCapacity"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addConsumedCapacity:) propertyName:@"consumedCapacity"];
 	}
 	return self;
 }

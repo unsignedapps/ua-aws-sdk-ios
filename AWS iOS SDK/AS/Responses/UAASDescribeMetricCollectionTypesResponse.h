@@ -26,4 +26,17 @@
 **/
 - (UAASMetricGranularityType *)granularityAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Metric to the metrics property.
+ *
+ * This will initialise metrics with an empty mutable array if necessary.
+**/
+- (void)addMetric:(UAASMetricCollectionType *)metric;
+/**
+ * Adds a Granularity to the granularities property.
+ *
+ * This will initialise granularities with an empty mutable array if necessary.
+**/
+- (void)addGranularity:(UAASMetricGranularityType *)granularity;
+
 @end

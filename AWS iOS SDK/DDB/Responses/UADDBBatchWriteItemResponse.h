@@ -32,4 +32,25 @@
 **/
 - (UADDBConsumedCapacity *)consumedCapacityAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ConsumedCapacity to the consumedCapacity property.
+ *
+ * This will initialise consumedCapacity with an empty mutable array if necessary.
+**/
+- (void)addConsumedCapacity:(UADDBConsumedCapacity *)consumedCapacity;
+
+/**
+ * Sets the value of TableName to UnprocessedItem in the unprocessedItems property.
+ *
+ * This will initialise unprocessedItems with an empty mutable dictionary if necessary.
+**/
+- (void)setUnprocessedItem:(NSArray *)unprocessedItem forTableName:(NSString *)tableName;
+
+/**
+ * Sets the value of TableName to ItemCollectionMetric in the itemCollectionMetrics property.
+ *
+ * This will initialise itemCollectionMetrics with an empty mutable dictionary if necessary.
+**/
+- (void)setItemCollectionMetric:(NSArray *)itemCollectionMetric forTableName:(NSString *)tableName;
+
 @end

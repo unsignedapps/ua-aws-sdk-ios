@@ -20,4 +20,11 @@
 **/
 - (UAEC2Image *)imageAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Image to the images property.
+ *
+ * This will initialise images with an empty mutable array if necessary.
+**/
+- (void)addImage:(UAEC2Image *)image;
+
 @end

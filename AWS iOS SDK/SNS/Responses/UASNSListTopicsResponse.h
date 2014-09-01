@@ -21,4 +21,11 @@
 **/
 - (UASNSTopic *)topicAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Topic to the topics property.
+ *
+ * This will initialise topics with an empty mutable array if necessary.
+**/
+- (void)addTopic:(UASNSTopic *)topic;
+
 @end

@@ -21,4 +21,11 @@
 **/
 - (UAASScheduledUpdateGroupAction *)scheduledUpdateGroupActionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ScheduledUpdateGroupAction to the scheduledUpdateGroupActions property.
+ *
+ * This will initialise scheduledUpdateGroupActions with an empty mutable array if necessary.
+**/
+- (void)addScheduledUpdateGroupAction:(UAASScheduledUpdateGroupAction *)scheduledUpdateGroupAction;
+
 @end

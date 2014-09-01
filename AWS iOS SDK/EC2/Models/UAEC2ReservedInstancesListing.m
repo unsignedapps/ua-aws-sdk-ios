@@ -29,6 +29,9 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceCountAtIndex:) propertyName:@"instanceCounts"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(priceScheduleAtIndex:) propertyName:@"priceSchedules"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstanceCount:) propertyName:@"instanceCounts"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPriceSchedule:) propertyName:@"priceSchedules"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
 	}
 	return self;
 }

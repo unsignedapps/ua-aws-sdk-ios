@@ -20,4 +20,11 @@
 **/
 - (UAEC2ExportTask *)exportTaskAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ExportTask to the exportTasks property.
+ *
+ * This will initialise exportTasks with an empty mutable array if necessary.
+**/
+- (void)addExportTask:(UAEC2ExportTask *)exportTask;
+
 @end

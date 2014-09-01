@@ -19,4 +19,11 @@
 **/
 - (NSString *)valueAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Value to the values property.
+ *
+ * This will initialise values with an empty mutable array if necessary.
+**/
+- (void)addValue:(NSString *)value;
+
 @end

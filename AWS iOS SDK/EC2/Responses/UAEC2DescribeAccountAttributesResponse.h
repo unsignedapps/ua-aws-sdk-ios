@@ -20,4 +20,11 @@
 **/
 - (UAEC2AccountAttribute *)accountAttributeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AccountAttribute to the accountAttributes property.
+ *
+ * This will initialise accountAttributes with an empty mutable array if necessary.
+**/
+- (void)addAccountAttribute:(UAEC2AccountAttribute *)accountAttribute;
+
 @end

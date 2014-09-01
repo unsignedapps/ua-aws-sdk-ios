@@ -22,4 +22,11 @@
 **/
 - (UAIAMCertificate *)certificateAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Certificate to the certificates property.
+ *
+ * This will initialise certificates with an empty mutable array if necessary.
+**/
+- (void)addCertificate:(UAIAMCertificate *)certificate;
+
 @end

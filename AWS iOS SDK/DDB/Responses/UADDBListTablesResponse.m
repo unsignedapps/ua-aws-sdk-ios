@@ -24,6 +24,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tableNameAtIndex:) propertyName:@"tableNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTableName:) propertyName:@"tableNames"];
 	}
 	return self;
 }

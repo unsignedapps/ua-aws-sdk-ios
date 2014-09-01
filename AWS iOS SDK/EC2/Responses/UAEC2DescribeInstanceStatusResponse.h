@@ -21,4 +21,11 @@
 **/
 - (UAEC2InstanceStatus *)instanceStatusAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a InstanceStatus to the instanceStatuses property.
+ *
+ * This will initialise instanceStatuses with an empty mutable array if necessary.
+**/
+- (void)addInstanceStatus:(UAEC2InstanceStatus *)instanceStatus;
+
 @end

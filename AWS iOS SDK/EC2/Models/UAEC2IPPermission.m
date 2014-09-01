@@ -27,6 +27,8 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(userIdGroupPairAtIndex:) propertyName:@"userIdGroupPairs"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(ipRangeAtIndex:) propertyName:@"ipRanges"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addUserIdGroupPair:) propertyName:@"userIdGroupPairs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addIPRange:) propertyName:@"ipRanges"];
 	}
 	return self;
 }

@@ -29,4 +29,17 @@
 **/
 - (UAEC2Instance *)instanceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Group to the groups property.
+ *
+ * This will initialise groups with an empty mutable array if necessary.
+**/
+- (void)addGroup:(UAEC2GroupIdentifier *)group;
+/**
+ * Adds a Instance to the instances property.
+ *
+ * This will initialise instances with an empty mutable array if necessary.
+**/
+- (void)addInstance:(UAEC2Instance *)instance;
+
 @end

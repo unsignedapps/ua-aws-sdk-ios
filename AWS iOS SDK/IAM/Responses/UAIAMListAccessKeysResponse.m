@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(accessKeyMetadataAtIndex:) propertyName:@"accessKeyMetadata"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAccessKeyMetadata:) propertyName:@"accessKeyMetadata"];
 	}
 	return self;
 }

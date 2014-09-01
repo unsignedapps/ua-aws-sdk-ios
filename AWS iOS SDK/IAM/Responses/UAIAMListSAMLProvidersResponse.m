@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(sAMLProviderListAtIndex:) propertyName:@"sAMLProviderList"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSAMLProviderList:) propertyName:@"sAMLProviderList"];
 	}
 	return self;
 }

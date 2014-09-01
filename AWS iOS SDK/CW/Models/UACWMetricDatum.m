@@ -26,6 +26,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dimensionAtIndex:) propertyName:@"dimensions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDimension:) propertyName:@"dimensions"];
 	}
 	return self;
 }
@@ -38,7 +39,7 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"metricName": @"MetricName",
-        @"dimensions": @"Dimensions.member",
+        @"dimensions": @"Dimensions.Member",
         @"timestamp": @"Timestamp",
         @"value": @"Value",
         @"statisticValues": @"StatisticValues",

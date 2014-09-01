@@ -35,6 +35,20 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)stateQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceCountsStateAvailable), @(UAEC2InstanceCountsStateSold), @(UAEC2InstanceCountsStateCancelled), @(UAEC2InstanceCountsStatePending) ]
+                                               stringValues:@[ @"available", @"sold", @"cancelled", @"pending" ]
+                                               unknownValue:@(UAEC2InstanceCountsStateUnknown)];
+}
+
++ (NSValueTransformer *)stateXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceCountsStateAvailable), @(UAEC2InstanceCountsStateSold), @(UAEC2InstanceCountsStateCancelled), @(UAEC2InstanceCountsStatePending) ]
+                                               stringValues:@[ @"available", @"sold", @"cancelled", @"pending" ]
+                                               unknownValue:@(UAEC2InstanceCountsStateUnknown)];
+}
+
 + (NSValueTransformer *)instanceCountXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

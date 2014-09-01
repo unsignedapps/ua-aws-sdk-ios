@@ -21,4 +21,11 @@
 **/
 - (UACWAlarmHistoryItem *)alarmHistoryItemAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AlarmHistoryItem to the alarmHistoryItems property.
+ *
+ * This will initialise alarmHistoryItems with an empty mutable array if necessary.
+**/
+- (void)addAlarmHistoryItem:(UACWAlarmHistoryItem *)alarmHistoryItem;
+
 @end

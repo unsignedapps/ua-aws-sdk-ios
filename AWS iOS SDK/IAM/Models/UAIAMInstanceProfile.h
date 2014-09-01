@@ -25,4 +25,11 @@
 **/
 - (UAIAMRole *)roleAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Role to the roles property.
+ *
+ * This will initialise roles with an empty mutable array if necessary.
+**/
+- (void)addRole:(UAIAMRole *)role;
+
 @end

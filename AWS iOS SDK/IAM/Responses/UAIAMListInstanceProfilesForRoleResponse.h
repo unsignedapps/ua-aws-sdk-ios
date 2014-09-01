@@ -22,4 +22,11 @@
 **/
 - (UAIAMInstanceProfile *)instanceProfileAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a InstanceProfile to the instanceProfiles property.
+ *
+ * This will initialise instanceProfiles with an empty mutable array if necessary.
+**/
+- (void)addInstanceProfile:(UAIAMInstanceProfile *)instanceProfile;
+
 @end

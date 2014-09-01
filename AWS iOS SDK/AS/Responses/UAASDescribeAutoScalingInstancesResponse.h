@@ -21,4 +21,11 @@
 **/
 - (UAASAutoScalingInstanceDetails *)autoScalingInstancesAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AutoScalingInstances to the autoScalingInstances property.
+ *
+ * This will initialise autoScalingInstances with an empty mutable array if necessary.
+**/
+- (void)addAutoScalingInstances:(UAASAutoScalingInstanceDetails *)autoScalingInstances;
+
 @end

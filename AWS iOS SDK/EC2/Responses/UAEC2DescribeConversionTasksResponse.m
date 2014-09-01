@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(conversionTaskAtIndex:) propertyName:@"conversionTasks"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addConversionTask:) propertyName:@"conversionTasks"];
 	}
 	return self;
 }

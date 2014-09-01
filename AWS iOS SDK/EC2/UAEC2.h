@@ -240,6 +240,7 @@
 #import "UAEC2LaunchPermission.h"
 #import "UAEC2LaunchPermissionModifications.h"
 #import "UAEC2LaunchSpecification.h"
+#import "UAEC2LaunchSpecificationSpecification.h"
 #import "UAEC2License.h"
 #import "UAEC2LicenseCapacity.h"
 #import "UAEC2Model.h"

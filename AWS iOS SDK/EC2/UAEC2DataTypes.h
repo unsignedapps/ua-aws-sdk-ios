@@ -48,6 +48,15 @@ typedef NS_ENUM(NSUInteger, UAEC2BundleTaskState) {
 	UAEC2BundleTaskStateFailed = 7
 };
 
+// UAEC2InstanceCountsState
+typedef NS_ENUM(NSUInteger, UAEC2InstanceCountsState) {
+	UAEC2InstanceCountsStateUnknown = 0,
+	UAEC2InstanceCountsStateAvailable = 1,
+	UAEC2InstanceCountsStateSold = 2,
+	UAEC2InstanceCountsStateCancelled = 3,
+	UAEC2InstanceCountsStatePending = 4
+};
+
 // UAEC2ReservedInstancesListingState
 typedef NS_ENUM(NSUInteger, UAEC2ReservedInstancesListingState) {
 	UAEC2ReservedInstancesListingStateUnknown = 0,
@@ -190,6 +199,16 @@ typedef NS_ENUM(NSUInteger, UAEC2InstanceInitiatedShutdownBehavior) {
 	UAEC2InstanceInitiatedShutdownBehaviorTerminate = 2
 };
 
+// UAEC2InstanceEventCode
+typedef NS_ENUM(NSUInteger, UAEC2InstanceEventCode) {
+	UAEC2InstanceEventCodeUnknown = 0,
+	UAEC2InstanceEventCodeInstanceReboot = 1,
+	UAEC2InstanceEventCodeSystemReboot = 2,
+	UAEC2InstanceEventCodeSystemMaintenance = 3,
+	UAEC2InstanceEventCodeInstanceRetirement = 4,
+	UAEC2InstanceEventCodeInstanceStop = 5
+};
+
 // UAEC2InstanceStatusDetailsName
 typedef NS_ENUM(NSUInteger, UAEC2InstanceStatusDetailsName) {
 	UAEC2InstanceStatusDetailsNameUnknown = 0,
@@ -253,6 +272,44 @@ typedef NS_ENUM(NSUInteger, UAEC2InstanceVirtualizationType) {
 	UAEC2InstanceVirtualizationTypeHvm = 2
 };
 
+// UAEC2PlacementGroupStrategy
+typedef NS_ENUM(NSUInteger, UAEC2PlacementGroupStrategy) {
+	UAEC2PlacementGroupStrategyUnknown = 0,
+	UAEC2PlacementGroupStrategyCluster = 1
+};
+
+// UAEC2PlacementGroupState
+typedef NS_ENUM(NSUInteger, UAEC2PlacementGroupState) {
+	UAEC2PlacementGroupStateUnknown = 0,
+	UAEC2PlacementGroupStatePending = 1,
+	UAEC2PlacementGroupStateAvailable = 2,
+	UAEC2PlacementGroupStateDeleting = 3,
+	UAEC2PlacementGroupStateDeleted = 4
+};
+
+// UAEC2RecurringChargesFrequency
+typedef NS_ENUM(NSUInteger, UAEC2RecurringChargesFrequency) {
+	UAEC2RecurringChargesFrequencyUnknown = 0,
+	UAEC2RecurringChargesFrequencyHourly = 1
+};
+
+// UAEC2ReservedInstanceProductDescription
+typedef NS_ENUM(NSUInteger, UAEC2ReservedInstanceProductDescription) {
+	UAEC2ReservedInstanceProductDescriptionUnknown = 0,
+	UAEC2ReservedInstanceProductDescriptionLinuxUNIX = 1,
+	UAEC2ReservedInstanceProductDescriptionLinuxUNIXAmazonVPC = 2,
+	UAEC2ReservedInstanceProductDescriptionSUSELinux = 3,
+	UAEC2ReservedInstanceProductDescriptionSUSELinuxAmazonVPC = 4,
+	UAEC2ReservedInstanceProductDescriptionRedHatEnterpriseLinux = 5,
+	UAEC2ReservedInstanceProductDescriptionRedHatEnterpriseLinuxAmazonVPC = 6,
+	UAEC2ReservedInstanceProductDescriptionWindows = 7,
+	UAEC2ReservedInstanceProductDescriptionWindowsAmazonVPC = 8,
+	UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerStandard = 9,
+	UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerStandardAmazonVPC = 10,
+	UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerWeb = 11,
+	UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerWebAmazonVPC = 12
+};
+
 // UAEC2ReservedInstanceState
 typedef NS_ENUM(NSUInteger, UAEC2ReservedInstanceState) {
 	UAEC2ReservedInstanceStateUnknown = 0,
@@ -260,6 +317,31 @@ typedef NS_ENUM(NSUInteger, UAEC2ReservedInstanceState) {
 	UAEC2ReservedInstanceStateActive = 2,
 	UAEC2ReservedInstanceStatePaymentFailed = 3,
 	UAEC2ReservedInstanceStateRetired = 4
+};
+
+// UAEC2ReservedInstanceOfferingType
+typedef NS_ENUM(NSUInteger, UAEC2ReservedInstanceOfferingType) {
+	UAEC2ReservedInstanceOfferingTypeUnknown = 0,
+	UAEC2ReservedInstanceOfferingTypeHeavyUtilization = 1,
+	UAEC2ReservedInstanceOfferingTypeMediumUtilization = 2,
+	UAEC2ReservedInstanceOfferingTypeLightUtilization = 3
+};
+
+// UAEC2ReservedInstanceOfferingProductDescription
+typedef NS_ENUM(NSUInteger, UAEC2ReservedInstanceOfferingProductDescription) {
+	UAEC2ReservedInstanceOfferingProductDescriptionUnknown = 0,
+	UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIX = 1,
+	UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIXAmazonVPC = 2,
+	UAEC2ReservedInstanceOfferingProductDescriptionSUSELinux = 3,
+	UAEC2ReservedInstanceOfferingProductDescriptionSUSELinuxAmazonVPC = 4,
+	UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinux = 5,
+	UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinuxAmazonVPC = 6,
+	UAEC2ReservedInstanceOfferingProductDescriptionWindows = 7,
+	UAEC2ReservedInstanceOfferingProductDescriptionWindowsAmazonVPC = 8,
+	UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandard = 9,
+	UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandardAmazonVPC = 10,
+	UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWeb = 11,
+	UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWebAmazonVPC = 12
 };
 
 // UAEC2SnapshotState
@@ -285,6 +367,17 @@ typedef NS_ENUM(NSUInteger, UAEC2SpotInstanceRequestState) {
 	UAEC2SpotInstanceRequestStateClosed = 3,
 	UAEC2SpotInstanceRequestStateCancelled = 4,
 	UAEC2SpotInstanceRequestStateFailed = 5
+};
+
+// UAEC2SpotRequestProductDescription
+typedef NS_ENUM(NSUInteger, UAEC2SpotRequestProductDescription) {
+	UAEC2SpotRequestProductDescriptionUnknown = 0,
+	UAEC2SpotRequestProductDescriptionLinuxUNIX = 1,
+	UAEC2SpotRequestProductDescriptionLinuxUNIXAmazonVPC = 2,
+	UAEC2SpotRequestProductDescriptionSUSELinux = 3,
+	UAEC2SpotRequestProductDescriptionSUSELinuxAmazonVPC = 4,
+	UAEC2SpotRequestProductDescriptionWindows = 5,
+	UAEC2SpotRequestProductDescriptionWindowsAmazonVPC = 6
 };
 
 // UAEC2ResourceType
@@ -334,5 +427,12 @@ typedef NS_ENUM(NSUInteger, UAEC2VolumeStatusInfoStatus) {
 	UAEC2VolumeStatusInfoStatusOk = 1,
 	UAEC2VolumeStatusInfoStatusImpaired = 2,
 	UAEC2VolumeStatusInfoStatusInsufficientData = 3
+};
+
+// UAEC2Platform
+typedef NS_ENUM(NSUInteger, UAEC2Platform) {
+	UAEC2PlatformUnknown = 0,
+	UAEC2PlatformEC2Classic = 1,
+	UAEC2PlatformEC2VPC = 2
 };
 

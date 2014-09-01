@@ -37,6 +37,13 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)codeQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceEventCodeInstanceReboot), @(UAEC2InstanceEventCodeSystemReboot), @(UAEC2InstanceEventCodeSystemMaintenance), @(UAEC2InstanceEventCodeInstanceRetirement), @(UAEC2InstanceEventCodeInstanceStop) ]
+                                               stringValues:@[ @"instance-reboot", @"system-reboot", @"system-maintenance", @"instance-retirement", @"instance-stop" ]
+                                               unknownValue:@(UAEC2InstanceEventCodeUnknown)];
+}
+
 + (NSValueTransformer *)notBeforeQueryStringTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -45,6 +52,13 @@
 + (NSValueTransformer *)notAfterQueryStringTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
++ (NSValueTransformer *)codeXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceEventCodeInstanceReboot), @(UAEC2InstanceEventCodeSystemReboot), @(UAEC2InstanceEventCodeSystemMaintenance), @(UAEC2InstanceEventCodeInstanceRetirement), @(UAEC2InstanceEventCodeInstanceStop) ]
+                                               stringValues:@[ @"instance-reboot", @"system-reboot", @"system-maintenance", @"instance-retirement", @"instance-stop" ]
+                                               unknownValue:@(UAEC2InstanceEventCodeUnknown)];
 }
 
 + (NSValueTransformer *)notBeforeXMLTransformer

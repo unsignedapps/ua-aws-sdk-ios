@@ -20,4 +20,11 @@
 **/
 - (UAEC2DHCPOption *)dhcpOptionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a DHCPOption to the dhcpOptions property.
+ *
+ * This will initialise dhcpOptions with an empty mutable array if necessary.
+**/
+- (void)addDHCPOption:(UAEC2DHCPOption *)dHCPOption;
+
 @end

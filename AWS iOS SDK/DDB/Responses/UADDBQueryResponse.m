@@ -26,6 +26,7 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(itemAtIndex:) propertyName:@"items"];
 		[self UA_addDDBKeyValueAdditionalAccessorForSelector:@selector(lastEvaluatedKeyValueForAttributeName:) propertyName:@"lastEvaluatedKey"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addItem:) propertyName:@"items"];
 	}
 	return self;
 }

@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(summaryMapAtIndex:) propertyName:@"summaryMap"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSummaryMap:) propertyName:@"summaryMap"];
 	}
 	return self;
 }

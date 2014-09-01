@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(autoScalingGroupAtIndex:) propertyName:@"autoScalingGroups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAutoScalingGroup:) propertyName:@"autoScalingGroups"];
 	}
 	return self;
 }

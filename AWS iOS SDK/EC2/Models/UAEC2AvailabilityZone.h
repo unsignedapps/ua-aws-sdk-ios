@@ -23,4 +23,11 @@
 **/
 - (UAEC2AvailabilityZoneMessage *)messageAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Message to the messages property.
+ *
+ * This will initialise messages with an empty mutable array if necessary.
+**/
+- (void)addMessage:(UAEC2AvailabilityZoneMessage *)message;
+
 @end

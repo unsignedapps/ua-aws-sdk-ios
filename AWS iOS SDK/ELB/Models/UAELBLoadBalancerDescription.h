@@ -60,4 +60,41 @@
 **/
 - (NSString *)securityGroupAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ListenerDescription to the listenerDescriptions property.
+ *
+ * This will initialise listenerDescriptions with an empty mutable array if necessary.
+**/
+- (void)addListenerDescription:(UAELBListenerDescription *)listenerDescription;
+/**
+ * Adds a BackendServerDescription to the backendServerDescriptions property.
+ *
+ * This will initialise backendServerDescriptions with an empty mutable array if necessary.
+**/
+- (void)addBackendServerDescription:(UAELBBackendServerDescription *)backendServerDescription;
+/**
+ * Adds a AvailabilityZone to the availabilityZones property.
+ *
+ * This will initialise availabilityZones with an empty mutable array if necessary.
+**/
+- (void)addAvailabilityZone:(NSString *)availabilityZone;
+/**
+ * Adds a Subnet to the subnets property.
+ *
+ * This will initialise subnets with an empty mutable array if necessary.
+**/
+- (void)addSubnet:(NSString *)subnet;
+/**
+ * Adds a Instance to the instances property.
+ *
+ * This will initialise instances with an empty mutable array if necessary.
+**/
+- (void)addInstance:(UAELBInstance *)instance;
+/**
+ * Adds a SecurityGroup to the securityGroups property.
+ *
+ * This will initialise securityGroups with an empty mutable array if necessary.
+**/
+- (void)addSecurityGroup:(NSString *)securityGroup;
+
 @end

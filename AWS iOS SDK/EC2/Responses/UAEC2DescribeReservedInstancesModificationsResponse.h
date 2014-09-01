@@ -21,4 +21,11 @@
 **/
 - (UAEC2ReservedInstancesModification *)reservedInstancesModificationAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ReservedInstancesModification to the reservedInstancesModifications property.
+ *
+ * This will initialise reservedInstancesModifications with an empty mutable array if necessary.
+**/
+- (void)addReservedInstancesModification:(UAEC2ReservedInstancesModification *)reservedInstancesModification;
+
 @end

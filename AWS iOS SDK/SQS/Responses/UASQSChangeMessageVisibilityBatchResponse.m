@@ -27,6 +27,8 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(successfulAtIndex:) propertyName:@"successful"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(failedAtIndex:) propertyName:@"failed"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSuccessful:) propertyName:@"successful"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addFailed:) propertyName:@"failed"];
 	}
 	return self;
 }

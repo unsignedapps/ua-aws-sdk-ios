@@ -27,4 +27,11 @@
 **/
 - (UAASAlarm *)alarmAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Alarm to the alarms property.
+ *
+ * This will initialise alarms with an empty mutable array if necessary.
+**/
+- (void)addAlarm:(UAASAlarm *)alarm;
+
 @end

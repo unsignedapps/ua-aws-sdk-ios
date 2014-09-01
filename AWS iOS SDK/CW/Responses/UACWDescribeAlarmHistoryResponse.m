@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(alarmHistoryItemAtIndex:) propertyName:@"alarmHistoryItems"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAlarmHistoryItem:) propertyName:@"alarmHistoryItems"];
 	}
 	return self;
 }

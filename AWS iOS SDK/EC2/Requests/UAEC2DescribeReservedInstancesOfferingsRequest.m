@@ -73,9 +73,30 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)productDescriptionJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIX), @(UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIXAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionSUSELinux), @(UAEC2ReservedInstanceOfferingProductDescriptionSUSELinuxAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinux), @(UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinuxAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindows), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowsAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandard), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandardAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWeb), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWebAmazonVPC) ]
+                                               stringValues:@[ @"Linux/UNIX", @"Linux/UNIX (Amazon VPC)", @"SUSE Linux", @"SUSE Linux (Amazon VPC)", @"Red Hat Enterprise Linux", @"Red Hat Enterprise Linux (Amazon VPC)", @"Windows", @"Windows (Amazon VPC)", @"Windows with SQL Server Standard", @"Windows with SQL Server Standard (Amazon VPC)", @"Windows with SQL Server Web", @"Windows with SQL Server Web (Amazon VPC)" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingProductDescriptionUnknown)];
+}
+
 + (NSValueTransformer *)filtersJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
+}
+
++ (NSValueTransformer *)instanceTenancyJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceTenancyDefault), @(UAEC2InstanceTenancyDedicated) ]
+                                               stringValues:@[ @"default", @"dedicated" ]
+                                               unknownValue:@(UAEC2InstanceTenancyUnknown)];
+}
+
++ (NSValueTransformer *)offeringTypeJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingTypeHeavyUtilization), @(UAEC2ReservedInstanceOfferingTypeMediumUtilization), @(UAEC2ReservedInstanceOfferingTypeLightUtilization) ]
+                                               stringValues:@[ @"Heavy Utilization", @"Medium Utilization", @"Light Utilization" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingTypeUnknown)];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
@@ -83,9 +104,30 @@
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
++ (NSValueTransformer *)productDescriptionQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIX), @(UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIXAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionSUSELinux), @(UAEC2ReservedInstanceOfferingProductDescriptionSUSELinuxAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinux), @(UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinuxAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindows), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowsAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandard), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandardAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWeb), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWebAmazonVPC) ]
+                                               stringValues:@[ @"Linux/UNIX", @"Linux/UNIX (Amazon VPC)", @"SUSE Linux", @"SUSE Linux (Amazon VPC)", @"Red Hat Enterprise Linux", @"Red Hat Enterprise Linux (Amazon VPC)", @"Windows", @"Windows (Amazon VPC)", @"Windows with SQL Server Standard", @"Windows with SQL Server Standard (Amazon VPC)", @"Windows with SQL Server Web", @"Windows with SQL Server Web (Amazon VPC)" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingProductDescriptionUnknown)];
+}
+
 + (NSValueTransformer *)filtersQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
+}
+
++ (NSValueTransformer *)instanceTenancyQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceTenancyDefault), @(UAEC2InstanceTenancyDedicated) ]
+                                               stringValues:@[ @"default", @"dedicated" ]
+                                               unknownValue:@(UAEC2InstanceTenancyUnknown)];
+}
+
++ (NSValueTransformer *)offeringTypeQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingTypeHeavyUtilization), @(UAEC2ReservedInstanceOfferingTypeMediumUtilization), @(UAEC2ReservedInstanceOfferingTypeLightUtilization) ]
+                                               stringValues:@[ @"Heavy Utilization", @"Medium Utilization", @"Light Utilization" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingTypeUnknown)];
 }
 
 + (NSValueTransformer *)includeMarketplaceQueryStringTransformer

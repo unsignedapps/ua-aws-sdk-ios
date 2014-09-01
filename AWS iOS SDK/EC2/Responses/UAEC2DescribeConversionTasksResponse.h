@@ -20,4 +20,11 @@
 **/
 - (UAEC2ConversionTask *)conversionTaskAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ConversionTask to the conversionTasks property.
+ *
+ * This will initialise conversionTasks with an empty mutable array if necessary.
+**/
+- (void)addConversionTask:(UAEC2ConversionTask *)conversionTask;
+
 @end

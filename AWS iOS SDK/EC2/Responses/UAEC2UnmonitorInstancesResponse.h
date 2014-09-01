@@ -20,4 +20,11 @@
 **/
 - (UAEC2InstanceMonitoring *)instanceMonitoringAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a InstanceMonitoring to the instanceMonitorings property.
+ *
+ * This will initialise instanceMonitorings with an empty mutable array if necessary.
+**/
+- (void)addInstanceMonitoring:(UAEC2InstanceMonitoring *)instanceMonitoring;
+
 @end

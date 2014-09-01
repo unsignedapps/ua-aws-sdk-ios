@@ -24,6 +24,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(queueURLAtIndex:) propertyName:@"queueUrls"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addqueueURL:) propertyName:@"queueUrls"];
 	}
 	return self;
 }

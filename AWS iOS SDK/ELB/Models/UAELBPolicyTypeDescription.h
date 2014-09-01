@@ -22,4 +22,11 @@
 **/
 - (UAELBPolicyAttributeTypeDescription *)policyAttributeTypeDescriptionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a PolicyAttributeTypeDescription to the policyAttributeTypeDescriptions property.
+ *
+ * This will initialise policyAttributeTypeDescriptions with an empty mutable array if necessary.
+**/
+- (void)addPolicyAttributeTypeDescription:(UAELBPolicyAttributeTypeDescription *)policyAttributeTypeDescription;
+
 @end

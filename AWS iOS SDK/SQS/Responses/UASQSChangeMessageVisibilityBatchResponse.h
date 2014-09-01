@@ -26,4 +26,17 @@
 **/
 - (UASQSBatchResultError *)failedAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Successful to the successful property.
+ *
+ * This will initialise successful with an empty mutable array if necessary.
+**/
+- (void)addSuccessful:(UASQSChangeMessageVisibilityBatchResultEntry *)successful;
+/**
+ * Adds a Failed to the failed property.
+ *
+ * This will initialise failed with an empty mutable array if necessary.
+**/
+- (void)addFailed:(UASQSBatchResultError *)failed;
+
 @end

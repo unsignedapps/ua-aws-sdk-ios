@@ -37,4 +37,23 @@
 **/
 - (UAEC2BlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a LaunchPermission to the launchPermissions property.
+ *
+ * This will initialise launchPermissions with an empty mutable array if necessary.
+**/
+- (void)addLaunchPermission:(UAEC2LaunchPermission *)launchPermission;
+/**
+ * Adds a ProductCode to the productCodes property.
+ *
+ * This will initialise productCodes with an empty mutable array if necessary.
+**/
+- (void)addProductCode:(UAEC2ProductCode *)productCode;
+/**
+ * Adds a BlockDeviceMapping to the blockDeviceMappings property.
+ *
+ * This will initialise blockDeviceMappings with an empty mutable array if necessary.
+**/
+- (void)addBlockDeviceMapping:(UAEC2BlockDeviceMapping *)blockDeviceMapping;
+
 @end

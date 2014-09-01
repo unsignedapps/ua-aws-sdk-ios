@@ -30,6 +30,9 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vgwTelemetryAtIndex:) propertyName:@"vgwTelemetry"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(routeAtIndex:) propertyName:@"routes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVGWTelemetry:) propertyName:@"vgwTelemetry"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addRoute:) propertyName:@"routes"];
 	}
 	return self;
 }

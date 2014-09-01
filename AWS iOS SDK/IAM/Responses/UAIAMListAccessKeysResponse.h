@@ -22,4 +22,11 @@
 **/
 - (UAIAMAccessKeyMetadata *)accessKeyMetadataAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AccessKeyMetadata to the accessKeyMetadata property.
+ *
+ * This will initialise accessKeyMetadata with an empty mutable array if necessary.
+**/
+- (void)addAccessKeyMetadata:(UAIAMAccessKeyMetadata *)accessKeyMetadata;
+
 @end

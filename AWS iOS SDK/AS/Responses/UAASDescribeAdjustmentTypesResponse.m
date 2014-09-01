@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(adjustmentTypeAtIndex:) propertyName:@"adjustmentTypes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAdjustmentType:) propertyName:@"adjustmentTypes"];
 	}
 	return self;
 }

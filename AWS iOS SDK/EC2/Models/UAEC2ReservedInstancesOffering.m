@@ -27,6 +27,8 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(recurringChargeAtIndex:) propertyName:@"recurringCharges"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(pricingDetailAtIndex:) propertyName:@"pricingDetails"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addRecurringCharge:) propertyName:@"recurringCharges"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPricingDetail:) propertyName:@"pricingDetails"];
 	}
 	return self;
 }
@@ -60,6 +62,27 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)productDescriptionQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIX), @(UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIXAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionSUSELinux), @(UAEC2ReservedInstanceOfferingProductDescriptionSUSELinuxAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinux), @(UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinuxAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindows), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowsAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandard), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandardAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWeb), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWebAmazonVPC) ]
+                                               stringValues:@[ @"Linux/UNIX", @"Linux/UNIX (Amazon VPC)", @"SUSE Linux", @"SUSE Linux (Amazon VPC)", @"Red Hat Enterprise Linux", @"Red Hat Enterprise Linux (Amazon VPC)", @"Windows", @"Windows (Amazon VPC)", @"Windows with SQL Server Standard", @"Windows with SQL Server Standard (Amazon VPC)", @"Windows with SQL Server Web", @"Windows with SQL Server Web (Amazon VPC)" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingProductDescriptionUnknown)];
+}
+
++ (NSValueTransformer *)instanceTenancyQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceTenancyDefault), @(UAEC2InstanceTenancyDedicated) ]
+                                               stringValues:@[ @"default", @"dedicated" ]
+                                               unknownValue:@(UAEC2InstanceTenancyUnknown)];
+}
+
++ (NSValueTransformer *)offeringTypeQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingTypeHeavyUtilization), @(UAEC2ReservedInstanceOfferingTypeMediumUtilization), @(UAEC2ReservedInstanceOfferingTypeLightUtilization) ]
+                                               stringValues:@[ @"Heavy Utilization", @"Medium Utilization", @"Light Utilization" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingTypeUnknown)];
+}
+
 + (NSValueTransformer *)recurringChargesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2RecurringCharge class]];
@@ -83,6 +106,27 @@
 + (NSValueTransformer *)fixedPriceXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];
+}
+
++ (NSValueTransformer *)productDescriptionXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIX), @(UAEC2ReservedInstanceOfferingProductDescriptionLinuxUNIXAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionSUSELinux), @(UAEC2ReservedInstanceOfferingProductDescriptionSUSELinuxAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinux), @(UAEC2ReservedInstanceOfferingProductDescriptionRedHatEnterpriseLinuxAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindows), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowsAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandard), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerStandardAmazonVPC), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWeb), @(UAEC2ReservedInstanceOfferingProductDescriptionWindowswithSQLServerWebAmazonVPC) ]
+                                               stringValues:@[ @"Linux/UNIX", @"Linux/UNIX (Amazon VPC)", @"SUSE Linux", @"SUSE Linux (Amazon VPC)", @"Red Hat Enterprise Linux", @"Red Hat Enterprise Linux (Amazon VPC)", @"Windows", @"Windows (Amazon VPC)", @"Windows with SQL Server Standard", @"Windows with SQL Server Standard (Amazon VPC)", @"Windows with SQL Server Web", @"Windows with SQL Server Web (Amazon VPC)" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingProductDescriptionUnknown)];
+}
+
++ (NSValueTransformer *)instanceTenancyXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceTenancyDefault), @(UAEC2InstanceTenancyDedicated) ]
+                                               stringValues:@[ @"default", @"dedicated" ]
+                                               unknownValue:@(UAEC2InstanceTenancyUnknown)];
+}
+
++ (NSValueTransformer *)offeringTypeXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingTypeHeavyUtilization), @(UAEC2ReservedInstanceOfferingTypeMediumUtilization), @(UAEC2ReservedInstanceOfferingTypeLightUtilization) ]
+                                               stringValues:@[ @"Heavy Utilization", @"Medium Utilization", @"Light Utilization" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingTypeUnknown)];
 }
 
 + (NSValueTransformer *)recurringChargesXMLTransformer

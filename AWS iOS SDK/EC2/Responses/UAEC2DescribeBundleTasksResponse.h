@@ -20,4 +20,11 @@
 **/
 - (UAEC2BundleTask *)bundleTaskAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a BundleTask to the bundleTasks property.
+ *
+ * This will initialise bundleTasks with an empty mutable array if necessary.
+**/
+- (void)addBundleTask:(UAEC2BundleTask *)bundleTask;
+
 @end

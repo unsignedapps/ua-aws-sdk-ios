@@ -27,6 +27,8 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(createVolumePermissionAtIndex:) propertyName:@"createVolumePermissions"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productCodeAtIndex:) propertyName:@"productCodes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addCreateVolumePermission:) propertyName:@"createVolumePermissions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addProductCode:) propertyName:@"productCodes"];
 	}
 	return self;
 }

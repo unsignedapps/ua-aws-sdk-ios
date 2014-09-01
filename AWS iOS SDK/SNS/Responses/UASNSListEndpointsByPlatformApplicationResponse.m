@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(endpointAtIndex:) propertyName:@"endpoints"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addEndpoint:) propertyName:@"endpoints"];
 	}
 	return self;
 }

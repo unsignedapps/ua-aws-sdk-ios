@@ -20,4 +20,11 @@
 **/
 - (UAEC2VPC *)vpcAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a VPC to the vpcs property.
+ *
+ * This will initialise vpcs with an empty mutable array if necessary.
+**/
+- (void)addVPC:(UAEC2VPC *)vPC;
+
 @end

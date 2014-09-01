@@ -25,4 +25,11 @@
 **/
 - (UACWDimension *)dimensionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Dimension to the dimensions property.
+ *
+ * This will initialise dimensions with an empty mutable array if necessary.
+**/
+- (void)addDimension:(UACWDimension *)dimension;
+
 @end

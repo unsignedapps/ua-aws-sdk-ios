@@ -11,7 +11,7 @@
 
 @interface UAEC2RecurringCharge : UAEC2Model
 
-@property (nonatomic, copy) NSString *frequency;
+@property (nonatomic) UAEC2RecurringChargesFrequency frequency;
 @property (nonatomic, strong) NSNumber *amount;
 
 @end

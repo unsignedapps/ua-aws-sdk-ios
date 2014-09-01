@@ -276,7 +276,7 @@ NSString * const UADDBParseErrorInputKey = @"Input";
 
     return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSNumber *(NSString *value)
     {
-        if (value == nil)
+        if (value == nil || [value isEqual:[NSNull null]])
             return unknownValue;
 
         // support for direct NSNumber values
@@ -327,7 +327,7 @@ NSString * const UADDBParseErrorInputKey = @"Input";
     {
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[values count]];
         for (NSNumber *value in values)
-            [array addObject:[transformer reverseTransformedValue:value]];
+            [array addObject:([transformer reverseTransformedValue:value] ?: [NSNull null])];
         return [array copy];
     }];
 }

@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpnGatewayAtIndex:) propertyName:@"vpnGateways"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVPNGateway:) propertyName:@"vpnGateways"];
 	}
 	return self;
 }

@@ -27,4 +27,17 @@
 **/
 - (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a CreateVolumePermission to the createVolumePermissions property.
+ *
+ * This will initialise createVolumePermissions with an empty mutable array if necessary.
+**/
+- (void)addCreateVolumePermission:(UAEC2CreateVolumePermission *)createVolumePermission;
+/**
+ * Adds a ProductCode to the productCodes property.
+ *
+ * This will initialise productCodes with an empty mutable array if necessary.
+**/
+- (void)addProductCode:(UAEC2ProductCode *)productCode;
+
 @end

@@ -20,4 +20,11 @@
 **/
 - (UAASAdjustmentType *)adjustmentTypeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AdjustmentType to the adjustmentTypes property.
+ *
+ * This will initialise adjustmentTypes with an empty mutable array if necessary.
+**/
+- (void)addAdjustmentType:(UAASAdjustmentType *)adjustmentType;
+
 @end

@@ -22,4 +22,11 @@
 **/
 - (UADDBKeySchema *)keySchemaAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a KeySchema to the keySchema property.
+ *
+ * This will initialise keySchema with an empty mutable array if necessary.
+**/
+- (void)addKeySchema:(UADDBKeySchema *)keySchema;
+
 @end

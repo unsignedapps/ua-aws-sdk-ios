@@ -26,4 +26,17 @@
 **/
 - (UAEC2LaunchPermission *)removeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Add to the add property.
+ *
+ * This will initialise add with an empty mutable array if necessary.
+**/
+- (void)addAdd:(UAEC2LaunchPermission *)add;
+/**
+ * Adds a Remove to the remove property.
+ *
+ * This will initialise remove with an empty mutable array if necessary.
+**/
+- (void)addRemove:(UAEC2LaunchPermission *)remove;
+
 @end

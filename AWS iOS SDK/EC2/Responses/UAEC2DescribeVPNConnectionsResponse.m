@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpnConnectionAtIndex:) propertyName:@"vpnConnections"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVPNConnection:) propertyName:@"vpnConnections"];
 	}
 	return self;
 }

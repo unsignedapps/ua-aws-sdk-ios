@@ -26,4 +26,11 @@
 **/
 - (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+
 @end

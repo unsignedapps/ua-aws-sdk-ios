@@ -33,4 +33,17 @@
 **/
 - (UAEC2ReservedInstancesModificationResponse *)modificationResultAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ReservedInstancesId to the reservedInstancesIds property.
+ *
+ * This will initialise reservedInstancesIds with an empty mutable array if necessary.
+**/
+- (void)addReservedInstancesId:(UAEC2ReservedInstancesID *)reservedInstancesId;
+/**
+ * Adds a ModificationResult to the modificationResults property.
+ *
+ * This will initialise modificationResults with an empty mutable array if necessary.
+**/
+- (void)addModificationResult:(UAEC2ReservedInstancesModificationResponse *)modificationResult;
+
 @end

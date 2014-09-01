@@ -22,4 +22,11 @@
 **/
 - (UAIAMGroup *)groupAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Group to the groups property.
+ *
+ * This will initialise groups with an empty mutable array if necessary.
+**/
+- (void)addGroup:(UAIAMGroup *)group;
+
 @end

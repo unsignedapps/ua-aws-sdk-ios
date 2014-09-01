@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(cancelledSpotInstanceRequestAtIndex:) propertyName:@"cancelledSpotInstanceRequests"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addCancelledSpotInstanceRequest:) propertyName:@"cancelledSpotInstanceRequests"];
 	}
 	return self;
 }

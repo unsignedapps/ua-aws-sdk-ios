@@ -40,4 +40,29 @@
 **/
 - (UAEC2PropagatingVGW *)propagatingVGWAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Route to the routes property.
+ *
+ * This will initialise routes with an empty mutable array if necessary.
+**/
+- (void)addRoute:(UAEC2Route *)route;
+/**
+ * Adds a Association to the associations property.
+ *
+ * This will initialise associations with an empty mutable array if necessary.
+**/
+- (void)addAssociation:(UAEC2RouteTableAssociation *)association;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+/**
+ * Adds a PropagatingVGW to the propagatingVGWs property.
+ *
+ * This will initialise propagatingVGWs with an empty mutable array if necessary.
+**/
+- (void)addPropagatingVGW:(UAEC2PropagatingVGW *)propagatingVGW;
+
 @end

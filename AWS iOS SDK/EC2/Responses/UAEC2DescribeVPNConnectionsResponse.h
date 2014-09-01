@@ -20,4 +20,11 @@
 **/
 - (UAEC2VPNConnection *)vpnConnectionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a VPNConnection to the vpnConnections property.
+ *
+ * This will initialise vpnConnections with an empty mutable array if necessary.
+**/
+- (void)addVPNConnection:(UAEC2VPNConnection *)vPNConnection;
+
 @end

@@ -28,6 +28,8 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(eventAtIndex:) propertyName:@"events"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(actionAtIndex:) propertyName:@"actions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addEvent:) propertyName:@"events"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAction:) propertyName:@"actions"];
 	}
 	return self;
 }

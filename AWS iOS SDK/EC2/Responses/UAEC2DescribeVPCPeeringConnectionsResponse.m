@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpcPeeringConnectionAtIndex:) propertyName:@"vpcPeeringConnections"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVPCPeeringConnection:) propertyName:@"vpcPeeringConnections"];
 	}
 	return self;
 }

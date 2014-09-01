@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(loadBalancerDescriptionAtIndex:) propertyName:@"loadBalancerDescriptions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLoadBalancerDescription:) propertyName:@"loadBalancerDescriptions"];
 	}
 	return self;
 }

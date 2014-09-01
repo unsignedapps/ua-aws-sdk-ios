@@ -20,4 +20,11 @@
 **/
 - (UAEC2SpotInstanceRequest *)spotInstanceRequestAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a SpotInstanceRequest to the spotInstanceRequests property.
+ *
+ * This will initialise spotInstanceRequests with an empty mutable array if necessary.
+**/
+- (void)addSpotInstanceRequest:(UAEC2SpotInstanceRequest *)spotInstanceRequest;
+
 @end

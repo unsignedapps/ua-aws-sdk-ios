@@ -21,4 +21,11 @@
 **/
 - (UAEC2SpotPriceHistory *)spotPriceHistoryAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a SpotPriceHistory to the spotPriceHistory property.
+ *
+ * This will initialise spotPriceHistory with an empty mutable array if necessary.
+**/
+- (void)addSpotPriceHistory:(UAEC2SpotPriceHistory *)spotPriceHistory;
+
 @end

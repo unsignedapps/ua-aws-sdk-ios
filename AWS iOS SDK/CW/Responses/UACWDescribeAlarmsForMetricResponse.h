@@ -20,4 +20,11 @@
 **/
 - (UACWMetricAlarm *)metricAlarmAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a MetricAlarm to the metricAlarms property.
+ *
+ * This will initialise metricAlarms with an empty mutable array if necessary.
+**/
+- (void)addMetricAlarm:(UACWMetricAlarm *)metricAlarm;
+
 @end

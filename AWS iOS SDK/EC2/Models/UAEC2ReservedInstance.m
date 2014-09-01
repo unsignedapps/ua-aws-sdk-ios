@@ -27,6 +27,8 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(recurringChargeAtIndex:) propertyName:@"recurringCharges"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addRecurringCharge:) propertyName:@"recurringCharges"];
 	}
 	return self;
 }
@@ -73,6 +75,13 @@
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
++ (NSValueTransformer *)productDescriptionQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceProductDescriptionLinuxUNIX), @(UAEC2ReservedInstanceProductDescriptionLinuxUNIXAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionSUSELinux), @(UAEC2ReservedInstanceProductDescriptionSUSELinuxAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionRedHatEnterpriseLinux), @(UAEC2ReservedInstanceProductDescriptionRedHatEnterpriseLinuxAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionWindows), @(UAEC2ReservedInstanceProductDescriptionWindowsAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerStandard), @(UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerStandardAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerWeb), @(UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerWebAmazonVPC) ]
+                                               stringValues:@[ @"Linux/UNIX", @"Linux/UNIX (Amazon VPC)", @"SUSE Linux", @"SUSE Linux (Amazon VPC)", @"Red Hat Enterprise Linux", @"Red Hat Enterprise Linux (Amazon VPC)", @"Windows", @"Windows (Amazon VPC)", @"Windows with SQL Server Standard", @"Windows with SQL Server Standard (Amazon VPC)", @"Windows with SQL Server Web", @"Windows with SQL Server Web (Amazon VPC)" ]
+                                               unknownValue:@(UAEC2ReservedInstanceProductDescriptionUnknown)];
+}
+
 + (NSValueTransformer *)stateQueryStringTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceStatePaymentPending), @(UAEC2ReservedInstanceStateActive), @(UAEC2ReservedInstanceStatePaymentFailed), @(UAEC2ReservedInstanceStateRetired) ]
@@ -83,6 +92,20 @@
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
+}
+
++ (NSValueTransformer *)instanceTenancyQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceTenancyDefault), @(UAEC2InstanceTenancyDedicated) ]
+                                               stringValues:@[ @"default", @"dedicated" ]
+                                               unknownValue:@(UAEC2InstanceTenancyUnknown)];
+}
+
++ (NSValueTransformer *)offeringTypeQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingTypeHeavyUtilization), @(UAEC2ReservedInstanceOfferingTypeMediumUtilization), @(UAEC2ReservedInstanceOfferingTypeLightUtilization) ]
+                                               stringValues:@[ @"Heavy Utilization", @"Medium Utilization", @"Light Utilization" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingTypeUnknown)];
 }
 
 + (NSValueTransformer *)recurringChargesQueryStringTransformer
@@ -120,6 +143,13 @@
   return [NSValueTransformer UA_XMLTransformerForDouble];
 }
 
++ (NSValueTransformer *)productDescriptionXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceProductDescriptionLinuxUNIX), @(UAEC2ReservedInstanceProductDescriptionLinuxUNIXAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionSUSELinux), @(UAEC2ReservedInstanceProductDescriptionSUSELinuxAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionRedHatEnterpriseLinux), @(UAEC2ReservedInstanceProductDescriptionRedHatEnterpriseLinuxAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionWindows), @(UAEC2ReservedInstanceProductDescriptionWindowsAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerStandard), @(UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerStandardAmazonVPC), @(UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerWeb), @(UAEC2ReservedInstanceProductDescriptionWindowswithSQLServerWebAmazonVPC) ]
+                                               stringValues:@[ @"Linux/UNIX", @"Linux/UNIX (Amazon VPC)", @"SUSE Linux", @"SUSE Linux (Amazon VPC)", @"Red Hat Enterprise Linux", @"Red Hat Enterprise Linux (Amazon VPC)", @"Windows", @"Windows (Amazon VPC)", @"Windows with SQL Server Standard", @"Windows with SQL Server Standard (Amazon VPC)", @"Windows with SQL Server Web", @"Windows with SQL Server Web (Amazon VPC)" ]
+                                               unknownValue:@(UAEC2ReservedInstanceProductDescriptionUnknown)];
+}
+
 + (NSValueTransformer *)stateXMLTransformer
 {
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceStatePaymentPending), @(UAEC2ReservedInstanceStateActive), @(UAEC2ReservedInstanceStatePaymentFailed), @(UAEC2ReservedInstanceStateRetired) ]
@@ -130,6 +160,20 @@
 + (NSValueTransformer *)tagsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2Tag class]];
+}
+
++ (NSValueTransformer *)instanceTenancyXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceTenancyDefault), @(UAEC2InstanceTenancyDedicated) ]
+                                               stringValues:@[ @"default", @"dedicated" ]
+                                               unknownValue:@(UAEC2InstanceTenancyUnknown)];
+}
+
++ (NSValueTransformer *)offeringTypeXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingTypeHeavyUtilization), @(UAEC2ReservedInstanceOfferingTypeMediumUtilization), @(UAEC2ReservedInstanceOfferingTypeLightUtilization) ]
+                                               stringValues:@[ @"Heavy Utilization", @"Medium Utilization", @"Light Utilization" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingTypeUnknown)];
 }
 
 + (NSValueTransformer *)recurringChargesXMLTransformer

@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(internetGatewayAtIndex:) propertyName:@"internetGateways"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInternetGateway:) propertyName:@"internetGateways"];
 	}
 	return self;
 }

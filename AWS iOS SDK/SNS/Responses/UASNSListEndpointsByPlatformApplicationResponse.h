@@ -21,4 +21,11 @@
 **/
 - (UASNSEndpoint *)endpointAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Endpoint to the endpoints property.
+ *
+ * This will initialise endpoints with an empty mutable array if necessary.
+**/
+- (void)addEndpoint:(UASNSEndpoint *)endpoint;
+
 @end

@@ -18,7 +18,7 @@ typedef BOOL(^UAEC2DescribeReservedInstancesRequestShouldContinueWaitingBlock)(U
 @property (nonatomic) BOOL dryRun;
 @property (nonatomic, strong) NSMutableArray *reservedInstancesIDs;
 @property (nonatomic, strong) NSMutableArray *filters;
-@property (nonatomic, copy) NSString *offeringType;
+@property (nonatomic) UAEC2ReservedInstanceOfferingType offeringType;
 // @property (nonatomic, copy) UAEC2DescribeReservedInstancesRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2DescribeReservedInstancesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

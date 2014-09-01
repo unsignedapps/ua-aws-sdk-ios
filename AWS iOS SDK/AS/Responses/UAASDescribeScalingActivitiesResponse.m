@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(activityAtIndex:) propertyName:@"activities"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addActivity:) propertyName:@"activities"];
 	}
 	return self;
 }

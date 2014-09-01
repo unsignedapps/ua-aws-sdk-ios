@@ -38,4 +38,17 @@
 **/
 - (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a BlockDeviceMapping to the blockDeviceMappings property.
+ *
+ * This will initialise blockDeviceMappings with an empty mutable array if necessary.
+**/
+- (void)addBlockDeviceMapping:(UAEC2InstanceBlockDeviceMapping *)blockDeviceMapping;
+/**
+ * Adds a ProductCode to the productCodes property.
+ *
+ * This will initialise productCodes with an empty mutable array if necessary.
+**/
+- (void)addProductCode:(UAEC2ProductCode *)productCode;
+
 @end

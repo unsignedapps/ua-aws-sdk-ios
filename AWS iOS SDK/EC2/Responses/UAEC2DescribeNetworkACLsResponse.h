@@ -20,4 +20,11 @@
 **/
 - (UAEC2NetworkACL *)networkACLAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a NetworkACL to the networkACLs property.
+ *
+ * This will initialise networkACLs with an empty mutable array if necessary.
+**/
+- (void)addNetworkACL:(UAEC2NetworkACL *)networkACL;
+
 @end

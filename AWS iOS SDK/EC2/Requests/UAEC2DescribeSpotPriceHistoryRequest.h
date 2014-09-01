@@ -33,9 +33,9 @@ typedef BOOL(^UAEC2DescribeSpotPriceHistoryRequestShouldContinueWaitingBlock)(UA
 - (NSString *)instanceTypeAtIndex:(NSUInteger)index;
 
 /**
- * Retrieves the NSString at the specified index.
+ * Retrieves the UAEC2SpotRequestProductDescription at the specified index.
 **/
-- (NSString *)productionDescriptionAtIndex:(NSUInteger)index;
+- (UAEC2SpotRequestProductDescription)productionDescriptionAtIndex:(NSUInteger)index;
 
 /**
  * Retrieves the UAEC2Filter at the specified index.
@@ -49,11 +49,11 @@ typedef BOOL(^UAEC2DescribeSpotPriceHistoryRequestShouldContinueWaitingBlock)(UA
 **/
 - (void)addInstanceType:(NSString *)instanceType;
 /**
- * Adds a ProductionDescription to the productDescriptions property.
+ * Adds a ProductionDescription enum to the productDescriptions property.
  *
  * This will initialise productDescriptions with an empty mutable array if necessary.
 **/
-- (void)addProductionDescription:(NSString *)productionDescription;
+- (void)addProductionDescription:(UAEC2SpotRequestProductDescription)productionDescription;
 /**
  * Adds a Filter to the filters property.
  *

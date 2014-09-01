@@ -28,6 +28,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
 	}
 	return self;
 }
@@ -108,6 +109,13 @@
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
++ (NSValueTransformer *)productDescriptionQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2SpotRequestProductDescriptionLinuxUNIX), @(UAEC2SpotRequestProductDescriptionLinuxUNIXAmazonVPC), @(UAEC2SpotRequestProductDescriptionSUSELinux), @(UAEC2SpotRequestProductDescriptionSUSELinuxAmazonVPC), @(UAEC2SpotRequestProductDescriptionWindows), @(UAEC2SpotRequestProductDescriptionWindowsAmazonVPC) ]
+                                               stringValues:@[ @"Linux/UNIX", @"Linux/UNIX (Amazon VPC)", @"SUSE Linux", @"SUSE Linux (Amazon VPC)", @"Windows", @"Windows (Amazon VPC)" ]
+                                               unknownValue:@(UAEC2SpotRequestProductDescriptionUnknown)];
+}
+
 + (NSValueTransformer *)tagsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Tag class]];
@@ -160,6 +168,13 @@
 + (NSValueTransformer *)createTimeXMLTransformer
 {
     return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
++ (NSValueTransformer *)productDescriptionXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2SpotRequestProductDescriptionLinuxUNIX), @(UAEC2SpotRequestProductDescriptionLinuxUNIXAmazonVPC), @(UAEC2SpotRequestProductDescriptionSUSELinux), @(UAEC2SpotRequestProductDescriptionSUSELinuxAmazonVPC), @(UAEC2SpotRequestProductDescriptionWindows), @(UAEC2SpotRequestProductDescriptionWindowsAmazonVPC) ]
+                                               stringValues:@[ @"Linux/UNIX", @"Linux/UNIX (Amazon VPC)", @"SUSE Linux", @"SUSE Linux (Amazon VPC)", @"Windows", @"Windows (Amazon VPC)" ]
+                                               unknownValue:@(UAEC2SpotRequestProductDescriptionUnknown)];
 }
 
 + (NSValueTransformer *)tagsXMLTransformer

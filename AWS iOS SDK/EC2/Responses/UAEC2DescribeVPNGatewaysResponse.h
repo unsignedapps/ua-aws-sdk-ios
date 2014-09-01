@@ -20,4 +20,11 @@
 **/
 - (UAEC2VPNGateway *)vpnGatewayAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a VPNGateway to the vpnGateways property.
+ *
+ * This will initialise vpnGateways with an empty mutable array if necessary.
+**/
+- (void)addVPNGateway:(UAEC2VPNGateway *)vPNGateway;
+
 @end

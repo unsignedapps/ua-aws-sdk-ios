@@ -18,4 +18,11 @@
 **/
 - (NSString *)subnetAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Subnet to the subnets property.
+ *
+ * This will initialise subnets with an empty mutable array if necessary.
+**/
+- (void)addSubnet:(NSString *)subnet;
+
 @end

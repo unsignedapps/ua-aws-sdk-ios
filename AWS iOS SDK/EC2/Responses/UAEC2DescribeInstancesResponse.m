@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservationAtIndex:) propertyName:@"reservations"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReservation:) propertyName:@"reservations"];
 	}
 	return self;
 }

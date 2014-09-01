@@ -39,4 +39,23 @@
 **/
 - (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a InstanceCount to the instanceCounts property.
+ *
+ * This will initialise instanceCounts with an empty mutable array if necessary.
+**/
+- (void)addInstanceCount:(UAEC2InstanceCount *)instanceCount;
+/**
+ * Adds a PriceSchedule to the priceSchedules property.
+ *
+ * This will initialise priceSchedules with an empty mutable array if necessary.
+**/
+- (void)addPriceSchedule:(UAEC2PriceSchedule *)priceSchedule;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+
 @end

@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(exportTaskAtIndex:) propertyName:@"exportTasks"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addExportTask:) propertyName:@"exportTasks"];
 	}
 	return self;
 }

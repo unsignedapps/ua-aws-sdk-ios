@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(mFADeviceAtIndex:) propertyName:@"mFADevices"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addMFADevice:) propertyName:@"mFADevices"];
 	}
 	return self;
 }

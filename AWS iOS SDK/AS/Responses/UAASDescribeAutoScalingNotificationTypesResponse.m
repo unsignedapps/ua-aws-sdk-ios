@@ -24,6 +24,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(autoScalingNotificationTypeAtIndex:) propertyName:@"autoScalingNotificationTypes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAutoScalingNotificationType:) propertyName:@"autoScalingNotificationTypes"];
 	}
 	return self;
 }

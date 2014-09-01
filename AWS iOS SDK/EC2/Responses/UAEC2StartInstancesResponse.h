@@ -20,4 +20,11 @@
 **/
 - (UAEC2InstanceStateChange *)startingInstanceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a StartingInstance to the startingInstances property.
+ *
+ * This will initialise startingInstances with an empty mutable array if necessary.
+**/
+- (void)addStartingInstance:(UAEC2InstanceStateChange *)startingInstance;
+
 @end

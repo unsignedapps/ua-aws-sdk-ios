@@ -21,4 +21,11 @@
 **/
 - (UACWDatapoint *)datapointAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Datapoint to the datapoints property.
+ *
+ * This will initialise datapoints with an empty mutable array if necessary.
+**/
+- (void)addDatapoint:(UACWDatapoint *)datapoint;
+
 @end

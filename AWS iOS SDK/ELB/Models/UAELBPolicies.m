@@ -28,6 +28,9 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(appCookieStickinessPolicyAtIndex:) propertyName:@"appCookieStickinessPolicies"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(lBCookieStickinessPolicyAtIndex:) propertyName:@"lBCookieStickinessPolicies"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(otherPolicyAtIndex:) propertyName:@"otherPolicies"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAppCookieStickinessPolicy:) propertyName:@"appCookieStickinessPolicies"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLBCookieStickinessPolicy:) propertyName:@"lBCookieStickinessPolicies"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addOtherPolicy:) propertyName:@"otherPolicies"];
 	}
 	return self;
 }

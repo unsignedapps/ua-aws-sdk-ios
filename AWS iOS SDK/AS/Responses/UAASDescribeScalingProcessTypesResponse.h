@@ -20,4 +20,11 @@
 **/
 - (UAASProcessType *)processAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Process to the processes property.
+ *
+ * This will initialise processes with an empty mutable array if necessary.
+**/
+- (void)addProcess:(UAASProcessType *)process;
+
 @end

@@ -10,7 +10,7 @@
 #import "UAEC2RequestSpotInstancesRequest.h"
 #import "UAAWSAdditionalAccessors.h"
 #import "UAEC2RequestSpotInstancesResponse.h"
-#import "UAEC2LaunchSpecification.h"
+#import "UAEC2LaunchSpecificationSpecification.h"
 
 @interface UAEC2RequestSpotInstancesRequest ()
 
@@ -65,6 +65,13 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)typeJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2SpotInstanceRequestTypeOneTime), @(UAEC2SpotInstanceRequestTypePersistent) ]
+                                               stringValues:@[ @"one-time", @"persistent" ]
+                                               unknownValue:@(UAEC2SpotInstanceRequestTypeUnknown)];
+}
+
 + (NSValueTransformer *)validFromJSONTransformer
 {
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -77,12 +84,19 @@
 
 + (NSValueTransformer *)launchSpecificationJSONTransformer
 {
-  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2LaunchSpecification class]];
+  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2LaunchSpecificationSpecification class]];
 }
 
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
+}
+
++ (NSValueTransformer *)typeQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2SpotInstanceRequestTypeOneTime), @(UAEC2SpotInstanceRequestTypePersistent) ]
+                                               stringValues:@[ @"one-time", @"persistent" ]
+                                               unknownValue:@(UAEC2SpotInstanceRequestTypeUnknown)];
 }
 
 + (NSValueTransformer *)validFromQueryStringTransformer
@@ -97,7 +111,7 @@
 
 + (NSValueTransformer *)launchSpecificationQueryStringTransformer
 {
-	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchSpecification class]];
+	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2LaunchSpecificationSpecification class]];
 }
 
 /*#pragma mark - Invocation

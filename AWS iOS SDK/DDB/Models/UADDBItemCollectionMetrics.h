@@ -24,4 +24,18 @@
 **/
 - (NSNumber *)sizeEstimateRangeGBAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a SizeEstimateRangeGB to the sizeEstimateRangeGB property.
+ *
+ * This will initialise sizeEstimateRangeGB with an empty mutable array if necessary.
+**/
+- (void)addSizeEstimateRangeGB:(NSNumber *)sizeEstimateRangeGB;
+
+/**
+ * Sets the DynamoDB attribute value for the specified attribute name in itemCollectionKey property.
+ *
+ * This will initialise itemCollectionKey with an empty mutable dictionary if necessary.
+**/
+- (void)setItemCollectionKeyValue:(id)itemCollectionKey forAttributeName:(NSString *)attributeName;
+
 @end

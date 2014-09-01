@@ -20,4 +20,11 @@
 **/
 - (UAELBInstanceStateDetails *)instanceStateAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a InstanceState to the instanceStates property.
+ *
+ * This will initialise instanceStates with an empty mutable array if necessary.
+**/
+- (void)addInstanceState:(UAELBInstanceStateDetails *)instanceState;
+
 @end

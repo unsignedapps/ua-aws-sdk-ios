@@ -20,4 +20,11 @@
 **/
 - (UAEC2ReservedInstance *)reservedInstanceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ReservedInstance to the reservedInstances property.
+ *
+ * This will initialise reservedInstances with an empty mutable array if necessary.
+**/
+- (void)addReservedInstance:(UAEC2ReservedInstance *)reservedInstance;
+
 @end

@@ -37,4 +37,23 @@
 **/
 - (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a IPPermission to the ipPermissions property.
+ *
+ * This will initialise ipPermissions with an empty mutable array if necessary.
+**/
+- (void)addIPPermission:(UAEC2IPPermission *)iPPermission;
+/**
+ * Adds a IPPermissionEgress to the ipPermissionsEgress property.
+ *
+ * This will initialise ipPermissionsEgress with an empty mutable array if necessary.
+**/
+- (void)addIPPermissionEgress:(UAEC2IPPermission *)iPPermissionEgress;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+
 @end

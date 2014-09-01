@@ -18,4 +18,11 @@
 **/
 - (NSString *)terminationPolicyTypeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a TerminationPolicyType to the terminationPolicyTypes property.
+ *
+ * This will initialise terminationPolicyTypes with an empty mutable array if necessary.
+**/
+- (void)addTerminationPolicyType:(NSString *)terminationPolicyType;
+
 @end

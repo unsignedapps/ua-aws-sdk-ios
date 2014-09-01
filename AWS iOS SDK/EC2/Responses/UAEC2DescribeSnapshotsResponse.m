@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(snapshotAtIndex:) propertyName:@"snapshots"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSnapshot:) propertyName:@"snapshots"];
 	}
 	return self;
 }

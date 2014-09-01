@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(messageAtIndex:) propertyName:@"messages"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addMessage:) propertyName:@"messages"];
 	}
 	return self;
 }

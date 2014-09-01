@@ -20,4 +20,11 @@
 **/
 - (UAELBPolicyTypeDescription *)policyTypeDescriptionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a PolicyTypeDescription to the policyTypeDescriptions property.
+ *
+ * This will initialise policyTypeDescriptions with an empty mutable array if necessary.
+**/
+- (void)addPolicyTypeDescription:(UAELBPolicyTypeDescription *)policyTypeDescription;
+
 @end

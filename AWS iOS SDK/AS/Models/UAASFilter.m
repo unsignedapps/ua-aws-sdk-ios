@@ -24,6 +24,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(valueAtIndex:) propertyName:@"values"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addValue:) propertyName:@"values"];
 	}
 	return self;
 }
@@ -36,7 +37,7 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"name": @"Name",
-        @"values": @"Values.member"
+        @"values": @"Values.Member"
     }];
     return [keyPaths copy];
 }

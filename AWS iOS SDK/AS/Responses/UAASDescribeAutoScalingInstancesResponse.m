@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(autoScalingInstancesAtIndex:) propertyName:@"autoScalingInstances"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAutoScalingInstances:) propertyName:@"autoScalingInstances"];
 	}
 	return self;
 }

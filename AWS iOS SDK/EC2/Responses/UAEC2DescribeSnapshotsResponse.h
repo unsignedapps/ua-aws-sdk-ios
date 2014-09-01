@@ -20,4 +20,11 @@
 **/
 - (UAEC2Snapshot *)snapshotAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Snapshot to the snapshots property.
+ *
+ * This will initialise snapshots with an empty mutable array if necessary.
+**/
+- (void)addSnapshot:(UAEC2Snapshot *)snapshot;
+
 @end

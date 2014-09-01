@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(datapointAtIndex:) propertyName:@"datapoints"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDatapoint:) propertyName:@"datapoints"];
 	}
 	return self;
 }

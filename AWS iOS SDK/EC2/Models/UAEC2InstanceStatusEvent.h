@@ -11,7 +11,7 @@
 
 @interface UAEC2InstanceStatusEvent : UAEC2Model
 
-@property (nonatomic, copy) NSString *code;
+@property (nonatomic) UAEC2InstanceEventCode code;
 @property (nonatomic, copy) NSString *descriptionValue;
 @property (nonatomic, strong) NSDate *notBefore;
 @property (nonatomic, strong) NSDate *notAfter;

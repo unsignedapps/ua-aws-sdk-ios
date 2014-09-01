@@ -20,4 +20,11 @@
 **/
 - (UAEC2Region *)regionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Region to the regions property.
+ *
+ * This will initialise regions with an empty mutable array if necessary.
+**/
+- (void)addRegion:(UAEC2Region *)region;
+
 @end

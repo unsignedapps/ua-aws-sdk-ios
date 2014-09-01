@@ -29,4 +29,17 @@
 **/
 - (UAEC2IPRange *)ipRangeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a UserIdGroupPair to the userIdGroupPairs property.
+ *
+ * This will initialise userIdGroupPairs with an empty mutable array if necessary.
+**/
+- (void)addUserIdGroupPair:(UAEC2UserIdGroupPair *)userIdGroupPair;
+/**
+ * Adds a IPRange to the ipRanges property.
+ *
+ * This will initialise ipRanges with an empty mutable array if necessary.
+**/
+- (void)addIPRange:(UAEC2IPRange *)iPRange;
+
 @end

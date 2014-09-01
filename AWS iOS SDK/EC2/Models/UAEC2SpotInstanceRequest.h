@@ -26,7 +26,7 @@
 @property (nonatomic, copy) UAEC2LaunchSpecification *launchSpecification;
 @property (nonatomic, copy) NSString *instanceID;
 @property (nonatomic, copy) NSDate *createTime;
-@property (nonatomic, copy) NSString *productDescription;
+@property (nonatomic) UAEC2SpotRequestProductDescription productDescription;
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic, copy) NSString *launchedAvailabilityZone;
 
@@ -34,5 +34,12 @@
  * Retrieves the UAEC2Tag at the specified index.
 **/
 - (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
+
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
 
 @end

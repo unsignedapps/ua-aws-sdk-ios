@@ -8,7 +8,7 @@
 
 #import "UAEC2Request.h"
 
-@class UAEC2LaunchSpecification, UAEC2RequestSpotInstancesResponse;
+@class UAEC2LaunchSpecificationSpecification, UAEC2RequestSpotInstancesResponse;
 
 typedef void(^UAEC2RequestSpotInstancesRequestCompletionBlock)(UAEC2RequestSpotInstancesResponse *response, NSError *error);
 typedef BOOL(^UAEC2RequestSpotInstancesRequestShouldContinueWaitingBlock)(UAEC2RequestSpotInstancesResponse *response, NSError *error);
@@ -18,12 +18,12 @@ typedef BOOL(^UAEC2RequestSpotInstancesRequestShouldContinueWaitingBlock)(UAEC2R
 @property (nonatomic) BOOL dryRun;
 @property (nonatomic, copy) NSString *spotPrice;
 @property (nonatomic, strong) NSNumber *instanceCount;
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic) UAEC2SpotInstanceRequestType type;
 @property (nonatomic, strong) NSDate *validFrom;
 @property (nonatomic, strong) NSDate *validUntil;
 @property (nonatomic, copy) NSString *launchGroup;
 @property (nonatomic, copy) NSString *availabilityZoneGroup;
-@property (nonatomic, copy) UAEC2LaunchSpecification *launchSpecification;
+@property (nonatomic, copy) UAEC2LaunchSpecificationSpecification *launchSpecification;
 // @property (nonatomic, copy) UAEC2RequestSpotInstancesRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2RequestSpotInstancesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

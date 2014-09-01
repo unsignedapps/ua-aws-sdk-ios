@@ -30,4 +30,17 @@
 **/
 - (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a VPCAttachment to the vpcAttachments property.
+ *
+ * This will initialise vpcAttachments with an empty mutable array if necessary.
+**/
+- (void)addVPCAttachment:(UAEC2VPCAttachment *)vPCAttachment;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+
 @end

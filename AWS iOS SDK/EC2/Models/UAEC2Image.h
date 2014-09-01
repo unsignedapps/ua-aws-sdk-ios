@@ -51,4 +51,23 @@
 **/
 - (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ProductCode to the productCodes property.
+ *
+ * This will initialise productCodes with an empty mutable array if necessary.
+**/
+- (void)addProductCode:(UAEC2ProductCode *)productCode;
+/**
+ * Adds a BlockDeviceMapping to the blockDeviceMappings property.
+ *
+ * This will initialise blockDeviceMappings with an empty mutable array if necessary.
+**/
+- (void)addBlockDeviceMapping:(UAEC2BlockDeviceMapping *)blockDeviceMapping;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+
 @end

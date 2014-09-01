@@ -19,4 +19,11 @@
 **/
 - (NSString *)tableNameAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a TableName to the tableNames property.
+ *
+ * This will initialise tableNames with an empty mutable array if necessary.
+**/
+- (void)addTableName:(NSString *)tableName;
+
 @end

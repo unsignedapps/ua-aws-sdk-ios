@@ -47,4 +47,23 @@
 **/
 - (UAEC2PrivateIPAddress *)privateIPAddressAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Group to the groups property.
+ *
+ * This will initialise groups with an empty mutable array if necessary.
+**/
+- (void)addGroup:(UAEC2GroupIdentifier *)group;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+/**
+ * Adds a PrivateIPAddress to the privateIPAddresses property.
+ *
+ * This will initialise privateIPAddresses with an empty mutable array if necessary.
+**/
+- (void)addPrivateIPAddress:(UAEC2PrivateIPAddress *)privateIPAddress;
+
 @end

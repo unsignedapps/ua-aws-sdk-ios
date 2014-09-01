@@ -35,6 +35,20 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)frequencyQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2RecurringChargesFrequencyHourly) ]
+                                               stringValues:@[ @"Hourly" ]
+                                               unknownValue:@(UAEC2RecurringChargesFrequencyUnknown)];
+}
+
++ (NSValueTransformer *)frequencyXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2RecurringChargesFrequencyHourly) ]
+                                               stringValues:@[ @"Hourly" ]
+                                               unknownValue:@(UAEC2RecurringChargesFrequencyUnknown)];
+}
+
 + (NSValueTransformer *)amountXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

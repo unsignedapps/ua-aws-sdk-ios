@@ -19,4 +19,11 @@
 **/
 - (NSString *)policyNameAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a PolicyName to the policyNames property.
+ *
+ * This will initialise policyNames with an empty mutable array if necessary.
+**/
+- (void)addPolicyName:(NSString *)policyName;
+
 @end

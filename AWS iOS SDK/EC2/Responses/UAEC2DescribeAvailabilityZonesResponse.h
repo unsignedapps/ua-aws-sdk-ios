@@ -20,4 +20,11 @@
 **/
 - (UAEC2AvailabilityZone *)availabilityZoneAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AvailabilityZone to the availabilityZones property.
+ *
+ * This will initialise availabilityZones with an empty mutable array if necessary.
+**/
+- (void)addAvailabilityZone:(UAEC2AvailabilityZone *)availabilityZone;
+
 @end

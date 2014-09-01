@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(launchConfigurationAtIndex:) propertyName:@"launchConfigurations"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLaunchConfiguration:) propertyName:@"launchConfigurations"];
 	}
 	return self;
 }

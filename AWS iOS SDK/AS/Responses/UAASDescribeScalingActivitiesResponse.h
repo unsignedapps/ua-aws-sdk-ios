@@ -21,4 +21,11 @@
 **/
 - (UAASActivity *)activityAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Activity to the activities property.
+ *
+ * This will initialise activities with an empty mutable array if necessary.
+**/
+- (void)addActivity:(UAASActivity *)activity;
+
 @end

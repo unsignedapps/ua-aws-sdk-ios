@@ -20,4 +20,11 @@
 **/
 - (UAEC2SecurityGroup *)securityGroupAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a SecurityGroup to the securityGroups property.
+ *
+ * This will initialise securityGroups with an empty mutable array if necessary.
+**/
+- (void)addSecurityGroup:(UAEC2SecurityGroup *)securityGroup;
+
 @end

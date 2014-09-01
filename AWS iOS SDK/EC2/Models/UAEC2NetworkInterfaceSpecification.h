@@ -34,4 +34,17 @@
 **/
 - (UAEC2PrivateIPAddressSpecification *)privateIPAddressAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Group to the groups property.
+ *
+ * This will initialise groups with an empty mutable array if necessary.
+**/
+- (void)addGroup:(NSString *)group;
+/**
+ * Adds a PrivateIPAddress to the privateIPAddresses property.
+ *
+ * This will initialise privateIPAddresses with an empty mutable array if necessary.
+**/
+- (void)addPrivateIPAddress:(UAEC2PrivateIPAddressSpecification *)privateIPAddress;
+
 @end

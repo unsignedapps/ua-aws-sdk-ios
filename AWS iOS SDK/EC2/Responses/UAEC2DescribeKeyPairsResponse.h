@@ -20,4 +20,11 @@
 **/
 - (UAEC2KeyPair *)keyPairAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a KeyPair to the keyPairs property.
+ *
+ * This will initialise keyPairs with an empty mutable array if necessary.
+**/
+- (void)addKeyPair:(UAEC2KeyPair *)keyPair;
+
 @end

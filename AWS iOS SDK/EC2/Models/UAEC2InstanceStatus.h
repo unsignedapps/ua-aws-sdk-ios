@@ -25,4 +25,11 @@
 **/
 - (UAEC2InstanceStatusEvent *)eventAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Event to the events property.
+ *
+ * This will initialise events with an empty mutable array if necessary.
+**/
+- (void)addEvent:(UAEC2InstanceStatusEvent *)event;
+
 @end

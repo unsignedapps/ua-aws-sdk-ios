@@ -28,6 +28,10 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(alarmActionAtIndex:) propertyName:@"alarmActions"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(insufficientDataActionAtIndex:) propertyName:@"insufficientDataActions"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dimensionAtIndex:) propertyName:@"dimensions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addOKAction:) propertyName:@"oKActions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAlarmAction:) propertyName:@"alarmActions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInsufficientDataAction:) propertyName:@"insufficientDataActions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDimension:) propertyName:@"dimensions"];
 	}
 	return self;
 }

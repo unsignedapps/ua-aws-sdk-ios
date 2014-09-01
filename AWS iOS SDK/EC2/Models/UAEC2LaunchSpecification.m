@@ -33,35 +33,11 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(networkInterfaceAtIndex:) propertyName:@"networkInterfaces"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSecurityGroup:) propertyName:@"securityGroups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addBlockDeviceMapping:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addNetworkInterface:) propertyName:@"networkInterfaces"];
 	}
 	return self;
-}
-
-+ (NSDictionary *)queryStringKeyPathsByPropertyKey
-{
-    // Start with super's key paths (if there are any)
-    NSMutableDictionary *keyPaths = [[UAEC2Model queryStringKeyPathsByPropertyKey] mutableCopy];
-
-    [keyPaths addEntriesFromDictionary:
-    @{
-        @"imageID": @"ImageId",
-        @"keyName": @"KeyName",
-        @"securityGroups": @"GroupSet",
-        @"userData": @"UserData",
-        @"decodedUserData": [NSNull null],
-        @"addressingType": @"AddressingType",
-        @"instanceType": @"InstanceType",
-        @"placement": @"Placement",
-        @"kernelID": @"KernelId",
-        @"ramdiskID": @"RamdiskId",
-        @"blockDeviceMappings": @"BlockDeviceMapping",
-        @"monitoringEnabled": @"MonitoringEnabled",
-        @"subnetID": @"SubnetId",
-        @"networkInterfaces": @"NetworkInterfaceSet",
-        @"iamInstanceProfile": @"IamInstanceProfile",
-        @"ebsOptimized": @"EbsOptimized"
-    }];
-    return [keyPaths copy];
 }
 
 + (NSString *)XPathPrefix
@@ -87,7 +63,7 @@
         @"kernelID": @"ec2:kernelId",
         @"ramdiskID": @"ec2:ramdiskId",
         @"blockDeviceMappings": @"ec2:blockDeviceMapping/ec2:item",
-        @"monitoringEnabled": @"ec2:monitoringEnabled",
+        @"monitoringEnabled": @"ec2:monitoring/ec2:enabled",
         @"subnetID": @"ec2:subnetId",
         @"networkInterfaces": @"ec2:networkInterfaceSet/ec2:item",
         @"iamInstanceProfile": @"ec2:iamInstanceProfile",

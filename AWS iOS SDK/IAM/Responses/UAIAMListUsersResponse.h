@@ -22,4 +22,11 @@
 **/
 - (UAIAMUser *)userAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a User to the users property.
+ *
+ * This will initialise users with an empty mutable array if necessary.
+**/
+- (void)addUser:(UAIAMUser *)user;
+
 @end

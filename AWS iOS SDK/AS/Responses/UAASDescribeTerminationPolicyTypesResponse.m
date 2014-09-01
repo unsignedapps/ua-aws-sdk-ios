@@ -24,6 +24,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(terminationPolicyTypeAtIndex:) propertyName:@"terminationPolicyTypes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTerminationPolicyType:) propertyName:@"terminationPolicyTypes"];
 	}
 	return self;
 }

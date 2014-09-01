@@ -21,4 +21,11 @@
 **/
 - (UAEC2ReservedInstancesOffering *)reservedInstancesOfferingAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ReservedInstancesOffering to the reservedInstancesOfferings property.
+ *
+ * This will initialise reservedInstancesOfferings with an empty mutable array if necessary.
+**/
+- (void)addReservedInstancesOffering:(UAEC2ReservedInstancesOffering *)reservedInstancesOffering;
+
 @end

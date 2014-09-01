@@ -20,4 +20,11 @@
 **/
 - (UAEC2RouteTable *)routeTableAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a RouteTable to the routeTables property.
+ *
+ * This will initialise routeTables with an empty mutable array if necessary.
+**/
+- (void)addRouteTable:(UAEC2RouteTable *)routeTable;
+
 @end

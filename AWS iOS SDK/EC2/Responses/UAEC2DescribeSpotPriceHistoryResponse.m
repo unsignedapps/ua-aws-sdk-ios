@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(spotPriceHistoryAtIndex:) propertyName:@"spotPriceHistory"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSpotPriceHistory:) propertyName:@"spotPriceHistory"];
 	}
 	return self;
 }

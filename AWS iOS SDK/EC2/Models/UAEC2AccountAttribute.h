@@ -19,4 +19,11 @@
 **/
 - (NSString *)attributeValueAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AttributeValue to the attributeValues property.
+ *
+ * This will initialise attributeValues with an empty mutable array if necessary.
+**/
+- (void)addAttributeValue:(NSString *)attributeValue;
+
 @end

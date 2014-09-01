@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(customerGatewayAtIndex:) propertyName:@"customerGateways"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addCustomerGateway:) propertyName:@"customerGateways"];
 	}
 	return self;
 }

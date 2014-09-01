@@ -22,12 +22,12 @@
 @property (nonatomic, strong) NSNumber *usagePrice;
 @property (nonatomic, strong) NSNumber *fixedPrice;
 @property (nonatomic, strong) NSNumber *instanceCount;
-@property (nonatomic, copy) NSString *productDescription;
+@property (nonatomic) UAEC2ReservedInstanceProductDescription productDescription;
 @property (nonatomic) UAEC2ReservedInstanceState state;
 @property (nonatomic, copy) NSArray *tags;
-@property (nonatomic, copy) NSString *instanceTenancy;
+@property (nonatomic) UAEC2InstanceTenancy instanceTenancy;
 @property (nonatomic, copy) NSString *currencyCode;
-@property (nonatomic, copy) NSString *offeringType;
+@property (nonatomic) UAEC2ReservedInstanceOfferingType offeringType;
 @property (nonatomic, copy) NSArray *recurringCharges;
 
 /**
@@ -39,5 +39,18 @@
  * Retrieves the UAEC2RecurringCharge at the specified index.
 **/
 - (UAEC2RecurringCharge *)recurringChargeAtIndex:(NSUInteger)index;
+
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+/**
+ * Adds a RecurringCharge to the recurringCharges property.
+ *
+ * This will initialise recurringCharges with an empty mutable array if necessary.
+**/
+- (void)addRecurringCharge:(UAEC2RecurringCharge *)recurringCharge;
 
 @end

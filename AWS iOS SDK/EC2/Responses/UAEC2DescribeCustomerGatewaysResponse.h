@@ -20,4 +20,11 @@
 **/
 - (UAEC2CustomerGateway *)customerGatewayAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a CustomerGateway to the customerGateways property.
+ *
+ * This will initialise customerGateways with an empty mutable array if necessary.
+**/
+- (void)addCustomerGateway:(UAEC2CustomerGateway *)customerGateway;
+
 @end

@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(spotInstanceRequestAtIndex:) propertyName:@"spotInstanceRequests"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSpotInstanceRequest:) propertyName:@"spotInstanceRequests"];
 	}
 	return self;
 }

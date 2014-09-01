@@ -31,6 +31,10 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(associationAtIndex:) propertyName:@"associations"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(propagatingVGWAtIndex:) propertyName:@"propagatingVGWs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addRoute:) propertyName:@"routes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAssociation:) propertyName:@"associations"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPropagatingVGW:) propertyName:@"propagatingVGWs"];
 	}
 	return self;
 }

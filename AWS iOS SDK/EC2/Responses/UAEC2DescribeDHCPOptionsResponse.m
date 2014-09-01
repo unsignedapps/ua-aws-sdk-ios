@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(dhcpOptionAtIndex:) propertyName:@"dhcpOptions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addDHCPOption:) propertyName:@"dhcpOptions"];
 	}
 	return self;
 }

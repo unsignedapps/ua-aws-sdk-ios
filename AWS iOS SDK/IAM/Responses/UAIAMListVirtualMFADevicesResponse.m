@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(virtualMFADeviceAtIndex:) propertyName:@"virtualMFADevices"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVirtualMFADevice:) propertyName:@"virtualMFADevices"];
 	}
 	return self;
 }

@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(platformApplicationAtIndex:) propertyName:@"platformApplications"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPlatformApplication:) propertyName:@"platformApplications"];
 	}
 	return self;
 }

@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesOfferingAtIndex:) propertyName:@"reservedInstancesOfferings"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReservedInstancesOffering:) propertyName:@"reservedInstancesOfferings"];
 	}
 	return self;
 }

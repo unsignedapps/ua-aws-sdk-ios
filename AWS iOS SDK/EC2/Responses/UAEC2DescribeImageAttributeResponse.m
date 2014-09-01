@@ -32,6 +32,9 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(launchPermissionAtIndex:) propertyName:@"launchPermissions"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(productCodeAtIndex:) propertyName:@"productCodes"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLaunchPermission:) propertyName:@"launchPermissions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addProductCode:) propertyName:@"productCodes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addBlockDeviceMapping:) propertyName:@"blockDeviceMappings"];
 	}
 	return self;
 }

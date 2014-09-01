@@ -8,7 +8,7 @@
 
 #import "UAEC2Request.h"
 
-@class UAEC2SourceDestCheck, UAEC2NetworkInterfaceAttachmentSpecification, UAEC2ModifyNetworkInterfaceAttributeResponse;
+@class UAEC2NetworkInterfaceAttachmentSpecification, UAEC2ModifyNetworkInterfaceAttributeResponse;
 
 typedef void(^UAEC2ModifyNetworkInterfaceAttributeRequestCompletionBlock)(UAEC2ModifyNetworkInterfaceAttributeResponse *response, NSError *error);
 typedef BOOL(^UAEC2ModifyNetworkInterfaceAttributeRequestShouldContinueWaitingBlock)(UAEC2ModifyNetworkInterfaceAttributeResponse *response, NSError *error);
@@ -18,7 +18,7 @@ typedef BOOL(^UAEC2ModifyNetworkInterfaceAttributeRequestShouldContinueWaitingBl
 @property (nonatomic) BOOL dryRun;
 @property (nonatomic, copy) NSString *networkInterfaceID;
 @property (nonatomic, copy) NSString *descriptionValue;
-@property (nonatomic, copy) UAEC2SourceDestCheck *sourceDestCheck;
+@property (nonatomic) BOOL sourceDestCheck;
 @property (nonatomic, strong) NSMutableArray *groups;
 @property (nonatomic, copy) UAEC2NetworkInterfaceAttachmentSpecification *attachment;
 // @property (nonatomic, copy) UAEC2ModifyNetworkInterfaceAttributeRequestCompletionBlock UA_RequestCompletionBlock;

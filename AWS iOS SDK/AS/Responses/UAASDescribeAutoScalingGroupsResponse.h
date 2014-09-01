@@ -21,4 +21,11 @@
 **/
 - (UAASAutoScalingGroup *)autoScalingGroupAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AutoScalingGroup to the autoScalingGroups property.
+ *
+ * This will initialise autoScalingGroups with an empty mutable array if necessary.
+**/
+- (void)addAutoScalingGroup:(UAASAutoScalingGroup *)autoScalingGroup;
+
 @end

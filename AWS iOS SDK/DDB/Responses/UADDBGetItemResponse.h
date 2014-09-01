@@ -21,4 +21,11 @@
 **/
 - (NSDictionary *)itemValueForAttributeName:(NSString *)attributeName;
 
+/**
+ * Sets the DynamoDB attribute value for the specified attribute name in item property.
+ *
+ * This will initialise item with an empty mutable dictionary if necessary.
+**/
+- (void)setItemValue:(id)item forAttributeName:(NSString *)attributeName;
+
 @end

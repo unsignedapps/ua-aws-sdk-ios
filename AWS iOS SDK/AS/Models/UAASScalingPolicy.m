@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(alarmAtIndex:) propertyName:@"alarms"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAlarm:) propertyName:@"alarms"];
 	}
 	return self;
 }

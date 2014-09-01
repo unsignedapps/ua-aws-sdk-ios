@@ -27,6 +27,8 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(metricAtIndex:) propertyName:@"metrics"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(granularityAtIndex:) propertyName:@"granularities"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addMetric:) propertyName:@"metrics"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGranularity:) propertyName:@"granularities"];
 	}
 	return self;
 }

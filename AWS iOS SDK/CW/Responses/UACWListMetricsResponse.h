@@ -21,4 +21,11 @@
 **/
 - (UACWMetric *)metricAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Metric to the metrics property.
+ *
+ * This will initialise metrics with an empty mutable array if necessary.
+**/
+- (void)addMetric:(UACWMetric *)metric;
+
 @end

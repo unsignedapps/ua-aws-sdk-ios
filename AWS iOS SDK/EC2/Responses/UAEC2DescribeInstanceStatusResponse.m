@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceStatusAtIndex:) propertyName:@"instanceStatuses"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstanceStatus:) propertyName:@"instanceStatuses"];
 	}
 	return self;
 }

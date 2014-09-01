@@ -21,4 +21,11 @@
 **/
 - (UAEC2Reservation *)reservationAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Reservation to the reservations property.
+ *
+ * This will initialise reservations with an empty mutable array if necessary.
+**/
+- (void)addReservation:(UAEC2Reservation *)reservation;
+
 @end

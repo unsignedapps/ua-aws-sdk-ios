@@ -32,6 +32,10 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(keySchemaAtIndex:) propertyName:@"keySchema"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(localSecondaryIndexAtIndex:) propertyName:@"localSecondaryIndexes"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(globalSecondaryIndexAtIndex:) propertyName:@"globalSecondaryIndexes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeDefinition:) propertyName:@"attributeDefinitions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addKeySchema:) propertyName:@"keySchema"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLocalSecondaryIndex:) propertyName:@"localSecondaryIndexes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addGlobalSecondaryIndex:) propertyName:@"globalSecondaryIndexes"];
 	}
 	return self;
 }

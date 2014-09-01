@@ -55,4 +55,29 @@
 **/
 - (UACWDimension *)dimensionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a OKAction to the oKActions property.
+ *
+ * This will initialise oKActions with an empty mutable array if necessary.
+**/
+- (void)addOKAction:(NSString *)oKAction;
+/**
+ * Adds a AlarmAction to the alarmActions property.
+ *
+ * This will initialise alarmActions with an empty mutable array if necessary.
+**/
+- (void)addAlarmAction:(NSString *)alarmAction;
+/**
+ * Adds a InsufficientDataAction to the insufficientDataActions property.
+ *
+ * This will initialise insufficientDataActions with an empty mutable array if necessary.
+**/
+- (void)addInsufficientDataAction:(NSString *)insufficientDataAction;
+/**
+ * Adds a Dimension to the dimensions property.
+ *
+ * This will initialise dimensions with an empty mutable array if necessary.
+**/
+- (void)addDimension:(UACWDimension *)dimension;
+
 @end

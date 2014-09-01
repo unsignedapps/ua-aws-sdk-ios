@@ -13,6 +13,4 @@
 
 @property (nonatomic) BOOL value;
 
-- (id)initWithValue:(BOOL)value;
-
 @end

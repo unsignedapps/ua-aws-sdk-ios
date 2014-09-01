@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(serverCertificateMetadataListAtIndex:) propertyName:@"serverCertificateMetadataList"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addServerCertificateMetadataList:) propertyName:@"serverCertificateMetadataList"];
 	}
 	return self;
 }

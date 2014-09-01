@@ -27,4 +27,17 @@
 **/
 - (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Attachment to the attachments property.
+ *
+ * This will initialise attachments with an empty mutable array if necessary.
+**/
+- (void)addAttachment:(UAEC2Attachment *)attachment;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+
 @end

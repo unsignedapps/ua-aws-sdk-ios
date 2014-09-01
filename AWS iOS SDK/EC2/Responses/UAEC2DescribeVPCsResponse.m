@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(vpcAtIndex:) propertyName:@"vpcs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVPC:) propertyName:@"vpcs"];
 	}
 	return self;
 }

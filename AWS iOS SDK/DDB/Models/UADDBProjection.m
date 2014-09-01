@@ -24,6 +24,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(nonKeyAttributeAtIndex:) propertyName:@"nonKeyAttributes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addNonKeyAttribute:) propertyName:@"nonKeyAttributes"];
 	}
 	return self;
 }

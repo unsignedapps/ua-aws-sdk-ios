@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(keyPairAtIndex:) propertyName:@"keyPairs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addKeyPair:) propertyName:@"keyPairs"];
 	}
 	return self;
 }

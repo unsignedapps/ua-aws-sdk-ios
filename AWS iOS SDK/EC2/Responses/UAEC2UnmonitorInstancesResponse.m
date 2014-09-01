@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceMonitoringAtIndex:) propertyName:@"instanceMonitorings"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstanceMonitoring:) propertyName:@"instanceMonitorings"];
 	}
 	return self;
 }

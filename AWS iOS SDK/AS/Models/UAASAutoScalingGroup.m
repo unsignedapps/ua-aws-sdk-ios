@@ -34,6 +34,13 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(enabledMetricAtIndex:) propertyName:@"enabledMetrics"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(terminationPolicyAtIndex:) propertyName:@"terminationPolicies"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAvailabilityZone:) propertyName:@"availabilityZones"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLoadBalancerName:) propertyName:@"loadBalancerNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstance:) propertyName:@"instances"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSuspendedProcess:) propertyName:@"suspendedProcesses"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addEnabledMetric:) propertyName:@"enabledMetrics"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTerminationPolicy:) propertyName:@"terminationPolicies"];
 	}
 	return self;
 }

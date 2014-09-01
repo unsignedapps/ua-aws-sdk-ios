@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesModificationAtIndex:) propertyName:@"reservedInstancesModifications"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReservedInstancesModification:) propertyName:@"reservedInstancesModifications"];
 	}
 	return self;
 }

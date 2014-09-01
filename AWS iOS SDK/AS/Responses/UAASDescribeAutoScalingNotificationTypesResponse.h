@@ -18,4 +18,11 @@
 **/
 - (NSString *)autoScalingNotificationTypeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AutoScalingNotificationType to the autoScalingNotificationTypes property.
+ *
+ * This will initialise autoScalingNotificationTypes with an empty mutable array if necessary.
+**/
+- (void)addAutoScalingNotificationType:(NSString *)autoScalingNotificationType;
+
 @end

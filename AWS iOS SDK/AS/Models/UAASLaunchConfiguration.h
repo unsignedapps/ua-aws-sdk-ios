@@ -42,4 +42,17 @@
 **/
 - (UAASBlockDeviceMapping *)blockDeviceMappingAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a SecurityGroup to the securityGroups property.
+ *
+ * This will initialise securityGroups with an empty mutable array if necessary.
+**/
+- (void)addSecurityGroup:(NSString *)securityGroup;
+/**
+ * Adds a BlockDeviceMapping to the blockDeviceMappings property.
+ *
+ * This will initialise blockDeviceMappings with an empty mutable array if necessary.
+**/
+- (void)addBlockDeviceMapping:(UAASBlockDeviceMapping *)blockDeviceMapping;
+
 @end

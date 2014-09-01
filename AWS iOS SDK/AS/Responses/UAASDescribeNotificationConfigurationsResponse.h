@@ -21,4 +21,11 @@
 **/
 - (UAASNotificationConfiguration *)notificationConfigurationAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a NotificationConfiguration to the notificationConfigurations property.
+ *
+ * This will initialise notificationConfigurations with an empty mutable array if necessary.
+**/
+- (void)addNotificationConfiguration:(UAASNotificationConfiguration *)notificationConfiguration;
+
 @end

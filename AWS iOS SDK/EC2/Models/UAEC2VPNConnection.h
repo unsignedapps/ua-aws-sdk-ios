@@ -39,4 +39,23 @@
 **/
 - (UAEC2VPNStaticRoute *)routeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+/**
+ * Adds a VGWTelemetry to the vgwTelemetry property.
+ *
+ * This will initialise vgwTelemetry with an empty mutable array if necessary.
+**/
+- (void)addVGWTelemetry:(UAEC2VGWTelemetry *)vGWTelemetry;
+/**
+ * Adds a Route to the routes property.
+ *
+ * This will initialise routes with an empty mutable array if necessary.
+**/
+- (void)addRoute:(UAEC2VPNStaticRoute *)route;
+
 @end

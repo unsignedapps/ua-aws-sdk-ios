@@ -21,4 +21,11 @@
 **/
 - (UAELBLoadBalancerDescription *)loadBalancerDescriptionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a LoadBalancerDescription to the loadBalancerDescriptions property.
+ *
+ * This will initialise loadBalancerDescriptions with an empty mutable array if necessary.
+**/
+- (void)addLoadBalancerDescription:(UAELBLoadBalancerDescription *)loadBalancerDescription;
+
 @end

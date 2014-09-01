@@ -20,4 +20,11 @@
 **/
 - (NSString *)accountAliasAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AccountAlias to the accountAliases property.
+ *
+ * This will initialise accountAliases with an empty mutable array if necessary.
+**/
+- (void)addAccountAlias:(NSString *)accountAlias;
+
 @end

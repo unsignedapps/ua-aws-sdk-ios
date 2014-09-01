@@ -19,10 +19,10 @@ typedef BOOL(^UAEC2DescribeReservedInstancesOfferingsRequestShouldContinueWaitin
 @property (nonatomic, strong) NSMutableArray *reservedInstancesOfferingIDs;
 @property (nonatomic, copy) NSString *instanceType;
 @property (nonatomic, copy) NSString *availabilityZone;
-@property (nonatomic, copy) NSString *productDescription;
+@property (nonatomic) UAEC2ReservedInstanceOfferingProductDescription productDescription;
 @property (nonatomic, strong) NSMutableArray *filters;
-@property (nonatomic, copy) NSString *instanceTenancy;
-@property (nonatomic, copy) NSString *offeringType;
+@property (nonatomic) UAEC2InstanceTenancy instanceTenancy;
+@property (nonatomic) UAEC2ReservedInstanceOfferingType offeringType;
 @property (nonatomic, copy) NSString *nextToken;
 @property (nonatomic, strong) NSNumber *maxResults;
 @property (nonatomic) BOOL includeMarketplace;

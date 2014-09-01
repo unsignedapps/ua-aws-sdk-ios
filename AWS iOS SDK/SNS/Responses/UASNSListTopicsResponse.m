@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(topicAtIndex:) propertyName:@"topics"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTopic:) propertyName:@"topics"];
 	}
 	return self;
 }

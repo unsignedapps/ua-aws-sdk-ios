@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(networkACLAtIndex:) propertyName:@"networkACLs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addNetworkACL:) propertyName:@"networkACLs"];
 	}
 	return self;
 }

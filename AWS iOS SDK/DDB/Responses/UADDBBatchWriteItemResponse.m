@@ -27,6 +27,7 @@
 		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(unprocessedItemForTableName:) propertyName:@"unprocessedItems"];
 		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(itemCollectionMetricForTableName:) propertyName:@"itemCollectionMetrics"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(consumedCapacityAtIndex:) propertyName:@"consumedCapacity"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addConsumedCapacity:) propertyName:@"consumedCapacity"];
 	}
 	return self;
 }

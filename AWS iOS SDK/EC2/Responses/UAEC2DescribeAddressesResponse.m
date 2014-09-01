@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(addressAtIndex:) propertyName:@"addresses"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAddress:) propertyName:@"addresses"];
 	}
 	return self;
 }

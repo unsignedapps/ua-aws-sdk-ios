@@ -29,4 +29,18 @@
 **/
 - (NSDictionary *)lastEvaluatedKeyValueForAttributeName:(NSString *)attributeName;
 
+/**
+ * Adds a Item to the items property.
+ *
+ * This will initialise items with an empty mutable array if necessary.
+**/
+- (void)addItem:( *)item;
+
+/**
+ * Sets the DynamoDB attribute value for the specified attribute name in lastEvaluatedKey property.
+ *
+ * This will initialise lastEvaluatedKey with an empty mutable dictionary if necessary.
+**/
+- (void)setLastEvaluatedKeyValue:(id)lastEvaluatedKey forAttributeName:(NSString *)attributeName;
+
 @end

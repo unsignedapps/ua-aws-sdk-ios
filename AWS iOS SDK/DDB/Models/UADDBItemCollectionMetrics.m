@@ -25,6 +25,7 @@
 		
 		[self UA_addDDBKeyValueAdditionalAccessorForSelector:@selector(itemCollectionKeyValueForAttributeName:) propertyName:@"itemCollectionKey"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(sizeEstimateRangeGBAtIndex:) propertyName:@"sizeEstimateRangeGB"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSizeEstimateRangeGB:) propertyName:@"sizeEstimateRangeGB"];
 	}
 	return self;
 }

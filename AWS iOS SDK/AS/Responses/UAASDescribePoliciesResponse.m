@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(scalingPolicyAtIndex:) propertyName:@"scalingPolicies"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addScalingPolicy:) propertyName:@"scalingPolicies"];
 	}
 	return self;
 }

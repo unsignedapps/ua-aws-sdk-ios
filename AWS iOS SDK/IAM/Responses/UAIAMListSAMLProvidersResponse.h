@@ -20,4 +20,11 @@
 **/
 - (UAIAMSAMLProviderList *)sAMLProviderListAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a SAMLProviderList to the sAMLProviderList property.
+ *
+ * This will initialise sAMLProviderList with an empty mutable array if necessary.
+**/
+- (void)addSAMLProviderList:(UAIAMSAMLProviderList *)sAMLProviderList;
+
 @end

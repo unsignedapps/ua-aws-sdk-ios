@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(metricAlarmAtIndex:) propertyName:@"metricAlarms"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addMetricAlarm:) propertyName:@"metricAlarms"];
 	}
 	return self;
 }

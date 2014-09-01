@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(subscriptionAtIndex:) propertyName:@"subscriptions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSubscription:) propertyName:@"subscriptions"];
 	}
 	return self;
 }

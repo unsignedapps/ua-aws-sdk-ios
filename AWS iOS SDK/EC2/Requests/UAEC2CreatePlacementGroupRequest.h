@@ -17,7 +17,7 @@ typedef BOOL(^UAEC2CreatePlacementGroupRequestShouldContinueWaitingBlock)(UAEC2C
 
 @property (nonatomic) BOOL dryRun;
 @property (nonatomic, copy) NSString *groupName;
-@property (nonatomic, copy) NSString *strategy;
+@property (nonatomic) UAEC2PlacementGroupStrategy strategy;
 // @property (nonatomic, copy) UAEC2CreatePlacementGroupRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2CreatePlacementGroupRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

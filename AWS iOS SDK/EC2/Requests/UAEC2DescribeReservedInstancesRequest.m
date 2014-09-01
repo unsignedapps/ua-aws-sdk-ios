@@ -68,6 +68,13 @@
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAEC2Filter class]];
 }
 
++ (NSValueTransformer *)offeringTypeJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingTypeHeavyUtilization), @(UAEC2ReservedInstanceOfferingTypeMediumUtilization), @(UAEC2ReservedInstanceOfferingTypeLightUtilization) ]
+                                               stringValues:@[ @"Heavy Utilization", @"Medium Utilization", @"Light Utilization" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingTypeUnknown)];
+}
+
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
@@ -76,6 +83,13 @@
 + (NSValueTransformer *)filtersQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2Filter class]];
+}
+
++ (NSValueTransformer *)offeringTypeQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ReservedInstanceOfferingTypeHeavyUtilization), @(UAEC2ReservedInstanceOfferingTypeMediumUtilization), @(UAEC2ReservedInstanceOfferingTypeLightUtilization) ]
+                                               stringValues:@[ @"Heavy Utilization", @"Medium Utilization", @"Light Utilization" ]
+                                               unknownValue:@(UAEC2ReservedInstanceOfferingTypeUnknown)];
 }
 
 /*#pragma mark - Invocation

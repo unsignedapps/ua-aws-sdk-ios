@@ -20,4 +20,11 @@
 **/
 - (UAEC2PlacementGroup *)placementGroupAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a PlacementGroup to the placementGroups property.
+ *
+ * This will initialise placementGroups with an empty mutable array if necessary.
+**/
+- (void)addPlacementGroup:(UAEC2PlacementGroup *)placementGroup;
+
 @end

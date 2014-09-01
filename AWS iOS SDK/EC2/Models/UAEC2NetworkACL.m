@@ -29,6 +29,9 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(entryAtIndex:) propertyName:@"entries"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(associationAtIndex:) propertyName:@"associations"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addEntry:) propertyName:@"entries"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAssociation:) propertyName:@"associations"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
 	}
 	return self;
 }

@@ -52,6 +52,20 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)platformQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2PlatformEC2Classic), @(UAEC2PlatformEC2VPC) ]
+                                               stringValues:@[ @"EC2-Classic", @"EC2-VPC" ]
+                                               unknownValue:@(UAEC2PlatformUnknown)];
+}
+
++ (NSValueTransformer *)platformXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2PlatformEC2Classic), @(UAEC2PlatformEC2VPC) ]
+                                               stringValues:@[ @"EC2-Classic", @"EC2-VPC" ]
+                                               unknownValue:@(UAEC2PlatformUnknown)];
+}
+
 + (NSValueTransformer *)instanceCountXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];

@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(policyDescriptionAtIndex:) propertyName:@"policyDescriptions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPolicyDescription:) propertyName:@"policyDescriptions"];
 	}
 	return self;
 }

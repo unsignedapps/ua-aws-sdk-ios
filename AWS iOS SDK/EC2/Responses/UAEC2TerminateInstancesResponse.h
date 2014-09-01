@@ -20,4 +20,11 @@
 **/
 - (UAEC2InstanceStateChange *)terminatingInstanceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a TerminatingInstance to the terminatingInstances property.
+ *
+ * This will initialise terminatingInstances with an empty mutable array if necessary.
+**/
+- (void)addTerminatingInstance:(UAEC2InstanceStateChange *)terminatingInstance;
+
 @end

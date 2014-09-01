@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(regionAtIndex:) propertyName:@"regions"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addRegion:) propertyName:@"regions"];
 	}
 	return self;
 }

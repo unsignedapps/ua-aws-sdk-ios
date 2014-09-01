@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(volumeStatusAtIndex:) propertyName:@"volumeStatuses"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addVolumeStatus:) propertyName:@"volumeStatuses"];
 	}
 	return self;
 }

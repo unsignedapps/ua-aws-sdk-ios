@@ -24,6 +24,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(accountAliasAtIndex:) propertyName:@"accountAliases"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAccountAlias:) propertyName:@"accountAliases"];
 	}
 	return self;
 }

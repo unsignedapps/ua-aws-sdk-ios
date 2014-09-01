@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(certificateAtIndex:) propertyName:@"certificates"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addCertificate:) propertyName:@"certificates"];
 	}
 	return self;
 }

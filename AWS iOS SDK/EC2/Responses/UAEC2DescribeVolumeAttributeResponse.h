@@ -22,4 +22,11 @@
 **/
 - (UAEC2ProductCode *)productCodeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ProductCode to the productCodes property.
+ *
+ * This will initialise productCodes with an empty mutable array if necessary.
+**/
+- (void)addProductCode:(UAEC2ProductCode *)productCode;
+
 @end

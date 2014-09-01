@@ -21,4 +21,11 @@
 **/
 - (UAEC2VolumeStatus *)volumeStatusAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a VolumeStatus to the volumeStatuses property.
+ *
+ * This will initialise volumeStatuses with an empty mutable array if necessary.
+**/
+- (void)addVolumeStatus:(UAEC2VolumeStatus *)volumeStatus;
+
 @end

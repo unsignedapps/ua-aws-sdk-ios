@@ -12,7 +12,7 @@
 @interface UAEC2PlacementGroup : UAEC2Model
 
 @property (nonatomic, copy) NSString *groupName;
-@property (nonatomic, copy) NSString *strategy;
-@property (nonatomic, copy) NSString *state;
+@property (nonatomic) UAEC2PlacementGroupStrategy strategy;
+@property (nonatomic) UAEC2PlacementGroupState state;
 
 @end

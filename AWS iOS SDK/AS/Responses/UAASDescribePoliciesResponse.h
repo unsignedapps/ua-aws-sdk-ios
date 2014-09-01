@@ -21,4 +21,11 @@
 **/
 - (UAASScalingPolicy *)scalingPolicyAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ScalingPolicy to the scalingPolicies property.
+ *
+ * This will initialise scalingPolicies with an empty mutable array if necessary.
+**/
+- (void)addScalingPolicy:(UAASScalingPolicy *)scalingPolicy;
+
 @end

@@ -69,4 +69,47 @@
 **/
 - (NSString *)terminationPolicyAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AvailabilityZone to the availabilityZones property.
+ *
+ * This will initialise availabilityZones with an empty mutable array if necessary.
+**/
+- (void)addAvailabilityZone:(NSString *)availabilityZone;
+/**
+ * Adds a LoadBalancerName to the loadBalancerNames property.
+ *
+ * This will initialise loadBalancerNames with an empty mutable array if necessary.
+**/
+- (void)addLoadBalancerName:(NSString *)loadBalancerName;
+/**
+ * Adds a Instance to the instances property.
+ *
+ * This will initialise instances with an empty mutable array if necessary.
+**/
+- (void)addInstance:(UAASInstance *)instance;
+/**
+ * Adds a SuspendedProcess to the suspendedProcesses property.
+ *
+ * This will initialise suspendedProcesses with an empty mutable array if necessary.
+**/
+- (void)addSuspendedProcess:(UAASSuspendedProcess *)suspendedProcess;
+/**
+ * Adds a EnabledMetric to the enabledMetrics property.
+ *
+ * This will initialise enabledMetrics with an empty mutable array if necessary.
+**/
+- (void)addEnabledMetric:(UAASEnabledMetric *)enabledMetric;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAASTag *)tag;
+/**
+ * Adds a TerminationPolicy to the terminationPolicies property.
+ *
+ * This will initialise terminationPolicies with an empty mutable array if necessary.
+**/
+- (void)addTerminationPolicy:(NSString *)terminationPolicy;
+
 @end

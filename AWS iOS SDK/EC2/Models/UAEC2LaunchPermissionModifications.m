@@ -26,6 +26,8 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(addAtIndex:) propertyName:@"add"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(removeAtIndex:) propertyName:@"remove"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAdd:) propertyName:@"add"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addRemove:) propertyName:@"remove"];
 	}
 	return self;
 }

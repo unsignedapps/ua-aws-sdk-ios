@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(processAtIndex:) propertyName:@"processes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addProcess:) propertyName:@"processes"];
 	}
 	return self;
 }

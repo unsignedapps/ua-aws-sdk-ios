@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(placementGroupAtIndex:) propertyName:@"placementGroups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addPlacementGroup:) propertyName:@"placementGroups"];
 	}
 	return self;
 }

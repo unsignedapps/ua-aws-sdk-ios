@@ -363,6 +363,7 @@ id UAAWS_AdditionalPropertyAccessor_DDBKeyValue (NSObject<UAAWSRequest> *_self, 
 {
     const char *types = [[NSString stringWithFormat:@"@@:%s", @encode(NSUInteger)] cStringUsingEncoding:NSASCIIStringEncoding];
     class_addMethod([self class], sel, (IMP)UAAWS_AdditionalPropertyAccessor_AtIndex, types);
+    objc_setAssociatedObject(self, sel, propertyName, OBJC_ASSOCIATION_COPY);
 }
 
 - (void)UA_addAtIndexEnumAdditionalAccessorForSelector:(SEL)sel propertyName:(NSString *)propertyName

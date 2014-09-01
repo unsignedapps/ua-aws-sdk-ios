@@ -21,4 +21,11 @@
 **/
 - (UASNSPlatformApplication *)platformApplicationAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a PlatformApplication to the platformApplications property.
+ *
+ * This will initialise platformApplications with an empty mutable array if necessary.
+**/
+- (void)addPlatformApplication:(UASNSPlatformApplication *)platformApplication;
+
 @end

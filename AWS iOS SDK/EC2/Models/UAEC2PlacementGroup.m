@@ -36,6 +36,34 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)strategyQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2PlacementGroupStrategyCluster) ]
+                                               stringValues:@[ @"cluster" ]
+                                               unknownValue:@(UAEC2PlacementGroupStrategyUnknown)];
+}
+
++ (NSValueTransformer *)stateQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2PlacementGroupStatePending), @(UAEC2PlacementGroupStateAvailable), @(UAEC2PlacementGroupStateDeleting), @(UAEC2PlacementGroupStateDeleted) ]
+                                               stringValues:@[ @"pending", @"available", @"deleting", @"deleted" ]
+                                               unknownValue:@(UAEC2PlacementGroupStateUnknown)];
+}
+
++ (NSValueTransformer *)strategyXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2PlacementGroupStrategyCluster) ]
+                                               stringValues:@[ @"cluster" ]
+                                               unknownValue:@(UAEC2PlacementGroupStrategyUnknown)];
+}
+
++ (NSValueTransformer *)stateXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2PlacementGroupStatePending), @(UAEC2PlacementGroupStateAvailable), @(UAEC2PlacementGroupStateDeleting), @(UAEC2PlacementGroupStateDeleted) ]
+                                               stringValues:@[ @"pending", @"available", @"deleting", @"deleted" ]
+                                               unknownValue:@(UAEC2PlacementGroupStateUnknown)];
+}
+
 @end
 
 #pragma clang diagnostic pop

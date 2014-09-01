@@ -20,4 +20,11 @@
 **/
 - (UAEC2NetworkInterface *)networkInterfaceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a NetworkInterface to the networkInterfaces property.
+ *
+ * This will initialise networkInterfaces with an empty mutable array if necessary.
+**/
+- (void)addNetworkInterface:(UAEC2NetworkInterface *)networkInterface;
+
 @end

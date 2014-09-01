@@ -77,4 +77,35 @@
 **/
 - (UAEC2InstanceNetworkInterface *)networkInterfaceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a ProductCode to the productCodes property.
+ *
+ * This will initialise productCodes with an empty mutable array if necessary.
+**/
+- (void)addProductCode:(UAEC2ProductCode *)productCode;
+/**
+ * Adds a BlockDeviceMapping to the blockDeviceMappings property.
+ *
+ * This will initialise blockDeviceMappings with an empty mutable array if necessary.
+**/
+- (void)addBlockDeviceMapping:(UAEC2InstanceBlockDeviceMapping *)blockDeviceMapping;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+/**
+ * Adds a SecurityGroup to the securityGroups property.
+ *
+ * This will initialise securityGroups with an empty mutable array if necessary.
+**/
+- (void)addSecurityGroup:(UAEC2GroupIdentifier *)securityGroup;
+/**
+ * Adds a NetworkInterface to the networkInterfaces property.
+ *
+ * This will initialise networkInterfaces with an empty mutable array if necessary.
+**/
+- (void)addNetworkInterface:(UAEC2InstanceNetworkInterface *)networkInterface;
+
 @end

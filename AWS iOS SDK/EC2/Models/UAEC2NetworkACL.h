@@ -35,4 +35,23 @@
 **/
 - (UAEC2Tag *)tagAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Entry to the entries property.
+ *
+ * This will initialise entries with an empty mutable array if necessary.
+**/
+- (void)addEntry:(UAEC2Entry *)entry;
+/**
+ * Adds a Association to the associations property.
+ *
+ * This will initialise associations with an empty mutable array if necessary.
+**/
+- (void)addAssociation:(UAEC2NetworkACLAssociation *)association;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAEC2Tag *)tag;
+
 @end

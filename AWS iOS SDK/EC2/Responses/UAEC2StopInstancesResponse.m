@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(stoppingInstanceAtIndex:) propertyName:@"stoppingInstances"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addStoppingInstance:) propertyName:@"stoppingInstances"];
 	}
 	return self;
 }

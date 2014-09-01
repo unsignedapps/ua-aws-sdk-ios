@@ -44,4 +44,29 @@
 **/
 - (UADDBGlobalSecondaryIndexDescription *)globalSecondaryIndexAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AttributeDefinition to the attributeDefinitions property.
+ *
+ * This will initialise attributeDefinitions with an empty mutable array if necessary.
+**/
+- (void)addAttributeDefinition:(UADDBAttributeDefinition *)attributeDefinition;
+/**
+ * Adds a KeySchema to the keySchema property.
+ *
+ * This will initialise keySchema with an empty mutable array if necessary.
+**/
+- (void)addKeySchema:(UADDBKeySchema *)keySchema;
+/**
+ * Adds a LocalSecondaryIndex to the localSecondaryIndexes property.
+ *
+ * This will initialise localSecondaryIndexes with an empty mutable array if necessary.
+**/
+- (void)addLocalSecondaryIndex:(UADDBLocalSecondaryIndexDescription *)localSecondaryIndex;
+/**
+ * Adds a GlobalSecondaryIndex to the globalSecondaryIndexes property.
+ *
+ * This will initialise globalSecondaryIndexes with an empty mutable array if necessary.
+**/
+- (void)addGlobalSecondaryIndex:(UADDBGlobalSecondaryIndexDescription *)globalSecondaryIndex;
+
 @end

@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceProfileAtIndex:) propertyName:@"instanceProfiles"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstanceProfile:) propertyName:@"instanceProfiles"];
 	}
 	return self;
 }

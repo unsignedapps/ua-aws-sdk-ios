@@ -22,4 +22,11 @@
 **/
 - (UAIAMMFADevice *)mFADeviceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a MFADevice to the mFADevices property.
+ *
+ * This will initialise mFADevices with an empty mutable array if necessary.
+**/
+- (void)addMFADevice:(UAIAMMFADevice *)mFADevice;
+
 @end

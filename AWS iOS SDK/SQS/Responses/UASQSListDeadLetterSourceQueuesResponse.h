@@ -18,4 +18,11 @@
 **/
 - (NSString *)queueURLAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a queueURL to the queueUrls property.
+ *
+ * This will initialise queueUrls with an empty mutable array if necessary.
+**/
+- (void)addqueueURL:(NSString *)queueURL;
+
 @end

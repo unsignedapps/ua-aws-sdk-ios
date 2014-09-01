@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(imageAtIndex:) propertyName:@"images"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addImage:) propertyName:@"images"];
 	}
 	return self;
 }

@@ -19,10 +19,10 @@
 @property (nonatomic, strong) NSNumber *duration;
 @property (nonatomic, strong) NSNumber *usagePrice;
 @property (nonatomic, strong) NSNumber *fixedPrice;
-@property (nonatomic, copy) NSString *productDescription;
-@property (nonatomic, copy) NSString *instanceTenancy;
+@property (nonatomic) UAEC2ReservedInstanceOfferingProductDescription productDescription;
+@property (nonatomic) UAEC2InstanceTenancy instanceTenancy;
 @property (nonatomic, copy) NSString *currencyCode;
-@property (nonatomic, copy) NSString *offeringType;
+@property (nonatomic) UAEC2ReservedInstanceOfferingType offeringType;
 @property (nonatomic, copy) NSArray *recurringCharges;
 @property (nonatomic) BOOL marketplace;
 @property (nonatomic, copy) NSArray *pricingDetails;
@@ -36,5 +36,18 @@
  * Retrieves the UAEC2PricingDetail at the specified index.
 **/
 - (UAEC2PricingDetail *)pricingDetailAtIndex:(NSUInteger)index;
+
+/**
+ * Adds a RecurringCharge to the recurringCharges property.
+ *
+ * This will initialise recurringCharges with an empty mutable array if necessary.
+**/
+- (void)addRecurringCharge:(UAEC2RecurringCharge *)recurringCharge;
+/**
+ * Adds a PricingDetail to the pricingDetails property.
+ *
+ * This will initialise pricingDetails with an empty mutable array if necessary.
+**/
+- (void)addPricingDetail:(UAEC2PricingDetail *)pricingDetail;
 
 @end

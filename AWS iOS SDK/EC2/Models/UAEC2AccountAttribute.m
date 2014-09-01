@@ -24,6 +24,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeValueAtIndex:) propertyName:@"attributeValues"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeValue:) propertyName:@"attributeValues"];
 	}
 	return self;
 }

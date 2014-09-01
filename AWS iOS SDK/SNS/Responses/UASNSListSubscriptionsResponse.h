@@ -21,4 +21,11 @@
 **/
 - (UASNSSubscription *)subscriptionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Subscription to the subscriptions property.
+ *
+ * This will initialise subscriptions with an empty mutable array if necessary.
+**/
+- (void)addSubscription:(UASNSSubscription *)subscription;
+
 @end

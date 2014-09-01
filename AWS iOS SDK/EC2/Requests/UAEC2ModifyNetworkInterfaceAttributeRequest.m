@@ -10,7 +10,6 @@
 #import "UAEC2ModifyNetworkInterfaceAttributeRequest.h"
 #import "UAAWSAdditionalAccessors.h"
 #import "UAEC2ModifyNetworkInterfaceAttributeResponse.h"
-#import "UAEC2SourceDestCheck.h"
 #import "UAEC2NetworkInterfaceAttachmentSpecification.h"
 
 @interface UAEC2ModifyNetworkInterfaceAttributeRequest ()
@@ -57,16 +56,11 @@
         @"dryRun": @"DryRun",
         @"networkInterfaceID": @"NetworkInterfaceId",
         @"descriptionValue": @"Description.Value",
-        @"sourceDestCheck": @"SourceDestCheck",
+        @"sourceDestCheck": @"SourceDestCheck.Value",
         @"groups": @"SecurityGroupId",
         @"attachment": @"Attachment"
     }];
     return [keyPaths copy];
-}
-
-+ (NSValueTransformer *)sourceDestCheckJSONTransformer
-{
-  return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
 }
 
 + (NSValueTransformer *)attachmentJSONTransformer
@@ -81,7 +75,7 @@
 
 + (NSValueTransformer *)sourceDestCheckQueryStringTransformer
 {
-	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2SourceDestCheck class]];
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
 }
 
 + (NSValueTransformer *)attachmentQueryStringTransformer

@@ -58,9 +58,23 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)strategyJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2PlacementGroupStrategyCluster) ]
+                                               stringValues:@[ @"cluster" ]
+                                               unknownValue:@(UAEC2PlacementGroupStrategyUnknown)];
+}
+
 + (NSValueTransformer *)dryRunQueryStringTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
+}
+
++ (NSValueTransformer *)strategyQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2PlacementGroupStrategyCluster) ]
+                                               stringValues:@[ @"cluster" ]
+                                               unknownValue:@(UAEC2PlacementGroupStrategyUnknown)];
 }
 
 /*#pragma mark - Invocation

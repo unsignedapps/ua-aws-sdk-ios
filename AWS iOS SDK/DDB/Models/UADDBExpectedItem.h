@@ -24,4 +24,11 @@
 **/
 - (NSMutableDictionary *)attributeValueListAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AttributeValueList to the attributeValueList property.
+ *
+ * This will initialise attributeValueList with an empty mutable array if necessary.
+**/
+- (void)addAttributeValueList:( *)attributeValueList;
+
 @end

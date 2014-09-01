@@ -29,4 +29,17 @@
 **/
 - (UAEC2VolumeStatusAction *)actionAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Event to the events property.
+ *
+ * This will initialise events with an empty mutable array if necessary.
+**/
+- (void)addEvent:(UAEC2VolumeStatusEvent *)event;
+/**
+ * Adds a Action to the actions property.
+ *
+ * This will initialise actions with an empty mutable array if necessary.
+**/
+- (void)addAction:(UAEC2VolumeStatusAction *)action;
+
 @end

@@ -26,6 +26,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(userAtIndex:) propertyName:@"users"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addUser:) propertyName:@"users"];
 	}
 	return self;
 }

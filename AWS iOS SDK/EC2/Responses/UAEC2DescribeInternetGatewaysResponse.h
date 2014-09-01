@@ -20,4 +20,11 @@
 **/
 - (UAEC2InternetGateway *)internetGatewayAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a InternetGateway to the internetGateways property.
+ *
+ * This will initialise internetGateways with an empty mutable array if necessary.
+**/
+- (void)addInternetGateway:(UAEC2InternetGateway *)internetGateway;
+
 @end

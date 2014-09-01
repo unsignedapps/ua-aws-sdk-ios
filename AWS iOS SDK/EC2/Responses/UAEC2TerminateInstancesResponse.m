@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(terminatingInstanceAtIndex:) propertyName:@"terminatingInstances"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTerminatingInstance:) propertyName:@"terminatingInstances"];
 	}
 	return self;
 }

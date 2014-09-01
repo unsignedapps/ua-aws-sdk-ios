@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(startingInstanceAtIndex:) propertyName:@"startingInstances"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addStartingInstance:) propertyName:@"startingInstances"];
 	}
 	return self;
 }

@@ -12,9 +12,9 @@
 @interface UAEC2SpotPriceHistory : UAEC2Model
 
 @property (nonatomic, copy) NSString *instanceType;
-@property (nonatomic, copy) NSString *productDescription;
-@property (nonatomic, copy) NSString *spotPrice;
-@property (nonatomic, copy) NSString *timestamp;
+@property (nonatomic) UAEC2SpotRequestProductDescription productDescription;
+@property (nonatomic, strong) NSNumber *spotPrice;
+@property (nonatomic, strong) NSDate *timestamp;
 @property (nonatomic, copy) NSString *availabilityZone;
 
 @end

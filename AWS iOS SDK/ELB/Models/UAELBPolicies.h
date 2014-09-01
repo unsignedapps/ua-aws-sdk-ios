@@ -32,4 +32,23 @@
 **/
 - (NSString *)otherPolicyAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a AppCookieStickinessPolicy to the appCookieStickinessPolicies property.
+ *
+ * This will initialise appCookieStickinessPolicies with an empty mutable array if necessary.
+**/
+- (void)addAppCookieStickinessPolicy:(UAELBAppCookieStickinessPolicy *)appCookieStickinessPolicy;
+/**
+ * Adds a LBCookieStickinessPolicy to the lBCookieStickinessPolicies property.
+ *
+ * This will initialise lBCookieStickinessPolicies with an empty mutable array if necessary.
+**/
+- (void)addLBCookieStickinessPolicy:(UAELBLBCookieStickinessPolicy *)lBCookieStickinessPolicy;
+/**
+ * Adds a OtherPolicy to the otherPolicies property.
+ *
+ * This will initialise otherPolicies with an empty mutable array if necessary.
+**/
+- (void)addOtherPolicy:(NSString *)otherPolicy;
+
 @end

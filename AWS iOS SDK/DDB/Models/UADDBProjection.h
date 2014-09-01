@@ -19,4 +19,11 @@
 **/
 - (NSString *)nonKeyAttributeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a NonKeyAttribute to the nonKeyAttributes property.
+ *
+ * This will initialise nonKeyAttributes with an empty mutable array if necessary.
+**/
+- (void)addNonKeyAttribute:(NSString *)nonKeyAttribute;
+
 @end

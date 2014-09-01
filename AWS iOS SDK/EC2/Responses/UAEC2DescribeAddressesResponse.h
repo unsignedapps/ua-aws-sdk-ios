@@ -20,4 +20,11 @@
 **/
 - (UAEC2Address *)addressAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Address to the addresses property.
+ *
+ * This will initialise addresses with an empty mutable array if necessary.
+**/
+- (void)addAddress:(UAEC2Address *)address;
+
 @end

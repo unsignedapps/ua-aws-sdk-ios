@@ -11,7 +11,7 @@
 
 @interface UAEC2InstanceCount : UAEC2Model
 
-@property (nonatomic, copy) NSString *state;
+@property (nonatomic) UAEC2InstanceCountsState state;
 @property (nonatomic, strong) NSNumber *instanceCount;
 
 @end

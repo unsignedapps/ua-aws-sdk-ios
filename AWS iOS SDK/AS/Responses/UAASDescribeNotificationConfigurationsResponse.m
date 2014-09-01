@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(notificationConfigurationAtIndex:) propertyName:@"notificationConfigurations"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addNotificationConfiguration:) propertyName:@"notificationConfigurations"];
 	}
 	return self;
 }

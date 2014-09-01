@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(roleAtIndex:) propertyName:@"roles"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addRole:) propertyName:@"roles"];
 	}
 	return self;
 }

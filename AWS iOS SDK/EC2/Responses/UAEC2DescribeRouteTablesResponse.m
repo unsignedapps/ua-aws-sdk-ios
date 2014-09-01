@@ -25,6 +25,7 @@
 		
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(routeTableAtIndex:) propertyName:@"routeTables"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addRouteTable:) propertyName:@"routeTables"];
 	}
 	return self;
 }

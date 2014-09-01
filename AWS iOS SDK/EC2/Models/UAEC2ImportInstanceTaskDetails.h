@@ -23,4 +23,11 @@
 **/
 - (UAEC2ImportInstanceVolumeDetailItem *)volumeAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Volume to the volumes property.
+ *
+ * This will initialise volumes with an empty mutable array if necessary.
+**/
+- (void)addVolume:(UAEC2ImportInstanceVolumeDetailItem *)volume;
+
 @end

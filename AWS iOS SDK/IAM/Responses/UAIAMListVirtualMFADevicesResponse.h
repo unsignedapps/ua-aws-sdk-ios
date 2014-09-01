@@ -22,4 +22,11 @@
 **/
 - (UAIAMVirtualMFADevice *)virtualMFADeviceAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a VirtualMFADevice to the virtualMFADevices property.
+ *
+ * This will initialise virtualMFADevices with an empty mutable array if necessary.
+**/
+- (void)addVirtualMFADevice:(UAIAMVirtualMFADevice *)virtualMFADevice;
+
 @end

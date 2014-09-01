@@ -21,4 +21,11 @@
 **/
 - (UAEC2VolumeStatusDetail *)detailAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a Detail to the details property.
+ *
+ * This will initialise details with an empty mutable array if necessary.
+**/
+- (void)addDetail:(UAEC2VolumeStatusDetail *)detail;
+
 @end

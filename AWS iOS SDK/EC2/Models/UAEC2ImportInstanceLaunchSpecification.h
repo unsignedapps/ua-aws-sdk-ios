@@ -30,4 +30,11 @@
 **/
 - (NSString *)groupNameAtIndex:(NSUInteger)index;
 
+/**
+ * Adds a GroupName to the groupNames property.
+ *
+ * This will initialise groupNames with an empty mutable array if necessary.
+**/
+- (void)addGroupName:(NSString *)groupName;
+
 @end
