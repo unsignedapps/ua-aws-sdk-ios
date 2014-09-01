@@ -17,7 +17,9 @@
     return [[super JSONKeyPathsByPropertyKey] UAMTL_dictionaryByAddingEntriesFromDictionary:
     @{
         @"identifier":          @"id",
-        @"startTime":           @"startTimestamp"
+        @"duration":            @"duration",
+        @"startTime":           @"startTimestamp",
+        @"stopTime":            @"stopTimestamp"
     }];
 }
 
@@ -40,6 +42,11 @@
 }
 
 + (NSValueTransformer *)startTimeJSONTransformer
+{
+    return [UAMTLValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SS'Z'"];
+}
+
++ (NSValueTransformer *)stopTimeJSONTransformer
 {
     return [UAMTLValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SS'Z'"];
 }

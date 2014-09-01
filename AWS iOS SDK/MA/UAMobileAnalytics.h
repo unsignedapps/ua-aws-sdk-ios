@@ -13,6 +13,16 @@
 @interface UAMobileAnalytics : NSObject
 
 /**
+ * Starts monitoring sessions based on app open/close.
+**/
++ (void)startSessionMonitoring;
+
+/**
+ * Stops monitoring sessions based on app open/close.
+**/
++ (void)stopSessionMonitoring;
+
+/**
  * Returns the currently active UAMASession.
 **/
 + (UAMASession *)currentSession;

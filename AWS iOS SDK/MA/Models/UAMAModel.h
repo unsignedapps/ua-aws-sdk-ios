@@ -10,6 +10,6 @@
 #import "NSValueTransformer+UAValueTransformerAdditions.h"
 #import "UAMADataTypes.h"
 
-@interface UAMAModel : UAAWSModel <UAMTLJSONSerializing, UAAWSPayloadSerialisation>
+@interface UAMAModel : UAAWSModel <UAMTLJSONSerializing>
 
 @end

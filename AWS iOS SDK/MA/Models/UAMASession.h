@@ -16,8 +16,18 @@
 @property (nonatomic, strong) NSUUID *identifier;
 
 /**
+ * A duration for the session.
+**/
+@property (nonatomic) NSTimeInterval duration;
+
+/**
  * The time that the session started.
 **/
 @property (nonatomic, strong) NSDate *startTime;
+
+/**
+ * The time that the session stopped.
+**/
+@property (nonatomic, strong) NSDate *stopTime;
 
 @end
