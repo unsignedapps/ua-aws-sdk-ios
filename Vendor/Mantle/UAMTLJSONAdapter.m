@@ -168,7 +168,11 @@ static NSString * const UAMTLJSONAdapterThrownExceptionErrorKey = @"UAMTLJSONAda
 	NSMutableDictionary *JSONDictionary = [[NSMutableDictionary alloc] initWithCapacity:dictionaryValue.count];
 
 	[dictionaryValue enumerateKeysAndObjectsUsingBlock:^(NSString *propertyKey, id value, BOOL *stop) {
-		NSString *JSONKeyPath = [self JSONKeyPathForPropertyKey:propertyKey];
+        // find out if the property is allowed to be serialised
+        if ([self.model respondsToSelector:@selector(canSerializePropertyKey:)] && ![self.model canSerializePropertyKey:propertyKey])
+            return;
+
+        NSString *JSONKeyPath = [self JSONKeyPathForPropertyKey:propertyKey];
 		if (JSONKeyPath == nil) return;
 
 		NSValueTransformer *transformer = [self JSONTransformerForKey:propertyKey];
