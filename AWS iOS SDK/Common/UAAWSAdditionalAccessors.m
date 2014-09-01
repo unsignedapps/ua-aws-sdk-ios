@@ -107,7 +107,9 @@ void UAAWS_AdditionalPropertyAccessor_addObject (NSObject<UAAWSAdditionalAccesso
             {
                 // can we set it?
                 array = [[NSMutableArray alloc] initWithCapacity:0];
+                [array addObject:object];
                 [_self setValue:array forKey:property];
+                return;
             }
             
             // double check it is an array before we do anything
@@ -142,7 +144,9 @@ void UAAWS_AdditionalPropertyAccessor_addObject_Enum (NSObject<UAAWSAdditionalAc
             {
                 // can we set it?
                 array = [[NSMutableArray alloc] initWithCapacity:0];
+                [array addObject:@(value)];
                 [_self setValue:array forKey:property];
+                return;
             }
             
             // double check it is an array before we do anything
@@ -178,7 +182,9 @@ void UAAWS_AdditionalPropertyAccessor_setObjectForKey (NSObject<UAAWSAdditionalA
             if (dictionary == nil)
             {
                 dictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
+                [dictionary setObject:value forKey:key];
                 [_self setValue:dictionary forKey:property];
+                return;
             }
             
             // double check stuff
