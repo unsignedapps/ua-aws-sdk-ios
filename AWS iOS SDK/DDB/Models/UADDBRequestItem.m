@@ -25,7 +25,6 @@
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(keyAtIndex:) propertyName:@"keys"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(attributeToGetAtIndex:) propertyName:@"attributesToGet"];
-		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addKey:) propertyName:@"keys"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAttributeToGet:) propertyName:@"attributesToGet"];
 	}
 	return self;

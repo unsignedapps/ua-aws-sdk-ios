@@ -26,12 +26,6 @@
 - (NSString *)attributeToGetAtIndex:(NSUInteger)index;
 
 /**
- * Adds a Key to the keys property.
- *
- * This will initialise keys with an empty mutable array if necessary.
-**/
-- (void)addKey:( *)key;
-/**
  * Adds a AttributeToGet to the attributesToGet property.
  *
  * This will initialise attributesToGet with an empty mutable array if necessary.

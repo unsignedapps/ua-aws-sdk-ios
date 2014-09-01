@@ -40,13 +40,6 @@
 - (void)addConsumedCapacity:(UADDBConsumedCapacity *)consumedCapacity;
 
 /**
- * Sets the value of TableName to Response in the responses property.
- *
- * This will initialise responses with an empty mutable dictionary if necessary.
-**/
-- (void)setResponse:( *)response forTableName:(NSString *)tableName;
-
-/**
  * Sets the value of TableName to UnprocessedKey in the unprocessedKeys property.
  *
  * This will initialise unprocessedKeys with an empty mutable dictionary if necessary.

@@ -19,16 +19,4 @@
 @property (nonatomic, copy) NSString *comparisonOperator;
 @property (nonatomic, strong) NSMutableArray *attributeValueList;
 
-/**
- * Retrieves the NSMutableDictionary at the specified index.
-**/
-- (NSMutableDictionary *)attributeValueListAtIndex:(NSUInteger)index;
-
-/**
- * Adds a AttributeValueList to the attributeValueList property.
- *
- * This will initialise attributeValueList with an empty mutable array if necessary.
-**/
-- (void)addAttributeValueList:( *)attributeValueList;
-
 @end
