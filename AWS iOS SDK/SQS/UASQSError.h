@@ -11,7 +11,7 @@
 
 @interface UASQSError : UAMTLModel <UAMTLXMLSerializing, UAAWSError>
 
-@property (nonatomic) NSUInteger HTTPStatusCode;
+@property (nonatomic) NSInteger HTTPStatusCode;
 @property (nonatomic, copy) NSString *code;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSString *requestID;

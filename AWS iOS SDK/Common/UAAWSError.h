@@ -10,6 +10,7 @@
 
 @protocol UAAWSError <NSObject>
 
+- (void)setHTTPStatusCode:(NSInteger)statusCode;
 - (NSError *)errorObject;
 
 @end

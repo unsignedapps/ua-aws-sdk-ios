@@ -428,6 +428,9 @@
                                                 UAAWSResponseExceptionParseErrorErrorKey: parseError }];
     }
     
+    // set the status code
+    [error setHTTPStatusCode:response.statusCode];
+    
     // otherwise, return the API error
     return [error errorObject];
 }

@@ -6,8 +6,13 @@
 //  Copyright (c) 2014 Unsigned Apps. All rights reserved.
 //
 
-#import "UAMTLModel.h"
+#import "UAMantle.h"
+#import "UAAWSError.h"
 
-@interface UAMAError : UAMTLModel
+@interface UAMAError : UAMTLModel <UAMTLJSONSerializing, UAAWSError>
+
+@property (nonatomic) NSInteger HTTPStatusCode;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *message;
 
 @end
