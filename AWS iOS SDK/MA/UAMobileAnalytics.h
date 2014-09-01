@@ -1,35 +1,26 @@
 //
-//  UAMobileAnalytics.h
+//  UAMA.h
 //  AWS iOS SDK
 //
 //  Created by Rob Amos on 1/09/2014.
 //  Copyright (c) 2014 Unsigned Apps. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "UAMobileAnalytics.h"
+#import "UAMADataTypes.h"
+#import "UAMobileAnalyticsClass.h"
+#import "UAMAError.h"
 
-@class UAMASession;
+// Models
 
-@interface UAMobileAnalytics : NSObject
+#import "UAMAClient.h"
+#import "UAMAClientContext.h"
+#import "UAMAClientEnvironment.h"
+#import "UAMAEvent.h"
+#import "UAMASession.h"
 
-/**
- * Starts monitoring sessions based on app open/close.
-**/
-+ (void)startSessionMonitoring;
+// Requests
+#import "UAMAPutEventsRequest.h"
 
-/**
- * Stops monitoring sessions based on app open/close.
-**/
-+ (void)stopSessionMonitoring;
-
-/**
- * Returns the currently active UAMASession.
-**/
-+ (UAMASession *)currentSession;
-
-/**
- * Restarts the UAMASession and returns the new session.
-**/
-+ (UAMASession *)restartSession;
-
-@end
+// Responses
+#import "UAMAPutEventsResponse.h"

@@ -3013,9 +3013,9 @@
 		A3623CF018EB968B00989324 /* UADDBUpdateTableResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBUpdateTableResponse.m; sourceTree = "<group>"; };
 		A3623CFE18EB99A300989324 /* UADDBRequestItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UADDBRequestItem.h; sourceTree = "<group>"; };
 		A3623CFF18EB99A300989324 /* UADDBRequestItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UADDBRequestItem.m; sourceTree = "<group>"; };
-		A380BC4D19B4381500BBEE5E /* UAMobileAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMobileAnalytics.h; sourceTree = "<group>"; };
+		A380BC4D19B4381500BBEE5E /* UAMobileAnalyticsClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMobileAnalyticsClass.h; sourceTree = "<group>"; };
 		A380BC4E19B4381500BBEE5E /* UAMobileAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMobileAnalytics.m; sourceTree = "<group>"; };
-		A380BC5019B4384900BBEE5E /* UAMA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAMA.h; sourceTree = "<group>"; };
+		A380BC5019B4384900BBEE5E /* UAMobileAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAMobileAnalytics.h; sourceTree = "<group>"; };
 		A380BC5119B43A5200BBEE5E /* UAMAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAMAModel.h; sourceTree = "<group>"; };
 		A380BC5219B43A5200BBEE5E /* UAMAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAMAModel.m; sourceTree = "<group>"; };
 		A380BC5419B43A8800BBEE5E /* UAMADataTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UAMADataTypes.h; sourceTree = "<group>"; };
@@ -5703,9 +5703,9 @@
 				A380BC4919B436A600BBEE5E /* Models */,
 				A380BC4A19B436A900BBEE5E /* Requests */,
 				A380BC4B19B436AB00BBEE5E /* Responses */,
-				A380BC5019B4384900BBEE5E /* UAMA.h */,
+				A380BC5019B4384900BBEE5E /* UAMobileAnalytics.h */,
 				A380BC5419B43A8800BBEE5E /* UAMADataTypes.h */,
-				A380BC4D19B4381500BBEE5E /* UAMobileAnalytics.h */,
+				A380BC4D19B4381500BBEE5E /* UAMobileAnalyticsClass.h */,
 				A380BC4E19B4381500BBEE5E /* UAMobileAnalytics.m */,
 				A380BC5819B43BD400BBEE5E /* UAMAError.h */,
 				A380BC5919B43BD400BBEE5E /* UAMAError.m */,

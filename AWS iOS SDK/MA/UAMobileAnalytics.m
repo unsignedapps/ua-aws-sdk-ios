@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unsigned Apps. All rights reserved.
 //
 
-#import "UAMobileAnalytics.h"
+#import "UAMobileAnalyticsClass.h"
 #import "UAMASession.h"
 #import "UAAWSOperationQueue.h"
 #import "UAMADataTypes.h"
