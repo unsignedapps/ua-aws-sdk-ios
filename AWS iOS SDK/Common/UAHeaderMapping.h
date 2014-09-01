@@ -10,4 +10,9 @@
 
 @protocol UAHeaderMapping <NSObject>
 
+/**
+ * Should return a dictionary of response header -> property key mappings.
+**/
++ (NSDictionary *)UAHeaderMappingsByPropertyKey;
+
 @end

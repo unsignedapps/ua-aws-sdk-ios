@@ -7,7 +7,14 @@
 //
 
 #import "UAAWSRequest.h"
+#import "UAMantle.h"
+#import "NSValueTransformer+UAValueTransformerAdditions.h"
+#import "UAMADataTypes.h"
+#import "UAHeaderMapping.h"
+#import "UAMAClientContext.h"
 
-@interface UAMARequest : UAAWSRequest
+@interface UAMARequest : UAAWSRequest <UAAWSRequest, UAMTLJSONSerializing, UAHeaderMapping>
+
+@property (nonatomic, strong) UAMAClientContext *clientContext;
 
 @end

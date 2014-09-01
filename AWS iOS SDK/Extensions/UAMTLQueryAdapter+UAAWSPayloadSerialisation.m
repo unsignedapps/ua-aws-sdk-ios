@@ -40,6 +40,18 @@
 //    return [self model]
 }
 
++ (NSString *)stringForModel:(NSObject<UAMTLModel> *)model error:(NSError *__autoreleasing *)error
+{
+    NSAssert([model conformsToProtocol:@protocol(UAMTLModel)], @"Cannot serialise to Query Strings when the model does not does not conform to <UAMTLModel>.");
+    NSAssert([model conformsToProtocol:@protocol(UAMTLQuerySerializing)], @"Cannot serialise to a Query String when the model does not conform to UAMTLQuerySerializing.");
+    
+    NSString *queryString = [self queryStringFromModel:(NSObject<UAMTLModel,UAMTLQuerySerializing> *)model];
+    if (queryString == nil)
+        return nil;
+
+    return queryString;
+}
+
 + (NSString *)contentType
 {
     return nil;

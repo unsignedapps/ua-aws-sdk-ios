@@ -7,7 +7,9 @@
 //
 
 #import "UAAWSModel.h"
+#import "NSValueTransformer+UAValueTransformerAdditions.h"
+#import "UAMADataTypes.h"
 
-@interface UAMAModel : UAAWSModel
+@interface UAMAModel : UAAWSModel <UAMTLJSONSerializing, UAAWSPayloadSerialisation>
 
 @end

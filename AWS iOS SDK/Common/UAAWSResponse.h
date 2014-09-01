@@ -10,4 +10,6 @@
 
 @interface UAAWSResponse : UAMTLModel <UAMTLJSONSerializing>
 
+- (void)UAPopulateMappingsForHeaders:(NSDictionary *)headers;
+
 @end

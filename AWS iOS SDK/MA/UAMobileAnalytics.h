@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class UAMASession;
+
 @interface UAMobileAnalytics : NSObject
+
+/**
+ * Returns the currently active UAMASession.
+**/
++ (UAMASession *)currentSession;
+
+/**
+ * Restarts the UAMASession and returns the new session.
+**/
++ (UAMASession *)restartSession;
 
 @end

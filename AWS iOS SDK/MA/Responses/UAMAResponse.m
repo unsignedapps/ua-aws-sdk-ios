@@ -10,4 +10,14 @@
 
 @implementation UAMAResponse
 
+@synthesize requestID=_requestID;
+
++ (NSDictionary *)UAHeaderMappingsByPropertyKey
+{
+    return
+    @{
+        @"requestID":       @"x-amzn-RequestId"
+    };
+}
+
 @end

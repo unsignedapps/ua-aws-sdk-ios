@@ -8,6 +8,16 @@
 
 #import "UAMAModel.h"
 
-@interface UAMASession : UAMAModel
+@interface UAMASession : UAMAModel <UAMTLJSONSerializing>
+
+/**
+ * An identifier for the session.
+**/
+@property (nonatomic, strong) NSUUID *identifier;
+
+/**
+ * The time that the session started.
+**/
+@property (nonatomic, strong) NSDate *startTime;
 
 @end

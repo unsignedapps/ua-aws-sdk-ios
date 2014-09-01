@@ -7,7 +7,13 @@
 //
 
 #import "UAAWSResponse.h"
+#import "UAMantle.h"
+#import "NSValueTransformer+UAValueTransformerAdditions.h"
+#import "UAMADataTypes.h"
+#import "UAHeaderMapping.h"
 
-@interface UAMAResponse : UAAWSResponse
+@interface UAMAResponse : UAAWSResponse <UAHeaderMapping>
+
+@property (nonatomic, strong) NSString *requestID;
 
 @end

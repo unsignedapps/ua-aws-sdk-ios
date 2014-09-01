@@ -7,7 +7,47 @@
 //
 
 #import "UAMAEvent.h"
+#import "UAMobileAnalytics.h"
+#import "UAMASession.h"
 
 @implementation UAMAEvent
+
+@synthesize eventType=_eventType, timestamp=_timestamp, attributes=_attributes, metrics=_metrics, session=_session, version=_version;
+
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        // default to the current session
+        [self setSession:[UAMobileAnalytics currentSession]];
+        
+        // and hardcoded version number
+        [self setVersion:@"v2.0"];
+    }
+    return self;
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return [[super JSONKeyPathsByPropertyKey] UAMTL_dictionaryByAddingEntriesFromDictionary:
+    @{
+        @"eventType":           @"eventType",
+        @"timestamp":           @"timestamp",
+        @"attributes":          @"attributes",
+        @"metrics":             @"metrics",
+        @"session":             @"session",
+        @"version":             @"version"
+    }];
+}
+
++ (NSValueTransformer *)timestampJSONTransformer
+{
+    return [UAMTLValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SS'Z'"];
+}
+
++ (NSValueTransformer *)sessionJSONTransformer
+{
+    return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAMASession class]];
+}
 
 @end

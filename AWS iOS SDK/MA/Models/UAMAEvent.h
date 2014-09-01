@@ -8,6 +8,57 @@
 
 #import "UAMAModel.h"
 
-@interface UAMAEvent : UAMAModel
+@class UAMASession;
+
+@interface UAMAEvent : UAMAModel <UAMTLJSONSerializing>
+
+/**
+ * The name of the event.
+ *
+ * This identifies the event that occured in your app. This is used for grouping and aggregating
+ * like events together for reporting purposes.
+ *
+ * Some constants exist for this. See UAMAEventTypeSessionStart for more.
+**/
+@property (nonatomic, copy) NSString *eventType;
+
+/**
+ * The time that the event occured.
+**/
+@property (nonatomic, strong) NSDate *timestamp;
+
+/**
+ * A dictionary of key/value attribute pairs to give additional context to the 
+ * event.
+ *
+ * These are entirely custom, but it is expected that the key and objects be NSStrings.
+ *
+ * The key can be up to 50 characters, the value 255.
+**/
+@property (nonatomic, copy) NSDictionary *attributes;
+
+/**
+ * A dictionary of key/value pairs that give additional *measurable* context to the event.
+ *
+ * These are entirely custom, but it is expected that the key is a NSString, and the values
+ * NSNumbers.
+ *
+ * The key can be up to 50 characters.
+**/
+@property (nonatomic, copy) NSDictionary *metrics;
+
+/**
+ * The current session information.
+ *
+ * By default, this will be set to the current session as managed by +[UAMobileAnalytics currentSession].
+**/
+@property (nonatomic, strong) UAMASession *session;
+
+/**
+ * The version of the session.
+ *
+ * Must always be v2.0, for some reason.
+**/
+@property (nonatomic, copy) NSString *version;
 
 @end

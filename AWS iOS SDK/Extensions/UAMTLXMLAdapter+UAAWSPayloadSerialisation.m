@@ -45,6 +45,22 @@
     return [self modelOfClass:responseClass fromXMLNode:document error:error];
 }
 
++ (NSString *)stringForModel:(NSObject<UAMTLModel> *)model error:(NSError *__autoreleasing *)error
+{
+    NSAssert([model conformsToProtocol:@protocol(UAMTLModel)], @"Cannot serialise to XML when the model does not does not conform to <UAMTLModel>.");
+    NSAssert([model conformsToProtocol:@protocol(UAMTLXMLSerializing)], @"Cannot serialise to XML when the model does not conform to UAMTLJSONSerializing.");
+    UADDXMLElement *element = [self XMLElementFromModel:(NSObject<UAMTLModel, UAMTLXMLSerializing> *)model];
+    
+    if (element == nil)
+        return nil;
+    
+    NSString *xmlString = [element stringValue];
+    if (xmlString == nil)
+        return nil;
+    
+    return xmlString;
+}
+
 + (NSString *)contentType
 {
     return nil;

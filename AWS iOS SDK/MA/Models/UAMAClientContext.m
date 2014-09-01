@@ -10,4 +10,35 @@
 
 @implementation UAMAClientContext
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return [[super JSONKeyPathsByPropertyKey] UAMTL_dictionaryByAddingEntriesFromDictionary:
+    @{
+        @"client":          @"client",
+        @"custom":          @"custom",
+        @"environment":     @"env"
+    }];
+}
+
++ (NSValueTransformer *)clientJSONTransformer
+{
+    return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAMAClient class]];
+}
+
++ (NSValueTransformer *)environmentJSONTransformer
+{
+    return [NSValueTransformer UAMTL_JSONDictionaryTransformerWithModelClass:[UAMAClientEnvironment class]];
+}
+
+#pragma mark - Convenience Methods
+
++ (UAMAClientContext *)currentClientContext
+{
+    UAMAClientContext *context = [[UAMAClientContext alloc] init];
+    [context setClient:[UAMAClient currentDeviceClient]];
+    [context setEnvironment:[UAMAClientEnvironment currentEnvironment]];
+    return context;
+}
+
+
 @end

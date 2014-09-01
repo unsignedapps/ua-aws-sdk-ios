@@ -13,6 +13,7 @@
 #import "UAAWSError.h"
 #import "UAAWSResponse.h"
 #import "NSArray+UAArrayFlattening.h"
+#import "UAHeaderMapping.h"
 
 @interface UAAWSRequest ()
 
@@ -40,8 +41,9 @@
 - (NSURLRequest *)UA_Payload;
 
 - (NSError *)UA_ErrorForHTTPResponse:(NSHTTPURLResponse *)response withResponseData:(NSData *)data;
-- (UAAWSResponse *)UA_ResponseObjectForResponseData:(NSData *)data;
+- (UAAWSResponse *)UA_ResponseObjectForResponseData:(NSData *)data responseHeaders:(NSDictionary *)headers;
 - (void)UA_SchedulePoll;
+- (NSString *)UA_serializedRequestHeaderForPropertyKey:(NSString *)key withSerializer:(Class<UAAWSPayloadSerialisation>)serializer;
 
 - (void)startDirtyPropertyObserving;
 - (void)stopDirtyPropertyObserving;
@@ -265,7 +267,7 @@
         if (httpResponse.statusCode >= 400)
             apiError = [blockSelf UA_ErrorForHTTPResponse:httpResponse withResponseData:data];
         else
-            apiResponse = [blockSelf UA_ResponseObjectForResponseData:data];
+            apiResponse = [blockSelf UA_ResponseObjectForResponseData:data responseHeaders:httpResponse.allHeaderFields];
         
         
         // Great! Now, if we're waiting for a result we should check with our waiting block
@@ -357,6 +359,22 @@
             [request addValue:xAmzTarget forHTTPHeaderField:@"X-Amz-Target"];
     }
     
+    // do we have custom header fields?
+    if ([self conformsToProtocol:@protocol(UAHeaderMapping)])
+    {
+        NSDictionary *mappings = [[((UAAWSRequest<UAHeaderMapping> *)self) class] UAHeaderMappingsByPropertyKey];
+        if (mappings != nil && [mappings count] > 0)
+        {
+            // go through mapping them over and setting our headers
+            for (NSString *propertyKey in mappings)
+            {
+                NSString *headerValue = [self UA_serializedRequestHeaderForPropertyKey:propertyKey withSerializer:serialiser];
+                if (headerValue != nil)
+                    [request addValue:headerValue forHTTPHeaderField:[mappings objectForKey:propertyKey]];
+            }
+        }
+    }
+    
     // Set the body
     [request setHTTPBody:requestBody];
     
@@ -364,6 +382,19 @@
     [UAAWSRequestSigning signURLRequest:request ofRequest:protocolSelf inRegion:region withCredentials:credentials];
     NSLog(@"-[%@] Posting request to %@: %@", NSStringFromClass([self class]), targetURL, [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
     return request;
+}
+
+- (NSString *)UA_serializedRequestHeaderForPropertyKey:(NSString *)key withSerializer:(Class<UAAWSPayloadSerialisation>)serializer
+{
+    // we need to serialise this down to a string for inclusion with the request header.
+    NSObject<UAMTLModel> *property = [self valueForKey:key];
+    if (property == nil)
+        return nil;
+    
+    NSAssert([property conformsToProtocol:@protocol(UAMTLModel)], @"Model for property key %@ to be serialized into a request header does not conform to <UAMTLModel>.", key);
+    
+    NSString *serialized = [serializer stringForModel:property error:nil];
+    return serialized;
 }
 
 #pragma mark - Response Parsing
@@ -401,7 +432,7 @@
     return [error errorObject];
 }
 
-- (UAAWSResponse *)UA_ResponseObjectForResponseData:(NSData *)data
+- (UAAWSResponse *)UA_ResponseObjectForResponseData:(NSData *)data responseHeaders:(NSDictionary *)headers
 {
     UAAWSRequest<UAAWSRequest> *protocolSelf = (UAAWSRequest<UAAWSRequest> *)self;
     Class serialiser = [protocolSelf UA_ResponseSerialisationClass];
@@ -429,6 +460,9 @@
                                                 UAAWSResponseExceptionParseErrorDataKey: data,
                                                 UAAWSResponseExceptionParseErrorErrorKey: error }];
     }
+    
+    // populate any headers as required
+    [response UAPopulateMappingsForHeaders:headers];
     
     // all good!
     return response;

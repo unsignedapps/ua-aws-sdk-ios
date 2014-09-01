@@ -7,7 +7,45 @@
 //
 
 #import "UAMAPutEventsRequest.h"
+#import "UAAWSAdditionalAccessors.h"
+#import "UAMAEvent.h"
+#import "UAMAPutEventsResponse.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAMAPutEventsRequest
 
+@synthesize events=_events;
+
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        [self UA_addAtIndexAdditionalAccessorForSelector:@selector(eventAtIndex:) propertyName:@"events"];
+        [self UA_addAddObjectAdditionalAccessorForSelector:@selector(addEvent:) propertyName:@"events"];
+    }
+    return self;
+}
+
+- (Class)UA_ResponseClass
+{
+    return [UAMAPutEventsResponse class];
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return [[super JSONKeyPathsByPropertyKey] UAMTL_dictionaryByAddingEntriesFromDictionary:
+    @{
+        @"events":          @"events"
+    }];
+}
+
++ (NSValueTransformer *)eventsJSONTransformer
+{
+    return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAMAEvent class]];
+}
+
 @end
+
+#pragma clang diagnostic pop

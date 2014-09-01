@@ -38,6 +38,19 @@
     return [self modelOfClass:responseClass fromJSONDictionary:dictionary error:error];
 }
 
++ (NSString *)stringForModel:(NSObject<UAMTLModel> *)model error:(NSError *__autoreleasing *)error
+{
+    NSAssert([model conformsToProtocol:@protocol(UAMTLModel)], @"Cannot serialise to JSON when the model does not does not conform to <UAMTLModel>.");
+    NSAssert([model conformsToProtocol:@protocol(UAMTLJSONSerializing)], @"Cannot serialise to JSON when the model does not conform to <UAMTLJSONSerializing>.");
+    NSDictionary *dictionary = [self JSONDictionaryFromModel:(NSObject<UAMTLModel,UAMTLJSONSerializing> *)model];
+    
+    if (dictionary == nil)
+        return nil;
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary options:kNilOptions error:error];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
 + (NSString *)contentType
 {
     return @"application/x-amz-json-1.0";

@@ -10,4 +10,38 @@
 
 @implementation UAMASession
 
+@synthesize identifier=_identifier, startTime=_startTime;
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return [[super JSONKeyPathsByPropertyKey] UAMTL_dictionaryByAddingEntriesFromDictionary:
+    @{
+        @"identifier":          @"id",
+        @"startTime":           @"startTimestamp"
+    }];
+}
+
++ (NSValueTransformer *)identifierJSONTransformer
+{
+    return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSUUID *(NSString *input)
+    {
+        if (input == nil || ![input isKindOfClass:[NSString class]])
+            return nil;
+        
+        return [[NSUUID alloc] initWithUUIDString:(NSString *)input];
+
+    } reverseBlock:^NSString *(NSUUID *input)
+    {
+        if (input == nil)
+            return nil;
+        
+        return [input UUIDString];
+    }];
+}
+
++ (NSValueTransformer *)startTimeJSONTransformer
+{
+    return [UAMTLValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SS'Z'"];
+}
+
 @end

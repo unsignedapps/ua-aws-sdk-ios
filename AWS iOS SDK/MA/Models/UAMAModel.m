@@ -10,4 +10,11 @@
 
 @implementation UAMAModel
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return @{};
+}
+
++
+
 @end
