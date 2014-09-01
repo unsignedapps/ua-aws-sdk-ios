@@ -36,7 +36,7 @@
  * A dictionary of custom values pairs that you would like sent to Mobile Analytics
  * to help identify this application.
 **/
-@property (nonatomic, copy) NSDictionary *custom;
+@property (nonatomic, strong) NSMutableDictionary *custom;
 
 /**
  * Creates a default instance of the client context based on the currently running

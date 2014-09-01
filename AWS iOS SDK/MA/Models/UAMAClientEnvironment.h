@@ -14,7 +14,7 @@
  * The platform that this SDK is running on. Only "iOS" is supported for us,
  * unless you've somehow recompiled this to run on FireOS or Android...
  *
- * When created via +currentEnvironment, will default to -[UIDevice systemName].
+ * When created via +currentEnvironment, will default to "iOS".
 **/
 @property (nonatomic, copy) NSString *platform;
 

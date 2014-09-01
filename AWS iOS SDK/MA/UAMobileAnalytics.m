@@ -47,6 +47,15 @@
     [[UAAWSOperationQueue sharedInstance] cancelAllRequestsForOwner:self];
 }
 
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        [self setSessionTimeout:30];
+    }
+    return self;
+}
+
 #pragma mark - Session Monitoring
 
 + (void)startSessionMonitoring
@@ -63,26 +72,54 @@
 {
     // register for application level events
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(applicationDidEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [center addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [center addObserver:self selector:@selector(applicationWillEnterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
+    
+    // make sure we have a session running
+    if (self.session == nil)
+        [self.class restartSession];
 }
 
 - (void)stopSessionMonitoring
 {
     // remove ourselves from observers
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    // if we have a session, close it
+    if (self.session != nil)
+        [self.class closeSession];
 }
 
 #pragma mark - Session Monitoring Notifications
 
 - (void)applicationWillEnterForeground
 {
-    [self.class sendEventOfType:UAMAEventTypeSessionResume forSession:self.session];
+    [self.class resumeSession];
 }
 
-- (void)applicationDidEnterBackground
+- (void)applicationDidEnterBackground:(NSNotification *)note
 {
-    [self.class sendEventOfType:UAMAEventTypeSessionPause forSession:self.session];
+    __block UIApplication *application = note.object;
+    if (application == nil || ![application isKindOfClass:[UIApplication class]])
+    {
+        // we're not able to delay the backgrounding, no application to work with
+        [self.class pauseSession];
+        return;
+    }
+
+    // we're going to nicely ask the application to let us post this through
+    __block UAMobileAnalytics *blockSelf = self;
+    __block UIBackgroundTaskIdentifier taskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^
+    {
+        [[UAAWSOperationQueue sharedInstance] cancelAllRequestsForOwner:blockSelf];
+        taskIdentifier = UIBackgroundTaskInvalid;
+    }];
+    
+    // ok, now that that is done, lets try pausing into the background
+    [self.class pauseSessionWithCompletionBlock:^(UAMAPutEventsResponse *response, NSError *error)
+    {
+        [application endBackgroundTask:taskIdentifier];
+    }];
 }
 
 #pragma mark - Session Management
@@ -105,12 +142,7 @@
     
     // if we have a session active we should close it
     if (sharedInstance.session != nil)
-    {
-        UAMASession *oldSession = sharedInstance.session;
-        [oldSession setStopTime:[NSDate date]];
-        [oldSession setDuration:[oldSession.stopTime timeIntervalSinceDate:oldSession.startTime]];
-        [self sendEventOfType:UAMAEventTypeSessionStop forSession:oldSession];
-    }
+        [self closeSession];
     
     // now then, lets just create a new one
     UAMASession *session = [[UAMASession alloc] init];
@@ -119,15 +151,60 @@
     [sharedInstance setSession:session];
     
     // now send the notification
-    [self sendEventOfType:UAMAEventTypeSessionStart forSession:session];
+    [self sendEventOfType:UAMAEventTypeSessionStart forSession:session completionBlock:NULL];
     
     // return it on through
     return session;
 }
 
++ (void)closeSession
+{
+    UAMobileAnalytics *sharedInstance = [self sharedInstance];
+    UAMASession *oldSession = sharedInstance.session;
+    [oldSession setStopTime:[NSDate date]];
+    [oldSession setDuration:[oldSession.stopTime timeIntervalSinceDate:oldSession.startTime]];
+    [self sendEventOfType:UAMAEventTypeSessionStop forSession:oldSession completionBlock:NULL];
+    [sharedInstance setSession:nil];
+}
+
++ (void)pauseSession
+{
+    [self pauseSessionWithCompletionBlock:NULL];
+}
+
++ (void)pauseSessionWithCompletionBlock:(UAMAPutEventsRequestCompletionBlock)block
+{
+    UAMobileAnalytics *sharedInstance = [self sharedInstance];
+    [sharedInstance.session setPauseTime:[NSDate date]];
+    [self sendEventOfType:UAMAEventTypeSessionPause forSession:sharedInstance.session completionBlock:block];
+}
+
++ (void)resumeSession
+{
+    UAMobileAnalytics *sharedInstance = [self sharedInstance];
+    
+    // do we have an existing session?
+    if (sharedInstance.session == nil)
+    {
+        [self restartSession];
+        return;
+    }
+    
+    // has the session timed out?
+    UAMASession *session = sharedInstance.session;
+    if (session.pauseTime != nil && [[NSDate date] timeIntervalSinceDate:session.pauseTime] > sharedInstance.sessionTimeout)
+    {
+        [self restartSession];
+        return;
+    }
+
+    // all good, resume
+    [self sendEventOfType:UAMAEventTypeSessionResume forSession:session completionBlock:NULL];
+}
+
 #pragma mark - Sending session related events
 
-+ (void)sendEventOfType:(NSString *)eventType forSession:(UAMASession *)session
++ (void)sendEventOfType:(NSString *)eventType forSession:(UAMASession *)session completionBlock:(UAMAPutEventsRequestCompletionBlock)block
 {
     // create the event
     UAMAEvent *event = [[UAMAEvent alloc] init];
@@ -137,10 +214,14 @@
     // now the request
     UAMAPutEventsRequest *request = [[UAMAPutEventsRequest alloc] init];
     [request addEvent:event];
+    
     [request invokeWithOwner:[self sharedInstance] completionBlock:^(UAMAPutEventsResponse *response, NSError *error)
     {
         if (error != nil)
             NSLog(@"Unable to put Mobile Analytics session event %@: %@", eventType, error);
+        
+        if (block != NULL)
+            block(response, error);
     }];
 }
 

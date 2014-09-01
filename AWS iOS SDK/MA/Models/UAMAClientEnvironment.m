@@ -30,7 +30,7 @@
     
     // set known current device information
     UIDevice *device = [UIDevice currentDevice];
-    [environment setPlatform:[device systemName]];
+    [environment setPlatform:@"iOS"];
     [environment setModel:[device model]];
     [environment setMake:@"Apple"];
     [environment setPlatformVersion:[device systemVersion]];

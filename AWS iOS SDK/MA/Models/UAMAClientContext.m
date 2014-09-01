@@ -10,6 +10,16 @@
 
 @implementation UAMAClientContext
 
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        // default to an empty custom dictionary
+        [self setCustom:[NSMutableDictionary dictionary]];
+    }
+    return self;
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return [[super JSONKeyPathsByPropertyKey] UAMTL_dictionaryByAddingEntriesFromDictionary:

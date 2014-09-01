@@ -21,6 +21,13 @@
         // default to the current session
         [self setSession:[UAMobileAnalytics currentSession]];
         
+        // and the current time
+        [self setTimestamp:[NSDate date]];
+        
+        // and some empty attribute/metric dictionaries
+        [self setAttributes:[NSMutableDictionary dictionary]];
+        [self setMetrics:[NSMutableDictionary dictionary]];
+        
         // and hardcoded version number
         [self setVersion:@"v2.0"];
     }

@@ -7,7 +7,35 @@
 //
 
 #import "UAMAError.h"
+#import "UAAWSRequest.h"
 
 @implementation UAMAError
+
+@synthesize type=_type, message=_message, HTTPStatusCode=_HTTPStatusCode;
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return
+    @{
+        @"type":            @"__type",
+        @"message":         @"message",
+        @"HTTPStatusCode":  [NSNull null]
+    };
+}
+
+#pragma mark - Error Generation
+
+- (NSError *)errorObject
+{
+    NSDictionary *userInfo = @{ UAAWSErrorName: self.type ?: @"", UAAWSErrorMessage: self.message ?: @"" };
+    
+    UAAWSErrorCode code = 0;
+    if (self.HTTPStatusCode >= 500)
+        code = UAAWSErrorCodeServer;
+    else if (self.HTTPStatusCode >= 400)
+        code = UAAWSErrorCodeClient;
+    
+    return [NSError errorWithDomain:UAAWSErrorDomain code:code userInfo:userInfo];
+}
 
 @end

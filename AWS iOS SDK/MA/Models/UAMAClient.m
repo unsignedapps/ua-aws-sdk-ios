@@ -30,7 +30,7 @@
     
     [client setClientID:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
 
-    NSDictionary *info = [[NSBundle mainBundle] localizedInfoDictionary];
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     [client setAppName:[info objectForKey:(NSString *)kCFBundleNameKey]];
     [client setAppID:[info objectForKey:(NSString *)kCFBundleIdentifierKey]];
     [client setVersion:[info objectForKey:(NSString *)kCFBundleVersionKey]];

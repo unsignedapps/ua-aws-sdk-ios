@@ -35,7 +35,7 @@
  *
  * The key can be up to 50 characters, the value 255.
 **/
-@property (nonatomic, copy) NSDictionary *attributes;
+@property (nonatomic, strong) NSMutableDictionary *attributes;
 
 /**
  * A dictionary of key/value pairs that give additional *measurable* context to the event.
@@ -45,7 +45,7 @@
  *
  * The key can be up to 50 characters.
 **/
-@property (nonatomic, copy) NSDictionary *metrics;
+@property (nonatomic, strong) NSMutableDictionary *metrics;
 
 /**
  * The current session information.

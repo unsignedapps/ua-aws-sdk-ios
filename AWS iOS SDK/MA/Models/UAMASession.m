@@ -10,7 +10,7 @@
 
 @implementation UAMASession
 
-@synthesize identifier=_identifier, startTime=_startTime;
+@synthesize identifier=_identifier, startTime=_startTime, duration=_duration, stopTime=_stopTime, pauseTime=_pauseTime;
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
@@ -19,7 +19,8 @@
         @"identifier":          @"id",
         @"duration":            @"duration",
         @"startTime":           @"startTimestamp",
-        @"stopTime":            @"stopTimestamp"
+        @"stopTime":            @"stopTimestamp",
+        @"pauseTime":           [NSNull null]
     }];
 }
 

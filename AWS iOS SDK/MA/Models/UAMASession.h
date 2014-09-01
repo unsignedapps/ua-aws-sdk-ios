@@ -30,4 +30,11 @@
 **/
 @property (nonatomic, strong) NSDate *stopTime;
 
+/**
+ * The time that the session was last paused.
+ *
+ * This value is not transmitted to Mobile Analytics.
+**/
+@property (nonatomic, strong) NSDate *pauseTime;
+
 @end
