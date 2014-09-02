@@ -383,6 +383,10 @@
     if (property == nil)
         return nil;
     
+    // already a string?
+    if ([property isKindOfClass:[NSString class]])
+        return (NSString *)property;
+    
     NSAssert([property conformsToProtocol:@protocol(UAMTLModel)], @"Model for property key %@ to be serialized into a request header does not conform to <UAMTLModel>.", key);
     
     NSString *serialized = [serializer stringForModel:property error:nil];

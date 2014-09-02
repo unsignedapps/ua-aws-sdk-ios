@@ -86,8 +86,8 @@
     return
     @{
         // the client context *should* appear in our headers
-        @"clientContext":       @"x-amz-Client-Context",
-        @"xAmzTarget":          @"x-amz-target"
+        @"clientContext":       @"X-Amz-Client-Context",
+        @"xAmzTarget":          @"X-Amz-Target"
     };
 }
 

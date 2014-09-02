@@ -53,7 +53,7 @@
 
 + (NSString *)contentType
 {
-    return @"application/x-amz-json-1.0";
+    return @"application/x-amz-json-1.1";
 }
 
 @end
