@@ -1,5 +1,5 @@
 //
-//  UAELBDescribeLoadBalancersRequest.h
+//  UAELBDescribeTagsRequest.h
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -8,18 +8,18 @@
 
 #import "UAELBRequest.h"
 
-@class UAELBDescribeLoadBalancersResponse;
+@class UAELBDescribeTagsResponse;
 
-typedef void(^UAELBDescribeLoadBalancersRequestCompletionBlock)(UAELBDescribeLoadBalancersResponse *response, NSError *error);
-typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELBDescribeLoadBalancersResponse *response, NSError *error);
+typedef void(^UAELBDescribeTagsRequestCompletionBlock)(UAELBDescribeTagsResponse *response, NSError *error);
+typedef BOOL(^UAELBDescribeTagsRequestShouldContinueWaitingBlock)(UAELBDescribeTagsResponse *response, NSError *error);
 
-@interface UAELBDescribeLoadBalancersRequest : UAELBRequest
+@interface UAELBDescribeTagsRequest : UAELBRequest
 
 @property (nonatomic, strong) NSMutableArray *loadBalancerNames;
-@property (nonatomic, copy) NSString *marker;
-@property (nonatomic, strong) NSNumber *pageSize;
-// @property (nonatomic, copy) UAELBDescribeLoadBalancersRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
+// @property (nonatomic, copy) UAELBDescribeTagsRequestCompletionBlock UA_RequestCompletionBlock;
+// @property (nonatomic, copy) UAELBDescribeTagsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
+
+- (id)initWithLoadBalancerNames:(NSArray *)loadBalancerNames;
 
 /**
  * Retrieves the NSString at the specified index.
@@ -42,7 +42,7 @@ typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELB
  * @param	completionBlock		Block to be called with two parameters upon completion of the request: the response object for the request,
  *								or an NSError object if something went wrong.
 **/
-- (void)invokeWithOwner:(id)owner completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock;
+- (void)invokeWithOwner:(id)owner completionBlock:(UAELBDescribeTagsRequestCompletionBlock)completionBlock;
 
 /**
  * Invokes the request on the default queue and keeps retrying the request until the conditions are met.
@@ -53,7 +53,7 @@ typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELB
  * @param	completionBlock		Block to be called with two parameters upon completion of the request: the response object for the request,
  *								or an NSError object if something went wrong.
 **/
-- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock;
+- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UAELBDescribeTagsRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UAELBDescribeTagsRequestCompletionBlock)completionBlock;
 
 /**
  * Invokes the request on the default queue and keeps retrying the request until the conditions are met.
@@ -66,6 +66,6 @@ typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELB
  * @param	completionBlock		Block to be called with two parameters upon completion of the request: the response object for the request,
  *								or an NSError object if something went wrong.
 **/
-- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock;
+- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UAELBDescribeTagsRequestCompletionBlock)completionBlock;
 
 @end

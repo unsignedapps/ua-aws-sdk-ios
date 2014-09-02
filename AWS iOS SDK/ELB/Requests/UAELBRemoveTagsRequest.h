@@ -1,5 +1,5 @@
 //
-//  UAELBDescribeLoadBalancersRequest.h
+//  UAELBRemoveTagsRequest.h
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -8,18 +8,17 @@
 
 #import "UAELBRequest.h"
 
-@class UAELBDescribeLoadBalancersResponse;
+@class UAELBTagName, UAELBRemoveTagsResponse;
 
-typedef void(^UAELBDescribeLoadBalancersRequestCompletionBlock)(UAELBDescribeLoadBalancersResponse *response, NSError *error);
-typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELBDescribeLoadBalancersResponse *response, NSError *error);
+typedef void(^UAELBRemoveTagsRequestCompletionBlock)(UAELBRemoveTagsResponse *response, NSError *error);
+typedef BOOL(^UAELBRemoveTagsRequestShouldContinueWaitingBlock)(UAELBRemoveTagsResponse *response, NSError *error);
 
-@interface UAELBDescribeLoadBalancersRequest : UAELBRequest
+@interface UAELBRemoveTagsRequest : UAELBRequest
 
 @property (nonatomic, strong) NSMutableArray *loadBalancerNames;
-@property (nonatomic, copy) NSString *marker;
-@property (nonatomic, strong) NSNumber *pageSize;
-// @property (nonatomic, copy) UAELBDescribeLoadBalancersRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
+@property (nonatomic, strong) NSMutableArray *tagNames;
+// @property (nonatomic, copy) UAELBRemoveTagsRequestCompletionBlock UA_RequestCompletionBlock;
+// @property (nonatomic, copy) UAELBRemoveTagsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
  * Retrieves the NSString at the specified index.
@@ -27,11 +26,22 @@ typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELB
 - (NSString *)loadBalancerNameAtIndex:(NSUInteger)index;
 
 /**
+ * Retrieves the UAELBTagName at the specified index.
+**/
+- (UAELBTagName *)tagNameAtIndex:(NSUInteger)index;
+
+/**
  * Adds a LoadBalancerName to the loadBalancerNames property.
  *
  * This will initialise loadBalancerNames with an empty mutable array if necessary.
 **/
 - (void)addLoadBalancerName:(NSString *)loadBalancerName;
+/**
+ * Adds a TagName to the tagNames property.
+ *
+ * This will initialise tagNames with an empty mutable array if necessary.
+**/
+- (void)addTagName:(UAELBTagName *)tagName;
 
 #pragma mark - Invocation
 
@@ -42,7 +52,7 @@ typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELB
  * @param	completionBlock		Block to be called with two parameters upon completion of the request: the response object for the request,
  *								or an NSError object if something went wrong.
 **/
-- (void)invokeWithOwner:(id)owner completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock;
+- (void)invokeWithOwner:(id)owner completionBlock:(UAELBRemoveTagsRequestCompletionBlock)completionBlock;
 
 /**
  * Invokes the request on the default queue and keeps retrying the request until the conditions are met.
@@ -53,7 +63,7 @@ typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELB
  * @param	completionBlock		Block to be called with two parameters upon completion of the request: the response object for the request,
  *								or an NSError object if something went wrong.
 **/
-- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock;
+- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UAELBRemoveTagsRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UAELBRemoveTagsRequestCompletionBlock)completionBlock;
 
 /**
  * Invokes the request on the default queue and keeps retrying the request until the conditions are met.
@@ -66,6 +76,6 @@ typedef BOOL(^UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)(UAELB
  * @param	completionBlock		Block to be called with two parameters upon completion of the request: the response object for the request,
  *								or an NSError object if something went wrong.
 **/
-- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock;
+- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UAELBRemoveTagsRequestCompletionBlock)completionBlock;
 
 @end

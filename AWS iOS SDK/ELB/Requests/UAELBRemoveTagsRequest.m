@@ -1,5 +1,5 @@
 //
-//  UAELBDescribeLoadBalancersRequest.m
+//  UAELBRemoveTagsRequest.m
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -7,11 +7,12 @@
 //
 //
 
-#import "UAELBDescribeLoadBalancersRequest.h"
+#import "UAELBRemoveTagsRequest.h"
 #import "UAAWSAdditionalAccessors.h"
-#import "UAELBDescribeLoadBalancersResponse.h"
+#import "UAELBRemoveTagsResponse.h"
+#import "UAELBTagName.h"
 
-@interface UAELBDescribeLoadBalancersRequest ()
+@interface UAELBRemoveTagsRequest ()
 
 @property (nonatomic, copy) NSString *action;
 @property (nonatomic, copy) NSString *version;
@@ -21,26 +22,28 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation UAELBDescribeLoadBalancersRequest
+@implementation UAELBRemoveTagsRequest
 
-@synthesize action=_action, version=_version, loadBalancerNames=_loadBalancerNames, marker=_marker, pageSize=_pageSize;
+@synthesize action=_action, version=_version, loadBalancerNames=_loadBalancerNames, tagNames=_tagNames;
 
 - (id)init
 {
 	if (self = [super init])
 	{
-		[self setAction:@"DescribeLoadBalancers"];
+		[self setAction:@"RemoveTags"];
 		[self setVersion:@"2012-06-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(loadBalancerNameAtIndex:) propertyName:@"loadBalancerNames"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagNameAtIndex:) propertyName:@"tagNames"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addLoadBalancerName:) propertyName:@"loadBalancerNames"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTagName:) propertyName:@"tagNames"];
 	}
 	return self;
 }
 
 - (Class)UA_ResponseClass
 {
-	return [UAELBDescribeLoadBalancersResponse class];
+	return [UAELBRemoveTagsResponse class];
 }
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
@@ -53,22 +56,31 @@
         @"action": @"Action",
         @"version": @"Version",
         @"loadBalancerNames": @"LoadBalancerNames.member",
-        @"marker": @"Marker",
-        @"pageSize": @"PageSize"
+        @"tagNames": @"Tags.member"
     }];
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)tagNamesJSONTransformer
+{
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBTagName class]];
+}
+
++ (NSValueTransformer *)tagNamesQueryStringTransformer
+{
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBTagName class]];
+}
+
 /*#pragma mark - Invocation
 
-- (void)invokeWithOwner:(id)owner completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock
+- (void)invokeWithOwner:(id)owner completionBlock:(UAELBRemoveTagsRequestCompletionBlock)completionBlock
 {
     [self setUA_Owner:owner];
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
 
-- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UAELBDescribeLoadBalancersRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock
+- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UAELBRemoveTagsRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UAELBRemoveTagsRequestCompletionBlock)completionBlock
 {
     [self setUA_Owner:owner];
     [self setUA_ShouldContinueWaiting:shouldContinueWaitingBlock];
@@ -76,7 +88,7 @@
     [self invoke];
 }
 
-- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UAELBDescribeLoadBalancersRequestCompletionBlock)completionBlock
+- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UAELBRemoveTagsRequestCompletionBlock)completionBlock
 {
     [self setUA_Owner:self];
     [self setUA_ShouldContinueWaiting:[UAAWSRequest UA_ShouldContinueWaitingBlockUntilValueAtKeyPath:keyPath isInArray:array]];

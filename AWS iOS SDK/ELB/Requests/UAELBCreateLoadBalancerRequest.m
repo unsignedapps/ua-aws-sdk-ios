@@ -11,6 +11,7 @@
 #import "UAAWSAdditionalAccessors.h"
 #import "UAELBCreateLoadBalancerResponse.h"
 #import "UAELBListener.h"
+#import "UAELBTag.h"
 
 @interface UAELBCreateLoadBalancerRequest ()
 
@@ -24,7 +25,7 @@
 
 @implementation UAELBCreateLoadBalancerRequest
 
-@synthesize action=_action, version=_version, loadBalancerName=_loadBalancerName, listeners=_listeners, availabilityZones=_availabilityZones, subnets=_subnets, securityGroups=_securityGroups, scheme=_scheme;
+@synthesize action=_action, version=_version, loadBalancerName=_loadBalancerName, listeners=_listeners, availabilityZones=_availabilityZones, subnets=_subnets, securityGroups=_securityGroups, scheme=_scheme, tags=_tags;
 
 - (id)init
 {
@@ -37,10 +38,12 @@
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(availabilityZoneAtIndex:) propertyName:@"availabilityZones"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(subnetAtIndex:) propertyName:@"subnets"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(tagAtIndex:) propertyName:@"tags"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addListener:) propertyName:@"listeners"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAvailabilityZone:) propertyName:@"availabilityZones"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSubnet:) propertyName:@"subnets"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSecurityGroup:) propertyName:@"securityGroups"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addTag:) propertyName:@"tags"];
 	}
 	return self;
 }
@@ -64,7 +67,8 @@
         @"availabilityZones": @"AvailabilityZones.member",
         @"subnets": @"Subnets.member",
         @"securityGroups": @"SecurityGroups.member",
-        @"scheme": @"Scheme"
+        @"scheme": @"Scheme",
+        @"tags": @"Tags.member"
     }];
     return [keyPaths copy];
 }
@@ -81,6 +85,11 @@
                                                unknownValue:@(UAELBSchemeUnknown)];
 }
 
++ (NSValueTransformer *)tagsJSONTransformer
+{
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBTag class]];
+}
+
 + (NSValueTransformer *)listenersQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBListener class]];
@@ -91,6 +100,11 @@
     return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBSchemeInternetFacing), @(UAELBSchemeInternal) ]
                                                stringValues:@[ @"internet-facing", @"internal" ]
                                                unknownValue:@(UAELBSchemeUnknown)];
+}
+
++ (NSValueTransformer *)tagsQueryStringTransformer
+{
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBTag class]];
 }
 
 /*#pragma mark - Invocation

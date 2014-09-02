@@ -8,7 +8,7 @@
 
 #import "UAELBRequest.h"
 
-@class UAELBListener, UAELBCreateLoadBalancerResponse;
+@class UAELBListener, UAELBTag, UAELBCreateLoadBalancerResponse;
 
 typedef void(^UAELBCreateLoadBalancerRequestCompletionBlock)(UAELBCreateLoadBalancerResponse *response, NSError *error);
 typedef BOOL(^UAELBCreateLoadBalancerRequestShouldContinueWaitingBlock)(UAELBCreateLoadBalancerResponse *response, NSError *error);
@@ -21,6 +21,7 @@ typedef BOOL(^UAELBCreateLoadBalancerRequestShouldContinueWaitingBlock)(UAELBCre
 @property (nonatomic, strong) NSMutableArray *subnets;
 @property (nonatomic, strong) NSMutableArray *securityGroups;
 @property (nonatomic) UAELBScheme scheme;
+@property (nonatomic, strong) NSMutableArray *tags;
 // @property (nonatomic, copy) UAELBCreateLoadBalancerRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAELBCreateLoadBalancerRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
@@ -43,6 +44,11 @@ typedef BOOL(^UAELBCreateLoadBalancerRequestShouldContinueWaitingBlock)(UAELBCre
  * Retrieves the NSString at the specified index.
 **/
 - (NSString *)securityGroupAtIndex:(NSUInteger)index;
+
+/**
+ * Retrieves the UAELBTag at the specified index.
+**/
+- (UAELBTag *)tagAtIndex:(NSUInteger)index;
 
 /**
  * Adds a Listener to the listeners property.
@@ -68,6 +74,12 @@ typedef BOOL(^UAELBCreateLoadBalancerRequestShouldContinueWaitingBlock)(UAELBCre
  * This will initialise securityGroups with an empty mutable array if necessary.
 **/
 - (void)addSecurityGroup:(NSString *)securityGroup;
+/**
+ * Adds a Tag to the tags property.
+ *
+ * This will initialise tags with an empty mutable array if necessary.
+**/
+- (void)addTag:(UAELBTag *)tag;
 
 #pragma mark - Invocation
 
