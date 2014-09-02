@@ -9,14 +9,14 @@
 
 #import "UAIAMListServerCertificatesResponse.h"
 #import "UAAWSAdditionalAccessors.h"
-#import "UAIAMServerCertificateMetadataList.h"
+#import "UAIAMServerCertificateMetadata.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAIAMListServerCertificatesResponse
 
-@synthesize serverCertificateMetadataList=_serverCertificateMetadataList, isTruncated=_isTruncated, marker=_marker;
+@synthesize serverCertificateMetadata=_serverCertificateMetadata, isTruncated=_isTruncated, marker=_marker;
 
 - (id)init
 {
@@ -24,8 +24,8 @@
 	{
 		
 		
-		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(serverCertificateMetadataListAtIndex:) propertyName:@"serverCertificateMetadataList"];
-		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addServerCertificateMetadataList:) propertyName:@"serverCertificateMetadataList"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(serverCertificateMetadataAtIndex:) propertyName:@"serverCertificateMetadata"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addServerCertificateMetadata:) propertyName:@"serverCertificateMetadata"];
 	}
 	return self;
 }
@@ -42,16 +42,16 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"serverCertificateMetadataList": @"iam:ServerCertificateMetadataList/iam:member",
+        @"serverCertificateMetadata": @"iam:ServerCertificateMetadataList/iam:member",
         @"isTruncated": @"iam:IsTruncated",
         @"marker": @"iam:Marker"
     }];
     return [keyPaths copy];
 }
 
-+ (NSValueTransformer *)serverCertificateMetadataListXMLTransformer
++ (NSValueTransformer *)serverCertificateMetadataXMLTransformer
 {
-  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMServerCertificateMetadataList class]];
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAIAMServerCertificateMetadata class]];
 }
 
 + (NSValueTransformer *)isTruncatedXMLTransformer

@@ -9,24 +9,24 @@
 
 #import "UAIAMResponse.h"
 
-@class UAIAMServerCertificateMetadataList;
+@class UAIAMServerCertificateMetadata;
 
 @interface UAIAMListServerCertificatesResponse : UAIAMResponse
 
-@property (nonatomic, copy) NSArray *serverCertificateMetadataList;
+@property (nonatomic, copy) NSArray *serverCertificateMetadata;
 @property (nonatomic) BOOL isTruncated;
 @property (nonatomic, copy) NSString *marker;
 
 /**
- * Retrieves the UAIAMServerCertificateMetadataList at the specified index.
+ * Retrieves the UAIAMServerCertificateMetadata at the specified index.
 **/
-- (UAIAMServerCertificateMetadataList *)serverCertificateMetadataListAtIndex:(NSUInteger)index;
+- (UAIAMServerCertificateMetadata *)serverCertificateMetadataAtIndex:(NSUInteger)index;
 
 /**
- * Adds a ServerCertificateMetadataList to the serverCertificateMetadataList property.
+ * Adds a ServerCertificateMetadata to the serverCertificateMetadata property.
  *
- * This will initialise serverCertificateMetadataList with an empty mutable array if necessary.
+ * This will initialise serverCertificateMetadata with an empty mutable array if necessary.
 **/
-- (void)addServerCertificateMetadataList:(UAIAMServerCertificateMetadataList *)serverCertificateMetadataList;
+- (void)addServerCertificateMetadata:(UAIAMServerCertificateMetadata *)serverCertificateMetadata;
 
 @end

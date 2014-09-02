@@ -99,7 +99,6 @@
 #import "UAIAMSAMLProviderList.h"
 #import "UAIAMServerCertificate.h"
 #import "UAIAMServerCertificateMetadata.h"
-#import "UAIAMServerCertificateMetadataList.h"
 #import "UAIAMSigningCertificate.h"
 #import "UAIAMUser.h"
 #import "UAIAMVirtualMFADevice.h"
