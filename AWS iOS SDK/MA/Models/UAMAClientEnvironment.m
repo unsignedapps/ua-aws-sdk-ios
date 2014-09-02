@@ -33,10 +33,10 @@
     
     // set known current device information
     UIDevice *device = [UIDevice currentDevice];
-    [environment setPlatform:@"iOS"];
+    [environment setPlatform:[device systemName]];
     [environment setModel:[device model]];
     [environment setModelVersion:[self currentModelVersion]];
-    [environment setMake:@"Apple"];
+    [environment setMake:@"apple"];
     [environment setPlatformVersion:[device systemVersion]];
     
     // set known locale information

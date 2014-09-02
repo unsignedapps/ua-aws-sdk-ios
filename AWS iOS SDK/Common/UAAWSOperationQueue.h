@@ -10,6 +10,8 @@
 #import "UAAWSOperationAuthenticationDelegate.h"
 #import "UAAWSCredentials.h"
 
+static NSString * const UAAWSSDKVersion = @"0.6.3";
+
 @class UAAWSRequest;
 
 @interface UAAWSOperationQueue : NSOperationQueue <NSURLSessionDelegate>
