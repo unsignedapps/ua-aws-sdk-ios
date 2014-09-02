@@ -31,7 +31,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ElasticLoadBalancing:ApplySecurityGroupsToLoadBalancerResult/ElasticLoadBalancing:ApplySecurityGroupsToLoadBalancerResult/";
+    return @"./ElasticLoadBalancing:ApplySecurityGroupsToLoadBalancerResponse/ElasticLoadBalancing:ApplySecurityGroupsToLoadBalancerResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey

@@ -20,7 +20,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ElasticLoadBalancing:ConfigureHealthCheckResult/ElasticLoadBalancing:ConfigureHealthCheckResult/";
+    return @"./ElasticLoadBalancing:ConfigureHealthCheckResponse/ElasticLoadBalancing:ConfigureHealthCheckResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
