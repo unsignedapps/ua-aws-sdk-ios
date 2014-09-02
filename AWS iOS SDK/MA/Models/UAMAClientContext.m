@@ -8,7 +8,15 @@
 
 #import "UAMAClientContext.h"
 
+@interface UAMAClientContext ()
+
+@property (nonatomic, strong) NSString *version;
+
+@end
+
 @implementation UAMAClientContext
+
+@synthesize client=_client, custom=_custom, environment=_environment, version=_version;
 
 - (instancetype)init
 {
@@ -16,6 +24,7 @@
     {
         // default to an empty custom dictionary
         [self setCustom:[NSMutableDictionary dictionary]];
+        [self setVersion:@"1.0"];
     }
     return self;
 }
@@ -26,7 +35,8 @@
     @{
         @"client":          @"client",
         @"custom":          @"custom",
-        @"environment":     @"env"
+        @"environment":     @"env",
+        @"version":         @"version"
     }];
 }
 

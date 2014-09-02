@@ -7,10 +7,12 @@
 //
 
 #import "UAMAClientEnvironment.h"
+#import <sys/types.h>
+#import <sys/sysctl.h>
 
 @implementation UAMAClientEnvironment
 
-@synthesize platform=_platform, model=_model, make=_make, platformVersion=_platformVersion, locale=_locale;
+@synthesize platform=_platform, model=_model, modelVersion=_modelVersion, make=_make, platformVersion=_platformVersion, locale=_locale;
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
@@ -18,6 +20,7 @@
     @{
         @"platform":            @"platform",
         @"model":               @"model",
+        @"modelVersion":        @"model_version",
         @"make":                @"make",
         @"platformVersion":     @"platform_version",
         @"locale":              @"locale"
@@ -32,6 +35,7 @@
     UIDevice *device = [UIDevice currentDevice];
     [environment setPlatform:@"iOS"];
     [environment setModel:[device model]];
+    [environment setModelVersion:[self currentModelVersion]];
     [environment setMake:@"Apple"];
     [environment setPlatformVersion:[device systemVersion]];
     
@@ -40,6 +44,24 @@
     [environment setLocale:[locale localeIdentifier]];
     
     return environment;
+}
+
++ (NSString *)currentModelVersion
+{
+    int mib[2];
+    size_t len;
+    char *machine;
+    
+    mib[0] = CTL_HW;
+    mib[1] = HW_MACHINE;
+    sysctl(mib, 2, NULL, &len, NULL, 0);
+    machine = malloc(len);
+    sysctl(mib, 2, machine, &len, NULL, 0);
+    
+    NSString *modelVersionCode = [NSString stringWithCString:machine encoding:NSUTF8StringEncoding];
+    free(machine);
+    
+    return modelVersionCode;
 }
 
 @end

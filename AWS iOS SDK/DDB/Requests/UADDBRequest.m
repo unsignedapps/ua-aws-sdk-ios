@@ -106,7 +106,18 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
-    return [NSDictionary dictionary];
+    return
+    @{
+        @"xAmzTarget":          [NSNull null]
+    };
+}
+
++ (NSDictionary *)UAHeaderMappingsByPropertyKey
+{
+    return
+    @{
+        @"xAmzTarget":          @"x-amz-target"
+    };
 }
 
 @end

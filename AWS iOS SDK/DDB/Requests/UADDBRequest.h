@@ -10,7 +10,8 @@
 #import "UAMantle.h"
 #import "NSValueTransformer+UAValueTransformerAdditions.h"
 #import "UADDBDataTypes.h"
+#import "UAHeaderMapping.h"
 
-@interface UADDBRequest : UAAWSRequest <UAAWSRequest, UAMTLJSONSerializing>
+@interface UADDBRequest : UAAWSRequest <UAAWSRequest, UAMTLJSONSerializing, UAHeaderMapping>
 
 @end

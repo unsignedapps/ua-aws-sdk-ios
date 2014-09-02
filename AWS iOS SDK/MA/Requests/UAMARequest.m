@@ -76,7 +76,8 @@
     return
     @{
         // The client context should not appear in our request body
-        @"clientContext":       [NSNull null]
+        @"clientContext":       [NSNull null],
+        @"xAmzTarget":          [NSNull null],
     };
 }
 
@@ -85,7 +86,8 @@
     return
     @{
         // the client context *should* appear in our headers
-        @"clientContext":       @"x-amz-Client-Context"
+        @"clientContext":       @"x-amz-Client-Context",
+        @"xAmzTarget":          @"x-amz-target"
     };
 }
 

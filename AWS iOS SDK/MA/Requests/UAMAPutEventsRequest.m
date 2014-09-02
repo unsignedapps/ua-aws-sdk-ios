@@ -14,14 +14,21 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
+@interface UAMAPutEventsRequest ()
+
+@property (nonatomic, strong) NSString *xAmzTarget;
+
+@end
+
 @implementation UAMAPutEventsRequest
 
-@synthesize events=_events;
+@synthesize events=_events, xAmzTarget=_xAmzTarget;
 
 - (instancetype)init
 {
     if (self = [super init])
     {
+        [self setXAmzTarget:@"AWSEventRecorderService.PutEvents"];
         [self UA_addAtIndexAdditionalAccessorForSelector:@selector(eventAtIndex:) propertyName:@"events"];
         [self UA_addAddObjectAdditionalAccessorForSelector:@selector(addEvent:) propertyName:@"events"];
     }

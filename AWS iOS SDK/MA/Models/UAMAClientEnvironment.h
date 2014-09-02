@@ -26,6 +26,13 @@
 @property (nonatomic, copy) NSString *model;
 
 /**
+ * The version of the current model.
+ *
+ * When created via +currentEnvironment, will default to the current model version. (e.g iPhone5,1)
+**/
+@property (nonatomic, copy) NSString *modelVersion;
+
+/**
  * The manufacturer of the current device.
  *
  * When created via +currentEnvironment, will default to "Apple".
@@ -54,6 +61,7 @@
  *
  * platform                 => -[UIDevice systemName]
  * model                    => -[UIDevice model]
+ * modelVersion             => Current model version (e.g. iPhone5,1)
  * make                     => "Apple"
  * platformVersion          => -[UIDevice systemVersion]
  * locale                   => Current locale from -[NSLocale autoupdatingCurrentLocale].
