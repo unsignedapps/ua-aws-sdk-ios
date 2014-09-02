@@ -38,6 +38,16 @@
 @property (nonatomic, strong) NSMutableDictionary *attributes;
 
 /**
+ * Sets an attribute for the given key.
+**/
+- (void)setAttribute:(NSString *)attribute forKey:(NSString *)key;
+
+/**
+ * Gets the attribute for the given key.
+**/
+- (NSString *)attributeForKey:(NSString *)key;
+
+/**
  * A dictionary of key/value pairs that give additional *measurable* context to the event.
  *
  * These are entirely custom, but it is expected that the key is a NSString, and the values
@@ -46,6 +56,16 @@
  * The key can be up to 50 characters.
 **/
 @property (nonatomic, strong) NSMutableDictionary *metrics;
+
+/**
+ * Sets the metric for the given key.
+ **/
+- (void)setMetric:(NSNumber *)metric forKey:(NSString *)key;
+
+/**
+ * Gets the attribute for the given key.
+**/
+- (NSNumber *)metricForKey:(NSString *)key;
 
 /**
  * The current session information.

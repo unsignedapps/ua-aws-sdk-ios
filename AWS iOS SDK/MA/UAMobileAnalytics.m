@@ -210,6 +210,17 @@
     UAMAEvent *event = [[UAMAEvent alloc] init];
     [event setEventType:eventType];
     [event setSession:session];
+    
+    // lets try adding session bits
+    NSDictionary *sessionDictionary = [UAMTLJSONAdapter JSONDictionaryFromModel:session];
+    if (sessionDictionary[@"id"] != nil)
+        [event setAttribute:sessionDictionary[@"id"] forKey:@"_session.id"];
+    if (session.duration != 0)
+        [event setMetric:@(session.duration) forKey:@"_session.duration"];
+    if (sessionDictionary[@"startTimestamp"] != nil)
+        [event setAttribute:sessionDictionary[@"startTimestamp"] forKey:@"_session.startTime"];
+    if (sessionDictionary[@"stopTimestamp"] != nil)
+        [event setAttribute:sessionDictionary[@"stopTimestamp"] forKey:@"_session.stopTime"];
 
     // now the request
     UAMAPutEventsRequest *request = [[UAMAPutEventsRequest alloc] init];

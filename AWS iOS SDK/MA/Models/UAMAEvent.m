@@ -7,8 +7,12 @@
 //
 
 #import "UAMAEvent.h"
+#import "UAAWSAdditionalAccessors.h"
 #import "UAMobileAnalytics.h"
 #import "UAMASession.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAMAEvent
 
@@ -30,6 +34,13 @@
         
         // and hardcoded version number
         [self setVersion:@"v2.0"];
+        
+        // additional accessors
+        [self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(attributeForKey:) propertyName:@"attributes"];
+        [self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setAttribute:forKey:) propertyName:@"attributes"];
+
+        [self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(metricForKey:) propertyName:@"metrics"];
+        [self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setMetric:forKey:) propertyName:@"metrics"];
     }
     return self;
 }
@@ -58,3 +69,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop
