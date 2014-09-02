@@ -44,12 +44,12 @@
 
 + (NSValueTransformer *)startTimeJSONTransformer
 {
-    return [UAMTLValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SS'Z'"];
+    return [UAMTLValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
 }
 
 + (NSValueTransformer *)stopTimeJSONTransformer
 {
-    return [UAMTLValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SS'Z'"];
+    return [UAMTLValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
 }
 
 @end

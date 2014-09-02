@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UAAWSResponse *UA_Response;
 @property (nonatomic, strong) NSError *UA_Error;
 @property (nonatomic, strong) NSURLSessionDataTask *UA_DataTask;
+@property (nonatomic, strong) NSString *UA_UserAgent;
 
 - (void)UA_Poll;
 
@@ -59,7 +60,7 @@
 
 @implementation UAAWSRequest
 
-@synthesize UA_CheckImmediately=_UA_CheckImmediately, UA_Error=_UA_Error, UA_Owner=_UA_Owner, UA_PollingAttempts=_UA_PollingAttempts, UA_Queue=_UA_Queue, UA_RequestCompletionBlock=_UA_RequestCompletionBlock, UA_Response=_UA_Response, UA_ShouldContinueWaiting=_UA_ShouldContinueWaiting, UA_DataTask=_UA_DataTask, UA_Credentials=_UA_Credentials, UA_Region=_UA_Region, UA_dirtyProperties=_UA_dirtyProperties, finished=_finished, executing=_executing;
+@synthesize UA_CheckImmediately=_UA_CheckImmediately, UA_Error=_UA_Error, UA_Owner=_UA_Owner, UA_PollingAttempts=_UA_PollingAttempts, UA_Queue=_UA_Queue, UA_RequestCompletionBlock=_UA_RequestCompletionBlock, UA_Response=_UA_Response, UA_ShouldContinueWaiting=_UA_ShouldContinueWaiting, UA_DataTask=_UA_DataTask, UA_Credentials=_UA_Credentials, UA_Region=_UA_Region, UA_dirtyProperties=_UA_dirtyProperties, finished=_finished, executing=_executing, UA_UserAgent=_UA_UserAgent;
 
 - (id)init
 {
@@ -71,6 +72,14 @@
         [self setUA_dirtyProperties:[[NSMutableArray alloc] initWithCapacity:0]];
         [self setQueuePriority:NSOperationQueuePriorityLow];
         [self startDirtyPropertyObserving];
+        
+        // set the initial user agent
+        NSString *userAgent = [NSString stringWithFormat:@"ua-aws-sdk-ios/%@ %@/%@ %@",
+                               UAAWSSDKVersion,
+                               [[[UIDevice currentDevice] systemName] stringByReplacingOccurrencesOfString:@" " withString:@"-"],
+                               [[UIDevice currentDevice] systemVersion],
+                               [[NSLocale autoupdatingCurrentLocale] localeIdentifier]];
+        [self setUA_UserAgent:userAgent];
     }
     return self;
 }
@@ -369,6 +378,9 @@
     
     // Set the body
     [request setHTTPBody:requestBody];
+    
+    // and the user agent
+    [request addValue:self.UA_UserAgent forHTTPHeaderField:@"User-Agent"];
     
     // now the last thing we need to do is sign the request
     [UAAWSRequestSigning signURLRequest:request ofRequest:protocolSelf inRegion:region withCredentials:credentials];

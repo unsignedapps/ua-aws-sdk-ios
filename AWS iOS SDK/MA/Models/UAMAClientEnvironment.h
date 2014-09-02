@@ -14,7 +14,7 @@
  * The platform that this SDK is running on. Only "iOS" is supported for us,
  * unless you've somehow recompiled this to run on FireOS or Android...
  *
- * When created via +currentEnvironment, will default to "iOS".
+ * When created via +currentEnvironment, will default to -[UIDevice systemName].
 **/
 @property (nonatomic, copy) NSString *platform;
 
@@ -35,7 +35,7 @@
 /**
  * The manufacturer of the current device.
  *
- * When created via +currentEnvironment, will default to "Apple".
+ * When created via +currentEnvironment, will default to "apple".
 **/
 @property (nonatomic, copy) NSString *make;
 
@@ -62,7 +62,7 @@
  * platform                 => -[UIDevice systemName]
  * model                    => -[UIDevice model]
  * modelVersion             => Current model version (e.g. iPhone5,1)
- * make                     => "Apple"
+ * make                     => "apple"
  * platformVersion          => -[UIDevice systemVersion]
  * locale                   => Current locale from -[NSLocale autoupdatingCurrentLocale].
 **/
