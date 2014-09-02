@@ -15,18 +15,23 @@
 
 #pragma mark - Mantle Serialisation
 
++ (NSDictionary *)XMLNamespaceMappings
+{
+    return @{ @"ElasticLoadBalancing": @"http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/" };
+}
+
 + (NSString *)XPathPrefix
 {
-    return @"./ErrorResponse/";
+    return @"./ElasticLoadBalancing:ErrorResponse/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
 {
     return
     @{
-        @"code":        @"Error/Code",
-        @"message":     @"Error/Message",
-        @"requestID":   @"RequestID"
+        @"code":        @"ElasticLoadBalancing:Error/ElasticLoadBalancing:Code",
+        @"message":     @"ElasticLoadBalancing:Error/ElasticLoadBalancing:Message",
+        @"requestID":   @"ElasticLoadBalancing:RequestID"
     };
 }
 
