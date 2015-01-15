@@ -38,6 +38,16 @@
     if (string == nil)
         return nil;
     
+    // is there only one namespace?
+    Class<UAMTLXMLSerializing> klass = responseClass;
+    NSDictionary *ns = [klass XMLNamespaceMappings];
+    if (ns != nil && [ns count] == 1)
+    {
+        // force any namespace in there to match
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"xmlns=\"[^\"]+?\"" options:NSRegularExpressionCaseInsensitive error:nil];
+        string = [regex stringByReplacingMatchesInString:string options:kNilOptions range:NSMakeRange(0, string.length) withTemplate:[NSString stringWithFormat:@"xmlns=\"%@\"", ns.allValues.firstObject]];
+    }
+    
     UADDXMLDocument *document = [[UADDXMLDocument alloc] initWithXMLString:string options:kNilOptions error:error];
     if (document == nil)
         return nil;

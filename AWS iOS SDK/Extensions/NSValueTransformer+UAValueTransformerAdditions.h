@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 extern NSString * const UADDBParseError;
 extern NSString * const UADDBParseErrorInputKey;

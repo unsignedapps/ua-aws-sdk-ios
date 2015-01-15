@@ -30,12 +30,18 @@
     NSAssert([responseClass conformsToProtocol:@protocol(UAMTLJSONSerializing)], @"Cannot serialise to class %@ as it does not conform to <UAMTLJSONSerializing>.", NSStringFromClass(responseClass));
 
     // Grab the JSON dictionary
-    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:error];
+    id object = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:error];
     
-    if (dictionary == nil)
+    if (object == nil)
         return nil;
     
-    return [self modelOfClass:responseClass fromJSONDictionary:dictionary error:error];
+    if ([object isKindOfClass:[NSArray class]])
+    {
+        NSValueTransformer *transformer = [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:responseClass];
+        return [transformer transformedValue:object];
+    }
+    
+    return [self modelOfClass:responseClass fromJSONDictionary:object error:error];
 }
 
 + (NSString *)stringForModel:(NSObject<UAMTLModel> *)model error:(NSError *__autoreleasing *)error

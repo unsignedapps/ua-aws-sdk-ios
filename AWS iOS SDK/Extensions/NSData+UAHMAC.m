@@ -15,6 +15,9 @@
 
 - (NSData *)UA_hmacSHA1WithKey:(NSString *)key
 {
+    if (key == nil)
+        return nil;
+    
     CCHmacContext context;
     const char    *keyCString = [key cStringUsingEncoding:NSASCIIStringEncoding];
     
@@ -31,6 +34,9 @@
 
 - (NSData *)UA_hmacSHA256WithKey:(NSString *)key
 {
+    if (key == nil)
+        return nil;
+    
     CCHmacContext context;
     const char    *keyCString = [key cStringUsingEncoding:NSASCIIStringEncoding];
     
