@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Desto. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
-typedef NS_ENUM(NSUInteger, UAAWSRegion)
+typedef NS_ENUM(long, UAAWSRegion)
 {
     UAAWSRegionUnknown       = 0,
     UAAWSRegionUSEast1       = 1,
@@ -20,5 +20,6 @@ typedef NS_ENUM(NSUInteger, UAAWSRegion)
     UAAWSRegionAPSoutheast2  = 7,
     UAAWSRegionSAEast1       = 8,
     UAAWSRegionCNNorth1      = 9,
-    UAAWSRegionUSGovWest1    = 10
+    UAAWSRegionUSGovWest1    = 10,
+    UAAWSRegionEUCentral1    = 11
 };
