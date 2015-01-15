@@ -2,7 +2,7 @@
 //  UACWDisableAlarmActionsResponse.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -15,9 +15,23 @@
 
 @implementation UACWDisableAlarmActionsResponse
 
+@synthesize requestID=_requestID;
+
 + (NSString *)XPathPrefix
 {
-    return @"./cloudwatch:DisableAlarmActionsResponse/cloudwatch:DisableAlarmActionsResult/";
+    return @"./cloudwatch:DisableAlarmActionsResponse/";
+}
+
++ (NSDictionary *)XMLKeyPathsByPropertyKey
+{
+    // Start with super's key paths (if there are any)
+    NSMutableDictionary *keyPaths = [[UACWResponse XMLKeyPathsByPropertyKey] mutableCopy];
+
+    [keyPaths addEntriesFromDictionary:
+    @{
+        @"requestID": @"cloudwatch:ResponseMetadata/cloudwatch:RequestId"
+    }];
+    return [keyPaths copy];
 }
 
 @end

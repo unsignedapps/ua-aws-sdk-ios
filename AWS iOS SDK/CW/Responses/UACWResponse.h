@@ -13,6 +13,6 @@
 
 @interface UACWResponse : UAAWSResponse <UAMTLXMLSerializing>
 
-@property (nonatomic, strong) NSString *requestID;
+@property (nonatomic, copy) NSString *requestID;
 
 @end
