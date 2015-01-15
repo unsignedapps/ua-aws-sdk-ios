@@ -19,7 +19,7 @@
 
 - (id)initWithKey:(NSString *)key
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setKey:key];
 	}

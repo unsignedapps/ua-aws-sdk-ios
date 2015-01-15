@@ -8,8 +8,9 @@
 //
 
 #import "UAELBModel.h"
+#import "UAAWSTag.h"
 
-@interface UAELBTag : UAELBModel
+@interface UAELBTag : UAELBModel <UAAWSTag>
 
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) NSString *value;
