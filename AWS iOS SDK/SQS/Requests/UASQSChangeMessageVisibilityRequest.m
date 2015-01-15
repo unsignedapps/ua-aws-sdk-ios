@@ -23,7 +23,7 @@
 
 @implementation UASQSChangeMessageVisibilityRequest
 
-@synthesize action=_action, version=_version, queueUrl=_queueUrl, receiptHandle=_receiptHandle, visibilityTimeout=_visibilityTimeout;
+@synthesize action=_action, version=_version, queueURL=_queueURL, receiptHandle=_receiptHandle, visibilityTimeout=_visibilityTimeout;
 
 - (id)init
 {
@@ -51,7 +51,7 @@
     @{
         @"action": @"Action",
         @"version": @"Version",
-        @"queueUrl": @"QueueUrl",
+        @"queueURL": @"QueueUrl",
         @"receiptHandle": @"ReceiptHandle",
         @"visibilityTimeout": @"VisibilityTimeout"
     }];

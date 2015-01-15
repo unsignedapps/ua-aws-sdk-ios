@@ -23,7 +23,7 @@
 
 @implementation UASQSListDeadLetterSourceQueuesRequest
 
-@synthesize action=_action, version=_version, queueUrl=_queueUrl;
+@synthesize action=_action, version=_version, queueURL=_queueURL;
 
 - (id)init
 {
@@ -37,11 +37,11 @@
 	return self;
 }
 
-- (id)initWithQueueUrl:(NSString *)queueUrl
+- (id)initWithQueueURL:(NSString *)queueURL
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
-		[self setQueueUrl:queueUrl];
+		[self setQueueURL:queueURL];
 	}
 	return self;
 }
@@ -60,7 +60,7 @@
     @{
         @"action": @"Action",
         @"version": @"Version",
-        @"queueUrl": @"QueueUrl"
+        @"queueURL": @"QueueUrl"
     }];
     return [keyPaths copy];
 }

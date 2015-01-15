@@ -15,9 +15,23 @@
 
 @implementation UASQSChangeMessageVisibilityResponse
 
+@synthesize requestID=_requestID;
+
 + (NSString *)XPathPrefix
 {
     return @"./sqs:ChangeMessageVisibilityResponse/";
+}
+
++ (NSDictionary *)XMLKeyPathsByPropertyKey
+{
+    // Start with super's key paths (if there are any)
+    NSMutableDictionary *keyPaths = [[UASQSResponse XMLKeyPathsByPropertyKey] mutableCopy];
+
+    [keyPaths addEntriesFromDictionary:
+    @{
+        @"requestID": @"sqs:ResponseMetadata/sqs:RequestId"
+    }];
+    return [keyPaths copy];
 }
 
 @end

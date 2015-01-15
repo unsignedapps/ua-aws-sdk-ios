@@ -23,7 +23,7 @@
 
 @implementation UASQSSetQueueAttributesRequest
 
-@synthesize action=_action, version=_version, queueUrl=_queueUrl, attributes=_attributes;
+@synthesize action=_action, version=_version, queueURL=_queueURL, attributes=_attributes;
 
 - (id)init
 {
@@ -51,7 +51,7 @@
     @{
         @"action": @"Action",
         @"version": @"Version",
-        @"queueUrl": @"QueueUrl",
+        @"queueURL": @"QueueUrl",
         @"attributes": @"Attribute.entry"
     }];
     return [keyPaths copy];

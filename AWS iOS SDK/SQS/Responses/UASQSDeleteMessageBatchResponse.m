@@ -35,7 +35,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./sqs:DeleteMessageBatchResponse/";
+    return @"./sqs:DeleteMessageBatchResponse/sqs:DeleteMessageBatchResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey

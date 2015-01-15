@@ -23,7 +23,7 @@
 
 @implementation UASQSDeleteMessageRequest
 
-@synthesize action=_action, version=_version, queueUrl=_queueUrl, receiptHandle=_receiptHandle;
+@synthesize action=_action, version=_version, queueURL=_queueURL, receiptHandle=_receiptHandle;
 
 - (id)init
 {
@@ -51,7 +51,7 @@
     @{
         @"action": @"Action",
         @"version": @"Version",
-        @"queueUrl": @"QueueUrl",
+        @"queueURL": @"QueueUrl",
         @"receiptHandle": @"ReceiptHandle"
     }];
     return [keyPaths copy];

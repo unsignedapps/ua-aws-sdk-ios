@@ -15,7 +15,7 @@
 
 @implementation UASQSListDeadLetterSourceQueuesResponse
 
-@synthesize queueUrls=_queueUrls;
+@synthesize queueURLs=_queueURLs;
 
 - (id)init
 {
@@ -23,15 +23,15 @@
 	{
 		
 		
-		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(queueURLAtIndex:) propertyName:@"queueUrls"];
-		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addqueueURL:) propertyName:@"queueUrls"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(queueURLAtIndex:) propertyName:@"queueURLs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addqueueURL:) propertyName:@"queueURLs"];
 	}
 	return self;
 }
 
 + (NSString *)XPathPrefix
 {
-    return @"./sqs:ListDeadLetterSourceQueuesResponse/";
+    return @"./sqs:ListDeadLetterSourceQueuesResponse/sqs:ListDeadLetterSourceQueuesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -41,12 +41,12 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"queueUrls": @"sqs:QueueUrl/sqs:QueueUrl"
+        @"queueURLs": @"sqs:QueueUrl/sqs:QueueUrl"
     }];
     return [keyPaths copy];
 }
 
-+ (NSValueTransformer *)queueUrlsXMLTransformer
++ (NSValueTransformer *)queueURLsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }

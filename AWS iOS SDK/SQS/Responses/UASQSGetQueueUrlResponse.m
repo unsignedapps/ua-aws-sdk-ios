@@ -1,5 +1,5 @@
 //
-//  UASQSGetQueueUrlResponse.m
+//  UASQSGetQueueURLResponse.m
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -7,19 +7,19 @@
 //
 //
 
-#import "UASQSGetQueueUrlResponse.h"
+#import "UASQSGetQueueURLResponse.h"
 #import "UAAWSAdditionalAccessors.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation UASQSGetQueueUrlResponse
+@implementation UASQSGetQueueURLResponse
 
-@synthesize queueUrl=_queueUrl;
+@synthesize queueURL=_queueURL;
 
 + (NSString *)XPathPrefix
 {
-    return @"./sqs:GetQueueUrlResponse/";
+    return @"./sqs:GetQueueResponse/sqs:GetQueueResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -29,7 +29,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"queueUrl": @"sqs:QueueUrl"
+        @"queueURL": @"sqs:QueueUrl"
     }];
     return [keyPaths copy];
 }

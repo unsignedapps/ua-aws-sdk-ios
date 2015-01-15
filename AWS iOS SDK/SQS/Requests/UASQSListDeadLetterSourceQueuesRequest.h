@@ -15,11 +15,11 @@ typedef BOOL(^UASQSListDeadLetterSourceQueuesRequestShouldContinueWaitingBlock)(
 
 @interface UASQSListDeadLetterSourceQueuesRequest : UASQSRequest
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 // @property (nonatomic, copy) UASQSListDeadLetterSourceQueuesRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UASQSListDeadLetterSourceQueuesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
-- (id)initWithQueueUrl:(NSString *)queueUrl;
+- (id)initWithQueueURL:(NSString *)queueURL;
 
 #pragma mark - Invocation
 

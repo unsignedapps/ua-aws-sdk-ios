@@ -11,4 +11,6 @@
 
 @interface UASQSSetQueueAttributesResponse : UASQSResponse
 
+@property (nonatomic, copy) NSString *requestID;
+
 @end

@@ -11,7 +11,7 @@
 
 @interface UASQSListQueuesResponse : UASQSResponse
 
-@property (nonatomic, copy) NSArray *queueUrls;
+@property (nonatomic, copy) NSArray *queueURLs;
 
 /**
  * Retrieves the NSString at the specified index.
@@ -19,9 +19,9 @@
 - (NSString *)queueURLAtIndex:(NSUInteger)index;
 
 /**
- * Adds a QueueURL to the queueUrls property.
+ * Adds a QueueURL to the queueURLs property.
  *
- * This will initialise queueUrls with an empty mutable array if necessary.
+ * This will initialise queueURLs with an empty mutable array if necessary.
 **/
 - (void)addQueueURL:(NSString *)queueURL;
 

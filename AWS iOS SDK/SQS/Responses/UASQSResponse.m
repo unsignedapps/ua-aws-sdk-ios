@@ -28,7 +28,7 @@
 
 + (NSDictionary *)XMLNamespaceMappings
 {
-    return @{ @"sqs": @"http://sqs.amazonaws.com/doc/2012-11-05/" };
+    return @{ @"sqs": @"http://queue.amazonaws.com/doc/2012-11-05/" };
 }
 
 @end

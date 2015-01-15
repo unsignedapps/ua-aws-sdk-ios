@@ -15,7 +15,7 @@
 
 @implementation UASQSListQueuesResponse
 
-@synthesize queueUrls=_queueUrls;
+@synthesize queueURLs=_queueURLs;
 
 - (id)init
 {
@@ -23,15 +23,15 @@
 	{
 		
 		
-		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(queueURLAtIndex:) propertyName:@"queueUrls"];
-		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addQueueURL:) propertyName:@"queueUrls"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(queueURLAtIndex:) propertyName:@"queueURLs"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addQueueURL:) propertyName:@"queueURLs"];
 	}
 	return self;
 }
 
 + (NSString *)XPathPrefix
 {
-    return @"./sqs:ListQueuesResponse/";
+    return @"./sqs:ListQueuesResponse/sqs:ListQueuesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -41,12 +41,12 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"queueUrls": @"sqs:QueueUrl/sqs:QueueUrl"
+        @"queueURLs": @"sqs:QueueUrl"
     }];
     return [keyPaths copy];
 }
 
-+ (NSValueTransformer *)queueUrlsXMLTransformer
++ (NSValueTransformer *)queueURLsXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForArrayOfStrings];
 }

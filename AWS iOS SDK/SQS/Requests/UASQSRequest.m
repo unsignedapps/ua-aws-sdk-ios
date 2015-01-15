@@ -103,7 +103,7 @@
 {
     // according to the read-only IAM template, these methods are readonly.
     NSString *klass = NSStringFromClass([self class]);
-    return [klass isEqualToString:@"UASQSGetQueueAttributes"] || [klass isEqualToString:@"UASQSListQueues"] || [klass isEqualToString:@"UASQSReceiveMessage"];
+    return [klass isEqualToString:@"UASQSGetQueueAttributesRequest"] || [klass isEqualToString:@"UASQSListQueuesRequest"] || [klass isEqualToString:@"UASQSReceiveMessageRequest"];
 }
 
 #pragma mark - Serializing defaults

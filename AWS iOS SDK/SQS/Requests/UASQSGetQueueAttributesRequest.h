@@ -15,7 +15,7 @@ typedef BOOL(^UASQSGetQueueAttributesRequestShouldContinueWaitingBlock)(UASQSGet
 
 @interface UASQSGetQueueAttributesRequest : UASQSRequest
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 @property (nonatomic, strong) NSMutableArray *attributeNames;
 // @property (nonatomic, copy) UASQSGetQueueAttributesRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UASQSGetQueueAttributesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;

@@ -15,7 +15,7 @@ typedef BOOL(^UASQSRemovePermissionRequestShouldContinueWaitingBlock)(UASQSRemov
 
 @interface UASQSRemovePermissionRequest : UASQSRequest
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 @property (nonatomic, copy) NSString *label;
 // @property (nonatomic, copy) UASQSRemovePermissionRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UASQSRemovePermissionRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;

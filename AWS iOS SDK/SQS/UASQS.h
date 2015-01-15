@@ -19,11 +19,8 @@
 #import "UASQSGetQueueUrlRequest.h"
 #import "UASQSListDeadLetterSourceQueuesRequest.h"
 #import "UASQSListQueuesRequest.h"
-#import "UASQSReceiveMessageRequest.h"
 #import "UASQSRemovePermissionRequest.h"
 #import "UASQSRequest.h"
-#import "UASQSSendMessageBatchRequest.h"
-#import "UASQSSendMessageRequest.h"
 #import "UASQSSetQueueAttributesRequest.h"
 
 // Models
@@ -35,8 +32,6 @@
 #import "UASQSDeleteMessageBatchResultEntry.h"
 #import "UASQSMessage.h"
 #import "UASQSModel.h"
-#import "UASQSSendMessageBatchRequestEntry.h"
-#import "UASQSSendMessageBatchResultEntry.h"
 
 // Responses
 #import "UASQSAddPermissionResponse.h"
@@ -50,9 +45,6 @@
 #import "UASQSGetQueueUrlResponse.h"
 #import "UASQSListDeadLetterSourceQueuesResponse.h"
 #import "UASQSListQueuesResponse.h"
-#import "UASQSReceiveMessageResponse.h"
 #import "UASQSRemovePermissionResponse.h"
 #import "UASQSResponse.h"
-#import "UASQSSendMessageBatchResponse.h"
-#import "UASQSSendMessageResponse.h"
 #import "UASQSSetQueueAttributesResponse.h"

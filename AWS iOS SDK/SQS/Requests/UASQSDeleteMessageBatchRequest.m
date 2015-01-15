@@ -24,7 +24,7 @@
 
 @implementation UASQSDeleteMessageBatchRequest
 
-@synthesize action=_action, version=_version, queueUrl=_queueUrl, entries=_entries;
+@synthesize action=_action, version=_version, queueURL=_queueURL, entries=_entries;
 
 - (id)init
 {
@@ -53,7 +53,7 @@
     @{
         @"action": @"Action",
         @"version": @"Version",
-        @"queueUrl": @"QueueUrl",
+        @"queueURL": @"QueueUrl",
         @"entries": @"DeleteMessageBatchRequestEntry"
     }];
     return [keyPaths copy];

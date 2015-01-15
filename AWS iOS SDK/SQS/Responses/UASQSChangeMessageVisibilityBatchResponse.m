@@ -35,7 +35,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./sqs:ChangeMessageVisibilityBatchResponse/";
+    return @"./sqs:ChangeMessageVisibilityBatchResponse/sqs:ChangeMessageVisibilityBatchResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey

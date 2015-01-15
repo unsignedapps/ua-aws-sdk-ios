@@ -11,4 +11,6 @@
 
 @interface UASQSRemovePermissionResponse : UASQSResponse
 
+@property (nonatomic, copy) NSString *requestID;
+
 @end

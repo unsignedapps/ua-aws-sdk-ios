@@ -39,7 +39,7 @@
 
 - (id)initWithQueueNamePrefix:(NSString *)queueNamePrefix
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setQueueNamePrefix:queueNamePrefix];
 	}

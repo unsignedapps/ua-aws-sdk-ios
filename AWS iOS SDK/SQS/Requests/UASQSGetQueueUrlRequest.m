@@ -1,5 +1,5 @@
 //
-//  UASQSGetQueueUrlRequest.m
+//  UASQSGetQueueURLRequest.m
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -7,11 +7,11 @@
 //
 //
 
-#import "UASQSGetQueueUrlRequest.h"
+#import "UASQSGetQueueURLRequest.h"
 #import "UAAWSAdditionalAccessors.h"
-#import "UASQSGetQueueUrlResponse.h"
+#import "UASQSGetQueueURLResponse.h"
 
-@interface UASQSGetQueueUrlRequest ()
+@interface UASQSGetQueueURLRequest ()
 
 @property (nonatomic, copy) NSString *action;
 @property (nonatomic, copy) NSString *version;
@@ -21,7 +21,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation UASQSGetQueueUrlRequest
+@implementation UASQSGetQueueURLRequest
 
 @synthesize action=_action, version=_version, queueName=_queueName, queueOwnerAWSAccountID=_queueOwnerAWSAccountID;
 
@@ -39,7 +39,7 @@
 
 - (Class)UA_ResponseClass
 {
-	return [UASQSGetQueueUrlResponse class];
+	return [UASQSGetQueueURLResponse class];
 }
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
@@ -59,14 +59,14 @@
 
 /*#pragma mark - Invocation
 
-- (void)invokeWithOwner:(id)owner completionBlock:(UASQSGetQueueUrlRequestCompletionBlock)completionBlock
+- (void)invokeWithOwner:(id)owner completionBlock:(UASQSGetQueueURLRequestCompletionBlock)completionBlock
 {
     [self setUA_Owner:owner];
     [self setUA_RequestCompletionBlock:completionBlock];
     [self invoke];
 }
 
-- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UASQSGetQueueUrlRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UASQSGetQueueUrlRequestCompletionBlock)completionBlock
+- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UASQSGetQueueURLRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UASQSGetQueueURLRequestCompletionBlock)completionBlock
 {
     [self setUA_Owner:owner];
     [self setUA_ShouldContinueWaiting:shouldContinueWaitingBlock];
@@ -74,7 +74,7 @@
     [self invoke];
 }
 
-- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UASQSGetQueueUrlRequestCompletionBlock)completionBlock
+- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UASQSGetQueueURLRequestCompletionBlock)completionBlock
 {
     [self setUA_Owner:self];
     [self setUA_ShouldContinueWaiting:[UAAWSRequest UA_ShouldContinueWaitingBlockUntilValueAtKeyPath:keyPath isInArray:array]];

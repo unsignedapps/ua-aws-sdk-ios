@@ -19,7 +19,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./sqs:GetQueueAttributesResponse/";
+    return @"./sqs:GetQueueAttributesResponse/sqs:GetQueueAttributesResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey

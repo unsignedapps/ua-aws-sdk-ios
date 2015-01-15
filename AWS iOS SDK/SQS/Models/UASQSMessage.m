@@ -15,7 +15,7 @@
 
 @implementation UASQSMessage
 
-@synthesize messageID=_messageID, receiptHandle=_receiptHandle, mD5OfBody=_mD5OfBody, body=_body, attributes=_attributes;
+@synthesize messageID=_messageID, receiptHandle=_receiptHandle, mD5OfBody=_mD5OfBody, body=_body, attributes=_attributes, mD5OfMessageAttributes=_mD5OfMessageAttributes;
 
 + (NSString *)XPathPrefix
 {
@@ -33,7 +33,8 @@
         @"receiptHandle": @"sqs:ReceiptHandle",
         @"mD5OfBody": @"sqs:MD5OfBody",
         @"body": @"sqs:Body",
-        @"attributes": @"sqs:Attribute.entry"
+        @"attributes": @"sqs:Attribute.entry",
+        @"mD5OfMessageAttributes": @"sqs:MD5OfMessageAttributes"
     }];
     return [keyPaths copy];
 }

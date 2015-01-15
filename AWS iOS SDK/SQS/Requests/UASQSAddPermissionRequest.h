@@ -15,7 +15,7 @@ typedef BOOL(^UASQSAddPermissionRequestShouldContinueWaitingBlock)(UASQSAddPermi
 
 @interface UASQSAddPermissionRequest : UASQSRequest
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, strong) NSMutableArray *aWSAccountIDs;
 @property (nonatomic, strong) NSMutableArray *actions;

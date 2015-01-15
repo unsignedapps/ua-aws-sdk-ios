@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, UASQSActionName) {
 	UASQSActionNameDeleteMessage = 4,
 	UASQSActionNameChangeMessageVisibility = 5,
 	UASQSActionNameGetQueueAttributes = 6,
-	UASQSActionNameGetQueueUrl = 7
+	UASQSActionNameGetQueueURL = 7
 };
 
 static NSString * const UASQSQueueAttributeAll = @"All";

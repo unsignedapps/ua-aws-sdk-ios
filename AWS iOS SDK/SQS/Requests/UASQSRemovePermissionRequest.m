@@ -23,7 +23,7 @@
 
 @implementation UASQSRemovePermissionRequest
 
-@synthesize action=_action, version=_version, queueUrl=_queueUrl, label=_label;
+@synthesize action=_action, version=_version, queueURL=_queueURL, label=_label;
 
 - (id)init
 {
@@ -51,7 +51,7 @@
     @{
         @"action": @"Action",
         @"version": @"Version",
-        @"queueUrl": @"QueueUrl",
+        @"queueURL": @"QueueUrl",
         @"label": @"Label"
     }];
     return [keyPaths copy];

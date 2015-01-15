@@ -15,7 +15,7 @@ typedef BOOL(^UASQSChangeMessageVisibilityBatchRequestShouldContinueWaitingBlock
 
 @interface UASQSChangeMessageVisibilityBatchRequest : UASQSRequest
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 @property (nonatomic, strong) NSMutableArray *entries;
 // @property (nonatomic, copy) UASQSChangeMessageVisibilityBatchRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UASQSChangeMessageVisibilityBatchRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;

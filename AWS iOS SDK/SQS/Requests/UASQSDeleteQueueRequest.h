@@ -15,11 +15,11 @@ typedef BOOL(^UASQSDeleteQueueRequestShouldContinueWaitingBlock)(UASQSDeleteQueu
 
 @interface UASQSDeleteQueueRequest : UASQSRequest
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 // @property (nonatomic, copy) UASQSDeleteQueueRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UASQSDeleteQueueRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
-- (id)initWithQueueUrl:(NSString *)queueUrl;
+- (id)initWithQueueURL:(NSString *)queueURL;
 
 #pragma mark - Invocation
 

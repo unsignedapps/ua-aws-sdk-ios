@@ -16,5 +16,6 @@
 @property (nonatomic, copy) NSString *mD5OfBody;
 @property (nonatomic, copy) NSString *body;
 @property (nonatomic, copy) NSDictionary *attributes;
+@property (nonatomic, copy) NSString *mD5OfMessageAttributes;
 
 @end

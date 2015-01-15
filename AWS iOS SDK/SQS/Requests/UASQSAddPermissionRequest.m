@@ -23,7 +23,7 @@
 
 @implementation UASQSAddPermissionRequest
 
-@synthesize action=_action, version=_version, queueUrl=_queueUrl, label=_label, aWSAccountIDs=_aWSAccountIDs, actions=_actions;
+@synthesize action=_action, version=_version, queueURL=_queueURL, label=_label, aWSAccountIDs=_aWSAccountIDs, actions=_actions;
 
 - (id)init
 {
@@ -54,7 +54,7 @@
     @{
         @"action": @"Action",
         @"version": @"Version",
-        @"queueUrl": @"QueueUrl",
+        @"queueURL": @"QueueUrl",
         @"label": @"Label",
         @"aWSAccountIDs": @"AWSAccountId",
         @"actions": @"ActionName"
@@ -64,14 +64,14 @@
 
 + (NSValueTransformer *)actionsQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMArrayTransformerWithValues:@[ @(UASQSActionNameAll), @(UASQSActionNameSendMessage), @(UASQSActionNameReceiveMessage), @(UASQSActionNameDeleteMessage), @(UASQSActionNameChangeMessageVisibility), @(UASQSActionNameGetQueueAttributes), @(UASQSActionNameGetQueueUrl) ]
+    return [NSValueTransformer UA_ENUMArrayTransformerWithValues:@[ @(UASQSActionNameAll), @(UASQSActionNameSendMessage), @(UASQSActionNameReceiveMessage), @(UASQSActionNameDeleteMessage), @(UASQSActionNameChangeMessageVisibility), @(UASQSActionNameGetQueueAttributes), @(UASQSActionNameGetQueueURL) ]
                                                     stringValues:@[ @"*", @"SendMessage", @"ReceiveMessage", @"DeleteMessage", @"ChangeMessageVisibility", @"GetQueueAttributes", @"GetQueueUrl" ]
                                                     unknownValue:@(UASQSActionNameUnknown)];
 }
 
 + (NSValueTransformer *)actionsJSONTransformer
 {
-    return [NSValueTransformer UA_ENUMArrayTransformerWithValues:@[ @(UASQSActionNameAll), @(UASQSActionNameSendMessage), @(UASQSActionNameReceiveMessage), @(UASQSActionNameDeleteMessage), @(UASQSActionNameChangeMessageVisibility), @(UASQSActionNameGetQueueAttributes), @(UASQSActionNameGetQueueUrl) ]
+    return [NSValueTransformer UA_ENUMArrayTransformerWithValues:@[ @(UASQSActionNameAll), @(UASQSActionNameSendMessage), @(UASQSActionNameReceiveMessage), @(UASQSActionNameDeleteMessage), @(UASQSActionNameChangeMessageVisibility), @(UASQSActionNameGetQueueAttributes), @(UASQSActionNameGetQueueURL) ]
                                                     stringValues:@[ @"*", @"SendMessage", @"ReceiveMessage", @"DeleteMessage", @"ChangeMessageVisibility", @"GetQueueAttributes", @"GetQueueUrl" ]
                                                     unknownValue:@(UASQSActionNameUnknown)];
 }

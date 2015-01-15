@@ -11,4 +11,6 @@
 
 @interface UASQSDeleteQueueResponse : UASQSResponse
 
+@property (nonatomic, copy) NSString *requestID;
+
 @end

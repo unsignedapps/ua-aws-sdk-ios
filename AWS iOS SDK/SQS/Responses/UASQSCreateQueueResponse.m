@@ -15,11 +15,11 @@
 
 @implementation UASQSCreateQueueResponse
 
-@synthesize queueUrl=_queueUrl;
+@synthesize queueURL=_queueURL;
 
 + (NSString *)XPathPrefix
 {
-    return @"./sqs:CreateQueueResponse/";
+    return @"./sqs:CreateQueueResponse/sqs:CreateQueueResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
@@ -29,7 +29,7 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"queueUrl": @"sqs:QueueUrl"
+        @"queueURL": @"sqs:QueueUrl"
     }];
     return [keyPaths copy];
 }

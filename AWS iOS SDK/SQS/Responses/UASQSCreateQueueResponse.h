@@ -11,6 +11,6 @@
 
 @interface UASQSCreateQueueResponse : UASQSResponse
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 
 @end

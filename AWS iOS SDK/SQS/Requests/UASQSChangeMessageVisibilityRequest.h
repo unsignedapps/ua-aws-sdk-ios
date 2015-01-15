@@ -15,7 +15,7 @@ typedef BOOL(^UASQSChangeMessageVisibilityRequestShouldContinueWaitingBlock)(UAS
 
 @interface UASQSChangeMessageVisibilityRequest : UASQSRequest
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 @property (nonatomic, copy) NSString *receiptHandle;
 @property (nonatomic, strong) NSNumber *visibilityTimeout;
 // @property (nonatomic, copy) UASQSChangeMessageVisibilityRequestCompletionBlock UA_RequestCompletionBlock;

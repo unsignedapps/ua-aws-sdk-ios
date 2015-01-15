@@ -15,7 +15,7 @@ typedef BOOL(^UASQSDeleteMessageBatchRequestShouldContinueWaitingBlock)(UASQSDel
 
 @interface UASQSDeleteMessageBatchRequest : UASQSRequest
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 @property (nonatomic, strong) NSMutableArray *entries;
 // @property (nonatomic, copy) UASQSDeleteMessageBatchRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UASQSDeleteMessageBatchRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;

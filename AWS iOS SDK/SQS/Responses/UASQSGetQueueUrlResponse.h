@@ -1,5 +1,5 @@
 //
-//  UASQSGetQueueUrlResponse.h
+//  UASQSGetQueueURLResponse.h
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -9,8 +9,8 @@
 
 #import "UASQSResponse.h"
 
-@interface UASQSGetQueueUrlResponse : UASQSResponse
+@interface UASQSGetQueueURLResponse : UASQSResponse
 
-@property (nonatomic, copy) NSString *queueUrl;
+@property (nonatomic, copy) NSString *queueURL;
 
 @end
