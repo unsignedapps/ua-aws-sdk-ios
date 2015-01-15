@@ -20,6 +20,8 @@
         return UAAWSRegionUSWest2;
     if ([self isEqualToString:@"eu-west-1"])
         return UAAWSRegionEUWest1;
+    if ([self isEqualToString:@"eu-central-1"])
+        return UAAWSRegionEUCentral1;
     if ([self isEqualToString:@"ap-northeast-1"])
         return UAAWSRegionAPNortheast1;
     if ([self isEqualToString:@"ap-southeast-1"])
@@ -51,7 +53,10 @@
             
         case UAAWSRegionEUWest1:
             return @"eu-west-1";
-            
+
+        case UAAWSRegionEUCentral1:
+            return @"eu-central-1";
+
         case UAAWSRegionAPNortheast1:
             return @"ap-northeast-1";
             

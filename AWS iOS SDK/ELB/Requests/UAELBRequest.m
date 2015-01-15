@@ -26,6 +26,9 @@
             
         case UAAWSRegionEUWest1:
             return [NSURL URLWithString:@"https://elasticloadbalancing.eu-west-1.amazonaws.com"];
+
+        case UAAWSRegionEUCentral1:
+            return [NSURL URLWithString:@"https://elasticloadbalancing.eu-central-1.amazonaws.com"];
             
         case UAAWSRegionAPNortheast1:
             return [NSURL URLWithString:@"https://elasticloadbalancing.ap-northeast-1.amazonaws.com"];

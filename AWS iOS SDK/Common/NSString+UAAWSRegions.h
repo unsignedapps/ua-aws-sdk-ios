@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unsigned Apps. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "UAAWSRegion.h"
 
 @interface NSString (UAAWSRegions)

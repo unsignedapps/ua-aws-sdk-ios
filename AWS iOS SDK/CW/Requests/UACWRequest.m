@@ -26,7 +26,10 @@
             
         case UAAWSRegionEUWest1:
             return [NSURL URLWithString:@"https://monitoring.eu-west-1.amazonaws.com"];
-            
+
+        case UAAWSRegionEUCentral1:
+            return [NSURL URLWithString:@"https://monitoring.eu-central-1.amazonaws.com"];
+
         case UAAWSRegionAPNortheast1:
             return [NSURL URLWithString:@"https://monitoring.ap-northeast-1.amazonaws.com"];
             
