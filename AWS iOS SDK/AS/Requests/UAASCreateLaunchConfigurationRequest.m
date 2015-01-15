@@ -2,7 +2,7 @@
 //  UAASCreateLaunchConfigurationRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -33,6 +33,8 @@
 		[self setAction:@"CreateLaunchConfiguration"];
 		[self setVersion:@"2011-01-01"];
 		
+		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
+		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(securityGroupAtIndex:) propertyName:@"securityGroups"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addSecurityGroup:) propertyName:@"securityGroups"];
@@ -60,6 +62,7 @@
         @"keyName": @"KeyName",
         @"securityGroups": @"SecurityGroups.member",
         @"userData": @"UserData",
+        @"decodedUserData": [NSNull null],
         @"instanceID": @"InstanceId",
         @"instanceType": @"InstanceType",
         @"kernelID": @"KernelId",

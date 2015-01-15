@@ -2,7 +2,7 @@
 //  UAASInstance.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -40,15 +40,15 @@
 
 + (NSValueTransformer *)lifecycleStateQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASInstanceLifecycleStatePending), @(UAASInstanceLifecycleStateQuarantined), @(UAASInstanceLifecycleStateInService), @(UAASInstanceLifecycleStateTerminating), @(UAASInstanceLifecycleStateTerminated) ]
-                                               stringValues:@[ @"Pending", @"Quarantined", @"InService", @"Terminating", @"Terminated" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASInstanceLifecycleStatePending), @(UAASInstanceLifecycleStatePendingWait), @(UAASInstanceLifecycleStatePendingProceed), @(UAASInstanceLifecycleStateQuarantined), @(UAASInstanceLifecycleStateInService), @(UAASInstanceLifecycleStateTerminating), @(UAASInstanceLifecycleStateTerminatingWait), @(UAASInstanceLifecycleStateTerminatingProceed), @(UAASInstanceLifecycleStateTerminated), @(UAASInstanceLifecycleStateDetaching), @(UAASInstanceLifecycleStateDetached), @(UAASInstanceLifecycleStateEnteringStandby), @(UAASInstanceLifecycleStateStandby) ]
+                                               stringValues:@[ @"Pending", @"Pending:Wait", @"Pending:Proceed", @"Quarantined", @"InService", @"Terminating", @"Terminating:Wait", @"Terminating:Proceed", @"Terminated", @"Detaching", @"Detached", @"EnteringStandby", @"Standby" ]
                                                unknownValue:@(UAASInstanceLifecycleStateUnknown)];
 }
 
 + (NSValueTransformer *)lifecycleStateXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASInstanceLifecycleStatePending), @(UAASInstanceLifecycleStateQuarantined), @(UAASInstanceLifecycleStateInService), @(UAASInstanceLifecycleStateTerminating), @(UAASInstanceLifecycleStateTerminated) ]
-                                               stringValues:@[ @"Pending", @"Quarantined", @"InService", @"Terminating", @"Terminated" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASInstanceLifecycleStatePending), @(UAASInstanceLifecycleStatePendingWait), @(UAASInstanceLifecycleStatePendingProceed), @(UAASInstanceLifecycleStateQuarantined), @(UAASInstanceLifecycleStateInService), @(UAASInstanceLifecycleStateTerminating), @(UAASInstanceLifecycleStateTerminatingWait), @(UAASInstanceLifecycleStateTerminatingProceed), @(UAASInstanceLifecycleStateTerminated), @(UAASInstanceLifecycleStateDetaching), @(UAASInstanceLifecycleStateDetached), @(UAASInstanceLifecycleStateEnteringStandby), @(UAASInstanceLifecycleStateStandby) ]
+                                               stringValues:@[ @"Pending", @"Pending:Wait", @"Pending:Proceed", @"Quarantined", @"InService", @"Terminating", @"Terminating:Wait", @"Terminating:Proceed", @"Terminated", @"Detaching", @"Detached", @"EnteringStandby", @"Standby" ]
                                                unknownValue:@(UAASInstanceLifecycleStateUnknown)];
 }
 

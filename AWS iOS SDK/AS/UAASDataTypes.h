@@ -19,25 +19,46 @@ typedef NS_ENUM(NSUInteger, UAASScalingPolicyAdjustmentType) {
 typedef NS_ENUM(NSUInteger, UAASInstanceLifecycleState) {
 	UAASInstanceLifecycleStateUnknown = 0,
 	UAASInstanceLifecycleStatePending = 1,
-	UAASInstanceLifecycleStateQuarantined = 2,
-	UAASInstanceLifecycleStateInService = 3,
-	UAASInstanceLifecycleStateTerminating = 4,
-	UAASInstanceLifecycleStateTerminated = 5
+	UAASInstanceLifecycleStatePendingWait = 2,
+	UAASInstanceLifecycleStatePendingProceed = 3,
+	UAASInstanceLifecycleStateQuarantined = 4,
+	UAASInstanceLifecycleStateInService = 5,
+	UAASInstanceLifecycleStateTerminating = 6,
+	UAASInstanceLifecycleStateTerminatingWait = 7,
+	UAASInstanceLifecycleStateTerminatingProceed = 8,
+	UAASInstanceLifecycleStateTerminated = 9,
+	UAASInstanceLifecycleStateDetaching = 10,
+	UAASInstanceLifecycleStateDetached = 11,
+	UAASInstanceLifecycleStateEnteringStandby = 12,
+	UAASInstanceLifecycleStateStandby = 13
+};
+
+// UAASTagResourceType
+typedef NS_ENUM(NSUInteger, UAASTagResourceType) {
+	UAASTagResourceTypeUnknown = 0,
+	UAASTagResourceTypeAutoScalingGroup = 1
 };
 
 // UAASHealthCheckType
 typedef NS_ENUM(NSUInteger, UAASHealthCheckType) {
 	UAASHealthCheckTypeUnknown = 0,
 	UAASHealthCheckTypeEC2 = 1,
-	UAASHealthCheckTypeElb = 2
+	UAASHealthCheckTypeELB = 2
 };
 
 // UAASEBSBlockDeviceVolumeType
 typedef NS_ENUM(NSUInteger, UAASEBSBlockDeviceVolumeType) {
 	UAASEBSBlockDeviceVolumeTypeUnknown = 0,
-	UAASEBSBlockDeviceVolumeTypeStandard = 1,
-	UAASEBSBlockDeviceVolumeTypeIO1 = 2,
-	UAASEBSBlockDeviceVolumeTypeGP2 = 3
+	UAASEBSBlockDeviceVolumeTypeGP2 = 1,
+	UAASEBSBlockDeviceVolumeTypeStandard = 2,
+	UAASEBSBlockDeviceVolumeTypeIO1 = 3
+};
+
+// UAASLifecycleHookDefaultResult
+typedef NS_ENUM(NSUInteger, UAASLifecycleHookDefaultResult) {
+	UAASLifecycleHookDefaultResultUnknown = 0,
+	UAASLifecycleHookDefaultResultContinue = 1,
+	UAASLifecycleHookDefaultResultAbandon = 2
 };
 
 // UAASActivityStatus
@@ -48,9 +69,11 @@ typedef NS_ENUM(NSUInteger, UAASActivityStatus) {
 	UAASActivityStatusWaitingForInstanceID = 3,
 	UAASActivityStatusPreInService = 4,
 	UAASActivityStatusInProgress = 5,
-	UAASActivityStatusSuccessful = 6,
-	UAASActivityStatusFailed = 7,
-	UAASActivityStatusCancelled = 8
+	UAASActivityStatusWaitingForELBConnectionDraining = 6,
+	UAASActivityStatusMidLifecycleAction = 7,
+	UAASActivityStatusSuccessful = 8,
+	UAASActivityStatusFailed = 9,
+	UAASActivityStatusCancelled = 10
 };
 
 // UAASScalingActivityStatus
@@ -66,3 +89,5 @@ typedef NS_ENUM(NSUInteger, UAASScalingActivityStatus) {
 	UAASScalingActivityStatusCancelled = 8
 };
 
+static NSString * const UAASLifecycleHookTypeEC2InstanceLaunching = @"autoscaling:EC2_INSTANCE_LAUNCHING";
+static NSString * const UAASLifecycleHookTypeEC2InstanceTerminating = @"autoscaling:EC2_INSTANCE_TERMINATING";

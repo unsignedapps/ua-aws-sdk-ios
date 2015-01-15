@@ -2,7 +2,7 @@
 //  UAASResumeProcessesResponse.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -15,9 +15,23 @@
 
 @implementation UAASResumeProcessesResponse
 
+@synthesize requestID=_requestID;
+
 + (NSString *)XPathPrefix
 {
-    return @"./AutoScaling:ResumeProcessesResponse/AutoScaling:ResumeProcessesResult/";
+    return @"./AutoScaling:ResumeProcessesResponse/";
+}
+
++ (NSDictionary *)XMLKeyPathsByPropertyKey
+{
+    // Start with super's key paths (if there are any)
+    NSMutableDictionary *keyPaths = [[UAASResponse XMLKeyPathsByPropertyKey] mutableCopy];
+
+    [keyPaths addEntriesFromDictionary:
+    @{
+        @"requestID": @"AutoScaling:ResponseMetadata/AutoScaling:RequestId"
+    }];
+    return [keyPaths copy];
 }
 
 @end

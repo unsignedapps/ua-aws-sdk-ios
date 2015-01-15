@@ -2,7 +2,7 @@
 //  UAASCreateAutoScalingGroupRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -78,9 +78,23 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)healthCheckTypeJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASHealthCheckTypeEC2), @(UAASHealthCheckTypeELB) ]
+                                               stringValues:@[ @"EC2", @"ELB" ]
+                                               unknownValue:@(UAASHealthCheckTypeUnknown)];
+}
+
 + (NSValueTransformer *)tagsJSONTransformer
 {
   return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAASTag class]];
+}
+
++ (NSValueTransformer *)healthCheckTypeQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASHealthCheckTypeEC2), @(UAASHealthCheckTypeELB) ]
+                                               stringValues:@[ @"EC2", @"ELB" ]
+                                               unknownValue:@(UAASHealthCheckTypeUnknown)];
 }
 
 + (NSValueTransformer *)tagsQueryStringTransformer

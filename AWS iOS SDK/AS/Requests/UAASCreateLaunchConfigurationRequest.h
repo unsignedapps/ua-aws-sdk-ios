@@ -2,7 +2,7 @@
 //  UAASCreateLaunchConfigurationRequest.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 
@@ -20,6 +20,8 @@ typedef BOOL(^UAASCreateLaunchConfigurationRequestShouldContinueWaitingBlock)(UA
 @property (nonatomic, copy) NSString *keyName;
 @property (nonatomic, strong) NSMutableArray *securityGroups;
 @property (nonatomic, copy) NSString *userData;
+- (NSString *)decodedUserData;
+- (void)setDecodedUserData:(NSString *)decodedUserData;
 @property (nonatomic, copy) NSString *instanceID;
 @property (nonatomic, copy) NSString *instanceType;
 @property (nonatomic, copy) NSString *kernelID;

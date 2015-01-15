@@ -2,7 +2,7 @@
 //  UAASActivity.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -55,8 +55,8 @@
 
 + (NSValueTransformer *)statusCodeQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASActivityStatusWaitingForSpotInstanceRequestID), @(UAASActivityStatusWaitingForSpotInstanceID), @(UAASActivityStatusWaitingForInstanceID), @(UAASActivityStatusPreInService), @(UAASActivityStatusInProgress), @(UAASActivityStatusSuccessful), @(UAASActivityStatusFailed), @(UAASActivityStatusCancelled) ]
-                                               stringValues:@[ @"WaitingForSpotInstanceRequestId", @"WaitingForSpotInstanceId", @"WaitingForInstanceId", @"PreInService", @"InProgress", @"Successful", @"Failed", @"Cancelled" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASActivityStatusWaitingForSpotInstanceRequestID), @(UAASActivityStatusWaitingForSpotInstanceID), @(UAASActivityStatusWaitingForInstanceID), @(UAASActivityStatusPreInService), @(UAASActivityStatusInProgress), @(UAASActivityStatusWaitingForELBConnectionDraining), @(UAASActivityStatusMidLifecycleAction), @(UAASActivityStatusSuccessful), @(UAASActivityStatusFailed), @(UAASActivityStatusCancelled) ]
+                                               stringValues:@[ @"WaitingForSpotInstanceRequestId", @"WaitingForSpotInstanceId", @"WaitingForInstanceId", @"PreInService", @"InProgress", @"WaitingForELBConnectionDraining", @"MidLifecycleAction", @"Successful", @"Failed", @"Cancelled" ]
                                                unknownValue:@(UAASActivityStatusUnknown)];
 }
 
@@ -72,8 +72,8 @@
 
 + (NSValueTransformer *)statusCodeXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASActivityStatusWaitingForSpotInstanceRequestID), @(UAASActivityStatusWaitingForSpotInstanceID), @(UAASActivityStatusWaitingForInstanceID), @(UAASActivityStatusPreInService), @(UAASActivityStatusInProgress), @(UAASActivityStatusSuccessful), @(UAASActivityStatusFailed), @(UAASActivityStatusCancelled) ]
-                                               stringValues:@[ @"WaitingForSpotInstanceRequestId", @"WaitingForSpotInstanceId", @"WaitingForInstanceId", @"PreInService", @"InProgress", @"Successful", @"Failed", @"Cancelled" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASActivityStatusWaitingForSpotInstanceRequestID), @(UAASActivityStatusWaitingForSpotInstanceID), @(UAASActivityStatusWaitingForInstanceID), @(UAASActivityStatusPreInService), @(UAASActivityStatusInProgress), @(UAASActivityStatusWaitingForELBConnectionDraining), @(UAASActivityStatusMidLifecycleAction), @(UAASActivityStatusSuccessful), @(UAASActivityStatusFailed), @(UAASActivityStatusCancelled) ]
+                                               stringValues:@[ @"WaitingForSpotInstanceRequestId", @"WaitingForSpotInstanceId", @"WaitingForInstanceId", @"PreInService", @"InProgress", @"WaitingForELBConnectionDraining", @"MidLifecycleAction", @"Successful", @"Failed", @"Cancelled" ]
                                                unknownValue:@(UAASActivityStatusUnknown)];
 }
 

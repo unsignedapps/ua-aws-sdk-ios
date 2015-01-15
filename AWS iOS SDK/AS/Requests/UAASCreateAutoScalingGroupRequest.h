@@ -2,7 +2,7 @@
 //  UAASCreateAutoScalingGroupRequest.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 
@@ -24,7 +24,7 @@ typedef BOOL(^UAASCreateAutoScalingGroupRequestShouldContinueWaitingBlock)(UAASC
 @property (nonatomic, strong) NSNumber *defaultCooldown;
 @property (nonatomic, strong) NSMutableArray *availabilityZones;
 @property (nonatomic, strong) NSMutableArray *loadBalancerNames;
-@property (nonatomic, copy) NSString *healthCheckType;
+@property (nonatomic) UAASHealthCheckType healthCheckType;
 @property (nonatomic, strong) NSNumber *healthCheckGracePeriod;
 @property (nonatomic, copy) NSString *placementGroup;
 @property (nonatomic, copy) NSString *vPCZoneIdentifier;

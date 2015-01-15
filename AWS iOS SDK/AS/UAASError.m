@@ -15,18 +15,23 @@
 
 #pragma mark - Mantle Serialisation
 
++ (NSDictionary *)XMLNamespaceMappings
+{
+    return @{ @"AutoScaling": @"http://autoscaling.amazonaws.com/doc/2011-01-01/" };
+}
+
 + (NSString *)XPathPrefix
 {
-    return @"./ErrorResponse/";
+    return @"./AutoScaling:ErrorResponse/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
 {
     return
     @{
-        @"code":        @"Error/Code",
-        @"message":     @"Error/Message",
-        @"requestID":   @"RequestID"
+        @"code":        @"AutoScaling:Error/AutoScaling:Code",
+        @"message":     @"AutoScaling:Error/AutoScaling:Message",
+        @"requestID":   @"AutoScaling:RequestID"
     };
 }
 
