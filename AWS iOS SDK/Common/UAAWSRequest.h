@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "UAAWSRegion.h"
 #import "UAAWSAdditionalAccessorsProtocol.h"
 
@@ -29,7 +29,8 @@ typedef NS_ENUM(NSInteger, UAAWSErrorCode)
 {
     UAAWSErrorCodeClient = 0,
     UAAWSErrorCodeServer = 1,
-    UAAWSErrorCodeNilData = 2
+    UAAWSErrorCodeNilData = 2,
+    UAAWSErrorCodeDNSLookup = 3
 };
 
 static NSString * const UAAWSResponseExceptionParseError = @"UAAWSResponseExceptionParseError";
@@ -89,6 +90,12 @@ static NSString * const UAAWSResponseExceptionParseErrorErrorKey = @"UAAWSRespon
  * something and checking immediately would be a waste.
 **/
 @property (nonatomic) BOOL UA_CheckImmediately;
+
+/**
+ * Allows you to provide a separate NSURLSession to use for this request. This will default to the session managed
+ * by the UAAWSOperationQueue.
+**/
+@property (nonatomic, strong) NSURLSession *UA_URLSession;
 
 /**
  * Returns a should continue waiting block until the value at the specified keypath is in the specified array.

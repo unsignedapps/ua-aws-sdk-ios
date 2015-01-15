@@ -157,6 +157,12 @@
 		[self.UA_dirtyProperties addObject:keyPath];
 }
 
+- (void)setName:(NSString *)name
+{
+    [self willChangeValueForKey:@"name"];
+    [super setName:name];
+    [self didChangeValueForKey:@"name"];
+}
 
 #pragma mark - NSOperation Bits and Bobs
 
@@ -332,9 +338,8 @@
     UAAWSRegion region = self.UA_Region ?: [queue regionForRequest:self];
     
     // We need to have credentials, at least
-    NSAssert(credentials != nil, @"Credentials must be supplied via -setUA_Credentials: or the UAAWSOperationQueue delegate.");
+    NSAssert(credentials != nil || [protocolSelf UA_SignatureVersion] == UAAWSSignatureNotRequired, @"Credentials must be supplied via -setUA_Credentials: or the UAAWSOperationQueue delegate.");
 
-    UAAWSRequest<UAAWSRequest> *protocolSelf = (UAAWSRequest<UAAWSRequest> *)self;
 
     // if the service is region-free/global, lock it down to US-East-1
     if ([protocolSelf UA_isRegionFree])
@@ -369,10 +374,6 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:targetURL];
     [request setHTTPMethod:[protocolSelf UA_RequestHTTPMethod]];
 
-    // set the content type as appropriate
-    NSString *contentType = [((Class<UAAWSPayloadSerialisation>)serialiser) contentType];
-    if (contentType != nil)
-        [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     
     // do we have custom header fields?
     if ([self conformsToProtocol:@protocol(UAHeaderMapping)])
@@ -390,15 +391,35 @@
         }
     }
     
-    // Set the body
-    [request setHTTPBody:requestBody];
-    
+    // GET Requests
+    if ([request.HTTPMethod isEqualToString:@"GET"])
+    {
+        NSString *query = [[NSString alloc] initWithData:requestBody encoding:NSUTF8StringEncoding];
+        if (query != nil && query.length > 0)
+        {
+            NSString *urlString = targetURL.absoluteString;
+            urlString = [urlString stringByAppendingFormat:@"%@%@", ([urlString rangeOfString:@"?"].location == NSNotFound ? @"?" : @"&"), query];
+            [request setURL:[NSURL URLWithString:urlString]];
+        }
+        
+    // everything else (POST Requests)
+    } else
+    {
+        // set the content type as appropriate
+        NSString *contentType = [((Class<UAAWSPayloadSerialisation>)serialiser) contentType];
+        if (contentType != nil)
+            [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+
+        // Set the body
+        [request setHTTPBody:requestBody];
+    }
+
     // and the user agent
     [request addValue:self.UA_UserAgent forHTTPHeaderField:@"User-Agent"];
     
     // now the last thing we need to do is sign the request
     [UAAWSRequestSigning signURLRequest:request ofRequest:protocolSelf inRegion:region withCredentials:credentials];
-    NSLog(@"-[%@] Posting request to %@: %@", NSStringFromClass([self class]), targetURL, [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
+    NSLog(@"-[%@] %@ing request to %@: %@", NSStringFromClass([self class]), request.HTTPMethod, targetURL.absoluteString, [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
     return request;
 }
 
@@ -463,7 +484,7 @@
     Class serialiser = [protocolSelf UA_ResponseSerialisationClass];
     NSAssert(serialiser != Nil, @"Response serialisation class cannot be Nil.");
     NSAssert([serialiser conformsToProtocol:@protocol(UAAWSPayloadSerialisation)], @"Response serialisation class %@ does not conform to protocol UAAWSPayloadSerialisation.", NSStringFromClass(serialiser));
-    
+
     Class responseClass = [protocolSelf UA_ResponseClass];
     NSAssert(responseClass != Nil, @"Response class cannot be Nil.");
     NSAssert([responseClass isSubclassOfClass:[UAAWSResponse class]], @"Response class %@ must be a subclass of UAAWSResponse.", NSStringFromClass(responseClass));
