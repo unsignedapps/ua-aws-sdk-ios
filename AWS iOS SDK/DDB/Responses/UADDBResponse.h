@@ -13,6 +13,6 @@
 
 @interface UADDBResponse : UAAWSResponse <UAMTLJSONSerializing>
 
-@property (nonatomic, strong) NSString *requestID;
+@property (nonatomic, copy) NSString *requestID;
 
 @end

@@ -2,7 +2,7 @@
 //  UADDBUnprocessedKey.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -37,8 +37,8 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"keys": @"Keys/Keys",
-        @"attributesToGet": @"AttributesToGet/AttributesToGet",
+        @"keys": @"Keys",
+        @"attributesToGet": @"AttributesToGet",
         @"consistentRead": @"ConsistentRead"
     }];
     return [keyPaths copy];

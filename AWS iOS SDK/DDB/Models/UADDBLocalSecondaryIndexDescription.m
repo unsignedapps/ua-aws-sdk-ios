@@ -2,7 +2,7 @@
 //  UADDBLocalSecondaryIndexDescription.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -39,7 +39,7 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"indexName": @"IndexName",
-        @"keySchema": @"KeySchema/KeySchema",
+        @"keySchema": @"KeySchema",
         @"projection": @"Projection",
         @"indexSizeBytes": @"IndexSizeBytes",
         @"itemCount": @"ItemCount"

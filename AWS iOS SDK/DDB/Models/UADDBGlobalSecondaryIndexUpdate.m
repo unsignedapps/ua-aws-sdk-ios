@@ -2,7 +2,7 @@
 //  UADDBGlobalSecondaryIndexUpdate.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -20,7 +20,7 @@
 
 - (id)initWithUpdate:(UADDBUpdate *)update
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setUpdate:update];
 	}

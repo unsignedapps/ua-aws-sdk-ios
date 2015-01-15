@@ -2,7 +2,7 @@
 //  UADDBTableDescription.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -47,16 +47,16 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"attributeDefinitions": @"AttributeDefinitions/AttributeDefinitions",
+        @"attributeDefinitions": @"AttributeDefinitions",
         @"tableName": @"TableName",
-        @"keySchema": @"KeySchema/KeySchema",
+        @"keySchema": @"KeySchema",
         @"tableStatus": @"TableStatus",
         @"creationDateTime": @"CreationDateTime",
         @"provisionedThroughput": @"ProvisionedThroughput",
         @"tableSizeBytes": @"TableSizeBytes",
         @"itemCount": @"ItemCount",
-        @"localSecondaryIndexes": @"LocalSecondaryIndexes/LocalSecondaryIndexes",
-        @"globalSecondaryIndexes": @"GlobalSecondaryIndexes/GlobalSecondaryIndexes"
+        @"localSecondaryIndexes": @"LocalSecondaryIndexes",
+        @"globalSecondaryIndexes": @"GlobalSecondaryIndexes"
     }];
     return [keyPaths copy];
 }
