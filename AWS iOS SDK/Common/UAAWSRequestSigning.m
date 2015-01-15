@@ -142,8 +142,13 @@
                         scope,
                         [[[canonicalRequest UA_UTF8Data] UA_sha256] UA_hexString]];
     
+    // an account problem?
+    NSString *secret = credentials.secretKey;
+    if (secret == nil)
+        return;
+
     // We run the key through several HMAC's before arriving at the final one
-    NSData *key = [[@"AWS4" stringByAppendingString:credentials.secretKey] UA_UTF8Data];
+    NSData *key = [[@"AWS4" stringByAppendingString:secret] UA_UTF8Data];
     key = [[dateString UA_UTF8Data] UA_hmacSHA256WithDataKey:key];
     key = [[[NSString UA_regionStringForRegionValue:region] UA_UTF8Data] UA_hmacSHA256WithDataKey:key];
     key = [[[urlRequest.URL UA_AWSServiceName] UA_UTF8Data] UA_hmacSHA256WithDataKey:key];

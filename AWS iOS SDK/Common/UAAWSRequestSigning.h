@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "UAAWSRequest.h"
 #import "UAAWSRegion.h"
 
