@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 typedef NS_ENUM(NSUInteger, UAAWSService)
 {
@@ -47,5 +47,15 @@ typedef NS_ENUM(NSUInteger, UAAWSService)
     UAAWSServiceStorageGateway,
     UAAWSServiceSWF,
     UAAWSServiceVPC,
-    UAAWSServiceWorkspaces
+    UAAWSServiceWorkspaces,
+    UAAWSServiceCognito,
+    UAAWSServiceMobileAnalytics,
+    UAAWSServiceZocalo,
+    UAAWSServiceCodeDeploy,
+    UAAWSServiceDirectoryService,
+    UAAWSServiceKMS,
+    UAAWSServiceLambda,
+    UAAWSServiceConfig,
+    
+    UAAWSService_COUNT
 };

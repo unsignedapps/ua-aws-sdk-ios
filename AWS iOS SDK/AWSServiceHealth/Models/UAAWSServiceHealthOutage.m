@@ -130,6 +130,9 @@
 {
     return [UAMTLValueTransformer reversibleTransformerWithForwardBlock:^NSAttributedString *(NSString *input)
     {
+        if (input == nil || input.length == 0)
+            return nil;
+
         // the span's denote the titles, which should be bold instead of yellow.
         NSMutableString *string = [input mutableCopy];
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<span[^>]*?>" options:NSRegularExpressionCaseInsensitive error:nil];
@@ -163,6 +166,7 @@
         @"ap-southeast-2": @(UAAWSRegionAPSoutheast2),
         @"cn-north-1": @(UAAWSRegionCNNorth1),
         @"eu-west-1": @(UAAWSRegionEUWest1),
+        @"eu-central-1": @(UAAWSRegionEUCentral1),
         @"sa-east-1": @(UAAWSRegionSAEast1),
         @"us-east-1": @(UAAWSRegionUSEast1),
         @"us-gov-west-1": @(UAAWSRegionUSGovWest1),
@@ -193,6 +197,9 @@
             
         case UAAWSRegionEUWest1:
             return @"eu-west-1";
+
+        case UAAWSRegionEUCentral1:
+            return @"eu-central-1";
             
         case UAAWSRegionSAEast1:
             return @"sa-east-1";

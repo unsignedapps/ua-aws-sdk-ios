@@ -30,7 +30,7 @@
 
 - (id)initWithService:(UAAWSService)service currentOutages:(NSArray *)currentOutages recentOutages:(NSArray *)recentOutages
 {
-    if (self = [self init])
+    if ((self = [self init]))
     {
         [self setService:service];
         [self setServiceName:[[self class] serviceNameForService:service]];
@@ -53,7 +53,12 @@
     {
         if (outage.region == region && outage.type > type)
             type = outage.type;
+        
+        // global services are incldued here regardless of the region
+        else if ([self.class isGlobalService:outage.service] && outage.type > type)
+            type = outage.type;
     }
+    
     return type;
 }
 
@@ -68,6 +73,10 @@
     for (UAAWSServiceHealthOutage *outage in self.currentOutages)
     {
         if (outage.region == region && outage.type == status && outage.summary != nil)
+            return outage.summary;
+        
+        // also check the global services
+        else if ([self.class isGlobalService:outage.service] && outage.type == status && outage.summary != nil)
             return outage.summary;
     }
     
@@ -101,16 +110,21 @@
     
     NSDictionary *names =
     @{
-        @"aps": @(UAAWSServiceAppStream),
+        @"analytics": @(UAAWSServiceMobileAnalytics),
+        @"appstream": @(UAAWSServiceAppStream),
         @"autoscaling": @(UAAWSServiceAutoScaling),
+        @"codedeploy": @(UAAWSServiceCodeDeploy),
         @"cloudformation": @(UAAWSServiceCloudFormation),
         @"cloudfront": @(UAAWSServiceCloudFront),
         @"cloudhsm": @(UAAWSServiceCloudHSM),
         @"cloudsearch": @(UAAWSServiceCloudSearch),
         @"cloudtrail": @(UAAWSServiceCloudTrail),
         @"cloudwatch": @(UAAWSServiceCloudWatch),
+        @"config": @(UAAWSServiceConfig),
+        @"cognito": @(UAAWSServiceCognito),
         @"datapipeline": @(UAAWSServiceDataPipeline),
         @"directconnect": @(UAAWSServiceDirectConnect),
+        @"directoryservice": @(UAAWSServiceDirectoryService),
         @"dynamodb": @(UAAWSServiceDynamoDB),
         @"ec2": @(UAAWSServiceEC2),
         @"elasticache": @(UAAWSServiceElastiCache),
@@ -123,6 +137,8 @@
         @"iam": @(UAAWSServiceIAM),
         @"import": @(UAAWSServiceImportExport),
         @"kinesis": @(UAAWSServiceKinesis),
+        @"kms": @(UAAWSServiceKMS),
+        @"lambda": @(UAAWSServiceLambda),
         @"management": @(UAAWSServiceManagementConsole),
         @"mturk": @(UAAWSServiceMechanicalTurk),
         @"opsworks": @(UAAWSServiceOpsWorks),
@@ -137,7 +153,8 @@
         @"storagegateway": @(UAAWSServiceStorageGateway),
         @"swf": @(UAAWSServiceSWF),
         @"vpc": @(UAAWSServiceVPC),
-        @"wks": @(UAAWSServiceWorkspaces)
+        @"workspaces": @(UAAWSServiceWorkspaces),
+        @"zocalo": @(UAAWSServiceZocalo)
     };
     
     NSNumber *serviceNumber = [names objectForKey:name];
@@ -149,7 +166,7 @@
     switch (service)
     {
         case UAAWSServiceAppStream:
-            return @"aps";
+            return @"appstream";
 
         case UAAWSServiceAutoScaling:
             return @"autoscaling";
@@ -172,11 +189,23 @@
         case UAAWSServiceCloudWatch:
             return @"cloudwatch";
             
+        case UAAWSServiceCodeDeploy:
+            return @"codedeploy";
+            
+        case UAAWSServiceCognito:
+            return @"cognito";
+            
+        case UAAWSServiceConfig:
+            return @"config";
+            
         case UAAWSServiceDataPipeline:
             return @"datapipeline";
             
         case UAAWSServiceDirectConnect:
             return @"directconnect";
+            
+        case UAAWSServiceDirectoryService:
+            return @"directoryservice";
             
         case UAAWSServiceDynamoDB:
             return @"dynamodb";
@@ -214,11 +243,20 @@
         case UAAWSServiceKinesis:
             return @"kinesis";
             
+        case UAAWSServiceKMS:
+            return @"kms";
+            
+        case UAAWSServiceLambda:
+            return @"lambda";
+            
         case UAAWSServiceManagementConsole:
             return @"management";
             
         case UAAWSServiceMechanicalTurk:
             return @"mturk";
+            
+        case UAAWSServiceMobileAnalytics:
+            return @"analytics";
             
         case UAAWSServiceOpsWorks:
             return @"opsworks";
@@ -257,7 +295,10 @@
             return @"vpc";
             
         case UAAWSServiceWorkspaces:
-            return @"wks";
+            return @"workspaces";
+            
+        case UAAWSServiceZocalo:
+            return @"zocalo";
             
         default:
             return nil;
@@ -269,17 +310,12 @@
     switch (service)
     {
         case UAAWSServiceAutoScaling:
-        case UAAWSServiceCloudHSM:
-        case UAAWSServiceDirectConnect:
         case UAAWSServiceEC2:
         case UAAWSServiceElasticLoadBalancing:
+        case UAAWSServiceLambda:
         case UAAWSServiceMechanicalTurk:
-        case UAAWSServiceRoute53:
-        case UAAWSServiceVPC:
-        case UAAWSServiceWorkspaces:
-            return @"Compute and Networking";
+            return @"Compute";
 
-        case UAAWSServiceAppStream:
         case UAAWSServiceCloudFront:
         case UAAWSServiceGlacier:
         case UAAWSServiceImportExport:
@@ -294,11 +330,23 @@
         case UAAWSServiceSimpleDB:
             return @"Database";
 
-        case UAAWSServiceCloudFormation:
+        case UAAWSServiceDirectConnect:
+        case UAAWSServiceRoute53:
+        case UAAWSServiceVPC:
+            return @"Networking";
+            
+        case UAAWSServiceCloudHSM:
+        case UAAWSServiceDirectoryService:
+        case UAAWSServiceIAM:
+        case UAAWSServiceKMS:
         case UAAWSServiceCloudTrail:
         case UAAWSServiceCloudWatch:
+        case UAAWSServiceConfig:
+            return @"Administration and Security";
+
+        case UAAWSServiceCloudFormation:
+        case UAAWSServiceCodeDeploy:
         case UAAWSServiceElasticBeanstalk:
-        case UAAWSServiceIAM:
         case UAAWSServiceManagementConsole:
         case UAAWSServiceOpsWorks:
             return @"Deployment and Management";
@@ -307,15 +355,24 @@
         case UAAWSServiceElasticMapReduce:
         case UAAWSServiceKinesis:
             return @"Analytics";
-
+            
+        case UAAWSServiceAppStream:
         case UAAWSServiceCloudSearch:
         case UAAWSServiceElasticTranscoder:
         case UAAWSServiceFlexiblePaymentsService:
         case UAAWSServiceSES:
-        case UAAWSServiceSNS:
         case UAAWSServiceSQS:
         case UAAWSServiceSWF:
             return @"App Services";
+            
+        case UAAWSServiceCognito:
+        case UAAWSServiceMobileAnalytics:
+        case UAAWSServiceSNS:
+            return @"Mobile Services";
+            
+        case UAAWSServiceWorkspaces:
+        case UAAWSServiceZocalo:
+            return @"Enterprise Applications";
             
         default:
             return @"Unknown";
@@ -325,6 +382,10 @@
 
 + (BOOL)isService:(UAAWSService)service availableInRegion:(UAAWSRegion)region
 {
+    // global service?
+    if ([self isGlobalService:service])
+        return YES;
+    
     switch (region)
     {
         // all services available here
@@ -339,7 +400,6 @@
                 case UAAWSServiceAutoScaling:
                 case UAAWSServiceCloudFormation:
                 case UAAWSServiceCloudFront:
-                case UAAWSServiceCloudHSM:
                 case UAAWSServiceCloudSearch:
                 case UAAWSServiceCloudTrail:
                 case UAAWSServiceCloudWatch:
@@ -354,12 +414,11 @@
                 case UAAWSServiceGlacier:
                 case UAAWSServiceIAM:
                 case UAAWSServiceImportExport:
+                case UAAWSServiceKMS:
                 case UAAWSServiceManagementConsole:
                 case UAAWSServiceRDS:
-                case UAAWSServiceRedshift:
                 case UAAWSServiceRoute53:
                 case UAAWSServiceS3:
-                case UAAWSServiceSES:
                 case UAAWSServiceSimpleDB:
                 case UAAWSServiceSNS:
                 case UAAWSServiceSQS:
@@ -380,9 +439,12 @@
                 case UAAWSServiceAutoScaling:
                 case UAAWSServiceCloudFormation:
                 case UAAWSServiceCloudFront:
+                case UAAWSServiceCloudHSM:
                 case UAAWSServiceCloudSearch:
                 case UAAWSServiceCloudWatch:
-                case UAAWSServiceDirectConnect:
+                case UAAWSServiceCodeDeploy:
+                case UAAWSServiceDataPipeline:
+                case UAAWSServiceDirectoryService:
                 case UAAWSServiceDynamoDB:
                 case UAAWSServiceEC2:
                 case UAAWSServiceElastiCache:
@@ -393,6 +455,8 @@
                 case UAAWSServiceGlacier:
                 case UAAWSServiceIAM:
                 case UAAWSServiceImportExport:
+                case UAAWSServiceKMS:
+                case UAAWSServiceLambda:
                 case UAAWSServiceManagementConsole:
                 case UAAWSServiceRDS:
                 case UAAWSServiceRoute53:
@@ -403,6 +467,8 @@
                 case UAAWSServiceStorageGateway:
                 case UAAWSServiceSWF:
                 case UAAWSServiceVPC:
+                case UAAWSServiceWorkspaces:
+                case UAAWSServiceZocalo:
                     return YES;
                     
                 default:
@@ -421,6 +487,7 @@
                 case UAAWSServiceCloudSearch:
                 case UAAWSServiceCloudWatch:
                 case UAAWSServiceDirectConnect:
+                case UAAWSServiceDirectoryService:
                 case UAAWSServiceDynamoDB:
                 case UAAWSServiceEC2:
                 case UAAWSServiceElastiCache:
@@ -431,6 +498,8 @@
                 case UAAWSServiceGlacier:
                 case UAAWSServiceIAM:
                 case UAAWSServiceImportExport:
+                case UAAWSServiceKMS:
+                case UAAWSServiceLambda:
                 case UAAWSServiceManagementConsole:
                 case UAAWSServiceRDS:
                 case UAAWSServiceRedshift:
@@ -447,7 +516,46 @@
                     
                 default:
                     return NO;
-        }
+            }
+            
+        // EU Central 1
+        case UAAWSRegionEUCentral1:
+            
+            switch (service)
+            {
+                case UAAWSServiceAutoScaling:
+                case UAAWSServiceCloudFormation:
+                case UAAWSServiceCloudFront:
+                case UAAWSServiceCloudHSM:
+                case UAAWSServiceCloudSearch:
+                case UAAWSServiceCloudTrail:
+                case UAAWSServiceCloudWatch:
+                case UAAWSServiceDirectConnect:
+                case UAAWSServiceDynamoDB:
+                case UAAWSServiceEC2:
+                case UAAWSServiceElasticBeanstalk:
+                case UAAWSServiceElasticLoadBalancing:
+                case UAAWSServiceElasticMapReduce:
+                case UAAWSServiceGlacier:
+                case UAAWSServiceIAM:
+                case UAAWSServiceKinesis:
+                case UAAWSServiceKMS:
+                case UAAWSServiceManagementConsole:
+                case UAAWSServiceOpsWorks:
+                case UAAWSServiceRDS:
+                case UAAWSServiceRoute53:
+                case UAAWSServiceRedshift:
+                case UAAWSServiceS3:
+                case UAAWSServiceStorageGateway:
+                case UAAWSServiceSNS:
+                case UAAWSServiceSQS:
+                case UAAWSServiceSWF:
+                case UAAWSServiceVPC:
+                    return YES;
+                    
+                default:
+                    return NO;
+            }
             
         // AP Southeast 1
         case UAAWSRegionAPSoutheast1:
@@ -469,6 +577,8 @@
                 case UAAWSServiceElasticTranscoder:
                 case UAAWSServiceIAM:
                 case UAAWSServiceImportExport:
+                case UAAWSServiceKinesis:
+                case UAAWSServiceKMS:
                 case UAAWSServiceManagementConsole:
                 case UAAWSServiceRDS:
                 case UAAWSServiceRedshift:
@@ -495,7 +605,9 @@
                 case UAAWSServiceCloudFormation:
                 case UAAWSServiceCloudFront:
                 case UAAWSServiceCloudWatch:
+                case UAAWSServiceDataPipeline:
                 case UAAWSServiceDirectConnect:
+                case UAAWSServiceDirectoryService:
                 case UAAWSServiceDynamoDB:
                 case UAAWSServiceEC2:
                 case UAAWSServiceElastiCache:
@@ -504,7 +616,9 @@
                 case UAAWSServiceElasticMapReduce:
                 case UAAWSServiceElasticTranscoder:
                 case UAAWSServiceGlacier:
+                case UAAWSServiceKinesis:
                 case UAAWSServiceIAM:
+                case UAAWSServiceKMS:
                 case UAAWSServiceManagementConsole:
                 case UAAWSServiceRDS:
                 case UAAWSServiceRedshift:
@@ -516,6 +630,7 @@
                 case UAAWSServiceStorageGateway:
                 case UAAWSServiceSWF:
                 case UAAWSServiceVPC:
+                case UAAWSServiceWorkspaces:
                     return YES;
                     
                 default:
@@ -532,7 +647,9 @@
                 case UAAWSServiceCloudFront:
                 case UAAWSServiceCloudHSM:
                 case UAAWSServiceCloudWatch:
+                case UAAWSServiceDataPipeline:
                 case UAAWSServiceDirectConnect:
+                case UAAWSServiceDirectoryService:
                 case UAAWSServiceDynamoDB:
                 case UAAWSServiceEC2:
                 case UAAWSServiceElastiCache:
@@ -541,6 +658,8 @@
                 case UAAWSServiceElasticMapReduce:
                 case UAAWSServiceGlacier:
                 case UAAWSServiceIAM:
+                case UAAWSServiceKinesis:
+                case UAAWSServiceKMS:
                 case UAAWSServiceManagementConsole:
                 case UAAWSServiceRDS:
                 case UAAWSServiceRedshift:
@@ -552,6 +671,8 @@
                 case UAAWSServiceStorageGateway:
                 case UAAWSServiceSWF:
                 case UAAWSServiceVPC:
+                case UAAWSServiceWorkspaces:
+                case UAAWSServiceZocalo:
                     return YES;
                     
                 default:
@@ -566,6 +687,7 @@
                 case UAAWSServiceAutoScaling:
                 case UAAWSServiceCloudFormation:
                 case UAAWSServiceCloudFront:
+                case UAAWSServiceCloudSearch:
                 case UAAWSServiceCloudWatch:
                 case UAAWSServiceDirectConnect:
                 case UAAWSServiceDynamoDB:
@@ -575,6 +697,7 @@
                 case UAAWSServiceElasticLoadBalancing:
                 case UAAWSServiceElasticMapReduce:
                 case UAAWSServiceIAM:
+                case UAAWSServiceKMS:
                 case UAAWSServiceManagementConsole:
                 case UAAWSServiceRDS:
                 case UAAWSServiceRoute53:
@@ -606,6 +729,7 @@
                 case UAAWSServiceElasticLoadBalancing:
                 case UAAWSServiceElasticMapReduce:
                 case UAAWSServiceIAM:
+                case UAAWSServiceKMS:
                 case UAAWSServiceManagementConsole:
                 case UAAWSServiceRDS:
                 case UAAWSServiceRoute53:
@@ -636,6 +760,7 @@
                 case UAAWSServiceElasticMapReduce:
                 case UAAWSServiceGlacier:
                 case UAAWSServiceIAM:
+                case UAAWSServiceKMS:
                 case UAAWSServiceManagementConsole:
                 case UAAWSServiceRDS:
                 case UAAWSServiceRoute53:
@@ -658,5 +783,19 @@
     }
 }
 
++ (BOOL)isGlobalService:(UAAWSService)service
+{
+    switch (service)
+    {
+        case UAAWSServiceCloudFront:
+        case UAAWSServiceIAM:
+        case UAAWSServiceManagementConsole:
+        case UAAWSServiceRoute53:
+            return YES;
+            
+        default:
+            return NO;
+    }
+}
 
 @end

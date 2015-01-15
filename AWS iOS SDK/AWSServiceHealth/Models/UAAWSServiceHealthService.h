@@ -18,7 +18,6 @@
 @property (nonatomic, copy, readonly) NSArray *recentOutages;
 @property (nonatomic, copy, readonly) NSArray *currentOutages;
 
-
 /**
  * Returns the status of the service in the specified region.
  *
@@ -35,6 +34,14 @@
 
 /**
  * Whether or not the specified service is available in the specified region.
+ *x
+ * Note: If a service is global (such as route 53) it will return yes regardless of the region.
 **/
 + (BOOL)isService:(UAAWSService)service availableInRegion:(UAAWSRegion)region;
+
+/**
+ * Whether or not the specified service is a global service. That is, it operates without a specific region.
+**/
++ (BOOL)isGlobalService:(UAAWSService)service;
+
 @end

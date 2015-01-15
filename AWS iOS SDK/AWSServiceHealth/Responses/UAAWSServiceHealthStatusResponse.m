@@ -50,7 +50,7 @@
     NSMutableArray *outages = [[NSMutableArray alloc] initWithCapacity:0];
     for (UAAWSServiceHealthOutage *outage in self.recentOutages)
     {
-        if ((region == UAAWSRegionUnknown || outage.region == region) && (service == UAAWSServiceUnknown || outage.service == service))
+        if ((region == UAAWSRegionUnknown || outage.region == region || [UAAWSServiceHealthService isGlobalService:service]) && (service == UAAWSServiceUnknown || outage.service == service))
             [outages addObject:outage];
     }
     
@@ -83,7 +83,7 @@
     NSMutableArray *outages = [[NSMutableArray alloc] initWithCapacity:0];
     for (UAAWSServiceHealthOutage *outage in self.currentOutages)
     {
-        if ((region == UAAWSRegionUnknown || outage.region == region) && (service == UAAWSServiceUnknown || outage.service == service))
+        if ((region == UAAWSRegionUnknown || outage.region == region || [UAAWSServiceHealthService isGlobalService:service]) && (service == UAAWSServiceUnknown || outage.service == service))
             [outages addObject:outage];
     }
     
@@ -112,7 +112,7 @@
     NSMutableArray *services = [[NSMutableArray alloc] initWithCapacity:0];
     
     // skip "Unknown"
-    for (UAAWSService service = UAAWSServiceAutoScaling; service <= UAAWSServiceVPC; service++)
+    for (UAAWSService service = UAAWSServiceAutoScaling; service <= UAAWSService_COUNT; service++)
     {
         if (region == UAAWSRegionUnknown || [UAAWSServiceHealthService isService:service availableInRegion:region])
         {
