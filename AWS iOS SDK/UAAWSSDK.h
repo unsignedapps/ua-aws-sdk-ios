@@ -16,5 +16,6 @@
 #import "UAEC2.h"
 #import "UAELB.h"
 #import "UAIAM.h"
+#import "UAKMS.h"
 #import "UASNS.h"
 #import "UASQS.h"

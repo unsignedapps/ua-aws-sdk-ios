@@ -2,7 +2,7 @@
 //  UAEC2Volume.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -17,7 +17,7 @@
 
 @implementation UAEC2Volume
 
-@synthesize volumeID=_volumeID, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, state=_state, createTime=_createTime, attachments=_attachments, tags=_tags, volumeType=_volumeType, iops=_iops, encrypted=_encrypted;
+@synthesize volumeID=_volumeID, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, state=_state, createTime=_createTime, attachments=_attachments, tags=_tags, volumeType=_volumeType, iops=_iops, encrypted=_encrypted, kmsKeyID=_kmsKeyID;
 
 - (id)init
 {
@@ -55,7 +55,8 @@
         @"tags": @"ec2:tagSet/ec2:item",
         @"volumeType": @"ec2:volumeType",
         @"iops": @"ec2:iops",
-        @"encrypted": @"ec2:encrypted"
+        @"encrypted": @"ec2:encrypted",
+        @"kmsKeyID": @"ec2:kmsKeyId"
     }];
     return [keyPaths copy];
 }
