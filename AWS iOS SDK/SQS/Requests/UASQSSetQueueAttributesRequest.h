@@ -2,7 +2,7 @@
 //  UASQSSetQueueAttributesRequest.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 
@@ -19,6 +19,18 @@ typedef BOOL(^UASQSSetQueueAttributesRequestShouldContinueWaitingBlock)(UASQSSet
 @property (nonatomic, strong) NSMutableDictionary *attributes;
 // @property (nonatomic, copy) UASQSSetQueueAttributesRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UASQSSetQueueAttributesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
+
+/**
+ * Retrieves the NSString for the specified Name.
+**/
+- (NSString *)attributeForName:(NSString *)name;
+
+/**
+ * Sets the value of Name to Attribute in the attributes property.
+ *
+ * This will initialise attributes with an empty mutable dictionary if necessary.
+**/
+- (void)setAttribute:(NSString *)attribute forName:(NSString *)name;
 
 #pragma mark - Invocation
 

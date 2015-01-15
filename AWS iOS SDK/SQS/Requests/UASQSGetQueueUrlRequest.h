@@ -1,24 +1,24 @@
 //
-//  UASQSGetQueueURLRequest.h
+//  UASQSGetQueueUrlRequest.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 
 #import "UASQSRequest.h"
 
-@class UASQSGetQueueURLResponse;
+@class UASQSGetQueueUrlResponse;
 
-typedef void(^UASQSGetQueueURLRequestCompletionBlock)(UASQSGetQueueURLResponse *response, NSError *error);
-typedef BOOL(^UASQSGetQueueURLRequestShouldContinueWaitingBlock)(UASQSGetQueueURLResponse *response, NSError *error);
+typedef void(^UASQSGetQueueUrlRequestCompletionBlock)(UASQSGetQueueUrlResponse *response, NSError *error);
+typedef BOOL(^UASQSGetQueueUrlRequestShouldContinueWaitingBlock)(UASQSGetQueueUrlResponse *response, NSError *error);
 
-@interface UASQSGetQueueURLRequest : UASQSRequest
+@interface UASQSGetQueueUrlRequest : UASQSRequest
 
 @property (nonatomic, copy) NSString *queueName;
 @property (nonatomic, copy) NSString *queueOwnerAWSAccountID;
-// @property (nonatomic, copy) UASQSGetQueueURLRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASQSGetQueueURLRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
+// @property (nonatomic, copy) UASQSGetQueueUrlRequestCompletionBlock UA_RequestCompletionBlock;
+// @property (nonatomic, copy) UASQSGetQueueUrlRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 #pragma mark - Invocation
 
@@ -29,7 +29,7 @@ typedef BOOL(^UASQSGetQueueURLRequestShouldContinueWaitingBlock)(UASQSGetQueueUR
  * @param	completionBlock		Block to be called with two parameters upon completion of the request: the response object for the request,
  *								or an NSError object if something went wrong.
 **/
-- (void)invokeWithOwner:(id)owner completionBlock:(UASQSGetQueueURLRequestCompletionBlock)completionBlock;
+- (void)invokeWithOwner:(id)owner completionBlock:(UASQSGetQueueUrlRequestCompletionBlock)completionBlock;
 
 /**
  * Invokes the request on the default queue and keeps retrying the request until the conditions are met.
@@ -40,7 +40,7 @@ typedef BOOL(^UASQSGetQueueURLRequestShouldContinueWaitingBlock)(UASQSGetQueueUR
  * @param	completionBlock		Block to be called with two parameters upon completion of the request: the response object for the request,
  *								or an NSError object if something went wrong.
 **/
-- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UASQSGetQueueURLRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UASQSGetQueueURLRequestCompletionBlock)completionBlock;
+- (void)waitWithOwner:(id)owner shouldContinueWaitingBlock:(UASQSGetQueueUrlRequestShouldContinueWaitingBlock)shouldContinueWaitingBlock completionBlock:(UASQSGetQueueUrlRequestCompletionBlock)completionBlock;
 
 /**
  * Invokes the request on the default queue and keeps retrying the request until the conditions are met.
@@ -53,6 +53,6 @@ typedef BOOL(^UASQSGetQueueURLRequestShouldContinueWaitingBlock)(UASQSGetQueueUR
  * @param	completionBlock		Block to be called with two parameters upon completion of the request: the response object for the request,
  *								or an NSError object if something went wrong.
 **/
-- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UASQSGetQueueURLRequestCompletionBlock)completionBlock;
+- (void)waitWithOwner:(id)owner untilValueAtKeyPath:(NSString *)keyPath isInArray:(NSArray *)array completionBlock:(UASQSGetQueueUrlRequestCompletionBlock)completionBlock;
 
 @end

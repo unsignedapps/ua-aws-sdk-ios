@@ -2,7 +2,7 @@
 //  UASQSGetQueueAttributesResponse.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -16,6 +16,17 @@
 @implementation UASQSGetQueueAttributesResponse
 
 @synthesize attributes=_attributes;
+
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(attributeForName:) propertyName:@"attributes"];
+	}
+	return self;
+}
 
 + (NSString *)XPathPrefix
 {

@@ -2,7 +2,7 @@
 //  UASQSSetQueueAttributesRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -32,7 +32,8 @@
 		[self setAction:@"SetQueueAttributes"];
 		[self setVersion:@"2012-11-05"];
 		
-		
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(attributeForName:) propertyName:@"attributes"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setAttribute:forName:) propertyName:@"attributes"];
 	}
 	return self;
 }

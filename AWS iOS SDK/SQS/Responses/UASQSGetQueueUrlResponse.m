@@ -1,19 +1,19 @@
 //
-//  UASQSGetQueueURLResponse.m
+//  UASQSGetQueueUrlResponse.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
 
-#import "UASQSGetQueueURLResponse.h"
+#import "UASQSGetQueueUrlResponse.h"
 #import "UAAWSAdditionalAccessors.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation UASQSGetQueueURLResponse
+@implementation UASQSGetQueueUrlResponse
 
 @synthesize queueURL=_queueURL;
 
