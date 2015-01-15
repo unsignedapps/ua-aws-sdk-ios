@@ -17,6 +17,7 @@ typedef BOOL(^UAIAMUpdateLoginProfileRequestShouldContinueWaitingBlock)(UAIAMUpd
 
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSString *password;
+@property (nonatomic) BOOL passwordResetRequired;
 // @property (nonatomic, copy) UAIAMUpdateLoginProfileRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAIAMUpdateLoginProfileRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

@@ -15,7 +15,7 @@
 
 @implementation UAIAMServerCertificateMetadata
 
-@synthesize path=_path, serverCertificateName=_serverCertificateName, serverCertificateID=_serverCertificateID, arn=_arn, uploadDate=_uploadDate;
+@synthesize path=_path, serverCertificateName=_serverCertificateName, serverCertificateID=_serverCertificateID, arn=_arn, uploadDate=_uploadDate, expiration=_expiration;
 
 + (NSString *)XPathPrefix
 {
@@ -33,7 +33,8 @@
         @"serverCertificateName": @"iam:ServerCertificateName",
         @"serverCertificateID": @"iam:ServerCertificateId",
         @"arn": @"iam:Arn",
-        @"uploadDate": @"iam:UploadDate"
+        @"uploadDate": @"iam:UploadDate",
+        @"expiration": @"iam:Expiration"
     }];
     return [keyPaths copy];
 }

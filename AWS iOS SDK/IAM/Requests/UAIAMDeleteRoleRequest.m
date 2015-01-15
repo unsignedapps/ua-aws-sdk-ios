@@ -39,7 +39,7 @@
 
 - (id)initWithRoleName:(NSString *)roleName
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setRoleName:roleName];
 	}

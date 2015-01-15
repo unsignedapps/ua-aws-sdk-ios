@@ -39,7 +39,7 @@
 
 - (id)initWithInstanceProfileName:(NSString *)instanceProfileName
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setInstanceProfileName:instanceProfileName];
 	}

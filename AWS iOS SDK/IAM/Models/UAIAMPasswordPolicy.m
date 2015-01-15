@@ -15,7 +15,7 @@
 
 @implementation UAIAMPasswordPolicy
 
-@synthesize minimumPasswordLength=_minimumPasswordLength, requireSymbols=_requireSymbols, requireNumbers=_requireNumbers, requireUppercaseCharacters=_requireUppercaseCharacters, requireLowercaseCharacters=_requireLowercaseCharacters, allowUsersToChangePassword=_allowUsersToChangePassword, expirePasswords=_expirePasswords, maxPasswordAge=_maxPasswordAge;
+@synthesize minimumPasswordLength=_minimumPasswordLength, requireSymbols=_requireSymbols, requireNumbers=_requireNumbers, requireUppercaseCharacters=_requireUppercaseCharacters, requireLowercaseCharacters=_requireLowercaseCharacters, allowUsersToChangePassword=_allowUsersToChangePassword, expirePasswords=_expirePasswords, maxPasswordAge=_maxPasswordAge, passwordReusePrevention=_passwordReusePrevention, hardExpiry=_hardExpiry;
 
 + (NSString *)XPathPrefix
 {
@@ -36,7 +36,9 @@
         @"requireLowercaseCharacters": @"iam:RequireLowercaseCharacters",
         @"allowUsersToChangePassword": @"iam:AllowUsersToChangePassword",
         @"expirePasswords": @"iam:ExpirePasswords",
-        @"maxPasswordAge": @"iam:MaxPasswordAge"
+        @"maxPasswordAge": @"iam:MaxPasswordAge",
+        @"passwordReusePrevention": @"iam:PasswordReusePrevention",
+        @"hardExpiry": @"iam:HardExpiry"
     }];
     return [keyPaths copy];
 }
@@ -79,6 +81,16 @@
 + (NSValueTransformer *)maxPasswordAgeXMLTransformer
 {
   return [NSValueTransformer UA_XMLTransformerForDouble];
+}
+
++ (NSValueTransformer *)passwordReusePreventionXMLTransformer
+{
+  return [NSValueTransformer UA_XMLTransformerForDouble];
+}
+
++ (NSValueTransformer *)hardExpiryXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

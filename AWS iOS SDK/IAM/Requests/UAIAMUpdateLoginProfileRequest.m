@@ -23,7 +23,7 @@
 
 @implementation UAIAMUpdateLoginProfileRequest
 
-@synthesize action=_action, version=_version, userName=_userName, password=_password;
+@synthesize action=_action, version=_version, userName=_userName, password=_password, passwordResetRequired=_passwordResetRequired;
 
 - (id)init
 {
@@ -52,7 +52,8 @@
         @"action": @"Action",
         @"version": @"Version",
         @"userName": @"UserName",
-        @"password": @"Password"
+        @"password": @"Password",
+        @"passwordResetRequired": @"PasswordResetRequired"
     }];
     return [keyPaths copy];
 }

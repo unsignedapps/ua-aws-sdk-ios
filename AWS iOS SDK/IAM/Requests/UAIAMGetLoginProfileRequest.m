@@ -39,7 +39,7 @@
 
 - (id)initWithUserName:(NSString *)userName
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setUserName:userName];
 	}

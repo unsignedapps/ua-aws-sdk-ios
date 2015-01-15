@@ -19,5 +19,7 @@
 @property (nonatomic) BOOL allowUsersToChangePassword;
 @property (nonatomic) BOOL expirePasswords;
 @property (nonatomic, strong) NSNumber *maxPasswordAge;
+@property (nonatomic, strong) NSNumber *passwordReusePrevention;
+@property (nonatomic) BOOL hardExpiry;
 
 @end

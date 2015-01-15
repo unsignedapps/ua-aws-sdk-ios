@@ -16,5 +16,6 @@
 @property (nonatomic, copy) NSString *serverCertificateID;
 @property (nonatomic, copy) NSString *arn;
 @property (nonatomic, copy) NSDate *uploadDate;
+@property (nonatomic, copy) NSString *expiration;
 
 @end

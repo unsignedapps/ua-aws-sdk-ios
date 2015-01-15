@@ -15,7 +15,7 @@
 
 @implementation UAIAMUser
 
-@synthesize path=_path, userName=_userName, userID=_userID, arn=_arn, createDate=_createDate;
+@synthesize path=_path, userName=_userName, userID=_userID, arn=_arn, createDate=_createDate, passwordLastUsed=_passwordLastUsed;
 
 + (NSString *)XPathPrefix
 {
@@ -33,7 +33,8 @@
         @"userName": @"iam:UserName",
         @"userID": @"iam:UserId",
         @"arn": @"iam:Arn",
-        @"createDate": @"iam:CreateDate"
+        @"createDate": @"iam:CreateDate",
+        @"passwordLastUsed": @"iam:PasswordLastUsed"
     }];
     return [keyPaths copy];
 }

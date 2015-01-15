@@ -16,5 +16,6 @@
 @property (nonatomic, copy) NSString *userID;
 @property (nonatomic, copy) NSString *arn;
 @property (nonatomic, copy) NSDate *createDate;
+@property (nonatomic, copy) NSString *passwordLastUsed;
 
 @end

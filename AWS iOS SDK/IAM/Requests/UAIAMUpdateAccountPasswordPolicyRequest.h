@@ -21,6 +21,9 @@ typedef BOOL(^UAIAMUpdateAccountPasswordPolicyRequestShouldContinueWaitingBlock)
 @property (nonatomic) BOOL requireUppercaseCharacters;
 @property (nonatomic) BOOL requireLowercaseCharacters;
 @property (nonatomic) BOOL allowUsersToChangePassword;
+@property (nonatomic, strong) NSNumber *maxPasswordAge;
+@property (nonatomic, strong) NSNumber *passwordReusePrevention;
+@property (nonatomic) BOOL hardExpiry;
 // @property (nonatomic, copy) UAIAMUpdateAccountPasswordPolicyRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAIAMUpdateAccountPasswordPolicyRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

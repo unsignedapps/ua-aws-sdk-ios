@@ -39,7 +39,7 @@
 
 - (id)initWithSAMLProviderARN:(NSString *)sAMLProviderARN
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setSAMLProviderARN:sAMLProviderARN];
 	}

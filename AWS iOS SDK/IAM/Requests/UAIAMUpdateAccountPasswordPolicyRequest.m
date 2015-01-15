@@ -23,7 +23,7 @@
 
 @implementation UAIAMUpdateAccountPasswordPolicyRequest
 
-@synthesize action=_action, version=_version, minimumPasswordLength=_minimumPasswordLength, requireSymbols=_requireSymbols, requireNumbers=_requireNumbers, requireUppercaseCharacters=_requireUppercaseCharacters, requireLowercaseCharacters=_requireLowercaseCharacters, allowUsersToChangePassword=_allowUsersToChangePassword;
+@synthesize action=_action, version=_version, minimumPasswordLength=_minimumPasswordLength, requireSymbols=_requireSymbols, requireNumbers=_requireNumbers, requireUppercaseCharacters=_requireUppercaseCharacters, requireLowercaseCharacters=_requireLowercaseCharacters, allowUsersToChangePassword=_allowUsersToChangePassword, maxPasswordAge=_maxPasswordAge, passwordReusePrevention=_passwordReusePrevention, hardExpiry=_hardExpiry;
 
 - (id)init
 {
@@ -56,7 +56,10 @@
         @"requireNumbers": @"RequireNumbers",
         @"requireUppercaseCharacters": @"RequireUppercaseCharacters",
         @"requireLowercaseCharacters": @"RequireLowercaseCharacters",
-        @"allowUsersToChangePassword": @"AllowUsersToChangePassword"
+        @"allowUsersToChangePassword": @"AllowUsersToChangePassword",
+        @"maxPasswordAge": @"MaxPasswordAge",
+        @"passwordReusePrevention": @"PasswordReusePrevention",
+        @"hardExpiry": @"HardExpiry"
     }];
     return [keyPaths copy];
 }

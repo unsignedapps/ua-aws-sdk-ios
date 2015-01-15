@@ -39,7 +39,7 @@
 
 - (id)initWithAccountAlias:(NSString *)accountAlias
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setAccountAlias:accountAlias];
 	}

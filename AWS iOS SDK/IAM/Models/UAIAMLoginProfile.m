@@ -15,7 +15,7 @@
 
 @implementation UAIAMLoginProfile
 
-@synthesize userName=_userName, createDate=_createDate;
+@synthesize userName=_userName, createDate=_createDate, passwordResetRequired=_passwordResetRequired;
 
 + (NSString *)XPathPrefix
 {
@@ -30,7 +30,8 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"userName": @"iam:UserName",
-        @"createDate": @"iam:CreateDate"
+        @"createDate": @"iam:CreateDate",
+        @"passwordResetRequired": @"iam:PasswordResetRequired"
     }];
     return [keyPaths copy];
 }
@@ -43,6 +44,11 @@
 + (NSValueTransformer *)createDateXMLTransformer
 {
     return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
++ (NSValueTransformer *)passwordResetRequiredXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

@@ -39,7 +39,7 @@
 
 - (id)initWithSerialNumber:(NSString *)serialNumber
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setSerialNumber:serialNumber];
 	}

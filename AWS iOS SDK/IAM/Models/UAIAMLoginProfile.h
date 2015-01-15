@@ -13,5 +13,6 @@
 
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSDate *createDate;
+@property (nonatomic) BOOL passwordResetRequired;
 
 @end

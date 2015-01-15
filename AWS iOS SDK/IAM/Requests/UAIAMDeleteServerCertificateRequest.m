@@ -39,7 +39,7 @@
 
 - (id)initWithServerCertificateName:(NSString *)serverCertificateName
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setServerCertificateName:serverCertificateName];
 	}

@@ -39,7 +39,7 @@
 
 - (id)initWithGroupName:(NSString *)groupName
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setGroupName:groupName];
 	}
