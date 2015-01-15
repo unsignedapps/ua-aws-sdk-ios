@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, UAELBInstanceState) {
 // UAELBInstanceStateReasonCode
 typedef NS_ENUM(NSUInteger, UAELBInstanceStateReasonCode) {
 	UAELBInstanceStateReasonCodeUnknown = 0,
-	UAELBInstanceStateReasonCodeElb = 1,
+	UAELBInstanceStateReasonCodeELB = 1,
 	UAELBInstanceStateReasonCodeInstance = 2
 };
 
