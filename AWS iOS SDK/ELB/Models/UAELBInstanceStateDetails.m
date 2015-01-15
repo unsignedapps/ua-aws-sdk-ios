@@ -2,7 +2,7 @@
 //  UAELBInstanceStateDetails.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -46,7 +46,7 @@
 
 + (NSValueTransformer *)reasonCodeQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBInstanceStateReasonCodeElb), @(UAELBInstanceStateReasonCodeInstance) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBInstanceStateReasonCodeELB), @(UAELBInstanceStateReasonCodeInstance) ]
                                                stringValues:@[ @"ELB", @"Instance" ]
                                                unknownValue:@(UAELBInstanceStateReasonCodeUnknown)];
 }
@@ -60,7 +60,7 @@
 
 + (NSValueTransformer *)reasonCodeXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBInstanceStateReasonCodeElb), @(UAELBInstanceStateReasonCodeInstance) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAELBInstanceStateReasonCodeELB), @(UAELBInstanceStateReasonCodeInstance) ]
                                                stringValues:@[ @"ELB", @"Instance" ]
                                                unknownValue:@(UAELBInstanceStateReasonCodeUnknown)];
 }
