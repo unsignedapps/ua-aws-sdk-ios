@@ -16,4 +16,9 @@
     return encoded;
 }
 
+- (NSString *)stringByURLUnescaping
+{
+    return [self stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
 @end

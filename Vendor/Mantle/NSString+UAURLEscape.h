@@ -6,10 +6,11 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface NSString (DSURLEscape)
 
 - (NSString *)stringByURLEscaping;
+- (NSString *)stringByURLUnescaping;
 
 @end
