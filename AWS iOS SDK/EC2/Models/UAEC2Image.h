@@ -2,7 +2,7 @@
 //  UAEC2Image.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSString *imageLocation;
 @property (nonatomic) UAEC2ImageState state;
 @property (nonatomic, copy) NSString *ownerID;
+@property (nonatomic, strong) NSDate *creationDate;
 @property (nonatomic) BOOL isPublic;
 @property (nonatomic, copy) NSArray *productCodes;
 @property (nonatomic) UAEC2Architecture architecture;

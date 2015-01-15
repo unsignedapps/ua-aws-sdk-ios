@@ -2,7 +2,7 @@
 //  UAEC2DiskImageDescription.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -15,7 +15,7 @@
 
 @implementation UAEC2DiskImageDescription
 
-@synthesize format=_format, size=_size, importManifestUrl=_importManifestUrl, checksum=_checksum;
+@synthesize format=_format, size=_size, importManifestURL=_importManifestURL, checksum=_checksum;
 
 + (NSString *)XPathPrefix
 {
@@ -31,7 +31,7 @@
     @{
         @"format": @"ec2:format",
         @"size": @"ec2:size",
-        @"importManifestUrl": @"ec2:importManifestUrl",
+        @"importManifestURL": @"ec2:importManifestUrl",
         @"checksum": @"ec2:checksum"
     }];
     return [keyPaths copy];

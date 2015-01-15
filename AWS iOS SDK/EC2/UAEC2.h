@@ -162,6 +162,12 @@
 #import "UAEC2TerminateInstancesRequest.h"
 #import "UAEC2UnassignPrivateIPAddressesRequest.h"
 #import "UAEC2UnmonitorInstancesRequest.h"
+#import "UAEC2AttachClassicLinkVPCRequest.h"
+#import "UAEC2DescribeClassicLinkInstancesRequest.h"
+#import "UAEC2DescribeVPCClassicLinkRequest.h"
+#import "UAEC2DetachClassicLinkVPCRequest.h"
+#import "UAEC2DisableVPCClassicLinkRequest.h"
+#import "UAEC2EnableVPCClassicLinkRequest.h"
 
 // Models
 #import "UAEC2AccepterVPCInfo.h"
@@ -315,6 +321,8 @@
 #import "UAEC2VPNConnection.h"
 #import "UAEC2VPNGateway.h"
 #import "UAEC2VPNStaticRoute.h"
+#import "UAEC2ClassicLinkInstance.h"
+#import "UAEC2VPCClassicLink.h"
 
 // Responses
 #import "UAEC2AcceptVPCPeeringConnectionResponse.h"
@@ -471,3 +479,10 @@
 #import "UAEC2TerminateInstancesResponse.h"
 #import "UAEC2UnassignPrivateIPAddressesResponse.h"
 #import "UAEC2UnmonitorInstancesResponse.h"
+#import "UAEC2AttachClassicLinkVPCResponse.h"
+#import "UAEC2DescribeClassicLinkInstancesResponse.h"
+#import "UAEC2DescribeVPCClassicLinkResponse.h"
+#import "UAEC2DetachClassicLinkVPCResponse.h"
+#import "UAEC2DisableVPCClassicLinkResponse.h"
+#import "UAEC2EnableVPCClassicLinkResponse.h"
+

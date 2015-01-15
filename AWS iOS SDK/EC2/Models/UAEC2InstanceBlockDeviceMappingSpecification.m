@@ -2,7 +2,7 @@
 //  UAEC2InstanceBlockDeviceMappingSpecification.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -58,9 +58,19 @@
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAEC2EBSInstanceBlockDeviceSpecification class]];
 }
 
++ (NSValueTransformer *)noDeviceQueryStringTransformer
+{
+    return [UAMTLValueTransformer UA_JSONTransformerForBooleanString];
+}
+
 + (NSValueTransformer *)ebsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAEC2EBSInstanceBlockDeviceSpecification class]];
+}
+
++ (NSValueTransformer *)noDeviceXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }
 
 @end

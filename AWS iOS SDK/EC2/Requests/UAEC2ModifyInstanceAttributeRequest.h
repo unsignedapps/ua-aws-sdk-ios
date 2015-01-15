@@ -2,7 +2,7 @@
 //  UAEC2ModifyInstanceAttributeRequest.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 
@@ -26,7 +26,8 @@ typedef BOOL(^UAEC2ModifyInstanceAttributeRequestShouldContinueWaitingBlock)(UAE
 @property (nonatomic, copy) UAEC2Kernel *kernel;
 @property (nonatomic, copy) UAEC2Ramdisk *ramdisk;
 @property (nonatomic, copy) NSString *userData;
-@property (nonatomic, copy) NSString *decodedUserData;
+- (NSString *)decodedUserData;
+- (void)setDecodedUserData:(NSString *)decodedUserData;
 @property (nonatomic) UAEC2InstanceInitiatedShutdownBehavior instanceInitiatedShutdownBehavior;
 @property (nonatomic, strong) NSMutableArray *groups;
 @property (nonatomic, copy) UAEC2EBSOptimized *ebsOptimized;

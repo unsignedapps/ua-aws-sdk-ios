@@ -2,7 +2,7 @@
 //  UAEC2RunInstancesRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -29,14 +29,12 @@
 
 @synthesize action=_action, version=_version, dryRun=_dryRun, imageID=_imageID, minCount=_minCount, maxCount=_maxCount, keyName=_keyName, securityGroups=_securityGroups, securityGroupIDs=_securityGroupIDs, userData=_userData, instanceType=_instanceType, placement=_placement, kernelID=_kernelID, ramdiskID=_ramdiskID, blockDeviceMappings=_blockDeviceMappings, monitoringEnabled=_monitoringEnabled, subnetID=_subnetID, disableApiTermination=_disableApiTermination, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, privateIPAddress=_privateIPAddress, clientToken=_clientToken, additionalInfo=_additionalInfo, networkInterfaces=_networkInterfaces, iamInstanceProfile=_iamInstanceProfile, ebsOptimized=_ebsOptimized;
 
-@dynamic decodedUserData;
-
 - (id)init
 {
 	if (self = [super init])
 	{
 		[self setAction:@"RunInstances"];
-		[self setVersion:@"2014-05-01"];
+		[self setVersion:@"2014-10-01"];
 		
 		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
 		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];

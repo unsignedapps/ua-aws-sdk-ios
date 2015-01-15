@@ -2,7 +2,7 @@
 //  UAEC2CopySnapshotRequest.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 
@@ -20,7 +20,7 @@ typedef BOOL(^UAEC2CopySnapshotRequestShouldContinueWaitingBlock)(UAEC2CopySnaps
 @property (nonatomic, copy) NSString *sourceSnapshotID;
 @property (nonatomic, copy) NSString *descriptionValue;
 @property (nonatomic, copy) NSString *destinationRegion;
-@property (nonatomic, copy) NSString *presignedUrl;
+@property (nonatomic, copy) NSString *presignedURL;
 // @property (nonatomic, copy) UAEC2CopySnapshotRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2CopySnapshotRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

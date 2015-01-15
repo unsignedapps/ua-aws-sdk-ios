@@ -2,7 +2,7 @@
 //  UAEC2ReservedInstancesModification.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -14,7 +14,7 @@
 @interface UAEC2ReservedInstancesModification : UAEC2Model
 
 @property (nonatomic, copy) NSString *reservedInstancesModificationID;
-@property (nonatomic, copy) NSArray *reservedInstancesIds;
+@property (nonatomic, copy) NSArray *reservedInstancesIDs;
 @property (nonatomic, copy) NSArray *modificationResults;
 @property (nonatomic, copy) NSDate *createDate;
 @property (nonatomic, copy) NSDate *updateDate;
@@ -34,11 +34,11 @@
 - (UAEC2ReservedInstancesModificationResponse *)modificationResultAtIndex:(NSUInteger)index;
 
 /**
- * Adds a ReservedInstancesId to the reservedInstancesIds property.
+ * Adds a ReservedInstancesID to the reservedInstancesIDs property.
  *
- * This will initialise reservedInstancesIds with an empty mutable array if necessary.
+ * This will initialise reservedInstancesIDs with an empty mutable array if necessary.
 **/
-- (void)addReservedInstancesId:(UAEC2ReservedInstancesID *)reservedInstancesId;
+- (void)addReservedInstancesID:(UAEC2ReservedInstancesID *)reservedInstancesID;
 /**
  * Adds a ModificationResult to the modificationResults property.
  *

@@ -2,7 +2,7 @@
 //  UAEC2Instance.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -136,7 +136,7 @@
 
 + (NSValueTransformer *)architectureQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceArchitectureI386), @(UAEC2InstanceArchitectureX86_64) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceArchitectureI386), @(UAEC2InstanceArchitectureX8664) ]
                                                stringValues:@[ @"i386", @"x86_64" ]
                                                unknownValue:@(UAEC2InstanceArchitectureUnknown)];
 }
@@ -226,7 +226,7 @@
 
 + (NSValueTransformer *)architectureXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceArchitectureI386), @(UAEC2InstanceArchitectureX86_64) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2InstanceArchitectureI386), @(UAEC2InstanceArchitectureX8664) ]
                                                stringValues:@[ @"i386", @"x86_64" ]
                                                unknownValue:@(UAEC2InstanceArchitectureUnknown)];
 }

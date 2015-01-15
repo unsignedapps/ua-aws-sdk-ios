@@ -2,7 +2,7 @@
 //  UAEC2DescribeExportTasksRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -30,7 +30,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"DescribeExportTasks"];
-		[self setVersion:@"2014-05-01"];
+		[self setVersion:@"2014-10-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(exportTaskIDAtIndex:) propertyName:@"exportTaskIDs"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addExportTaskID:) propertyName:@"exportTaskIDs"];
@@ -40,7 +40,7 @@
 
 - (id)initWithExportTaskIDs:(NSArray *)exportTaskIDs
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setExportTaskIDs:[exportTaskIDs mutableCopy]];
 	}

@@ -2,7 +2,7 @@
 //  UAEC2GetConsoleOutputResponse.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *instanceID;
 @property (nonatomic, copy) NSString *timestamp;
 @property (nonatomic, copy) NSString *output;
-@property (nonatomic, copy) NSString *decodedOutput;
+- (NSString *)decodedOutput;
+- (void)setDecodedOutput:(NSString *)decodedOutput;
 
 @end

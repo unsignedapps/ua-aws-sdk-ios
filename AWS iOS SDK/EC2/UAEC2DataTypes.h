@@ -154,7 +154,7 @@ typedef NS_ENUM(NSUInteger, UAEC2ImageState) {
 typedef NS_ENUM(NSUInteger, UAEC2Architecture) {
 	UAEC2ArchitectureUnknown = 0,
 	UAEC2ArchitectureI386 = 1,
-	UAEC2ArchitectureX86_64 = 2
+	UAEC2ArchitectureX8664 = 2
 };
 
 // UAEC2ImageType
@@ -255,7 +255,7 @@ typedef NS_ENUM(NSUInteger, UAEC2InstanceMonitoringState) {
 typedef NS_ENUM(NSUInteger, UAEC2InstanceArchitecture) {
 	UAEC2InstanceArchitectureUnknown = 0,
 	UAEC2InstanceArchitectureI386 = 1,
-	UAEC2InstanceArchitectureX86_64 = 2
+	UAEC2InstanceArchitectureX8664 = 2
 };
 
 // UAEC2InstanceRootDeviceType
@@ -436,3 +436,7 @@ typedef NS_ENUM(NSUInteger, UAEC2Platform) {
 	UAEC2PlatformEC2VPC = 2
 };
 
+static NSString * const UAEC2NetworkInterfaceAttributeDescription = @"description";
+static NSString * const UAEC2NetworkInterfaceAttributeGroupSet = @"groupSet";
+static NSString * const UAEC2NetworkInterfaceAttributeSourceDestCheck = @"sourceDestCheck";
+static NSString * const UAEC2NetworkInterfaceAttributeAttachment = @"attachment";

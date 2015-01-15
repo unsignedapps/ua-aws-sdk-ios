@@ -2,7 +2,7 @@
 //  UAEC2Image.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -19,7 +19,7 @@
 
 @implementation UAEC2Image
 
-@synthesize imageID=_imageID, imageLocation=_imageLocation, state=_state, ownerID=_ownerID, isPublic=_isPublic, productCodes=_productCodes, architecture=_architecture, imageType=_imageType, kernelID=_kernelID, ramdiskID=_ramdiskID, platform=_platform, sriovNetSupport=_sriovNetSupport, stateReason=_stateReason, imageOwnerAlias=_imageOwnerAlias, name=_name, descriptionValue=_descriptionValue, rootDeviceType=_rootDeviceType, rootDeviceName=_rootDeviceName, blockDeviceMappings=_blockDeviceMappings, virtualizationType=_virtualizationType, tags=_tags, hypervisor=_hypervisor;
+@synthesize imageID=_imageID, imageLocation=_imageLocation, state=_state, ownerID=_ownerID, creationDate=_creationDate, isPublic=_isPublic, productCodes=_productCodes, architecture=_architecture, imageType=_imageType, kernelID=_kernelID, ramdiskID=_ramdiskID, platform=_platform, sriovNetSupport=_sriovNetSupport, stateReason=_stateReason, imageOwnerAlias=_imageOwnerAlias, name=_name, descriptionValue=_descriptionValue, rootDeviceType=_rootDeviceType, rootDeviceName=_rootDeviceName, blockDeviceMappings=_blockDeviceMappings, virtualizationType=_virtualizationType, tags=_tags, hypervisor=_hypervisor;
 
 - (id)init
 {
@@ -53,6 +53,7 @@
         @"imageLocation": @"ec2:imageLocation",
         @"state": @"ec2:imageState",
         @"ownerID": @"ec2:imageOwnerId",
+        @"creationDate": @"ec2:creationDate",
         @"isPublic": @"ec2:isPublic",
         @"productCodes": @"ec2:productCodes/ec2:item",
         @"architecture": @"ec2:architecture",
@@ -82,6 +83,11 @@
                                                unknownValue:@(UAEC2ImageStateUnknown)];
 }
 
++ (NSValueTransformer *)creationDateQueryStringTransformer
+{
+    return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
 + (NSValueTransformer *)productCodesQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2ProductCode class]];
@@ -89,7 +95,7 @@
 
 + (NSValueTransformer *)architectureQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX86_64) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX8664) ]
                                                stringValues:@[ @"i386", @"x86_64" ]
                                                unknownValue:@(UAEC2ArchitectureUnknown)];
 }
@@ -151,6 +157,11 @@
                                                unknownValue:@(UAEC2ImageStateUnknown)];
 }
 
++ (NSValueTransformer *)creationDateXMLTransformer
+{
+    return [NSValueTransformer UAMTL_XMLTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+}
+
 + (NSValueTransformer *)isPublicXMLTransformer
 {
     return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
@@ -163,7 +174,7 @@
 
 + (NSValueTransformer *)architectureXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX86_64) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX8664) ]
                                                stringValues:@[ @"i386", @"x86_64" ]
                                                unknownValue:@(UAEC2ArchitectureUnknown)];
 }

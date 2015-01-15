@@ -2,7 +2,7 @@
 //  UAEC2Snapshot.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -24,6 +24,7 @@
 @property (nonatomic, copy) NSString *ownerAlias;
 @property (nonatomic, copy) NSArray *tags;
 @property (nonatomic) BOOL encrypted;
+@property (nonatomic, copy) NSString *kmsKeyID;
 
 /**
  * Retrieves the UAEC2Tag at the specified index.

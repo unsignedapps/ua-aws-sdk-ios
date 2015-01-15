@@ -2,7 +2,7 @@
 //  UAEC2Snapshot.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -16,7 +16,7 @@
 
 @implementation UAEC2Snapshot
 
-@synthesize snapshotID=_snapshotID, volumeID=_volumeID, state=_state, startTime=_startTime, progress=_progress, ownerID=_ownerID, descriptionValue=_descriptionValue, volumeSize=_volumeSize, ownerAlias=_ownerAlias, tags=_tags, encrypted=_encrypted;
+@synthesize snapshotID=_snapshotID, volumeID=_volumeID, state=_state, startTime=_startTime, progress=_progress, ownerID=_ownerID, descriptionValue=_descriptionValue, volumeSize=_volumeSize, ownerAlias=_ownerAlias, tags=_tags, encrypted=_encrypted, kmsKeyID=_kmsKeyID;
 
 - (id)init
 {
@@ -52,7 +52,8 @@
         @"volumeSize": @"ec2:volumeSize",
         @"ownerAlias": @"ec2:ownerAlias",
         @"tags": @"ec2:tagSet/ec2:item",
-        @"encrypted": @"ec2:encrypted"
+        @"encrypted": @"ec2:encrypted",
+        @"kmsKeyID": @"ec2:kmsKeyId"
     }];
     return [keyPaths copy];
 }

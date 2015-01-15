@@ -15,7 +15,7 @@
 
 - (id)initWithPool:(NSString *)pool
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setPool:pool];
 	}

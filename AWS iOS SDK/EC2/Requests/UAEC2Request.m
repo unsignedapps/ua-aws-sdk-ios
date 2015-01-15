@@ -56,12 +56,12 @@
 
 - (UAAWSSignatureVersion)UA_SignatureVersion
 {
-    return UAAWSSignatureVersion2;
+    return UAAWSSignatureVersion4;
 }
 
 - (NSString *)UA_APIVersion
 {
-    return @"2014-05-01";
+    return @"2014-10-01";
 }
 
 - (NSString *)UA_RequestPath
@@ -102,7 +102,8 @@
 - (BOOL)UA_isReadOnly
 {
     // according to the read-only IAM template, all Describe* EC2 methods are read only.
-    return [NSStringFromClass([self class]) rangeOfString:@"UAEC2Describe"].location == 0;
+    NSString *klass = NSStringFromClass([self class]);
+    return [klass rangeOfString:@"UAEC2Describe"].location == 0 || [klass rangeOfString:@"UAEC2Get"].location == 0;
 }
 
 #pragma mark - Serializing defaults

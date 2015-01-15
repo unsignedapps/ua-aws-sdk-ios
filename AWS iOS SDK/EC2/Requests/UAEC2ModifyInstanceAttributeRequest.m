@@ -2,7 +2,7 @@
 //  UAEC2ModifyInstanceAttributeRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -30,14 +30,12 @@
 
 @synthesize action=_action, version=_version, dryRun=_dryRun, instanceID=_instanceID, attribute=_attribute, value=_value, blockDeviceMappings=_blockDeviceMappings, sourceDestCheck=_sourceDestCheck, disableApiTermination=_disableApiTermination, instanceType=_instanceType, kernel=_kernel, ramdisk=_ramdisk, userData=_userData, instanceInitiatedShutdownBehavior=_instanceInitiatedShutdownBehavior, groups=_groups, ebsOptimized=_ebsOptimized, sriovNetSupport=_sriovNetSupport;
 
-@dynamic decodedUserData;
-
 - (id)init
 {
 	if (self = [super init])
 	{
 		[self setAction:@"ModifyInstanceAttribute"];
-		[self setVersion:@"2014-05-01"];
+		[self setVersion:@"2014-10-01"];
 		
 		[self UA_addDecodeBase64AdditionalAccessorForSelector:@selector(decodedUserData) propertyName:@"userData"];
 		[self UA_addEncodeBase64AdditionalAccessorForSelector:@selector(setDecodedUserData:) propertyName:@"userData"];

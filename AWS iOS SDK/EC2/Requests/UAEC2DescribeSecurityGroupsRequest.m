@@ -2,7 +2,7 @@
 //  UAEC2DescribeSecurityGroupsRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -31,7 +31,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"DescribeSecurityGroups"];
-		[self setVersion:@"2014-05-01"];
+		[self setVersion:@"2014-10-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupNameAtIndex:) propertyName:@"groupNames"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(groupIDAtIndex:) propertyName:@"groupIDs"];

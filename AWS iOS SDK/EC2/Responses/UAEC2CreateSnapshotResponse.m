@@ -2,7 +2,7 @@
 //  UAEC2CreateSnapshotResponse.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -15,7 +15,7 @@
 
 @implementation UAEC2CreateSnapshotResponse
 
-@synthesize snapshotID=_snapshotID, volumeID=_volumeID, state=_state, startTime=_startTime, progress=_progress, ownerID=_ownerID, descriptionValue=_descriptionValue, volumeSize=_volumeSize, ownerAlias=_ownerAlias, encrypted=_encrypted;
+@synthesize snapshotID=_snapshotID, volumeID=_volumeID, state=_state, startTime=_startTime, progress=_progress, ownerID=_ownerID, descriptionValue=_descriptionValue, volumeSize=_volumeSize, ownerAlias=_ownerAlias, encrypted=_encrypted, kmsKeyID=_kmsKeyID;
 
 + (NSString *)XPathPrefix
 {
@@ -38,7 +38,8 @@
         @"descriptionValue": @"ec2:description",
         @"volumeSize": @"ec2:volumeSize",
         @"ownerAlias": @"ec2:ownerAlias",
-        @"encrypted": @"ec2:encrypted"
+        @"encrypted": @"ec2:encrypted",
+        @"kmsKeyID": @"ec2:kmsKeyId"
     }];
     return [keyPaths copy];
 }

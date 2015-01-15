@@ -2,7 +2,7 @@
 //  UAEC2DiskImageDescription.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -13,7 +13,7 @@
 
 @property (nonatomic, copy) NSString *format;
 @property (nonatomic, strong) NSNumber *size;
-@property (nonatomic, copy) NSString *importManifestUrl;
+@property (nonatomic, copy) NSString *importManifestURL;
 @property (nonatomic, copy) NSString *checksum;
 
 @end

@@ -2,7 +2,7 @@
 //  UAEC2LaunchSpecificationSpecification.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -16,7 +16,8 @@
 @property (nonatomic, copy) NSString *imageID;
 @property (nonatomic, copy) NSString *keyName;
 @property (nonatomic, copy) NSString *userData;
-@property (nonatomic, copy) NSString *decodedUserData;
+- (NSString *)decodedUserData;
+- (void)setDecodedUserData:(NSString *)decodedUserData;
 @property (nonatomic, copy) NSString *addressingType;
 @property (nonatomic, copy) NSString *instanceType;
 @property (nonatomic, copy) UAEC2SpotPlacement *placement;

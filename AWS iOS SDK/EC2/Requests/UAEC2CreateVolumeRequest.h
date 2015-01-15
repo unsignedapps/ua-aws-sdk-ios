@@ -2,7 +2,7 @@
 //  UAEC2CreateVolumeRequest.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 
@@ -22,6 +22,7 @@ typedef BOOL(^UAEC2CreateVolumeRequestShouldContinueWaitingBlock)(UAEC2CreateVol
 @property (nonatomic) UAEC2VolumeType volumeType;
 @property (nonatomic, strong) NSNumber *iops;
 @property (nonatomic) BOOL encrypted;
+@property (nonatomic, copy) NSString *kmsKeyID;
 // @property (nonatomic, copy) UAEC2CreateVolumeRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAEC2CreateVolumeRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 

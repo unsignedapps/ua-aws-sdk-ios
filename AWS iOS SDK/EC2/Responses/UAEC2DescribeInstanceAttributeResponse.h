@@ -2,7 +2,7 @@
 //  UAEC2DescribeInstanceAttributeResponse.h
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -18,7 +18,8 @@
 @property (nonatomic, copy) NSString *kernelID;
 @property (nonatomic, copy) NSString *ramdiskID;
 @property (nonatomic, copy) NSString *userData;
-@property (nonatomic, copy) NSString *decodedUserData;
+- (NSString *)decodedUserData;
+- (void)setDecodedUserData:(NSString *)decodedUserData;
 @property (nonatomic) BOOL disableApiTermination;
 @property (nonatomic) UAEC2InstanceInitiatedShutdownBehavior instanceInitiatedShutdownBehavior;
 @property (nonatomic, copy) NSString *rootDeviceName;

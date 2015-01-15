@@ -2,7 +2,7 @@
 //  UAEC2ReservedInstancesModification.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -17,7 +17,7 @@
 
 @implementation UAEC2ReservedInstancesModification
 
-@synthesize reservedInstancesModificationID=_reservedInstancesModificationID, reservedInstancesIds=_reservedInstancesIds, modificationResults=_modificationResults, createDate=_createDate, updateDate=_updateDate, effectiveDate=_effectiveDate, status=_status, statusMessage=_statusMessage, clientToken=_clientToken;
+@synthesize reservedInstancesModificationID=_reservedInstancesModificationID, reservedInstancesIDs=_reservedInstancesIDs, modificationResults=_modificationResults, createDate=_createDate, updateDate=_updateDate, effectiveDate=_effectiveDate, status=_status, statusMessage=_statusMessage, clientToken=_clientToken;
 
 - (id)init
 {
@@ -25,9 +25,9 @@
 	{
 		
 		
-		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesIDAtIndex:) propertyName:@"reservedInstancesIds"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(reservedInstancesIDAtIndex:) propertyName:@"reservedInstancesIDs"];
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(modificationResultAtIndex:) propertyName:@"modificationResults"];
-		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReservedInstancesId:) propertyName:@"reservedInstancesIds"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addReservedInstancesID:) propertyName:@"reservedInstancesIDs"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addModificationResult:) propertyName:@"modificationResults"];
 	}
 	return self;
@@ -46,7 +46,7 @@
     [keyPaths addEntriesFromDictionary:
     @{
         @"reservedInstancesModificationID": @"ec2:reservedInstancesModificationId",
-        @"reservedInstancesIds": @"ec2:reservedInstancesSet/ec2:item",
+        @"reservedInstancesIDs": @"ec2:reservedInstancesSet/ec2:item",
         @"modificationResults": @"ec2:modificationResultSet/ec2:item",
         @"createDate": @"ec2:createDate",
         @"updateDate": @"ec2:updateDate",
@@ -58,7 +58,7 @@
     return [keyPaths copy];
 }
 
-+ (NSValueTransformer *)reservedInstancesIdsQueryStringTransformer
++ (NSValueTransformer *)reservedInstancesIDsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAEC2ReservedInstancesID class]];
 }
@@ -83,7 +83,7 @@
     return [NSValueTransformer UA_JSONTransformerForDateWithFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
 }
 
-+ (NSValueTransformer *)reservedInstancesIdsXMLTransformer
++ (NSValueTransformer *)reservedInstancesIDsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAEC2ReservedInstancesID class]];
 }

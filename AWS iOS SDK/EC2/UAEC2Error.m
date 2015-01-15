@@ -15,6 +15,11 @@
 
 #pragma mark - Mantle Serialisation
 
++ (NSDictionary *)XMLNamespaceMappings
+{
+    return nil;
+}
+
 + (NSString *)XPathPrefix
 {
     return @"./Response/";

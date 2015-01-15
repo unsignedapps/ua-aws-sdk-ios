@@ -2,7 +2,7 @@
 //  UAEC2RegisterImageRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -31,7 +31,7 @@
 	if (self = [super init])
 	{
 		[self setAction:@"RegisterImage"];
-		[self setVersion:@"2014-05-01"];
+		[self setVersion:@"2014-10-01"];
 		
 		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(blockDeviceMappingAtIndex:) propertyName:@"blockDeviceMappings"];
 		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addBlockDeviceMapping:) propertyName:@"blockDeviceMappings"];
@@ -77,7 +77,7 @@
 
 + (NSValueTransformer *)architectureJSONTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX86_64) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX8664) ]
                                                stringValues:@[ @"i386", @"x86_64" ]
                                                unknownValue:@(UAEC2ArchitectureUnknown)];
 }
@@ -101,7 +101,7 @@
 
 + (NSValueTransformer *)architectureQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX86_64) ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAEC2ArchitectureI386), @(UAEC2ArchitectureX8664) ]
                                                stringValues:@[ @"i386", @"x86_64" ]
                                                unknownValue:@(UAEC2ArchitectureUnknown)];
 }

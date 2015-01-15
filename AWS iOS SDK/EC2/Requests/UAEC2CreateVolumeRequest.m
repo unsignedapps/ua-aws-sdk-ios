@@ -2,7 +2,7 @@
 //  UAEC2CreateVolumeRequest.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -23,14 +23,14 @@
 
 @implementation UAEC2CreateVolumeRequest
 
-@synthesize action=_action, version=_version, dryRun=_dryRun, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, volumeType=_volumeType, iops=_iops, encrypted=_encrypted;
+@synthesize action=_action, version=_version, dryRun=_dryRun, size=_size, snapshotID=_snapshotID, availabilityZone=_availabilityZone, volumeType=_volumeType, iops=_iops, encrypted=_encrypted, kmsKeyID=_kmsKeyID;
 
 - (id)init
 {
 	if (self = [super init])
 	{
 		[self setAction:@"CreateVolume"];
-		[self setVersion:@"2014-05-01"];
+		[self setVersion:@"2014-10-01"];
 		
 		
 	}
@@ -57,7 +57,8 @@
         @"availabilityZone": @"AvailabilityZone",
         @"volumeType": @"VolumeType",
         @"iops": @"Iops",
-        @"encrypted": @"Encrypted"
+        @"encrypted": @"Encrypted",
+        @"kmsKeyID": @"KmsKeyId"
     }];
     return [keyPaths copy];
 }

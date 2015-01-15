@@ -15,7 +15,7 @@
 
 - (id)initWithValue:(BOOL)value
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setValue:value];
 	}
