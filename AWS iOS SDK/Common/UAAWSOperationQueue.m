@@ -18,7 +18,7 @@
 // keep an array of request adding timers
 @property (nonatomic, strong) NSMutableArray *timers;
 
-- (UAAWSCredentials *)credentialsForRequest:(UAAWSRequest *)request;
+- (UAAWSCredentials *)credentialsForRequest:(UAAWSRequest *)request error:(NSError *__autoreleasing *)error;
 - (UAAWSRegion)regionForRequest:(UAAWSRequest *)request;
 - (void)addRequestFromTimer:(NSTimer *)timer;
 
@@ -136,12 +136,17 @@
 
 #pragma mark - Authentication Management
 
-- (UAAWSCredentials *)credentialsForRequest:(UAAWSRequest *)request
+- (UAAWSCredentials *)credentialsForRequest:(UAAWSRequest<UAAWSRequest> *)request error:(NSError *__autoreleasing *)error
 {
-    id<UAAWSOperationAuthenticationDelegate> delegate = self.delegate;
-    if (delegate != nil && [delegate respondsToSelector:@selector(credentialsForRequest:)])
-        return [delegate credentialsForRequest:request];
-    return nil;
+    __block UAAWSCredentials *credentials = nil;
+    __block id<UAAWSOperationAuthenticationDelegate> delegate = self.delegate;
+    
+    dispatch_sync(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
+    {
+        if (delegate != nil && [delegate respondsToSelector:@selector(credentialsForRequest:error:)])
+            credentials = [delegate credentialsForRequest:request error:error];
+    });
+    return credentials;
 }
 
 - (UAAWSRegion)regionForRequest:(UAAWSRequest *)request

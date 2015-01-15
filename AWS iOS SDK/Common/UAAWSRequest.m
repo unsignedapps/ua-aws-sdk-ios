@@ -39,7 +39,7 @@
  **/
 - (NSUInteger)UA_PollingMaxAttempts;
 
-- (NSURLRequest *)UA_Payload;
+- (NSURLRequest *)UA_PayloadWithCredentials:(UAAWSCredentials *)credentials;
 
 - (NSError *)UA_ErrorForHTTPResponse:(NSHTTPURLResponse *)response withResponseData:(NSData *)data;
 - (UAAWSResponse *)UA_ResponseObjectForResponseData:(NSData *)data responseHeaders:(NSDictionary *)headers;
@@ -53,14 +53,14 @@
 
 @interface UAAWSOperationQueue (Authentication)
 
-- (UAAWSCredentials *)credentialsForRequest:(UAAWSRequest *)request;
+- (UAAWSCredentials *)credentialsForRequest:(UAAWSRequest<UAAWSRequest> *)request error:(NSError *__autoreleasing *)error;
 - (UAAWSRegion)regionForRequest:(UAAWSRequest *)request;
 
 @end
 
 @implementation UAAWSRequest
 
-@synthesize UA_CheckImmediately=_UA_CheckImmediately, UA_Error=_UA_Error, UA_Owner=_UA_Owner, UA_PollingAttempts=_UA_PollingAttempts, UA_Queue=_UA_Queue, UA_RequestCompletionBlock=_UA_RequestCompletionBlock, UA_Response=_UA_Response, UA_ShouldContinueWaiting=_UA_ShouldContinueWaiting, UA_DataTask=_UA_DataTask, UA_Credentials=_UA_Credentials, UA_Region=_UA_Region, UA_dirtyProperties=_UA_dirtyProperties, finished=_finished, executing=_executing, UA_UserAgent=_UA_UserAgent;
+@synthesize UA_CheckImmediately=_UA_CheckImmediately, UA_Error=_UA_Error, UA_Owner=_UA_Owner, UA_PollingAttempts=_UA_PollingAttempts, UA_Queue=_UA_Queue, UA_RequestCompletionBlock=_UA_RequestCompletionBlock, UA_Response=_UA_Response, UA_ShouldContinueWaiting=_UA_ShouldContinueWaiting, UA_DataTask=_UA_DataTask, UA_Credentials=_UA_Credentials, UA_Region=_UA_Region, UA_dirtyProperties=_UA_dirtyProperties, finished=_finished, executing=_executing, UA_UserAgent=_UA_UserAgent, UA_URLSession=_UA_URLSession;
 
 - (id)init
 {
@@ -241,6 +241,9 @@
     NSAssert([self conformsToProtocol:@protocol(UAAWSRequest)], @"Your UAAWSRequest must conform to the <UAAWSRequest> protocol.");
 
     UAAWSOperationQueue *queue = self.UA_Queue;
+    
+    NSError *credentialError = nil;
+    UAAWSCredentials *credentials = self.UA_Credentials ?: [queue credentialsForRequest:((UAAWSRequest<UAAWSRequest> *)self) error:&credentialError];
 
     // have we been cancelled?
     if ([self isCancelled])
@@ -250,10 +253,21 @@
         return;
     }
     
+    // did we end up with a credential error?
+    if (credentialError != nil)
+    {
+        [self setUA_Error:credentialError];
+        [self setUA_Response:nil];
+        [self setExecuting:NO];
+        [self setFinished:YES];
+        return;
+    }
+    
     // Lets go!
     NSLog(@"-[%@] Executing request (Attempt #%lu).", NSStringFromClass([self class]), (unsigned long)self.UA_PollingAttempts);
     __block UAAWSRequest *blockSelf = self;
-    [self setUA_DataTask:[queue.session dataTaskWithRequest:[self UA_Payload] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    NSURLSession *session = self.UA_URLSession ?: queue.session;
+    [self setUA_DataTask:[session dataTaskWithRequest:[self UA_PayloadWithCredentials:credentials] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         // before we continue, check again for the cancellation
         if ([blockSelf isCancelled] || (error != nil && error.code == NSURLErrorCancelled))
@@ -310,11 +324,11 @@
 }
 
 // Generate the request payload
-- (NSURLRequest *)UA_Payload
+- (NSURLRequest *)UA_PayloadWithCredentials:(UAAWSCredentials *)credentials
 {
     // Obtain credentials
     UAAWSOperationQueue *queue = self.UA_Queue;
-    UAAWSCredentials *credentials = self.UA_Credentials ?: [queue credentialsForRequest:self];
+    UAAWSRequest<UAAWSRequest> *protocolSelf = (UAAWSRequest<UAAWSRequest> *)self;
     UAAWSRegion region = self.UA_Region ?: [queue regionForRequest:self];
     
     // We need to have credentials, at least

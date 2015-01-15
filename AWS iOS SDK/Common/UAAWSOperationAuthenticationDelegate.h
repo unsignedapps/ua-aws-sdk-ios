@@ -6,12 +6,15 @@
 //  Copyright (c) 2013 Desto. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "UAAWSRegion.h"
+#import "UAAWSRequest.h"
 
-@class UAAWSCredentials, UAAWSRequest;
+@class UAAWSCredentials;
 
 @protocol UAAWSOperationAuthenticationDelegate <NSObject>
+
+@optional
 
 /**
  * The Amazon Credentials to use.
@@ -19,7 +22,7 @@
  * @param   op                  The operation requiring credentials.
  * @returns                     You should return a configured UAAWSCredentials object.
 **/
-- (UAAWSCredentials *)credentialsForRequest:(UAAWSRequest *)request;
+- (UAAWSCredentials *)credentialsForRequest:(UAAWSRequest<UAAWSRequest> *)request error:(NSError **)error;
 
 /**
  * The region to use.
@@ -31,5 +34,6 @@
  * @returns                     You should return a UAAWSRegion constant.
 **/
 - (UAAWSRegion)regionForRequest:(UAAWSRequest *)request;
+
 
 @end
