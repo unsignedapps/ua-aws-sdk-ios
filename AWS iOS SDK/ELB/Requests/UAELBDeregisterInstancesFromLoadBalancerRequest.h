@@ -8,7 +8,7 @@
 
 #import "UAELBRequest.h"
 
-@class UAELBDeregisterInstancesFromLoadBalancerResponse;
+@class UAELBInstance, UAELBDeregisterInstancesFromLoadBalancerResponse;
 
 typedef void(^UAELBDeregisterInstancesFromLoadBalancerRequestCompletionBlock)(UAELBDeregisterInstancesFromLoadBalancerResponse *response, NSError *error);
 typedef BOOL(^UAELBDeregisterInstancesFromLoadBalancerRequestShouldContinueWaitingBlock)(UAELBDeregisterInstancesFromLoadBalancerResponse *response, NSError *error);
@@ -16,21 +16,21 @@ typedef BOOL(^UAELBDeregisterInstancesFromLoadBalancerRequestShouldContinueWaiti
 @interface UAELBDeregisterInstancesFromLoadBalancerRequest : UAELBRequest
 
 @property (nonatomic, copy) NSString *loadBalancerName;
-@property (nonatomic, strong) NSMutableArray *instanceIDs;
+@property (nonatomic, strong) NSMutableArray *instances;
 // @property (nonatomic, copy) UAELBDeregisterInstancesFromLoadBalancerRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UAELBDeregisterInstancesFromLoadBalancerRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
- * Retrieves the NSString at the specified index.
+ * Retrieves the UAELBInstance at the specified index.
 **/
-- (NSString *)instanceIDAtIndex:(NSUInteger)index;
+- (UAELBInstance *)instanceAtIndex:(NSUInteger)index;
 
 /**
- * Adds a InstanceID to the instanceIDs property.
+ * Adds a Instance to the instances property.
  *
- * This will initialise instanceIDs with an empty mutable array if necessary.
+ * This will initialise instances with an empty mutable array if necessary.
 **/
-- (void)addInstanceID:(NSString *)instanceID;
+- (void)addInstance:(UAELBInstance *)instance;
 
 #pragma mark - Invocation
 

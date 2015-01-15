@@ -39,7 +39,7 @@
 
 - (id)initWithLoadBalancerName:(NSString *)loadBalancerName
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setLoadBalancerName:loadBalancerName];
 	}

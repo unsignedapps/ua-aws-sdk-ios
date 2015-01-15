@@ -19,7 +19,7 @@
 
 - (id)initWithIdleTimeout:(NSNumber *)idleTimeout
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setIdleTimeout:idleTimeout];
 	}

@@ -1,5 +1,5 @@
 //
-//  UAELBInstance.m
+//  UAELBAdditionalAttribute.m
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -7,24 +7,15 @@
 //
 //
 
-#import "UAELBInstance.h"
+#import "UAELBAdditionalAttribute.h"
 #import "UAAWSAdditionalAccessors.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation UAELBInstance
+@implementation UAELBAdditionalAttribute
 
-@synthesize instanceID=_instanceID;
-
-- (id)initWithInstanceID:(NSString *)instanceID
-{
-	if ((self = [self init]))
-	{
-		[self setInstanceID:instanceID];
-	}
-	return self;
-}
+@synthesize key=_key, value=_value;
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {
@@ -33,7 +24,8 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"instanceID": @"InstanceId"
+        @"key": @"Key",
+        @"value": @"Value"
     }];
     return [keyPaths copy];
 }
@@ -50,7 +42,8 @@
 
     [keyPaths addEntriesFromDictionary:
     @{
-        @"instanceID": @"ElasticLoadBalancing:InstanceId"
+        @"key": @"ElasticLoadBalancing:Key",
+        @"value": @"ElasticLoadBalancing:Value"
     }];
     return [keyPaths copy];
 }

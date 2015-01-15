@@ -40,7 +40,7 @@
 
 - (id)initWithPolicyTypeNames:(NSArray *)policyTypeNames
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setPolicyTypeNames:[policyTypeNames mutableCopy]];
 	}

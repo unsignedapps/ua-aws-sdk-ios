@@ -10,6 +10,7 @@
 #import "UAELBDeregisterInstancesFromLoadBalancerRequest.h"
 #import "UAAWSAdditionalAccessors.h"
 #import "UAELBDeregisterInstancesFromLoadBalancerResponse.h"
+#import "UAELBInstance.h"
 
 @interface UAELBDeregisterInstancesFromLoadBalancerRequest ()
 
@@ -23,7 +24,7 @@
 
 @implementation UAELBDeregisterInstancesFromLoadBalancerRequest
 
-@synthesize action=_action, version=_version, loadBalancerName=_loadBalancerName, instanceIDs=_instanceIDs;
+@synthesize action=_action, version=_version, loadBalancerName=_loadBalancerName, instances=_instances;
 
 - (id)init
 {
@@ -32,8 +33,8 @@
 		[self setAction:@"DeregisterInstancesFromLoadBalancer"];
 		[self setVersion:@"2012-06-01"];
 		
-		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceIDAtIndex:) propertyName:@"instanceIDs"];
-		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstanceID:) propertyName:@"instanceIDs"];
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(instanceAtIndex:) propertyName:@"instances"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addInstance:) propertyName:@"instances"];
 	}
 	return self;
 }
@@ -53,9 +54,19 @@
         @"action": @"Action",
         @"version": @"Version",
         @"loadBalancerName": @"LoadBalancerName",
-        @"instanceIDs": @"Instances.member"
+        @"instances": @"Instances.member"
     }];
     return [keyPaths copy];
+}
+
++ (NSValueTransformer *)instancesJSONTransformer
+{
+  return [NSValueTransformer UAMTL_JSONArrayTransformerWithModelClass:[UAELBInstance class]];
+}
+
++ (NSValueTransformer *)instancesQueryStringTransformer
+{
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBInstance class]];
 }
 
 /*#pragma mark - Invocation

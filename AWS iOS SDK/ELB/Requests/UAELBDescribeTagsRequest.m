@@ -40,7 +40,7 @@
 
 - (id)initWithLoadBalancerNames:(NSArray *)loadBalancerNames
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setLoadBalancerNames:[loadBalancerNames mutableCopy]];
 	}

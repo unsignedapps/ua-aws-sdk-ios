@@ -12,13 +12,26 @@
 #import "UAELBAccessLog.h"
 #import "UAELBConnectionDraining.h"
 #import "UAELBConnectionSettings.h"
+#import "UAELBAdditionalAttribute.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation UAELBLoadBalancerAttributes
 
-@synthesize crossZoneLoadBalancing=_crossZoneLoadBalancing, accessLog=_accessLog, connectionDraining=_connectionDraining, connectionSettings=_connectionSettings;
+@synthesize crossZoneLoadBalancing=_crossZoneLoadBalancing, accessLog=_accessLog, connectionDraining=_connectionDraining, connectionSettings=_connectionSettings, additionalAttributes=_additionalAttributes;
+
+- (id)init
+{
+	if (self = [super init])
+	{
+		
+		
+		[self UA_addAtIndexAdditionalAccessorForSelector:@selector(additionalAttributeAtIndex:) propertyName:@"additionalAttributes"];
+		[self UA_addAddObjectAdditionalAccessorForSelector:@selector(addAdditionalAttribute:) propertyName:@"additionalAttributes"];
+	}
+	return self;
+}
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {
@@ -30,7 +43,8 @@
         @"crossZoneLoadBalancing": @"CrossZoneLoadBalancing.Enabled",
         @"accessLog": @"AccessLog",
         @"connectionDraining": @"ConnectionDraining",
-        @"connectionSettings": @"ConnectionSettings"
+        @"connectionSettings": @"ConnectionSettings",
+        @"additionalAttributes": @"AdditionalAttributes.Member"
     }];
     return [keyPaths copy];
 }
@@ -50,7 +64,8 @@
         @"crossZoneLoadBalancing": @"ElasticLoadBalancing:CrossZoneLoadBalancing/ElasticLoadBalancing:Enabled",
         @"accessLog": @"ElasticLoadBalancing:AccessLog",
         @"connectionDraining": @"ElasticLoadBalancing:ConnectionDraining",
-        @"connectionSettings": @"ElasticLoadBalancing:ConnectionSettings"
+        @"connectionSettings": @"ElasticLoadBalancing:ConnectionSettings",
+        @"additionalAttributes": @"ElasticLoadBalancing:AdditionalAttributes.member/ElasticLoadBalancing:AdditionalAttributes"
     }];
     return [keyPaths copy];
 }
@@ -68,6 +83,11 @@
 + (NSValueTransformer *)connectionSettingsQueryStringTransformer
 {
 	return [NSValueTransformer UAMTL_QueryStringDictionaryTransformerWithModelClass:[UAELBConnectionSettings class]];
+}
+
++ (NSValueTransformer *)additionalAttributesQueryStringTransformer
+{
+	return [NSValueTransformer UAMTL_QueryStringArrayTransformerWithModelClass:[UAELBAdditionalAttribute class]];
 }
 
 + (NSValueTransformer *)crossZoneLoadBalancingXMLTransformer
@@ -88,6 +108,11 @@
 + (NSValueTransformer *)connectionSettingsXMLTransformer
 {
   return [NSValueTransformer UAMTL_XMLTransformerWithModelClass:[UAELBConnectionSettings class]];
+}
+
++ (NSValueTransformer *)additionalAttributesXMLTransformer
+{
+  return [NSValueTransformer UAMTL_XMLArrayTransformerWithModelClass:[UAELBAdditionalAttribute class]];
 }
 
 @end
