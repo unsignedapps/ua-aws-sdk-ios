@@ -22,8 +22,6 @@
 - (void)startSessionMonitoring;
 - (void)stopSessionMonitoring;
 
-+ (void)sendEventOfType:(NSString *)eventType forSession:(UAMASession *)session;
-
 @end
 
 @implementation UAMobileAnalytics
@@ -213,6 +211,7 @@
 
     // now the request
     UAMAPutEventsRequest *request = [[UAMAPutEventsRequest alloc] init];
+    [request setQueuePriority:NSOperationQueuePriorityVeryLow];
     [request addEvent:event];
     
     [request invokeWithOwner:[self sharedInstance] completionBlock:^(UAMAPutEventsResponse *response, NSError *error)
@@ -222,6 +221,27 @@
         
         if (block != NULL)
             block(response, error);
+    }];
+}
+
+#pragma mark - Sending Named Events
+
++ (void)putEventNamed:(NSString *)name
+{
+	// create the event
+    UAMAEvent *event = [[UAMAEvent alloc] init];
+    [event setEventType:name];
+    [event setSession:[self currentSession]];
+    
+    // now the request
+    UAMAPutEventsRequest *request = [[UAMAPutEventsRequest alloc] init];
+    [request setQueuePriority:NSOperationQueuePriorityVeryLow];
+    [request addEvent:event];
+    
+    [request invokeWithOwner:self completionBlock:^(UAMAPutEventsResponse *response, NSError *error)
+    {
+        if (error != nil)
+            NSLog(@"Unable to put Mobile Analytics named event %@: %@", event.eventType, error);
     }];
 }
 

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Unsigned Apps. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 
 @class UAMASession;
@@ -59,5 +59,10 @@
  * the session was paused it will be restarted instead.
 **/
 + (void)resumeSession;
+
+/**
+ * Sends a named event using the current session to AWS.
+**/
++ (void)putEventNamed:(NSString *)name;
 
 @end
