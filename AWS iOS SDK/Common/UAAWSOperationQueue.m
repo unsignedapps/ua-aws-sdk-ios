@@ -66,6 +66,10 @@
 
 - (void)addRequest:(UAAWSRequest *)request
 {
+    // already cancelled?
+    if ([request isCancelled])
+        return;
+
     [request setUA_Queue:self];
     [self addOperation:request];
 }
