@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 GitHub. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 // The name for a value transformer that converts strings into URLs and back.
 extern NSString * const UAMTLURLValueTransformerName;

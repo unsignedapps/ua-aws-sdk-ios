@@ -7,7 +7,7 @@
 //  Released under the MIT license.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "metamacros.h"
 
 /**

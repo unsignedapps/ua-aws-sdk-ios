@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Matthew Baranowski. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "UADDXML.h"
 #import "UADDXMLNode.h"
 #import "UAMTLModelProtocol.h"

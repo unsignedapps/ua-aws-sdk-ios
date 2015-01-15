@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 GitHub. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "UAMTLModelProtocol.h"
 
 // A UAMTLModel object that supports being parsed from and serialized to JSON.

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 GitHub. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 // Creates a selector from a key and a constant string.
 //

@@ -9,7 +9,7 @@
 //  See the LICENSE file for more information.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 // Returns whether both objects are identical or equal via -isEqual:
 BOOL UAMTLEqualObjects(id obj1, id obj2);

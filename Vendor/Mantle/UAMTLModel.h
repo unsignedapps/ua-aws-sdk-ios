@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 GitHub. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "UAMTLModelProtocol.h"
 
 // An abstract base class for model objects, using reflection to provide
