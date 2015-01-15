@@ -2,7 +2,7 @@
 //  UAASEBSBlockDevice.m
 //  AWS iOS SDK
 //
-//  Copyright © Unsigned Apps 2014. See License file.
+//  Copyright © Unsigned Apps 2015. See License file.
 //  Created by Rob Amos.
 //
 //
@@ -15,7 +15,7 @@
 
 @implementation UAASEBSBlockDevice
 
-@synthesize snapshotID=_snapshotID, volumeSize=_volumeSize, volumeType=_volumeType, deleteOnTermination=_deleteOnTermination, iops=_iops;
+@synthesize snapshotID=_snapshotID, volumeSize=_volumeSize, volumeType=_volumeType, deleteOnTermination=_deleteOnTermination, encrypted=_encrypted, iops=_iops;
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey
 {
@@ -28,6 +28,7 @@
         @"volumeSize": @"VolumeSize",
         @"volumeType": @"VolumeType",
         @"deleteOnTermination": @"DeleteOnTermination",
+        @"encrypted": @"Encrypted",
         @"iops": @"Iops"
     }];
     return [keyPaths copy];
@@ -49,6 +50,7 @@
         @"volumeSize": @"AutoScaling:VolumeSize",
         @"volumeType": @"AutoScaling:VolumeType",
         @"deleteOnTermination": @"AutoScaling:DeleteOnTermination",
+        @"encrypted": @"AutoScaling:Encrypted",
         @"iops": @"AutoScaling:Iops"
     }];
     return [keyPaths copy];
@@ -56,8 +58,8 @@
 
 + (NSValueTransformer *)volumeTypeQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIO1), @(UAASEBSBlockDeviceVolumeTypeGP2) ]
-                                               stringValues:@[ @"standard", @"io1", @"gp2" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeGP2), @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIO1) ]
+                                               stringValues:@[ @"gp2", @"standard", @"io1" ]
                                                unknownValue:@(UAASEBSBlockDeviceVolumeTypeUnknown)];
 }
 
@@ -68,12 +70,17 @@
 
 + (NSValueTransformer *)volumeTypeXMLTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIO1), @(UAASEBSBlockDeviceVolumeTypeGP2) ]
-                                               stringValues:@[ @"standard", @"io1", @"gp2" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UAASEBSBlockDeviceVolumeTypeGP2), @(UAASEBSBlockDeviceVolumeTypeStandard), @(UAASEBSBlockDeviceVolumeTypeIO1) ]
+                                               stringValues:@[ @"gp2", @"standard", @"io1" ]
                                                unknownValue:@(UAASEBSBlockDeviceVolumeTypeUnknown)];
 }
 
 + (NSValueTransformer *)deleteOnTerminationXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
+}
+
++ (NSValueTransformer *)encryptedXMLTransformer
 {
     return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }

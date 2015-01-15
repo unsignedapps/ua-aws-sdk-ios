@@ -14,7 +14,7 @@
 
 - (id)initWithAccessKey:(NSString *)accessKey secretKey:(NSString *)secretKey
 {
-    if (self = [self init])
+    if ((self = [self init]))
     {
         [self setAccessKey:accessKey];
         [self setSecretKey:secretKey];
