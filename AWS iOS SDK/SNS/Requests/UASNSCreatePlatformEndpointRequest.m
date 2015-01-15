@@ -9,7 +9,7 @@
 
 #import "UASNSCreatePlatformEndpointRequest.h"
 #import "UAAWSAdditionalAccessors.h"
-#import "UASNSCreateEndpointResponse.h"
+#import "UASNSCreatePlatformEndpointResponse.h"
 
 @interface UASNSCreatePlatformEndpointRequest ()
 
@@ -32,14 +32,15 @@
 		[self setAction:@"CreatePlatformEndpoint"];
 		[self setVersion:@"2010-03-31"];
 		
-		
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(attributeForKey:) propertyName:@"attributes"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setAttribute:forKey:) propertyName:@"attributes"];
 	}
 	return self;
 }
 
 - (Class)UA_ResponseClass
 {
-	return [UASNSCreateEndpointResponse class];
+	return [UASNSCreatePlatformEndpointResponse class];
 }
 
 + (NSDictionary *)queryStringKeyPathsByPropertyKey

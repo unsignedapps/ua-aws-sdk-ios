@@ -39,7 +39,7 @@
 
 - (id)initWithSubscriptionARN:(NSString *)subscriptionARN
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setSubscriptionARN:subscriptionARN];
 	}

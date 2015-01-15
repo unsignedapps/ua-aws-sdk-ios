@@ -17,17 +17,22 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./ErrorResponse/";
+    return @"./Sns:ErrorResponse/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey
 {
     return
     @{
-        @"code":        @"Error/Code",
-        @"message":     @"Error/Message",
-        @"requestID":   @"RequestID"
+        @"code":        @"Sns:Error/Sns:Code",
+        @"message":     @"Sns:Error/Sns:Message",
+        @"requestID":   @"Sns:RequestID"
     };
+}
+
++ (NSDictionary *)XMLNamespaceMappings
+{
+    return @{ @"Sns": @"http://sns.amazonaws.com/doc/2010-03-31/" };
 }
 
 #pragma mark - Error Generation

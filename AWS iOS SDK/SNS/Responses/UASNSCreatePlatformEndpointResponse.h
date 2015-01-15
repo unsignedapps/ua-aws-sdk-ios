@@ -1,5 +1,5 @@
 //
-//  UASNSCreateEndpointResponse.h
+//  UASNSCreatePlatformEndpointResponse.h
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -9,7 +9,7 @@
 
 #import "UASNSResponse.h"
 
-@interface UASNSCreateEndpointResponse : UASNSResponse
+@interface UASNSCreatePlatformEndpointResponse : UASNSResponse
 
 @property (nonatomic, copy) NSString *endpointARN;
 

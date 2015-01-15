@@ -38,6 +38,20 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)protocolQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSProtocolHTTP), @(UASNSProtocolHTTPS), @(UASNSProtocolEmail), @(UASNSProtocolEmailJSON), @(UASNSProtocolSMS), @(UASNSProtocolSQS), @(UASNSProtocolApplication) ]
+                                               stringValues:@[ @"http", @"https", @"email", @"email-json", @"sms", @"sqs", @"application" ]
+                                               unknownValue:@(UASNSProtocolUnknown)];
+}
+
++ (NSValueTransformer *)protocolXMLTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSProtocolHTTP), @(UASNSProtocolHTTPS), @(UASNSProtocolEmail), @(UASNSProtocolEmailJSON), @(UASNSProtocolSMS), @(UASNSProtocolSQS), @(UASNSProtocolApplication) ]
+                                               stringValues:@[ @"http", @"https", @"email", @"email-json", @"sms", @"sqs", @"application" ]
+                                               unknownValue:@(UASNSProtocolUnknown)];
+}
+
 @end
 
 #pragma clang diagnostic pop

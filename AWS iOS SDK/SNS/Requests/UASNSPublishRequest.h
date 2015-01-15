@@ -8,7 +8,7 @@
 
 #import "UASNSRequest.h"
 
-@class UASNSPublishResponse;
+@class UASNSMessageAttribute, UASNSPublishResponse;
 
 typedef void(^UASNSPublishRequestCompletionBlock)(UASNSPublishResponse *response, NSError *error);
 typedef BOOL(^UASNSPublishRequestShouldContinueWaitingBlock)(UASNSPublishResponse *response, NSError *error);
@@ -20,8 +20,21 @@ typedef BOOL(^UASNSPublishRequestShouldContinueWaitingBlock)(UASNSPublishRespons
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSString *subject;
 @property (nonatomic, copy) NSString *messageStructure;
+@property (nonatomic, strong) NSMutableDictionary *messageAttributes;
 // @property (nonatomic, copy) UASNSPublishRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UASNSPublishRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
+
+/**
+ * Retrieves the UASNSMessageAttribute for the specified Key.
+**/
+- (UASNSMessageAttribute *)messageAttributeForKey:(NSString *)key;
+
+/**
+ * Sets the value of Key to MessageAttribute in the messageAttributes property.
+ *
+ * This will initialise messageAttributes with an empty mutable dictionary if necessary.
+**/
+- (void)setMessageAttribute:(UASNSMessageAttribute *)messageAttribute forKey:(NSString *)key;
 
 #pragma mark - Invocation
 

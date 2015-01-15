@@ -1,5 +1,5 @@
 //
-//  UASNSCreateEndpointResponse.m
+//  UASNSCreatePlatformEndpointResponse.m
 //  AWS iOS SDK
 //
 //  Copyright © Unsigned Apps 2014. See License file.
@@ -7,19 +7,19 @@
 //
 //
 
-#import "UASNSCreateEndpointResponse.h"
+#import "UASNSCreatePlatformEndpointResponse.h"
 #import "UAAWSAdditionalAccessors.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation UASNSCreateEndpointResponse
+@implementation UASNSCreatePlatformEndpointResponse
 
 @synthesize endpointARN=_endpointARN;
 
 + (NSString *)XPathPrefix
 {
-    return @"./Sns:CreateEndpointResponse/Sns:CreateEndpointResult/";
+    return @"./Sns:CreatePlatformEndpointResponse/Sns:CreatePlatformEndpointResult/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey

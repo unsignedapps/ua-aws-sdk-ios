@@ -15,7 +15,7 @@
 
 @implementation UASNSSubscriptionAttributes
 
-@synthesize subscriptionARN=_subscriptionARN, topicARN=_topicARN, owner=_owner, confirmationWasAuthenticated=_confirmationWasAuthenticated, deliveryPolicy=_deliveryPolicy, effectiveDeliveryPolicy=_effectiveDeliveryPolicy;
+@synthesize subscriptionARN=_subscriptionARN, topicARN=_topicARN, owner=_owner, confirmationWasAuthenticated=_confirmationWasAuthenticated, rawMessageDelivery=_rawMessageDelivery, deliveryPolicy=_deliveryPolicy, effectiveDeliveryPolicy=_effectiveDeliveryPolicy;
 
 + (NSString *)XPathPrefix
 {
@@ -33,6 +33,7 @@
         @"topicARN": @"Sns:entry/Sns:value[../Sns:key/text() = \"TopicArn\"]",
         @"owner": @"Sns:entry/Sns:value[../Sns:key/text() = \"Owner\"]",
         @"confirmationWasAuthenticated": @"Sns:entry/Sns:value[../Sns:key/text() = \"ConfirmationWasAuthenticated\"]",
+        @"rawMessageDelivery": @"Sns:entry/Sns:value[../Sns:key/text() = \"RawMessageDelivery\"]",
         @"deliveryPolicy": @"Sns:entry/Sns:value[../Sns:key/text() = \"DeliveryPolicy\"]",
         @"effectiveDeliveryPolicy": @"Sns:entry/Sns:value[../Sns:key/text() = \"EffectiveDeliveryPolicy\"]"
     }];
@@ -40,6 +41,11 @@
 }
 
 + (NSValueTransformer *)confirmationWasAuthenticatedXMLTransformer
+{
+    return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
+}
+
++ (NSValueTransformer *)rawMessageDeliveryXMLTransformer
 {
     return [UAMTLValueTransformer UA_XMLTransformerForBooleanString];
 }

@@ -32,7 +32,8 @@
 		[self setAction:@"SetPlatformApplicationAttributes"];
 		[self setVersion:@"2010-03-31"];
 		
-		
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(attributeForKey:) propertyName:@"attributes"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setAttribute:forKey:) propertyName:@"attributes"];
 	}
 	return self;
 }

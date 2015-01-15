@@ -39,7 +39,7 @@
 
 - (id)initWithEndpointARN:(NSString *)endpointARN
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setEndpointARN:endpointARN];
 	}

@@ -39,7 +39,7 @@
 
 - (id)initWithNextToken:(NSString *)nextToken
 {
-	if (self = [self init])
+	if ((self = [self init]))
 	{
 		[self setNextToken:nextToken];
 	}

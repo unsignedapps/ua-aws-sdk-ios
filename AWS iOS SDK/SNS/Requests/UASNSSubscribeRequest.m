@@ -58,6 +58,20 @@
     return [keyPaths copy];
 }
 
++ (NSValueTransformer *)protocolJSONTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSProtocolHTTP), @(UASNSProtocolHTTPS), @(UASNSProtocolEmail), @(UASNSProtocolEmailJSON), @(UASNSProtocolSMS), @(UASNSProtocolSQS), @(UASNSProtocolApplication) ]
+                                               stringValues:@[ @"http", @"https", @"email", @"email-json", @"sms", @"sqs", @"application" ]
+                                               unknownValue:@(UASNSProtocolUnknown)];
+}
+
++ (NSValueTransformer *)protocolQueryStringTransformer
+{
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSProtocolHTTP), @(UASNSProtocolHTTPS), @(UASNSProtocolEmail), @(UASNSProtocolEmailJSON), @(UASNSProtocolSMS), @(UASNSProtocolSQS), @(UASNSProtocolApplication) ]
+                                               stringValues:@[ @"http", @"https", @"email", @"email-json", @"sms", @"sqs", @"application" ]
+                                               unknownValue:@(UASNSProtocolUnknown)];
+}
+
 /*#pragma mark - Invocation
 
 - (void)invokeWithOwner:(id)owner completionBlock:(UASNSSubscribeRequestCompletionBlock)completionBlock

@@ -32,7 +32,8 @@
 		[self setAction:@"CreatePlatformApplication"];
 		[self setVersion:@"2010-03-31"];
 		
-		
+		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(attributeForKey:) propertyName:@"attributes"];
+		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setAttribute:forKey:) propertyName:@"attributes"];
 	}
 	return self;
 }
@@ -67,8 +68,8 @@
 
 + (NSValueTransformer *)platformJSONTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSPlatformApplicationTypeAdm), @(UASNSPlatformApplicationTypeApns), @(UASNSPlatformApplicationTypeApnsSandbox), @(UASNSPlatformApplicationTypeGcm) ]
-                                               stringValues:@[ @"ADM", @"APNS", @"APNS_SANDBOX", @"GCM" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSPlatformApplicationTypeADM), @(UASNSPlatformApplicationTypeAPNS), @(UASNSPlatformApplicationTypeAPNSSandbox), @(UASNSPlatformApplicationTypeGCM), @(UASNSPlatformApplicationTypeBaidu), @(UASNSPlatformApplicationTypeMPNS), @(UASNSPlatformApplicationTypeWNS) ]
+                                               stringValues:@[ @"ADM", @"APNS", @"APNS_SANDBOX", @"GCM", @"BAIDU", @"MPNS", @"WNS" ]
                                                unknownValue:@(UASNSPlatformApplicationTypeUnknown)];
 }
 
@@ -79,8 +80,8 @@
 
 + (NSValueTransformer *)platformQueryStringTransformer
 {
-    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSPlatformApplicationTypeAdm), @(UASNSPlatformApplicationTypeApns), @(UASNSPlatformApplicationTypeApnsSandbox), @(UASNSPlatformApplicationTypeGcm) ]
-                                               stringValues:@[ @"ADM", @"APNS", @"APNS_SANDBOX", @"GCM" ]
+    return [NSValueTransformer UA_ENUMTransformerWithValues:@[ @(UASNSPlatformApplicationTypeADM), @(UASNSPlatformApplicationTypeAPNS), @(UASNSPlatformApplicationTypeAPNSSandbox), @(UASNSPlatformApplicationTypeGCM), @(UASNSPlatformApplicationTypeBaidu), @(UASNSPlatformApplicationTypeMPNS), @(UASNSPlatformApplicationTypeWNS) ]
+                                               stringValues:@[ @"ADM", @"APNS", @"APNS_SANDBOX", @"GCM", @"BAIDU", @"MPNS", @"WNS" ]
                                                unknownValue:@(UASNSPlatformApplicationTypeUnknown)];
 }
 

@@ -8,10 +8,10 @@
 
 #import "UASNSRequest.h"
 
-@class UASNSCreateEndpointResponse;
+@class UASNSCreatePlatformEndpointResponse;
 
-typedef void(^UASNSCreatePlatformEndpointRequestCompletionBlock)(UASNSCreateEndpointResponse *response, NSError *error);
-typedef BOOL(^UASNSCreatePlatformEndpointRequestShouldContinueWaitingBlock)(UASNSCreateEndpointResponse *response, NSError *error);
+typedef void(^UASNSCreatePlatformEndpointRequestCompletionBlock)(UASNSCreatePlatformEndpointResponse *response, NSError *error);
+typedef BOOL(^UASNSCreatePlatformEndpointRequestShouldContinueWaitingBlock)(UASNSCreatePlatformEndpointResponse *response, NSError *error);
 
 @interface UASNSCreatePlatformEndpointRequest : UASNSRequest
 
@@ -21,6 +21,18 @@ typedef BOOL(^UASNSCreatePlatformEndpointRequestShouldContinueWaitingBlock)(UASN
 @property (nonatomic, strong) NSMutableDictionary *attributes;
 // @property (nonatomic, copy) UASNSCreatePlatformEndpointRequestCompletionBlock UA_RequestCompletionBlock;
 // @property (nonatomic, copy) UASNSCreatePlatformEndpointRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
+
+/**
+ * Retrieves the NSString for the specified Key.
+**/
+- (NSString *)attributeForKey:(NSString *)key;
+
+/**
+ * Sets the value of Key to Attribute in the attributes property.
+ *
+ * This will initialise attributes with an empty mutable dictionary if necessary.
+**/
+- (void)setAttribute:(NSString *)attribute forKey:(NSString *)key;
 
 #pragma mark - Invocation
 

@@ -27,7 +27,6 @@
 #import "UASNSListTopicsRequest.h"
 #import "UASNSPublishRequest.h"
 #import "UASNSRemovePermissionRequest.h"
-#import "UASNSRequest.h"
 #import "UASNSSetEndpointAttributesRequest.h"
 #import "UASNSSetPlatformApplicationAttributesRequest.h"
 #import "UASNSSetSubscriptionAttributesRequest.h"
@@ -38,7 +37,7 @@
 // Models
 #import "UASNSEndpoint.h"
 #import "UASNSEndpointAttributes.h"
-#import "UASNSModel.h"
+#import "UASNSMessageAttribute.h"
 #import "UASNSPlatformApplication.h"
 #import "UASNSPlatformApplicationAttributes.h"
 #import "UASNSSubscription.h"
@@ -49,7 +48,7 @@
 // Responses
 #import "UASNSAddPermissionResponse.h"
 #import "UASNSConfirmSubscriptionResponse.h"
-#import "UASNSCreateEndpointResponse.h"
+#import "UASNSCreatePlatformEndpointResponse.h"
 #import "UASNSCreatePlatformApplicationResponse.h"
 #import "UASNSCreateTopicResponse.h"
 #import "UASNSDeleteEndpointResponse.h"
@@ -66,7 +65,6 @@
 #import "UASNSListTopicsResponse.h"
 #import "UASNSPublishResponse.h"
 #import "UASNSRemovePermissionResponse.h"
-#import "UASNSResponse.h"
 #import "UASNSSetEndpointAttributesResponse.h"
 #import "UASNSSetPlatformApplicationAttributesResponse.h"
 #import "UASNSSetSubscriptionAttributesResponse.h"
