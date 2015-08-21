@@ -15,7 +15,6 @@
 @property (nonatomic, copy) NSString *topicARN;
 @property (nonatomic, copy) NSString *owner;
 @property (nonatomic) BOOL confirmationWasAuthenticated;
-@property (nonatomic) BOOL rawMessageDelivery;
 @property (nonatomic, copy) NSString *deliveryPolicy;
 @property (nonatomic, copy) NSString *effectiveDeliveryPolicy;
 

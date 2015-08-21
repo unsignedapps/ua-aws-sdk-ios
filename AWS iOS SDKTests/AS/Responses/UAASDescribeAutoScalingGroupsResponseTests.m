@@ -44,7 +44,7 @@ describe(@"UAASDescribeAutoScalingGroupsResponse", ^
         [[group.tags should] beNil];
         [[group.suspendedProcesses should] beNil];
         [[group.autoScalingGroupName should] equal:@"my-test-asg-lbs"];
-        [[theValue(group.healthCheckType) should] equal:theValue(UAASHealthCheckTypeElb)];
+        [[theValue(group.healthCheckType) should] equal:theValue(UAASHealthCheckTypeELB)];
         [[group.createdTime should] equal:[NSDate dateWithTimeIntervalSince1970:1367826435]];
         [[group.enabledMetrics should] beNil];
         [[group.launchConfigurationName should] equal:@"my-test-lc"];

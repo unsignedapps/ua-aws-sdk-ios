@@ -10,7 +10,6 @@
 #import "UASNSPublishRequest.h"
 #import "UAAWSAdditionalAccessors.h"
 #import "UASNSPublishResponse.h"
-#import "UASNSMessageAttribute.h"
 
 @interface UASNSPublishRequest ()
 
@@ -24,7 +23,7 @@
 
 @implementation UASNSPublishRequest
 
-@synthesize action=_action, version=_version, topicARN=_topicARN, targetARN=_targetARN, message=_message, subject=_subject, messageStructure=_messageStructure, messageAttributes=_messageAttributes;
+@synthesize action=_action, version=_version, topicARN=_topicARN, targetARN=_targetARN, message=_message, subject=_subject, messageStructure=_messageStructure;
 
 - (id)init
 {
@@ -33,8 +32,7 @@
 		[self setAction:@"Publish"];
 		[self setVersion:@"2010-03-31"];
 		
-		[self UA_addDictionaryKeyValueAdditionalAccessorForSelector:@selector(messageAttributeForKey:) propertyName:@"messageAttributes"];
-		[self UA_addSetObjectForKeyAdditionalAccessorForSelector:@selector(setMessageAttribute:forKey:) propertyName:@"messageAttributes"];
+		
 	}
 	return self;
 }
@@ -57,15 +55,9 @@
         @"targetARN": @"TargetArn",
         @"message": @"Message",
         @"subject": @"Subject",
-        @"messageStructure": @"MessageStructure",
-        @"messageAttributes": @"MessageAttributes.entry"
+        @"messageStructure": @"MessageStructure"
     }];
     return [keyPaths copy];
-}
-
-+ (NSValueTransformer *)messageAttributesJSONTransformer
-{
-    return [UAMTLValueTransformer UA_JSONDictionaryTransformerWithItemTransformer:nil];
 }
 
 /*#pragma mark - Invocation

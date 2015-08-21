@@ -18,8 +18,6 @@ typedef BOOL(^UASNSSetTopicAttributesRequestShouldContinueWaitingBlock)(UASNSSet
 @property (nonatomic, copy) NSString *topicARN;
 @property (nonatomic) UASNSTopicAttribute attributeName;
 @property (nonatomic, copy) NSString *attributeValue;
-// @property (nonatomic, copy) UASNSSetTopicAttributesRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSSetTopicAttributesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 #pragma mark - Invocation
 

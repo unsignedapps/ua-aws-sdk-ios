@@ -18,8 +18,6 @@ typedef BOOL(^UASNSConfirmSubscriptionRequestShouldContinueWaitingBlock)(UASNSCo
 @property (nonatomic, copy) NSString *topicARN;
 @property (nonatomic, copy) NSString *token;
 @property (nonatomic, copy) NSString *authenticateOnUnsubscribe;
-// @property (nonatomic, copy) UASNSConfirmSubscriptionRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSConfirmSubscriptionRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 #pragma mark - Invocation
 

@@ -39,7 +39,7 @@
 
 - (id)initWithName:(NSString *)name
 {
-	if ((self = [self init]))
+	if (self = [self init])
 	{
 		[self setName:name];
 	}

@@ -18,20 +18,6 @@ typedef BOOL(^UASNSCreatePlatformApplicationRequestShouldContinueWaitingBlock)(U
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) UASNSPlatformApplicationType platform;
 @property (nonatomic, strong) NSMutableDictionary *attributes;
-// @property (nonatomic, copy) UASNSCreatePlatformApplicationRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSCreatePlatformApplicationRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
-
-/**
- * Retrieves the NSString for the specified Key.
-**/
-- (NSString *)attributeForKey:(NSString *)key;
-
-/**
- * Sets the value of Key to Attribute in the attributes property.
- *
- * This will initialise attributes with an empty mutable dictionary if necessary.
-**/
-- (void)setAttribute:(NSString *)attribute forKey:(NSString *)key;
 
 #pragma mark - Invocation
 

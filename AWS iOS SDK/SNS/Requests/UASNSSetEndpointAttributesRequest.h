@@ -17,20 +17,6 @@ typedef BOOL(^UASNSSetEndpointAttributesRequestShouldContinueWaitingBlock)(UASNS
 
 @property (nonatomic, copy) NSString *endpointARN;
 @property (nonatomic, strong) NSMutableDictionary *attributes;
-// @property (nonatomic, copy) UASNSSetEndpointAttributesRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSSetEndpointAttributesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
-
-/**
- * Retrieves the NSString for the specified Key.
-**/
-- (NSString *)attributeForKey:(NSString *)key;
-
-/**
- * Sets the value of Key to Attribute in the attributes property.
- *
- * This will initialise attributes with an empty mutable dictionary if necessary.
-**/
-- (void)setAttribute:(NSString *)attribute forKey:(NSString *)key;
 
 #pragma mark - Invocation
 

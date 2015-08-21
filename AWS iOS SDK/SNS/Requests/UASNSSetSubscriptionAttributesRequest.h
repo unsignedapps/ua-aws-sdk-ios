@@ -18,8 +18,6 @@ typedef BOOL(^UASNSSetSubscriptionAttributesRequestShouldContinueWaitingBlock)(U
 @property (nonatomic, copy) NSString *subscriptionARN;
 @property (nonatomic) UASNSSubscriptionAttribute attributeName;
 @property (nonatomic, copy) NSString *attributeValue;
-// @property (nonatomic, copy) UASNSSetSubscriptionAttributesRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSSetSubscriptionAttributesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 #pragma mark - Invocation
 

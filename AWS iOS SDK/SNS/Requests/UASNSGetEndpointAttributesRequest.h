@@ -16,8 +16,6 @@ typedef BOOL(^UASNSGetEndpointAttributesRequestShouldContinueWaitingBlock)(UASNS
 @interface UASNSGetEndpointAttributesRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *endpointARN;
-// @property (nonatomic, copy) UASNSGetEndpointAttributesRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSGetEndpointAttributesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 - (id)initWithEndpointARN:(NSString *)endpointARN;
 

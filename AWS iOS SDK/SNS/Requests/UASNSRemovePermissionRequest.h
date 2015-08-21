@@ -17,8 +17,6 @@ typedef BOOL(^UASNSRemovePermissionRequestShouldContinueWaitingBlock)(UASNSRemov
 
 @property (nonatomic, copy) NSString *topicARN;
 @property (nonatomic, copy) NSString *label;
-// @property (nonatomic, copy) UASNSRemovePermissionRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSRemovePermissionRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 #pragma mark - Invocation
 

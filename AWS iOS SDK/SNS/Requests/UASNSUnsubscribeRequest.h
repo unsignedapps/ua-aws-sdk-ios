@@ -16,8 +16,6 @@ typedef BOOL(^UASNSUnsubscribeRequestShouldContinueWaitingBlock)(UASNSUnsubscrib
 @interface UASNSUnsubscribeRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *subscriptionARN;
-// @property (nonatomic, copy) UASNSUnsubscribeRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSUnsubscribeRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 - (id)initWithSubscriptionARN:(NSString *)subscriptionARN;
 

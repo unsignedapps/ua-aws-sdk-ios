@@ -16,8 +16,6 @@ typedef BOOL(^UASNSCreateTopicRequestShouldContinueWaitingBlock)(UASNSCreateTopi
 @interface UASNSCreateTopicRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *name;
-// @property (nonatomic, copy) UASNSCreateTopicRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSCreateTopicRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 - (id)initWithName:(NSString *)name;
 

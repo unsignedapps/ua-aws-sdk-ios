@@ -16,8 +16,6 @@ typedef BOOL(^UASNSDeleteTopicRequestShouldContinueWaitingBlock)(UASNSDeleteTopi
 @interface UASNSDeleteTopicRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *topicARN;
-// @property (nonatomic, copy) UASNSDeleteTopicRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSDeleteTopicRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 - (id)initWithTopicARN:(NSString *)topicARN;
 

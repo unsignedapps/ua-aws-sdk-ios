@@ -13,7 +13,7 @@
 
 @property (nonatomic, copy) NSString *subscriptionARN;
 @property (nonatomic, copy) NSString *owner;
-@property (nonatomic) UASNSProtocol protocol;
+@property (nonatomic, copy) NSString *protocol;
 @property (nonatomic, copy) NSString *endpoint;
 @property (nonatomic, copy) NSString *topicARN;
 

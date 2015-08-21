@@ -16,8 +16,6 @@ typedef BOOL(^UASNSGetTopicAttributesRequestShouldContinueWaitingBlock)(UASNSGet
 @interface UASNSGetTopicAttributesRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *topicARN;
-// @property (nonatomic, copy) UASNSGetTopicAttributesRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSGetTopicAttributesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 - (id)initWithTopicARN:(NSString *)topicARN;
 

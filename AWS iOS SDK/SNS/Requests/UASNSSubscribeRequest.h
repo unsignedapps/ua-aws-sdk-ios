@@ -16,10 +16,8 @@ typedef BOOL(^UASNSSubscribeRequestShouldContinueWaitingBlock)(UASNSSubscribeRes
 @interface UASNSSubscribeRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *topicARN;
-@property (nonatomic) UASNSProtocol protocol;
+@property (nonatomic, copy) NSString *protocol;
 @property (nonatomic, copy) NSString *endpoint;
-// @property (nonatomic, copy) UASNSSubscribeRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSSubscribeRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 #pragma mark - Invocation
 

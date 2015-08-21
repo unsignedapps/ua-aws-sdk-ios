@@ -19,7 +19,7 @@
 
 + (NSString *)XPathPrefix
 {
-    return @"./Sns:ConfirmSubscriptionResponse/Sns:ConfirmSubscriptionResult/";
+    return @"./Sns:ConfirmSubscriptionResponse/Sns:ConfirmSubscriptionResponse/";
 }
 
 + (NSDictionary *)XMLKeyPathsByPropertyKey

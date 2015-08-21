@@ -16,8 +16,6 @@ typedef BOOL(^UASNSDeletePlatformApplicationRequestShouldContinueWaitingBlock)(U
 @interface UASNSDeletePlatformApplicationRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *platformApplicationARN;
-// @property (nonatomic, copy) UASNSDeletePlatformApplicationRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSDeletePlatformApplicationRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 - (id)initWithPlatformApplicationARN:(NSString *)platformApplicationARN;
 

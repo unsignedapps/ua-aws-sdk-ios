@@ -16,8 +16,6 @@ typedef BOOL(^UASNSDeleteEndpointRequestShouldContinueWaitingBlock)(UASNSDeleteE
 @interface UASNSDeleteEndpointRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *endpointARN;
-// @property (nonatomic, copy) UASNSDeleteEndpointRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSDeleteEndpointRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 - (id)initWithEndpointARN:(NSString *)endpointARN;
 

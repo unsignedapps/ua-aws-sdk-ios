@@ -16,8 +16,6 @@ typedef BOOL(^UASNSGetPlatformApplicationAttributesRequestShouldContinueWaitingB
 @interface UASNSGetPlatformApplicationAttributesRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *platformApplicationARN;
-// @property (nonatomic, copy) UASNSGetPlatformApplicationAttributesRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSGetPlatformApplicationAttributesRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 - (id)initWithPlatformApplicationARN:(NSString *)platformApplicationARN;
 

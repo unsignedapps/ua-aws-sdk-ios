@@ -17,8 +17,6 @@ typedef BOOL(^UASNSListSubscriptionsByTopicRequestShouldContinueWaitingBlock)(UA
 
 @property (nonatomic, copy) NSString *topicARN;
 @property (nonatomic, copy) NSString *nextToken;
-// @property (nonatomic, copy) UASNSListSubscriptionsByTopicRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSListSubscriptionsByTopicRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 #pragma mark - Invocation
 

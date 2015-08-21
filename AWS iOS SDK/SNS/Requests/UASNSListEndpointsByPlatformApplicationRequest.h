@@ -17,8 +17,6 @@ typedef BOOL(^UASNSListEndpointsByPlatformApplicationRequestShouldContinueWaitin
 
 @property (nonatomic, copy) NSString *platformApplicationARN;
 @property (nonatomic, copy) NSString *nextToken;
-// @property (nonatomic, copy) UASNSListEndpointsByPlatformApplicationRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSListEndpointsByPlatformApplicationRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 #pragma mark - Invocation
 

@@ -39,7 +39,7 @@
 
 - (id)initWithTopicARN:(NSString *)topicARN
 {
-	if ((self = [self init]))
+	if (self = [self init])
 	{
 		[self setTopicARN:topicARN];
 	}

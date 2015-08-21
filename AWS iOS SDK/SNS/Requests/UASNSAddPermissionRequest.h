@@ -19,8 +19,6 @@ typedef BOOL(^UASNSAddPermissionRequestShouldContinueWaitingBlock)(UASNSAddPermi
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, strong) NSMutableArray *aWSAccountID;
 @property (nonatomic, strong) NSMutableArray *actionName;
-// @property (nonatomic, copy) UASNSAddPermissionRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSAddPermissionRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 /**
  * Retrieves the NSString at the specified index.

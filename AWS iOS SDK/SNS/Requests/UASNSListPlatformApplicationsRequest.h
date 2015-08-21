@@ -16,8 +16,6 @@ typedef BOOL(^UASNSListPlatformApplicationsRequestShouldContinueWaitingBlock)(UA
 @interface UASNSListPlatformApplicationsRequest : UASNSRequest
 
 @property (nonatomic, copy) NSString *nextToken;
-// @property (nonatomic, copy) UASNSListPlatformApplicationsRequestCompletionBlock UA_RequestCompletionBlock;
-// @property (nonatomic, copy) UASNSListPlatformApplicationsRequestShouldContinueWaitingBlock UA_ShouldContinueWaiting;
 
 - (id)initWithNextToken:(NSString *)nextToken;
 

@@ -39,7 +39,7 @@
 
 - (id)initWithPlatformApplicationARN:(NSString *)platformApplicationARN
 {
-	if ((self = [self init]))
+	if (self = [self init])
 	{
 		[self setPlatformApplicationARN:platformApplicationARN];
 	}
